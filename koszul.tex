@@ -1,13 +1,16 @@
 \documentclass[11pt]{amsart}
 
-\usepackage{macros}
+\usepackage{macros, setspace}
 
 \author{Natalie Paquette and Brian R. Williams}
 \date{\today}
 \title{Koszul duality in QFT}
 
+\def\define{\overset{\rm def}{=}}
 \begin{document}
 \maketitle
+
+\spacing{1.25}
 
 \section{Introduction}
 
@@ -32,13 +35,62 @@
 \section{QFT rudiments}
 %clarify: algebra of local ops vs. dense inclusion we work with in practice?
 
-\subsection{Local couplings} 
+\subsection{Local functionals} 
 
 \subsection{Local operators}
 
+Let $\Obs$ be the local operators of a one-dimensional translation invariant theory. 
+The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
+
+A one-dimensional theory is topological if there exists an endomorphism $\eta$ of the local operators, of cohomological degree $-1$, which satisfies
+\[
+\{Q, \eta\} = \frac{\partial}{\partial t} .
+\]
+
+
 \subsection{Topological descent} 
 
+Let $\Obs$ be the local operators of a one-dimensional topological field theory on $\RR_t$. 
+Because the theory is translation invariant, we can consider the complex of {\em differential form} valued operators
+\[
+\Omega^\bu(\RR \, , \, \Obs) .
+\]
+This complex is equipped with the original BRST differential $\{Q, \cdot\}$ acting on $\Obs$ as well as the de Rham differential $\d$. 
+
+Given $\cO = \cO^{(0)} \in \Obs$, we can use the endomorphism $\eta$ to define the following one-form valued operator
+\[
+\cO^{(1)} \define (\eta \cdot \cO) \d t \in \Omega^1(\RR \, , \, \Obs).
+\]
+The inhomogenous operator $\cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \Obs)$ if and only if the following descent equations are satisfies
+\begin{align*}
+\{Q, \cO^{(0)}\} & = 0 \\
+\d \cO^{(0)} + \{Q, \cO^{(1)}\} & = 0 .
+\end{align*}
+
+In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed local functional
+\[
+\int_\RR \cO^{(1)} .
+\]
+
+\subsection{Coupling to line defects} 
+
+Let's suppose we have a field theory on a manifold of the form $\RR_t \times M$ with the property that it is {\em topological} along the $\RR_t$-direction. 
+Denote by $\Obs$ the local operators along $\RR_t$. 
+
+Suppose that $A$ is an associative algebra which represents some other quantum mechanical system. 
+Our goal is to couple $A$ to the original theory as a line operator along $\RR_t$. 
+
+\begin{prop}
+There is a one-to-one correspondence between the space of couplings of $A$ to $\Obs$ and the space of Maurer--Cartan elements in 
+\[
+A \otimes \Obs .
+\]
+\end{prop}
+
+Suppose that $\alpha \in $
+
 \subsection{Vacuums and augmentations}
+
 %discrete choices of vacua vs. moduli spaces of vacua
 
 \section{Line operators}
@@ -61,7 +113,7 @@
 \section{Higher dimensional defects} 
 
 %higher dimensional topological defects. PSM in 3dCS. 
-%Kapustin--Salina
+%Kapustin--Salina.
 %Check refs by Mnev et al on BV-BFV?
 
 \end{document}
