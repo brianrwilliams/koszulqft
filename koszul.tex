@@ -7,6 +7,16 @@
 \title{Koszul duality in QFT}
 
 \def\define{\overset{\rm def}{=}}
+\def\ep{\varepsilon}
+\def\zbar{{\overline{z}}}
+\def\Weyl{{\rm Weyl}}
+\def\Cl{{\rm C}\ell}
+
+\def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
+\def\natalie#1{{\textcolor{green!65!black}{BRW: {#1}}}}
+
+\usepackage[upint]{stix}
+
 \begin{document}
 \maketitle
 
@@ -35,11 +45,12 @@
 \section{QFT rudiments}
 %clarify: algebra of local ops vs. dense inclusion we work with in practice?
 
-\subsection{Local functionals} 
+\subsection{Local functionals and Maurer--Cartan elements} 
+
+
 
 \subsection{Local operators}
 
-<<<<<<< HEAD
 Let $\Obs$ be the local operators of a one-dimensional translation invariant theory. 
 The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
 
@@ -48,9 +59,7 @@ A one-dimensional theory is topological if there exists an endomorphism $\eta$ o
 \{Q, \eta\} = \frac{\partial}{\partial t} .
 \]
 
-=======
 %To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x \Omega^{d-2}(M)... how is Koszul duality insensitive to this?
->>>>>>> eada762f051fe8c18801aad8542032ed6e2563ba
 
 \subsection{Topological descent} 
 
@@ -59,7 +68,7 @@ Because the theory is translation invariant, we can consider the complex of {\em
 \[
 \Omega^\bu(\RR \, , \, \Obs) .
 \]
-This complex is equipped with the original BRST differential $\{Q, \cdot\}$ acting on $\Obs$ as well as the de Rham differential $\d$. 
+This complex is equipped with the original BRST differential $Q$ acting on $\Obs$ as well as the de Rham differential $\d$. 
 
 Given $\cO = \cO^{(0)} \in \Obs$, we can use the endomorphism $\eta$ to define the following one-form valued operator
 \[
@@ -67,8 +76,8 @@ Given $\cO = \cO^{(0)} \in \Obs$, we can use the endomorphism $\eta$ to define t
 \]
 The inhomogenous operator $\cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \Obs)$ if and only if the following descent equations are satisfies
 \begin{align*}
-\{Q, \cO^{(0)}\} & = 0 \\
-\d \cO^{(0)} + \{Q, \cO^{(1)}\} & = 0 .
+Q \cO^{(0)} & = 0 \\
+\d \cO^{(0)} + Q \cO^{(1)} & = 0 .
 \end{align*}
 
 In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed local functional
@@ -76,22 +85,6 @@ In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $
 \int_\RR \cO^{(1)} .
 \]
 
-\subsection{Coupling to line defects} 
-
-Let's suppose we have a field theory on a manifold of the form $\RR_t \times M$ with the property that it is {\em topological} along the $\RR_t$-direction. 
-Denote by $\Obs$ the local operators along $\RR_t$. 
-
-Suppose that $A$ is an associative algebra which represents some other quantum mechanical system. 
-Our goal is to couple $A$ to the original theory as a line operator along $\RR_t$. 
-
-\begin{prop}
-There is a one-to-one correspondence between the space of couplings of $A$ to $\Obs$ and the space of Maurer--Cartan elements in 
-\[
-A \otimes \Obs .
-\]
-\end{prop}
-
-Suppose that $\alpha \in $
 
 \subsection{Vacuums and augmentations}
 
@@ -102,18 +95,132 @@ Suppose that $\alpha \in $
 %universal line defects and Koszul duality
 %stress relationship between three perspectives: MC(AxB), Hom(A!, B), couplings as local functionals from descent
 
-\subsection{Topological quantum mechanics}
+\subsection*{Topological mechanics}
 
 %free fermions/bosons in CS example? In 4d CS? Classical limit to connect Assoc/Assoc duality to Comm/Lie? 
 %references for lines in 4d N=4, 2d YM, boson and fermion descriptions
 %any example where we know, e.g., dim(MC(AxB)) and it's relatively tractable? If so, connect explicitly with Hom & couplings
 %3d N=6 topological line?
 
-\subsection{Coupling to bulk gauge theories}
+Ordinary mechanics describes \brian{do it}
+Topological mechanics, on the other hand, describes {\em locally constant} paths inside of phase space.
+
+The most basic phase space we consider is the cotangent bundle of affine space $\T^* \RR^n$.
+The fields of this system are given by functions $\gamma^i, \beta_j$ on $\RR$ where $i,j=1,\ldots n$. 
+The free action is simply
+\[
+\int_\RR \beta_i \partial_t \gamma^i .
+\]
+The algebra of operators of the quantum mechanical system is simply the Weyl algebra $\Weyl(\RR^n)$.
+This is the free algebra on $2n$ generators $p^i, q_j$ modulo the relation
+\[
+[p^i, q_j] = \delta^i_j .
+\]
+
+There is also a fermionic version of this topological mechanical system. 
+Instead of taking the phase space to be $T^* \RR^n$, it is the cotangent bundle of the odd vector space $\Pi \RR^n$.
+The fields describing the system are given by {\em odd} functions $\psi^i, \chi_j$ on $\RR$ where $i,j=1,\ldots n$. 
+The free action is identical
+\[
+\int_\RR \chi_i \partial_t \psi^i .
+\]
+The algebra of operators of the quantum mechanical system is the Clifford algebra $\Cl(\RR^n)$ on $\RR^n$ equipped with its Euclidean metric. 
+
+
+
+\subsection*{Coupling to bulk gauge theories}
+
+\subsection{Coupling to line defects} 
+
+Let's suppose we have a field theory on a manifold of the form $\RR_t \times M$ with the property that it is {\em topological} along the $\RR_t$-direction. 
+Denote by $\Obs$ the local operators along $\RR_t$. 
+
+Suppose that $\cA$ is an associative algebra which represents some other quantum mechanical system. 
+Our goal is to couple $\cA$ to the original theory as a line operator along $\RR_t$. 
+
+\begin{prop}
+There is a one-to-one correspondence between the space of couplings of $\cA$ to $\Obs$ and the space of Maurer--Cartan elements in 
+\[
+\Obs \otimes \cA .
+\]
+\end{prop}
+
+We provide a sketch of the proof of this result. 
+Suppose that $\alpha \in $
 
 %try to say something about the effect of the transverse directions on this story (topological, holomorphic, general fact alg)
 %brief point about BRST vs. BV-BRST
 %BV-BRST vs. BRST and `minimal' couplings
+
+\section{``Critical'' Chern--Simons theory}
+
+Let $\fg$ be a Lie algebra. 
+The theory has two sets of fields
+\begin{align*}
+A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
+B & = B_z (z,t) \d z 
+\end{align*}
+with $A_{\zbar}, A_t, B_z$ all $\fg$-valued functions on $\RR^3$.
+The action is of ``BF'' type:
+\begin{align*}
+\int B F_A & = \int B \d A + \frac12 B [A,A] \\
+& = \int B_z \partial_t A_{\zbar} + B_z \partial_{\zbar} A_t + B_z [A_t, A_\zbar] .
+\end{align*}
+Notice that in kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a form Dolbeault form of type $(1,0)$. 
+
+The Lie algebra of gauge symmetries is the familiar one $C^\infty(\RR^3) \otimes \fg$, smooth functions valued in $\fg$. 
+An element $\fc \in C^\infty(\RR^3) \otimes \fg$ acts on the fields via the transformation rule
+\begin{align*}
+\delta A_\zbar & = \partial_{\zbar} \fc + [\fc, A_\zbar] \\
+\delta A_t & = \partial_t \fc + [\fc,A_t] \\
+\delta B_z & = [\fc, B_z] .
+\end{align*}
+
+The classical BRST complex of local operators supported at $(z,t) = (0,0)$ is equivalent to the Chevalley--Eilenberg complex
+\[
+\clie^\bu \left(\fg[\ep][[z]]\right)
+\] 
+which computes Lie algebra cohomology of the ($\infty$-dimensional) Lie algebra $\fg[\ep][[z]]$. 
+
+Pick a basis $\{e^a\}_{a = 1,\ldots, \dim \fg}$ for $\fg$ with dual basis $\{e_a\}$ for $\fg^*$. 
+Explicitly, the Lie algebra cohomology representing local operators is computed by 
+\[
+\bigg(\Sym\left(\fg^*[\ep] [\partial_z] [-1] \right) \; , \; \d \bigg) = \bigg(\CC[\fc_a, \partial_z \fc_a , \partial^2_z \fc_a, \ldots, B_a , \partial_z B_a , \partial_z^2 B_a, \ldots]_{a=1, \ldots, \dim \fg} \; , \; \d \bigg)
+\]
+where $\d$ encodes the Lie bracket on $\fg[\ep][[z]]$ and is given by \brian{write formula}
+
+The linear local operators are spanned by 
+\begin{align*}
+\partial_z^n \fc_a \colon & \fc^b \mapsto \delta_a^b \partial^n_z \fc^b (z=t=0), \\
+\partial_z^n B_a \colon & B^b \mapsto \delta_a^b \partial_z^n B^b_z (z=t=0) 
+\end{align*}
+for $n \in \ZZ_{\geq 0}, a = 1,\ldots, \dim \fg$. 
+These operators are of cohomological degree $+1$, $0$ respectively. 
+
+\subsection*{Line operators}
+
+There is a one-to-one correspondence between coupled line defects along $z = 0$ described by an associative algebra $\cA$ and Maurer--Cartan elements in 
+\[
+\clie^\bu(\fg[\ep][[z]]) \otimes \cA .
+\]
+
+We spell out this correspondence in the case that $\cA$ is the algebra of local operators of the free fermion topological mechanics system of rank $n$. 
+Field theoretically, $\cA$ is described by the one-dimensional system on $\RR$ whose fields are odd functions $\chi_i, \psi^j$ for $i,j=1,\ldots, n$. 
+\brian{finish}
+
+Consider the local operator built from the bulk gauge theory and the free fermion theory along the line defect:
+\[
+\rho_j^{a,i} \fc_a \psi_i \chi^j 
+\]
+for some collection of coefficients $\{\rho_j^{a,i}\}$. 
+Call this local operator $\cO^{(0)}$. 
+To construct the coupling, we solve the descent equations $\partial_t \cO^{(0)} + Q \cO^{(1)} = 0$.
+
+First, notice that the local operator $\fc_a$ satisfies the following descent equation
+\[
+\partial_t \fc_a = Q A_{t, a} + f_{a}^{bc} \fc_b \fc_c .
+\]
+
 
 \section{Higher dimensional defects} 
 
