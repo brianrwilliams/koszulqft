@@ -176,6 +176,7 @@ An element $\fc \in C^\infty(\RR^3) \otimes \fg$ acts on the fields via the tran
 \delta B_z & = [\fc, B_z] .
 \end{align*}
 
+We first treat the classical theory.
 The classical BRST complex of local operators supported at $(z,t) = (0,0)$ is equivalent to the Chevalley--Eilenberg complex
 \[
 \clie^\bu \left(\fg[\ep][[z]]\right)
@@ -185,9 +186,9 @@ which computes Lie algebra cohomology of the ($\infty$-dimensional) Lie algebra 
 Pick a basis $\{e^a\}_{a = 1,\ldots, \dim \fg}$ for $\fg$ with dual basis $\{e_a\}$ for $\fg^*$. 
 Explicitly, the Lie algebra cohomology representing local operators is computed by 
 \[
-\bigg(\Sym\left(\fg^*[\ep] [\partial_z] [-1] \right) \; , \; \d \bigg) = \bigg(\CC[\fc_a, \partial_z \fc_a , \partial^2_z \fc_a, \ldots, B_a , \partial_z B_a , \partial_z^2 B_a, \ldots]_{a=1, \ldots, \dim \fg} \; , \; \d \bigg)
+\bigg(\Sym\left(\fg^*[\ep] [\partial_z] [-1] \right) \; , \; Q \bigg) = \bigg(\CC[\fc_a, \partial_z \fc_a , \partial^2_z \fc_a, \ldots, B_a , \partial_z B_a , \partial_z^2 B_a, \ldots]_{a=1, \ldots, \dim \fg} \; , \; Q \bigg)
 \]
-where $\d$ encodes the Lie bracket on $\fg[\ep][[z]]$ and is given by \brian{write formula}
+where the BRST operator encodes the Lie bracket on $\fg[\ep][[z]]$ and is given by \brian{write formula}
 
 The linear local operators are spanned by 
 \begin{align*}
@@ -199,21 +200,43 @@ These operators are of cohomological degree $+1$, $0$ respectively.
 
 \subsection*{Line operators}
 
-There is a one-to-one correspondence between coupled line defects along $z = 0$ described by an associative algebra $\cA$ and Maurer--Cartan elements in 
-\[
-\clie^\bu(\fg[\ep][[z]]) \otimes \cA .
-\]
+There is a one-to-one correspondence between classically coupled line defects along $z = 0$ described by an associative algebra $\cA$ and Maurer--Cartan elements in 
+\begin{equation}\label{eqn:criticalobs}
+\clie_\hbar^\bu(\fg[\ep][[z]]) \otimes \cA .
+\end{equation}
 
-We spell out this correspondence in the case that $\cA$ is the algebra of local operators of the free fermion topological mechanics system of rank $n$. 
-Field theoretically, $\cA$ is described by the one-dimensional system on $\RR$ whose fields are odd functions $\chi_i, \psi^j$ for $i,j=1,\ldots, n$. 
+The Maurer--Cartan equation reads
+\begin{equation}\label{eqn:mccs}
+Q_\hbar \cO^{(0)} + \cO^{(0)} \star_\hbar \cO^{(0)} = 0 .
+\end{equation}
+If we treat the bulk gauge field as classical, the quantum BRST operator $Q_\hbar$ is replaced by the classical BRST operator $Q$ which is simply the Chevalley--Eilenberg differential for the Lie algebra $\fg[\ep][[z]]$.
+The product $\star_\hbar$ is replaced by the product $\star$ in the algebra $\cA$. 
+Thus, the classical limit of \eqref{eqn:mccs} becomes
+\begin{equation}\label{eqn:cmccs}
+Q \cO^{(0)} + \cO^{(0)} \star \cO^{(0)} = 0 .
+\end{equation}
+
+We spell out the correspondence between such Maurer--Cartan elements and local couplings in the case that $\cA$ is the algebra of local operators of the free fermion topological mechanics system of rank $n$. 
+Here, $\cA$ is isomorphic to the Clifford algebra $\Cl(\RR^n)$. 
+Field theoretically, this system is described by the one-dimensional theory on $\RR$ whose fields are odd functions $\chi_i, \psi^j$ for $i,j=1,\ldots, n$. 
 \brian{finish}
 
-Consider the local operator built from the bulk gauge theory and the free fermion theory along the line defect:
+Consider, for instance, the local operator built from the bulk gauge theory and the free fermion theory along the line defect:
 \[
 \rho_j^{a,i} \fc_a \psi_i \chi^j 
 \]
 for some collection of coefficients $\{\rho_j^{a,i}\}$. 
 Call this local operator $\cO^{(0)}$. 
+Notice that $\cO^{(0)}$ is of cohomological degree $+1$.
+The classical Maurer--Cartan equation \eqref{eqn:cmccs} reads
+\[
+f_a^{bc} \rho_j^{a,i} \fc_b \fc_c \psi_i \chi^j + .. = 0. 
+\]
+This equation simply says that the collection $\{\rho_j^{a,i}\}$ prescribes a representation of the Lie algebra $\fg$ on the vector space $\RR^n$. 
+
+ 
+
+
 To construct the coupling, we solve the descent equations $\partial_t \cO^{(0)} + Q \cO^{(1)} = 0$.
 
 First, notice that the local operator $\fc_a$ satisfies the following descent equation
