@@ -1,8 +1,10 @@
 \documentclass[11pt]{amsart}
 
 \usepackage{macros, setspace}
+\usepackage{hyperref}
+\usepackage{amsmath,amsthm}
 
-\author{Natalie Paquette and Brian R. Williams}
+\author{Natalie M. Paquette and Brian R. Williams}
 \date{\today}
 \title{Koszul duality in QFT}
 
@@ -27,7 +29,7 @@
 \section{A biased review of Koszul duality} 
 
 %sym and alt
-%maybe a few words about mapping of modules btw derived categories?
+%maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
 
 \subsection{Commutative-Lie duality}
@@ -45,45 +47,52 @@
 \section{QFT rudiments}
 %clarify: algebra of local ops vs. dense inclusion we work with in practice?
 
+%Explain our conventions/some basic facts about the cohomological degree as ghost number, as well as the meaning of various degree shifts, which are unfamiliar to most physicists. 
+
 \subsection{Local functionals and Maurer--Cartan elements} 
 
 
 
 \subsection{Local operators}
 
-Let $\Obs$ be the local operators of a one-dimensional translation invariant theory. 
+Let $\Obs$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on the theory.
 The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
 
-A one-dimensional theory is topological if there exists an endomorphism $\eta$ of the local operators, of cohomological degree $-1$, which satisfies
+A one-dimensional theory is topological if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $-1$, which satisfies
 \[
-\{Q, \eta\} = \frac{\partial}{\partial t} .
+\{Q, \hat{Q}\} = \frac{\partial}{\partial t} .
 \]
+In words, translations along the line are trivial in BRST cohomology. 
+%Should we here contrast with notion of topological QFT coming from Q-exact stress tensors, which is a stronger statement?
 
 %To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x \Omega^{d-2}(M)... how is Koszul duality insensitive to this?
 
 \subsection{Topological descent} 
 
-Let $\Obs$ be the local operators of a one-dimensional topological field theory on $\RR_t$. 
+Let $\Obs$ be the local operators of a one-dimensional topological field theory on $\RR$. 
 Because the theory is translation invariant, we can consider the complex of {\em differential form} valued operators
 \[
 \Omega^\bu(\RR \, , \, \Obs) .
 \]
 This complex is equipped with the original BRST differential $Q$ acting on $\Obs$ as well as the de Rham differential $\d$. 
 
-Given $\cO = \cO^{(0)} \in \Obs$, we can use the endomorphism $\eta$ to define the following one-form valued operator
+Given a local 0-form operator, $\cO = \cO^{(0)} \in \Obs$, we can use the endomorphism $\hat{Q}$ to define the following one-form valued operator
 \[
-\cO^{(1)} \define (\eta \cdot \cO) \d t \in \Omega^1(\RR \, , \, \Obs).
+\cO^{(1)} \define (\hat{Q} \cdot \cO) \d t \in \Omega^1(\RR \, , \, \Obs).
 \]
-The inhomogenous operator $\cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \Obs)$ if and only if the following descent equations are satisfies
+The inhomogenous operator $\cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \Obs)$ if and only if the following descent equations are satisfied 
 \begin{align*}
 Q \cO^{(0)} & = 0 \\
 \d \cO^{(0)} + Q \cO^{(1)} & = 0 .
 \end{align*}
 
+Topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain smeared gauge-invariant observables from local operators of higher ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. 
+
 In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed local functional
 \[
-\int_\RR \cO^{(1)} .
+\int_{\RR} \cO^{(1)} .
 \]
+The superscript denotes a 1-form operator, now in cohomological degree (ghost number) 0, as appropriate for a gauge-invariant term in the Lagrangian. 
 
 
 \subsection{Vacuums and augmentations}
@@ -148,12 +157,15 @@ There is a one-to-one correspondence between the space of couplings of $\cA$ to 
 We provide a sketch of the proof of this result. 
 Suppose that $\alpha \in $
 
+%explanation about augmentation ideal in more general case should go here
+
 %try to say something about the effect of the transverse directions on this story (topological, holomorphic, general fact alg)
 %brief point about BRST vs. BV-BRST
 %BV-BRST vs. BRST and `minimal' couplings
 
 \section{``Critical'' Chern--Simons theory}
 
+%Add a few sentences about how CS theory at the critical level can still give a nontrivial topological theory when written in the first order formalism... need to connect to the familiar Lagrangian before jumping in to the BF-type theory. 
 Let $\fg$ be a Lie algebra. 
 The theory has two sets of fields
 \begin{align*}
@@ -166,9 +178,9 @@ The action is of ``BF'' type:
 \int B F_A & = \int B \d A + \frac12 B [A,A] \\
 & = \int B_z \partial_t A_{\zbar} + B_z \partial_{\zbar} A_t + B_z [A_t, A_\zbar] .
 \end{align*}
-Notice that in kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a form Dolbeault form of type $(1,0)$. 
+Notice that in the kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a Dolbeault form of type $(1,0)$. 
 
-The Lie algebra of gauge symmetries is the familiar one $C^\infty(\RR^3) \otimes \fg$, smooth functions valued in $\fg$. 
+The Lie algebra of gauge symmetries is the familiar one: $C^\infty(\RR^3) \otimes \fg$, i.e. smooth functions valued in $\fg$. 
 An element $\fc \in C^\infty(\RR^3) \otimes \fg$ acts on the fields via the transformation rule
 \begin{align*}
 \delta A_\zbar & = \partial_{\zbar} \fc + [\fc, A_\zbar] \\
@@ -182,6 +194,8 @@ The classical BRST complex of local operators supported at $(z,t) = (0,0)$ is eq
 \clie^\bu \left(\fg[\ep][[z]]\right)
 \] 
 which computes Lie algebra cohomology of the ($\infty$-dimensional) Lie algebra $\fg[\ep][[z]]$. 
+
+%Here I plan to add a few sentences explaining that CE cohomology is the usual BRST for physicists.
 
 Pick a basis $\{e^a\}_{a = 1,\ldots, \dim \fg}$ for $\fg$ with dual basis $\{e_a\}$ for $\fg^*$. 
 Explicitly, the Lie algebra cohomology representing local operators is computed by 
@@ -250,5 +264,31 @@ First, notice that the local operator $\fc_a$ satisfies the following descent eq
 %higher dimensional topological defects. PSM in 3dCS. 
 %Kapustin--Salina.
 %Check refs by Mnev et al on BV-BFV?
+
+\begin{thebibliography}{KWWY14}
+
+\bibitem[MW97]{MW97}
+G.~W.~Moore and E.~Witten,
+``Integration over the u plane in Donaldson theory,''
+Adv. Theor. Math. Phys. \textbf{1}, 298-387 (1997)
+doi:10.4310/ATMP.1997.v1.n2.a7
+[arXiv:hep-th/9709193 [hep-th]].
+
+\bibitem[W88]{W88}
+E.~Witten,
+``Topological Quantum Field Theory,''
+Commun. Math. Phys. \textbf{117}, 353 (1988)
+doi:10.1007/BF01223371
+
+
+\bibitem[WZ92]{WZ92}
+E.~Witten and B.~Zwiebach,
+``Algebraic structures and differential geometry in 2-D string theory,''
+Nucl. Phys. B \textbf{377}, 55-112 (1992)
+doi:10.1016/0550-3213(92)90018-7
+[arXiv:hep-th/9201056 [hep-th]].
+
+
+\end{thebibliography}
 
 \end{document}
