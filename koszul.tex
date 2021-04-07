@@ -312,6 +312,8 @@ This leads to the Lagrangian coupling
 \sum_{k \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{k!} \rho_{a,i}^j[k] \chi_j \partial_z^k A_t \psi^i .
 \]
 
+
+
 \subsection*{Koszul duality and local operators}
 
 In this section we characterize, to first-order in $\hbar$, the algebra which is Koszul dual to the algebra of local operators of the three-dimensional gauge theory.
@@ -511,6 +513,39 @@ We will show that this gauge anomaly is proportional to
 	\caption{Cancellation of the gauge anomaly of these two diagrams leads to the $\hbar$-linear correction to the differential $\d K[k]$.
 	\label{fig:cancel4}}
 \end{figure}
+
+
+\section{Koszul duality: an example of a free theory}
+
+\brian{renamed fields in terms of gauge theory above Let us step back and consider the free limit of the 3d gauge theory on $\RR \times \CC$. 
+Set $V = \fg$. 
+It will be useful to slightly rename the fields as $\phi = B$, $\psi_\zbar = A_{\zbar}$, and $\psi_t = A_t$ so that the free action reads
+}
+
+The fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
+\[
+\psi = \psi_t \d t + \psi_\zbar \d \zbar 
+\]
+valued in $V^*$. 
+The free action reads
+\[
+\int \phi \partial_t \psi_\zbar + \int \phi \partial_\zbar \psi_t .
+\]
+The gauge symmetry by a $V^*$-valued scalar $\chi$ defined by
+\begin{align*}
+\delta \psi_t & = \partial_t \chi \\
+\delta \psi_\zbar & = \partial_\zbar \chi .
+\end{align*}
+
+As a $\ZZ/2$-graded algebra, the operators are of the form
+\[
+{\rm S}^\bu \left(z^{-1} V^*[z^{-1}]\right) \otimes \wedge^\bu \left(V[z^{-1}]\right)
+\]
+which we can slightly rewrite as
+\[
+\bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big) .
+\]
+Here, $V_{(n)}^* \simeq V$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi$ and $V_{(m)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{n-1}_z \fc$. 
 
 %Two steps:
 %\begin{itemize}
