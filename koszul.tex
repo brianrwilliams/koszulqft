@@ -18,7 +18,8 @@
 \def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
 \def\natalie#1{{\textcolor{green!65!black}{BRW: {#1}}}}
 
-\usepackage[upint]{stix}
+%\usepackage[upint]{stix}
+\usepackage{cmupint}
 
 \begin{document}
 \maketitle
@@ -163,6 +164,287 @@ Suppose that $\alpha \in $
 %try to say something about the effect of the transverse directions on this story (topological, holomorphic, general fact alg)
 %brief point about BRST vs. BV-BRST
 %BV-BRST vs. BRST and `minimal' couplings
+
+\section{Koszul duality: a free theory example}
+
+%\brian{renamed fields in terms of gauge theory above Let us step back and consider the free limit of the 3d gauge theory on $\RR \times \CC$. 
+%Set $V = \fg$. 
+%It will be useful to slightly rename the fields as $\phi = B$, $\psi_\zbar = A_{\zbar}$, and $\psi_t = A_t$ so that the free action reads
+%}
+
+We turn to an example in three-dimensions of a free field theory on $\RR^3$.
+This theory is equivalent to the twist of the $3d$ $\cN=2$ chiral multiplet. 
+The input data is simply a complex vector space $V$.
+
+It will be convenient to choose coordinates of the form
+\[
+(t , z) \in \RR_t \times \CC_z \simeq \RR^3
+\]
+where $t$ is a real coordinate along $\RR$ and $z$ is a holomorphic coordinate along the remaining $\CC \cong \RR^2$ direction. 
+
+The fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
+\[
+\psi = \psi_t \d t + \psi_\zbar \d \zbar 
+\]
+valued in $V^*$. 
+The free action reads
+\[
+\int_{\RR^3} \phi \partial_t \psi_\zbar + \int_{\RR^3} \phi \partial_\zbar \psi_t .
+\]
+
+The equations of motion for the scalar $\phi$ are
+\[
+\frac{\partial}{\partial t} \phi = 0; \quad
+\frac{\partial}{\partial \zbar} \phi = 0 .
+\]
+The first equation implies that $\phi$ is constant in the $t$-direction and the second implies that $\phi$ is holomorphic in the variable $z$. 
+The equation of motion for the one-form field $\psi$ reads
+\[
+\frac{\partial}{\partial t} \psi_\zbar - \frac{\partial}{\partial \zbar} \psi_t = 0 .
+\]
+
+There is an abelian gauge symmetry which acts on the $\psi$-fields as follows.
+The gauge symmetry is given by a $V^*$-valued scalar $\chi$ which acts on the fields by
+\begin{equation}\label{eqn:freegauge}
+\delta \psi_t = \frac{\partial}{\partial t} \chi; \quad
+\delta \psi_\zbar = \frac{\partial}{\partial \zbar} \chi .
+\end{equation}
+
+\subsection*{Local operators}
+
+We move towards a description of the algebra of local operators at $z = t = 0$ up to gauge equivalence.
+
+The equations of motion imply that the $\phi$ has vanishing $t$ and $\zbar$-derivatives. 
+Thus, the only local operators built from $\phi$ must be given by holomorphic $z$-derivatives. 
+Let $V^*_{(n)} \simeq V^*$ denote the span of the local operators of the form $\partial_z^n \phi(0)$.
+Thus, the linear local operators in $\phi$ comprise the vector space $\oplus_{n \geq 0} V_{(n)}^*$.
+Since $\phi$ is a scalar, the algebra of operators involving only $\phi$ combine to form the symmetric algebra ${\rm S}^\bu \left(\oplus_{n \geq 0} V^*_{(n)}\right)$.
+
+Next, consider local operators of the one-form field $\psi = \psi_t \d t + \psi_\zbar \d \zbar$. 
+We claim that up to gauge equivalence there are no nontrivial local operators depending on $\psi_t, \psi_\zbar$.  
+The easiest way to see this is to introduce the two-form field
+\[
+\d z \wedge \psi = \psi_t \d z \wedge \d t + \psi_\zbar \d z \wedge \d \zbar .
+\]
+Then, the equations of motion are equivalent to the condition that this two-form be closed for the de Rham differential
+\[
+\d \left(\d z \wedge \psi\right) = 0 .
+\]
+In other words, $\d z \wedge \psi \in Z^2 (\RR^3)$. 
+
+In terms of the two form field $\d \wedge \psi$ there is a one-form gauge symmetry by the field $\d z \wedge \chi$. 
+In this notation, the gauge symmetry simply reads $\delta (\d z \wedge \psi) = \d (\d z \wedge \chi)$, which is completely equivalent to Equation \eqref{eqn:freegauge}.
+By a slight refinement of the Poincar\'{e} lemma for partial one-forms forms\footnote{This version of the Poincar\'{e} lemma is simply the statement $H^1_{\rm dR} (\RR) = H_{\dbar}^{0,1}(\CC)= 0$.}, there exists $\chi$ such that the one-form $\d z \wedge \chi$ renders $\d z \wedge \psi \in Z^2(\RR^3)$ gauge trivial. 
+
+
+Finally, consider local operators built from the ghost field $\chi$. 
+The gauge transformations preserving $\psi = 0$ satisfy $\frac{\partial}{\partial \zbar} \chi = \frac{\partial}{\partial t} \chi = 0$. 
+Thus, similarly to $\phi$, the local operators one can build from $\chi$ only involve holomorphic $z$-derivatives. 
+Let $V_{(n+1)} \simeq V$ denote the span of the local operators of the form $\partial_z^n \chi(0)$.
+Thus, the linear local operators in $\chi$ comprise the vector space $\oplus_{n > 0} V_{(n)}$.
+Since $\chi$ is a gauge symmetry, the algebra of operators involving only $\chi$ combine to form the exterior algebra $\wedge^\bu \left(\oplus_{n > 0} V_{(n)}\right)$. 
+\footnote{More precisely, we obtain the {\em graded symmetric} algebra $\Sym(V_{(n)}[-1])$ of $V_{(n)}$ concentrated in degree $+1$.
+We will only use the underlying $\ZZ/2$-graded vector space in this section.}
+
+Summarizing our discussion thus far, we see that the local operators are of the form
+%\[
+%{\rm S}^\bu \left(z^{-1} V^*[z^{-1}]\right) \otimes \wedge^\bu \left(V[z^{-1}]\right)
+%\]
+%which we can slightly rewrite as
+\[
+\cA_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
+\]
+where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
+
+\subsection*{Character of local operators}
+
+We contemplate the following two symmetries of the free theory.
+The first corresponds to conformal symmetries along the $z$-plane. 
+Concretely, consider the piece of this generated by $\U(1)$ rotations of $\CC_z$.
+Infinitesimally, this is generated by the holomorphic vector field $z \frac{\partial}{\partial z}$. 
+
+Second, there is a flavor symmetry.
+Suppose $V$ transforms according to some $G_f$ representation, where $G_f$ is the flavor group. 
+Then we obtain a symmetry of this system by declaring that $\phi$ transform according to this representation and $\psi$ transform in the dual representation.
+
+The character of the space of local operators $\cA_0$ can be written in terms of fugacities $q$ and $u$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $u$ is a vector in the maximal torus $T_f$ of the flavor group $G_f$. 
+\[
+\chi_0(q , s) = \frac{1}{|{\rm Weyl}(G)|} \oint_{s \in T_f} \frac{\d s}{2 \pi i s} \prod_{\alpha \in {\rm wt}(V)} (1-s_\alpha) \frac{(q s^{-1}_\alpha ; q)_\infty}{(s_\alpha ; q)_\infty} .
+\]
+
+Suppose $\U(1) \to G_f$ is a cocharacter which acts on $V$ by weight $+1$. 
+Then, we can break $\U(1)_q \times G_f$ to $\U(1)_q \times \U(1)_s$ and the resulting character becomes
+\[
+\chi_0 (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1} q^{n+1}}{1 - s q^n} .
+\]
+
+
+\subsection*{Dimensional reduction}
+
+Consider, for a moment, the restriction of this free theory to the submanifold 
+\[
+\RR \times (\RR_{>0} \times S^1) \simeq \RR \times \CC^\times \subset \RR \times \CC .
+\]
+We will contemplate the dimensional reduction along $S^1$ factor and the resulting two-dimensional field theory on $\RR \times \RR_{>0}$. 
+We will continue to denote the coordinate on the first $\RR$ by $t$, and will denote the coordinate on $\RR_{>0}$ by the circle radius $r$.  
+
+For the naive dimensional reduction, we remember just the lowest lying $S^1$ modes. 
+The resulting free theory simply consists of fields
+\[
+\varphi_0(t,r) \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \psi_0 (t,r) \in \Omega^1 (\RR \times \RR_{>0}, V^*) 
+\] 
+with action $\int_{\RR\times \RR_{>0}} \varphi_0 \d \psi_0$.
+There is, in addition, a topological gauge symmetry $\delta \psi_0 = \d \chi_0$. 
+
+Of course, we have missed out on all of the higher $S^1$ modes present in the three-dimensional theory. 
+More accurately what we should do is expand the fields $\varphi, \psi$ into their Fourier modes around the circle.
+We will then obtain a two-dimensional theory on $\RR \times \RR_{>0}$ with an infinite number of fields each labeled by their Fourier mode around the circle. 
+
+Writing the complex coordinate as $z = r e^{i \theta}$ we obtain a decomposition of the three-dimensional fields on $\RR \times \CC^\times$:
+\begin{align*}
+\varphi(t,z) & = \sum_{n \in \ZZ} \varphi_n (t,r) e^{2 \pi i n \theta} \\
+\psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t,\theta) e^{2 \pi i n \theta} .
+\end{align*}
+
+If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ has as its fields 
+\[
+\{\varphi_n(t,r)\}_{n \in \ZZ} \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \{\psi_n (t,r)\}_{n \in \ZZ} \in \Omega^1 (\RR \times \RR_{>0}, V^*) .
+\] 
+with free action
+\[
+\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\varphi_n \d \psi_{-n} + n \varphi_n \psi_{-n} (r^{-1} \d r)  \bigg)
+\]
+
+Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$. 
+The second term includes a background gauge field for the symmetry of loop rotations. 
+
+There is an overall gauge symmetry of this dimensionally reduced action by an integers worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
+
+So far we have provided a description of the $S^1$ reduction of the theory on $\RR \times \CC^\times$ to $\RR \times \RR_{>0}$. 
+The fact that this theory was defined on the affine space $\RR \times \CC$ determines a natural boundary condition for this dimensional reduction at $r = 0$, thus extending it to a theory on $\RR \times \RR_{\geq 0}$. 
+This boundary condition reads
+\begin{equation}\label{eqn:bc1}
+\varphi_n (t, 0) = 0 ; \quad \psi_{n+1} (t,0) = 0 \quad {\rm for} \; n < 0 .
+\end{equation}
+We must also require that the gauge field satisfy a compatible boundary condition:
+\begin{equation}\label{eqn:gbc1}
+\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n < 0 .
+\end{equation}
+
+We observe that the corresponding operators at $t = r = 0$ of this dimensionally reduced theory agree precisely with the local operators $\cA_0$ we found from the three-dimensional point of view above. 
+Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\varphi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
+In the notation of the previous section $\varphi_n$ corresponds to a scalar multiple of $\partial_z^n \varphi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
+
+\subsection*{Another boundary condition} 
+
+We define another boundary condition of this dimensionally reduced two-dimensional theory which is `dual' to the one we have just discussed. 
+
+In fact, we will actually construct this boundary condition at the level of the three-dimensional theory on $\RR_t \times \CC_z$ at $z = \infty$. 
+This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$ by fixing the behavior for the fields at $z = \infty$. 
+
+The boundary conditions we choose are the following:
+\begin{itemize}
+\item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
+That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
+\[
+\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) .\otimes V \right) 
+\]
+\item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
+That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
+\[
+\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
+\]
+\end{itemize}
+
+Additionally, we must fix the boundary behavior of the gauge field $\chi$ to be compatible with the above choices.
+A natural way to do this is to require the gauge field to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
+\[
+\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right) .
+\]
+
+This choice of a boundary condition results in a very special property of the theory upon compactification along $\PP^1$.
+
+\begin{lem}\label{lem:compactP1}
+The compactification of the theory along 
+\[
+\begin{tikzcd}
+\RR \times \PP^1 \ar[d] \\ \RR
+\end{tikzcd}
+\]
+results in the trivial one-dimensional theory. 
+\end{lem}
+\begin{proof}
+The point is that every solution to the equations of motion is gauge equivalent to the trivial solution. 
+For the scalar $\phi$, notice that the equations of motion require it to be constant along $\RR$ and holomorphic $\dbar \phi = 0$. 
+Since there are no global holomorphic sections on $\PP^1$, we see that $\phi$ must be the trivial solution. 
+
+The remaining equations of motion are
+\[
+\frac{\partial}{\partial \zbar} \psi_t - \frac{\partial}{\partial t} \psi_\zbar = 0 .
+\]
+\brian{finish} \footnote{This follows from the fact that $\chi$ and $\psi$ comprise the cohomology $H^\bu(\PP^1, K_{\PP^1} \otimes \cO(1))$ which is trivial.}
+
+%Again, $\psi_t$ is required to be constant along $\RR$ and be holomorphic $\dbar \psi_t = 0$. 
+
+\end{proof}
+
+Let us translate this boundary condition to the $S^1$-reduction of the three-dimensional theory to $\RR \times \RR_{>0}$. 
+This boundary condition determines the behavior of the two-dimensional fields as $r \to \infty$, which we read off to be 
+\begin{equation}\label{eqn:bc2}
+\varphi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
+\end{equation}
+We must also require that the gauge field satisfy a compatible boundary condition:
+\begin{equation}\label{eqn:gbc2}
+\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n \geq 0 .
+\end{equation}
+
+\subsection*{Comparing boundary conditions}
+
+We compare these to the boundary conditions at $r=0$ in Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1}. 
+Furthermore, the boundary condition at $r = \infty$ tells us how to extend the theory on $\RR \times \RR_{\geq 0}$ to its one-point compactification. 
+Furthermore, by Proposition \ref{lem:compactP1} we know that the reduction along the compact direction results in a trivial one-dimensional theory.
+
+By the general principal \brian{write section above} we expect the local operators $\cA_0$ at $r = 0$ to be Koszul dual to the local operators $\cA_\infty$ at $r = \infty$. 
+
+From Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1} we can compute the gauge equivalence classes of local operators $\cA_\infty$ at $r = \infty$ in a very similar way as we did for $r = 0$. 
+The algebra is freely generated by the even local operators $\{\varphi_n\}_{n < 0}$ and the odd local operators $\{\chi_n\}_{n \leq 0}$. 
+In other words
+\[
+\cA_\infty = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{n \leq 0} \wedge^\bu \big(V_{(m)}\big)
+\]
+which we can clearly identify as the Koszul dual algebra to $\cA_0$. 
+
+Its instructive to compare characters of local operators at $r = 0, \infty$. 
+We have already computed the character $\chi_0(q,s)$ of the algebra $\cA_0$ above. 
+At $r=\infty$ the character reads 
+\[
+\chi_\infty (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1}q^{-n}}{1 - s q^{-n-1}}
+\]
+
+Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$. 
+\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
+
+\subsection*{Topological limit}
+
+It's already instructive to think about a degenerate limit of $S^1$ reduced theory. 
+If we just remember the {\em lowest} lying $S^1$-modes, we have see that observables at $r=0$ are simply the free algebra on the even operator $\varphi_0$, thus the subalgebra of lowest lying modes of the algebra $\cA_0$ is
+\[
+\cA_0^{(0)} = {\rm S}^\bu(V^*).
+\]
+
+On the other hand, at $r=\infty$ the lowest lying linear operator that survives is the {\em odd} operator $\chi_0$.
+So, the subalgebra of lowest lying modes of the algebra $\cA_\infty$ is
+\[
+\cA_\infty^{(0)} = \wedge^\bu(V) .
+\]
+
+We recognize that $\cA_0^{(0)}$ and $\cA_\infty^{(0)}$ witness the prototypical example of Koszul duality for free algebras. 
+
+
+\subsection*{Line operators}
+
+\brian{do this}
+
 
 \section{``Critical'' Chern--Simons theory}
 
@@ -516,165 +798,7 @@ We will show that this gauge anomaly is proportional to
 \end{figure}
 
 
-\section{Koszul duality: an example of a free theory}
 
-%\brian{renamed fields in terms of gauge theory above Let us step back and consider the free limit of the 3d gauge theory on $\RR \times \CC$. 
-%Set $V = \fg$. 
-%It will be useful to slightly rename the fields as $\phi = B$, $\psi_\zbar = A_{\zbar}$, and $\psi_t = A_t$ so that the free action reads
-%}
-
-We turn to a three-dimensional example. 
-This theory is equivalent to the twist of the $3d$ $\cN=2$ chiral multiplet. 
-The starting data is a complex vector space $V$.
-
-First, we consider the theory defined on $\RR^3$. 
-It will be convenient to choose coordinates of the form
-\[
-(t ; z) \in \RR_t \times \CC_z \simeq \RR^3
-\]
-where $t$ is a real coordinate along $\RR$ and $z$ is a holomorphic coordinate along the remaining $\CC \cong \RR^2$ direction. 
-
-The fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
-\[
-\psi = \psi_t \d t + \psi_\zbar \d \zbar 
-\]
-valued in $V^*$. 
-The free action reads
-\[
-\int \phi \partial_t \psi_\zbar + \int \phi \partial_\zbar \psi_t .
-\]
-
-The equations of motion for the scalar $\phi$ read
-\begin{align*}
-\frac{\partial}{\partial t} \phi & = 0 \\
-\frac{\partial}{\partial \zbar} \phi & = 0 .
-\end{align*}
-The first equation implies that $\phi$ is constant in the $t$-direction and the second implies that $\phi$ is holomorphic in the variable $z$. 
-
-The equation of motion for the one-form field $\psi$ reads
-\[
-\frac{\partial}{\partial t} \psi_\zbar - \frac{\partial}{\partial \zbar} \psi_t = 0 .
-\]
-
-There is an abelian gauge symmetry which acts on the $\psi$-fields as follows.
-The gauge symmetry is given by a $V^*$-valued scalar $\chi$ which acts on the fields by
-\begin{align*}
-\delta \psi_t & = \frac{\partial}{\partial t} \chi \\
-\delta \psi_\zbar & = \frac{\partial}{\partial \zbar} \chi .
-\end{align*}
-
-\subsection*{Local operators}
-
-In this section we describe the algebra of local operators at $z = t = 0$ up to gauge equivalence.
-
-The equations of motion imply that the $\phi$ has vanishing $t$ and $\zbar$-derivatives. 
-Thus, the only local operators built from $\phi$ must be given by holomorphic $z$-derivatives. 
-Let $V^*_{(n)} \simeq V^*$ denote the span of the local operators of the form $\partial_z^n \phi(0)$.
-Thus, the linear local operators in $\phi$ span the vector space $\oplus_{n \geq 0} V_{(n)}^*$.
-Since $\phi$ is a scalar, the algebra of operators involving only $\phi$ combine to form the symmetric algebra ${\rm S}^\bu \left(\oplus_{n \geq 0} V^*_{(n)}\right)$.
-
-Next, consider local operators of the one-form field $\psi = \psi_t \d t + \psi_\zbar \d \zbar$. 
-We claim that up to gauge equivalence there are no nontrivial local operators depending on $\psi_t, \psi_\zbar$.  
-The easiest way to see this is to introduce the two-form field
-\[
-\d z \wedge \psi = \psi_t \d z \wedge \d t + \psi_\zbar \d z \wedge \d \zbar .
-\]
-Then, the equations of motion are equivalent to the condition that this two-form be closed for the de Rham differential
-\[
-\d \left(\d z \wedge \psi\right) = 0 .
-\]
-In other words, $\d z \wedge \psi \in Z^2 (\RR^3)$. 
-
-Consider the one-form gauge symmetry $\d z \wedge \chi$. 
-In this notation, the gauge symmetry simply reads $\delta (\d z \wedge \psi) = \d (\d z \wedge \chi)$. 
-By a slight refinement of the Poincar\'{e} lemma for smooth differential forms, we can find one-form of the form $\d z \wedge \chi$ rendering $\d z \wedge \psi \in Z^2(\RR^3)$ gauge trivial. 
-
-Finally, consider local operators built from the ghost field $\chi$. 
-The gauge transformations preserving $\psi = 0$ satisfy $\frac{\partial}{\partial \zbar} \chi = \frac{\partial}{\partial t} \chi = 0$. 
-Thus, similarly to $\phi$, the local operators one can build from $\chi$ only involve holomorphic $z$-derivatives. 
-Let $V_{(n+1)} \simeq V$ denote the span of the local operators of the form $\partial_z^n \chi(0)$.
-Thus, the linear local operators in $\chi$ span the vector space $\oplus_{n > 0} V_{(n)}$.
-Since $\chi$ is a gauge symmetry, the algebra of operators involving only $\chi$ combine to form the exterior algebra $\wedge^\bu \left(\oplus_{n > 0} V_{(n)}\right)$. 
-\footnote{More precisely, we obtain the {\em graded symmetric} algebra $\Sym(V_{(n)}[-1])$ of $V_{(n)}$ concentrated in degree $+1$.
-We will only use the underlying $\ZZ/2$-graded vector space in this section.}
-
-Summarizing our discussion thus far, we see that the local operators are of the form
-%\[
-%{\rm S}^\bu \left(z^{-1} V^*[z^{-1}]\right) \otimes \wedge^\bu \left(V[z^{-1}]\right)
-%\]
-%which we can slightly rewrite as
-\[
-\bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
-\]
-where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
-
-\subsection*{Character of local operators}
-
-We contemplate the following two symmetries of the free theory.
-The first corresponds to conformal symmetries along the $z$-plane. 
-Concretely, consider the piece of this generated by $\U(1)$ rotations of $\CC_z$.
-Infinitesimally, this is generated by the holomorphic vector field $z \frac{\partial}{\partial z}$. 
-
-Second, there is a flavor symmetry.
-Indeed, suppose that $V$ transforms according to some $G_f$ representation, where $G_f$ is the flavor group. 
-Then we obtain a symmetry of this system by declaring that $\phi$ transform according to this representation and $\psi$ transform in the dual representation.
-
-The character of the space of local operators is written in terms of fugacities $q$ and $u$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $u$ is a vector in the maximal torus $T_f$ of the flavor group $G_f$. 
-\[
-\chi(q , u) = \frac{1}{|{\rm Weyl}(G)|} \oint_{s \in T_f} \frac{\d s}{2 \pi i s} \prod_{\alpha \in {\rm wt}(V)} (1-s_\alpha) \frac{(q s^{-1}_\alpha ; q)_\infty}{(s_\alpha ; q)_\infty} .
-\]
-
-\brian{If I break this $\U(1)_q \times G_f$ to $\U(1)_q \times \U(1)_s$ I can write the character as
-\[
-\prod_{n \geq 0} \frac{1 - s^{-1} q^{n+1}}{1 - s q^n} .
-\]
-}
-
-\subsection*{Boundary conditions}
-
-We extend the theory on $\RR \times \CC$ to a theory on $\RR \times \PP^1$ by choosing boundary conditions at $\infty \in \PP^1$.  
-The boundary conditions we choose:
-\begin{itemize}
-\item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
-That is, 
-\[
-\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) .
-\]
-\item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$:
-\[
-\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
-\]
-\end{itemize}
-
-Additionally, we must fix the boundary behavior of the gauge field $\chi$ to be compatible with the above choices.
-A natural way to do this is to require the gauge field to acquire a simple pole at $\infty \in \PP^1$:
-\[
-\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right) .
-\]
-
-\begin{lem}
-The compactification of the theory along 
-\[
-\begin{tikzcd}
-\RR \times \PP^1 \ar[d] \\ \RR
-\end{tikzcd}
-\]
-results in the trivial one-dimensional theory. 
-\end{lem}
-\begin{proof}
-The point is that every solution to the equations of motion is gauge equivalent to the trivial solution. 
-For the scalar $\phi$, notice that the equations of motion require it to be constant along $\RR$ and holomorphic $\dbar \phi = 0$. 
-Since there are no global holomorphic sections on $\PP^1$, we see that $\phi$ must be the trivial solution. 
-
-The remaining equations of motion are
-\[
-\frac{\partial}{\partial \zbar} \psi_t - \frac{\partial}{\partial t} \psi_\zbar = 0 .
-\]
-\brian{finish} \footnote{In the BV language this follows from the fact that $\chi$ and $\psi$ comprise the cohomology $H^\bu(\PP^1, K_{\PP^1} \otimes \cO(1))\simeq 0$.}
-
-%Again, $\psi_t$ is required to be constant along $\RR$ and be holomorphic $\dbar \psi_t = 0$. 
-
-\end{proof}
 
 %Two steps:
 %\begin{itemize}
