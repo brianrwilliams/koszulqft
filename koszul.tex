@@ -102,6 +102,7 @@ The superscript denotes a 1-form operator, now in cohomological degree (ghost nu
 %discrete choices of vacua vs. moduli spaces of vacua
 
 \section{Line operators}
+\label{sec:lines}
 
 %universal line defects and Koszul duality
 %stress relationship between three perspectives: MC(AxB), Hom(A!, B), couplings as local functionals from descent
@@ -252,7 +253,7 @@ Summarizing our discussion thus far, we see that the local operators are of the 
 %\]
 %which we can slightly rewrite as
 \[
-\cA_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
+\Obs_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
 \]
 where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
 
@@ -267,7 +268,7 @@ Second, there is a flavor symmetry.
 Suppose $V$ transforms according to some $G_f$ representation, where $G_f$ is the flavor group. 
 Then we obtain a symmetry of this system by declaring that $\phi$ transform according to this representation and $\psi$ transform in the dual representation.
 
-The character of the space of local operators $\cA_0$ can be written in terms of fugacities $q$ and $u$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $u$ is a vector in the maximal torus $T_f$ of the flavor group $G_f$. 
+The character of the space of local operators $\Obs_0$ can be written in terms of fugacities $q$ and $u$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $u$ is a vector in the maximal torus $T_f$ of the flavor group $G_f$. 
 \[
 \chi_0(q , s) = \frac{1}{|{\rm Weyl}(G)|} \oint_{s \in T_f} \frac{\d s}{2 \pi i s} \prod_{\alpha \in {\rm wt}(V)} (1-s_\alpha) \frac{(q s^{-1}_\alpha ; q)_\infty}{(s_\alpha ; q)_\infty} .
 \]
@@ -291,28 +292,28 @@ We will continue to denote the coordinate on the first $\RR$ by $t$, and will de
 For the naive dimensional reduction, we remember just the lowest lying $S^1$ modes. 
 The resulting free theory simply consists of fields
 \[
-\varphi_0(t,r) \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \psi_0 (t,r) \in \Omega^1 (\RR \times \RR_{>0}, V^*) 
+\phi_0(t,r) \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \psi_0 (t,r) \in \Omega^1 (\RR \times \RR_{>0}, V^*) 
 \] 
-with action $\int_{\RR\times \RR_{>0}} \varphi_0 \d \psi_0$.
+with action $\int_{\RR\times \RR_{>0}} \phi_0 \d \psi_0$.
 There is, in addition, a topological gauge symmetry $\delta \psi_0 = \d \chi_0$. 
 
 Of course, we have missed out on all of the higher $S^1$ modes present in the three-dimensional theory. 
-More accurately what we should do is expand the fields $\varphi, \psi$ into their Fourier modes around the circle.
+More accurately what we should do is expand the fields $\phi, \psi$ into their Fourier modes around the circle.
 We will then obtain a two-dimensional theory on $\RR \times \RR_{>0}$ with an infinite number of fields each labeled by their Fourier mode around the circle. 
 
 Writing the complex coordinate as $z = r e^{i \theta}$ we obtain a decomposition of the three-dimensional fields on $\RR \times \CC^\times$:
 \begin{align*}
-\varphi(t,z) & = \sum_{n \in \ZZ} \varphi_n (t,r) e^{2 \pi i n \theta} \\
+\phi(t,z) & = \sum_{n \in \ZZ} \phi_n (t,r) e^{2 \pi i n \theta} \\
 \psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t,\theta) e^{2 \pi i n \theta} .
 \end{align*}
 
 If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ has as its fields 
 \[
-\{\varphi_n(t,r)\}_{n \in \ZZ} \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \{\psi_n (t,r)\}_{n \in \ZZ} \in \Omega^1 (\RR \times \RR_{>0}, V^*) .
+\{\phi_n(t,r)\}_{n \in \ZZ} \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \{\psi_n (t,r)\}_{n \in \ZZ} \in \Omega^1 (\RR \times \RR_{>0}, V^*) .
 \] 
 with free action
 \[
-\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\varphi_n \d \psi_{-n} + n \varphi_n \psi_{-n} (r^{-1} \d r)  \bigg)
+\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\phi_n \d \psi_{-n} + n \phi_n \psi_{-n} (r^{-1} \d r)  \bigg)
 \]
 
 Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$. 
@@ -324,18 +325,18 @@ So far we have provided a description of the $S^1$ reduction of the theory on $\
 The fact that this theory was defined on the affine space $\RR \times \CC$ determines a natural boundary condition for this dimensional reduction at $r = 0$, thus extending it to a theory on $\RR \times \RR_{\geq 0}$. 
 This boundary condition reads
 \begin{equation}\label{eqn:bc1}
-\varphi_n (t, 0) = 0 ; \quad \psi_{n+1} (t,0) = 0 \quad {\rm for} \; n < 0 .
+\phi_n (t, 0) = 0 ; \quad \psi_{n+1} (t,0) = 0 \quad {\rm for} \; n < 0 .
 \end{equation}
 We must also require that the gauge field satisfy a compatible boundary condition:
 \begin{equation}\label{eqn:gbc1}
 \chi_{n+1} (t,0) = 0, \quad {\rm for} \; n < 0 .
 \end{equation}
 
-We observe that the corresponding operators at $t = r = 0$ of this dimensionally reduced theory agree precisely with the local operators $\cA_0$ we found from the three-dimensional point of view above. 
-Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\varphi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
-In the notation of the previous section $\varphi_n$ corresponds to a scalar multiple of $\partial_z^n \varphi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
+We observe that the corresponding operators at $t = r = 0$ of this dimensionally reduced theory agree precisely with the local operators $\Obs_0$ we found from the three-dimensional point of view above. 
+Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\phi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
+In the notation of the previous section $\phi_n$ corresponds to a scalar multiple of $\partial_z^n \phi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
 
-\subsection*{Another boundary condition} 
+\subsection*{A `dual' boundary condition} 
 
 We define another boundary condition of this dimensionally reduced two-dimensional theory which is `dual' to the one we have just discussed. 
 
@@ -391,7 +392,7 @@ The remaining equations of motion are
 Let us translate this boundary condition to the $S^1$-reduction of the three-dimensional theory to $\RR \times \RR_{>0}$. 
 This boundary condition determines the behavior of the two-dimensional fields as $r \to \infty$, which we read off to be 
 \begin{equation}\label{eqn:bc2}
-\varphi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
+\phi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
 \end{equation}
 We must also require that the gauge field satisfy a compatible boundary condition:
 \begin{equation}\label{eqn:gbc2}
@@ -404,18 +405,18 @@ We compare these to the boundary conditions at $r=0$ in Equations \eqref{eqn:bc1
 Furthermore, the boundary condition at $r = \infty$ tells us how to extend the theory on $\RR \times \RR_{\geq 0}$ to its one-point compactification. 
 Furthermore, by Proposition \ref{lem:compactP1} we know that the reduction along the compact direction results in a trivial one-dimensional theory.
 
-By the general principal \brian{write section above} we expect the local operators $\cA_0$ at $r = 0$ to be Koszul dual to the local operators $\cA_\infty$ at $r = \infty$. 
+By the general principal \brian{write section above} we expect the local operators $\Obs_0$ at $r = 0$ to be Koszul dual to the local operators $\Obs_\infty$ at $r = \infty$. 
 
-From Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1} we can compute the gauge equivalence classes of local operators $\cA_\infty$ at $r = \infty$ in a very similar way as we did for $r = 0$. 
-The algebra is freely generated by the even local operators $\{\varphi_n\}_{n < 0}$ and the odd local operators $\{\chi_n\}_{n \leq 0}$. 
+From Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1} we can compute the gauge equivalence classes of local operators $\Obs_\infty$ at $r = \infty$ in a very similar way as we did for $r = 0$. 
+The algebra is freely generated by the even local operators $\{\phi_n\}_{n < 0}$ and the odd local operators $\{\chi_n\}_{n \leq 0}$. 
 In other words
 \[
-\cA_\infty = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{n \leq 0} \wedge^\bu \big(V_{(m)}\big)
+\Obs_\infty = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{n \leq 0} \wedge^\bu \big(V_{(m)}\big)
 \]
-which we can clearly identify as the Koszul dual algebra to $\cA_0$. 
+which we can clearly identify as the Koszul dual algebra to $\Obs_0$. 
 
 Its instructive to compare characters of local operators at $r = 0, \infty$. 
-We have already computed the character $\chi_0(q,s)$ of the algebra $\cA_0$ above. 
+We have already computed the character $\chi_0(q,s)$ of the algebra $\Obs_0$ above. 
 At $r=\infty$ the character reads 
 \[
 \chi_\infty (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1}q^{-n}}{1 - s q^{-n-1}}
@@ -427,23 +428,43 @@ Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$.
 \subsection*{Topological limit}
 
 It's already instructive to think about a degenerate limit of $S^1$ reduced theory. 
-If we just remember the {\em lowest} lying $S^1$-modes, we have see that observables at $r=0$ are simply the free algebra on the even operator $\varphi_0$, thus the subalgebra of lowest lying modes of the algebra $\cA_0$ is
+If we just remember the {\em lowest} lying $S^1$-modes, we have see that observables at $r=0$ are simply the free algebra on the even operator $\phi_0$, thus the subalgebra of lowest lying modes of the algebra $\Obs_0$ is
 \[
-\cA_0^{(0)} = {\rm S}^\bu(V^*).
+\Obs_0^{(0)} = {\rm S}^\bu(V^*).
 \]
 
 On the other hand, at $r=\infty$ the lowest lying linear operator that survives is the {\em odd} operator $\chi_0$.
-So, the subalgebra of lowest lying modes of the algebra $\cA_\infty$ is
+So, the subalgebra of lowest lying modes of the algebra $\Obs_\infty$ is
 \[
-\cA_\infty^{(0)} = \wedge^\bu(V) .
+\Obs_\infty^{(0)} = \wedge^\bu(V) .
 \]
 
-We recognize that $\cA_0^{(0)}$ and $\cA_\infty^{(0)}$ witness the prototypical example of Koszul duality for free algebras. 
+We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypical example of Koszul duality for free algebras. 
 
 
 \subsection*{Line operators}
 
-\brian{do this}
+We turn to an interpretation of Koszul duality in terms of line operators of the three-dimensional theory. 
+As this theory is free, the analysis here is quite simple, but it we hope it serves as an instructive exhibition of the general discussion in Section \ref{sec:lines}. 
+
+Let us consider the space of local operators at the origin $\Obs_0$. 
+As announced in the general section, we are to interpret the Koszul dual of this algebra as the algebra of local operators on the ``universal line defect''.
+In this example, the defect we are considering is along the topological line $\{z=0\} \subset \RR \times \CC$. 
+
+We choose a basis $\{e_a\}$ for $V$. 
+The most general coupling takes the form
+\[
+\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K_t^a [\ell] \partial_z^\ell \phi_{a} + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J_a[k] \partial_z^k \psi_t^a  .
+\] 
+For some locally defined currents $J_a [k], K^a [\ell] = K_t^a [\ell] \d t$ along $\RR_t$. 
+
+Notice that only the $\d t$-component of the one-form $\psi$ may couple to a field along the defect. 
+Also, observe that while the one-form field $\psi_t$ couples to a scalar $J_a [k]$ along $\RR_t$ the field $\phi$ couples to a one-form $K^a[\ell] = K^a_t [\ell] \d t$ along $\RR_t$. 
+
+If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
+\[
+Q_{\rm defect} K_t^a[\ell] = \partial_t \mathfrak{k}^a [\ell] .
+\]
 
 
 \section{``Critical'' Chern--Simons theory}
