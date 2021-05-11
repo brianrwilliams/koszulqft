@@ -175,25 +175,50 @@ Suppose that $\alpha \in $
 %It will be useful to slightly rename the fields as $\phi = B$, $\psi_\zbar = A_{\zbar}$, and $\psi_t = A_t$ so that the free action reads
 %}
 
-We turn to an example in three-dimensions of a free field theory on $\RR^3$.
-This theory is equivalent to the twist of the $3d$ $\cN=2$ chiral multiplet. 
-The input data is simply a complex vector space $V$.
+We turn to an illustrative example in three-dimensions of a free field theory on $\RR^3$. In spite of its simplicity, this theory is a useful toy model for illustrating the abstract considerations of the previous section. 
+This theory we study is equivalent to the holomorphic twist of the $3d$ $\cN=2$ chiral multiplet. The details of this twist for general 3d $\cN=2$ theories appear in \cite{CDG20}, to which we refer the interested reader for details. 
 
-It will be convenient to choose coordinates of the form
+The component fields of a 3d chiral multiplet of R-charge $r$ include a complex scalar $\phi$ of R-charge $r$ and four fermions $\psi_{\pm}$ with R-charges  $r-1$ and their conjugates $\bar{\psi}_{\pm}$ with R-charges $1-r$. We choose $r=0$ \footnote{Since the R-charge governs the twisted spin of the fields, more general R-charge assignments will result in the fields transforming as sections of certain powers of the canonical bundle: the $r/2$ power for the twisted scalar, and the $1-r/2$ power for the twisted fermion.}.  
+
+The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). After the holomorphic twist with respect to a choice of supercharge $\bar{Q}_+$, the surviving degrees of freedom are the scalar field and one of the fermions, $\bar{\psi}_-$. One can check from the supersymmetry transformations that these components are $\bar{Q}_+$-closed, but not exact. 
+
+The holomorphic twist involves a choice of coordinates of the form
 \[
 (t , z) \in \RR_t \times \CC_z \simeq \RR^3
 \]
 where $t$ is a real coordinate along $\RR$ and $z$ is a holomorphic coordinate along the remaining $\CC \cong \RR^2$ direction. 
 
-The fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
+Per the discussion of the previous section, one may also perform descent on the two $Q$-closed fields of the twisted theory. If we denote the descendent 1-forms associated to an operator $\mathcal{O}$ by $\mathcal{O}^{(1)}$, then by construction these operators satisfy
+\[
+\bar{Q}_+(dz \wedge \mathcal{O}^{(1)}) = d (dz \wedge \mathcal{O})
+\]
+where $d = \partial_{\bar{z}} d\bar{z} + \partial_t dt$ (which, in the presence of gauge fields, must be covariantized). Explicitly, $\mathcal{O}^{(1)} = {i \over 2}Q_+ \mathcal{O} d\bar{z} - i Q_- \mathcal{O} dt$. 
+
+Computing the corresponding descendants for the scalar and the fermion gives (up to signs and constants we suppress)
+\begin{align}
+\phi^{(1)} &\sim \psi_{-}dt + \psi_+ d\bar{z} \\
+\bar{\psi}^{(1)} &\sim \bar{\partial}_{\bar{z}}\phi dt + \bar{\partial_t} \phi dz.
+\end{align}
+
+In the twisted formalism of \cite{ACNV}, reviewed in \cite{CDG}, one instead writes the action in the first-order, BV formalism and removes $\bar{Q}_+$-exact terms. Performing such a rewriting of the action will in general yield a different algebra of local operators than that of the original theory, but the two algebras will be quasi-isomorphic to one another (i.e. with identical $\bar{Q}_+$-cohomology and any higher operations). \textcolor{red}{comment here about Koszul duality?}
+The scalar in the twisted, first-order theory is identical to the scalar in the physical theory with its twisted spin, and for $r=0$ they are simply identical. There is also a fermion $\psi$ in the twisted theory that may be identified, in the physical theory, with $i \bar{\psi}^{(1)}$.
+
+Hence, our fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
 \[
 \psi = \psi_t \d t + \psi_\zbar \d \zbar 
 \]
-valued in $V^*$. 
+valued in $V^*$, the dual vector space.
 The free action reads
 \[
-\int_{\RR^3} \phi \partial_t \psi_\zbar + \int_{\RR^3} \phi \partial_\zbar \psi_t .
+\int_{\RR^3} \phi \partial_t \psi_\zbar + \int_{\RR^3} \phi \partial_\zbar \psi_t 
 \]
+which, after integration by parts, can be written more compactly in the twisted theory as\footnote{Although $\phi^{(1)}$ does not appear in the action, it plays an interesting role in understanding higher operations (brackets); see \cite{CDG} for details.} \textcolor{red}{right? confused about minus signs here...}
+
+\[
+\int \psi d\phi.
+\]
+
+We may return to the physical theory for a free chiral multiplet from this twisted representation by adding a quadratic term for $\psi$ and integrating it out to return it to its on-shell value. Such quadratic terms are killed in the twisted formalism because they are $\bar{Q}_+$-exact.  
 
 The equations of motion for the scalar $\phi$ are
 \[
@@ -206,16 +231,18 @@ The equation of motion for the one-form field $\psi$ reads
 \frac{\partial}{\partial t} \psi_\zbar - \frac{\partial}{\partial \zbar} \psi_t = 0 .
 \]
 
-There is an abelian gauge symmetry which acts on the $\psi$-fields as follows.
+There is an abelian gauge symmetry which acts on the $\psi$-fields, while leaving $\phi$ invariant.
 The gauge symmetry is given by a $V^*$-valued scalar $\chi$ which acts on the fields by
 \begin{equation}\label{eqn:freegauge}
 \delta \psi_t = \frac{\partial}{\partial t} \chi; \quad
 \delta \psi_\zbar = \frac{\partial}{\partial \zbar} \chi .
 \end{equation}
 
+This ghost $\chi$ in the twisted theory is precisely $i \bar{\psi}_-$ in the physical theory. The BRST transformation of the twisted theory is identified with the SUSY transformation in the physical theory. Indeed, one may compute the SUSY transformation of $\psi$ and observe that it coincides with this symmetry on-shell. 
+
 \subsection*{Local operators}
 
-We move towards a description of the algebra of local operators at $z = t = 0$ up to gauge equivalence.
+We move towards a description of the algebra of local operators \textit{of all cohomological degrees} at $z = t = 0$, up to gauge equivalence. We recall that (local) operators are (local) functionals on the space of fields, so that while the field $\phi$ is valued in $V$, its local dual operator is valued in $V^*$. Although we are treating operators in this section, we will make use of the standard physics abuse of notation and denote them by the same symbols as the corresponding fields \footnote{Properly speaking, the R-charges we listed in the previous section were also those of the local operators. The fields have the opposite charges.}. 
 
 The equations of motion imply that the $\phi$ has vanishing $t$ and $\zbar$-derivatives. 
 Thus, the only local operators built from $\phi$ must be given by holomorphic $z$-derivatives. 
@@ -245,11 +272,10 @@ The gauge transformations preserving $\psi = 0$ satisfy $\frac{\partial}{\partia
 Thus, similarly to $\phi$, the local operators one can build from $\chi$ only involve holomorphic $z$-derivatives. 
 Let $V_{(n+1)} \simeq V$ denote the span of the local operators of the form $\partial_z^n \chi(0)$.
 Thus, the linear local operators in $\chi$ comprise the vector space $\oplus_{n > 0} V_{(n)}$.
-Since $\chi$ is a gauge symmetry, the algebra of operators involving only $\chi$ combine to form the exterior algebra $\wedge^\bu \left(\oplus_{n > 0} V_{(n)}\right)$. 
-\footnote{More precisely, we obtain the {\em graded symmetric} algebra $\Sym(V_{(n)}[-1])$ of $V_{(n)}$ concentrated in degree $+1$.
-We will only use the underlying $\ZZ/2$-graded vector space in this section.}
+Since $\chi$ is a gauge symmetry, the algebra of operators involving only $\chi$ combine to form the exterior algebra $\wedge^\bu \left(\oplus_{n > 0} V_{(n)}\right)$ \footnote{More precisely, we obtain the {\em graded symmetric} algebra $\Sym(V_{(n)}[-1])$ of $V_{(n)}$ concentrated in degree $+1$.
+We will only use the underlying $\ZZ/2$-graded vector space in this section.}. Note that the operators coming from $\chi$ are concentrated in cohomological degree 1 and higher, as expected. Note that in the twisted theory, cohomological degree is identified with the R-charge of the twisted fields, which further coincides with ``ghost number'' in this example. 
 
-Summarizing our discussion thus far, we see that the local operators are of the form
+Summarizing our discussion thus far, we see that the local, or 0-form, operators are of the form
 %\[
 %{\rm S}^\bu \left(z^{-1} V^*[z^{-1}]\right) \otimes \wedge^\bu \left(V[z^{-1}]\right)
 %\]
@@ -266,20 +292,16 @@ The first corresponds to conformal symmetries along the $z$-plane.
 Concretely, consider the piece of this generated by $\U(1)$ rotations of $\CC_z$.
 Infinitesimally, this is generated by the holomorphic vector field $z \frac{\partial}{\partial z}$. 
 
-Second, there is a flavor symmetry.
-Suppose $V$ transforms according to some $G_f$ representation, where $G_f$ is the flavor group. 
-Then we obtain a symmetry of this system by declaring that $\phi$ transform according to this representation and $\psi$ transform in the dual representation.
+Second, there is a $\U(1)$ flavor symmetry, where $\phi$ transforms with charge $+1$ and $\psi$ transforms in the dual representation, $-1$.
 
-The character of the space of local operators $\Obs_0$ can be written in terms of fugacities $q$ and $u$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $u$ is a vector in the maximal torus $T_f$ of the flavor group $G_f$. 
+The character of the chiral algebra furnished by the space of local operators $\Obs_0$ can be written in terms of fugacities $q$ and $s$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $s$ is the fugacity of the $\U(1)$ flavor symmetry. The fugacity $q$ is conjugate to the twisted spin $J$, the fugacity $s$ is conjugate to the flavor charge $e$, and $r$, the R-charge, is the homological grading:
 \[
-\chi_0(q , s) = \frac{1}{|{\rm Weyl}(G)|} \oint_{s \in T_f} \frac{\d s}{2 \pi i s} \prod_{\alpha \in {\rm wt}(V)} (1-s_\alpha) \frac{(q s^{-1}_\alpha ; q)_\infty}{(s_\alpha ; q)_\infty} .
+\chi_0(q , s) := \Tr (-1)^r q^J s^e =  \frac{(q s^{-1} ; q)_\infty}{(s ; q)_\infty}  = \prod_{n \geq 0} \frac{1 - s^{-1} q^{n+1}}{1 - s q^n}.
 \]
 
-Suppose $\U(1) \to G_f$ is a cocharacter which acts on $V$ by weight $+1$. 
-Then, we can break $\U(1)_q \times G_f$ to $\U(1)_q \times \U(1)_s$ and the resulting character becomes
-\[
-\chi_0 (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1} q^{n+1}}{1 - s q^n} .
-\]
+This is nothing but the usual expression for the supersymmetric index of a free chiral multiplet. The degrees of freedom counted by this index are given by the $\bar{Q}_+$-closed fields in the physical theory: $\left\lbrace \partial_z^n \phi \right\rbrace_{n \geq 0}, \left\lbrace \partial_z^n \bar{\psi}_- \right\rbrace_{n \geq 0}$. The former have $r=0, J = n$ and the latter have $r=1, J= n+1$. These perfectly match the local operators in the twisted theory generated by holomorphic derivatives of $\phi, \chi$ as enumerated in the previous subsection.
+
+
 
 
 \subsection*{Dimensional reduction}
