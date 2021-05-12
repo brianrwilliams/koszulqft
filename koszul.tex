@@ -190,7 +190,7 @@ Per the discussion of the previous section, one may also perform descent on the 
 \[
 \bar{Q}_+(dz \wedge \mathcal{O}^{(1)}) = d (dz \wedge \mathcal{O})
 \]
-where $d = \partial_{\bar{z}} d\bar{z} + \partial_t dt$ (which, in the presence of gauge fields, must be covariantized). Explicitly, $\mathcal{O}^{(1)} = {i \over 2}Q_+ \mathcal{O} d\bar{z} - i Q_- \mathcal{O} dt$. 
+where $d$ is the total exterior derivative on spacetime (which, in the presence of gauge fields, must be covariantized). Equivalently, we have $\bar{Q}_{+}\mathcal{O}^{(1)} = (d\bar{z}\partial_{\bar{z}} + dt \partial_t)\mathcal{O}$. This equation can be solved for the descendent, and the solution is given by $\mathcal{O}^{(1)} = {i \over 2}Q_+ \mathcal{O} d\bar{z} - i Q_- \mathcal{O} dt$. Wedging the one-form descendent with $dz$ produces a 2-form field that can be integrated along a 2-cycle in spacetime to produce a $\bar{Q}_+$-closed operator. 
 
 Computing the corresponding descendants for the scalar and the fermion gives (up to signs and constants we suppress)
 \begin{align}
@@ -201,7 +201,7 @@ Computing the corresponding descendants for the scalar and the fermion gives (up
 In the twisted formalism of \cite{ACNV}, reviewed in \cite{CDG}, one instead writes the action in the first-order, BV formalism and removes $\bar{Q}_+$-exact terms. Performing such a rewriting of the action will in general yield a different algebra of local operators than that of the original theory, but the two algebras will be quasi-isomorphic to one another (i.e. with identical $\bar{Q}_+$-cohomology and any higher operations). \textcolor{red}{comment here about Koszul duality?}
 The scalar in the twisted, first-order theory is identical to the scalar in the physical theory with its twisted spin, and for $r=0$ they are simply identical. There is also a fermion $\psi$ in the twisted theory that may be identified, in the physical theory, with $i \bar{\psi}^{(1)}$.
 
-Hence, our fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
+Hence, our fields consist of a scalar $\phi$ valued in $V \simeq \mathbb{C}$ and a partial one-form 
 \[
 \psi = \psi_t \d t + \psi_\zbar \d \zbar 
 \]
