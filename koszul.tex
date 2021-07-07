@@ -16,7 +16,7 @@
 \def\U{{\rm U}}
 
 \def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
-\def\natalie#1{{\textcolor{green!65!black}{BRW: {#1}}}}
+\def\natalie#1{{\textcolor{green!65!black}{NMP: {#1}}}}
 
 %\usepackage[upint]{stix}
 \usepackage{cmupint}
@@ -200,7 +200,7 @@ Computing the corresponding descendants for the scalar and the fermion gives (up
 \bar{\psi}^{(1)} &\sim \partial_{\bar{z}}\phi dt + \partial_t \phi d\bar{z}.
 \end{align}
 
-In the twisted formalism of \cite{ACNV}, reviewed in \cite{CDG}, one instead writes the action in the first-order, BV formalism and removes $\bar{Q}_+$-exact terms. Performing such a rewriting of the action will in general yield a different algebra of local operators than that of the original theory, but the two algebras will be quasi-isomorphic to one another (i.e. with identical $\bar{Q}_+$-cohomology and any higher operations). \textcolor{red}{comment here about Koszul duality?}
+In the twisted formalism of \cite{ACNV}, reviewed in \cite{CDG}, one instead writes the action in the first-order, BV formalism and removes $\bar{Q}_+$-exact terms. Performing such a rewriting of the action will in general yield a different algebra of local operators than that of the original theory, but the two algebras will be quasi-isomorphic to one another (i.e. with identical $\bar{Q}_+$-cohomology and any higher operations).\natalie{comment here about Koszul duality?}
 The scalar in the twisted, first-order theory is identical to the scalar in the physical theory with its twisted spin, and for $r=0$ they are simply identical. There is also a fermion $\psi$ in the twisted theory that may be identified, in the physical theory, with $i \bar{\psi}^{(1)}$.
 
 Hence, our fields consist of a scalar $\phi$ valued in $V \simeq \mathbb{C}$ and a partial one-form 
@@ -212,7 +212,7 @@ The free action reads
 \[
 \int_{\RR^3} \phi \partial_t \psi_\zbar + \int_{\RR^3} \phi \partial_\zbar \psi_t 
 \]
-which, after integration by parts, can be written more compactly in the twisted theory as\footnote{Although $\phi^{(1)}$ does not appear in the action, it plays an interesting role in understanding higher operations (brackets); see \cite{CDG} for details.} \textcolor{red}{right?}
+which, after integration by parts, can be written more compactly in the twisted theory as\footnote{Although $\phi^{(1)}$ does not appear in the action, it plays an interesting role in understanding higher operations (brackets); see \cite{CDG} for details.} \natalie{right?}
 
 \[
 \int(dz \wedge \psi) d\phi.
@@ -285,7 +285,7 @@ Summarizing our discussion thus far, we see that the local, or 0-form, operators
 \]
 where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
 
-\textcolor{red}{Do we want to say anything about the higher products in this example/how they behave under Koszul duality? It may involve a longer interlude regarding secondary brackets, etc.}
+\natalie{Do we want to say anything about the higher products in this example/how they behave under Koszul duality? It may involve a longer interlude regarding secondary brackets, etc.}
 
 \subsection*{Character of local operators}
 
@@ -313,21 +313,31 @@ As this theory is free, the analysis here is quite simple, but it we hope it ser
 Let us consider the space of local operators at the origin $\Obs_0$. 
 As announced in the general section, we are to interpret the Koszul dual of this algebra as the algebra of local operators on the ``universal line defect''.
 In this example, the defect we are considering is along the topological line $\{z=0\} \subset \RR \times \CC$. 
+Per our analysis in the previous section, we perform topological descent on all Maurer-Cartan elements of the algebra of operators on the line $\mathcal{A}\otimes \mathcal{B}$ to obtain the space of possible perturbative couplings, where $\mathcal{A} \simeq \mathbb{C}[\phi, \chi]$ is the algebra of bulk operators restricted to the line and $\mathcal{B}$ is our (at the moment arbitrary) auxiliary algebra of operators. 
 
-We choose a basis $\{e_a\}$ for $V$. 
-The most general coupling takes the form
+Any Maurer-Cartan element, governing first-order deformations of our uncoupled system, lives in degree one by definition. This leaves us with two options in our example. We may perform descent on $\partial_z^n \chi \otimes J$ where $|\chi| = 1, |J|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $J, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $J^{(1)}, K^{(1)}$. 
+
+
+%We choose a basis $\{e_a\}$ for $V$. 
+The most general coupling then takes the form
 \[
-\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K_t^a [\ell] \partial_z^\ell \phi_{a} + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J_a[k] \partial_z^k \psi_t^a  .
+\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} J^{(1)}[i] \partial_z^i \chi.
 \] 
-For some locally defined currents $J_a [k], K^a [\ell] = K_t^a [\ell] \d t$ along $\RR_t$. 
 
-Notice that only the $\d t$-component of the one-form $\psi$ may couple to a field along the defect. 
-Also, observe that while the one-form field $\psi_t$ couples to a scalar $J_a [k]$ along $\RR_t$ the field $\phi$ couples to a one-form $K^a[\ell] = K^a_t [\ell] \d t$ along $\RR_t$. 
 
-If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
-\[
-Q_{\rm defect} K_t^a[\ell] = \partial_t \mathfrak{k}^a [\ell] .
-\]
+Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may couple to a field along the defect, which we denote by $\psi_t, \phi_t$. 
+Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$ along $\RR_t$, the field $\phi$ couples to a one-form $K^{(1)}[\ell] = K_t [\ell] \d t$ along $\RR_t$ (and vice versa for their counterparts). In total, all of the couplings are one-forms along $\RR_t$ with ghost number 0. 
+
+Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements \textit{modulo gauge redundancies}. It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$.
+
+For example, consider the coupling $\int J \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int J d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $J$: $d_t J = 0$. One can instead rewrite 
+
+
+%If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
+%\[
+%Q_{\rm defect} K_t^a[\ell] = \partial_t \mathfrak{k}^a [\ell] .
+%\]
+
 
 
 
@@ -357,7 +367,7 @@ We will then obtain a two-dimensional theory on $\RR \times \RR_{>0}$ with an in
 Writing the complex coordinate as $z = r e^{i \theta}$ we obtain a decomposition of the three-dimensional fields on $\RR \times \CC^\times$:
 \begin{align*}
 \phi(t,z) & = \sum_{n \in \ZZ} \phi_n (t,r) e^{2 \pi i n \theta} \\
-\psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t,\theta) e^{2 \pi i n \theta} .
+\psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t, r) e^{2 \pi i n \theta} .
 \end{align*}
 
 If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ has as its fields 
@@ -366,13 +376,13 @@ If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ ha
 \] 
 with free action
 \[
-\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\phi_n \d \psi_{-n} + n \phi_n \psi_{-n} (r^{-1} \d r)  \bigg)
+\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\phi_n \d \psi_{-n} + n \phi_n \psi_{-n} (r^{-1} \d r)  \bigg).
 \]
 
-Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$. 
-The second term includes a background gauge field for the symmetry of loop rotations. 
+Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$.  \natalie{citation}
+The second term includes a background gauge field for the symmetry of loop rotations. \natalie{spell this out more?}
 
-There is an overall gauge symmetry of this dimensionally reduced action by an integers worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
+There is an overall gauge symmetry of this dimensionally reduced action by an integers' worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
 
 So far we have provided a description of the $S^1$ reduction of the theory on $\RR \times \CC^\times$ to $\RR \times \RR_{>0}$. 
 The fact that this theory was defined on the affine space $\RR \times \CC$ determines a natural boundary condition for this dimensional reduction at $r = 0$, thus extending it to a theory on $\RR \times \RR_{\geq 0}$. 
@@ -401,7 +411,7 @@ The boundary conditions we choose are the following:
 \item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
 That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
 \[
-\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) .\otimes V \right) 
+\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) 
 \]
 \item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
 That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
