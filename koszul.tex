@@ -57,24 +57,23 @@
 Let $\cB$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on this space. 
 The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
 
-A one-dimensional theory is topological if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $(-1)$, which satisfies
+A one-dimensional theory is topological\footnote{In general dimensions, $Q$-exactness of all translation generators is the minimal condition for a cohomological theory to be called topological, and in some contexts this condition is referred to as weakly-topological. A stronger statement that many topological theories satisfy is $Q$-exactness of all components of the stress-energy tensor.} if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $(-1)$, which satisfies
 \beqn\label{eqn:triv}
 \{Q, \hat{Q}\} = \frac{\partial}{\partial t} .
 \eeqn
 In words, translations along the line are trivial in BRST cohomology. 
 
 The space of local operators $\cB$ is equipped with an algebra structure coming from the operator product expansion. 
-Together with $Q$ we assume this equips $\cB$ with the structure of a {\em dg} algebra. 
+Together with $Q$ we assume this equips $\cB$ with the structure of a {\em dg} (differential graded) algebra. In the case of an associative dg-algebra (dga), there is an associative multiplication and a differential which acts as a derivation on the associative product. 
 More generally, $\cB$ is endowed with higher operations which combined with $Q$ to form an $A_\infty$ algebra. 
 We will say a few remarks about this more general situation in what follows. 
 
-%Should we here contrast with notion of topological QFT coming from Q-exact stress tensors, which is a stronger statement?
 
 %To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x \Omega^{d-2}(M)... how is Koszul duality insensitive to this?
 
 \subsection{Couplings and Maurer--Cartan elements} 
 
-Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras over local operators we denote by $\cA$ and $\cB$. 
+Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras of local operators we denote by $\cA$ and $\cB$. 
 
 The completely `uncoupled' theory is the theory obtained by combining these two 
 theories in a rather trivial way; at the level of local operators this is just the plain tensor product (over $\CC$):
@@ -84,8 +83,8 @@ theories in a rather trivial way; at the level of local operators this is just t
 The BRST operator is simply $Q_\cA \otimes 1 + 1 \otimes Q_\cB$.
 At the level of action functionals this corresponds to simply taking the sum of action functionals $S_{\cA} + S_{\cB}$. 
 
-We restrict to nontrivial couplings between theories $\cA$ and $\cB$ which are visible at the level of BRST operators. 
-In terms of the dg algebra of local operators this means that as a graded algebra is exactly that of \eqref{eqn:uncoupled} (the plain tensor product over $\CC$). 
+We restrict to nontrivial couplings between theories $\cA$ and $\cB$ which are visible at the level of BRST operators. \natalie{It would be nice to make a remark here that this is WLOG (or, essentially WLOG?)}
+This means that the coupled dg algebra of local operators is, as a graded algebra, exactly as in \eqref{eqn:uncoupled} (the plain tensor product over $\CC$). 
 What is modified is the BRST operator: 
 \beqn\label{eqn:coupled}
 Q_{\cA} \otimes 1 + 1 \otimes Q_{\cB} + \til{Q}
@@ -97,15 +96,15 @@ where
 is some new operator contributing to the coupled BRST operator. 
 In order for \eqref{eqn:coupled} to be of homogenous ghost number we see that $\til{Q}$ must also be of ghost number one.
 
-The addition of such an operator $\til{Q}$ would be a very general way to formulate the notion of a coupling between theories $\cA$ and $\cB$. 
+The addition of such an operator $\til{Q}$ would be a very general way to formulate the notion of a coupling between theories $\cA$ and $\cB$. \natalie{How general? Why is this natural (mathematically, since this is non-obvious physically)? Describe more general deformations vs. couplings here, perhaps?}
 We specialize the situation a bit and make the following assumption: 
 \begin{itemize}
-\item the operator $\til{Q}$ is {\em inner} in the sense that it is given by a pure commutator
+\item the operator $\til{Q}$ is {\em inner} \natalie{explain terminology more. what are other useful forms the operator could take?} in the sense that it is given by a pure commutator
 \[
 \til{Q} = [\alpha, -]_{\cA \otimes \cB}
 \]
 where $\alpha$ is an element in $\cA \otimes \cB$. 
-We will refer to such deformations as Hamiltonian. 
+We will refer to such deformations as Hamiltonian.  \natalie{I think Hamiltonian is already deleted in your copy of the file, but adding a note just in case.}
 \end{itemize}
 In order for this to make sense the element $\alpha$, like $\til{Q}$, must be of ghost number one. 
 We let $Q_\alpha$ denote the resulting total operator as in \eqref{eqn:coupled}. 
@@ -121,16 +120,16 @@ Q_{\cA} (\alpha) + Q_{\cB}(\alpha) + \frac12 [\alpha, \alpha] = 0 .
 \]
 \end{lem}
 
-From hereon, we refer to $\alpha$ as an {\em algebraic coupling} between two quantum mechanical systems. 
+From hereon, we refer to $\alpha$ as an {\em algebraic coupling} (which we will soon relate to the notion of a {\em physical coupling}) between two quantum mechanical systems whose algebras of operators are given by ${\cA}, {\cB}$. 
 
 Let's consider the following very important example. 
 \begin{eg}\label{eg:gauge}
 Fix a Lie algebra $\fg$ and
 suppose that $\cA$ is the (commutative) algebra $\clie^\bu(\fg)$ of Lie algebra cochains of $\fg$. 
-This is the algebra encoding the local operators of a Chern--Simons type gauge theory in one-dimension. 
+This is the algebra encoding the local operators of a Chern--Simons type gauge theory in one-dimension. In particular, the algebra generators are the BRST ghosts $c^{\alpha}$ \natalie{how best to explain the role of anti-ghosts?} of degree (ghost number) 1 endowed with a free anticommuting product and BRST differential. In this example, we work only at the level of the Lie algebra, and ignore subtleties related to the global form of the gauge group. \natalie{would be nice to explain somewhere how the picture gets modified when global issues are taken into account} 
 
 Next, let $\cB$ be the algebra of operators of a particle moving in a $\fg$-representation $V$.
-That is, $\cB = \cO(T^* V)$ with algebra structure given by the Moyal product $\star$. 
+That is, $\cB = \cO(T^* V)$ with algebra structure given by the Moyal product $\star$. \natalie{needs to be unpacked more for physicists, and Moyal product should be defined.}
 
 Let $\{\fc_a\}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^\vee$. 
 Let $\{v_i\}$ be a basis for $V$ and denote by $\{v^j\}$ the dual basis for $V^\vee$.
@@ -171,8 +170,8 @@ More abstractly \brian{get in to KD}
 
 
 \subsection{Topological descent} 
-
-Topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain smeared gauge-invariant observables from local operators of higher ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. 
+\natalie{reminder to revert to bib}
+Topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain gauge-invariant observables with nontrivial spatial support from local operators of higher ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. \natalie{more references here eventually}
 
 As above let $\cB$ be the local operators of a theory of topological quantum mechanics. 
 We recall how Equation \eqref{eqn:triv} solves the topological descent equations which allows us to construct non-local operators out of local ones. 
@@ -188,13 +187,13 @@ Given a local (0-form) operator, $\cO = \cO^{(0)} \in \cB$, we can use the endom
 \[
 \cO^{(1)} \define (\hat{Q} \cdot \cO) \d t \in \Omega^1(\RR \, , \, \cB).
 \]
-The operator $\til{Q} = \cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
+The operator \natalie{do we really mean this notation? we already use $\til{Q}$ above for the BRST deformation} $\til{Q} = \cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
 \begin{align*}
 Q \cO^{(0)} & = 0 \\
 \d \cO^{(0)} + Q \cO^{(1)} & = 0 .
 \end{align*}
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then $\cO^{(1)}$ is of ghost number $k-1$ but it also carries differential form degree one. 
-So, with respect to the totalized grading on $\Omega^\bu(S, \cB)$ the operator $\cB$ does have a homogenous degree.
+So, with respect to the total grading on $\Omega^\bu(S, \cB)$ the operator $\cB$ does have a homogenous degree.
 
 In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed Lagrangian
 \[
@@ -202,7 +201,10 @@ In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $
 \]
 where we integrate over any closed oriented one-manifold $S$.
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then this Lagrangian is of ghost number $k-1$. 
-So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree $+1$. 
+So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree $+1$. \natalie{say something about the meaning of higher ghost number deformations in twisted theories?}
+
+\natalie{topological descent gives BRST invariance to first order, but the Lagrangian will get upgraded to a path ordered exponential in the full path integral... BRST invariance to all perturbative orders will force the coupling to satisfy MC eq'n. We also wanted to explain how the MC equation could take the form of a MC eqn for an $A_{\infty}$ algebra. Where do we want these discussions to go?}
+
 
 \subsection{From Maurer--Cartan elements to local couplings} 
 
