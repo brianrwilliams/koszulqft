@@ -54,6 +54,9 @@
 
 \subsection{Local operators}
 
+\brian{warning about 'local operators' vs physical local operators}
+\brian{cohomological/ghost number degrees}
+
 Let $\cB$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on this space. 
 The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
 
@@ -82,7 +85,7 @@ theories in a rather trivial way; at the level of local operators this is just t
 \cA \otimes \cB .
 \eeqn
 The BRST operator is simply $Q_\cA \otimes 1 + 1 \otimes Q_\cB$.
-At the level of action functionals this corresponds to simply taking the sum of action functionals $S_{\cA} + S_{\cB}$. 
+\brian{maybe this goes later} At the level of action functionals this corresponds to simply taking the sum of action functionals $S_{\cA} + S_{\cB}$. 
 
 We restrict to nontrivial couplings between theories $\cA$ and $\cB$ which are visible at the level of BRST operators. 
 In terms of the dg algebra of local operators this means that as a graded algebra is exactly that of \eqref{eqn:uncoupled} (the plain tensor product over $\CC$). 
@@ -97,6 +100,8 @@ where
 is some new operator contributing to the coupled BRST operator. 
 In order for \eqref{eqn:coupled} to be of homogenous ghost number we see that $\til{Q}$ must also be of ghost number one.
 
+\brian{other types of deformations, hochschild cohomology}
+
 The addition of such an operator $\til{Q}$ would be a very general way to formulate the notion of a coupling between theories $\cA$ and $\cB$. 
 We specialize the situation a bit and make the following assumption: 
 \begin{itemize}
@@ -105,7 +110,7 @@ We specialize the situation a bit and make the following assumption:
 \til{Q} = [\alpha, -]_{\cA \otimes \cB}
 \]
 where $\alpha$ is an element in $\cA \otimes \cB$. 
-We will refer to such deformations as Hamiltonian. 
+%We will refer to such deformations as Hamiltonian. 
 \end{itemize}
 In order for this to make sense the element $\alpha$, like $\til{Q}$, must be of ghost number one. 
 We let $Q_\alpha$ denote the resulting total operator as in \eqref{eqn:coupled}. 
@@ -120,6 +125,8 @@ The operator $Q_\alpha = Q_{\cA} \otimes 1 + 1 \otimes Q_{\cB} + [\alpha,-]$ act
 Q_{\cA} (\alpha) + Q_{\cB}(\alpha) + \frac12 [\alpha, \alpha] = 0 .
 \]
 \end{lem}
+
+\brian{a infinity version}
 
 From hereon, we refer to $\alpha$ as an {\em algebraic coupling} between two quantum mechanical systems. 
 
@@ -145,6 +152,10 @@ Define the element $\alpha \in \cA \otimes \cB$ by the formula
 \alpha = \rho_{a,i}^j \fc^a v^i v_j .
 \]
 It is an instructive exercise to show that directly that the Jacobi-type identity satisfied by the $\rho_{a,i}^j$'s is equivalent to the Maurer--Cartan equation above. 
+\end{eg}
+
+\begin{eg} 
+\brian{four fermion term}
 \end{eg}
 
 More abstractly \brian{get in to KD}
@@ -215,7 +226,10 @@ Since the uncoupled system is topological (as both $\cA$ and $\cB$ are) we can r
 Further, we can form the Lagrangian 
 \[
 S_\alpha \define \int_S \alpha^{(1)} .\]
+\brian{cite Kevin and Natalie, action is gauge invariant.}
 
+\begin{eg}
+\label{eg:gaugelocal}
 Let's return to Example \ref{eg:gauge} which portrayed the typical example of a gauge invariant coupling of a free quantum mechanical system. 
 In this example $\cA = \clie^\bu(\fg)$ with $Q_{\cA}$ the Chevalley--Eilenberg differential of $\fg$ and $\cB = \cO(T^* V)$ with trivial BRST differential $Q_{\cB} = 0$. 
 
@@ -226,8 +240,11 @@ The algebraic coupling defined by the data of a $\fg$-representation $\rho$ is $
 The one-form operator $\alpha^{(1)}$ is given by applying 
 
 The Lagrangian obtained by topological 
+\end{eg}
 
 A detailed and rigorous formulation of the results in this section within the Batalin--Vilkovisky formalism has been given by Grady, Li, and Li in \cite{GLL} and further explained by Si Li in \cite{LiVertex}.
+
+\brian{higher dimensional}
 
 \subsection{Vacuums and augmentations}
 
