@@ -1,23 +1,17 @@
 \documentclass[11pt]{amsart}
 
-\usepackage{macros, setspace}
-\usepackage{hyperref}
-\usepackage{amsmath,amsthm}
+\usepackage{macros}
+\spacing{1.25}
 
 \author{Natalie M. Paquette and Brian R. Williams}
 \date{\today}
 \title{Koszul duality in QFT}
 
-\def\define{\overset{\rm def}{=}}
-\def\ep{\varepsilon}
-\def\zbar{{\overline{z}}}
-\def\Weyl{{\rm Weyl}}
-\def\Cl{{\rm C}\ell}
-\def\U{{\rm U}}
-\newcommand{\til}{\widetilde}
-
 \def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
-\def\natalie#1{{\textcolor{green!65!black}{BRW: {#1}}}}
+\def\natalie#1{{\textcolor{green!65!black}{NMP: {#1}}}}
+
+\def\mod{{\rm mod}}
+\newcommand{\RHom}{\mathbb{R}\op{Hom}}
 
 %\usepackage[upint]{stix}
 \usepackage{cmupint}
@@ -25,7 +19,7 @@
 \begin{document}
 \maketitle
 
-\spacing{1.25}
+
 
 \section{Introduction}
 
@@ -35,9 +29,44 @@
 %maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
 
+Let $\cA$ be an associative algebra.
+We will often work in the generality where $\cA$ is a differentially graded (dg) algebra meaning that it is $\ZZ$ graded and equipped with a square-zero, degree one operator $\d : \cA \to \cA[1]$ such that 
+\[
+\d (a \cdot b) = (\d a) \cdot b + (-1)^{|a|} a \cdot (\d b) 
+\]
+where $|a|$ denotes the degree of the element $a$. 
+If we forget the product then $(\cA, \d)$ has the structure of a cochain complex. 
+We work over the complex numbers $\CC$ so all products and maps are required to be $\CC$-linear. 
+
+The notion of an $\cA$-module we will also be taken in the dg sense. 
+Precisely, a dg $\cA$-module is a cochain complex $(M, \d_M)$ together with an $\cA$-module structure on $M$ which preserves the gradings and both differentials. 
+When $\d_M = 0$ this returns the usual notion of an $\cA$-module. 
+Unless there is room for confusion, when we speak of algebras and modules we are referring to the dg version.
+
+Physically speaking, one should think about $\cA$ as being the algebra of BRST operators of a system of topological quantum mechanics \brian{best way to be gentle here?}. 
+\brian{what to say about $M$, defects?}
+
+A map of algebras $f \colon \cA \to \cB$ is a map of cochain complexes which also preserves the associative products.
+Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b = f(a) \cdot b$ where the on the right hand side we use the associative product on $\cB$.  
+
+Similarly one defines a map of modules for a fixed algebra $\cA$. 
+All $\cA$-modules combine to form a category that we denote $\cA-\mod$.
+This category has the structure of a dg category, which means its set of morphisms is equipped with the structure of a cochain complex. 
+Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ the cochain complex of homomorphisms. 
+\brian{gentle way to define this?}
+
+An {\em augmentation} is a map of algebras 
+\[
+\ep \colon \cA \to \CC .
+\]
+In other words, an augmentation is the data of an $\cA$-module structure on the one-dimensional module which we denote $\CC_\ep$. 
+
 \subsection{Commutative-Lie duality}
 
 %CE complex
+
+Let $\fg$ be a Lie algebra. 
+The Chevalley--Eilenberg complex of $\fg$ 
 
 \subsection{Associative-Associative duality} 
 
@@ -60,24 +89,23 @@
 Let $\cB$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on this space. 
 The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
 
-A one-dimensional theory is topological if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $(-1)$, which satisfies
+A one-dimensional theory is topological\footnote{In general dimensions, $Q$-exactness of all translation generators is the minimal condition for a cohomological theory to be called topological, and in some contexts this condition is referred to as weakly-topological. A stronger statement that many topological theories satisfy is $Q$-exactness of all components of the stress-energy tensor.} if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $(-1)$, which satisfies
 \beqn\label{eqn:triv}
 \{Q, \hat{Q}\} = \frac{\partial}{\partial t} .
 \eeqn
 In words, translations along the line are trivial in BRST cohomology. 
 
 The space of local operators $\cB$ is equipped with an algebra structure coming from the operator product expansion. 
-Together with $Q$ we assume this equips $\cB$ with the structure of a {\em dg} algebra. 
+Together with $Q$ we assume this equips $\cB$ with the structure of a {\em dg} (differential graded) algebra. In the case of an associative dg-algebra (dga), there is an associative multiplication and a differential which acts as a derivation on the associative product. 
 More generally, $\cB$ is endowed with higher operations which combined with $Q$ to form an $A_\infty$ algebra. 
 We will say a few remarks about this more general situation in what follows. 
 
-%Should we here contrast with notion of topological QFT coming from Q-exact stress tensors, which is a stronger statement?
 
 %To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x \Omega^{d-2}(M)... how is Koszul duality insensitive to this?
 
 \subsection{Couplings and Maurer--Cartan elements} 
 
-Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras over local operators we denote by $\cA$ and $\cB$. 
+Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras of local operators we denote by $\cA$ and $\cB$. 
 
 The completely `uncoupled' theory is the theory obtained by combining these two 
 theories in a rather trivial way; at the level of local operators this is just the plain tensor product (over $\CC$):
@@ -85,10 +113,10 @@ theories in a rather trivial way; at the level of local operators this is just t
 \cA \otimes \cB .
 \eeqn
 The BRST operator is simply $Q_\cA \otimes 1 + 1 \otimes Q_\cB$.
-\brian{maybe this goes later} At the level of action functionals this corresponds to simply taking the sum of action functionals $S_{\cA} + S_{\cB}$. 
+At the level of action functionals this corresponds to simply taking the sum of action functionals $S_{\cA} + S_{\cB}$. 
 
 We restrict to nontrivial couplings between theories $\cA$ and $\cB$ which are visible at the level of BRST operators. 
-In terms of the dg algebra of local operators this means that as a graded algebra is exactly that of \eqref{eqn:uncoupled} (the plain tensor product over $\CC$). 
+This means that the coupled dg algebra of local operators is, as a graded algebra, exactly as in \eqref{eqn:uncoupled} (the plain tensor product over $\CC$). 
 What is modified is the BRST operator: 
 \beqn\label{eqn:coupled}
 Q_{\cA} \otimes 1 + 1 \otimes Q_{\cB} + \til{Q}
@@ -100,17 +128,16 @@ where
 is some new operator contributing to the coupled BRST operator. 
 In order for \eqref{eqn:coupled} to be of homogenous ghost number we see that $\til{Q}$ must also be of ghost number one.
 
-\brian{other types of deformations, hochschild cohomology}
+The addition of such an operator $\til{Q}$ would is one way to formulate the notion of a coupling between theories $\cA$ and $\cB$. 
+More generally, one can speak about deforming the tensor product $\cA \otimes \cB$ as a dg algebra (or even $A_\infty$ algebra) which is algebraically controlled by Hochschild cohomology \cite{refs?}. 
 
-The addition of such an operator $\til{Q}$ would be a very general way to formulate the notion of a coupling between theories $\cA$ and $\cB$. 
-We specialize the situation a bit and make the following assumption: 
+We specialize the situation a bit further and make the following assumption: 
 \begin{itemize}
-\item the operator $\til{Q}$ is {\em inner} in the sense that it is given by a pure commutator
+\item the operator $\til{Q}$ is {\em inner} \natalie{explain terminology more. what are other useful forms the operator could take?} in the sense that it is given by a pure commutator
 \[
 \til{Q} = [\alpha, -]_{\cA \otimes \cB}
 \]
 where $\alpha$ is an element in $\cA \otimes \cB$. 
-%We will refer to such deformations as Hamiltonian. 
 \end{itemize}
 In order for this to make sense the element $\alpha$, like $\til{Q}$, must be of ghost number one. 
 We let $Q_\alpha$ denote the resulting total operator as in \eqref{eqn:coupled}. 
@@ -126,18 +153,18 @@ Q_{\cA} (\alpha) + Q_{\cB}(\alpha) + \frac12 [\alpha, \alpha] = 0 .
 \]
 \end{lem}
 
-\brian{a infinity version}
-
-From hereon, we refer to $\alpha$ as an {\em algebraic coupling} between two quantum mechanical systems. 
+From hereon, we refer to $\alpha$ as an {\em algebraic coupling} (which we will soon relate to the notion of a {\em physical coupling}) between two quantum mechanical systems whose algebras of operators are given by ${\cA}, {\cB}$. 
 
 Let's consider the following very important example. 
 \begin{eg}\label{eg:gauge}
 Fix a Lie algebra $\fg$ and
 suppose that $\cA$ is the (commutative) algebra $\clie^\bu(\fg)$ of Lie algebra cochains of $\fg$. 
-This is the algebra encoding the local operators of a Chern--Simons type gauge theory in one-dimension. 
+This is the algebra encoding the local operators of a Chern--Simons type gauge theory in one-dimension. In particular, the algebra generators are the BRST ghosts $c^{\alpha}$ \natalie{how best to explain the role of anti-ghosts?} \brian{b ghosts cohomologically trivial} of degree (ghost number) 1 endowed with a free anticommuting product and BRST differential. In this example, we work only at the level of the Lie algebra, and ignore subtleties related to the global form of the gauge group. \natalie{would be nice to explain somewhere how the picture gets modified when global issues are taken into account} 
+\brian{issue of filtrations in terms of physics}
+\brian{locality of the coupling, ask for polynomials in fields and derivatives.}
 
 Next, let $\cB$ be the algebra of operators of a particle moving in a $\fg$-representation $V$.
-That is, $\cB = \cO(T^* V)$ with algebra structure given by the Moyal product $\star$. 
+That is, $\cB = \cO(T^* V)$ with algebra structure given by the Moyal product $\star$. \natalie{needs to be unpacked more for physicists, and Moyal product should be defined.}
 
 Let $\{\fc_a\}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^\vee$. 
 Let $\{v_i\}$ be a basis for $V$ and denote by $\{v^j\}$ the dual basis for $V^\vee$.
@@ -182,8 +209,8 @@ More abstractly \brian{get in to KD}
 
 
 \subsection{Topological descent} 
-
-Topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain smeared gauge-invariant observables from local operators of higher ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. 
+\natalie{reminder to revert to bib}
+Topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain gauge-invariant observables with nontrivial spatial support from local operators of higher ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. \natalie{more references here eventually}
 
 As above let $\cB$ be the local operators of a theory of topological quantum mechanics. 
 We recall how Equation \eqref{eqn:triv} solves the topological descent equations which allows us to construct non-local operators out of local ones. 
@@ -199,13 +226,13 @@ Given a local (0-form) operator, $\cO = \cO^{(0)} \in \cB$, we can use the endom
 \[
 \cO^{(1)} \define (\hat{Q} \cdot \cO) \d t \in \Omega^1(\RR \, , \, \cB).
 \]
-The operator $\til{Q} = \cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
+The operator \natalie{do we really mean this notation? we already use $\til{Q}$ above for the BRST deformation} $\til{Q} = \cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
 \begin{align*}
 Q \cO^{(0)} & = 0 \\
 \d \cO^{(0)} + Q \cO^{(1)} & = 0 .
 \end{align*}
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then $\cO^{(1)}$ is of ghost number $k-1$ but it also carries differential form degree one. 
-So, with respect to the totalized grading on $\Omega^\bu(S, \cB)$ the operator $\cB$ does have a homogenous degree.
+So, with respect to the total grading on $\Omega^\bu(S, \cB)$ the operator $\cB$ does have a homogenous degree.
 
 In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed Lagrangian
 \[
@@ -213,7 +240,10 @@ In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $
 \]
 where we integrate over any closed oriented one-manifold $S$.
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then this Lagrangian is of ghost number $k-1$. 
-So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree $+1$. 
+So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree $+1$. \natalie{say something about the meaning of higher ghost number deformations in twisted theories?}
+
+\natalie{topological descent gives BRST invariance to first order, but the Lagrangian will get upgraded to a path ordered exponential in the full path integral... BRST invariance to all perturbative orders will force the coupling to satisfy MC eq'n. We also wanted to explain how the MC equation could take the form of a MC eqn for an $A_{\infty}$ algebra. Where do we want these discussions to go?}
+
 
 \subsection{From Maurer--Cartan elements to local couplings} 
 
@@ -339,18 +369,18 @@ Per the discussion of the previous section, one may also perform descent on the 
 \[
 \bar{Q}_+(dz \wedge \mathcal{O}^{(1)}) = d (dz \wedge \mathcal{O})
 \]
-where $d = \partial_{\bar{z}} d\bar{z} + \partial_t dt$ (which, in the presence of gauge fields, must be covariantized). Explicitly, $\mathcal{O}^{(1)} = {i \over 2}Q_+ \mathcal{O} d\bar{z} - i Q_- \mathcal{O} dt$. 
+where $d$ is the total exterior derivative on spacetime (which, in the presence of gauge fields, must be covariantized). Equivalently, we have $\bar{Q}_{+}\mathcal{O}^{(1)} = (d\bar{z}\partial_{\bar{z}} + dt \partial_t)\mathcal{O}$. This equation can be solved for the descendent, and the solution is given by $\mathcal{O}^{(1)} = {i \over 2}Q_+ \mathcal{O} d\bar{z} - i Q_- \mathcal{O} dt$. Wedging the one-form descendent with $dz$ produces a 2-form field that can be integrated along a 2-cycle in spacetime to produce a $\bar{Q}_+$-closed operator. 
 
 Computing the corresponding descendants for the scalar and the fermion gives (up to signs and constants we suppress)
 \begin{align}
 \phi^{(1)} &\sim \psi_{-}dt + \psi_+ d\bar{z} \\
-\bar{\psi}^{(1)} &\sim \bar{\partial}_{\bar{z}}\phi dt + \bar{\partial_t} \phi dz.
+\bar{\psi}^{(1)} &\sim \partial_{\bar{z}}\phi dt + \partial_t \phi d\bar{z}.
 \end{align}
 
-In the twisted formalism of \cite{ACNV}, reviewed in \cite{CDG}, one instead writes the action in the first-order, BV formalism and removes $\bar{Q}_+$-exact terms. Performing such a rewriting of the action will in general yield a different algebra of local operators than that of the original theory, but the two algebras will be quasi-isomorphic to one another (i.e. with identical $\bar{Q}_+$-cohomology and any higher operations). \textcolor{red}{comment here about Koszul duality?}
+In the twisted formalism of \cite{ACNV}, reviewed in \cite{CDG}, one instead writes the action in the first-order, BV formalism and removes $\bar{Q}_+$-exact terms. Performing such a rewriting of the action will in general yield a different algebra of local operators than that of the original theory, but the two algebras will be quasi-isomorphic to one another (i.e. with identical $\bar{Q}_+$-cohomology and any higher operations).\natalie{comment here about Koszul duality?}
 The scalar in the twisted, first-order theory is identical to the scalar in the physical theory with its twisted spin, and for $r=0$ they are simply identical. There is also a fermion $\psi$ in the twisted theory that may be identified, in the physical theory, with $i \bar{\psi}^{(1)}$.
 
-Hence, our fields consist of a scalar $\phi$ valued in $V$ and a partial one-form 
+Hence, our fields consist of a scalar $\phi$ valued in $V \simeq \mathbb{C}$ and a partial one-form 
 \[
 \psi = \psi_t \d t + \psi_\zbar \d \zbar 
 \]
@@ -359,10 +389,10 @@ The free action reads
 \[
 \int_{\RR^3} \phi \partial_t \psi_\zbar + \int_{\RR^3} \phi \partial_\zbar \psi_t 
 \]
-which, after integration by parts, can be written more compactly in the twisted theory as\footnote{Although $\phi^{(1)}$ does not appear in the action, it plays an interesting role in understanding higher operations (brackets); see \cite{CDG} for details.} \textcolor{red}{right? confused about minus signs here...}
+which, after integration by parts, can be written more compactly in the twisted theory as\footnote{Although $\phi^{(1)}$ does not appear in the action, it plays an interesting role in understanding higher operations (brackets); see \cite{CDG} for details.} \natalie{right?}
 
 \[
-\int \psi d\phi.
+\int(dz \wedge \psi) d\phi.
 \]
 
 We may return to the physical theory for a free chiral multiplet from this twisted representation by adding a quadratic term for $\psi$ and integrating it out to return it to its on-shell value. Such quadratic terms are killed in the twisted formalism because they are $\bar{Q}_+$-exact.  
@@ -409,7 +439,7 @@ Then, the equations of motion are equivalent to the condition that this two-form
 \]
 In other words, $\d z \wedge \psi \in Z^2 (\RR^3)$. 
 
-In terms of the two form field $\d \wedge \psi$ there is a one-form gauge symmetry by the field $\d z \wedge \chi$. 
+In terms of the two form field $\d z \wedge \psi$ there is a one-form gauge symmetry by the field $\d z \wedge \chi$. 
 In this notation, the gauge symmetry simply reads $\delta (\d z \wedge \psi) = \d (\d z \wedge \chi)$, which is completely equivalent to Equation \eqref{eqn:freegauge}.
 By a slight refinement of the Poincar\'{e} lemma for partial one-forms forms\footnote{This version of the Poincar\'{e} lemma is simply the statement $H^1_{\rm dR} (\RR) = H_{\dbar}^{0,1}(\CC)= 0$.}, there exists $\chi$ such that the one-form $\d z \wedge \chi$ renders $\d z \wedge \psi \in Z^2(\RR^3)$ gauge trivial. 
 
@@ -432,6 +462,8 @@ Summarizing our discussion thus far, we see that the local, or 0-form, operators
 \]
 where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
 
+\natalie{Do we want to say anything about the higher products in this example/how they behave under Koszul duality? It may involve a longer interlude regarding secondary brackets, etc.}
+
 \subsection*{Character of local operators}
 
 We contemplate the following two symmetries of the free theory.
@@ -447,6 +479,43 @@ The character of the chiral algebra furnished by the space of local operators $\
 \]
 
 This is nothing but the usual expression for the supersymmetric index of a free chiral multiplet. The degrees of freedom counted by this index are given by the $\bar{Q}_+$-closed fields in the physical theory: $\left\lbrace \partial_z^n \phi \right\rbrace_{n \geq 0}, \left\lbrace \partial_z^n \bar{\psi}_- \right\rbrace_{n \geq 0}$. The former have $r=0, J = n$ and the latter have $r=1, J= n+1$. These perfectly match the local operators in the twisted theory generated by holomorphic derivatives of $\phi, \chi$ as enumerated in the previous subsection.
+
+\subsection*{Line operators}
+
+We turn to an interpretation of the Koszul dual of the algebra of local operators of the bulk theory, namely $\Obs_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)$. 
+
+As we have explained, we consider the coupling of our bulk theory to a topological theory on the topological line given by $\mathbb{R}_t$. Koszul duality will arise in terms of such line operators of the original three-dimensional theory. 
+As this theory is free, the analysis here is quite simple, but it we hope it serves as an instructive exhibition of the general discussion in Section \ref{sec:lines}. 
+
+Let us consider the space of local operators at the origin $\Obs_0$. 
+As announced in the general section, we are to interpret the Koszul dual of this algebra as the algebra of local operators on the ``universal line defect''.
+In this example, the defect we are considering is along the topological line $\{z=0\} \subset \RR \times \CC$. 
+Per our analysis in the previous section, we perform topological descent on all Maurer-Cartan elements of the algebra of operators on the line $\mathcal{A}\otimes \mathcal{B}$ to obtain the space of possible perturbative couplings, where $\mathcal{A} \simeq \mathbb{C}[\phi, \chi]$ is the algebra of bulk operators restricted to the line and $\mathcal{B}$ is our (at the moment arbitrary) auxiliary algebra of operators. 
+
+Any Maurer-Cartan element, governing first-order deformations of our uncoupled system, lives in degree one by definition. This leaves us with two options in our example. We may perform descent on $\partial_z^n \chi \otimes J$ where $|\chi| = 1, |J|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $J, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $J^{(1)}, K^{(1)}$. 
+
+
+%We choose a basis $\{e_a\}$ for $V$. 
+The most general coupling then takes the form
+\[
+\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} J^{(1)}[i] \partial_z^i \chi.
+\] 
+
+
+Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may couple to a field along the defect, which we denote by $\psi_t, \phi_t$. 
+Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$ along $\RR_t$, the field $\phi$ couples to a one-form $K^{(1)}[\ell] = K_t [\ell] \d t$ along $\RR_t$ (and vice versa for their counterparts). In total, all of the couplings are one-forms along $\RR_t$ with ghost number 0. 
+
+Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements \textit{modulo gauge redundancies}. It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$.
+
+For example, consider the coupling $\int J \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int J d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $J$: $d_t J = 0$. One can instead rewrite 
+
+
+%If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
+%\[
+%Q_{\rm defect} K_t^a[\ell] = \partial_t \mathfrak{k}^a [\ell] .
+%\]
+
+
 
 
 
@@ -475,7 +544,7 @@ We will then obtain a two-dimensional theory on $\RR \times \RR_{>0}$ with an in
 Writing the complex coordinate as $z = r e^{i \theta}$ we obtain a decomposition of the three-dimensional fields on $\RR \times \CC^\times$:
 \begin{align*}
 \phi(t,z) & = \sum_{n \in \ZZ} \phi_n (t,r) e^{2 \pi i n \theta} \\
-\psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t,\theta) e^{2 \pi i n \theta} .
+\psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t, r) e^{2 \pi i n \theta} .
 \end{align*}
 
 If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ has as its fields 
@@ -484,13 +553,13 @@ If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ ha
 \] 
 with free action
 \[
-\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\phi_n \d \psi_{-n} + n \phi_n \psi_{-n} (r^{-1} \d r)  \bigg)
+\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\phi_n \d \psi_{-n} + n \phi_n \psi_{-n} (r^{-1} \d r)  \bigg).
 \]
 
-Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$. 
-The second term includes a background gauge field for the symmetry of loop rotations. 
+Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$.  \natalie{citation}
+The second term includes a background gauge field for the symmetry of loop rotations. \natalie{spell this out more?}
 
-There is an overall gauge symmetry of this dimensionally reduced action by an integers worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
+There is an overall gauge symmetry of this dimensionally reduced action by an integers' worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
 
 So far we have provided a description of the $S^1$ reduction of the theory on $\RR \times \CC^\times$ to $\RR \times \RR_{>0}$. 
 The fact that this theory was defined on the affine space $\RR \times \CC$ determines a natural boundary condition for this dimensional reduction at $r = 0$, thus extending it to a theory on $\RR \times \RR_{\geq 0}$. 
@@ -519,7 +588,7 @@ The boundary conditions we choose are the following:
 \item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
 That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
 \[
-\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) .\otimes V \right) 
+\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) 
 \]
 \item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
 That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
@@ -613,29 +682,6 @@ So, the subalgebra of lowest lying modes of the algebra $\Obs_\infty$ is
 We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypical example of Koszul duality for free algebras. 
 
 
-\subsection*{Line operators}
-
-We turn to an interpretation of Koszul duality in terms of line operators of the three-dimensional theory. 
-As this theory is free, the analysis here is quite simple, but it we hope it serves as an instructive exhibition of the general discussion in Section \ref{sec:lines}. 
-
-Let us consider the space of local operators at the origin $\Obs_0$. 
-As announced in the general section, we are to interpret the Koszul dual of this algebra as the algebra of local operators on the ``universal line defect''.
-In this example, the defect we are considering is along the topological line $\{z=0\} \subset \RR \times \CC$. 
-
-We choose a basis $\{e_a\}$ for $V$. 
-The most general coupling takes the form
-\[
-\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K_t^a [\ell] \partial_z^\ell \phi_{a} + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J_a[k] \partial_z^k \psi_t^a  .
-\] 
-For some locally defined currents $J_a [k], K^a [\ell] = K_t^a [\ell] \d t$ along $\RR_t$. 
-
-Notice that only the $\d t$-component of the one-form $\psi$ may couple to a field along the defect. 
-Also, observe that while the one-form field $\psi_t$ couples to a scalar $J_a [k]$ along $\RR_t$ the field $\phi$ couples to a one-form $K^a[\ell] = K^a_t [\ell] \d t$ along $\RR_t$. 
-
-If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
-\[
-Q_{\rm defect} K_t^a[\ell] = \partial_t \mathfrak{k}^a [\ell] .
-\]
 
 
 \section{``Critical'' Chern--Simons theory}
@@ -1020,6 +1066,16 @@ We will show that this gauge anomaly is proportional to
 
 \begin{thebibliography}{KWWY14}
 
+\bibitem[ACNV17]{ACNV}
+M.~Aganagic, K.~Costello, J.~McNamara and C.~Vafa,
+``Topological Chern-Simons/Matter Theories,''
+[arXiv:1706.09977 [hep-th]].
+
+\bibitem[CDG20]{CDG}
+K.~Costello, T.~Dimofte and D.~Gaiotto,
+``Boundary Chiral Algebras and Holomorphic Twists,''
+[arXiv:2005.00083 [hep-th]].
+
 \bibitem[MW97]{MW97}
 G.~W.~Moore and E.~Witten,
 ``Integration over the u plane in Donaldson theory,''
@@ -1032,7 +1088,6 @@ E.~Witten,
 ``Topological Quantum Field Theory,''
 Commun. Math. Phys. \textbf{117}, 353 (1988)
 doi:10.1007/BF01223371
-
 
 \bibitem[WZ92]{WZ92}
 E.~Witten and B.~Zwiebach,
