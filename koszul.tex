@@ -449,7 +449,7 @@ In other words, $\d z \wedge \psi \in Z^2 (\RR^3)$.
 
 In terms of the two form field $\d z \wedge \psi$ there is a one-form gauge symmetry by the field $\d z \wedge \chi$. 
 In this notation, the gauge symmetry simply reads $\delta (\d z \wedge \psi) = \d (\d z \wedge \chi)$, which is completely equivalent to Equation \eqref{eqn:freegauge}.
-By a slight refinement of the Poincar\'{e} lemma for partial one-forms forms\footnote{This version of the Poincar\'{e} lemma is simply the statement $H^1_{\rm dR} (\RR) = H_{\dbar}^{0,1}(\CC)= 0$.}, there exists $\chi$ such that the one-form $\d z \wedge \chi$ renders $\d z \wedge \psi \in Z^2(\RR^3)$ gauge trivial. 
+By a slight refinement of the Poincar\'{e} lemma for partial one-forms\footnote{This version of the Poincar\'{e} lemma is simply the statement $H^1_{\rm dR} (\RR) = H_{\dbar}^{0,1}(\CC)= 0$.}, there exists $\chi$ such that the one-form $\d z \wedge \chi$ renders $\d z \wedge \psi \in Z^2(\RR^3)$ gauge trivial. 
 
 
 Finally, consider local operators built from the ghost field $\chi$. 
@@ -695,21 +695,41 @@ We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypica
 \section{``Critical'' Chern--Simons theory}
 
 %Add a few sentences about how CS theory at the critical level can still give a nontrivial topological theory when written in the first order formalism... need to connect to the familiar Lagrangian before jumping in to the BF-type theory. 
-Let $\fg$ be a Lie algebra. 
-The theory has two sets of fields
+
+Our second example will be another example of a theory that arises from a holomorphic-topological twist of a 3d $\cN=2$ theory. We will see that, unlike in the case of the free twisted chiral multiplet, the algebra of local operators will acquire nontrivial quantum corrections that are essential for Koszul duality to work. We study the holomorphic-topological twist of Chern-Simons theory with Lie algebra $\fg$ at the ``critical'' level $k = h^{\vee}$ , where $k > 0$ is the bare level, $h^{\vee}$ is the dual Coxeter number of the Lie algebra, and $k - h^{\vee}$ is the Chern-Simons level incorporating the one-loop shift from integrating out the vector multiplet gauginos. 
+
+Physically, we begin with a vector multiplet with components $(A_{\mu}, \sigma, \lambda_{\pm}, \bar{\lambda}_{\pm})$ with canonical R-charge and spin quantum numbers, and will consider the components of the gauge field on $\RR_t \times \CC_{z}$ (though as explained in \natalie{cite} the twisted construction to follow may be defined on any 3-manifold with a transverse holomorphic foliation). The gauge field takes values in some compact gauge group, though for the purposes of studying local operators we will only need to specify the Lie algebra $\fg$ in what follows. The vector multiplet also includes a real adjoint-valued scalar, $\sigma \in \fg_{\RR}$, and $\fg$-valued gauginos. 
+
+With respect to the twisting supercharge $Q:= \bar{Q}_+$, it is easy to check that we have the following $Q$-closed combinations:
+\begin{align}
+A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
+\cA_t &= A_t - i \sigma.
+\end{align}
+The curvature of the connection 1-form in the first line is given by
+\[
+\cF_{\zbar t} := i  [(\partial_{\zbar} - i A_{\zbar}), \partial_t - i \cA_t] = F_{\zbar t} - i D_{\zbar}\sigma.
+\] It is straightforward to check that $\overline{\cF_{\zbar t}}$ is also $Q$-closed modulo the Dirac equation for the gauginos. 
+The computation of the descendants of the local operators will proceed similarly to our previous example, except that now we use the covariantized descent equation:
+\[
+Q \cO^{(1)} = d_{A} \cO
+\] with $d_A := (\partial_{\zbar} - i A_{\zbar})d\zbar + (\partial_t - i \cA_t)dt$. 
+
+We will pass now to the twisted theory, where we write the theory in the first-order formalism and discard the $Q$-exact terms. We will slightly relabel the relevant fields for Chern-Simons theory at the critical level. 
+
+The theory has two sets of fields \natalie{I changed the description of B here! Please double-check this!}
 \begin{align*}
 A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
-B & = B (z,t) 
+B & = B (z,t)dz 
 \end{align*}
-with $A_{\zbar}, A_t, B$ all $\fg$-valued functions on $\RR^3$.
-In other words, the fields consist of a partial connection $A$ and a smooth $\fg$-valued function $B$.
+with $A_{\zbar}, A_t$ $\fg$-valued functions on $\RR^3$ and $B(z,t) \in \fg^*$ is co-adjoint valued. If one rewrites the standard Yang-Mills action in the first-order formalism, one can identify $B_z \leftrightarrow {1 \over g^2} \overline{\cF_{\zbar t}}$ on-shell. The addition of Chern-Simons will modify this identification. 
 
-The action is of ``BF'' type:
+
+In terms of these fields, the twisted action can be written in ``BF'' type form:
 \begin{align*}
-\int \d z \; B F_A & = \int \d z \; \Tr(B \d A) +  \frac12 \int \d z \; \Tr(B [A,A]) \\
+\int \; B F_A & = \int \; \Tr(B \d A) +  \frac12 \int \; \Tr(B [A,A]) \\
 & = \int \Tr(B \partial_t A_{\zbar} + B \partial_{\zbar} A_t + B [A_t, A_\zbar]) .
 \end{align*}
-Notice that in the kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a Dolbeault form of type $(1,0)$. 
+Notice that in the kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a Dolbeault form of type $(1,0)$. At general Chern-Simons level, this action would be augmented by a Chern-Simons term using the partial connection: ${i k \over 8 \pi} \int A d A$.
 
 The Lie algebra of gauge symmetries is the familiar one: $C^\infty(\RR^3) \otimes \fg$, i.e. smooth functions valued in $\fg$. 
 An element $\fc \in C^\infty(\RR^3) \otimes \fg$ acts on the fields via the transformation rule
