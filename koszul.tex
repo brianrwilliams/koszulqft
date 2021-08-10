@@ -12,6 +12,10 @@
 
 \def\mod{{\rm mod}}
 
+\NewDocumentCommand \parsec { o }{
+\subsubsection{}
+\IfNoValueF{#1}{\label{#1}}
+}
 \newcommand{\RHom}{\mathbb{R}\operatorname{Hom}}
 
 
@@ -31,14 +35,14 @@ Cohomological shift.
 
 
 
-\section{A biased review of Koszul duality} 
+\section{A short review of Koszul duality} 
 
 %sym and alt
 %maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
 
 Let $\cA$ be an associative algebra.
-We will often work in the generality where $\cA$ is a differentially graded (dg) algebra meaning that it is $\ZZ$ graded and equipped with a square-zero, degree one operator $\d : \cA \to \cA[1]$ such that 
+We will often work in the generality where $\cA$ is a differentially graded (dg) algebra meaning that it is $\ZZ$ graded and equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
 \[
 \d (a \cdot b) = (\d a) \cdot b + (-1)^{|a|} a \cdot (\d b) 
 \]
@@ -46,41 +50,120 @@ where $|a|$ denotes the degree of the element $a$.
 If we forget the product then $(\cA, \d)$ has the structure of a cochain complex. 
 We work over the complex numbers $\CC$ so all products and maps are required to be $\CC$-linear. 
 
+Physically speaking, one should think about $\cA$ as being the algebra of BRST operators of a system of quantum mechanics.
+
 The notion of an $\cA$-module we will also be taken in the dg sense. 
 Precisely, a dg $\cA$-module is a cochain complex $(M, \d_M)$ together with an $\cA$-module structure on $M$ which preserves the gradings and both differentials. 
 When $\d_M = 0$ this returns the usual notion of an $\cA$-module. 
 Unless there is room for confusion, when we speak of algebras and modules we are referring to the dg version.
 
-Physically speaking, one should think about $\cA$ as being the algebra of BRST operators of a system of topological quantum mechanics \brian{best way to be gentle here?}. 
 \brian{what to say about $M$, defects?}
-
+ 
 A map of algebras $f \colon \cA \to \cB$ is a map of cochain complexes which also preserves the associative products.
 Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b = f(a) \cdot b$ where the on the right hand side we use the associative product on $\cB$.  
 
 Similarly one defines a map of modules for a fixed algebra $\cA$. 
 All $\cA$-modules combine to form a category that we denote $\cA-\mod$.
 This category has the structure of a dg category, which means its set of morphisms is equipped with the structure of a cochain complex. 
-Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ the cochain complex of homomorphisms. 
-\brian{gentle way to define this?}
+Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ the dg vector space of homomorphisms in the resulting derived category. 
+The cohomology of this complex comprises the Ext groups ${\rm Ext}_{\cA}(M,N)$. 
+When $M = N$ the dg vector space $\RHom_\cA(M,M)$ acquires the structure of a dg algebra, $H^0$ of which is the space of $\cA$-linear endomorphisms ${\rm End}_{\cA}(M)$.  
+When computing the space of derived homomorphisms needs to first freely resolve the module $M$, we will see an example shortly.
 
-An {\em augmentation} is a map of algebras 
+A particularly important structure on an algebra will be that of an augmentation. 
+An {\em augmentation} on a dg algebra $\cA$ is a map of dg algebras 
 \[
-\ep \colon \cA \to \CC .
+\ep \colon \cA \to \CC 
 \]
-In other words, an augmentation is the data of an $\cA$-module structure on the one-dimensional module which we denote $\CC_\ep$. 
+meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. 
+In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module.
+When we want to stress this interpretation of an augmentation, we denote the one-dimensional module by~$\CC_\ep$.
+
+
+The Koszul dual of a dg algebra $\cA$ is the dg algebra
+\[
+\cA^! \define \RHom_\cA(\CC_\ep,\CC_\ep) .
+\] 
+Notice that the Koszul dual of $\cA$ is defined with respect to an augmentation $\ep$, though when the augmentation is understood we will omit it from the notation. 
+
+\parsec[]
+
+We give a short computation of the Koszul dual of the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
+The augmentation $\ep$ is the obvious one which sends a polynomial to its constant coefficient. 
+
+The resulting module $\CC_{\ep}$ is not free as a $\CC[x]$-module, so we need to find a cochain complex of free modules which resolves it. 
+A natural choice is the so-called ``Koszul complex'' defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
+There is a nontrivial differential defined by $\d \xi = x$. 
+A presentation for this dg algebra is 
+\[
+\bigg(\CC[x, \xi] \, , \, \d = x \frac{\d}{\d \xi} \bigg) 
+\]
+On linear generators, the cochain complex is of the form
+\[
+\begin{tikzcd} 
+1 & x & x^2 & x^3 & \cdots \\
+& \xi \ar[u] & x \xi \ar[u] & x^2 \xi \ar[u] & \cdots . 
+\end{tikzcd}
+\]
+
+The derived space of homomorphisms is equivalent to endomorphisms $\CC[x, \xi] \to \CC[x,\xi]$ which commute with the $\CC[x]$-module structure; that is, endomorphisms which commute with multiplication by $x$. 
+Such endomorphisms are algebraically generated by multiplication by $x$, multiplication by $\xi$, and differentiation by $\xi$. 
+Thus
+\[
+\RHom_{\CC[x]} \left(\CC_\ep, \CC_\ep\right) = \left(\CC\left[x, \xi, \frac{\partial}{\partial \xi} \right] \, , \, \left[x \frac{\partial}{\partial \xi} , -\right] \right) .
+\]
+The differential is given by commutation with the original differential of the Koszul complex. 
+
+One can check that the embedding 
+\[
+\left(\CC[\eta] \, , \, \d = 0 \right) \hookrightarrow \RHom_{\CC[x]} \left(\CC_\ep, \CC_\ep\right) 
+\]
+is a quasi-isomorphism of dg algebras. 
+In other words, we see that the Koszul dual of the polynomial algebra on a bosonic generator $x$ is equivalent to the polynomial algebra on a fermionic generator $\eta = \frac{\partial}{\partial \xi}$
+\[
+\CC[x]^! \simeq \CC[\eta] .
+\]
+
+In a completely analogous way, the Koszul dual of the algebra of polynomials in $n$ bosonic variables is the algebra of polynomials in $n$ fermionic variables. 
+In other words, there is an equivalence
+\[
+\Sym^\bu (V)^! \simeq \wedge^\bu V^\vee .
+\]
+The linear dual on the right-hand side arose in the computation above; the fermionic generator \brian{finish}.
 
 \subsection{Commutative-Lie duality}
 
 %CE complex
 
-Let $\fg$ be a Lie algebra. 
-The Chevalley--Eilenberg complex of $\fg$ 
+Let $\fg$ be a Lie algebra with basis $\{x_1,\ldots, x_n\}$ and structure constants $\{f_{ij}^k\}$. 
+The enveloping algebra of $\fg$, denoted $U \fg$, is the algebra generated by the bosonic generators $x_1,\ldots,x_n$ subject to the relation 
+\[
+x_i x_j - x_j x_i = c_{ij}^k x_k .
+\]
+There is a natural augmentation on this algebra $\ep \colon U \fg \to \CC$ which sends the linear generators to zero $x_i \mapsto 0$ and the constant $1 \in U \fg$ to $1 \in \CC$. 
+
+Notice that if we forget the relation, the computation of the Koszul dual of $U \fg$ is identical to the calculation with the polynomial algebra above. 
+The Koszul complex freely resolving $\CC$ as a $\fg$-module also takes into account the structure constants. 
+It is defined by
+\[
+\left(\CC[x_i,\xi_i] \, , \, x_i \frac{\d}{\d \xi_i} + c_{ij}^k \xi_k \frac{\d}{\d \xi_i}\frac{\d}{\d \xi_j}\right) 
+\]
+so that the space of derived homomorphisms is computed by the following complex 
+\beqn
+\left(\CC[x_i,\xi_i, \eta^i] \, , \, \left[x_i \frac{\d}{\d \xi_i} + c_{ij}^k \xi_k \frac{\d}{\d \xi_i}\frac{\d}{\d \xi_j}, - \right] \right) 
+\eeqn
+where we have used the notation $\eta^i = \frac{\d}{\d \xi_i}$. 
+
+The Chevalley--Eilenberg complex $\clie^\bu(\fg)$ of $\fg$ is the commutative dg algebra which as a graded algebra is the polynomial algebra on $n$ fermionic variables $\eta^1, \ldots, \eta^n$ equipped with the so-called Chevalley--Eilenberg differential
+\beqn
+\left(\CC[\eta^i] \, , \, c_{ij}^k \eta^i \eta^j \frac{\d}{\d \eta_k}  \right) 
+\eeqn
 
 \subsection{Associative-Associative duality} 
 
 %hochschild
 
-\subsection{A look at $\EE_n$ Koszul duality}
+%\subsection{A look at $\EE_n$ Koszul duality}
 
 %\subsection{Deformed Koszul duality}
 
