@@ -11,25 +11,28 @@
 \setlength{\parskip}{10pt}
 \setlength{\headsep}{20pt}
 
+%\usepackage[upint]{stix}
+\usepackage{cmupint}
 
-%%% BIB STUFF
+%%% BIB
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage[backend=biber,
             isbn=false,
             doi=false,
-            maxbibnames=5,
             giveninits=true,
             style=alphabetic,
+            useprefix=true,
+            maxcitenames=5,
+            maxbibnames=5,
+            sorting=nyt,
+            labelnumber, defernumbers = true,
             citestyle=alphabetic]{biblatex}
-\usepackage{url}
-\setcounter{biburllcpenalty}{7000}
-\setcounter{biburlucpenalty}{8000}
 \renewbibmacro{in:}{}
-\renewcommand*{\bibfont}{\footnotesize}
+%\usepackage[capitalise]{cleveref}
+\setlength{\headheight}{14pt}
 
-\usepackage{xcolor}
+%%% REFS
+
 \definecolor{e-mail}{rgb}{0,.40,.80}
 \definecolor{reference}{rgb}{.20,.60,.22}
 \definecolor{citation}{rgb}{0,.40,.80}
@@ -38,7 +41,7 @@
             linkcolor=reference,
             citecolor=citation,
             urlcolor=e-mail]{hyperref}
-\usepackage{cleveref}
+\usepackage[capitalise]{cleveref}
 
 %%% FONT PACKAGES
 \usepackage{amsfonts, slashed}
@@ -261,7 +264,14 @@
 \end{equation}
 }
 
-%%% MTHEORY STUFF
+\def\mod{{\rm mod}}
+
+\NewDocumentCommand \parsec { o }{
+\subsubsection{}
+\IfNoValueF{#1}{\label{#1}}
+}
+\newcommand{\RHom}{\mathbb{R}\operatorname{Hom}}
+
 
 
 

@@ -3,24 +3,14 @@
 \usepackage{macros}
 \spacing{1.25}
 
+\addbibresource{references.bib}
+
 \author{Natalie M. Paquette and Brian R. Williams}
 \date{\today}
 \title{Koszul duality in QFT}
 
 \def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
 \def\natalie#1{{\textcolor{green!65!black}{NMP: {#1}}}}
-
-\def\mod{{\rm mod}}
-
-\NewDocumentCommand \parsec { o }{
-\subsubsection{}
-\IfNoValueF{#1}{\label{#1}}
-}
-\newcommand{\RHom}{\mathbb{R}\operatorname{Hom}}
-
-
-%\usepackage[upint]{stix}
-\usepackage{cmupint}
 
 \begin{document}
 \maketitle
@@ -1237,39 +1227,6 @@ We will show that this gauge anomaly is proportional to
 %Kapustin--Salina.
 %Check refs by Mnev et al on BV-BFV?
 
-\begin{thebibliography}{KWWY14}
-
-\bibitem[ACNV17]{ACNV}
-M.~Aganagic, K.~Costello, J.~McNamara and C.~Vafa,
-``Topological Chern-Simons/Matter Theories,''
-[arXiv:1706.09977 [hep-th]].
-
-\bibitem[CDG20]{CDG}
-K.~Costello, T.~Dimofte and D.~Gaiotto,
-``Boundary Chiral Algebras and Holomorphic Twists,''
-[arXiv:2005.00083 [hep-th]].
-
-\bibitem[MW97]{MW97}
-G.~W.~Moore and E.~Witten,
-``Integration over the u plane in Donaldson theory,''
-Adv. Theor. Math. Phys. \textbf{1}, 298-387 (1997)
-doi:10.4310/ATMP.1997.v1.n2.a7
-[arXiv:hep-th/9709193 [hep-th]].
-
-\bibitem[W88]{W88}
-E.~Witten,
-``Topological Quantum Field Theory,''
-Commun. Math. Phys. \textbf{117}, 353 (1988)
-doi:10.1007/BF01223371
-
-\bibitem[WZ92]{WZ92}
-E.~Witten and B.~Zwiebach,
-``Algebraic structures and differential geometry in 2-D string theory,''
-Nucl. Phys. B \textbf{377}, 55-112 (1992)
-doi:10.1016/0550-3213(92)90018-7
-[arXiv:hep-th/9201056 [hep-th]].
-
-
-\end{thebibliography}
+\printbibliography
 
 \end{document}
