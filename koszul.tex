@@ -1,13 +1,21 @@
 \documentclass[11pt]{amsart}
 
 \usepackage{macros}
+
 \spacing{1.25}
 
 \addbibresource{references.bib}
 
-\author{Natalie M. Paquette and Brian R. Williams}
+\author{Natalie M. Paquette}
+\address{Institute for Advanced Study, School of Natural Sciences, Princeton NJ, 08540, USA}
+\address{Department of Physics, University of Washington, Seattle, WA, 98195-1560, USA}
+\email{npaquett@uw.edu}
+\author{Brian R. Williams}
+\address{School of Mathematics, University of Edinburgh, Edinburgh, UK}
+\email{brianwilliams.math@gmail.com}
+
 \date{\today}
-\title{Koszul duality in QFT}
+\title{Koszul duality in quantum field theory}
 
 \def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
 \def\natalie#1{{\textcolor{green!65!black}{NMP: {#1}}}}
@@ -15,6 +23,9 @@
 \begin{document}
 \maketitle
 
+\begin{abstract}
+...
+\end{abstract}
 
 
 \section{Introduction}
@@ -32,32 +43,27 @@ Cohomological shift.
 %CE(g) and U(g)
 
 Let $\cA$ be an associative algebra.
-We will often work in the generality where $\cA$ is a differentially graded (dg) algebra meaning that it is $\ZZ$ graded and equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
+We will often work in the generality where $\cA$ is a differentially graded (dg) algebra. A dg-algebra is $\ZZ$-graded algebra equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
 \[
 \d (a \cdot b) = (\d a) \cdot b + (-1)^{|a|} a \cdot (\d b) 
 \]
-where $|a|$ denotes the degree of the element $a$. 
+where $|a|$ denotes the degree of the element $a$. In physical contexts, one should think about $\cA$ as being the algebra of operators of a system of quantum mechanics, and $\d$ may be a BRST operator or a square-zero supercharge, with the operators graded by ghost number or fermion number respectively \footnote{In many physical and mathematical contexts, we only require a $\ZZ/2\ZZ$ grading, e.g. fermion parity, but we will restrict to the $\ZZ$-graded case for now.}.
 If we forget the product then $(\cA, \d)$ has the structure of a cochain complex. 
 We work over the complex numbers $\CC$ so all products and maps are required to be $\CC$-linear. 
 
-Physically speaking, one should think about $\cA$ as being the algebra of operators of a system of quantum mechanics.
-The differential $\d$ is the BRST operator. 
-
-The notion of an $\cA$-module we will also be taken in the dg sense. 
-Precisely, a dg $\cA$-module is a cochain complex $(M, \d_M)$ together with an $\cA$-module structure on $M$ which preserves the gradings and both differentials. 
+The notion of an $\cA$-module will also be taken in the dg sense. A dg $\cA$-module is a cochain complex $(M, \d_M)$ together with an $\cA$-module structure on $M$ which preserves the gradings and both the differentials $\d, \d_M$. 
 When $\d_M = 0$ this returns the usual notion of an $\cA$-module. 
 Unless there is room for confusion, when we speak of algebras and modules we are referring to the dg version.
 
 \brian{what to say about $M$, defects?}
  
 A map of algebras $f \colon \cA \to \cB$ is a map of cochain complexes which also preserves the associative products.
-Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b = f(a) \cdot b$ where the on the right hand side we use the associative product on $\cB$.  
+Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b := f(a) \cdot b$ where the on the right hand side we use the associative product on $\cB$.  \natalie{this is the definition of the LHS right?}
 
-Similarly one defines a map of modules for a fixed algebra $\cA$. 
-All $\cA$-modules combine to form a category that we denote $\cA-\mod$.
-This category has the structure of a dg category, which means its set of morphisms is equipped with the structure of a cochain complex. 
-Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ the dg vector space of homomorphisms in the {\em derived category}. 
+Similarly one can define a map of modules for a fixed algebra $\cA$.  All $\cA$-modules combine to form a category that we denote $\cA-\mod$.
+This category has the structure of a dg category, which means its set of morphisms is equipped with the structure of a cochain complex (roughly, the space of Homs between any two fixed modules is graded and equipped with a nilpotent differential). 
 
+Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ \natalie{add a footnote here about what the R in RHom means} the dg vector space of homomorphisms in the {\em derived category}. 
 We will not use the full technology of derived categories in these notes, but we remark on some important features. 
 The $i$th cohomology of the complex $\RHom_{\cA} (M,N)$ comprises the Ext groups ${\rm Ext}^i_{\cA}(M,N)$. 
 For all $M,N$ the group ${\rm Ext}^0_{\cA}(M,N)$ agrees with the naive space of $\cA$-linear homomorphisms $M \to N$. 
@@ -68,7 +74,7 @@ The space ${\rm Ext}^1_{\cA}(M,N)$ is the space of equivalences classes of short
 
 When $M = N$ the dg vector space $\RHom_\cA(M,M)$ acquires the structure of a dg algebra.
 The zeroth cohomology agrees with the algebra of $\cA$-linear endomorphisms ${\rm End}_{\cA}(M)$.  
-In general, to compute the space of derived homomorphisms needs to first freely resolve the module $M$, we will see an example shortly.
+In general, to compute the space of derived homomorphisms needs to first \textit{freely resolve} the module $M$, and we will see an example shortly.
 
 A particularly important structure on an algebra will be that of an augmentation. 
 An {\em augmentation} on a dg algebra $\cA$ is a map of dg algebras 
@@ -76,7 +82,7 @@ An {\em augmentation} on a dg algebra $\cA$ is a map of dg algebras
 \ep \colon \cA \to \CC 
 \]
 meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. 
-In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module.
+In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module. We will explain physical interpretation of the augmentation later in this note, and in all of our examples the augmentation is unique.
 When we want to stress this interpretation of an augmentation, we denote the one-dimensional module by~$\CC_\ep$.
 
 
@@ -84,14 +90,16 @@ The Koszul dual of a dg algebra $\cA$ is the dg algebra
 \[
 \cA^! \define \RHom_\cA(\CC_\ep,\CC_\ep) .
 \] 
-Notice that the Koszul dual of $\cA$ is defined with respect to an augmentation $\ep$, though when the augmentation is understood we will omit it from the notation. 
+Notice that the Koszul dual of $\cA$ is defined with respect to an augmentation $\ep$, though when the augmentation is understood we will omit it from the notation. Roughly speaking, this denotes that the Koszul dual algebra is the space of symmetries of the trivial module that commute with $\cA$. Further, notice that even if a dg-algebra $\cA$ is an ordinary associative algebra with trivial differential, its Koszul dual will be a complex with support in cohomological degrees $\geq 1$. 
+
+\natalie{we should say something about Koszul dual modules too before moving on I think.}
 
 \subsection{Free field example} 
 
 We give a short computation of the Koszul dual of the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
 The augmentation $\ep$ is the obvious one which sends a polynomial to its constant coefficient. 
 
-The resulting module $\CC_{\ep}$ is not free as a $\CC[x]$-module, so we need to find a cochain complex of free modules which resolves it. 
+The resulting module $\CC_{\ep}$ is not free as a $\CC[x]$-module, so we need to find a cochain complex of free modules which resolves it. \natalie{this is unfamiliar to physicists. we need to answer what a free module is and why someone would need to resolve it}
 A natural choice is the so-called ``Koszul complex'' defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
 There is a nontrivial differential defined by $\d \xi = x$. 
 A presentation for this dg algebra is 
@@ -113,17 +121,18 @@ The derived space of homomorphisms is equal to linear endomorphisms
 \] 
 which commute with the $\CC[x]$-module structure; that is, endomorphisms which commute with multiplication by $x$. 
 Such endomorphisms are algebraically generated by multiplication by $x$, multiplication by $\xi$, and differentiation by $\xi$. 
-Thus
+Thus 
 \[
 \RHom_{\CC[x]} \left(\CC_\ep, \CC_\ep\right) = \left(\CC\left[x, \xi, \frac{\partial}{\partial \xi} \right] \, , \, \left[x \frac{\partial}{\partial \xi} , -\right] \right) .
 \]
-The differential is given by commutation with the original differential of the Koszul complex. 
+The differential is given by taking the commutator with the original differential of the Koszul complex. 
 
 One can check that the embedding 
 \[
 \left(\CC[\eta] \, , \, \d = 0 \right) \hookrightarrow \RHom_{\CC[x]} \left(\CC_\ep, \CC_\ep\right) 
 \]
-is a map of cochain complexes and induces an isomorphism on cohomology (we call such a map a quasi-isomorphism).
+is a map of cochain complexes and induces an isomorphism on cohomology. \natalie{we need to write it explicitly. that these would be quasi-iso is non-obvious to physicists}We call such a map a \textit{quasi-isomorphism}. We will be interested in identifying Koszul dual algebras up to quasi-isomorphism, as ultimately the physical operator algebras of interest come from passing to cohomology in the BRST framework. \natalie{physically we should expand on this point more, perhaps in the examples? if so, make a note here about that.}
+
 In other words, we see that the Koszul dual of the polynomial algebra on a bosonic generator $x$ is equivalent to the polynomial algebra on a fermionic generator $\eta = \frac{\partial}{\partial \xi}$
 \[
 \CC[x]^! \simeq \CC[\eta] .
@@ -135,6 +144,8 @@ In other words, there is an equivalence
 \Sym^\bu (V^\vee)^! \simeq \wedge^\bu V .
 \]
 The linear dual on the right-hand side $V^{\vee \vee} \cong V$ arose in the computation above; the fermionic generator $\eta = \frac{\partial}{\partial \xi}$ is naturally dual to the generator $\xi$. 
+
+\natalie{I think we should clarify the cohomological degree shift here, what do you think?}
 
 \subsection{A gauge theory example}
 
@@ -195,12 +206,12 @@ It is immediate to see that $\d_W \circ \d_W = 0$ and so we obtain the commutati
 \cA = \left(\CC[x_i, \xi^j] \, , \, \d = (\partial_j W) \frac{\partial}{\partial \xi_j} \right).
 \]
 
-Observe that the zeroth cohomology $H^0$ of this algebra is precisely the Jacobian ring of~$W$
+Observe \natalie{should just add the computation I think...} that the zeroth cohomology $H^0$ of this algebra is precisely the Jacobian ring of~$W$
 \[
 \CC[x_i] \, / \, (\partial_i W) .
 \]
 
-This algebra $\cA$ resolving the Jacobian ring has the following special property: it is self Koszul dual. 
+This algebra $\cA$ resolving the Jacobian ring has the following special property: it is self-Koszul dual. 
 This means that $\cA^!$ is equivalent to the original algebra $\cA$. 
 When $W$ is a constant function, so that the differential $\d$ vanishes, this is immediate:
 \[
@@ -209,7 +220,9 @@ When $W$ is a constant function, so that the differential $\d$ vanishes, this is
 Note that it is absolutely necessary to remember the full algebra $\cA$, even when $W = 0$. 
 For instance, the degree zero piece is simply the algebra of polynomials in the variables $x_i$, which is far from being self Koszul dual.
 
-It is an easy exercise to see that even for a more general superpotential $W$ the result still holds that $\cA^! \simeq \cA$.
+It is an easy exercise \natalie{not easy for physicists :) but do we want to do it here?} to see that even for a more general superpotential $W$ the result still holds that $\cA^! \simeq \cA$.
+
+\natalie{indeed, would like to connect this to some baby example of the chiral ring of some theory, need to think a bit more}
 
 %hochschild
 
