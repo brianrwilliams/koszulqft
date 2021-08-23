@@ -306,36 +306,15 @@ It is an easy exercise \natalie{not easy for physicists :) but do we want to do 
 
 %\subsection{Deformed Koszul duality}
 
-\section{QFT rudiments}
-%clarify: algebra of local ops vs. dense inclusion we work with in practice?
+\section{Maurer--Cartan elements and algebraic couplings}
 
-%Explain our conventions/some basic facts about the cohomological degree as ghost number, as well as the meaning of various degree shifts, which are unfamiliar to most physicists. 
-
-\subsection{Local operators}
-
-\brian{warning about 'local operators' vs physical local operators}
-\brian{cohomological/ghost number degrees}
-
-Let $\cB$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on this space. 
-The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
-
-A one-dimensional theory is topological\footnote{In general dimensions, $Q$-exactness of all translation generators is the minimal condition for a cohomological theory to be called topological, and in some contexts this condition is referred to as weakly-topological. A stronger statement that many topological theories satisfy is $Q$-exactness of all components of the stress-energy tensor.} if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $(-1)$, which satisfies
-\beqn\label{eqn:triv}
-\{Q, \hat{Q}\} = \frac{\partial}{\partial t} .
-\eeqn
-In words, translations along the line are trivial in BRST cohomology. 
-
-The space of local operators $\cB$ is equipped with an algebra structure coming from the operator product expansion. 
-Together with $Q$ we assume this equips $\cB$ with the structure of a {\em dg} (differential graded) algebra. In the case of an associative dg-algebra (dga), there is an associative multiplication and a differential which acts as a derivation on the associative product. 
-More generally, $\cB$ is endowed with higher operations which combined with $Q$ to form an $A_\infty$ algebra. 
-We will say a few remarks about this more general situation in what follows. 
 
 
 
 
 %To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x \Omega^{d-2}(M)... how is Koszul duality insensitive to this?
 
-\subsection{Couplings and Maurer--Cartan elements} 
+\subsection{Coupling two systems of quantum mechanics} 
 
 Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras of local operators we denote by $\cA$ and~$\cB$. 
 
@@ -442,13 +421,18 @@ and
 \brian{off by a sign}
 Thus, we see that in order for the Maurer--Cartan equation to hold we must have $f_{ab}^c \rho_{cj}^i = \rho^i_{ak} \rho^k_{bj}$ for all $a,b,i,j$. 
 This is equivalent to the condition that $\rho$ be a well-defined $\fg$-representation. 
+
 \subsection{Other examples}
+Let $\psi_i$ and $\chi_j$, $i=1,\ldots, n$ be two sets of odd variables which satisfy the commutation relations
+\[
+\psi_i \chi_i + \chi_i \psi_i = 1, \quad i,j=1,2 (\text{not summed}).
+\]
+These variables generate a Clifford algebra. 
 
-\begin{eg} 
-\brian{four fermion term}
-\end{eg}
+%Of course, there is an abstract isomorphism $\cA \cong \cB$. 
 
-More abstractly \brian{get in to KD}
+
+
 
 %In physics terms, an infinitesimal symmetry of a field theory can be encoded by coupling a background gauge field in a gauge invariant way.
 %For quantum mechanical theories which are topological there is a purely algebraic way to formulate such a gauge invariant coupling. 
@@ -469,7 +453,29 @@ More abstractly \brian{get in to KD}
 %\clie^\bu(\fh \, , \, \Obs).
 %\]
 %\end{prop} 
+\section{QFT rudiments}
+%clarify: algebra of local ops vs. dense inclusion we work with in practice?
 
+%Explain our conventions/some basic facts about the cohomological degree as ghost number, as well as the meaning of various degree shifts, which are unfamiliar to most physicists. 
+
+\subsection{Local operators}
+
+\brian{warning about 'local operators' vs physical local operators}
+\brian{cohomological/ghost number degrees}
+
+Let $\cB$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on this space. 
+The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
+
+A one-dimensional theory is topological\footnote{In general dimensions, $Q$-exactness of all translation generators is the minimal condition for a cohomological theory to be called topological, and in some contexts this condition is referred to as weakly-topological. A stronger statement that many topological theories satisfy is $Q$-exactness of all components of the stress-energy tensor.} if there exists an endomorphism $\hat{Q}$ of the local operators, of cohomological degree $(-1)$, which satisfies
+\beqn\label{eqn:triv}
+\{Q, \hat{Q}\} = \frac{\partial}{\partial t} .
+\eeqn
+In words, translations along the line are trivial in BRST cohomology. 
+
+The space of local operators $\cB$ is equipped with an algebra structure coming from the operator product expansion. 
+Together with $Q$ we assume this equips $\cB$ with the structure of a {\em dg} (differential graded) algebra. In the case of an associative dg-algebra (dga), there is an associative multiplication and a differential which acts as a derivation on the associative product. 
+More generally, $\cB$ is endowed with higher operations which combined with $Q$ to form an $A_\infty$ algebra. 
+We will say a few remarks about this more general situation in what follows. 
 
 \subsection{Topological descent} 
 \natalie{reminder to revert to bib}
