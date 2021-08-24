@@ -166,7 +166,7 @@ The linear dual on the right-hand side $V^{\vee \vee} \cong V$ arose in the comp
 
 \natalie{I think we should clarify the cohomological degree shift here, what do you think?}
 
-\subsection{A gauge theory example}
+\subsection{An example from gauge theory}
 
 %CE complex
 
@@ -404,7 +404,7 @@ When the algebras $\cA,\cB$ are presented in this way as a quantization, we will
 
 We turn to a very important example. 
 
-\subsection{Gauge coupling} \label{sec:gauge}
+\subsection{Gauge coupling} \label{sec:gaugealg}
 
 Fix a Lie algebra $\fg$ and
 suppose that $\cA$ is the (commutative) algebra $\clie^\bu(\fg)$ of Chevalley--Eilenberg cochains of $\fg$. 
@@ -614,25 +614,50 @@ where we integrate over any closed oriented one-manifold $S$.
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then this Lagrangian is of ghost number $k-1$. 
 So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree~$+1$. \natalie{say something about the meaning of higher ghost number deformations in twisted theories?}
 
-\natalie{topological descent gives BRST invariance to first order, but the Lagrangian will get upgraded to a path ordered exponential in the full path integral... BRST invariance to all perturbative orders will force the coupling to satisfy MC eq'n. We also wanted to explain how the MC equation could take the form of a MC eqn for an $A_{\infty}$ algebra. Where do we want these discussions to go?}
+Thus, to first-order, topological descent gives BRST invariance of the Lagrangian.
+At the quantum level, the Lagrangian gets upgraded to a path ordered exponential. BRST invariance to all perturbative orders will force the coupling to satisfy the Maurer--Cartan equation. 
 
+The path-ordered exponential of a Lagrangian $\cL$ is of the form
+\[
+\PExp \int_\RR \cL .
+\]
+Starting with some local operator $\cO \in \cB$ of ghost number one, we apply this to the case $\cL = \cO^{(1)} = (\hat{Q} \cdot \cO) \d t$.
+The BRST variation of the path integral is
+\[
+\int_{u=-\infty}^\infty \d u \left( \int_{-\infty}^{t = u} \d t (\hat{Q} \cdot \cO) (t) \right) \big(\partial_u \cO(u) + \Hat{Q} (Q \cO)(u) \big) \left( \int_{s=u}^{\infty} \d s (\hat{Q} \cdot \cO) (s) \right) .
+\]
+Integrating the $\partial_u(-)$ term by parts, we pick up two boundary terms corresponding to $u=s$ and $u=t$:
+\[
+\int_{u=-\infty}^\infty \d u \left( \int_{-\infty}^{t = u} \d t (\hat{Q} \cdot \cO) (t) \right) \big(\cO (u) (\Hat{Q}\cO) (u) - (\Hat{Q}\cO) (u) \cO (u) + \Hat{Q} (Q \cO)(u) \big) \left( \int_{s=u}^{\infty} \d s (\hat{Q} \cdot \cO) (s) \right) .
+\]
+We now recognize the Maurer--Cartan equation. 
+Since $\Hat{Q}$ is a derivation, we observe that the last expression vanishes precisely when
+\[
+Q \cO + \cO \star \cO = 0 
+\]
+which is the Maurer--Cartan equation for $\cB$, thought of as a dg Lie algebra. 
+
+\natalie{We also wanted to explain how the MC equation could take the form of a MC eqn for an $A_{\infty}$ algebra. Where do we want these discussions to go?}
 
 \subsection{From Maurer--Cartan elements to local couplings} 
 
 In this section we relate the notion of an {\em algebraic coupling} to the more standard notion of a local Lagrangian type coupling between quantum mechanical theories. 
-The bridge is given by topological descent. 
+The bridge is given by topological descent and is very similar in spirit to the last section where we only had a single algebra~$\cB$. 
 
 Suppose that $\alpha$ is an algebraic coupling between two quantum mechanical systems $\cA$ and $\cB$. 
 View $\alpha \in \cA \otimes \cB$ as a local operator inside of the uncoupled system. 
 Since the uncoupled system is topological (as both $\cA$ and $\cB$ are) we can run topological descent to obtain the one-form operator $\alpha^{(1)} \in \Omega^1 (S , \cA \otimes \cB)$.
 Further, we can form the Lagrangian 
 \[
-S_\alpha \define \int_S \alpha^{(1)} .\]
-\brian{cite Kevin and Natalie, action is gauge invariant.}
+ \int_S \alpha^{(1)} .\]
 
-\begin{eg}
-\label{eg:gaugelocal}
-Let's return to Example \ref{eg:gauge} which portrayed the typical example of a gauge invariant coupling of a free quantum mechanical system. 
+By the above discussion, we see that $\alpha$ is an algebraic coupling, meaning it satisfies the Maurer--Cartan equation for $\cA \otimes \cB$, if and only if $\int_S \alpha^{(1)}$ is BRST invariant at the perturbative quantum level.
+
+\subsection{One-dimensional gauge theory}
+\label{sec:gaugetheory}
+
+We return to Example \ref{sec:gaugealg} which clearly had some relationship to gauge theory. 
+
 In this example $\cA = \clie^\bu(\fg)$ with $Q_{\cA}$ the Chevalley--Eilenberg differential of $\fg$ and $\cB = \cO(T^* V)$ with trivial BRST differential $Q_{\cB} = 0$. 
 
 The linear local operators in $\cA$ are spanned by the ghost operators $\{\fc^a\}$ where $a = 1,\ldots, \dim(\fg)$ which all have cohomological degree $(+1)$. 
@@ -642,7 +667,7 @@ The algebraic coupling defined by the data of a $\fg$-representation $\rho$ is $
 The one-form operator $\alpha^{(1)}$ is given by applying 
 
 The Lagrangian obtained by topological 
-\end{eg}
+
 
 A detailed and rigorous formulation of the results in this section within the Batalin--Vilkovisky formalism has been given by Grady, Li, and Li in \cite{GLL} and further explained by Si Li in \cite{LiVertex}.
 
