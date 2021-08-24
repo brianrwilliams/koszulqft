@@ -297,7 +297,7 @@ When $W$ is a constant function, so that the differential $\d$ vanishes, this is
 Note that it is absolutely necessary to remember the full algebra $\cA$, even when $W = 0$. 
 For instance, the degree zero piece is simply the algebra of polynomials in the variables $x_i$, which is far from being self Koszul dual.
 
-It is an easy exercise \natalie{not easy for physicists :) but do we want to do it here?} to see that even for a more general superpotential $W$ the result still holds that $\cA^! \simeq \cA$.
+It is an exercise \natalie{not easy for physicists :) but do we want to do it here?} \brian{i can prove it using a spectral sequence, but maybe that's too much to do here...} to see that even for a more general superpotential $W$ the result still holds that $\cA^! \simeq \cA$.
 
 \natalie{indeed, would like to connect this to some baby example of the chiral ring of some theory, need to think a bit more}
 
@@ -683,7 +683,33 @@ A detailed and rigorous formulation of the results in this section within the Ba
 %universal line defects and Koszul duality
 %stress relationship between three perspectives: MC(AxB), Hom(A!, B), couplings as local functionals from descent
 
-\subsection*{Topological mechanics}
+We extend the perspective on coupling of two one-dimensional systems to coupling a higher dimensional ``bulk'' theory to a theory of quantum mechanics along a one-dimensional line defect. 
+
+The basic idea is very similar to the above discussion, though we will need to make some simplifying assumptions. 
+We start with some bulk theory on a manifold of the form 
+\[
+\RR_t \times M 
+\] 
+where $M$ is some manifold. 
+The crucial assumption we make is that the bulk theory is {\em topological} along $\RR \times \{x\}$ for any $x \in M$. 
+This means that OPE's are independent of the coordinate $t$. \brian{can we say this better?}
+An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. 
+
+Given our simplifying assumptions, the results of the previous sections characterize the coupling between $\cA_x$ and any other algebra $\cB$ representing an independent quantum mechanical system supported on $\RR \times \{x\}$. 
+We have the following
+
+\begin{prop}\label{prop:line}
+There is a one-to-one correspondence between the space of couplings of $\cA_x$ to $\cB$ and the space of Maurer--Cartan elements in 
+\[
+\cA_x \otimes \cB .
+\]
+\end{prop}
+
+In practice, the bulk theory will \brian{finish}
+
+\subsection{Line defects in gauge theory}
+
+\brian{sort of a mess below, needs cleaning and pruning}
 
 %free fermions/bosons in CS example? In 4d CS? Classical limit to connect Assoc/Assoc duality to Comm/Lie? 
 %references for lines in 4d N=4, 2d YM, boson and fermion descriptions
@@ -715,26 +741,13 @@ The free action is identical
 The algebra of operators of the quantum mechanical system is the Clifford algebra $\Cl(\RR^n)$ on $\RR^n$ equipped with its Euclidean metric. 
 
 
-
-\subsection*{Coupling to bulk gauge theories}
-
-\subsection{Coupling to line defects} 
-
 Let's suppose we have a field theory on a manifold of the form $\RR_t \times M$ with the property that it is {\em topological} along the $\RR_t$-direction. 
 Denote by $\Obs$ the local operators along $\RR_t$. 
 
 Suppose that $\cA$ is an associative algebra which represents some other quantum mechanical system. 
 Our goal is to couple $\cA$ to the original theory as a line operator along $\RR_t$. 
 
-\begin{prop}\label{prop:line}
-There is a one-to-one correspondence between the space of couplings of $\cA$ to $\Obs$ and the space of Maurer--Cartan elements in 
-\[
-\Obs \otimes \cA .
-\]
-\end{prop}
-
-We provide a sketch of the proof of this result. 
-Suppose that $\alpha \in $
+\subsection{The universal line defect}
 
 %explanation about augmentation ideal in more general case should go here
 
@@ -750,19 +763,22 @@ Suppose that $\alpha \in $
 %}
 
 We turn to an illustrative example in three-dimensions of a free field theory on $\RR^3$. In spite of its simplicity, this theory is a useful toy model for illustrating the abstract considerations of the previous section. 
-This theory we study is equivalent to the holomorphic twist of the $3d$ $\cN=2$ chiral multiplet. The details of this twist for general 3d $\cN=2$ theories appear in \cite{CDG20}, to which we refer the interested reader for details. 
+This theory we study is equivalent to the holomorphic twist of the $3d$ $\cN=2$ chiral multiplet. The details of this twist for general 3d $\cN=2$ theories appear in \cite{CDG20,ESW}, to which we refer the interested reader for details. 
 
+The presentation of the holomorphic twist depends on the R-symmetry data we assign to the untwisted theory. 
 The component fields of a 3d chiral multiplet of R-charge $r$ include a complex scalar $\phi$ of R-charge $r$ and four fermions $\psi_{\pm}$ with R-charges  $r-1$ and their conjugates $\bar{\psi}_{\pm}$ with R-charges $1-r$. We choose $r=0$ \footnote{Since the R-charge governs the twisted spin of the fields, more general R-charge assignments will result in the fields transforming as sections of certain powers of the canonical bundle: the $r/2$ power for the twisted scalar, and the $1-r/2$ power for the twisted fermion.}.  
 
-The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). After the holomorphic twist with respect to a choice of supercharge $\bar{Q}_+$, the surviving degrees of freedom are the scalar field and one of the fermions, $\bar{\psi}_-$. One can check from the supersymmetry transformations that these components are $\bar{Q}_+$-closed, but not exact. 
+The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). After the holomorphic twist with respect to a choice of supercharge $\bar{Q}_+$ \brian{introduce this notation}, the surviving degrees of freedom are the scalar field and one of the fermions, $\bar{\psi}_-$. One can check from the supersymmetry transformations that these components are $\bar{Q}_+$-closed, but not exact. 
 
 The holomorphic twist involves a choice of coordinates of the form
 \[
 (t , z) \in \RR_t \times \CC_z \simeq \RR^3
 \]
 where $t$ is a real coordinate along $\RR$ and $z$ is a holomorphic coordinate along the remaining $\CC \cong \RR^2$ direction. 
+The theory will be topological along $\RR$ but only holomorphic along $\CC_z$. 
+This means that the OPE depends trivially on $t$ and holomorphically on $z$. 
 
-Per the discussion of the previous section, one may also perform descent on the two $Q$-closed fields of the twisted theory. If we denote the descendent 1-forms associated to an operator $\mathcal{O}$ by $\mathcal{O}^{(1)}$, then by construction these operators satisfy
+Per the discussion of the previous section, one may also perform descent on the two \brian{Is this $\Bar{Q}_+$ above?} $Q$-closed fields of the twisted theory. If we denote the descendent 1-forms associated to an operator $\mathcal{O}$ by $\mathcal{O}^{(1)}$, then by construction these operators satisfy
 \[
 \bar{Q}_+(dz \wedge \mathcal{O}^{(1)}) = d (dz \wedge \mathcal{O})
 \]
@@ -1087,11 +1103,17 @@ We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypica
 \brian{I'd like to preempt this maybe by also discussing some characterization of line operators in 3d N=2 theories. 
 Is there any sort of quantum correction that one sees in the physical setup that we could compare to our calculation below?}
 
-Our second example will be another example of a theory that arises from a holomorphic-topological twist of a 3d $\cN=2$ theory. We will see that, unlike in the case of the free twisted chiral multiplet, the algebra of local operators will acquire nontrivial quantum corrections that are essential for Koszul duality to work. We study the holomorphic-topological twist of Chern-Simons theory with Lie algebra $\fg$ at the ``critical'' level $k = h^{\vee}$ , where $k > 0$ is the bare level, $h^{\vee}$ is the dual Coxeter number of the Lie algebra, and $k - h^{\vee}$ is the Chern-Simons level incorporating the one-loop shift from integrating out the vector multiplet gauginos. 
+Our second example will be another example of a theory that arises from a holomorphic-topological twist of 3d $\cN=2$ gauge theory. 
+We treat only the pure gauge theory case, coupling to chiral multiplets (as discussed in the previous section) can be handled similarly. 
+We will see that, unlike in the case of the free twisted chiral multiplet, the algebra of local operators will acquire nontrivial quantum corrections that are essential for Koszul duality to work. 
+
+One interpretation of this holomorphic-topological twist is as Chern-Simons theory with Lie algebra $\fg$ at the ``critical'' level $k = h^{\vee}$, where $k > 0$ is the bare level, $h^{\vee}$ is the dual Coxeter number of the Lie algebra, and $k - h^{\vee}$ is the Chern-Simons level incorporating the one-loop shift from integrating out the vector multiplet gauginos.  \brian{probably need to expand this statement}
 
 Physically, we begin with a vector multiplet with components $(A_{\mu}, \sigma, \lambda_{\pm}, \bar{\lambda}_{\pm})$ with canonical R-charge and spin quantum numbers, and will consider the components of the gauge field on $\RR_t \times \CC_{z}$ (though as explained in \natalie{cite} the twisted construction to follow may be defined on any 3-manifold with a transverse holomorphic foliation). The gauge field takes values in some compact gauge group, though for the purposes of studying local operators we will only need to specify the Lie algebra $\fg$ in what follows. The vector multiplet also includes a real adjoint-valued scalar, $\sigma \in \fg_{\RR}$, and $\fg$-valued gauginos. 
 
-With respect to the twisting supercharge $Q:= \bar{Q}_+$, it is easy to check that we have the following $Q$-closed combinations:
+\brian{We are confusing $Q$ with both the twist and the full BRST operator of the twisted theory.}
+
+With respect to the twisting supercharge $Q \define \bar{Q}_+$, it is easy to check that we have the following $Q$-closed combinations:
 \begin{align}
 A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
 \cA_t &= A_t - i \sigma.
@@ -1123,42 +1145,49 @@ In terms of these fields, the twisted action can be written in ``BF'' type form:
 \end{align*}
 Notice that in the kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a Dolbeault form of type $(1,0)$. At general Chern-Simons level, this action would be augmented by a Chern-Simons term using the partial connection: ${i k \over 8 \pi} \int A d A$.
 
+\subsection{Gauge invariant local operators}
+
 The Lie algebra of gauge symmetries is the familiar one: $C^\infty(\RR^3) \otimes \fg$, i.e. smooth functions valued in $\fg$. 
 An element $\fc \in C^\infty(\RR^3) \otimes \fg$ acts on the fields via the transformation rule
 \begin{align*}
-\delta A_\zbar & = \partial_{\zbar} \fc + [\fc, A_\zbar] \\
-\delta A_t & = \partial_t \fc + [\fc,A_t] \\
-\delta B & = [\fc, B] .
+Q A_\zbar & = \partial_{\zbar} \fc + [\fc, A_\zbar] \\
+Q A_t & = \partial_t \fc + [\fc,A_t] \\
+Q B & = [\fc, B] .
 \end{align*}
-\brian{I switch between $Q$ and $\delta$. We should fix a convention.}
 
-The classical BRST complex of local operators supported at $(z,t) = (0,0)$ is equivalent to the Chevalley--Eilenberg complex
+Forgetting the terms in the BRST operator coming from the Lie algebra structure on $\fg$, we can argue as in the last section that any local operator supported at $(z,t) = (0,0)$ which depends on $\partial^n_{\zbar} \fc^a$, $\partial^n_t \fc^a$, $\partial^n_{\zbar} B_a$, or $\partial^n_t B_a$ is BRST exact. 
+Thus, only operators depending on $\partial_z^n \fc^a$ and $\partial^n_z B_a$ survive to BRST cohomology.
+
+Explicitly, as a graded algebra the classical BRST complex $\cA / \hbar$ is a free polynomial algebra on an infinite number of generators
 \[
-\clie^\bu \left(\fg[\ep][[z]]\right)
+\CC[\fc^a, \partial_z \fc^a , \partial^2_z \fc^a, \ldots, B_a , \partial_z B_a , \partial_z^2 B_a, \ldots], \qquad {a=1, \ldots, \dim \fg} 
+\]
+where $\partial_z^n \fc^a$ is of ghost number $+1$ and $\partial_z B_a$ is of ghost number $0$. 
+The classical BRST operator is \brian{write it}
+
+In a more invariant way, the BRST complex of local operators is equivalent to the Chevalley--Eilenberg complex for the graded Lie algebra $\fg[\ep][[z]]$:
+\[
+\cA / \hbar = \clie^\bu \left(\fg[\ep][[z]]\right) .
 \] 
-which computes Lie algebra cohomology of the ($\infty$-dimensional) Lie algebra $\fg[\ep][[z]]$. 
+
 
 %Here I plan to add a few sentences explaining that CE cohomology is the usual BRST for physicists.
 
-Let's describe this complex more explicitly. 
-Pick a basis $\{e_a\}_{a = 1,\ldots, \dim \fg}$ for $\fg$ with dual basis $\{e^a\}$ for $\fg^*$. 
-Explicitly, the Lie algebra cohomology representing local operators is computed by 
-\[
-\bigg(\Sym\left(\fg^*[\ep] [\partial_z] [-1] \right) \; , \; Q_0 \bigg) = \bigg(\CC[\fc^a, \partial_z \fc^a , \partial^2_z \fc^a, \ldots, B^a , \partial_z B^a , \partial_z^2 B^a, \ldots]_{a=1, \ldots, \dim \fg} \; , \; Q \bigg)
-\]
-where the BRST operator encodes the Lie bracket on $\fg[\ep][[z]]$ and is given by \brian{write formula}
+%Let's describe this complex more explicitly. 
+%Pick a basis $\{e_a\}_{a = 1,\ldots, \dim \fg}$ for $\fg$ with dual basis $\{e^a\}$ for $\fg^*$. 
+%
+%
+%In the description above we have used the following linear local operators
+%\begin{align*}
+%\partial_z^n \fc^a \colon & \fc_b \mapsto \delta_b^a \partial^n_z \fc_b (z=t=0), \\
+%\partial_z^n B^a \colon & B_b \mapsto \delta_b^a \partial_z^n B_{b,z} (z=t=0) 
+%\end{align*}
+%where $n \in \ZZ_{\geq 0}, a = 1,\ldots, \dim \fg$. 
+%These families of operators are of cohomological degrees $+1$, $0$ respectively. 
 
-In the description above we have used the following linear local operators
-\begin{align*}
-\partial_z^n \fc^a \colon & \fc_b \mapsto \delta_b^a \partial^n_z \fc_b (z=t=0), \\
-\partial_z^n B^a \colon & B_b \mapsto \delta_b^a \partial_z^n B_{b,z} (z=t=0) 
-\end{align*}
-where $n \in \ZZ_{\geq 0}, a = 1,\ldots, \dim \fg$. 
-These families of operators are of cohomological degrees $+1$, $0$ respectively. 
-
-Perturbatively, the {\em quantum} BRST complex is a certain $\hbar$-deformation of the classical BRST complex which we will schematically denote
+Perturbatively, the {\em quantum} BRST complex is an $\hbar$-deformation of the classical BRST complex which we will schematically denote
 \[
-\clie^\bu_\hbar (\fg[\ep][[z]])  .
+\cA = \clie^\bu_\hbar (\fg[\ep][[z]])  .
 \]
 As a graded vector space, this quantum complex is obtained from the classical one simply by adjoining the formal variable $\hbar$. 
 Quantum effects modify the classical BRST operator as in
@@ -1167,15 +1196,15 @@ Q = Q_0 + \hbar Q_1 + \cdots .
 \]
 \brian{some comment about only working to first order in what follows}
 
-\subsection*{Line operators}
+\subsection{Line operators}
 
 By Proposition \ref{prop:line}, there is a one-to-one correspondence between line defects along
 \[
 \RR \times \{z=0\} \subset \RR^3 
 \]
-described by an associative algebra $\cA$ and Maurer--Cartan elements in 
+described by an associative algebra $\cB$ and Maurer--Cartan elements in 
 \begin{equation}\label{eqn:criticalobs}
-\clie_\hbar^\bu(\fg[\ep][[z]]) \otimes \cA .
+\clie_\hbar^\bu(\fg[\ep][[z]]) \otimes \cB .
 \end{equation}
 
 This Maurer--Cartan equation reads
