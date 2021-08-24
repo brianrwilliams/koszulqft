@@ -369,9 +369,38 @@ We refer to this as a Maurer--Cartan equation since it is equivalent to the cond
 From hereon, we refer to $\alpha$ as an {\em algebraic coupling} (which we will soon relate to the notion of a {\em physical coupling}) between two quantum mechanical systems whose algebras of operators are given by ${\cA}, {\cB}$. 
 For any such algebraic coupling we obtain a new dg algebra 
 \[
-\cA \, \underset{\alpha}{\til{\otimes}} \, \cB = \left(\cA \otimes \cB \, , \, \d = Q_{\cA} + Q_{\cB} + \alpha \star (-) \right) 
+\cA \, \underset{\alpha}{\til{\otimes}} \, \cB \define \left(\cA \otimes \cB \, , \, \d = Q_{\cA} + Q_{\cB} + \alpha \star (-) \right) 
 \]
 which is the BRST algebra of operators of the coupled system. 
+
+Often times, the algebras $\cA,\cB$ arises from the quantization of a classical system. 
+In particular, we may view them as algebras over the power series ring $\CC[[\hbar]]$ which are commutative modulo $\hbar$. 
+We will view $\cA/\hbar$ as a commutative dg algebra with differential $Q_{\cA,0} = Q_{\cA} \mod \hbar$ and similarly for $\cB/\hbar$.
+Furthermore, the bracket 
+\[
+\{b_1,b_2\}_{PB} = \lim_{\hbar \to 0} \frac{1}{\hbar}(b_1 \star b_2 - b_2 \star b_1) 
+\]
+is a well-defined Poisson bracket on $\cB / \hbar$. 
+The algebraic coupling $\alpha$ should now be understood as a power series in $\hbar$. 
+What acts on the tensor product $\cA / \hbar \otimes \cB / \hbar$ is the Poisson bracket with the element $\alpha_0 = \alpha \,\mod \, \hbar$. 
+
+It is natural, then, to ask a purely classical characterization of this algebraic coupling. 
+In other words, what is the condition on $\alpha_0$ to define a coupling between $\cA / \hbar$ and $\cB / \hbar$.
+
+\begin{lem}
+The operator $Q_{\cA,0} + Q_{\cB,0} + \{\alpha_0,-\}_{PB}$ acting on $\cA/\hbar \otimes \cB/\hbar$ is square-zero if and only if $\alpha_0$ satisfies the Maurer--Cartan equation 
+\beqn\label{eqn:mc1}
+Q_{\cA,0} (\alpha_0) + Q_{\cB,0}(\alpha_0) + \{\alpha_0 , \alpha_0\} = 0 .
+\eeqn
+\end{lem}
+
+Just as in the quantum version, this equation is the Maurer--Cartan equation for a certain dg Lie algebra. 
+We have already pointed out that $\cA/\hbar$ equipped with $Q_{\cA,0}$ is a commutative dg algebra. 
+The differential $Q_{\cB,0}$ combined with the Poisson bracket endow $\cB / \hbar$ with the structure of a dg Lie algebra.
+Thus $\cA/\hbar \otimes \cB/\hbar$ carries the natural structure of a dg Lie algebra.
+The condition above is precisely the condition that $\alpha_0$ be a Maurer--Cartan element.
+
+When the algebras $\cA,\cB$ are presented in this way as a quantization, we will refer to $\alpha_0$ as a first-order, or classical, algebraic coupling. 
 
 We turn to a very important example. 
 
@@ -388,6 +417,7 @@ The algebra $\cH_V$ is the free polynomial algebra on generators $p^i, x_i$ subj
 [p^i, q_j] = \delta_j^i .
 \]
 In the notation of the previous section, we consider coupling the dg algebra $\cA$ to the algebra $\cB = \cH_V$. 
+Notice that along with $V$, the algebra $\cH_V$ carries the natural structure of a $\fg$-representation where $\fg$ acts covariantly on the $p$-variables and contragradiently on the $q$-variables. 
 
 Let $\{\fc_a\}_{a=1,\dots,\dim \fg}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^\vee$. 
 In other words, $\fc^a$ is a linear BRST ghost for the gauge field. 
@@ -561,26 +591,28 @@ Because the theory is translation invariant, we can consider the complex of {\em
 \]
 where $S$ is any closed oriented one-manifold. 
 This complex is equipped with the original BRST differential $Q$ acting on $\cB$ as well as the de Rham differential $\d$. 
+This complex carries a total grading which combines the natural grading on differential forms and the internal grading / ghost number in the BRST complex $\cB$. 
 
 Given a local (0-form) operator, $\cO = \cO^{(0)} \in \cB$, we can use the endomorphism $\hat{Q}$ to define the following one-form valued operator
 \[
 \cO^{(1)} \define (\hat{Q} \cdot \cO) \d t \in \Omega^1(\RR \, , \, \cB).
 \]
-The operator \natalie{do we really mean this notation? we already use $\til{Q}$ above for the BRST deformation} $\til{Q} = \cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
+The non-homogenous operator $\cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
 \begin{align*}
 Q \cO^{(0)} & = 0 \\
 \d \cO^{(0)} + Q \cO^{(1)} & = 0 .
 \end{align*}
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then $\cO^{(1)}$ is of ghost number $k-1$ but it also carries differential form degree one. 
-So, with respect to the total grading on $\Omega^\bu(S, \cB)$ the operator $\cB$ does have a homogenous degree.
+So, with respect to the total grading on $\Omega^\bu(S, \cB)$ the operator $\cB$ does have a homogenous degree $k$.
 
-In particular, if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed Lagrangian
+We will use topological descent to produce Lagrangians for systems of quantum mechanics. 
+From the descent equations, we see that if $\{Q,\cO^{(0)}\} = 0$ then $\cO^{(1)}$ defines the following $Q$-closed Lagrangian
 \[
 \int_S \cO^{(1)} 
 \]
 where we integrate over any closed oriented one-manifold $S$.
 If $\cO = \cO^{(0)}$ is of ghost number $k$ then this Lagrangian is of ghost number $k-1$. 
-So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree $+1$. \natalie{say something about the meaning of higher ghost number deformations in twisted theories?}
+So, in order to pick out a standard (ghost number zero) Lagrangian one must start with a local operator of degree~$+1$. \natalie{say something about the meaning of higher ghost number deformations in twisted theories?}
 
 \natalie{topological descent gives BRST invariance to first order, but the Lagrangian will get upgraded to a path ordered exponential in the full path integral... BRST invariance to all perturbative orders will force the coupling to satisfy MC eq'n. We also wanted to explain how the MC equation could take the form of a MC eqn for an $A_{\infty}$ algebra. Where do we want these discussions to go?}
 
