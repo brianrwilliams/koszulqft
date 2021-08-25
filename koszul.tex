@@ -41,13 +41,14 @@ Cohomological shift.
 %sym and alt
 %maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
+We begin by providing a basic introduction of Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. For a more exhaustive and general introduction to Koszul duality in mathematics see, for example, \cite{LV}.  \natalie{other canonical references?}
 
 Let $\cA$ be an associative algebra.
-We will often work in the generality where $\cA$ is a differentially graded (dg) algebra. A dg-algebra is $\ZZ$-graded algebra equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
+We will often work in the more general situation where $\cA$ is a differentially graded (dg) algebra. A dg-algebra is $\ZZ$-graded algebra equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
 \[
 \d (a \cdot b) = (\d a) \cdot b + (-1)^{|a|} a \cdot (\d b) 
 \]
-where $|a|$ denotes the degree of the element $a$. In physical contexts, one should think about $\cA$ as being the algebra of operators of a system of quantum mechanics, and $\d$ may be a BRST operator or a square-zero supercharge, with the operators graded by ghost number or fermion number respectively \footnote{In many physical and mathematical contexts, we only require a $\ZZ/2\ZZ$ grading, e.g. fermion parity, but we will restrict to the $\ZZ$-graded case for now.}.
+where $|a|$ denotes the degree of the element $a$. In physical contexts, one should think about $\cA$ as being the algebra of operators of a quantum mechanical system, and $\d$ may be a BRST operator or a square-zero supercharge, with the operators graded by ghost number or fermion number respectively \footnote{In many physical and mathematical contexts, we only require a $\ZZ/2\ZZ$ grading, e.g. fermion parity, but we will restrict to the $\ZZ$-graded case for now.}.
 If we forget the product then $(\cA, \d)$ has the structure of a cochain complex. 
 We work over the complex numbers $\CC$ so all products and maps are required to be $\CC$-linear. 
 
@@ -58,31 +59,32 @@ Unless there is room for confusion, when we speak of algebras and modules we are
 \brian{what to say about $M$, defects?}
  
 A map of algebras $f \colon \cA \to \cB$ is a map of cochain complexes which also preserves the associative products.
-Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b := f(a) \cdot b$ where the on the right hand side we use the associative product on $\cB$.  \natalie{this is the definition of the LHS right?}
+Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b := f(a) \cdot b$, for $a \in \cA$ and $b \in \cB$, where the on the right hand side we use the associative product on $\cB$.  \natalie{the RHS is the *definition* of the LHS right?}
 
 Similarly one can define a map of modules for a fixed algebra $\cA$.  All $\cA$-modules combine to form a category that we denote $\cA-\mod$.
 This category has the structure of a dg category, which means its set of morphisms is equipped with the structure of a cochain complex (roughly, the space of Homs between any two fixed modules is graded and equipped with a nilpotent differential). 
 
 Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ \natalie{add a footnote here about what the R in RHom means} the dg vector space of homomorphisms in the {\em derived category}. 
-We will not use the full technology of derived categories in these notes, but we remark on some important features. 
+We will not use the full technology of derived categories in this note, but we remark on some important features to give the reader some intuition. 
 The $i$th cohomology of the complex $\RHom_{\cA} (M,N)$ comprises the Ext groups ${\rm Ext}^i_{\cA}(M,N)$. 
 For all $M,N$ the group ${\rm Ext}^0_{\cA}(M,N)$ agrees with the naive space of $\cA$-linear homomorphisms $M \to N$. 
-The space ${\rm Ext}^1_{\cA}(M,N)$ is the space of equivalences classes of short exact sequences of $\cA$-modules of the form
+The space ${\rm Ext}^1_{\cA}(M,N)$ is also relatively easy to understand: it is the space of equivalence classes of short exact sequences of $\cA$-modules of the form
 \[
 0 \to N \to E \to M \to 0 .
 \]
+\natalie{how are the equivalence classes defined?}
 
 When $M = N$ the dg vector space $\RHom_\cA(M,M)$ acquires the structure of a dg algebra.
 The zeroth cohomology agrees with the algebra of $\cA$-linear endomorphisms ${\rm End}_{\cA}(M)$.  
-In general, to compute the space of derived homomorphisms needs to first \textit{freely resolve} the module $M$, and we will see an example shortly.
+In general, to compute the space of derived homomorphisms one needs to first \textit{freely resolve} the module $M$, and we will see an example shortly.
 
 A particularly important structure on an algebra will be that of an augmentation. 
 An {\em augmentation} on a dg algebra $\cA$ is a map of dg algebras 
 \[
 \ep \colon \cA \to \CC 
 \]
-meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. 
-In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module. We will explain physical interpretation of the augmentation later in this note, and in all of our examples the augmentation is unique.
+meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. This augmentation may have a nontrivial kernel, which acts trivially on $\CC$; in our examples, we will focus 
+In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module. A choice of augmentation corresponds physically to a choice of vacuum. In our examples in this note, the augmentation is unique; we plan to expand on explicit examples with vacuum degeneracy (both massive vacua and moduli spaces of vacua) in subsequent work. \natalie{right? if we are feeling too lazy then we can remove this :)}
 When we want to stress this interpretation of an augmentation, we denote the one-dimensional module by~$\CC_\ep$.
 
 
@@ -92,21 +94,33 @@ The Koszul dual of a dg algebra $\cA$ is the dg algebra
 \] 
 Notice that the Koszul dual of $\cA$ is defined with respect to an augmentation $\ep$, though when the augmentation is understood we will omit it from the notation. Roughly speaking, this denotes that the Koszul dual algebra is the space of symmetries of the trivial module that commute with $\cA$. Further, notice that even if a dg-algebra $\cA$ is an ordinary associative algebra with trivial differential, its Koszul dual will be a complex with support in cohomological degrees $\geq 1$. 
 
+One can show that the Koszul dual of $\cA^{!}$ is $\cA$ \natalie{is this easy to see without using anything too derived? if so, we should say a bit more}:
+\[
+\cA = \RHom_{\cA^!}(\CC_\ep, \CC_\ep).
+\]
+In other words, with the choice of augmentation, $\CC_\ep$ is simultaneously a module for $\cA, \cA^!$, and these algebras have commuting actions on $\CC_\ep$.
 
+\natalie{please check and see if you agree with the discussion below. Should we say anything more/different about modules?}
 
-\natalie{we should say something about Koszul dual modules too before moving on I think.}
+Throughout this note, we will focus on the computation of Koszul dual algebras. However, we note that modules for these algebras are also of physical and mathematical interest. In fact, the derived categories of dg-modules of Koszul dual algebras are equivalent \footnote{More generally, certain triangulated subcategories may be equivalent \natalie{refs? I actually don't understand this subtlety in physical or math examples myself... plus, physicists mostly don't understand triangulated categories...}.}. We can denote this category $\cC \simeq \cA-\mod \simeq \cA^!-\mod$. We will make a few remarks on dg-modules throughout the note to orient the reader. 
+
+\natalie{check that later in the paper we say something about the physical picture as e.g. defects on which lines can end, perhaps relation to topological boundary conditions?}
 
 \subsection{Free field example} 
 
-We give a short computation of the Koszul dual of the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
+To illustrate the abstract considerations above, we present a short computation of the Koszul dual of the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
 The augmentation $\ep$ is the obvious one which sends a polynomial to its constant coefficient. 
 
-The resulting module $\CC_{\ep}$ is not free as a $\CC[x]$-module, so we need to find a cochain complex of free modules which resolves it. \natalie{this is unfamiliar to physicists. we need to answer what a free module is and why someone would need to resolve it}
-A natural choice is the so-called ``Koszul complex'' defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
+The resulting one-dimensional module $\CC_{\ep}$ is not free (i.e. it does not admit a presentation in terms of linearly independent basis elements) as a $\CC[x]$-module, so, in order to make efficient computations, we need to find a cochain complex of free modules which resolves it. (The prototypical example of a free module is a vector space). 
+
+\natalie{please feel free to edit or expand on this}Note that using the technique of resolving a module into a chain complex  is not unheard-of in physics: indeed, BRST quantization for some gauge group $G$ involves making a so-called projective resolution of the space of $G$-invariant local operators. The corresponding complex introduces fields of nonzero ghost number and a BRST differential. The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish. Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. The resulting complex is called the Koszul-Tate complex. In general, a resolution of some module is simply a chain complex whose cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. The resulting chain map is called a quasi-isomorphism. Different quasi-isomorphic representations of the same module can have useful physical interpretations, even though the physical observables of interest involve the passage back to cohomology\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
+\natalie{Do we want to add anything about free resolutions as solutions to PDEs as a more down-to-earth example here?}
+
+A natural choice for a free resolution in this example is the so-called ``Koszul complex'', a progenitor of the Koszul-Tate complex in BV-quantization, defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
 There is a nontrivial differential defined by $\d \xi = x$. 
 A presentation for this dg algebra is 
 \beqn\label{eqn:res1}
-\bigg(\CC[x, \xi] \, , \, \d = x \frac{\partial}{\partial \xi} \bigg) 
+\bigg(\CC[x, \xi] \, , \, \d = x \frac{\partial}{\partial \xi} \bigg).
 \eeqn
 On linear generators, the cochain complex is of the form
 \[
@@ -115,13 +129,13 @@ On linear generators, the cochain complex is of the form
 & \xi \ar[u] & x \xi \ar[u] & x^2 \xi \ar[u] & \cdots 
 \end{tikzcd}
 \]
-where the bottom line is in cohomological degree $-1$ and the top line is in cohomological degree zero. 
+where the bottom line is in cohomological degree $-1$, the top line is in cohomological degree zero, and the arrows denote acting by the differential as usual. 
 
-The derived space of homomorphisms is equal to linear endomorphisms 
+The derived space of homomorphisms of $\CC_\ep$ is equal \natalie{why? by definition?} to linear endomorphisms 
 \[
 \CC[x, \xi] \to \CC[x,\xi]
 \] 
-which commute with the $\CC[x]$-module structure; that is, endomorphisms which commute with multiplication by $x$. 
+which commute with the $\CC[x]$-module structure: that is, endomorphisms which commute with multiplication by $x$. 
 Such endomorphisms are algebraically generated by multiplication by $x$, multiplication by $\xi$, and differentiation by $\xi$. 
 Thus 
 \beqn\label{eqn:rhom1}
@@ -129,11 +143,11 @@ Thus
 \eeqn
 The differential is given by taking the commutator with the original differential of the Koszul complex. 
 
-Let $\eta$ denote an odd parameter and consider the cochain complex equipped with the trivial differential
+Now, let $\eta$ denote an odd parameter and consider the cochain complex equipped with the trivial differential
 \[
  \left(\CC[\eta] \, , \, \d = 0 \right) .
 \]
-Since $\eta^2$ is zero, this is simply the graded vector space linearly spanned by an single element in even degree $1$ and a single element in odd degree $\eta$. 
+Since $\eta^2=0$, this is simply the graded vector space linearly spanned by a single element in even degree, $1$, and a single element in odd degree, $\eta$. 
 
 Consider the following map of dg algebras
 \[
@@ -152,14 +166,12 @@ Furthermore, if $n \geq 0$ and $k = 0,1$ the element $x^{n+1}\left(\frac{\partia
 This shows that the cohomology is algebraically generated by $\frac{\partial}{\partial \xi}$. 
 The result follows via the identification $\eta = \frac{\partial}{\partial \xi}$. 
 
-\natalie{physically we should expand on this point more, perhaps in the examples? if so, make a note here about that.}
-
 In other words, we see that the Koszul dual of the polynomial algebra on a bosonic generator $x$ is equivalent to the polynomial algebra on a fermionic generator $\eta = \frac{\partial}{\partial \xi}$
 \[
 \CC[x]^! \simeq \CC[\eta] .
 \]
 
-In a completely analogous way, one proves that the Koszul dual of the algebra of polynomials in $n$ bosonic variables is the algebra of polynomials in $n$ fermionic variables. 
+In a completely analogous way, one proves that the Koszul dual of the algebra of polynomials in $n$ bosonic variables, which form a basis for a vector space $V$, is the algebra of polynomials in $n$ fermionic variables. 
 In other words, there is an equivalence
 \[
 \Sym^\bu (V^\vee)^! \simeq \wedge^\bu V .
