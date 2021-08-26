@@ -280,17 +280,15 @@ which is precisely the algebra of local operators of a gauge field valued in $\f
 \subsection{A non-free example} 
 \label{sec:LG1}
 
-Before we move on to the explanation of why Koszul duality appears in physics, we compute the Koszul dual of one more algebra. The algebra in question naturally arises in the context of interacting field theories, namely as the algebra of local operators of the B-twist of a $\cN = (2,2)$ Landau-Ginzburg theory with target $V^{\vee}$ and superpotential $W: V^{\vee} \rightarrow \CC$.
-
-\brian{I want to do the following Landau--Ginzburg type example. Maybe you can help me motivate it?
-Also, do you see any interesting observations or applications we could make?}
+Before we move on to the explanation of why Koszul duality appears in physics, we compute the Koszul dual of one more algebra. The algebra in question naturally arises in the context of interacting field theories, namely as the algebra of local operators of the B-twist of a $\cN = (2,2)$ Landau-Ginzburg theory with target a vector space equipped with a superpotential.
 
 Let $V$ be an $n$-dimensional vector space and consider the algebra 
 \[
 \CC[x_i, \psi^j] = \Sym^\bu (V^\vee) \otimes \wedge^\bu(V) 
 \]
 where $\{\psi^j\}$ is a linear basis for $V$ and $\{x_i\}$ is its dual basis.
-The variable $x_i$ is even parity and $\psi^j$ is odd parity; we will furthermore take a $\ZZ$-grading where $x_i$ is degree zero and $\psi^j$ is degree $-1$. These operators have a physical origin as the $Q_B$-closed scalar and fermionic components of chiral multiplets valued in $V^{\vee}$. \natalie{right? say anything here about polyvector fields on $V^{\vee}$?}
+The variable $x_i$ is even parity and $\psi^j$ is odd parity; we will furthermore take a $\ZZ$-grading where $x_i$ is degree zero and $\psi^j$ is degree $-1$. These operators have a physical origin as the $Q_B$-closed scalar and fermionic components of chiral multiplets valued in $V$.
+Geometrically, this is the graded algebra of (polynomial) polyvector fields on $V$.
 
 Consider a `superpotential' $W(x) = W(x_1,\ldots, x_n) \in \CC[x_1,\ldots, x_n]$ and the operator 
 \[
@@ -321,7 +319,7 @@ When $W$ is a constant function, so that the differential $\d$ vanishes, this is
 Note that it is absolutely necessary to remember the full algebra $\cA$, even when $W = 0$. 
 For instance, the degree zero piece is simply the algebra of polynomials in the variables $x_i$, which is far from being self Koszul dual.
 
-It is a straightforward exercise in spectral sequences to prove that even for a more general superpotential $W$ the result still holds, and $\cA^! \simeq \cA$. We will spare the physics-oriented reader this unpleasantness. 
+It is a straightforward exercise in spectral sequences to prove that even for a more general superpotential $W$ the result still holds, and $\cA^! \simeq \cA$. We will spare the physics-oriented reader this potential unpleasantness. 
 
 %hochschild
 
@@ -432,6 +430,7 @@ suppose that $\cA$ is the (commutative) algebra $\clie^\bu(\fg)$ of Chevalley--E
 We think of $\cA$ as the BRST algebra of operators of a one-dimensional gauge field on flat space (in other words, the dg-algebra of the BRST ghost). 
 
 Next, we consider the Heisenberg algebra $\cH_V$ associated to a $\fg$-representation $V$. Of course, this is the algebra of operators of some topological quantum mechanics consisting of bosonic matter with a $\fg$-symmetry, and we intend to couple it to the 1d gauge theory and thereby gauge its global symmetry.
+We will see that this is encoded by an explicit Maurer--Cartan element. 
 
 Suppose $\{p^i\}_{i=1,\ldots,\dim V}$ is a basis for $V$ with dual basis $\{q_i\}$. 
 The algebra $\cH_V$ is the free polynomial algebra on generators $p^i, x_i$ subject to the relation 
@@ -453,7 +452,7 @@ Define the element $\alpha \in \cA \otimes \cB$ by the formula
 \[
 \alpha = \rho_{aj}^i \, \fc^a \otimes q_i p^j .
 \]
-We will show that $\alpha$ satisfies the Maurer--Cartan equation \eqref{eqn:mc1}. 
+We show that the element $\alpha$ satisfies the Maurer--Cartan equation \eqref{eqn:mc1}. 
 
 First, notice that $Q_{\cA}$ is the Chevalley--Eilenberg differential 
 \[
@@ -487,6 +486,7 @@ Turning on $\alpha$ has the affect of deforming this tensor product algebra to t
 where the right-hand side is the complex computing the Lie algebra cohomology of $\fg$ with coefficients in the $\fg$-representation $\cH_V$. 
 
 An analogous computation goes through when coupling to a fermionic quantum mechanical system, furnishing the Weyl algebra associated to a $\fg$-representation. \natalie{agree with this? should we add something further about that case here?}
+\brian{You mean Clifford algebra here, right? Do we want to rename `Heisenberg' above to Weyl? To me, Heisenberg is a general construction and makes sense for any possibly graded symplectic space, whereas Weyl is the usual bosonic algebra. What do you think?}
 
 \subsection{Other examples}
 
@@ -678,27 +678,68 @@ Further, we can form the Lagrangian
 
 By the previous discussion, we see that $\alpha$ is an algebraic coupling, meaning it satisfies the Maurer--Cartan equation for $\cA \otimes \cB$, if and only if $\int_S \alpha^{(1)}$ is BRST invariant (at least perturbatively) at the quantum level.
 
+We turn to some examples. 
+
 \subsection{One-dimensional gauge theory}
 \label{sec:gaugetheory}
 
-We return to Example \ref{sec:gaugealg}, which clearly had some relationship to gauge theory, and finally flesh out the physics behind it. 
+We return to the example of Section \ref{sec:gaugealg}, which clearly had some relationship to gauge theory, and finally flesh out the physics behind it. 
 
-In this example $\cA = \clie^\bu(\fg)$ with $Q_{\cA}$ the Chevalley--Eilenberg differential of $\fg$ and $\cB = \cO(T^* V)$ with trivial BRST differential $Q_{\cB} = 0$. 
+In this example $\cA = \clie^\bu(\fg)$ with $Q_{\cA}$ the Chevalley--Eilenberg differential of $\fg$.
+As alluded to, this commutative dg algebra is equivalent to the dg algebra of BRST operators of gauge theory on the real line. 
+A gauge theory field is simply a one-form valued in the Lie algebra
+\[
+A \in \Omega^1(\RR ; \fg) .
+\]
+A ghost is simply a $\fg$-valued function $\fc$. 
+The local BRST symmetry is
+\[
+\delta A^a = \d \fc^a + f_{bc}^a \fc^b A^c .
+\]
+Locally, any operator in the gauge field $A$ is exact for the linearized BRST differential.  
+This is an application of the Poincar\'e lemma, all one-forms on $\RR$ are exact!
 
-The linear local operators in $\cA$ are spanned by the ghost operators $\{\fc^a\}$ where $a = 1,\ldots, \dim(\fg)$ which all have cohomological degree $(+1)$. 
-The local operators in $\cB$ are generated by $\{v_i, v^j\}$ where $i,j=1,\ldots, \dim(V)$. 
-The algebraic coupling defined by the data of a $\fg$-representation $\rho$ is $\alpha = \rho_{i,a}^j \fc^a v^i v_j$. 
+An explicit way to witness the Poincar\'e lemma is to introduce the cohomological degree $-1$ operator $\Hat{Q}$ defined by 
+\[
+\Hat{Q} \fc^a = \iota_{\partial_t} A^a .
+\]
+Notice that $\Hat{Q}$ commutes with the non-linear part of the BRST operator. 
+Further, this operator satisfies the commutation relation 
+\[
+\{Q_\cA , \Hat{Q}\} = \frac{\partial}{\partial t} 
+\]
+and so satisfies the requisite data to run topological descent for the one-dimensional gauge field. 
 
-The one-form operator $\alpha^{(1)}$ is given by applying 
+The only operators which are closed for the linearized BRST operator are expressions in the ghosts $\fc^a$.
+The non-linear BRST operator induces the Chevalley--Eilenberg differential $Q_\cA$. 
 
-The Lagrangian obtained by topological 
+The Weyl algebra $\cB = \cW_V$ (which has a trivial BRST differential $Q_{\cB} = 0$) is the algebra of operators of a system of topological mechanics on the real line. \footnote{In the case that one considers {\em complex} valued functions, one can think about this as the algebra of operators in a twist of $\cN=2$ supersymmetric mechanics with a K\"ahler target $V$.}
+The fields are pairs of two functions $q \colon V \to \CC$ and $p \colon \RR \to V^*$ and the action is 
+\[
+\int_\RR (p,\d q) = \int_\RR (p , \partial_t q) \d t 
+\]
+where $(-,-)$ is the natural symplectic pairing on $T^* V = V \oplus V^*$. 
 
+This model is manifestly topological, the equations of motion simply require $p,q$ be constant functions.
+This leads to the classical algebra of operators $\cO(T^* V) = \CC[q^i, p_j]$ where $i=1,\ldots, \dim (V)$. 
+At the quantum level the Heisenberg commutation relations give the Weyl algebra $\cW_V$. 
+ 
+Recall that the algebraic coupling defined by the data of a $\fg$-representation $\rho$ is $\alpha = \rho_{i,a}^j \fc^a q^i p_j$.
+The one-form operator $\alpha^{(1)}$ is given by applying the descent procedure using the operator $\Hat{Q}$. 
+Notice that in our setup here, $\Hat{Q}$ only acts on the gauge field.
+We have
+\begin{align*}
+\alpha^{(1)} & = \Hat{Q} (\rho_{i,a}^j \fc^a q^i p_j) \d t  \\
+& = \rho_{i,a}^j (\Hat{Q} \fc^a) q^i p_j \d t \\
+& = \rho_{i,a}^j A^a q^i p_j ,
+\end{align*}
+leading the Lagrangian $\int_{\RR} \rho_{i,a}^j A^a q^i p_j = \int_\RR p [A,q]$ which recovers the standard minimal coupling for by a gauge field. 
 
-A detailed and rigorous formulation of the results in this section within the Batalin--Vilkovisky formalism has been given by Grady, Li, and Li in \cite{GLL} and further explained by Si Li in \cite{LiVertex}.
+%A detailed and rigorous formulation of the results in this section within the Batalin--Vilkovisky formalism has been given by Grady, Li, and Li in \cite{GLL} and further explained by Si Li in \cite{LiVertex}.
 
-\brian{higher dimensional}
+%\brian{higher dimensional}
 
-\subsection{Vacuums and augmentations}
+%\subsection{Vacuums and augmentations}
 
 %discrete choices of vacua vs. moduli spaces of vacua
 
