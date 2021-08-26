@@ -1185,12 +1185,22 @@ The classical BRST operator take a similar form to the usual Chevalley--Eilenber
 Indeed, it is the $\CC[[z]]$-linear extension of this operator. 
 The formula is
 \[
-Q_0 = \sum_{n +m \geq 0} \left(f_{ab}^c \partial_z^m \fc^a \partial_z^n \fc^b \frac{\partial}{\partial \partial_z^{n+m}\fc^c} + f_a^{bc} \partial_{z}^m \fc^a \partial_z^n B_b \frac{\partial}{\partial \partial_z^{n+m} B_c}\right) .
-\]
-Here, $\{f^{bc}_a\}$ denotes the contragradient structure constants of the Lie algebra, which satisfy $[e_a, e^b] = f_a^{bc} e_c$ where $\{e^a\}$ is a dual basis for $\fg^*$. 
+Q_0 = \sum_{n +m \geq 0} \left(f_{ab}^c \partial_z^m \fc^a \partial_z^n \fc^b \frac{\partial}{\partial \partial_z^{n+m}\fc^c} + f_{ac}^b \partial_{z}^m \fc^a \partial_z^n B_b \frac{\partial}{\partial \partial_z^{n+m} B_c}\right) .
+\] 
 Notice that when restricted to the modes $\partial_z^n \fc^a, \partial_z^n B_a$ with $n=0$, this is the ordinary BRST differential. 
 
-As alluded to, the BRST complex of local operators is equivalent to the Chevalley--Eilenberg complex for the graded Lie algebra $\fg[\ep][[z]]$:
+As alluded to, the BRST complex of local operators is equivalent to the Chevalley--Eilenberg complex for a certain graded Lie algebra.
+The graded Lie algebra is
+\[
+\fg[[z]] \oplus \fg^*[[z]] [-1] .
+\]
+This means that in degree zero there is the Lie algebra of currents $\fg[[z]]$ and in cohomological degree $+1$ there is the module $\fg^*[[z]]$. 
+Here, the module structure is simply the contragadient one where we also remember to add powers of $z$.
+In bases, this reads
+\[
+[e_a z^n , e^b z^m] = z^{n+m} f_{ac}^{b} e^c  .
+\]
+The concise formula for the clasical BRST algebra is, then
 \[
 \cA / \hbar = \clie^\bu \left(\fg[\ep][[z]]\right) .
 \] 
