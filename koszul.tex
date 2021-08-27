@@ -686,35 +686,42 @@ We turn to some examples.
 We return to the example of Section \ref{sec:gaugealg}, which clearly had some relationship to gauge theory, and finally flesh out the physics behind it. 
 
 In this example $\cA = \clie^\bu(\fg)$ with $Q_{\cA}$ the Chevalley--Eilenberg differential of $\fg$.
-As alluded to, this commutative dg algebra is equivalent to the dg algebra of BRST operators of gauge theory on the real line. 
+As alluded to, this commutative dg algebra is equivalent to the dg algebra of local BRST operators of gauge theory on the real line. 
 A gauge theory field is simply a one-form valued in the Lie algebra
 \[
 A \in \Omega^1(\RR ; \fg) .
 \]
-A ghost is simply a $\fg$-valued function $\fc$. 
-The local BRST symmetry is
+A ghost is simply a smooth $\fg$-valued function $\fc \colon \RR \to \fg$. 
+The local BRST symmetry for the gauge field is
 \[
 \delta A^a = \d \fc^a + f_{bc}^a \fc^b A^c .
 \]
 Locally, any operator in the gauge field $A$ is exact for the linearized BRST differential.  
 This is an application of the Poincar\'e lemma, all one-forms on $\RR$ are exact!
-
-An explicit way to witness the Poincar\'e lemma is to introduce the cohomological degree $-1$ operator $\Hat{Q}$ defined by 
+Thus, up to equivalence, all local operators can be built from the ghost $\fc$. 
+The non-linear BRST operator acting on the ghost 
 \[
-\Hat{Q} \fc^a = \iota_{\partial_t} A^a .
+\delta \fc^a = f_{bc}^a \fc^b \fc^c 
+\]
+is precisely the Chevalley--Eilenberg differential $Q_\cA$.
+
+Since one-dimensional gauge fields only have topological degrees of freedom we can run topological descent using the operator $\Hat{Q}_\cA$ defined by
+\[
+\Hat{Q}_\cA \fc^a = \iota_{\partial_t} A^a .
 \]
 Notice that $\Hat{Q}$ commutes with the non-linear part of the BRST operator. 
 Further, this operator satisfies the commutation relation 
 \[
-\{Q_\cA , \Hat{Q}\} = \frac{\partial}{\partial t} 
+\{\delta , \Hat{Q}_\cA\} = \frac{\partial}{\partial t} 
 \]
 and so satisfies the requisite data to run topological descent for the one-dimensional gauge field. 
-
-The only operators which are closed for the linearized BRST operator are expressions in the ghosts $\fc^a$.
-The non-linear BRST operator induces the Chevalley--Eilenberg differential $Q_\cA$. 
+Explicitly, applied to the ghost $\fc^a$, topological descent returns the one-form operator 
+\[
+(\fc^a)^{(1)} = \Hat{Q}_\cA \fc^a \d t = A^a  .
+\]
 
 The Weyl algebra $\cB = \cW_V$ (which has a trivial BRST differential $Q_{\cB} = 0$) is the algebra of operators of a system of topological mechanics on the real line. \footnote{In the case that one considers {\em complex} valued functions, one can think about this as the algebra of operators in a twist of $\cN=2$ supersymmetric mechanics with a K\"ahler target $V$.}
-The fields are pairs of two functions $q  \RR \to V$ and $p \colon \RR \to V^*$ and the action is 
+The fields are pairs of functions $q  \colon \RR \to V$ and $p \colon \RR \to V^*$ and the action is 
 \[
 \int_\RR (p,\d q) = \int_\RR (p , \partial_t q) \d t 
 \]
@@ -734,6 +741,19 @@ We have
 & = \rho_{i,a}^j A^a q^i p_j ,
 \end{align*}
 leading the Lagrangian $\int_{\RR} \rho_{i,a}^j A^a q^i p_j = \int_\RR p [A,q]$ which recovers the standard minimal coupling for by a gauge field. 
+
+The equations of motion for the fields $q,p$ are very simple, they are just required to be constant. 
+Another approach, related to the Batalin--Vilkovisky formalism, is to impose the equations of motions of the fields $p,q$ cohomologically. 
+That is, one can introduce one-form fields $q^{(1)}, p^{(1)}$ which satisfy $q^{(1)} = \d q$ and $p^{(1)} = \d p$. 
+The equations of motion are simply $q^{(1)} = p^{(1)} = 0$. 
+Doing this, we are treating the de Rham differential as a linear BRST operator $Q_{\cB} = \d$. 
+Since the model is topological, there is a homotopy $\Hat{Q}$ which satisfies $\Hat{Q} q = \iota_{\partial_t} q^{(1)}$ and $\Hat{Q} p = \iota_{\partial_t} p^{(1)}$, very similar to the case of the gauge field.
+
+If we take into account larger BRST complex, there are more terms present in the descendant operator $\alpha^{(1)}$:
+\[
+\alpha^{(1)} = \rho_{i,a}^j \left(A^a q^i p_j - \fc^a (q^i)^{(1)} p_j - \fc^a q^i (p_j)^{(1)}\right) . 
+\] 
+These additional terms involve the ghost field $\fc$, and will be present in any BV formulation of a 1d theory.  
 
 %A detailed and rigorous formulation of the results in this section within the Batalin--Vilkovisky formalism has been given by Grady, Li, and Li in \cite{GLL} and further explained by Si Li in \cite{LiVertex}.
 
