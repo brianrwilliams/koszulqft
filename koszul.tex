@@ -24,12 +24,13 @@
 \maketitle
 
 \begin{abstract}
-In this article, we introduce basic aspects of the algebraic notion of Koszul duality for a physics audience. We then review its appearance in the physical problem of coupling QFTs to topological line defects, and illustrate the concept with some examples drawn from twists of various simple supersymmetric theories. Though much of the content of this article is well-known to experts, the presentation and examples have not, to our knowledge, appeared in the literature before. Our aim is to provide an elementary introduction for those interested in the appearance of Koszul duality in supersymmetric gauge theories and, ultimately, its generalization to twisted holography. 
+In this article, we introduce basic aspects of the algebraic notion of Koszul duality for a physics audience. We then review its appearance in the physical problem of coupling QFTs to topological line defects, and illustrate the concept with some examples drawn from twists of various simple supersymmetric theories. Though much of the content of this article is well-known to experts, the presentation and examples have not, to our knowledge, appeared in the literature before. Our aim is to provide an elementary introduction for those interested in the appearance of Koszul duality in supersymmetric gauge theories with line defects and, ultimately, its generalizations to higher-dimensional defects and twisted holography. 
 \end{abstract}
 
 
 \section{Introduction}
 \natalie{preview quantum mechanical deformations of algebras}
+
 \natalie{geometric quantization on the bubble}
 
 \subsection*{Notations}
@@ -43,7 +44,7 @@ Cohomological shift.
 %sym and alt
 %maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
-We begin by providing a basic introduction of Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. For a more exhaustive and general introduction to Koszul duality in mathematics see, for example, \cite{LV}.  \natalie{other canonical references?}
+We begin by providing a basic introduction to Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. For a more exhaustive and general introduction to Koszul duality in mathematics see, for example, \cite{LV}.  \natalie{other canonical references?}
 
 Let $\cA$ be an associative algebra.
 We will often work in the more general situation where $\cA$ is a differentially graded (dg) algebra. A dg-algebra is $\ZZ$-graded algebra equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
@@ -85,7 +86,7 @@ An {\em augmentation} on a dg algebra $\cA$ is a map of dg algebras
 \[
 \ep \colon \cA \to \CC 
 \]
-meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. This augmentation may have a nontrivial kernel, which acts trivially on $\CC$; in our examples, we will focus 
+meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. This augmentation may have a nontrivial kernel, which acts trivially on $\CC$. 
 In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module. A choice of augmentation corresponds physically to a choice of vacuum. In our examples in this note, the augmentation is unique; we plan to expand on explicit examples with vacuum degeneracy (both massive vacua and moduli spaces of vacua) in subsequent work. \natalie{right? if we are feeling too lazy then we can remove this :)}
 When we want to stress this interpretation of an augmentation, we denote the one-dimensional module by~$\CC_\ep$.
 
@@ -115,7 +116,7 @@ The augmentation $\ep$ is the obvious one which sends a polynomial to its consta
 
 The resulting one-dimensional module $\CC_{\ep}$ is not free (i.e. it does not admit a presentation in terms of linearly independent basis elements) as a $\CC[x]$-module, so, in order to make efficient computations, we need to find a cochain complex of free modules which resolves it. (The prototypical example of a free module is a vector space). 
 
-\natalie{please feel free to edit or expand on this}Note that using the technique of resolving a module into a chain complex  is not unheard-of in physics: indeed, BRST quantization for some gauge group $G$ involves making a so-called projective resolution of the space of $G$-invariant local operators. The corresponding complex introduces fields of nonzero ghost number and a BRST differential. The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish. Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. The resulting complex is called the Koszul-Tate complex. In general, a resolution of some module is simply a chain complex whose cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. The resulting chain map is called a quasi-isomorphism. Different quasi-isomorphic representations of the same module can have useful physical interpretations, even though the physical observables of interest involve the passage back to cohomology\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
+\natalie{please feel free to edit or expand on this}Note that using the technique of resolving a module into a chain complex  is not unheard-of in physics: indeed, BRST quantization for some gauge group $G$ involves making a so-called projective resolution of the space of $G$-invariant local operators. The corresponding complex introduces fields of nonzero ghost number and a BRST differential. The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish. Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. The resulting complex is called the Koszul-Tate complex. In general, a resolution of some module is simply a chain complex whose cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. The resulting chain map is called a quasi-isomorphism. Different quasi-isomorphic representations of the same module can have useful physical interpretations, even though the physical observables of interest involve the passage back to cohomology. To take a particularly simple instance, Yang-Mills theory can be quantized using the minimal BRST complex or using the full machinery of the BV-BRST complex, which are quasi-isomorphic complexes.\footnote{\natalie{do we want to say anything here about a "minimal complex" and Koszul duality? or elsewhere?}}.\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
 \natalie{Do we want to add anything about free resolutions as solutions to PDEs as a more down-to-earth example here?}
 
 A natural choice for a free resolution in this example is the so-called ``Koszul complex'', a progenitor of the Koszul-Tate complex in BV-quantization, defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
@@ -133,12 +134,11 @@ On linear generators, the cochain complex is of the form
 \]
 where the bottom line is in cohomological degree $-1$, the top line is in cohomological degree zero, and the arrows denote acting by the differential as usual. 
 
-The derived space of homomorphisms of $\CC_\ep$ is equal \natalie{why? by definition?}
-\brian{The $\CC[x]$-module structure is by multiplication, so this is what it means to be a map of $\CC[x]$-modules.} to linear endomorphisms 
+The derived space of homomorphisms of $\CC_\ep$ is equal to linear endomorphisms 
 \[
 \CC[x, \xi] \to \CC[x,\xi]
 \] 
-which commute with the $\CC[x]$-module structure: that is, endomorphisms which commute with multiplication by $x$. 
+which commute with the $\CC[x]$-module structure: that is, endomorphisms which commute with multiplication by $x$\footnote{The $\CC[x]$-module structure is by multiplication, so this is what it means to be a map of $\CC[x]$-modules.}. 
 Such endomorphisms are algebraically generated by multiplication by $x$, multiplication by $\xi$, and differentiation by $\xi$. 
 Thus 
 \beqn\label{eqn:rhom1}
@@ -330,19 +330,17 @@ It is a straightforward exercise in spectral sequences to prove that even for a 
 \section{Maurer--Cartan elements and algebraic couplings}
 
 In this subsection, we will explain how Koszul dual pairs of algebras naturally arise in the context of topological line defects: more precisely, when considering gauge-invariant couplings between (supersymetrically twisted) quantum field theories and topological quantum mechanical systems. We will largely expand upon the presentation in \cite{CP}; see also the appendix of \cite{GO}.
-%To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x \Omega^{d-2}(M)... how is Koszul duality insensitive to this?
 
 \subsection{Coupling two quantum mechanical systems} 
 
-Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras of local operators we denote by $\cA$ and~$\cB$. We will assume that the theories are topological, in the sense that their Hamiltonian/``time'' translation operators are cohomologically trivial with respect to their BRST operators $Q_\cA$ and $Q_\cB$; in this context, the algebras of local operators are (dg-)associative. 
+Before discussing the problem of coupling a line defect inside of a higher dimensional gauge theory we discuss the coupling of two one-dimensional theories whose algebras of local operators we denote by $\cA$ and~$\cB$. We will assume that the theories are topological, in the sense that their Hamiltonian/``time'' translation operators are cohomologically trivial with respect to their BRST operators $Q_\cA$ and $Q_\cB$; in this context, the algebras of local operators are (dg-)associative, since the operator product reduces to the associative multiplication. 
 
 The completely `uncoupled' theory is the theory obtained by combining these two 
 theories in a rather trivial way; at the level of local operators this is just the plain tensor product (over $\CC$):
 \beqn\label{eqn:uncoupled}
 \cA \otimes \cB .
 \eeqn
-The total BRST operator is simply $Q_\cA \otimes 1 + 1 \otimes Q_\cB$.
-At the level of action functionals this corresponds to simply taking the sum $S_{\cA} + S_{\cB}$. 
+The total BRST operator is simply $Q_\cA \otimes 1 + 1 \otimes Q_\cB$ \footnote{Although in this section we take a purely algebraic perspective, we remark that at the level of action functionals, which we will turn to later, this corresponds to simply taking the sum $S_{\cA} + S_{\cB}$.}.
 
 We restrict to nontrivial couplings between theories $\cA$ and $\cB$ which are visible at the level of the BRST complex. 
 This means that the coupled dg algebra of local operators is, as a graded algebra, exactly as in \eqref{eqn:uncoupled} (the plain tensor product over $\CC$). 
@@ -397,7 +395,7 @@ Furthermore, the bracket
 \[
 \{b_1,b_2\}_{PB} = \lim_{\hbar \to 0} \frac{1}{\hbar}(b_1 \star b_2 - b_2 \star b_1) 
 \]
-is a well-defined Poisson bracket on $\cB / \hbar$. 
+is a well-defined Poisson bracket on $\cB / \hbar$. \natalie{we should clarify here that we are making simplifying assumptions: in principle we could have started with two algebras with nontrivial Poisson brackets.}
 The algebraic coupling $\alpha$ should now be understood as a power series in $\hbar$. 
 What acts on the tensor product $\cA / \hbar \otimes \cB / \hbar$ is the Poisson bracket with the element $\alpha_0 = \alpha \,\mod \, \hbar$. 
 
@@ -417,11 +415,10 @@ The differential $Q_{\cB,0}$ combined with the Poisson bracket endow $\cB / \hba
 Thus $\cA/\hbar \otimes \cB/\hbar$ carries the natural structure of a dg Lie algebra.
 The condition above is precisely the condition that $\alpha_0$ be a Maurer--Cartan element.
 
-Mathematically, one speaks of a more general Koszul duality between Comm/Lie \textit{operads}, as well as the Koszul self-duality of the Associative operad. We will not need the machinery of operads in this note. Here, we are simply pointing out that at the level of algebras, one naturally finds commutative/Lie Koszul dual pairs of algebras arising from classical limits of associative/associative Koszul dual algebras.
 
-When the algebras $\cA,\cB$ are presented in this way as a quantization, we will refer to $\alpha_0$ as a first-order, or classical, algebraic coupling. 
+When the algebras $\cA,\cB$ are presented in this way as a quantization, we will refer to $\alpha_0$ as a classical algebraic coupling. 
 
-We will now illustrate the notion of algebraic couplings in the context of a simple, yet fundamental, example. We will connect this notion to both physical couplings and Koszul duality in the next section. 
+We will now illustrate the notion of algebraic couplings in the context of a simple, yet fundamental, example. We will then connect this notion to both physical couplings and Koszul duality in the next section. 
 
 \subsection{Gauge coupling} \label{sec:gaugealg}
 
@@ -429,20 +426,20 @@ Fix a Lie algebra $\fg$ and
 suppose that $\cA$ is the (commutative) algebra $\clie^\bu(\fg)$ of Chevalley--Eilenberg cochains of $\fg$. 
 We think of $\cA$ as the BRST algebra of operators of a one-dimensional gauge field on flat space (in other words, the dg-algebra of the BRST ghost). 
 
-Next, we consider the Heisenberg algebra $\cH_V$ associated to a $\fg$-representation $V$. Of course, this is the algebra of operators of some topological quantum mechanics consisting of bosonic matter with a $\fg$-symmetry, and we intend to couple it to the 1d gauge theory and thereby gauge its global symmetry.
+Next, we consider the Weyl algebra $\cW_V$ associated to a $\fg$-representation $V$. Of course, this is the algebra of operators of some topological quantum mechanics consisting of bosonic matter with a $\fg$-symmetry, and we intend to couple it to the 1d gauge theory and thereby gauge its global symmetry.
 We will see that this is encoded by an explicit Maurer--Cartan element. 
 
 Suppose $\{p^i\}_{i=1,\ldots,\dim V}$ is a basis for $V$ with dual basis $\{q_i\}$. 
-The algebra $\cH_V$ is the free polynomial algebra on generators $p^i, x_i$ subject to the relation 
+The algebra $\cW_V$ is the free polynomial algebra on generators $p^i, x_i$ subject to the relation 
 \[
 [p^i, q_j] = \delta_j^i .
 \]
-In the notation of the previous section, we consider coupling the dg algebra $\cA$ to the algebra $\cB = \cH_V$. 
-Notice that along with $V$, the algebra $\cH_V$ carries the natural structure of a $\fg$-representation where $\fg$ acts covariantly on the $p$-variables and contragradiently on the $q$-variables. 
+In the notation of the previous section, we consider coupling the dg algebra $\cA$ to the algebra $\cB = \cW_V$. 
+Notice that along with $V$, the algebra $\cW_V$ carries the natural structure of a $\fg$-representation where $\fg$ acts covariantly on the $p$-variables and contragradiently on the $q$-variables. 
 
 Let $\{\fc_a\}_{a=1,\dots,\dim \fg}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^\vee$. 
 In other words, $\fc^a$ is a linear BRST ghost for the gauge field. 
-The $\fg$-representation $V$ is encoded by a linear map 
+The $\fg$-representation $V$ is encoded by a linear map \natalie{we may need to be more uniform about $V^*$ vs. $V^{\vee}$ for the dual space...}
 \begin{align*}
 \rho & \colon \fg \to {\rm End}(V) = V^* \otimes V \\
 \rho(\fc_a) & = \rho_{aj}^i \, x_i \otimes p^j .
@@ -453,6 +450,8 @@ Define the element $\alpha \in \cA \otimes \cB$ by the formula
 \alpha = \rho_{aj}^i \, \fc^a \otimes q_i p^j .
 \]
 We show that the element $\alpha$ satisfies the Maurer--Cartan equation \eqref{eqn:mc1}. 
+
+\natalie{I'd like to say some words somewhere about how much is understood (at least mathematically) about the space of solutions to an MC equation in general. Here we demonstrate one element... what about finding all such elements?}
 
 First, notice that $Q_{\cA}$ is the Chevalley--Eilenberg differential 
 \[
@@ -477,20 +476,19 @@ This is equivalent to the condition that $\rho$ be a well-defined $\fg$-represen
 
 Before turning on the coupling $\alpha$, the decoupled system is of the form
 \[
-\cA \otimes \cB = \clie^\bu(\fg) \otimes \cH_V . 
+\cA \otimes \cB = \clie^\bu(\fg) \otimes \cW_V . 
 \]
-Turning on $\alpha$ has the affect of deforming this tensor product algebra to the algebra
+Turning on $\alpha$ has the effect of deforming this tensor product algebra to the algebra
 \[
-\cA \, \underset{\alpha}{\til{\otimes}} \, \cB = \clie^\bu(\fg ; \cH_V) ,
+\cA \, \underset{\alpha}{\til{\otimes}} \, \cB = \clie^\bu(\fg ; \cW_V) ,
 \]
-where the right-hand side is the complex computing the Lie algebra cohomology of $\fg$ with coefficients in the $\fg$-representation $\cH_V$. 
+where the right-hand side is the complex computing the Lie algebra cohomology of $\fg$ with coefficients in the $\fg$-representation $\cW_V$. 
 
-An analogous computation goes through when coupling to a fermionic quantum mechanical system, furnishing the Weyl algebra associated to a $\fg$-representation. \natalie{agree with this? should we add something further about that case here?}
-\brian{You mean Clifford algebra here, right? Do we want to rename `Heisenberg' above to Weyl? To me, Heisenberg is a general construction and makes sense for any possibly graded symplectic space, whereas Weyl is the usual bosonic algebra. What do you think?}
+An analogous computation goes through when coupling to a fermionic quantum mechanical system, which furnishes the Clifford algebra associated to a $\fg$-representation. \natalie{want to add anything further here?}
 
 \subsection{Other examples}
 
-Let $p,q$ be two even variables satisfying the Heisenberg commutation relations
+Let $p,q$ be two even variables satisfying the Heisenberg \natalie{do we want to call it Weyl here too?} commutation relations
 \[
 [p,q] = 1.
 \]
@@ -541,7 +539,7 @@ Thus, the cohomology is again the Jacobian ring of $W$:
 H^\bu \left(\cA \, \underset{\alpha_W}{\til{\otimes}} \, \cB\right) \cong \CC[q_1,q_2] / (\partial_i W)  .
 \]
 Observe that the algebraic coupling deformed us from a non-commutative associative algebra to one that is strictly commutative. 
-We will remark on the physical significance of this example momentarily. 
+We will remark on the physical significance of this example momentarily. \natalie{note to us to check that we do this}
 %
 %Consider the algebra 
 %\[
@@ -585,7 +583,7 @@ We will remark on the physical significance of this example momentarily.
 
 \subsection{Local operators}
 
-Now that we have introduced Koszul duality and algebraic couplings, we are ready to describe the quantum field theoretic context in which these ideas arise. First, we will introduce the notion of a physical coupling in the context of relevance for our discussion, and explain how it is related to the notion of algebraic coupling introduced in the previous section. Then, we will elucidate the appearance of Koszul duality. 
+Now that we have introduced algebraic couplings and sketched some elementary computations in homological algebra, we are ready to describe their quantum field theoretic context. First, we will introduce the notion of a physical coupling in the context of relevance for our discussion, and explain how it is related to the notion of algebraic coupling introduced in the previous section. Then, we will elucidate the appearance of Koszul duality. 
 
 \brian{warning about 'local operators' vs physical local operators}
 \brian{cohomological/ghost number degrees}
@@ -601,14 +599,13 @@ In words, translations along the line are trivial in BRST cohomology.
 
 The space of local operators $\cB$ is equipped with an algebra structure coming from the operator product expansion. 
 Together with $Q$ we assume this equips $\cB$ with the structure of a  dg-algebra. In the case of an associative dg-algebra (dga), which has been our primary interest in this note, there is an associative multiplication and a differential which acts as a derivation on the associative product. 
-More generally, $\cB$ is endowed with higher operations which combine with $Q$ to form an $A_\infty$ algebra, and we will say a few remarks about this more general situation in what follows. 
+More generally, $\cB$ may be endowed with higher operations which combine with $Q$ to form an $A_\infty$ algebra, and we will say a few remarks about this more general situation in what follows. 
 
 \subsection{Topological descent} 
-\natalie{reminder to revert to bib}
-We are able to produce physical couplings from BRST complexes of operators using the procedure of topological descent. The topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain higher-form-valued gauge-invariant observables from local operators of nonzero ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. \natalie{more references here eventually}
+We are able to produce physical couplings from BRST complexes using the procedure of topological descent. The topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain higher-form-valued gauge-invariant observables from local operators of nonzero ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. \natalie{more references here eventually}
 
 As above let $\cB$ be the local operators of a theory of topological quantum mechanics. 
-We first recall how Equation \eqref{eqn:triv} solves the topological descent equations which allows us to construct a certain class of non-local operators out of local ones. Ultimately, through topological descent, we will obtain BRST-closed one-forms that can be added to the action of some topological quantum mechanics as a deformation. The route to the BRST-closed condition will turn out to pass through the Maurer-Cartan equation discussed earlier. 
+We first recall how Equation \eqref{eqn:triv} solves the topological descent equations which allows us to construct a certain class of non-local operators out of local ones. Ultimately, through topological descent, we will obtain BRST-closed one-forms that, when integrated, can be added to the action of some topological quantum mechanics as a deformation \footnote{For topological theories in $d$-dimensions, one may similarly produce deformations to the original action by using topological descent to produce $d$-form-valued operators.}. The route to the BRST-closed condition will turn out to pass through the Maurer-Cartan equation discussed earlier. 
 
 Because the theory is translation invariant, we can consider the complex of {\em differential form} valued operators
 \[
@@ -616,12 +613,13 @@ Because the theory is translation invariant, we can consider the complex of {\em
 \]
 where $S$ is any closed oriented one-manifold. 
 This complex is equipped with the original BRST differential $Q$ acting on $\cB$ as well as the de Rham differential $\d$. 
-This complex carries a total grading which combines the natural grading on differential forms and the internal grading / ghost number in the BRST complex $\cB$. 
+This complex carries a total grading which combines the natural grading on differential forms and the internal grading / ghost number in the BRST complex $\cB$.  \natalie{this reminds me... should we say something somewhere about how when an algebra whose homological and internal gradings coincide it is Koszul (and why)?}
 
 Given a local (0-form) operator, $\cO = \cO^{(0)} \in \cB$, we can use the endomorphism $\hat{Q}$ to define the following one-form valued operator
 \[
 \cO^{(1)} \define (\hat{Q} \cdot \cO) \d t \in \Omega^1(\RR \, , \, \cB).
 \]
+\natalie{Above $S$ was closed but here we work with $\RR$... we should say something here to justify this. We start by working locally with the understanding that in a path integral we will pass to a trace or something?}
 The non-homogenous operator $\cO^{(0)} + \cO^{(1)}$ is closed in $\Omega^\bu(\RR \, , \, \cB)$ if and only if the following descent equations are satisfied 
 \begin{align*}
 Q \cO^{(0)} & = 0 \\
@@ -642,7 +640,7 @@ Thus, at the classical level, topological descent guarantees a BRST-invariant La
 
 At the quantum level, the Lagrangian gets upgraded to a path ordered exponential. Demanding that the coupled system satisfies BRST invariance to all orders in perturbation theory will force the coupling to satisfy the Maurer--Cartan equation.
 
-The path-ordered exponential of a Lagrangian $\cL$ is of the form
+The path-ordered exponential of a Lagrangian $\cL$ is of the form \natalie{don't we need a Trace out front here so that the integral is effectively over a closed 1-mfld?}
 \[
 \text{PExp} \int_\RR \cL .
 \]
@@ -662,7 +660,14 @@ Q \cO + \cO \star \cO = 0
 \]
 which is the Maurer--Cartan equation for $\cB$, thought of as a dg Lie algebra. 
 
-\natalie{To be added here: sketch, possibly with an example, how the MC equation could take the form of a MC eqn for an $A_{\infty}$ algebra. }
+Our analysis so far has been a little bit oversimplified. In particular, we assumed that the algebra of a topological quantum mechanics took the form of a dga. When we work at the level of quasi-isomorphisms, this is a very convenient assumption we can make without loss of generality. However, generically, when we are working with a theory that is topological in the sense of (\ref{eqn:triv}), it is useful to keep in mind that product between operators on the line may be nonsingular only up to $Q$-exact terms. Regularizing the divergences and keeping track of this more refined chain-level structure turns out to naturally produce an $E_1$-algebra, which retains more information about configurations of operators in the original physical theory than passing to a quasi-isomorphic dga. Carrying through an analogous analysis as above, by computing the condition for BRST invariance of the appropriately defined path-ordered exponential with a suitable regularization, then produces the Maurer-Cartan equation for an $A_{\infty}$ algebra (with different regularization choices related by quasi-isomorphisms \textit{of $A_{\infty}$-algebras})
+\[
+Q \cO + \mu_2(\cO, \cO) + \mu_3(\cO, \cO, \cO) + \ldots = 0,
+\]
+where $\mu_n(\cdot, \cdot, \ldots, \cdot)$ denote the $n$-ary operations of the $A_{\infty}$ algebra, with $\mu_1 = [Q, \cdot]$ and $\mu_2$ being the standard associative product.  
+
+The deformed BRST differential is then modified by an infinite number of terms involving the higher products $Q \tilde{\cO} \mapsto Q \tilde{\cO} + \sum_{n, m}\mu_{n + m + 1}(\cO^n, \tilde{\cO}, \cO^m)$. The reader is encouraged to consult the appendices of \cite{GO} for more details, including explications of the $E_1$-algebra structure and the definition of the $n$-ary operations in terms of suitably regularized operator products on a topological line. \natalie{We may want to be more explicit here, perhaps introduce a little bit about what $E_1$ or $A_{\infty}$ algebras are, or at least how they are related to one another?} In the remainder of the note, we will continue to implicitly assume that we have passed to a convenient dga model for the $A_{\infty}$-algebra (which can always be done by suitably enlarging the complex \natalie{elementary reference for this?}) underlying the theory with a topological line. \natalie{need a word here about why, for the purposes of computing a koszul dual, this is a "legal" operation.}
+
 
 \subsection{From Maurer--Cartan elements to local couplings} 
 
@@ -687,7 +692,7 @@ We return to the example of Section \ref{sec:gaugealg}, which clearly had some r
 
 In this example $\cA = \clie^\bu(\fg)$ with $Q_{\cA}$ the Chevalley--Eilenberg differential of $\fg$.
 As alluded to, this commutative dg algebra is equivalent to the dg algebra of local BRST operators of gauge theory on the real line. 
-A gauge theory field is simply a one-form valued in the Lie algebra
+A gauge field is a one-form valued in the Lie algebra
 \[
 A \in \Omega^1(\RR ; \fg) .
 \]
@@ -696,8 +701,7 @@ The local BRST symmetry for the gauge field is
 \[
 \delta A^a = \d \fc^a + f_{bc}^a \fc^b A^c .
 \]
-Locally, any operator in the gauge field $A$ is exact for the linearized BRST differential.  
-This is an application of the Poincar\'e lemma, all one-forms on $\RR$ are exact!
+Locally, any operator in the gauge field $A$ is exact for the linearized BRST differential. This is an application of the Poincar\'e lemma: all one-forms on $\RR$ are exact!
 Thus, up to equivalence, all local operators can be built from the ghost $\fc$. 
 The non-linear BRST operator acting on the ghost 
 \[
@@ -707,9 +711,9 @@ is precisely the Chevalley--Eilenberg differential $Q_\cA$.
 
 Since one-dimensional gauge fields only have topological degrees of freedom we can run topological descent using the operator $\Hat{Q}_\cA$ defined by
 \[
-\Hat{Q}_\cA \fc^a = \iota_{\partial_t} A^a .
-\]
-Notice that $\Hat{Q}$ commutes with the non-linear part of the BRST operator. 
+\Hat{Q}_\cA \fc^a = \iota_{\partial_t} A^a ,
+\] where $ \iota_{\partial_t}$ is a contraction along the vector field generated by $\partial_t$. \natalie{does this operator have some natural physical origin? It clearly does the job, but looks sort of unfamiliar.}
+Notice that $\Hat{Q}$ commutes with the nonlinear part of the BRST operator. 
 Further, this operator satisfies the commutation relation 
 \[
 \{\delta , \Hat{Q}_\cA\} = \frac{\partial}{\partial t} 
@@ -720,14 +724,14 @@ Explicitly, applied to the ghost $\fc^a$, topological descent returns the one-fo
 (\fc^a)^{(1)} = \Hat{Q}_\cA \fc^a \d t = A^a  .
 \]
 
-The Weyl algebra $\cB = \cW_V$ (which has a trivial BRST differential $Q_{\cB} = 0$) is the algebra of operators of a system of topological mechanics on the real line. \footnote{In the case that one considers {\em complex} valued functions, one can think about this as the algebra of operators in a twist of $\cN=2$ supersymmetric mechanics with a K\"ahler target $V$.}
+The Weyl algebra $\cB = \cW_V$ (which has a trivial BRST differential $Q_{\cB} = 0$) is the algebra of operators of a system of topological mechanics on the real line. \footnote{In the case that one considers {\em complex} valued functions, one can think about this as the algebra of operators in a twist of $\cN=2$ supersymmetric quantum mechanics with a K\"ahler target $V$.}
 The fields are pairs of functions $q  \colon \RR \to V$ and $p \colon \RR \to V^*$ and the action is 
 \[
 \int_\RR (p,\d q) = \int_\RR (p , \partial_t q) \d t 
 \]
 where $(-,-)$ is the natural symplectic pairing on $T^* V = V \oplus V^*$. 
 
-This model is manifestly topological, the equations of motion simply require $p,q$ be constant functions.
+This model is manifestly topological, with the equations of motion requiring $p,q$ to be constant functions.
 This leads to the classical algebra of operators $\cO(T^* V) = \CC[q^i, p_j]$ where $i=1,\ldots, \dim (V)$. 
 At the quantum level the Heisenberg commutation relations give the Weyl algebra $\cW_V$. 
  
@@ -740,20 +744,20 @@ We have
 & = \rho_{i,a}^j (\Hat{Q} \fc^a) q^i p_j \d t \\
 & = \rho_{i,a}^j A^a q^i p_j ,
 \end{align*}
-leading the Lagrangian $\int_{\RR} \rho_{i,a}^j A^a q^i p_j = \int_\RR p [A,q]$ which recovers the standard minimal coupling for by a gauge field. 
+leading to the Lagrangian $\int_{\RR} \rho_{i,a}^j A^a q^i p_j = \int_\RR p [A,q]$ which recovers the standard minimal coupling to a gauge field. 
 
-The equations of motion for the fields $q,p$ are very simple, they are just required to be constant. 
+The equations of motion for the fields $q,p$ are very simple: they are just required to be constant. 
 Another approach, related to the Batalin--Vilkovisky formalism, is to impose the equations of motions of the fields $p,q$ cohomologically. 
 That is, one can introduce one-form fields $q^{(1)}, p^{(1)}$ which satisfy $q^{(1)} = \d q$ and $p^{(1)} = \d p$. 
 The equations of motion are simply $q^{(1)} = p^{(1)} = 0$. 
 Doing this, we are treating the de Rham differential as a linear BRST operator $Q_{\cB} = \d$. 
-Since the model is topological, there is a homotopy $\Hat{Q}$ which satisfies $\Hat{Q} q = \iota_{\partial_t} q^{(1)}$ and $\Hat{Q} p = \iota_{\partial_t} p^{(1)}$, very similar to the case of the gauge field.
+Since the model is topological, there is a homotopy $\Hat{Q}'$ which satisfies $\Hat{Q}' q = \iota_{\partial_t} q^{(1)}$ and $\Hat{Q}' p = \iota_{\partial_t} p^{(1)}$, very similar to the case of the gauge field. \natalie{added a prime to distinguish it from the other one}
 
-If we take into account larger BRST complex, there are more terms present in the descendant operator $\alpha^{(1)}$:
+If we take into account the larger BRST complex, there are more terms present in the descendant operator $\alpha^{(1)}$:
 \[
 \alpha^{(1)} = \rho_{i,a}^j \left(A^a q^i p_j - \fc^a (q^i)^{(1)} p_j - \fc^a q^i (p_j)^{(1)}\right) . 
 \] 
-These additional terms involve the ghost field $\fc$, and will be present in any BV formulation of a 1d theory.  
+These additional terms involve the ghost field $\fc$, and will be present in any BV formulation of a 1d theory.  Indeed, while these couplings may look unfamiliar because of the explicit presence of the ghost field, the resulting couplings have the appropriate cohomological degree. The minimal BRST complex and its BV-BRST extension are quasi-isomorphic to one another. 
 
 %A detailed and rigorous formulation of the results in this section within the Batalin--Vilkovisky formalism has been given by Grady, Li, and Li in \cite{GLL} and further explained by Si Li in \cite{LiVertex}.
 
@@ -779,7 +783,14 @@ We start with some bulk theory on a manifold of the form
 where $M$ is some manifold. 
 The crucial assumption we make is that the bulk theory is {\em topological} along $\RR \times \{x\}$ for any $x \in M$. 
 This means that OPE's are independent of the coordinate $t$. \brian{can we say this better?}
-An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. 
+An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. \natalie{remark about equivalence of $\cA_x \simeq \cA_{x'}$ here.}
+
+\natalie{compactify on M as choice of vacuum and choice of augmentation}
+
+\natalie{koszul duality only preserved by deformations preserving augmentation and therefore choice of vacuum}
+
+
+
 
 Given our simplifying assumptions, the results of the previous sections characterize the coupling between $\cA_x$ and any other algebra $\cB$ representing an independent quantum mechanical system supported on $\RR \times \{x\}$. 
 We have the following
@@ -793,6 +804,7 @@ There is a one-to-one correspondence between the space of couplings of $\cA_x$ t
 
 In practice, the bulk theory will \brian{finish}
 
+\natalie{general statement with augmentation ideal}
 \subsection{Line defects in gauge theory}
 
 \brian{sort of a mess below, needs cleaning and pruning}
@@ -834,6 +846,9 @@ Suppose that $\cA$ is an associative algebra which represents some other quantum
 Our goal is to couple $\cA$ to the original theory as a line operator along $\RR_t$. 
 
 \subsection{The universal line defect}
+\natalie{To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x $\Omega^{d-2}(M)$... how is Koszul duality insensitive to this?}
+
+Mathematically, one speaks of a more general Koszul duality between Comm/Lie \textit{operads}, as well as the Koszul self-duality of the Associative operad. We will not need the machinery of operads in this note. Here, we are simply pointing out that at the level of algebras, one naturally finds commutative/Lie Koszul dual pairs of algebras arising from classical limits of associative/associative Koszul dual algebras.
 
 %explanation about augmentation ideal in more general case should go here
 
