@@ -668,6 +668,8 @@ where $\mu_n(\cdot, \cdot, \ldots, \cdot)$ denote the $n$-ary operations of the 
 
 The deformed BRST differential is then modified by an infinite number of terms involving the higher products $Q \tilde{\cO} \mapsto Q \tilde{\cO} + \sum_{n, m}\mu_{n + m + 1}(\cO^n, \tilde{\cO}, \cO^m)$. The reader is encouraged to consult the appendices of \cite{GO} for more details, including explications of the $E_1$-algebra structure and the definition of the $n$-ary operations in terms of suitably regularized operator products on a topological line. \natalie{We may want to be more explicit here, perhaps introduce a little bit about what $E_1$ or $A_{\infty}$ algebras are, or at least how they are related to one another?} In the remainder of the note, we will continue to implicitly assume that we have passed to a convenient dga model for the $A_{\infty}$-algebra (which can always be done by suitably enlarging the complex \natalie{elementary reference for this?}) underlying the theory with a topological line. \natalie{need a word here about why, for the purposes of computing a koszul dual, this is a "legal" operation.}
 
+\natalie{make sure to say a word somewhere in this section about which algebra maps take MC elements to MC elements.}
+
 
 \subsection{From Maurer--Cartan elements to local couplings} 
 
@@ -682,6 +684,7 @@ Further, we can form the Lagrangian
  \int_S \alpha^{(1)} .\]
 
 By the previous discussion, we see that $\alpha$ is an algebraic coupling, meaning it satisfies the Maurer--Cartan equation for $\cA \otimes \cB$, if and only if $\int_S \alpha^{(1)}$ is BRST invariant (at least perturbatively) at the quantum level.
+
 
 We turn to some examples. 
 
@@ -785,9 +788,17 @@ The crucial assumption we make is that the bulk theory is {\em topological} alon
 This means that OPE's are independent of the coordinate $t$. \brian{can we say this better?}
 An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. \natalie{remark about equivalence of $\cA_x \simeq \cA_{x'}$ here.}
 
-\natalie{compactify on M as choice of vacuum and choice of augmentation}
 
-\natalie{koszul duality only preserved by deformations preserving augmentation and therefore choice of vacuum}
+\natalie{feel free to edit/move/etc. the discussion below}
+
+The choice of augmentation that underlies the notion of Koszul duality corresponds to a physical choice of vacuum. We consider a compactification of the theory on $\RR_t \times M \rightarrow \RR_t$. \natalie{check: are the following statements correct?} In particular, if $M$ is a noncompact manifold \natalie{say anything additional about compact case?}, one must choose suitable boundary conditions at infinity. In theories with a mass gap, this requires making a choice of massive vacuum and prescribing that the fields approach their expectation values in that vacuum as they approach the boundary. If the theory is massless, this requires choosing a point on the moduli space of vacua. \natalie{do we have to worry about IR divergences here? e.g. the character of the algebra might diverge...? Might want to check with Kevin about this case}
+
+More formally, if we have a projection map on the product space $\pi: \RR_t \times M \rightarrow \RR_t$, then we are interested in the pushforward $\pi_* \textrm{Obs}(\RR_t \times M)$ on the algebra of local operators. Throughout this note, we have been working under the assumption that this pushforward is trivial \natalie{example where it's not trivial?}, and simply maps to the ground ring $\CC$ (classically) or $\CC[[\hbar]]$ (when incorporating quantum corrections). \natalie{check we have introduced the quantum corrections earlier so that this makes sense} This corresponds to the assumption that there is a unique vacuum. The map $\cA_x \rightarrow \pi_* \textrm{Obs} \simeq \CC$ is the augmentation. 
+
+In general, the augmentation map will have some nontrivial kernel, which acts trivially on the one-dimensional module $\CC_{\ep}$. The kernel is often referred to as the \textit{augmentation ideal}, since it is a two-sided ideal in the group ring. \natalie{make sure it include its relevance to Koszul duality somewhere... also, we may want to spell out under which assumptions we can replace the augmentation ideal with $\cA$ itself and why.}
+
+
+\natalie{make sure to make some clear statements about koszul duality only being preserved by deformations that preserve augmentation and therefore choice of vacuum... algebraically, which deformations does this pick out?}
 
 
 
@@ -864,12 +875,20 @@ Mathematically, one speaks of a more general Koszul duality between Comm/Lie \te
 %}
 
 We turn to an illustrative example in three-dimensions of a free field theory on $\RR^3$. In spite of its simplicity, this theory is a useful toy model for illustrating the abstract considerations of the previous section. 
-This theory we study is equivalent to the holomorphic twist of the $3d$ $\cN=2$ chiral multiplet. The details of this twist for general 3d $\cN=2$ theories appear in \cite{CDG20,ESW}, to which we refer the interested reader for details. 
+This theory we study is equivalent to the holomorphic twist of the $3d$ $\cN=2$ chiral multiplet. The details of this twist for general 3d $\cN=2$ theories appear in \cite{CDG, ACNV, ESW}, to which we refer the interested reader for details. 
 
 The presentation of the holomorphic twist depends on the R-symmetry data we assign to the untwisted theory. 
 The component fields of a 3d chiral multiplet of R-charge $r$ include a complex scalar $\phi$ of R-charge $r$ and four fermions $\psi_{\pm}$ with R-charges  $r-1$ and their conjugates $\bar{\psi}_{\pm}$ with R-charges $1-r$. We choose $r=0$ \footnote{Since the R-charge governs the twisted spin of the fields, more general R-charge assignments will result in the fields transforming as sections of certain powers of the canonical bundle: the $r/2$ power for the twisted scalar, and the $1-r/2$ power for the twisted fermion.}.  
 
-The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). After the holomorphic twist with respect to a choice of supercharge $\bar{Q}_+$ \brian{introduce this notation}, the surviving degrees of freedom are the scalar field and one of the fermions, $\bar{\psi}_-$. One can check from the supersymmetry transformations that these components are $\bar{Q}_+$-closed, but not exact. 
+The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). Following \cite{DGP}, in preparation for the holomorphic twist, we can express the 3d $\cN=2$ superalgebra on $\RR^{1,1} \times \RR$ using complex spinors as (displaying only the nonvanishing brackets)
+\begin{align*}
+\left\lbrace Q_+, \bar{Q}_+ \right\rbrace &= -2 P_+ \\
+\left\lbrace Q_-, \bar{Q}_- \right\rbrace &= 2 P_- \\
+\left\lbrace Q_+, \bar{Q}_- \right\rbrace &= -2 i (P_{\perp} - i Z) \\
+\left\lbrace Q_-, \bar{Q}_+ \right\rbrace &= 2 i (P_{\perp} + i Z)
+\end{align*} where $P_{\pm} := \pm P_0 + P_1$ are linear combinations of the translation generators on $\RR^{1, 1}$, $P_{\perp}$ is the translation generator along $\RR$, and $Z$ is a real central charge.
+
+After the holomorphic twist with respect to the choice of supercharge $\bar{Q}_+$, the surviving degrees of freedom are the scalar field and one of the fermions, $\bar{\psi}_-$. One can check from the supersymmetry transformations that these components are $\bar{Q}_+$-closed, but not exact. 
 
 The holomorphic twist involves a choice of coordinates of the form
 \[
@@ -879,7 +898,7 @@ where $t$ is a real coordinate along $\RR$ and $z$ is a holomorphic coordinate a
 The theory will be topological along $\RR$ but only holomorphic along $\CC_z$. 
 This means that the OPE depends trivially on $t$ and holomorphically on $z$. 
 
-Per the discussion of the previous section, one may also perform descent on the two \brian{Is this $\Bar{Q}_+$ above?} $Q$-closed fields of the twisted theory. If we denote the descendent 1-forms associated to an operator $\mathcal{O}$ by $\mathcal{O}^{(1)}$, then by construction these operators satisfy
+Per the discussion of the previous section \natalie{we may want to make sure we say a few words about this slight generalization of descent in the previous section!}, one may also perform descent on the two $\bar{Q}_+$-closed fields of the twisted theory. If we denote the descendent 1-forms associated to an operator $\mathcal{O}$ by $\mathcal{O}^{(1)}$, then by construction these operators satisfy
 \[
 \bar{Q}_+(dz \wedge \mathcal{O}^{(1)}) = d (dz \wedge \mathcal{O})
 \]
@@ -1006,22 +1025,24 @@ As announced in the general section, we are to interpret the Koszul dual of this
 In this example, the defect we are considering is along the topological line $\{z=0\} \subset \RR \times \CC$. 
 Per our analysis in the previous section, we perform topological descent on all Maurer-Cartan elements of the algebra of operators on the line $\mathcal{A}\otimes \mathcal{B}$ to obtain the space of possible perturbative couplings, where $\mathcal{A} \simeq \mathbb{C}[\phi, \chi]$ is the algebra of bulk operators restricted to the line and $\mathcal{B}$ is our (at the moment arbitrary) auxiliary algebra of operators. 
 
-Any Maurer-Cartan element, governing first-order deformations of our uncoupled system, lives in degree one by definition. This leaves us with two options in our example. We may perform descent on $\partial_z^n \chi \otimes J$ where $|\chi| = 1, |J|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $J, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $J^{(1)}, K^{(1)}$. 
+Any Maurer-Cartan element, governing first-order deformations of our uncoupled system, lives in degree one by definition. This leaves us with two options in our example. We may perform descent on $\partial_z^n \chi \otimes \rho$ where $|\chi| = 1, |\rho|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $\rho, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $\rho^{(1)}, K^{(1)}$. 
 
 
 %We choose a basis $\{e_a\}$ for $V$. 
 The most general coupling then takes the form
 \[
-\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} J^{(1)}[i] \partial_z^i \chi.
+\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} \rho[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} \rho^{(1)}[i] \partial_z^i \chi.
 \] 
 
 
-Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may couple to a field along the defect, which we denote by $\psi_t, \phi_t$. 
+Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may couple to a field along the defect, which we denote by $\psi_t, \phi_t$. This is equivalent to what we would have obtained had we performed ordinary topological descent directly on the line. \natalie{right?} 
 Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$ along $\RR_t$, the field $\phi$ couples to a one-form $K^{(1)}[\ell] = K_t [\ell] \d t$ along $\RR_t$ (and vice versa for their counterparts). In total, all of the couplings are one-forms along $\RR_t$ with ghost number 0. 
 
-Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements \textit{modulo gauge redundancies}. It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$.
+Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}. In practice, this means we may begin with the space of degree 1 elements in the tensor product algebra and check that they satisfy the Maurer-Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
 
-For example, consider the coupling $\int J \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int J d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $J$: $d_t J = 0$. One can instead rewrite 
+It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$. For example, consider the coupling $\int \rho \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int \rho d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $\rho$: $d_t \rho = 0$. One can instead rewrite \natalie{need to finish this discussion, explaining the role of each term}
+
+\natalie{make Koszul duality statement}
 
 
 %If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
@@ -1165,7 +1186,7 @@ From Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1} we can compute the gauge equ
 The algebra is freely generated by the even local operators $\{\phi_n\}_{n < 0}$ and the odd local operators $\{\chi_n\}_{n \leq 0}$. 
 In other words
 \[
-\Obs_\infty = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{n \leq 0} \wedge^\bu \big(V_{(m)}\big)
+\Obs_\infty = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m \leq 0} \wedge^\bu \big(V_{(m)}\big)
 \]
 which we can clearly identify as the Koszul dual algebra to $\Obs_0$. 
 
