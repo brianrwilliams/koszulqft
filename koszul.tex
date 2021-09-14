@@ -1226,12 +1226,12 @@ We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypica
 Is there any sort of quantum correction that one sees in the physical setup that we could compare to our calculation below?}
 
 Our second example will be another example of a theory that arises from a holomorphic-topological twist of 3d $\cN=2$ gauge theory. 
-We treat only the pure gauge theory case, coupling to chiral multiplets (as discussed in the previous section) can be handled similarly. 
+We treat only the pure gauge theory case; coupling to chiral multiplets (as discussed in the previous section) can be handled similarly. 
 We will see that, unlike in the case of the free twisted chiral multiplet, the algebra of local operators will acquire nontrivial quantum corrections that are essential for Koszul duality to work. 
 
 One interpretation of this holomorphic-topological twist is as Chern-Simons theory with Lie algebra $\fg$ at the ``critical'' level $k = h^{\vee}$, where $k > 0$ is the bare level, $h^{\vee}$ is the dual Coxeter number of the Lie algebra, and $k - h^{\vee}$ is the Chern-Simons level incorporating the one-loop shift from integrating out the vector multiplet gauginos.  \brian{probably need to expand this statement}
 
-Physically, we begin with a vector multiplet with components $(A_{\mu}, \sigma, \lambda_{\pm}, \bar{\lambda}_{\pm})$ with canonical R-charge and spin quantum numbers, and will consider the components of the gauge field on $\RR_t \times \CC_{z}$ (though as explained in \natalie{cite} the twisted construction to follow may be defined on any 3-manifold with a transverse holomorphic foliation). The gauge field takes values in some compact gauge group, though for the purposes of studying local operators we will only need to specify the Lie algebra $\fg$ in what follows. The vector multiplet also includes a real adjoint-valued scalar, $\sigma \in \fg_{\RR}$, and $\fg$-valued gauginos. 
+Physically, we begin with a vector multiplet with components $(A_{\mu}, \sigma, \lambda_{\pm}, \bar{\lambda}_{\pm})$ with canonical R-charge and spin quantum numbers, and will consider the components of the gauge field on $\RR_t \times \CC_{z}$ (though as explained in \cite{ACNV} the twisted construction to follow may be defined on any 3-manifold with a transverse holomorphic foliation). The gauge field takes values in some compact gauge group, though for the purposes of studying local operators we will only need to specify the Lie algebra $\fg$ in what follows. The vector multiplet also includes a real adjoint-valued scalar, $\sigma \in \fg_{\RR}$, and $\fg$-valued gauginos. 
 
 \brian{We are confusing $Q$ with both the twist and the full BRST operator of the twisted theory.}
 
@@ -1257,7 +1257,7 @@ The theory has two sets of fields \natalie{I changed the description of B here! 
 A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
 B & = B (z,t) \d z 
 \end{align*}
-with $A_{\zbar}, A_t$ $\fg$-valued functions on $\RR^3$ and $B(z,t) \in \fg^*$ is co-adjoint valued. If one rewrites the standard Yang-Mills action in the first-order formalism, one can identify $B_z \leftrightarrow {1 \over g^2} \overline{\cF_{\zbar t}}$ on-shell. The addition of Chern-Simons will modify this identification. 
+with $A_{\zbar}, A_t$ $\fg$-valued functions on $\RR^3$ and $B(z,t) \in \fg^*$ is co-adjoint valued. If one rewrites the standard Yang-Mills action in the first-order formalism, one can identify $B_z \leftrightarrow {1 \over g^2} \overline{\cF_{\zbar t}}$ on-shell. The addition of a Chern-Simons term will modify this identification. 
 
 
 In terms of these fields, the twisted action can be written in ``BF'' type form:
@@ -1286,7 +1286,7 @@ Explicitly, as a graded algebra the classical BRST complex $\cA / \hbar$ is a fr
 \]
 where $\partial_z^n \fc^a$ is of ghost number $+1$ and $\partial_z B_a$ is of ghost number $0$. 
 The classical BRST operator take a similar form to the usual Chevalley--Eilenberg differential for the Lie algebra $\fg$ with coefficients in ${\rm S}^\bu (\fg)$. 
-Indeed, it is the $\CC[[z]]$-linear extension of this operator. 
+Indeed, it is the $\CC[[z]]$-linear extension of this operator. \natalie{how do we derive this? at minimum we need to cite something here}
 The formula is
 \[
 Q_0 = \sum_{n +m \geq 0} \left(f_{ab}^c \partial_z^m \fc^a \partial_z^n \fc^b \frac{\partial}{\partial \partial_z^{n+m}\fc^c} + f_{ac}^b \partial_{z}^m \fc^a \partial_z^n B_b \frac{\partial}{\partial \partial_z^{n+m} B_c}\right) .
@@ -1304,7 +1304,7 @@ In bases, this reads
 \[
 [e_a z^n , e^b z^m] = z^{n+m} f_{ac}^{b} e^c  .
 \]
-The concise formula for the clasical BRST algebra is, then
+The concise formula for the classical BRST algebra is, then \natalie{should just spell out how this epsilon is keeping track of coh. degree a little more}
 \[
 \cA / \hbar = \clie^\bu \left(\fg[\ep][[z]]\right) .
 \] 
@@ -1357,7 +1357,7 @@ Then, the quantum BRST operator $Q$ is replaced by the classical BRST operator $
 The product $\star_\hbar$ is replaced by the product $\star$ in the algebra $\cA$. 
 Thus, the classical limit of \eqref{eqn:mccs} becomes
 \begin{equation}\label{eqn:cmccs}
-Q \cO^{(0)} + \cO^{(0)} \star \cO^{(0)} = 0 .
+Q_0 \cO^{(0)} + \cO^{(0)} \star \cO^{(0)} = 0 .
 \end{equation}
 
 \subsection*{An example: free fermions}
