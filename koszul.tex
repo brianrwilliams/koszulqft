@@ -601,7 +601,7 @@ The space of local operators $\cB$ is equipped with an algebra structure coming 
 Together with $Q$ we assume this equips $\cB$ with the structure of a  dg-algebra. In the case of an associative dg-algebra (dga), which has been our primary interest in this note, there is an associative multiplication and a differential which acts as a derivation on the associative product. 
 More generally, $\cB$ may be endowed with higher operations which combine with $Q$ to form an $A_\infty$ algebra, and we will say a few remarks about this more general situation in what follows. 
 
-\subsection{Topological descent} 
+\subsection{Topological descent}\label{sec:descent}
 We are able to produce physical couplings from BRST complexes using the procedure of topological descent. The topological descent equations were first explored by Witten in the Donaldson twist of 4d $\cN=2$ theory \cite{W88} as a means to obtain higher-form-valued gauge-invariant observables from local operators of nonzero ghost number. The solutions to the descent equations were constructed more generally in \cite{MW97}; they may also be familiar to string theorists from their application to the BRST cohomology of noncritical string theories, e.g. \cite{WZ92}. \natalie{more references here eventually}
 
 As above let $\cB$ be the local operators of a theory of topological quantum mechanics. 
@@ -1362,7 +1362,7 @@ Q_0 \cO^{(0)} + \cO^{(0)} \star \cO^{(0)} = 0 .
 
 \subsection*{An example: free fermions}
 \brian{I think we've moved this section above, but let's make sure its the same before deleting}
-We spell out the correspondence between Maurer--Cartan elements as in \eqref{eqn:cmccs} and {\em classical} local couplings in the case that $\cA$ is the algebra of local operators of the free fermion topological mechanics system of rank $N$. 
+We spell out the correspondence between Maurer--Cartan elements as in \eqref{eqn:cmccs} and {\em classical} local couplings in the case that $\cA$ \natalie{I'm not sure we have this above actually. you mean $\cB$ here right? $\cA$ is our gauge algebra} is the algebra of local operators of the free fermion topological mechanics system of rank $N$. 
 
 In this case, $\cA$ is isomorphic to the Clifford algebra $\Cl(\RR^N)$. 
 Systematically, we know how to describe this as the algebra of operators of the quantum mechanical theory on $\RR \times \{z=0\}$ whose fields are odd functions $\chi_i, \psi^j$ for $i,j=1,\ldots, N$. 
@@ -1389,11 +1389,11 @@ To construct the coupling, we solve the descent equations $\partial_t \cO^{(0)} 
 Following the general discussion of topological descent in Section \ref{sec:descent}, we first construct an endomorphism $\hat{Q}$ acting on local operators which trivializes infinitesimal time translations: $\{Q, \hat{Q}\} = \partial_t$. 
 
 It is important here that we work with the full cochain complex of local operators, including those which are cohomologically trivial. 
-For instance, consider the local opeartor $A^a_t$ of degree zero which is defined by
+For instance, consider the local operator $A^a_t$ of degree zero which is defined by
 \[
 A^a_{t} \colon A_b \mapsto \delta^a_b A_{b,t} (t=0, z=0) .
 \]
-This operator is cohomological trivial as it is in the image of \brian{how do physicists say this?}
+This operator is cohomological trivial as it is in the image of \brian{how do physicists say this?} \natalie{how did you want to complete the sentence? we might simply say it's not gauge invariant}
 
 On the $\fc$-ghosts, the operator $\Hat{Q}$ is defined by 
 \[
@@ -1441,13 +1441,15 @@ The Koszul dual to the algebra of operators of the $3d$ gauge theory on $\RR \ti
 [J_a [k], K_b[\ell]] & = f_{ab}^c K_c [k+\ell] .
 \end{align*} 
 
-Furthermore, on generators, the differential is of the form
+Furthermore, on generators, the differential is of the form \natalie{are we bouncing back and forth between d and Q again?}
 \begin{align*}
 \d J_a[k] & = \hbar \sum_{r + s = k} \kappa f J_b[r] K_c[s] + O(\hbar^2) \\
 \d K_a[k] & = \hbar \sum_{r + s = k} \kappa f K_b[r] \Tilde{J}_c[s] + O(\hbar^2)
 \end{align*} 
 \brian{figure out indices}
 \end{prop}
+
+\natalie{what's $\kappa$?}
 
 Clasically, this proposition is a generators and relations description of the graded algebra 
 \[
@@ -1456,7 +1458,7 @@ U(\fg[\ep][z])
 where the linear generators are $J_a[k] = z^k \ft_a$ and $K_a [k] = \ep z^k \ft_a$. 
 
 
-In Section \ref{sec:??} we have argued generally how the relations of the Koszul dual algebra arise by demanding that terms in the path integral involving the coupling to the line defect are BRST invariant. 
+In Section \ref{sec:lines} we have argued generally how the relations of the Koszul dual algebra arise by demanding that terms in the path integral involving the coupling to the line defect are BRST invariant. 
 We work out explicitly how these relations come from an analysis of the BRST invariance of the tree-level path integral for this system.
 
 \subsection*{Tree-level diagrams}
@@ -1620,7 +1622,7 @@ We will show that this gauge anomaly is proportional to
 	\label{fig:cancel4}}
 \end{figure}
 
-
+\natalie{computation needs to be completed}
 
 
 %Two steps:
@@ -1651,6 +1653,14 @@ We will show that this gauge anomaly is proportional to
 %Check refs by Mnev et al on BV-BFV?
 
 \section{Conclusions and further directions}
+
+\natalie{remark on the transverse boundary condition computation of the free field example, explain that the two pictures of KD connect (lines and boundaries), cite Tudor's String-Math talk, remark on it as future work}
+
+\natalie{some basic comments on modules (lines ending on surface defects), cite Davide/s paper with Miro on OPEs of lines/surfaces in twisted M-theory}
+
+\natalie{we may want to make a few remarks about higher dimensional topological defects and En algebras here, rather than have a separate section}
+
+
 
 \printbibliography
 
