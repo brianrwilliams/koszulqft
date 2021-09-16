@@ -17,6 +17,8 @@
 \date{\today}
 \title{Koszul duality in quantum field theory}
 
+\def\id{\mathbb{1}}
+
 \def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
 \def\natalie#1{{\textcolor{green!65!black}{NMP: {#1}}}}
 
@@ -31,6 +33,36 @@ In this article, we introduce basic aspects of the algebraic notion of Koszul du
 \section{Introduction}
 \natalie{preview quantum mechanical deformations of algebras}
 
+Let us give a heuristic for the context in which Koszul duality appears in field theory. 
+Suppose that $\cA$ is the algebra of local operators corresponding to some QFT. 
+To obtain this algebra structure we assume that our QFT is defined on a manifold of the form $\RR \times M$. 
+The algebra structure arises from the OPE in the $\RR$-direction.  
+
+Next, assume that $\cB$ is another algebra, which we think of as being associated to some quantum mechanical system along $\RR \times \{x\} \subset \RR \times M$ where $x \in M$. 
+For now, and for the most of this work, we assume that $\cA,\cB$ are simply associative (possibly up to homotopy) algebras. 
+We will always keep track of an internal grading by ghost degree and we denote by $\delta$ the BRST operator. 
+
+The natural problem we contemplate is what it means to couple the two systems $\cA$ and $\cB$. 
+The tensor product algebra $\cA \otimes \cB$ should be thought of as the algebra of operators of the total, uncoupled system, along $\RR$. 
+By a {\em coupling} of the two systems we will mean a {\em Maurer--Cartan element} in this algebra
+\[
+\alpha \in \cA \otimes \cB .
+\]
+That is, $\alpha$ is an element of ghost degree one which satisfies the Maurer--Cartan equation
+\[
+\delta \alpha + \alpha \star \alpha = 0 .
+\]
+In \S \ref{s:algcoupling}, we will elaborate further on this definition. 
+In \S \ref{s:lagcoupling}, we will explain the relationship of this algebraic notion of a coupling more the possibly more standard description in terms of local Lagrangians.
+
+We arrive at Koszul duality from this description of a coupling between two systems. 
+The key observation is that the data of the Mauer--Cartan element $\alpha$ is equivalent to the data of a map of algebras
+\[
+\alpha \colon \cA^! \to \cB 
+\]
+where $\cA^!$ is Koszul dual to the algebra $\cA$. 
+From this observation, the Koszul dual has the following interpretation: $\cA^!$ is the algebra of operators on the {\em universal} line defect supported on $\RR \times \{x\}$. 
+
 \natalie{geometric quantization on the bubble}
 
 \subsection*{Notations}
@@ -44,14 +76,20 @@ Cohomological shift.
 %sym and alt
 %maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
-We begin by providing a basic introduction to Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. For a more exhaustive and general introduction to Koszul duality in mathematics see, for example, \cite{LV}.  \natalie{other canonical references?}
+
+We provide a basic introduction to Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. For a more exhaustive and general introduction to Koszul duality in mathematics see, for example, \cite{LV}.  
+\natalie{other canonical references?}
+
+\subsection{Some definitions}
 
 Let $\cA$ be an associative algebra.
-We will often work in the more general situation where $\cA$ is a differentially graded (dg) algebra. A dg-algebra is $\ZZ$-graded algebra equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
+We will often work in the more general situation where $\cA$ is a differentially graded (dg) algebra. 
+A dg-algebra is $\ZZ$-graded algebra equipped with a square-zero, degree one operator $\d \colon \cA \to \cA[1]$ such that 
 \[
 \d (a \cdot b) = (\d a) \cdot b + (-1)^{|a|} a \cdot (\d b) 
 \]
-where $|a|$ denotes the degree of the element $a$. In physical contexts, one should think about $\cA$ as being the algebra of operators of a quantum mechanical system, and $\d$ may be a BRST operator or a square-zero supercharge, with the operators graded by ghost number or fermion number respectively \footnote{In many physical and mathematical contexts, we only require a $\ZZ/2\ZZ$ grading, e.g. fermion parity, but we will restrict to the $\ZZ$-graded case for now.}.
+where $|a|$ denotes the degree of the element $a$. 
+In physical contexts, one should think about $\cA$ as being the algebra of operators of a quantum mechanical system, and $\d$ may be a BRST operator or a square-zero supercharge, with the operators graded by ghost number or fermion number respectively \footnote{In many physical and mathematical contexts, we only require a $\ZZ/2\ZZ$ grading, e.g. fermion parity, but we will restrict to the $\ZZ$-graded case for now.}.
 If we forget the product then $(\cA, \d)$ has the structure of a cochain complex. 
 We work over the complex numbers $\CC$ so all products and maps are required to be $\CC$-linear. 
 
@@ -328,6 +366,7 @@ It is a straightforward exercise in spectral sequences to prove that even for a 
 %\subsection{Deformed Koszul duality}
 
 \section{Maurer--Cartan elements and algebraic couplings}
+\label{s:algcouple}
 
 In this subsection, we will explain how Koszul dual pairs of algebras naturally arise in the context of topological line defects: more precisely, when considering gauge-invariant couplings between (supersymetrically twisted) quantum field theories and topological quantum mechanical systems. We will largely expand upon the presentation in \cite{CP}; see also the appendix of \cite{GO}.
 
@@ -785,26 +824,16 @@ We start with some bulk theory on a manifold of the form
 \] 
 where $M$ is some manifold. 
 The crucial assumption we make is that the bulk theory is {\em topological} along $\RR \times \{x\}$ for any $x \in M$. 
-This means that OPE's are independent of the coordinate $t$. \brian{can we say this better?}
-An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. \natalie{remark about equivalence of $\cA_x \simeq \cA_{x'}$ here.}
+This means that OPE's are independent of the coordinate $t$.
+An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. 
+If we assume that the theory is also translation invariant along $M$ then there is also an equivalence of algebras $\cA_x \simeq \cA_{x'}$ for $x, x' \in M$. 
+This happens in the examples we discuss later on.
 
+We will consider the problem of coupling to an auxiliary quantum mechanical system along $\RR_t$ whose algebra of local operators we will denote by $\cB$. 
+\brian{should we call this a line operator?}
 
-\natalie{feel free to edit/move/etc. the discussion below}
-
-The choice of augmentation that underlies the notion of Koszul duality corresponds to a physical choice of vacuum. We consider a compactification of the theory on $\RR_t \times M \rightarrow \RR_t$. \natalie{check: are the following statements correct?} In particular, if $M$ is a noncompact manifold \natalie{say anything additional about compact case?}, one must choose suitable boundary conditions at infinity. In theories with a mass gap, this requires making a choice of massive vacuum and prescribing that the fields approach their expectation values in that vacuum as they approach the boundary. If the theory is massless, this requires choosing a point on the moduli space of vacua. \natalie{do we have to worry about IR divergences here? e.g. the character of the algebra might diverge...? Might want to check with Kevin about this case}
-
-More formally, if we have a projection map on the product space $\pi: \RR_t \times M \rightarrow \RR_t$, then we are interested in the pushforward $\pi_* \textrm{Obs}(\RR_t \times M)$ on the algebra of local operators. Throughout this note, we have been working under the assumption that this pushforward is trivial \natalie{example where it's not trivial?}, and simply maps to the ground ring $\CC$ (classically) or $\CC[[\hbar]]$ (when incorporating quantum corrections). \natalie{check we have introduced the quantum corrections earlier so that this makes sense} This corresponds to the assumption that there is a unique vacuum. The map $\cA_x \rightarrow \pi_* \textrm{Obs} \simeq \CC$ is the augmentation. 
-
-In general, the augmentation map will have some nontrivial kernel, which acts trivially on the one-dimensional module $\CC_{\ep}$. The kernel is often referred to as the \textit{augmentation ideal}, since it is a two-sided ideal in the group ring. \natalie{make sure it include its relevance to Koszul duality somewhere... also, we may want to spell out under which assumptions we can replace the augmentation ideal with $\cA$ itself and why.}
-
-
-\natalie{make sure to make some clear statements about koszul duality only being preserved by deformations that preserve augmentation and therefore choice of vacuum... algebraically, which deformations does this pick out?}
-
-
-
-
-Given our simplifying assumptions, the results of the previous sections characterize the coupling between $\cA_x$ and any other algebra $\cB$ representing an independent quantum mechanical system supported on $\RR \times \{x\}$. 
-We have the following
+Given these simplifying assumptions, the results of the previous sections characterize the coupling between $\cA_x$ and $\cB$.
+We have the following.
 
 \begin{prop}\label{prop:line}
 There is a one-to-one correspondence between the space of couplings of $\cA_x$ to $\cB$ and the space of Maurer--Cartan elements in 
@@ -813,9 +842,8 @@ There is a one-to-one correspondence between the space of couplings of $\cA_x$ t
 \]
 \end{prop}
 
-In practice, the bulk theory will \brian{finish}
+We spell out an explicit example. 
 
-\natalie{general statement with augmentation ideal}
 \subsection{Line defects in gauge theory}
 
 \brian{sort of a mess below, needs cleaning and pruning}
@@ -849,7 +877,6 @@ The free action is identical
 \]
 The algebra of operators of the quantum mechanical system is the Clifford algebra $\Cl(\RR^n)$ on $\RR^n$ equipped with its Euclidean metric. 
 
-
 Let's suppose we have a field theory on a manifold of the form $\RR_t \times M$ with the property that it is {\em topological} along the $\RR_t$-direction. 
 Denote by $\Obs$ the local operators along $\RR_t$. 
 
@@ -857,7 +884,75 @@ Suppose that $\cA$ is an associative algebra which represents some other quantum
 Our goal is to couple $\cA$ to the original theory as a line operator along $\RR_t$. 
 
 \subsection{The universal line defect}
+
+Proposition \ref{prop:line} characterizes the problem of coupling a fixed line defect to a higher dimensional theory. 
+We now explain how the Koszul dual to the algebra of operators of the bulk theory represents the universal line defect. 
+
+The key to this interpretation is the following result.
+
+\begin{prop} 
+\label{prop:kd}
+Let $\cA,\cB$ be dg algebras and suppose that $\ep \colon \cA \to \CC$ is an augmentation of $\cA$ and let $\cA^!$ denote the corresponding Koszul dual algebra. 
+There is a bijective correspondence between:
+\begin{itemize}
+\item Maurer--Cartan elements 
+\[
+\alpha \in \cA \otimes \cB 
+\]
+satisfying $(\ep \otimes \id_B) (\alpha) = 0 \in \cB$.
+\item Algebra homomorphisms 
+\[
+\phi_\alpha \colon \cA^! \to \cB .
+\]
+\end{itemize}
+\end{prop}
+
+A number of remarks are in order. 
+We recognize part of the first condition above from the characterization of coupling $\cA$ to a line defect whose algebra of operators is $\cB$.
+What does this extra condition that $\ep \otimes \id_B$ annihilate the algebra coupling mean, physically? 
+To answer this, we need to explain the role of the augmentation.
+
+The choice of an augmentation $\ep \colon \cA \to \CC$ corresponds to a physical choice of vacuum. 
+Recall that the original bulk theory is defined on a manifold of the form $\RR_t \times M$. 
+Consider the compactification of the theory on $\RR_t \times M \rightarrow \RR_t$. 
+In particular, if $M$ is a noncompact manifold, one must choose suitable boundary conditions at infinity. 
+If $\Obs(M \cup \infty)$ denotes the algebra of observables upon making this choice of boundary conditions, then there is a canonical map of algebras $\cA \to \Obs(M \cup \infty)$.\footnote{Using the formalism of factorization algebras this has the elegant interpretation as the structure map corresponding to the manifold embedding $\RR \times M \hookrightarrow \RR \times (M \cup \infty)$.} 
+
+We assume that the augmentation arises by making a suitable choice of boundary conditions which render the compactified theory {\em trivial}. 
+In other words, the algebra of operators of the compactified theory is the trivial one-dimensional algebra $\CC$ and so there is a canonical map $\cA \to \CC$.
+This is the augmentation. 
+
+In theories with a mass gap, choosing boundary conditions at $\infty$ requires making a choice of massive vacuum and prescribing that the fields approach their expectation values in that vacuum as they approach the boundary. If the theory is massless, this requires choosing a point on the moduli space of vacua. \natalie{do we have to worry about IR divergences here? e.g. the character of the algebra might diverge...? Might want to check with Kevin about this case}
+
+With this physical interpretation of the augmentation, we can make sense of the condition that the algebraic coupling satisfy $(\ep \otimes \id_B) \alpha = 0$.
+This simply says that the coupling preserves the choice of a vacuum.
+This means that the coupled system corresponding to $\alpha$ leaves the vacuum unchanged. \brian{Can we say this better?}
+
+We can finally make sense of what we mean by the ``universal'' line defect. 
+Fix an augmentation, or choice of vacuum. 
+Rather tautologically, there is a natural Maurer--Cartan element in the algebra 
+\[
+\alpha_{univ} \in \cA \otimes \cA^! 
+\]
+which corresponds to the identity map $\id_{\cA^!}$ under the equivalence of Proposition \ref{prop:kd}. 
+This coupling is universal, in the following sense. 
+Any another coupling $\alpha \in \cA \otimes \cB$ can be obtained by
+\[
+\alpha = \phi_\alpha (\alpha_{univ})
+\]
+where $\phi_\alpha \colon \cA^! \to \cB$ is the corresponding map of algebras. 
+We note that this universal property is sensitive to the choice of a vacuum; the element $\alpha_{univ}$ depends on this vacuum.  
+
+\brian{the stuff below I had a hard time fitting in}
+
+In general, the augmentation map will have some nontrivial kernel, which acts trivially on the one-dimensional module $\CC_{\ep}$. The kernel is often referred to as the \textit{augmentation ideal}, since it is a two-sided ideal in the group ring. \natalie{make sure it include its relevance to Koszul duality somewhere... also, we may want to spell out under which assumptions we can replace the augmentation ideal with $\cA$ itself and why.}
+\brian{Sorry if I'm being dim here, but is there a particular reason we want to bring up the augmentation ideal at this stage?}
+
+\natalie{general statement with augmentation ideal}
+
 \natalie{To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x $\Omega^{d-2}(M)$... how is Koszul duality insensitive to this?}
+
+\brian{I'm not sure where this comment should go, but I don't think it belongs here}
 
 Mathematically, one speaks of a more general Koszul duality between Comm/Lie \textit{operads}, as well as the Koszul self-duality of the Associative operad. We will not need the machinery of operads in this note. Here, we are simply pointing out that at the level of algebras, one naturally finds commutative/Lie Koszul dual pairs of algebras arising from classical limits of associative/associative Koszul dual algebras.
 
@@ -925,7 +1020,7 @@ The free action reads
 which, after integration by parts, can be written more compactly in the twisted theory as\footnote{Although $\phi^{(1)}$ does not appear in the action, it plays an interesting role in understanding higher operations (brackets); see \cite{CDG} for details.} \natalie{right?}
 
 \[
-\int(dz \wedge \psi) d\phi.
+\int(\d z \wedge \psi) \wedge \d \phi.
 \]
 
 We may return to the physical theory for a free chiral multiplet from this twisted representation by adding a quadratic term for $\psi$ and integrating it out to return it to its on-shell value. Such quadratic terms are killed in the twisted formalism because they are $\bar{Q}_+$-exact.  
@@ -950,9 +1045,10 @@ The gauge symmetry is given by a $V^*$-valued scalar $\chi$ which acts on the fi
 
 This ghost $\chi$ in the twisted theory is precisely $i \bar{\psi}_-$ in the physical theory. The BRST transformation of the twisted theory is identified with the SUSY transformation in the physical theory. Indeed, one may compute the SUSY transformation of $\psi$ and observe that it coincides with this symmetry on-shell. 
 
-\subsection*{Local operators}
+\subsection{Local operators}
 
-We move towards a description of the algebra of local operators \textit{of all cohomological degrees} at $z = t = 0$, up to gauge equivalence. We recall that (local) operators are (local) functionals on the space of fields, so that while the field $\phi$ is valued in $V$, its local dual operator is valued in $V^*$. Although we are treating operators in this section, we will make use of the standard physics abuse of notation and denote them by the same symbols as the corresponding fields \footnote{Properly speaking, the R-charges we listed in the previous section were also those of the local operators. The fields have the opposite charges.}. 
+We move towards a description of the algebra of local operators \textit{of all cohomological degrees} at $z = t = 0$, up to gauge equivalence. 
+We recall that (local) operators are (local) functionals on the space of fields, so that while the field $\phi$ is valued in $V$, its local dual operator is valued in $V^*$. Although we are treating operators in this section, we will make use of the standard physics abuse of notation and denote them by the same symbols as the corresponding fields \footnote{Properly speaking, the R-charges we listed in the previous section were also those of the local operators. The fields have the opposite charges.}. 
 
 The equations of motion imply that the $\phi$ has vanishing $t$ and $\zbar$-derivatives. 
 Thus, the only local operators built from $\phi$ must be given by holomorphic $z$-derivatives. 
@@ -985,58 +1081,64 @@ Thus, the linear local operators in $\chi$ comprise the vector space $\oplus_{n 
 Since $\chi$ is a gauge symmetry, the algebra of operators involving only $\chi$ combine to form the exterior algebra $\wedge^\bu \left(\oplus_{n > 0} V_{(n)}\right)$ \footnote{More precisely, we obtain the {\em graded symmetric} algebra $\Sym(V_{(n)}[-1])$ of $V_{(n)}$ concentrated in degree $+1$.
 We will only use the underlying $\ZZ/2$-graded vector space in this section.}. Note that the operators coming from $\chi$ are concentrated in cohomological degree 1 and higher, as expected. Note that in the twisted theory, cohomological degree is identified with the R-charge of the twisted fields, which further coincides with ``ghost number'' in this example. 
 
-Summarizing our discussion thus far, we see that the local, or 0-form, operators are of the form
+Summarizing our discussion thus far, we see that the space of local operators at $z=t=0$ is of the form
 %\[
 %{\rm S}^\bu \left(z^{-1} V^*[z^{-1}]\right) \otimes \wedge^\bu \left(V[z^{-1}]\right)
 %\]
 %which we can slightly rewrite as
 \[
-\Obs_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
+\cA_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
 \]
 where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
 
 \natalie{Do we want to say anything about the higher products in this example/how they behave under Koszul duality? It may involve a longer interlude regarding secondary brackets, etc.}
 
-\subsection*{Character of local operators}
+\subsection{Character of local operators}
 
-We contemplate the following two symmetries of the free theory.
+We consider the following two symmetries of the free theory.
 The first corresponds to conformal symmetries along the $z$-plane. 
 Concretely, consider the piece of this generated by $\U(1)$ rotations of $\CC_z$.
-Infinitesimally, this is generated by the holomorphic vector field $z \frac{\partial}{\partial z}$. 
+Infinitesimally, this is generated by the holomorphic vector field $z \frac{\partial}{\partial z}$ acting on the fields $\phi$ and $\d z \wedge \psi$. 
 
 Second, there is a $\U(1)$ flavor symmetry, where $\phi$ transforms with charge $+1$ and $\psi$ transforms in the dual representation, $-1$.
 
-The character of the chiral algebra furnished by the space of local operators $\Obs_0$ can be written in terms of fugacities $q$ and $s$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $s$ is the fugacity of the $\U(1)$ flavor symmetry. The fugacity $q$ is conjugate to the twisted spin $J$, the fugacity $s$ is conjugate to the flavor charge $e$, and $r$, the R-charge, is the homological grading:
+The character of the chiral algebra furnished by the space of local operators $\cA_0$ can be written in terms of fugacities $q$ and $s$ where $q$ is the fugacity of the $\U(1)$ conformal symmetry and $s$ is the fugacity of the $\U(1)$ flavor symmetry. The fugacity $q$ is conjugate to the twisted spin $J$, the fugacity $s$ is conjugate to the flavor charge $e$, and $r$, the R-charge, is the homological grading:
 \[
 \chi_0(q , s) := \Tr (-1)^r q^J s^e =  \frac{(q s^{-1} ; q)_\infty}{(s ; q)_\infty}  = \prod_{n \geq 0} \frac{1 - s^{-1} q^{n+1}}{1 - s q^n}.
 \]
 
 This is nothing but the usual expression for the supersymmetric index of a free chiral multiplet. The degrees of freedom counted by this index are given by the $\bar{Q}_+$-closed fields in the physical theory: $\left\lbrace \partial_z^n \phi \right\rbrace_{n \geq 0}, \left\lbrace \partial_z^n \bar{\psi}_- \right\rbrace_{n \geq 0}$. The former have $r=0, J = n$ and the latter have $r=1, J= n+1$. These perfectly match the local operators in the twisted theory generated by holomorphic derivatives of $\phi, \chi$ as enumerated in the previous subsection.
 
-\subsection*{Line operators}
+\subsection{Line operators}
 
-We turn to an interpretation of the Koszul dual of the algebra of local operators of the bulk theory, namely $\Obs_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)$. 
+%We turn to an interpretation of the Koszul dual of the algebra of local operators of the bulk theory, namely $\Obs_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)$. 
 
-As we have explained, we consider the coupling of our bulk theory to a topological theory on the topological line given by $\mathbb{R}_t$. Koszul duality will arise in terms of such line operators of the original three-dimensional theory. 
+As we have explained, we consider the coupling of our bulk theory to a topological line defect along $\mathbb{R}_t \times \{z=0\}$. 
+Koszul duality will arise in terms of such line operators of the original three-dimensional theory. 
 As this theory is free, the analysis here is quite simple, but it we hope it serves as an instructive exhibition of the general discussion in Section \ref{sec:lines}. 
 
-Let us consider the space of local operators at the origin $\Obs_0$. 
+Let us consider the space of local operators $\cA_0$ at $z=t=0$. 
 As announced in the general section, we are to interpret the Koszul dual of this algebra as the algebra of local operators on the ``universal line defect''.
 In this example, the defect we are considering is along the topological line $\{z=0\} \subset \RR \times \CC$. 
-Per our analysis in the previous section, we perform topological descent on all Maurer-Cartan elements of the algebra of operators on the line $\mathcal{A}\otimes \mathcal{B}$ to obtain the space of possible perturbative couplings, where $\mathcal{A} \simeq \mathbb{C}[\phi, \chi]$ is the algebra of bulk operators restricted to the line and $\mathcal{B}$ is our (at the moment arbitrary) auxiliary algebra of operators. 
 
-Any Maurer-Cartan element, governing first-order deformations of our uncoupled system, lives in degree one by definition. This leaves us with two options in our example. We may perform descent on $\partial_z^n \chi \otimes \rho$ where $|\chi| = 1, |\rho|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $\rho, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $\rho^{(1)}, K^{(1)}$. 
+Recall that if $\cB$ is the algebra of operators of an auxiliary quantum mechanical system along $\{z=0\}$, then couplings between $\cA_0$ and $\cB$ are controlled by Maurer--Cartan elements in $\mathcal{A}_0\otimes \mathcal{B}$.
+The Lagrangian coupling is obtained by descent. 
+%to obtain the space of possible perturbative couplings, where $\mathcal{A} \simeq \mathbb{C}[\phi, \chi]$ is the algebra of bulk operators restricted to the line and $\mathcal{B}$ is our (at the moment arbitrary) auxiliary algebra of operators. 
+
+Any Maurer--Cartan element lives in degree one, by definition. This leaves us with two options in our example. 
+We may perform descent on $\partial_z^n \chi \otimes J$ where $|\chi| = 1, |J|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $\rho, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $J^{(1)}, K^{(1)}$. 
 
 
 %We choose a basis $\{e_a\}$ for $V$. 
 The most general coupling then takes the form
 \[
-\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} \rho[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} \rho^{(1)}[i] \partial_z^i \chi.
+\sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} J^{(1)}[i] \partial_z^i \chi.
 \] 
 
 
 Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may couple to a field along the defect, which we denote by $\psi_t, \phi_t$. This is equivalent to what we would have obtained had we performed ordinary topological descent directly on the line. \natalie{right?} 
-Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$ along $\RR_t$, the field $\phi$ couples to a one-form $K^{(1)}[\ell] = K_t [\ell] \d t$ along $\RR_t$ (and vice versa for their counterparts). In total, all of the couplings are one-forms along $\RR_t$ with ghost number 0. 
+Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$ along, the field $\phi$ couples to a one-form $K^{(1)}[\ell] = K_t [\ell] \d t$ (and vice versa for their counterparts). 
+In total, all of the Lagrangian couplings are one-forms along $\RR_t$ with ghost number 0. 
 
 Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}. In practice, this means we may begin with the space of degree 1 elements in the tensor product algebra and check that they satisfy the Maurer-Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
 
