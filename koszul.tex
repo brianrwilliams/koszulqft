@@ -842,19 +842,19 @@ There is a one-to-one correspondence between the space of couplings of $\cA_x$ t
 \]
 \end{prop}
 
-We spell out an explicit example. 
+We consider a simple example. 
 
-\subsection{Line defects in gauge theory}
+\subsection{Line defects in topological gauge theory}
 
-\brian{sort of a mess below, needs cleaning and pruning}
+Let's consider Chern--Simons theory on $\RR^3 = \RR \times \RR^2$. 
+
 
 %free fermions/bosons in CS example? In 4d CS? Classical limit to connect Assoc/Assoc duality to Comm/Lie? 
 %references for lines in 4d N=4, 2d YM, boson and fermion descriptions
 %any example where we know, e.g., dim(MC(AxB)) and it's relatively tractable? If so, connect explicitly with Hom & couplings
 %3d N=6 topological line?
 
-Ordinary mechanics describes \brian{do it}
-Topological mechanics, on the other hand, describes {\em locally constant} paths inside of phase space.
+Next, we let $\cB$ be the Weyl algebra which is associated to topological mechanics on $\RR_t$ as we recalled in \S \ref{sec:gaugetheory}. 
 
 The most basic phase space we consider is the cotangent bundle of affine space $\T^* \RR^n$.
 The fields of this system are given by functions $\gamma^i, \beta_j$ on $\RR$ where $i,j=1,\ldots n$. 
@@ -884,13 +884,40 @@ Suppose that $\cA$ is an associative algebra which represents some other quantum
 Our goal is to couple $\cA$ to the original theory as a line operator along $\RR_t$. 
 
 \subsection{The universal line defect}
+\label{sec:univ}
 
 Proposition \ref{prop:line} characterizes the problem of coupling a fixed line defect to a higher dimensional theory. 
 We now explain how the Koszul dual to the algebra of operators of the bulk theory represents the universal line defect. 
 
-The key to this interpretation is the following result.
+The key to this interpretation is the following idea.
+Let's consider the problem of coupling a line defect to a simple bulk gauge theory. 
+Assume that the algebra of local operators of the gauge theory is $\clie^\bu(\fg)$.
+If the algebra along the line defect $\cB$ is concentrated in degree zero (so has trivial internal BRST differential), then couplings must necessarily lie in the subspace
+\[
+\alpha \in \fg^* \otimes \cB \subset \clie^\bu(\fg) \otimes \cB [1] .
+\]
+Thus, $\alpha$ can be thought of as a linear map $\phi_\alpha \colon \fg \to \cB$. 
 
-\begin{prop} 
+The condition that $\alpha$ be a Maurer--Cartan element is $\d_{CE} (\alpha) + \alpha \star \alpha = 0$.
+This condition is equivalent to a very natural condition on the map $\phi_\alpha$, that it is a map of Lie algebras:
+\[
+\phi_\alpha ([x,y]_\fg) = \phi_\alpha(x) \star \phi_\alpha(y) - \phi_\alpha(y) \star \phi_\alpha(x) .
+\]
+
+From here, we can see where Koszul duality enters. 
+The characterizing property of the enveloping algebra $U \fg$ is that it is the universal algebra for which $\fg$ sits inside as a Lie algebra. 
+This implies that there exists a unique map $\til \phi_\alpha$ making the following diagram commutative
+\[
+\begin{tikzcd}
+\fg \ar[dr] \ar[rr, "\phi_\alpha"] & & \cB \\
+& U \fg \ar[ur, "\til \phi_\alpha"'] .
+\end{tikzcd}
+\]
+
+This spells out a bijective correspondence between couplings of a gauge theory to an external algebra $\cB$ along a line defect with maps of algebras $U \fg \to \cB$. 
+The more general statement is the following.  
+
+\begin{prop}[\cite{LurieHA}]
 \label{prop:kd}
 Let $\cA,\cB$ be dg algebras and suppose that $\ep \colon \cA \to \CC$ is an augmentation of $\cA$ and let $\cA^!$ denote the corresponding Koszul dual algebra. 
 There is a bijective correspondence between:
@@ -899,7 +926,7 @@ There is a bijective correspondence between:
 \[
 \alpha \in \cA \otimes \cB 
 \]
-satisfying $(\ep \otimes \id_B) (\alpha) = 0 \in \cB$.
+satisfying $(\ep \otimes \id_B) (\alpha) = 0 \in \cB$.\footnote{Equivalently, this means that $\alpha$ lives in $\mathfrak{m} \otimes \cB$ where $\mathfrak{m} = \ker \ep \subset \cA$ is the augmentation ideal.}
 \item Algebra homomorphisms 
 \[
 \phi_\alpha \colon \cA^! \to \cB .
@@ -926,7 +953,7 @@ In theories with a mass gap, choosing boundary conditions at $\infty$ requires m
 
 With this physical interpretation of the augmentation, we can make sense of the condition that the algebraic coupling satisfy $(\ep \otimes \id_B) \alpha = 0$.
 This simply says that the coupling preserves the choice of a vacuum.
-This means that the coupled system corresponding to $\alpha$ leaves the vacuum unchanged. \brian{Can we say this better?}
+This means that the coupled system corresponding to $\alpha$ leaves the vacuum unchanged.
 
 We can finally make sense of what we mean by the ``universal'' line defect. 
 Fix an augmentation, or choice of vacuum. 
@@ -943,18 +970,18 @@ Any another coupling $\alpha \in \cA \otimes \cB$ can be obtained by
 where $\phi_\alpha \colon \cA^! \to \cB$ is the corresponding map of algebras. 
 We note that this universal property is sensitive to the choice of a vacuum; the element $\alpha_{univ}$ depends on this vacuum.  
 
-\brian{the stuff below I had a hard time fitting in}
-
-In general, the augmentation map will have some nontrivial kernel, which acts trivially on the one-dimensional module $\CC_{\ep}$. The kernel is often referred to as the \textit{augmentation ideal}, since it is a two-sided ideal in the group ring. \natalie{make sure it include its relevance to Koszul duality somewhere... also, we may want to spell out under which assumptions we can replace the augmentation ideal with $\cA$ itself and why.}
-\brian{Sorry if I'm being dim here, but is there a particular reason we want to bring up the augmentation ideal at this stage?}
-
-\natalie{general statement with augmentation ideal}
-
-\natalie{To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x $\Omega^{d-2}(M)$... how is Koszul duality insensitive to this?}
-
-\brian{I'm not sure where this comment should go, but I don't think it belongs here}
-
-Mathematically, one speaks of a more general Koszul duality between Comm/Lie \textit{operads}, as well as the Koszul self-duality of the Associative operad. We will not need the machinery of operads in this note. Here, we are simply pointing out that at the level of algebras, one naturally finds commutative/Lie Koszul dual pairs of algebras arising from classical limits of associative/associative Koszul dual algebras.
+%\brian{the stuff below I had a hard time fitting in}
+%
+%In general, the augmentation map will have some nontrivial kernel, which acts trivially on the one-dimensional module $\CC_{\ep}$. The kernel is often referred to as the \textit{augmentation ideal}, since it is a two-sided ideal in the group ring. \natalie{make sure it include its relevance to Koszul duality somewhere... also, we may want to spell out under which assumptions we can replace the augmentation ideal with $\cA$ itself and why.}
+%\brian{Sorry if I'm being dim here, but is there a particular reason we want to bring up the augmentation ideal at this stage?}
+%
+%\natalie{general statement with augmentation ideal}
+%
+%\natalie{To be clarified: even ignoring BV/BRST extensions, we often have the freedom to enlarge the basic space of fields (dual to ops). E.g. U(1) gauge theory in the first order formalism enlarges from (gauge fields) to (gauge fields) x $\Omega^{d-2}(M)$... how is Koszul duality insensitive to this?}
+%
+%\brian{I'm not sure where this comment should go, but I don't think it belongs here}
+%
+%Mathematically, one speaks of a more general Koszul duality between Comm/Lie \textit{operads}, as well as the Koszul self-duality of the Associative operad. We will not need the machinery of operads in this note. Here, we are simply pointing out that at the level of algebras, one naturally finds commutative/Lie Koszul dual pairs of algebras arising from classical limits of associative/associative Koszul dual algebras.
 
 %explanation about augmentation ideal in more general case should go here
 
@@ -1086,9 +1113,9 @@ Summarizing our discussion thus far, we see that the space of local operators at
 %{\rm S}^\bu \left(z^{-1} V^*[z^{-1}]\right) \otimes \wedge^\bu \left(V[z^{-1}]\right)
 %\]
 %which we can slightly rewrite as
-\[
+\beqn\label{eqn:freeops}
 \cA_0 = \bigotimes_{n \geq 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m > 0} \wedge^\bu \big(V_{(m)}\big)
-\]
+\eeqn
 where $V_{(n)}^* \simeq V^*$ indicates the vector space spanned by local operators of the form $\partial^n_{z} \phi(0)$ and $V_{(m+1)} \simeq V$ indicates the vector space spanned by local operators of the form $\partial^{m}_z \chi$. 
 
 \natalie{Do we want to say anything about the higher products in this example/how they behave under Koszul duality? It may involve a longer interlude regarding secondary brackets, etc.}
@@ -1126,15 +1153,19 @@ The Lagrangian coupling is obtained by descent.
 %to obtain the space of possible perturbative couplings, where $\mathcal{A} \simeq \mathbb{C}[\phi, \chi]$ is the algebra of bulk operators restricted to the line and $\mathcal{B}$ is our (at the moment arbitrary) auxiliary algebra of operators. 
 
 Any Maurer--Cartan element lives in degree one, by definition. This leaves us with two options in our example. 
-We may perform descent on $\partial_z^n \chi \otimes J$ where $|\chi| = 1, |J|=0$, or we may perform descent on $\partial_z^n \phi \otimes K$, where $|\phi|=0, |K| = 1$.  At the moment, $\rho, K \in \mathcal{B}$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $J^{(1)}, K^{(1)}$. 
-
+Let us introduce a basis $\{e_a\}$ of $V$ with dual basis $\{e^a\}$.
+We may perform descent on the following two classes of local operators in $\cA_0 \otimes \cB$:
+\begin{itemize}
+\item $\partial_z^n \chi^a \otimes J_a[n]$ where $|\chi| = 1, |J|=0$, and $J = J_a e^a \in V$ and
+\item $\partial_z^n \phi_a \otimes K^a[n]$, where $|\phi|=0, |K| = 1$, and $K = K^a e_a \in V^*$. 
+\end{itemize}
+At the moment, $J, K$ are stand-ins for some arbitrary local operators of the appropriate cohomological degree, and we will denote their descendants by a defect algebra endomorphism $\hat{Q}_{d}$ (which need not to be the same as the $\hat{Q}$ acting on the bulk algebra) by $J^{(1)}, K^{(1)}$. 
 
 %We choose a basis $\{e_a\}$ for $V$. 
 The most general coupling then takes the form
 \[
 \sum_{\ell \geq 0} \int_{\{z=0\}} \frac{1}{\ell!} K^{(1)} [\ell] \partial_z^\ell \phi + \sum_{k \geq 0} \int_{\{z=0\}} \frac{1}{k!} J[k] \partial_z^k \psi_t  + \sum_{j \geq 0} \int_{\{z=0\}} \frac{1}{j!} K[j] \partial_z^j \phi_t +  \sum_{i \geq 0} \int_{\{z=0\}} \frac{1}{i!} J^{(1)}[i] \partial_z^i \chi.
 \] 
-
 
 Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may couple to a field along the defect, which we denote by $\psi_t, \phi_t$. This is equivalent to what we would have obtained had we performed ordinary topological descent directly on the line. \natalie{right?} 
 Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$ along, the field $\phi$ couples to a one-form $K^{(1)}[\ell] = K_t [\ell] \d t$ (and vice versa for their counterparts). 
@@ -1152,8 +1183,77 @@ It is natural to expect that we can obtain a complete set of couplings only invo
 %Q_{\rm defect} K_t^a[\ell] = \partial_t \mathfrak{k}^a [\ell] .
 %\]
 
+\subsection{Choosing a vacuum} 
 
+In \eqref{eqn:freeops} we deduced the algebra of local operators $\cA_0$. 
+Implicitly, in the above calculation of the Koszul dual of $\cA_0$ we assumed a natural augmentation given by the projection onto the ${\rm S}^0(V^*_{(0)})\simeq \CC$ piece of $\cA_0$. 
+Indeed, each of the couplings listed above are annihilated by this augmentation. 
+In \S \ref{sec:univ} we explained that such an augmentation arises physically from the choice of a vacuum. 
+In this section, we explain this choice of a vacuum. 
 
+This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$, thinking of $\PP^1$ is the one-point compactification of $\CC$, by fixing the behavior for the fields at $z = \infty$. 
+
+For the desired vacuum, we choose the boundary conditions:
+\begin{itemize}
+\item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
+That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
+\[
+\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) 
+\]
+\item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
+That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
+\[
+\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
+\]
+\end{itemize}
+
+Additionally, we must fix the boundary behavior of the gauge field $\chi$ to be compatible with the above choices.
+A natural way to do this is to require the gauge field to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
+\[
+\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right) .
+\]
+
+This choice of a boundary condition results in the following special property of the theory upon compactification along $\PP^1$.
+
+\begin{lem}\label{lem:compactP1}
+The compactification of the theory along 
+\[
+\begin{tikzcd}
+\RR \times \PP^1 \ar[d] \\ \RR
+\end{tikzcd}
+\]
+results in the trivial one-dimensional theory. 
+\end{lem}
+\begin{proof}
+The point is that every solution to the equations of motion is gauge equivalent to the trivial solution. 
+For the scalar $\phi$, notice that the equations of motion require it to be constant along $\RR$ and holomorphic $\dbar \phi = 0$. 
+Since there are no global holomorphic sections on $\PP^1$, we see that $\phi$ must be the trivial solution. 
+
+The remaining equations of motion are
+\[
+\frac{\partial}{\partial \zbar} \psi_t - \frac{\partial}{\partial t} \psi_\zbar = 0 .
+\]
+\brian{finish} \footnote{This follows from the fact that $\chi$ and $\psi$ comprise the cohomology $H^\bu(\PP^1, K_{\PP^1} \otimes \cO(1))$ which is trivial.}
+
+%Again, $\psi_t$ is required to be constant along $\RR$ and be holomorphic $\dbar \psi_t = 0$. 
+\end{proof}
+
+If $\Obs(\PP^1)$ denotes the observables of the compactified theory, the above result implies that $\Obs(\PP^1) \simeq \CC$. 
+The local-to-global map from local operators to operators in the compactificatied theory
+\[
+\cA_0 \to \Obs(\PP^1) \simeq \CC
+\]
+is precisely the projection onto the component ${\rm S}^0(V^*_{(0)}$. 
+
+%Let us translate this boundary condition to the $S^1$-reduction of the three-dimensional theory to $\RR \times \RR_{>0}$. 
+%This boundary condition determines the behavior of the two-dimensional fields as $r \to \infty$, which we read off to be 
+%\begin{equation}\label{eqn:bc2}
+%\phi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
+%\end{equation}
+%We must also require that the gauge field satisfy a compatible boundary condition:
+%\begin{equation}\label{eqn:gbc2}
+%\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n \geq 0 .
+%\end{equation}
 
 
 
@@ -1212,69 +1312,6 @@ We must also require that the gauge field satisfy a compatible boundary conditio
 We observe that the corresponding operators at $t = r = 0$ of this dimensionally reduced theory agree precisely with the local operators $\Obs_0$ we found from the three-dimensional point of view above. 
 Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\phi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
 In the notation of the previous section $\phi_n$ corresponds to a scalar multiple of $\partial_z^n \phi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
-
-\subsection*{A `dual' boundary condition} 
-
-We define another boundary condition of this dimensionally reduced two-dimensional theory which is `dual' to the one we have just discussed. 
-
-In fact, we will actually construct this boundary condition at the level of the three-dimensional theory on $\RR_t \times \CC_z$ at $z = \infty$. 
-This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$ by fixing the behavior for the fields at $z = \infty$. 
-
-The boundary conditions we choose are the following:
-\begin{itemize}
-\item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
-That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
-\[
-\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) 
-\]
-\item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
-That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
-\[
-\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
-\]
-\end{itemize}
-
-Additionally, we must fix the boundary behavior of the gauge field $\chi$ to be compatible with the above choices.
-A natural way to do this is to require the gauge field to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
-\[
-\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right) .
-\]
-
-This choice of a boundary condition results in a very special property of the theory upon compactification along $\PP^1$.
-
-\begin{lem}\label{lem:compactP1}
-The compactification of the theory along 
-\[
-\begin{tikzcd}
-\RR \times \PP^1 \ar[d] \\ \RR
-\end{tikzcd}
-\]
-results in the trivial one-dimensional theory. 
-\end{lem}
-\begin{proof}
-The point is that every solution to the equations of motion is gauge equivalent to the trivial solution. 
-For the scalar $\phi$, notice that the equations of motion require it to be constant along $\RR$ and holomorphic $\dbar \phi = 0$. 
-Since there are no global holomorphic sections on $\PP^1$, we see that $\phi$ must be the trivial solution. 
-
-The remaining equations of motion are
-\[
-\frac{\partial}{\partial \zbar} \psi_t - \frac{\partial}{\partial t} \psi_\zbar = 0 .
-\]
-\brian{finish} \footnote{This follows from the fact that $\chi$ and $\psi$ comprise the cohomology $H^\bu(\PP^1, K_{\PP^1} \otimes \cO(1))$ which is trivial.}
-
-%Again, $\psi_t$ is required to be constant along $\RR$ and be holomorphic $\dbar \psi_t = 0$. 
-
-\end{proof}
-
-Let us translate this boundary condition to the $S^1$-reduction of the three-dimensional theory to $\RR \times \RR_{>0}$. 
-This boundary condition determines the behavior of the two-dimensional fields as $r \to \infty$, which we read off to be 
-\begin{equation}\label{eqn:bc2}
-\phi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
-\end{equation}
-We must also require that the gauge field satisfy a compatible boundary condition:
-\begin{equation}\label{eqn:gbc2}
-\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n \geq 0 .
-\end{equation}
 
 \subsection*{Comparing boundary conditions}
 
