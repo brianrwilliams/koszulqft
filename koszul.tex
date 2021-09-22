@@ -1089,17 +1089,20 @@ Next, consider local operators of the one-form field $\psi = \psi_t \d t + \psi_
 We claim that up to gauge equivalence there are no nontrivial local operators depending on $\psi_t, \psi_\zbar$.  
 The easiest way to see this is to introduce the two-form field
 \[
-\d z \wedge \psi = \psi_t \d z \wedge \d t + \psi_\zbar \d z \wedge \d \zbar .
+\til \psi \define \d z \wedge \psi = \psi_t \d z \wedge \d t + \psi_\zbar \d z \wedge \d \zbar .
 \]
 Then, the equations of motion are equivalent to the condition that this two-form be closed for the de Rham differential
 \[
-\d \left(\d z \wedge \psi\right) = 0 .
+\d \left(\til \psi\right) = 0 .
 \]
-In other words, $\d z \wedge \psi \in Z^2 (\RR^3)$. 
+In other words, $\til \psi \in Z^2 (\RR^3)$. 
 
-In terms of the two form field $\d z \wedge \psi$ there is a one-form gauge symmetry by the field $\d z \wedge \chi$. 
-In this notation, the gauge symmetry simply reads $\delta (\d z \wedge \psi) = \d (\d z \wedge \chi)$, which is completely equivalent to Equation \eqref{eqn:freegauge}.
-By a slight refinement of the Poincar\'{e} lemma for partial one-forms\footnote{This version of the Poincar\'{e} lemma is simply the statement $H^1_{\rm dR} (\RR) = H_{\dbar}^{0,1}(\CC)= 0$.}, there exists $\chi$ such that the one-form $\d z \wedge \chi$ renders $\d z \wedge \psi \in Z^2(\RR^3)$ gauge trivial. 
+In terms of the two form field $\til \psi$ there is a one-form gauge symmetry by the one-form field 
+\[
+\til \chi \define \d z \wedge \chi .
+\]
+In this notation, the gauge symmetry simply reads $\delta (\til \psi) = \d (\til \chi)$, which is completely equivalent to Equation \eqref{eqn:freegauge}.
+By a slight refinement of the Poincar\'{e} lemma for partial one-forms\footnote{This version of the Poincar\'{e} lemma is simply the statement $H^1_{\rm dR} (\RR) = H_{\dbar}^{0,1}(\CC)= 0$.}, there exists $\chi$ such that the one-form $\til \chi$ renders $\til \psi \in Z^2(\RR^3)$ gauge trivial. 
 
 
 Finally, consider local operators built from the ghost field $\chi$. 
@@ -1196,6 +1199,8 @@ In \S \ref{sec:univ} we explained that such an augmentation arises physically fr
 In this section, we explain this choice of a vacuum. 
 
 This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$, thinking of $\PP^1$ is the one-point compactification of $\CC$, by fixing the behavior for the fields at $z = \infty$. 
+One subtle thing is that since $\PP^1$ does not admit a nowhere vanishing holomorphic volume form, it is most natural to locally replace $\psi$ by the two-form field $\til \psi = \d z \wedge \psi$.
+Denote the $\d z  \wedge \d \zbar$ component of $\til \psi$ by $\til \psi_{z \zbar}$ and the $\d z  \wedge \d t$ component by $\til \psi_{zt}$. 
 
 For the desired vacuum, we choose the boundary conditions on the \textit{fields} of the twisted theory:
 \begin{itemize}
@@ -1207,15 +1212,15 @@ That is, $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{Mor
 \item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
 That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
 \[
-\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
+\til \psi_{zt}, \psi_{z\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, K_{\PP^1} \otimes \cO(1) \otimes V^*\right)
 \]
 \end{itemize}
 
-\natalie{below I renamed $\chi$ a ghost field instead of a gauge field, since it's a scalar}
 Additionally, we must fix the boundary behavior of the ghost field $\chi$ to be compatible with the above choices.
-A natural way to do this is to require the ghost to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
+Again, it is best to replace $\chi$ by the one-form field $\til \chi = \d z \wedge \chi$. 
+We require that the one-form ghost $\til \chi$ acquire a simple pole at $\infty \in \PP^1$, just like the $\til \psi$-field:
 \[
-\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V\right) .
+\til\chi \in C^\infty\left(\RR \times \PP^1 \, , \, K_{\PP^1}(1) \otimes V\right) .
 \]
 
 This choice of a boundary condition results in the following special property of the theory upon compactification along $\PP^1$.
@@ -1236,16 +1241,16 @@ Since there are no global holomorphic sections of the sheaf $\cO(-1)$ on $\PP^1$
 
 The remaining equations of motion are
 \[
-\frac{\partial}{\partial \zbar} \psi_t - \frac{\partial}{\partial t} \psi_\zbar = 0 .
+\frac{\partial}{\partial \zbar} \psi_t - \frac{\partial}{\partial t} \psi_\zbar = 0 ,
 \]
+which is equivalent to $\d \til \psi = 0$, where $\til \psi = \d z \wedge \psi$. 
 We have already argued that before imposing boundary conditions that every pair of solutions to this equation are gauge trivial. 
 Since the gauge transformations preserve the condition that $\psi_t, \psi_{\zbar}$ have a simple pole at $\infty$ this remains true even after imposing the boundary conditions. 
 
-It remains to see that there are non trivial degrees of freedom present for the ghost $\chi$. 
-Recall that $\chi$ must also be constant along $\RR$ and holomorphic along $\PP^1$ 
-\brian{I messed something up, I need to fix this}
-
-
+It remains to see that there are non trivial degrees of freedom present for the ghost $\til\chi = \d z \wedge \chi$. 
+Recall that $\til\chi$ must be constant along $\RR$.
+The remaining equations of motion together with our boundary condition implies $\til \chi$ is a holomorphic section of $K_{\PP^1}(1)$. 
+Any such section is trivial.
 %Again, $\psi_t$ is required to be constant along $\RR$ and be holomorphic $\dbar \psi_t = 0$. 
 \end{proof}
 
