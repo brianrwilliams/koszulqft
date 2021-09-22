@@ -1181,7 +1181,7 @@ It is natural to expect that we can obtain a complete set of couplings only invo
 
 Applying our analysis from \S \ref{s:lines} to obtain the Koszul dual algebra is almost trivial in this case. We have two putative MC elements to apply the MC equation to:  $\partial_z^n \chi^a \otimes J_a[n]$,  $\partial_z^n \phi_a \otimes K^a[n]$. The twisted BRST charge, $\bar{Q}_+$, acts only on the bulk operators, which it annihilates. The operator products on the bulk terms, as we have seen, are just free products, so we have no interesting constraints on the OPEs for the defect operators from the quadratic terms: free products on the defect operators will satisfy the MC equation. The operators $K[n], J[n]$ are anticommuting and commuting, respectively, per their cohomological degree above. In total we have
 
-\begin{equation}
+\begin{equation}\label{eq:freedual}
 \mathcal{A}_0^{!} = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m \leq 0} \wedge^\bu \big(V_{(m)}\big).
 \end{equation} Notice that since the holomorphic derivatives increment the spin/degree of the operators, then in order for the coupling to have total spin 0, the gradings of the algebras are negative the gradings of the bulk algebras.
 
@@ -1274,7 +1274,7 @@ is precisely the projection onto the component ${\rm S}^0(V^*_{(0)})$.
 
 \subsection{Dimensional reduction}
 
-Before moving on to a more interesting example, we take a small expository detour and demonstrate that one can obtain Koszul dual algebras from a rather different point of view. We will expand on this second point of view, and its connection to our main point-of-view, in \S \ref{s:conclusions}. On a first readthrough, the reader may wish to skip this analysis and jump directly to \S \ref{s:crit}. 
+Before moving on to a more interesting example, we take a small expository detour and demonstrate that one can obtain Koszul dual algebras from a rather different point of view. We will expand on this second point of view, and its connection to our main exposition, in \S \ref{s:conclusions}. On a first readthrough, the reader may wish to skip this analysis and jump directly to \S \ref{s:crit}. 
 
 Consider, for a moment, the restriction of this free theory to the submanifold 
 \[
@@ -1330,96 +1330,37 @@ We observe that the corresponding operators at $t = r = 0$ of this dimensionally
 Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\phi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
 In the notation of the previous section $\phi_n$ corresponds to a scalar multiple of $\partial_z^n \phi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
 
+To summarize, imposing the boundary conditions (\ref{eqn:bc1}), (\ref{eqn:gbc1}) on the theory defined on the half-space $\mathbb{R} \times \mathbb{R}_{\geq 0}$ results in an algebra of boundary local operators given by (\ref{eqn:freeops}), the bulk line algebra in the original theory.  
+
 \subsection{A ``transverse'' boundary condition}
-\natalie{restore this section}
+%
+We define another boundary condition of this dimensionally reduced two-dimensional theory which is naturally `dual' to the one we have just discussed. We will be a bit more precise about what we mean by this in \S \ref{s:conclusions} but, as we will see, the algebra of boundary local operators on this new boundary condition will reproduce the Koszul dual algebra (\ref{eq:freedual}).
 
-\brian{COMMENTED OUT IS OLD TEXT A LOT IS PROBABLY REPETITIVE!}
+In fact, we will actually construct this boundary condition at the level of the three-dimensional theory on $\RR_t \times \CC_z$ at $z = \infty$. 
+This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$ by fixing the behavior for the fields at $z = \infty$. 
 
-%\subsection*{Dimensional reduction}
-%
-%Consider, for a moment, the restriction of this free theory to the submanifold 
-%\[
-%\RR \times (\RR_{>0} \times S^1) \simeq \RR \times \CC^\times \subset \RR \times \CC .
-%\]
-%We will contemplate the dimensional reduction along $S^1$ factor and the resulting two-dimensional field theory on $\RR \times \RR_{>0}$. 
-%We will continue to denote the coordinate on the first $\RR$ by $t$, and will denote the coordinate on $\RR_{>0}$ by the circle radius $r$.  
-%
-%For the naive dimensional reduction, we remember just the lowest lying $S^1$ modes. 
-%The resulting free theory simply consists of fields
-%\[
-%\phi_0(t,r) \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \psi_0 (t,r) \in \Omega^1 (\RR \times \RR_{>0}, V^*) 
-%\] 
-%with action $\int_{\RR\times \RR_{>0}} \phi_0 \d \psi_0$.
-%There is, in addition, a topological gauge symmetry $\delta \psi_0 = \d \chi_0$. 
-%
-%Of course, we have missed out on all of the higher $S^1$ modes present in the three-dimensional theory. 
-%More accurately what we should do is expand the fields $\phi, \psi$ into their Fourier modes around the circle.
-%We will then obtain a two-dimensional theory on $\RR \times \RR_{>0}$ with an infinite number of fields each labeled by their Fourier mode around the circle. 
-%
-%Writing the complex coordinate as $z = r e^{i \theta}$ we obtain a decomposition of the three-dimensional fields on $\RR \times \CC^\times$:
-%\begin{align*}
-%\phi(t,z) & = \sum_{n \in \ZZ} \phi_n (t,r) e^{2 \pi i n \theta} \\
-%\psi(t,z) & = \frac{1}{2 \pi i z} \sum_{n \in \ZZ} \psi_n(t, r) e^{2 \pi i n \theta} .
-%\end{align*}
-%
-%If we expand the free action, we see that the theory on $\RR \times \RR_{>0}$ has as its fields 
-%\[
-%\{\phi_n(t,r)\}_{n \in \ZZ} \in C^\infty(\RR \times \RR_{>0} , V) ; \quad \{\psi_n (t,r)\}_{n \in \ZZ} \in \Omega^1 (\RR \times \RR_{>0}, V^*) .
-%\] 
-%with free action
-%\[
-%\sum_{n \in \ZZ} \int_{\RR \times \RR_{>0}} \bigg(\phi_n \d \psi_{-n} + n \phi_n \psi_{-n} (r^{-1} \d r)  \bigg).
-%\]
-%
-%Without the second term, this free action is equivalent the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$.  \natalie{citation}
-%The second term includes a background gauge field for the symmetry of loop rotations. \natalie{spell this out more?}
-%
-%There is an overall gauge symmetry of this dimensionally reduced action by an integers' worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
-%
-%So far we have provided a description of the $S^1$ reduction of the theory on $\RR \times \CC^\times$ to $\RR \times \RR_{>0}$. 
-%The fact that this theory was defined on the affine space $\RR \times \CC$ determines a natural boundary condition for this dimensional reduction at $r = 0$, thus extending it to a theory on $\RR \times \RR_{\geq 0}$. 
-%This boundary condition reads
-%\begin{equation}\label{eqn:bc1}
-%\phi_n (t, 0) = 0 ; \quad \psi_{n+1} (t,0) = 0 \quad {\rm for} \; n < 0 .
-%\end{equation}
-%We must also require that the gauge field satisfy a compatible boundary condition:
-%\begin{equation}\label{eqn:gbc1}
-%\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n < 0 .
-%\end{equation}
-%
-%We observe that the corresponding operators at $t = r = 0$ of this dimensionally reduced theory agree precisely with the local operators $\Obs_0$ we found from the three-dimensional point of view above. 
-%Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\phi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
-%In the notation of the previous section $\phi_n$ corresponds to a scalar multiple of $\partial_z^n \phi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
-%
-%\subsection*{A `dual' boundary condition} 
-%
-%We define another boundary condition of this dimensionally reduced two-dimensional theory which is `dual' to the one we have just discussed. 
-%
-%In fact, we will actually construct this boundary condition at the level of the three-dimensional theory on $\RR_t \times \CC_z$ at $z = \infty$. 
-%This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$ by fixing the behavior for the fields at $z = \infty$. 
-%
-%The boundary conditions we choose are the following:
-%\begin{itemize}
-%\item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
-%That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
-%\[
-%\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) 
-%\]
-%\item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
-%That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
-%\[
-%\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
-%\]
-%\end{itemize}
-%
-%Additionally, we must fix the boundary behavior of the gauge field $\chi$ to be compatible with the above choices.
-%A natural way to do this is to require the gauge field to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
-%\[
-%\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right) .
-%\]
-%
-%This choice of a boundary condition results in a very special property of the theory upon compactification along $\PP^1$.
-%
+The boundary conditions we choose are the following:
+\begin{itemize}
+\item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
+That is $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
+\[
+\phi \in \Gamma \left(\RR \times \PP^1 \, , \, \cO(-1) \otimes V \right) 
+\]
+\item the components of the one-form $\psi_{t}, \psi_{\zbar}$ have simple poles at $\infty \in \PP^1$.
+That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
+\[
+\psi_{t}, \psi_{\zbar}\in \Gamma\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right)
+\]
+\end{itemize}
+
+Additionally, we must fix the boundary behavior of the gauge field $\chi$ to be compatible with the above choices.
+A natural way to do this is to require the gauge field to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
+\[
+\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V\right) .
+\]
+
+This choice of a boundary condition results in the trivial 1d theory upon compactification along $\PP^1$, by the argument given above. 
+
 %\begin{lem}\label{lem:compactP1}
 %The compactification of the theory along 
 %\[
@@ -1443,17 +1384,34 @@ In the notation of the previous section $\phi_n$ corresponds to a scalar multipl
 %%Again, $\psi_t$ is required to be constant along $\RR$ and be holomorphic $\dbar \psi_t = 0$. 
 %
 %\end{proof}
-%
-%Let us translate this boundary condition to the $S^1$-reduction of the three-dimensional theory to $\RR \times \RR_{>0}$. 
-%This boundary condition determines the behavior of the two-dimensional fields as $r \to \infty$, which we read off to be 
-%\begin{equation}\label{eqn:bc2}
-%\phi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
-%\end{equation}
-%We must also require that the gauge field satisfy a compatible boundary condition:
-%\begin{equation}\label{eqn:gbc2}
-%\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n \geq 0 .
-%\end{equation}
-%
+
+Let us translate this boundary condition to the $S^1$-reduction of the three-dimensional theory to $\RR \times \RR_{>0}$. 
+This boundary condition determines the behavior of the two-dimensional fields as $r \to \infty$, which we read off to be 
+\begin{equation}\label{eqn:bc2}
+\phi_n (t, \infty) = 0 ; \quad \psi_{n+1} (t, \infty) = 0 \quad {\rm for} \; n \geq 0 .
+\end{equation}
+We must also require that the gauge field satisfy a compatible boundary condition:
+\begin{equation}\label{eqn:gbc2}
+\chi_{n+1} (t,0) = 0, \quad {\rm for} \; n \geq 0 .
+\end{equation}
+
+We can compute the gauge equivalence classes of local operators $\Obs_\infty$ at $r = \infty$ in a very similar way as we did for $r = 0$. 
+The algebra is freely generated by the even local operators $\{\phi_n\}_{n < 0}$ and the odd local operators $\{\chi_n\}_{n \leq 0}$. 
+In other words
+\[
+\Obs_\infty = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{n \leq 0} \wedge^\bu \big(V_{(m)}\big)
+\]
+which we can clearly identify as the Koszul dual algebra to $\Obs_0$, as anticipated.
+
+It is also instructive to compare the characters of local operators at $r = 0, \infty$. 
+We have already computed the character $\chi_0(q,s)$ of the algebra $\Obs_0$ above. 
+At $r=\infty$ the character reads 
+\[
+\chi_\infty (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1}q^{-n}}{1 - s q^{-n-1}}
+\]
+Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$. 
+\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
+
 %\subsection*{Comparing boundary conditions}
 %
 %We compare these to the boundary conditions at $r=0$ in Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1}. 
@@ -1479,24 +1437,24 @@ In the notation of the previous section $\phi_n$ corresponds to a scalar multipl
 %
 %Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$. 
 %\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
-%
-%\subsection*{Topological limit}
-%
-%It's already instructive to think about a degenerate limit of $S^1$ reduced theory. 
-%If we just remember the {\em lowest} lying $S^1$-modes, we have see that observables at $r=0$ are simply the free algebra on the even operator $\phi_0$, thus the subalgebra of lowest lying modes of the algebra $\Obs_0$ is
-%\[
-%\Obs_0^{(0)} = {\rm S}^\bu(V^*).
-%\]
-%
-%On the other hand, at $r=\infty$ the lowest lying linear operator that survives is the {\em odd} operator $\chi_0$.
-%So, the subalgebra of lowest lying modes of the algebra $\Obs_\infty$ is
-%\[
-%\Obs_\infty^{(0)} = \wedge^\bu(V) .
-%\]
-%
-%We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypical example of Koszul duality for free algebras. 
-%
-%
+
+\subsubsection*{Topological limit}
+
+We conclude by noting that it is already instructive to think about a degenerate limit of $S^1$ reduced theory. 
+If we just remember the {\em lowest} lying $S^1$-modes, we have see that observables at $r=0$ are simply the free algebra on the even operator $\phi_0$, thus the subalgebra of lowest lying modes of the algebra $\Obs_0$ is
+\[
+\Obs_0^{(0)} = {\rm S}^\bu(V^*).
+\]
+
+On the other hand, at $r=\infty$ the lowest lying linear operator that survives is the {\em odd} operator $\chi_0$.
+So, the subalgebra of lowest lying modes of the algebra $\Obs_\infty$ is
+\[
+\Obs_\infty^{(0)} = \wedge^\bu(V) .
+\]
+
+We recognize the prototypical example of Koszul duality for free algebras in $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$. 
+
+
 %\subsection*{Comparing boundary conditions}
 %
 %We compare these to the boundary conditions at $r=0$ in Equations \eqref{eqn:bc1} and \eqref{eqn:gbc1}. 
@@ -1539,7 +1497,7 @@ In the notation of the previous section $\phi_n$ corresponds to a scalar multipl
 %
 %We recognize that $\Obs_0^{(0)}$ and $\Obs_\infty^{(0)}$ witness the prototypical example of Koszul duality for free algebras. 
 %
-
+%
 
 
 \section{``Critical'' Chern--Simons theory}\label{s:crit}
@@ -1982,11 +1940,12 @@ We will show that this gauge anomaly is proportional to
 %\]
 %\brian{do I need to symmetrize?}
 %\end{itemize}
-\section{Higher dimensional defects} 
-%A few words about En algebras
 
-%higher dimensional topological defects. PSM in 3dCS. 
-%Kapustin--Salina.
+%\section{Higher dimensional defects} 
+%%A few words about En algebras
+%
+%%higher dimensional topological defects. PSM in 3dCS. 
+%%Kapustin--Salina.
 %Check refs by Mnev et al on BV-BFV?
 
 \section{Conclusions and further directions}\label{s:conclusions}
