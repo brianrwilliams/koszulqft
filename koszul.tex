@@ -1174,10 +1174,13 @@ In total, all of the Lagrangian couplings are one-forms along $\RR_t$ with ghost
 
 Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}. In practice, this means we may begin with the space of degree 1 elements in the tensor product algebra and check that they satisfy the Maurer-Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
 
-It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$. For example, consider the coupling $\int J \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int J d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $J$: $d_t J = 0$. One can instead rewrite \natalie{need to finish this discussion, explaining the role of each term}
+It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$. For example, consider the coupling $\int J \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int J d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $J$: $d_t J = 0$. One can instead rewrite \natalie{need to finish this discussion, explaining the role of each term. Maybe use analogies to BV?}
 
-Applying our analysis from \S \ref{s:lines} is almost trivial in this case. We have two putative MC elements to apply the MC equation to:  $\partial_z^n \chi^a \otimes J_a[n]$,  $\partial_z^n \phi_a \otimes K^a[n]$. 
+Applying our analysis from \S \ref{s:lines} to obtain the Koszul dual algebra is almost trivial in this case. We have two putative MC elements to apply the MC equation to:  $\partial_z^n \chi^a \otimes J_a[n]$,  $\partial_z^n \phi_a \otimes K^a[n]$. The twisted BRST charge, $\bar{Q}_+$, acts only on the bulk operators, which it annihilates. The operator products on the bulk terms, as we have seen, are just free products, so we have no interesting constraints on the OPEs for the defect operators from the quadratic terms: free products on the defect operators will satisfy the MC equation. The operators $K[n], J[n]$ are anticommuting and commuting, respectively, per their cohomological degree above. In total we have
 
+\begin{equation}
+\mathcal{A}_0^{!} = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m \leq 0} \wedge^\bu \big(V_{(m)}\big).
+\end{equation} Notice that since the holomorphic derivatives increment the spin/degree of the operators, then in order for the coupling to have total spin 0, the gradings of the algebras are negative the gradings of the bulk algebras.
 
 %If we assume that the theory along the defect is {\em topological} we are forced to introduce an abelian gauge symmetry for the currents $\{K_t^a [\ell]\}$ which says 
 %\[
@@ -1185,7 +1188,7 @@ Applying our analysis from \S \ref{s:lines} is almost trivial in this case. We h
 %\]
 
 \subsection{Choosing a vacuum} 
-
+\natalie{we need to double check the conventions here and make sure the $V, V^*$ are in the right places! Here I am imposing boundary conditions on fields rather than on their dual operators, and I changed what you had for the ghost, in particular.}
 In \eqref{eqn:freeops} we deduced the algebra of local operators $\cA_0$. 
 Implicitly, in the above calculation of the Koszul dual of $\cA_0$ we assumed a natural augmentation given by the projection onto the ${\rm S}^0(V^*_{(0)})\simeq \CC$ piece of $\cA_0$. 
 Indeed, each of the couplings listed above are annihilated by this augmentation. 
@@ -1194,7 +1197,7 @@ In this section, we explain this choice of a vacuum.
 
 This amounts to extending the theory on affine space $\RR \times \CC$ to a theory on $\RR \times \PP^1$, thinking of $\PP^1$ is the one-point compactification of $\CC$, by fixing the behavior for the fields at $z = \infty$. 
 
-For the desired vacuum, we choose the boundary conditions:
+For the desired vacuum, we choose the boundary conditions on the \textit{fields} of the twisted theory:
 \begin{itemize}
 \item the scalar $\phi$ vanishes at $\infty \in \PP^1$. 
 That is, $\phi$ is actually a section of the line bundle $\cO(-1)$ \footnote{More accurately this bundle should be written as $\pi^* \cO(-1)$ where $\pi \colon \RR \times \PP^1 \to \PP^1$ is the projection.}, 
@@ -1212,7 +1215,7 @@ That is, $\psi_t,\psi_{\zbar}$ are twisted by the line bundle $\cO(1)$,
 Additionally, we must fix the boundary behavior of the ghost field $\chi$ to be compatible with the above choices.
 A natural way to do this is to require the ghost to acquire a simple pole at $\infty \in \PP^1$, just like the $\psi$-fields:
 \[
-\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V^*\right) .
+\chi \in C^\infty\left(\RR \times \PP^1 \, , \, \cO(1) \otimes V\right) .
 \]
 
 This choice of a boundary condition results in the following special property of the theory upon compactification along $\PP^1$.
@@ -1261,6 +1264,8 @@ is precisely the projection onto the component ${\rm S}^0(V^*_{(0)})$.
 
 \subsection*{Dimensional reduction}
 
+Before moving on to a more interesting example, we take a small expository detour and demonstrate that one can obtain Koszul dual algebras from a rather different point of view. We will expand on this second point of view, and its connection to our main point-of-view, in \S \ref{s:conclusions}. On a first readthrough, the reader may wish to skip this analysis and jump directly to \S \ref{s:crit}. 
+
 Consider, for a moment, the restriction of this free theory to the submanifold 
 \[
 \RR \times (\RR_{>0} \times S^1) \simeq \RR \times \CC^\times \subset \RR \times \CC .
@@ -1306,7 +1311,7 @@ This boundary condition reads
 \begin{equation}\label{eqn:bc1}
 \phi_n (t, 0) = 0 ; \quad \psi_{n+1} (t,0) = 0 \quad {\rm for} \; n < 0 .
 \end{equation}
-We must also require that the gauge field satisfy a compatible boundary condition:
+We must also require that the ghost field satisfy a compatible boundary condition:
 \begin{equation}\label{eqn:gbc1}
 \chi_{n+1} (t,0) = 0, \quad {\rm for} \; n < 0 .
 \end{equation}
@@ -1314,6 +1319,9 @@ We must also require that the gauge field satisfy a compatible boundary conditio
 We observe that the corresponding operators at $t = r = 0$ of this dimensionally reduced theory agree precisely with the local operators $\Obs_0$ we found from the three-dimensional point of view above. 
 Indeed, they are freely generated, up to gauge equivalence, by the even local operators $\{\phi_n\}_{n \geq 0}$ and the odd local operators $\{\chi_n\}_{n > 0}$. 
 In the notation of the previous section $\phi_n$ corresponds to a scalar multiple of $\partial_z^n \phi$ and $\chi_n$ a scalar multiple of~$\partial^{n-1}_z \chi$. 
+
+\subsection{A ``transverse'' boundary condition}
+\natalie{restore this section}
 
 \subsection*{Comparing boundary conditions}
 
@@ -1824,6 +1832,8 @@ We will show that this gauge anomaly is proportional to
 \natalie{Koszul duality for VOAs, applications to twisted holography}
 
 \natalie{addressing technical complications with algebras generated by elements in multiple coh. degrees (i.e. symmetries with higher form gauge fields... connections with higher groups?}
+
+\natalie{augmentation is about choosing a vacuum... say you do this in the UV, but there is spontaneous supersymmetry breaking...?}
 
 
 
