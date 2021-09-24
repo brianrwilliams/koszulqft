@@ -66,7 +66,8 @@ The key observation is that the data of the Mauer--Cartan element $\alpha$ is eq
 where $\cA^!$ is Koszul dual to the algebra $\cA$. 
 From this observation, the Koszul dual has the following interpretation: $\cA^!$ is the algebra of operators on the {\em universal} line defect supported on $\RR \times \{x\}$. We will explain this point of view in detail in \S \ref{s:lines} and illustrate it concretely in a free field theory example in \S \ref{s:free}. 
 
-We stress that Koszul dual algebras at the classical level may be (dually) deformed when considering quantum effects. The MC equation is linear at the classical level and simply captures BRST-closure of the coupling: $\delta \alpha = 0$. However, a classical coupling may fail to be BRST invariant at the quantum level. As we will explain, this manifests as a deformation of the BRST operator $\delta \rightarrow \delta + \alpha \star$, which in turn deforms the Maurer-Cartan equation by the quadratic term as above. Requiring that the coupling satisfies the full, nonlinear MC equation will produce a noncommutative deformation of the classical operator product. We will illustrate this in an example in \S \ref{s:crit}. For another illustrative example of this phenomenon, in which the algebra $\mathfrak{g}[[z]]$ deforms to the Yangian due to the presence of a two-loop gauge anomaly, see \cite{CWY}. In other interesting examples, the quantum corrections may take the form of an infinite series, with nontrivial corrections at every loop order \natalie{is there a non vertex-algebra case in which this happens to cite here?}. 
+We stress that Koszul dual algebras at the classical level may be (dually) deformed when considering quantum effects. The Maurer--Cartan equation is linear at the classical level and simply captures BRST-closure of the coupling: $\delta \alpha = 0$. However, a classical coupling may fail to be BRST invariant at the quantum level. As we will explain, this manifests as a deformation of the BRST operator $\delta \rightarrow \delta + \alpha \star (-)$, which in turn deforms the Maurer--Cartan equation by the quadratic term as above. Requiring that the coupling satisfies the full, nonlinear MC equation will produce a noncommutative deformation of the classical operator product. We will illustrate this in an example in \S \ref{s:crit}. For another illustrative example of this phenomenon, in which the algebra $\mathfrak{g}[[z]]$ deforms to the Yangian due to the presence of a two-loop gauge anomaly, see \cite{CWY}. In other interesting examples, the quantum corrections may take the form of an infinite series, with nontrivial corrections at every loop order \natalie{is there a non vertex-algebra case in which this happens to cite here?}. 
+\brian{the Yangian is already such an example I think.}
 
 Finally, in \S \ref{s:conclusions}, we will take a somewhat broader view. We will explain some connections between Koszul duality and other areas of inquiry, mention other appearances and applications of Koszul duality in the field theory literature, and highlight further examples of our perspective on Koszul duality, as well as some generalizations, in both field theory and holography. 
 
@@ -84,8 +85,8 @@ Cohomological shift.
 %maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
 %CE(g) and U(g)
 
-We provide a basic introduction to Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. For a more exhaustive and general introduction to Koszul duality in mathematics see, for example, \cite{LV}.  
-\natalie{other canonical references?}
+We provide a basic introduction to Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. 
+For a more exhaustive textbook introduction to Koszul duality in mathematics see, for example, \cite[Chapter 3]{LV}. 
 
 \subsection{Some definitions}
 
@@ -104,15 +105,16 @@ The notion of an $\cA$-module will also be taken in the dg sense. A dg $\cA$-mod
 When $\d_M = 0$ this returns the usual notion of an $\cA$-module. 
 Unless there is room for confusion, when we speak of algebras and modules we are referring to the dg version.
 
-\brian{what to say about $M$, defects?}
+Physically, if $\cA$ reprsents the algebra of local operators of a quantum mechanical system, then modules label point defects. 
+If the point defect is contained in the interior of the one-dimensional manifold then one needs a bi-module. 
  
 A map of algebras $f \colon \cA \to \cB$ is a map of cochain complexes which also preserves the associative products.
-Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b := f(a) \cdot b$, for $a \in \cA$ and $b \in \cB$, where the on the right hand side we use the associative product on $\cB$.  \natalie{the RHS is the *definition* of the LHS right?}
+Notice that $f$ endows $\cB$ with the structure of a dg $\cA$-module by the formula $a \cdot b \define f(a) \cdot b$, for $a \in \cA$ and $b \in \cB$, where the on the right hand side we use the associative product on $\cB$. 
 
 Similarly one can define a map of modules for a fixed algebra $\cA$.  All $\cA$-modules combine to form a category that we denote $\cA-\mod$.
 This category has the structure of a dg category, which means its set of morphisms is equipped with the structure of a cochain complex (roughly, the space of Homs between any two fixed modules is graded and equipped with a nilpotent differential). 
 
-Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ \natalie{add a footnote here about what the R in RHom means} the dg vector space of homomorphisms in the {\em derived category}. 
+Given $M,N \in \cA-\mod$ we denote by $\RHom_\cA(M,N)$ the dg vector space of homomorphisms in the {\em derived category}. 
 We will not use the full technology of derived categories in this note, but we remark on some important features to give the reader some intuition. 
 The $i$th cohomology of the complex $\RHom_{\cA} (M,N)$ comprises the Ext groups ${\rm Ext}^i_{\cA}(M,N)$. 
 For all $M,N$ the group ${\rm Ext}^0_{\cA}(M,N)$ agrees with the naive space of $\cA$-linear homomorphisms $M \to N$. 
@@ -121,7 +123,10 @@ The space ${\rm Ext}^1_{\cA}(M,N)$ is also relatively easy to understand: it is 
 0 \to N \to E \to M \to 0 .
 \]
 \natalie{how are the equivalence classes defined?}
-
+\brian{Do you think explaining that would be helpful? We could refer to \cite{LV} for this sort of thing. It just seems a little technical for the discussion so far.
+If you want to touch this up, the short definition I would give goes like this. 
+``Two extensions $E,E'$ are equivalent if there is an isomorphism of $\cA$-modules $E \to E'$ which can be extended to an isomorphism of short exact sequences.''}
+ 
 When $M = N$ the dg vector space $\RHom_\cA(M,M)$ acquires the structure of a dg algebra.
 The zeroth cohomology agrees with the algebra of $\cA$-linear endomorphisms ${\rm End}_{\cA}(M)$.  
 In general, to compute the space of derived homomorphisms one needs to first \textit{freely resolve} the module $M$, and we will see an example shortly.
@@ -132,37 +137,56 @@ An {\em augmentation} on a dg algebra $\cA$ is a map of dg algebras
 \ep \colon \cA \to \CC 
 \]
 meaning that $\ep (a b) = \ep(a) \ep(b)$ and $\ep (\d a) = 0$. This augmentation may have a nontrivial kernel, which acts trivially on $\CC$. 
-In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module. A choice of augmentation corresponds physically to a choice of vacuum. In our examples in this note, the augmentation is unique; we plan to expand on explicit examples with vacuum degeneracy (both massive vacua and moduli spaces of vacua) in subsequent work. \natalie{right? if we are feeling too lazy then we can remove this :)}
+In other words, an augmentation defines the data of an $\cA$-module structure on the one-dimensional module. A choice of augmentation corresponds physically to a choice of vacuum. In our examples in this note, the augmentation is unique; we plan to expand on explicit examples with vacuum degeneracy (both massive vacua and moduli spaces of vacua) in subsequent work.
 When we want to stress this interpretation of an augmentation, we denote the one-dimensional module by~$\CC_\ep$.
-
 
 The Koszul dual of a dg algebra $\cA$ is the dg algebra
 \[
 \cA^! \define \RHom_\cA(\CC_\ep,\CC_\ep) .
 \] 
-Notice that the Koszul dual of $\cA$ is defined with respect to an augmentation $\ep$, though when the augmentation is understood we will omit it from the notation. Roughly speaking, this denotes that the Koszul dual algebra is the space of symmetries of the trivial module that commute with $\cA$. Further, notice that even if a dg-algebra $\cA$ is an ordinary associative algebra with trivial differential, its Koszul dual will be a complex with support in cohomological degrees $\geq 1$. 
+Notice that the Koszul dual of $\cA$ is defined with respect to an augmentation $\ep$, though when the augmentation is understood we will omit it from the notation. Roughly speaking, this denotes that the Koszul dual algebra is the space of symmetries of the trivial module that commute with $\cA$. Further, notice that even if a dg-algebra $\cA$ is an ordinary associative algebra with trivial differential, its Koszul dual will be a complex with support in cohomological degrees $\geq 1$.
 
-One can show that the Koszul dual of $\cA^{!}$ is $\cA$ \natalie{is this easy to see without using anything too derived? if so, we should say a bit more}:
-\[
-\cA = \RHom_{\cA^!}(\CC_\ep, \CC_\ep).
-\]
-In other words, with the choice of augmentation, $\CC_\ep$ is simultaneously a module for $\cA, \cA^!$, and these algebras have commuting actions on $\CC_\ep$.
+Concretely, there is a model for the Koszul dual $\cA^!$ called the {\em bar complex}.
+See \cite{Weibel}, for a textbook account. 
+We won't use it explicitly here, but we will compute some basic examples in a low-brow fashion momentarily. 
 
-\natalie{please check and see if you agree with the discussion below. Should we say anything more/different about modules?}
+There is a canonical map of dg algebras $\cA \to (\cA^!)^!$. 
+In nice situations\footnote{For instance, if $H^0 (\cA) \cong \CC$, $H^{<0} (\cA) = 0$, and $H^i(\cA)$ is finite-dimensional for all $i > 0$.} 
+this map is a quasi-isomorphism, meaning it is an isomorphism on cohomology. 
+Thus, with the choice of augmentation, $\CC_\ep$ is simultaneously a module for $\cA, \cA^!$, and these algebras have commuting actions on $\CC_\ep$.
 
-Throughout this note, we will focus on the computation of Koszul dual algebras. However, we note that modules for these algebras are also of physical and mathematical interest. In fact, the derived categories of dg-modules of Koszul dual algebras are equivalent \footnote{More generally, certain triangulated subcategories may be equivalent \natalie{refs? I actually don't understand this subtlety in physical or math examples myself... plus, physicists mostly don't understand triangulated categories...}.}. We can denote this category $\cC \simeq \cA-\mod \simeq \cA^!-\mod$. We will make a few remarks on dg-modules throughout the note to orient the reader. 
+Throughout this note, we will focus on the computation of Koszul dual algebras. 
+However, we note that modules for these algebras are also of physical and mathematical interest. 
+One of the key characterizing features of Koszul duality is that certain subcategories of the derived categories of dg-modules of $\cA$ and $\cA^!$ are equivalent \cite{BGG, BGSch, BGSoerg, Pos}. \footnote{Certain assumption on the dg algebra $\cA$ are required for this result to hold. 
+To get an idea of the technical homological algebra that goes into this, even for examples of physical interest, we refer to \cite[Section 8]{CostelloYangian}. } 
+%We can denote this category $\cC \simeq \cA-\mod \simeq \cA^!-\mod$. 
+We will make a few remarks on the physical consequences of this equivalence throughout the note to help orient the reader, but it will not be our main focus. 
 
 \natalie{check that later in the paper we say something about the physical picture as e.g. defects on which lines can end, perhaps relation to topological boundary conditions?}
 
 \subsection{Free field example} 
 
-To illustrate the abstract considerations above, we present a short computation of the Koszul dual of the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
+To illustrate the abstract considerations above, we present a short computation of the most famous instance of Koszul duality. 
+This is the case where the algebra is the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
 The augmentation $\ep$ is the obvious one which sends a polynomial to its constant coefficient. 
 
 The resulting one-dimensional module $\CC_{\ep}$ is not free (i.e. it does not admit a presentation in terms of linearly independent basis elements) as a $\CC[x]$-module, so, in order to make efficient computations, we need to find a cochain complex of free modules which resolves it. (The prototypical example of a free module is a vector space). 
 
-\natalie{please feel free to edit or expand on this}Note that using the technique of resolving a module into a chain complex  is not unheard-of in physics: indeed, BRST quantization for some gauge group $G$ involves making a so-called projective resolution of the space of $G$-invariant local operators. The corresponding complex introduces fields of nonzero ghost number and a BRST differential. The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish. Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. The resulting complex is called the Koszul-Tate complex. In general, a resolution of some module is simply a chain complex whose cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. The resulting chain map is called a quasi-isomorphism. Different quasi-isomorphic representations of the same module can have useful physical interpretations, even though the physical observables of interest involve the passage back to cohomology. To take a particularly simple instance, Yang-Mills theory can be quantized using the minimal BRST complex or using the full machinery of the BV-BRST complex, which are quasi-isomorphic complexes.\footnote{\natalie{do we want to say anything here about a "minimal complex" and Koszul duality? or elsewhere?}}.\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
+Using the technique of resolving a module as cochain complex is not unheard-of in physics: indeed, BRST quantization for some gauge group $G$ involves making a so-called projective resolution of the space of $G$-invariant local operators. 
+The corresponding complex introduces fields of nonzero ghost number and a BRST differential. 
+The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish.\brian{I'm not sure about this. 
+The BRST complex is a model of the derived invariants, which may differ from the strict invariants.
+}
+
+Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. Geometrically, the resulting complex is called the Koszul-Tate complex. 
+
+In general, a resolution of some module is simply a chain complex whose cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. 
+A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. 
+The resulting chain map is called a quasi-isomorphism. 
+Different quasi-isomorphic representations of the same module can have useful physical interpretations, even though the physical observables of interest involve the passage back to cohomology. 
+To take a particularly simple instance, Yang-Mills theory can be quantized using the minimal BRST complex or using the full machinery of the BV-BRST complex, which are quasi-isomorphic complexes.\footnote{\natalie{do we want to say anything here about a "minimal complex" and Koszul duality? or elsewhere?}}.\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
 \natalie{Do we want to add anything about free resolutions as solutions to PDEs as a more down-to-earth example here?}
+\brian{I think that's probably enough...}
 
 A natural choice for a free resolution in this example is the so-called ``Koszul complex'', a progenitor of the Koszul-Tate complex in BV-quantization, defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
 There is a nontrivial differential defined by $\d \xi = x$. 
@@ -304,7 +328,6 @@ Mathematically, the cochain complex \eqref{eqn:ce1} is called the {\em Chevalley
 This complex computes so-called Lie algebra cohomology, which controls things like central extensions and anomalies in the context of QFT. 
 
 Physically, we will think of the commutative dg algebra $\clie^\bu(\fg)$ as the BRST algebra encoding the local operators of a gauge field on flat space. 
-\brian{I hope that sounds right?}
 In more familiar notation, the algebra is generated by the BRST ghosts 
 \[
 \eta^i = \fc^{i}
@@ -402,11 +425,17 @@ is some new operator contributing to the coupled BRST operator.
 In order for \eqref{eqn:coupled} to be of homogenous ghost number we see that $\til{Q}$ must also be of ghost number one.
 
 The addition of such an operator $\til{Q}$ to the BRST differential is one way to formulate the notion of a coupling between theories with operator algebras $\cA$ and $\cB$. 
-More generally, one can speak about deforming the tensor product $\cA \otimes \cB$ as a dg algebra (or even $A_\infty$ algebra), which is algebraically controlled by Hochschild cohomology \cite{refs?}. \natalie{more details about this would be good for the reader unfamiliar with Hochschild cohomology... probably can add references on closed/open string theories or some boundary condition references}
+More generally, one can speak about deforming the tensor product $\cA \otimes \cB$ as a dg algebra (or even $A_\infty$ algebra), which is algebraically controlled by the Hochschild cohomology. \natalie{more details about this would be good for the reader unfamiliar with Hochschild cohomology... probably can add references on closed/open string theories or some boundary condition references}
+\brian{There's a beautiful story here, of course, but idk how much we want to say. 
+The Gerstenhaber bracket equips $HH^\bu [1]$ with the structure of a dg Lie algebra which describes deformations of the algebra.
+From the string field theory point of view, the Gerstenhaber bracket. We can then relate to the topological string. Should we do this?}
 
 We specialize the situation a bit further and make the following assumption: 
 \begin{itemize}
-\item the operator $\til{Q}$ is {\em inner} \natalie{explain terminology more. what are other useful forms the operator could take?} in the sense that it acts on an observable $\cO$ by
+\item the operator $\til{Q}$ is {\em inner} (or {\em Lagrangian}) \natalie{explain terminology more. what are other useful forms the operator could take?}
+\brian{In general it lives in the Hochschild complex, and inner is the condition that it lives in the algebra. 
+It has something to do with the realization as a Lagrangian deformation, so I've added that word.}
+in the sense that it acts on an observable $\cO$ by
 \[
 \til{Q} \cO = \alpha \star \cO
 \]
@@ -434,35 +463,35 @@ For any such algebraic coupling we obtain a new dg algebra
 \]
 which is the BRST algebra of operators of the coupled system. 
 
-Oftentimes, the algebras $\cA,\cB$ arises from the quantization of a classical system. 
-In particular, we may view them as algebras over the power series ring $\CC[[\hbar]]$ which are commutative modulo $\hbar$. 
-We will view $\cA/\hbar$ as a commutative dg algebra with differential $Q_{\cA,0} := Q_{\cA} \mod \hbar$ and similarly for $\cB/\hbar$.
-Furthermore, the bracket 
-\[
-\{b_1,b_2\}_{PB} = \lim_{\hbar \to 0} \frac{1}{\hbar}(b_1 \star b_2 - b_2 \star b_1) 
-\]
-is a well-defined Poisson bracket on $\cB / \hbar$. \natalie{we should clarify here that we are making simplifying assumptions: in principle we could have started with two algebras with nontrivial Poisson brackets.}
-The algebraic coupling $\alpha$ should now be understood as a power series in $\hbar$. 
-What acts on the tensor product $\cA / \hbar \otimes \cB / \hbar$ is the Poisson bracket with the element $\alpha_0 = \alpha \,\mod \, \hbar$. 
-
-It is natural, then, to ask for a purely classical characterization of this algebraic coupling. 
-In other words, what is the condition on $\alpha_0$ to define a coupling between $\cA / \hbar$ and $\cB / \hbar$?
-
-\begin{lem}
-The operator $Q_{\cA,0} + Q_{\cB,0} + \{\alpha_0,-\}_{PB}$ acting on $\cA/\hbar \otimes \cB/\hbar$ is square-zero if and only if $\alpha_0$ satisfies the Maurer--Cartan equation 
-\beqn\label{eqn:mc1}
-Q_{\cA,0} (\alpha_0) + Q_{\cB,0}(\alpha_0) + \{\alpha_0 , \alpha_0\} = 0 .
-\eeqn
-\end{lem}
-
-Just as in the quantum version, this equation is the Maurer--Cartan equation for a certain dg Lie algebra. 
-We have already pointed out that $\cA/\hbar$ equipped with $Q_{\cA,0}$ is a \textit{commutative} dg algebra. 
-The differential $Q_{\cB,0}$ combined with the Poisson bracket endow $\cB / \hbar$ with the structure of a dg \textit{Lie} algebra.
-Thus $\cA/\hbar \otimes \cB/\hbar$ carries the natural structure of a dg Lie algebra.
-The condition above is precisely the condition that $\alpha_0$ be a Maurer--Cartan element.
-
-
-When the algebras $\cA,\cB$ are presented in this way as a quantization, we will refer to $\alpha_0$ as a classical algebraic coupling. 
+%Oftentimes, the algebras $\cA,\cB$ arises from the quantization of a classical system. 
+%In particular, we may view them as algebras over the power series ring $\CC[[\hbar]]$ which are commutative modulo $\hbar$. 
+%We will view $\cA/\hbar$ as a commutative dg algebra with differential $Q_{\cA,0} := Q_{\cA} \mod \hbar$ and similarly for $\cB/\hbar$.
+%Furthermore, the bracket 
+%\[
+%\{b_1,b_2\}_{PB} = \lim_{\hbar \to 0} \frac{1}{\hbar}(b_1 \star b_2 - b_2 \star b_1) 
+%\]
+%is a well-defined Poisson bracket on $\cB / \hbar$. \natalie{we should clarify here that we are making simplifying assumptions: in principle we could have started with two algebras with nontrivial Poisson brackets.}
+%The algebraic coupling $\alpha$ should now be understood as a power series in $\hbar$. 
+%What acts on the tensor product $\cA / \hbar \otimes \cB / \hbar$ is the Poisson bracket with the element $\alpha_0 = \alpha \,\mod \, \hbar$. 
+%
+%It is natural, then, to ask for a purely classical characterization of this algebraic coupling. 
+%In other words, what is the condition on $\alpha_0$ to define a coupling between $\cA / \hbar$ and $\cB / \hbar$?
+%
+%\begin{lem}
+%The operator $Q_{\cA,0} + Q_{\cB,0} + \{\alpha_0,-\}_{PB}$ acting on $\cA/\hbar \otimes \cB/\hbar$ is square-zero if and only if $\alpha_0$ satisfies the Maurer--Cartan equation 
+%\beqn\label{eqn:mc1}
+%Q_{\cA,0} (\alpha_0) + Q_{\cB,0}(\alpha_0) + \{\alpha_0 , \alpha_0\} = 0 .
+%\eeqn
+%\end{lem}
+%
+%Just as in the quantum version, this equation is the Maurer--Cartan equation for a certain dg Lie algebra. 
+%We have already pointed out that $\cA/\hbar$ equipped with $Q_{\cA,0}$ is a \textit{commutative} dg algebra. 
+%The differential $Q_{\cB,0}$ combined with the Poisson bracket endow $\cB / \hbar$ with the structure of a dg \textit{Lie} algebra.
+%Thus $\cA/\hbar \otimes \cB/\hbar$ carries the natural structure of a dg Lie algebra.
+%The condition above is precisely the condition that $\alpha_0$ be a Maurer--Cartan element.
+%
+%
+%When the algebras $\cA,\cB$ are presented in this way as a quantization, we will refer to $\alpha_0$ as a classical algebraic coupling. 
 
 We will now illustrate the notion of algebraic couplings in the context of a simple, yet fundamental, example. We will then connect this notion to both physical couplings and Koszul duality in the next section. 
 
@@ -483,9 +512,9 @@ The algebra $\cW_V$ is the free polynomial algebra on generators $p^i, x_i$ subj
 In the notation of the previous section, we consider coupling the dg algebra $\cA$ to the algebra $\cB = \cW_V$. 
 Notice that along with $V$, the algebra $\cW_V$ carries the natural structure of a $\fg$-representation where $\fg$ acts covariantly on the $p$-variables and contragradiently on the $q$-variables. 
 
-Let $\{\fc_a\}_{a=1,\dots,\dim \fg}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^\vee$. 
+Let $\{\fc_a\}_{a=1,\dots,\dim \fg}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^*$. 
 In other words, $\fc^a$ is a linear BRST ghost for the gauge field. 
-The $\fg$-representation $V$ is encoded by a linear map \natalie{we may need to be more uniform about $V^*$ vs. $V^{\vee}$ for the dual space...}
+The $\fg$-representation $V$ is encoded by a linear map
 \begin{align*}
 \rho & \colon \fg \to {\rm End}(V) = V^* \otimes V \\
 \rho(\fc_a) & = \rho_{aj}^i \, x_i \otimes p^j .
@@ -498,6 +527,8 @@ Define the element $\alpha \in \cA \otimes \cB$ by the formula
 We show that the element $\alpha$ satisfies the Maurer--Cartan equation \eqref{eqn:mc1}. 
 
 \natalie{I'd like to say some words somewhere about how much is understood (at least mathematically) about the space of solutions to an MC equation in general. Here we demonstrate one element... what about finding all such elements?}
+\brian{If $\fg$ and $V$ are ordinary, meaning in degree zero, we are finding all elements. 
+With these assumptions, the space of degree one elements in $\cA \otimes \cB$ is precisely $\fg^* \otimes \End(V)$.}
 
 First, notice that $Q_{\cA}$ is the Chevalley--Eilenberg differential 
 \[
@@ -530,15 +561,16 @@ Turning on $\alpha$ has the effect of deforming this tensor product algebra to t
 \]
 where the right-hand side is the complex computing the Lie algebra cohomology of $\fg$ with coefficients in the $\fg$-representation $\cW_V$. 
 
-An analogous computation goes through when coupling to a fermionic quantum mechanical system, which furnishes the Clifford algebra associated to a $\fg$-representation. \natalie{want to add anything further here?}
+An analogous computation goes through when coupling to a fermionic quantum mechanical system, which furnishes the Clifford algebra associated to a $\fg$-representation.
 
 \subsection{Other examples}
 
-Let $p,q$ be two even variables satisfying the Heisenberg \natalie{do we want to call it Weyl here too?} commutation relations
+Let $p,q$ be two even variables satisfying the commutation relations
 \[
 [p,q] = 1.
 \]
-Denote by $\cH$ the Heisenberg algebra generated by $p,q$. 
+Denote by $\cW$ the resulting Weyl algebra generated by $p,q$.
+ 
 Let $\psi$ and $\chi$ be two odd variables which satisfy the commutation relations
 \[
 \{\psi, \chi\} = \psi \chi + \chi \psi = 1.
@@ -547,12 +579,12 @@ Denote by $\cC$ the (complex) Clifford algebra on these two odd generators.
 
 Consider the algebra 
 \[
-\cA = \cH\otimes \cC 
+\cA = \cW \otimes \cC 
 \]
 whose generators we label by $p_1,q_1,\psi_1,\chi_1$.
 Consider also the (isomorphic) algebra
 \[
-\cB = \cH \otimes \cC
+\cB = \cW \otimes \cC
 \]
 whose generators we label by $p_2,q_2,\psi_2,\chi_2$.
 We will produce an algebraic coupling between the algebras $\cA$ and $\cB$. 
