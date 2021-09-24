@@ -1950,23 +1950,40 @@ We will show that this gauge anomaly is proportional to
 
 \section{Conclusions and further directions}\label{s:conclusions}
 
-\natalie{we may want to open the conclusions with a brief literature survey of appearances of Koszul duality in mathematics, to get a sense of its breadth}
+\natalie{we may want to open the conclusions with a brief literature survey of appearances of Koszul duality in mathematics, to get a sense of its breadth. Or maybe add something brief like that in the beginning of section 2?}
 
-\natalie{geometric quantization on the bubble}
+In this note, we have explicated Koszul duality as an algebraic duality that arises when coupling a QFT to a topological quantum mechanical system. We would like to conclude by tying it to some parallel developments in the math and physics literature, as well as enumerate various open questions, works-in-progress, and future directions.
 
-\natalie{remark on the transverse boundary condition computation of the free field example, explain that the two pictures of KD connect (lines and boundaries), cite Tudor's String-Math talk, remark on it as future work}
+We begin by describing some versions of Koszul duality for a broader class of algebras than the (homotopy) associative algebras we have been focusing on. For some of these, the physical and mathematical generalization is relatively straightforward, while for others the appropriate definitions have not yet been made. 
+
+\begin{itemize}
+
+\item In \S \ref{s:lines} we alluded to the $E_1$-algebra (or $A_{\infty}$-algebra \natalie{is it fine or inaccurate to conflate these two?}) structure present for algebras on topological lines (though see \cite{GO}). Also of interest are higher-dimensional topological defects (or, in codimension-1, boundary conditions) \footnote{Note that here we again mean a \textit{fixed} $d$-dimensional submanifold in spacetime along which translations are BRST-trivial. This is to be contrasted with the topological defect lines (TDLs) of, e.g., \cite{Yinetal}.}. For example, topological boundary conditions in 3d TQFTs have been studied in \cite{KS, BM, Kaidietal}. Gauge-invariant couplings of QFTs to $d$-dimensional topological defects can be described using Koszul duality for $E_d$-algebras, and the latter is well-understood mathematically \cite{lurie2011formal}. It would be interesting to see if Koszul duality affords an alternative characterization of these topological defects/boundaries as the space of $E_n$-homomorphisms from a Koszul-dual $E_n$-algebra. For instance, the perspective on Koszul duality as a ``Fourier transform" between transverse boundary conditions that we will discuss below may connect to the Lagrangian subgroup condition of \cite{KS}. It may also be fruitful to approach these problems using the BV-BFV formalism espoused in \cite{Cattaneo:2020lle} and elsewhere. 
+
+\item Associative algebras and their $E_n$ cousins are natural algebras capturing OPEs of local operators in topological quantum field theories (including theories which are topological in the sense of cohomology).  Another concrete but rich algebraic structure capturing OPEs in certain (cohomological) field theories is that of a vertex algebra\footnote{For higher dimensional analogues of Kac-Moody algebras, relevant for capturing symmetries of holomorphically twisted QFTs, see \cite{GW}}. In contrast to the $E_n$ case, however, Koszul duality for vertex algebras has not been rigorously formulated \footnote{As in the associative algebra case, we are actually working with dg-vertex algebras}. Following the logic in this note, one would expect that a theory with holomorphic dependence on a plane (i.e. such that $\partial_{\bar{z}}$ is BRST-exact) has a Koszul dual vertex algebra corresponding to the universal holomorphic defect. One can try to compute this algebra by imposing BRST invariance of the resulting coupled system. This point of view was adopted to perturbatively compute Koszul dual vertex algebras in \cite{CP}. To formulate this notion mathematically, along the lines of this note, one needs the appropriate generalization of the space of Maurer-Cartan elements in the augmentation kernel. See \cite{Li} for some special cases of the requisite space of solutions.  
+
+\item Throughout this note, we have focused on defects of order-type: that is, defects described by a lower-dimensional QFT with a local Lagrangian, coupled to the bulk QFT by local terms. It is natural to wonder if Koszul duality has some imprint on defects of disorder type, such as those describing nonperturbative objects in the bulk QFT. (Certainly, in systems with S-duality exchanging Wilson and 't Hooft lines, one can expect a connection). 
+
+This question was answered in the special case of 't Hooft lines in 4d Chern-Simons theory in \cite{CGY}. There, the algebra of operators on an order-type line is the Yangian, which is Koszul dual to the bulk algebra \cite{CYangian}; it turns out that the Koszul dual of the operator algebra on a 't Hooft line is the dominant shifted Yangian (a subalgebra of the Yangian), predicated physically on consistency conditions arising when coupling the two types of defects together. 
+
+It would be desirable to have a more general analysis of this situation. In particular, these operators source flux, which is expected to produce a deformation of the standard Koszul dual algebra via anomalous interactions with bulk modes. Rather than ask, then, that bulk/defect coupling is BRST-invariant, one must ask that the coupling has an anomaly that cancels the anomaly arising from the presence of flux escaping to infinity, so that the total system is gauge-invariant. A perturbative version of this analysis was employed in the vertex algebra case in \cite{CP}: there, the vertex algebras arose from the worldvolume theories of holomorphically twisted D-branes, which produced RR flux coupling to closed-string modes in Kodaira-Spencer theory via a local but non-BRST-invariant term. Mathematically, these deformations should connect to curved Koszul duality, which allows for a source term in the Maurer-Cartan equation \cite{curved}, and it would be useful to formulate this notion in generality. 
+
+\item A general way to formulate local operator algebraic data in Euclidean QFT is via factorization algebras. See \cite{CG1, CG2} for an introduction. An analysis using the mathematical machinery of operads tells us that the Koszul dual of a factorization algebra is another factorization algebra, but computing these explicitly in non-twisted settings is a prohibitively difficult task. It would be instructive if a computable example could be found, even in a low-dimensional toy model. Many aspects of our formulation become murky. For example, we have been studying augmented algebras, which are symmetries that preserve a choice of vacuum; one may choose a nice symmetry-preserving asymptotic boundary condition in the UV, but have to contend with spontaneous symmetry breaking at low energies. Nonetheless, we will simply point out encouraging recent mathematical advances in understanding these foundational field theoretic phenomena; see \cite{EG} for a description of SSB in derived geometry. 
+
+\end{itemize} 
+
+\natalie{remark on the transverse boundary condition computation of the free field example, explain that the two pictures of KD connect (lines and boundaries), cite Tudor's String-Math talk, remark on it as future work. Cite also Mina}
 
 \natalie{some basic comments on modules (lines ending on surface defects), cite Davide/s paper with Miro on OPEs of lines/surfaces in twisted M-theory}
 
-\natalie{we may want to make a few remarks about higher dimensional topological defects and En algebras here, rather than have a separate section}
-
-\natalie{line defects of disorder type: cite Kevin/Davide/Junya}
-
-\natalie{Koszul duality for VOAs, applications to twisted holography}
-
 \natalie{addressing technical complications with algebras generated by elements in multiple coh. degrees (i.e. symmetries with higher form gauge fields... connections with higher groups?}
 
-\natalie{augmentation is about choosing a vacuum... say you do this in the UV, but there is spontaneous supersymmetry breaking...?}
+
+\natalie{geometric quantization on the bubble}
+
+\section{acknowledgements} We are grateful to Kevin Costello for teaching us many of the ideas and perspectives described in this note, for enjoyable and inspiring collaborations, and for emphasizing to us and others the importance of Koszul duality in mathematical physics. We also wish to thank Tudor Dimofte, Chris Elliott, Davide Gaiotto, Justin Hilburn, Si Li, Ingmar Saberi, and Philsang Yoo for numerous useful conversations and collaborations throughout the years. Finally, we are grateful to ... for very helpful comments on a draft of this note. 
+
+NMP was supported by the grant NSF PHY-1911298, and the Sivian Fund, and is currently supported by the DOE's Research Opportunities in High Energy Physics and the University of Washington. 
 
 
 
