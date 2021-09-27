@@ -534,7 +534,7 @@ With these assumptions, the space of degree one elements in $\cA \otimes \cB$ is
 
 First, notice that $Q_{\cA}$ is the Chevalley--Eilenberg differential 
 \[
-Q_{\cA} = f_{ab}^c \fc^a \fc^b \frac{\partial}{\partial \fc^c} .
+Q_{\cA} = f_{ab}^c \fc^a \fc^b \frac{\delta}{\delta \fc^c} .
 \]
 where $\{f_{ab}^c\}$ are the structure constants of the Lie algebra. 
 Also, $Q_{\cB} = 0$ in this example. 
@@ -1149,6 +1149,7 @@ The gauge symmetry is given by a $V^*$-valued scalar $\chi$ which acts on the fi
 \delta \psi_t = \frac{\partial}{\partial t} \chi; \quad
 \delta \psi_\zbar = \frac{\partial}{\partial \zbar} \chi .
 \end{equation}
+This gauge symmetry in the twisted theory arises from the action of the holomorphic supercharge $Q$ on the fermion $\Bar{\psi}_-$. 
 
 This ghost $\chi$ in the twisted theory is precisely $i \bar{\psi}_-$ in the physical theory. The BRST transformation of the twisted theory is identified with the SUSY transformation in the physical theory. Indeed, one may compute the SUSY transformation of $\psi$ and observe that it coincides with this symmetry on-shell.
 
@@ -1159,11 +1160,12 @@ From Equations \eqref{eqn:N=2desc1}--\eqref{eqn:N=2desc2} for the untwisted desc
 \phi^{(1)} &= \phi_t \d t + \phi_{\zbar} \d \bar{z} \\
 \label{eqn:N=2desc2tw}
 \psi^{(1)} &= \psi_{t \zbar} \d t \d \zbar  \\
-\label{eqn:N=2desc4tw} 
+\label{eqn:N=2desc3tw} 
 \chi^{(1)} &= \psi .
 \end{align}
-In the BV formalism $\psi_{t \zbar} \d t \d \zbar$ can be thought of as an anti-ghost to the ghost $\chi$. 
+In the BV formalism, the two-form $\psi_{t \zbar} \d t \d \zbar$ can be thought of as the anti-ghost to the ghost $\chi$. 
 It will not play a role in any of the discussion below. 
+Also, the one-forms $\phi_t \d t, \phi_{\zbar} \d \zbar$ combine to form an anti-field for $\psi$. 
 We have also included the descendant for the ghost field $\chi$.
 \subsection{Local operators}
 
@@ -1245,7 +1247,7 @@ As announced in the general section, we are to interpret the Koszul dual of this
 We proceed to compute this algebra from first principles.  
 
 Recall that the theory is topological along this line. 
-Along the line, the descendants of the fields $\phi, \psi$ are given by the $\d t$ components of the one-form descendants in the full theory \eqref{eqn:N=2desc1tw}--\eqref{eqn:N=2desc2tw}. 
+Along the line, the descendants of the fields $\phi, \psi$ are given by the $\d t$ components of the one-form descendants in the full theory \eqref{eqn:N=2desc1tw}--\eqref{eqn:N=2desc3tw}. 
 The formulas for the descendant fields along $\{z=0\}$ are given as follows
 \begin{align*}
 \Hat{Q} \chi = \psi_t \\
@@ -1293,7 +1295,9 @@ In other words, we must really work with the space of Maurer--Cartan elements of
 %In practice, this means we may begin with the space of degree $+1$ elements in the tensor product algebra and check that they satisfy the Maurer--Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
 
 Applying our analysis from \S \ref{s:lines} to obtain the Koszul dual algebra is almost trivial to compute in this case. 
-We have two putative  elements to apply the MC equation to:  $\partial_z^n \chi^a \otimes J_a[n]$,  $\partial_z^n \phi_a \otimes K^a[n]$. The twisted BRST charge, $Q$, acts only on the bulk operators, which it annihilates. The operator products on the bulk terms, as we have seen, are just free products, so we have no interesting constraints on the OPEs for the defect operators from the quadratic terms: free products on the defect operators will satisfy the MC equation. The operators $K[n], J[n]$ are anticommuting and commuting, respectively, per their cohomological degree above. In total we have
+%We have two putative  elements to apply the MC equation to:  $\partial_z^n \chi^a \otimes J_a[n]$,  $\partial_z^n \phi_a \otimes K^a[n]$. 
+The twisted BRST charge, $Q$, acts only on the bulk operators, which it annihilates. The operator products on the bulk terms, as we have seen, are just free products, so we have no interesting constraints on the OPEs for the defect operators from the quadratic terms: free products on the defect operators will satisfy the Maurer--Cartan equation. 
+The operators $K[n], J[n]$ are anticommuting and commuting, respectively, per their cohomological degree above. In total we have
 
 \begin{equation}\label{eq:freedual}
 \mathcal{A}_0^{!} = \bigotimes_{n < 0} {\rm S}^\bu \big(V^*_{(n)}\big) \otimes \bigotimes_{m \leq 0} \wedge^\bu \big(V_{(m)}\big).
@@ -1660,16 +1664,17 @@ In terms of these fields, the twisted action can be written as a ``BF'' theory:
 & = \int \left(B \partial_t A_{\zbar} + B \partial_{\zbar} A_t + B [A_t, A_\zbar]\right) .
 \end{align*}
 Here, we have implicitly used the canonical linear pairing between $\fg$ and its coadjoint module $\fg^*$. 
-Notice that in the kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a Dolbeault form of type $(1,0)$. At general Chern-Simons level, this action would be augmented by a Chern-Simons term using the partial connection: ${i k \over 8 \pi} \int A d A$.
+Notice that in the kinetic part of the action only $\partial_t$ and $\partial_{\zbar}$ derivatives appear since $B$ is a Dolbeault form of type $(1,0)$. At general Chern-Simons level, this action would be augmented by a Chern-Simons term using the partial connection: ${i \kappa \over 8 \pi} \int A \del A$ where $\kappa$ is the level.
+Here $\del = \d z \partial_z$ is the holomorphic de Rham operator along $\CC$. 
 
 \subsection{Gauge invariant local operators}
 
 The Lie algebra of gauge symmetries is the familiar one: $C^\infty(\RR^3) \otimes \fg$, i.e. smooth functions valued in $\fg$. 
 An element $\fc \in C^\infty(\RR^3) \otimes \fg$ acts on the fields via the transformation rule
 \begin{align*}
-Q A_\zbar & = \partial_{\zbar} \fc + [\fc, A_\zbar] \\
-Q A_t & = \partial_t \fc + [\fc,A_t] \\
-Q B & = [\fc, B] .
+\delta A^a_\zbar & = \partial_{\zbar} \fc^a + f^a_{bc} \fc^b A^c_\zbar \\
+\delta A^a_t & = \partial_t \fc^a + f^a_{bc} \fc^b A^c_t  \\
+\delta B_a & = f^c_{ab} \fc^b B_c .
 \end{align*}
 
 Forgetting the terms in the BRST operator coming from the Lie algebra structure on $\fg$, we can argue as in the last section that any local operator supported at $(z,t) = (0,0)$ which depends on $\partial^n_{\zbar} \fc^a$, $\partial^n_t \fc^a$, $\partial^n_{\zbar} B_a$, or $\partial^n_t B_a$ is BRST exact. 
@@ -1691,7 +1696,7 @@ Namely as the CE differential for $\fg[[z]] + \ep \fg^*[[z]]$.
 Do you want to say more?}
 The formula is
 \[
-Q_0 = \sum_{n +m \geq 0} \left(f_{ab}^c \partial_z^m \fc^a \partial_z^n \fc^b \frac{\partial}{\partial \partial_z^{n+m}\fc^c} + f_{ac}^b \partial_{z}^m \fc^a \partial_z^n B_b \frac{\partial}{\partial \partial_z^{n+m} B_c}\right) .
+Q_0 = \sum_{n +m \geq 0} \left(f_{ab}^c \partial_z^m \fc^a \partial_z^n \fc^b \frac{\delta}{\delta \partial_z^{n+m}\fc^c} + f_{ac}^b \partial_{z}^m \fc^a \partial_z^n B_b \frac{\delta}{\delta \partial_z^{n+m} B_c}\right) .
 \] 
 Notice that when restricted to the modes $\partial_z^n \fc^a, \partial_z^n B_a$ with $n=0$, this is the ordinary BRST differential. 
 
@@ -1742,7 +1747,7 @@ Quantum effects modify the classical BRST operator as in
 Q = Q_0 + \hbar Q_1 + \cdots .
 \]
 In what follows, we will work only to first order in $\hbar$.
-At the end of the section we argue that this is actually enough: there exists a quantization of this three-dimensional theory which is exact at one-loop. 
+At the end of the section we argue that this is actually enough: there exists a quantization of this three-dimensional theory which is exact at one-loop so we can assume $Q_k = 0$ for $k \geq 2$. 
 
 \subsection{Line operators}
 
@@ -1752,83 +1757,114 @@ By Proposition \ref{prop:line}, there is a one-to-one correspondence between lin
 \]
 described by an associative algebra $\cB$ and Maurer--Cartan elements in 
 \begin{equation}\label{eqn:criticalobs}
-\clie_\hbar^\bu(\fg[\ep][[z]]) \otimes \cB .
+\cA \otimes \cB = \clie_\hbar^\bu(\fg[\ep][[z]]) \otimes \cB .
 \end{equation}
 
-This Maurer--Cartan equation reads
-\begin{equation}\label{eqn:mccs}
-Q \cO^{(0)} + \cO^{(0)} \star_\hbar \cO^{(0)} = 0 
-\end{equation}
-where $Q$ is the quantum BRST operator acting on the gauge fields and $\star_\hbar$ is the quantum associative product (which we have not yet claimed to fully characterize). 
+%This Maurer--Cartan equation reads
+%\begin{equation}\label{eqn:mccs}
+%Q \alpha + \cO^{(0)} \star_\hbar \cO^{(0)} = 0 
+%\end{equation}
+%where $Q$ is the quantum BRST operator acting on the gauge fields and $\star_\hbar$ is the quantum associative product (which we have not yet claimed to fully characterize). 
 
 For now, we treat the bulk gauge field as classical.
 Then, the quantum BRST operator $Q$ is replaced by the classical BRST operator $Q_0$ which is simply the Chevalley--Eilenberg differential for the Lie algebra $\fg[\ep][[z]]$.
 The product $\star_\hbar$ is replaced by the product $\star$ in the algebra $\cA$. 
-Thus, the classical limit of \eqref{eqn:mccs} becomes
+Thus, we are studying the Maurer--Cartan equation in
+\[
+\cA / \hbar \otimes \cB = \clie^\bu(\fg[\ep][[z]]) \otimes \cB
+\]
+which reads
 \begin{equation}\label{eqn:cmccs}
 Q_0 \cO^{(0)} + \cO^{(0)} \star \cO^{(0)} = 0 .
 \end{equation}
 
-\subsection*{An example: free fermions}
-\brian{I think we've moved this section above, but let's make sure its the same before deleting}
-We spell out the correspondence between Maurer--Cartan elements as in \eqref{eqn:cmccs} and {\em classical} local couplings in the case that $\cA$ \natalie{I'm not sure we have this above actually. you mean $\cB$ here right? $\cA$ is our gauge algebra} is the algebra of local operators of the free fermion topological mechanics system of rank $N$. 
+\subsection{An example: minimal free fermion coupling}
 
-In this case, $\cA$ is isomorphic to the Clifford algebra $\Cl(\RR^N)$. 
-Systematically, we know how to describe this as the algebra of operators of the quantum mechanical theory on $\RR \times \{z=0\}$ whose fields are odd functions $\chi_i, \psi^j$ for $i,j=1,\ldots, N$. 
+Before moving on to the computation of the universal line defect, we spell out the yoga between a class of Maurer--Cartan elements as in \eqref{eqn:cmccs} and local couplings in the case that $\cB$ is the algebra of local operators of the free fermion topological mechanics system. 
 
-We look at operators supported on the line $\RR \times \{z=0\}$ which depend on the both the gauge field and the free fermion system.
-Consider, for example, the local operator
+The fields of the quantum mechanics system consists of pairs of fermions $(\psi^i, \chi_i)$, $i=1,\ldots N$. 
+In this case, the algebra of local operators $\cB$ is isomorphic to the Clifford algebra $\cC_{\RR^N} = \cC_N$ on generators $\psi^1,\ldots, \psi^N, \chi_1,\ldots \chi_N$. 
+They satisfy the anticommutation relations 
 \[
-\rho_{a,i}^{j} \fc^a \psi^i \chi_j 
+\psi^i \chi_j + \chi_j \psi^i = \hbar\, \delta^i_j .
 \]
-for some collection of coefficients $\{\rho_{a,i}^{j}\}$. 
-Call this local operator $\cO^{(0)}$. 
-Notice that $\cO^{(0)}$ is of cohomological degree $+1$.
-The classical Maurer--Cartan equation \eqref{eqn:cmccs} reads
-\[
-f_{bc}^a \rho_{a,i}^{j}  \fc^b \fc^c \psi^i \chi_j + .. = 0. 
-\]
-This equation simply says that the collection $\{\rho_{a,i}^{j} \}$ prescribes a representation of the Lie algebra $\fg$ on the vector space $\RR^N$ which we can think of as a map of Lie algebras 
-\[
-\rho \colon \fg \to \End(\RR^N)
-\]
-which maps $e_a$ to the $N \times N$ matrix $\rho(e_a) = (\rho_{a,i}^{j})$. 
 
-To construct the coupling, we solve the descent equations $\partial_t \cO^{(0)} + Q \cO^{(1)} = 0$.
-Following the general discussion of topological descent in Section \ref{sec:descent}, we first construct an endomorphism $\hat{Q}$ acting on local operators which trivializes infinitesimal time translations: $\{Q, \hat{Q}\} = \partial_t$. 
-
-It is important here that we work with the full cochain complex of local operators, including those which are cohomologically trivial. 
-For instance, consider the local operator $A^a_t$ of degree zero which is defined by
+For now, let us treat the bulk gauge theory as classical. 
+Then, couplings are given by Maurer--Cartan elements in 
 \[
-A^a_{t} \colon A_b \mapsto \delta^a_b A_{b,t} (t=0, z=0) .
+\cA / \hbar \otimes \cC_{N} .
 \]
-This operator is cohomological trivial as it is in the image of \brian{how do physicists say this?} \natalie{how did you want to complete the sentence? we might simply say it's not gauge invariant}
-
-On the $\fc$-ghosts, the operator $\Hat{Q}$ is defined by 
+The most general degree $+1$ local operator in this algebra is of the form 
 \[
-\hat{Q} \cdot \fc^a = A^a_t  .
+\alpha [n] = \rho_{a,i}^{j} [n] \partial_z^n \fc^a \psi^i \chi_j 
 \]
-Since we are imposing the equations of motion for the fields of the free fermion system, it suffices to declare that $\hat{Q}$ annihilates operators built from $\psi$ and $\chi$. 
-\brian{here a remark about BV is probably good}
+for some collection of coefficients $\{\rho_{a,i}^{j}[n]\}$. 
+Here, $n$ can be any non-negative integer, $i,j=1,\ldots N$ and $a = 1,\ldots, \dim \fg$. 
 
-We use $\hat{Q}$ to obtain the one-form valued operator from $\cO^{(0)}$ by the formula
-\begin{align*}
-\cO^{(1)} & = (\hat{Q} \cdot \cO^{(0)}) \, \d t \\
-& = \rho_{a,i}^j (\hat{Q} \fc^a) \psi^i \chi_j \, \d t \\ 
-& = \rho_{a,i}^j A^a \psi^i \chi_j \, \d t .
-\end{align*}
+Suppose that $\rho_{a,i}^j [n] = 0$ for $n \geq 1$. 
+Since we are treating the bulk gauge theory as classical, the Maurer--Cartan equation \eqref{eqn:cmccs} reads
+\beqn\label{eqn:mcz0}
+f_{bc}^a \rho_{a,i}^{j} [0] \fc^b \fc^c \psi^i \chi_j + \rho_{aj}^i [0] \rho_{bl}^k [0] \delta^j_k \fc^a \fc^b \otimes \chi_i \psi^l  = 0
+\eeqn
+This computation is completely analogous to the one we did in \S {sec:gaugealg} for the case of the Weyl algebra.
+It is equivalent to the condition that $\alpha[0]$ define a map of Lie algebras 
+\[
+\alpha[0] \colon \fg \to \End(\RR^N) . 
+\]
+In other words, $\fg$ is represented on $\RR^N$. 
 
-This leads to the following Lagrangian coupling
-\[
-\int_{\RR \times \{z=0\}} \rho_{a,i}^j \chi_j  A_t \psi^i  .
-\]
-More generally, for any $k \geq 0$ we could have started with the local operator 
-\[
-\sum_{k \geq 0} \frac1{k!} \rho_{a,i}^j [k] \partial_z^k \fc^a \chi_j \psi^i .
-\]
+Let's go one step further. 
+Assume that $\rho_{a,i}^j [n] = 0$ only for $n \geq 2$. 
+In this case, in addition to \eqref{eqn:mcz1} there is the additional term in the Maurer--Cartan equation which requires
+\beqn\label{eqn:mcz1}
+f_{bc}^a \rho_{a,i}^{j} [1] \fc^b \fc^c \psi^i \chi_j + \rho_{aj}^i [0] \rho_{bl}^k [1] \delta^j_k \fc^a \fc^b \otimes \chi_i \psi^l  = 0
+\eeqn
+Both \eqref{eqn:mcz0} and \eqref{eqn:mcz1} together imply that $\alpha[0] + \alpha[1]$ comprise a representation for the Lie algebra $\fg \otimes \CC[[z]]/z^2 \simeq \fg \ltimes \fg$. 
+
+In general, the Maurer--Cartan equation requires that the coupling $\alpha = \sum_n \alpha[n]$ comprises a representation for the infinite-dimensional Lie algebra $\fg[[z]]$.  
+%
+%This equation simply says that the collection $\{\rho_{a,i}^{j} \}$ prescribes a representation of the Lie algebra $\fg$ on the vector space $\RR^N$ which we can think of as a map of Lie algebras 
+%\[
+%\rho \colon \fg \to \End(\RR^N)
+%\]
+%which maps $e_a$ to the $N \times N$ matrix $\rho(e_a) = (\rho_{a,i}^{j})$. 
+
+
+To construct the Lagragian coupling, we solve the descent equations $\partial_t \cO^{(0)} + Q \cO^{(1)} = 0$, where $\alpha = \cO^{(0)}$. 
+Following the general discussion of topological descent in \S \ref{sec:descent}, we first construct an endomorphism $\hat{Q}$ acting on local operators which trivializes infinitesimal time translations: $\{Q, \hat{Q}\} = \partial_t$. 
+
+%It is important here that we work with the full cochain complex of local operators, including those which are cohomologically trivial. 
+%For instance, consider the local operator $A^a_t$ of degree zero which is defined by
+%\[
+%A^a_{t} \colon A_b \mapsto \delta^a_b A_{b,t} (t=0, z=0) .
+%\]
+%This operator is cohomological trivial as it is in the image of \brian{how do physicists say this?} \natalie{how did you want to complete the sentence? we might simply say it's not gauge invariant}
+%
+%On the $\fc$-ghosts, the operator $\Hat{Q}$ is defined by 
+%\[
+%\hat{Q} \cdot \fc^a = A^a_t  .
+%\]
+%Since we are imposing the equations of motion for the fields of the free fermion system, it suffices to declare that $\hat{Q}$ annihilates operators built from $\psi$ and $\chi$. 
+%\brian{here a remark about BV is probably good}
+%
+%We use $\hat{Q}$ to obtain the one-form valued operator from $\cO^{(0)}$ by the formula
+%\begin{align*}
+%\cO^{(1)} & = (\hat{Q} \cdot \cO^{(0)}) \, \d t \\
+%& = \rho_{a,i}^j (\hat{Q} \fc^a) \psi^i \chi_j \, \d t \\ 
+%& = \rho_{a,i}^j A^a \psi^i \chi_j \, \d t .
+%\end{align*}
+%
+%This leads to the following Lagrangian coupling
+%\[
+%\int_{\RR \times \{z=0\}} \rho_{a,i}^j \chi_j  A_t \psi^i  .
+%\]
+%More generally, for any $k \geq 0$ we could have started with the local operator 
+%\[
+%\sum_{k \geq 0} \frac1{k!} \rho_{a,i}^j [k] \partial_z^k \fc^a \chi_j \psi^i .
+%\]
 This leads to the Lagrangian coupling
 \[
-\sum_{k \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{k!} \rho_{a,i}^j[k] \chi_j \partial_z^k A_t \psi^i .
+\sum_{k \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{k!} \rho_{a,i}^j[k] \partial_z^k A_t \chi_j \psi^i .
 \]
 
 
