@@ -659,9 +659,6 @@ We will remark on the physical significance of this example momentarily. \natali
 
 Now that we have introduced algebraic couplings and sketched some elementary computations in homological algebra, we are ready to describe their quantum field theoretic context. First, we will introduce the notion of a physical coupling in the context of relevance for our discussion, and explain how it is related to the notion of algebraic coupling introduced in the previous section. Then, we will elucidate the appearance of Koszul duality. 
 
-\brian{warning about 'local operators' vs physical local operators}
-\brian{cohomological/ghost number degrees}
-
 Let $\cB$ be the local operators of a one-dimensional translation invariant theory, and let $Q$ denote the BRST operator which acts on this space. 
 The infinitesimal action by translations is through the time derivative $\frac{\partial}{\partial t}$. 
 
@@ -861,7 +858,8 @@ where $M$ is some manifold.
 The crucial assumption we make is that the bulk theory is {\em topological} along $\RR \times \{x\}$ for any $x \in M$. 
 This means that OPE's are independent of the coordinate $t$ \footnote{Again, this is generally true only up to $Q$-exact terms but our conclusions will not be affected by this simplification; we refer to the discussion of the previous section about the connection between dg-associative algebras and $A_{\infty}$ algebras.}.
 An outcome of this assumption, is that the OPE of operators supported on $\RR \times \{x\}$, for any $x \in M$, have the structure of an associative algebra $\cA_x$. 
-If we assume that the theory is also translation invariant along $M$ then there is also an equivalence \natalie{algebra isomorphism, right? or quasi-iso?} of algebras $\cA_x \simeq \cA_{x'}$ for $x, x' \in M$. 
+If we assume that the theory is also translation invariant along $M$ then there is also an equivalence \natalie{algebra isomorphism, right? or quasi-iso?} \brian{could do either, depends on how strong you want the condition "translation invariant", that's why I was vague with `equivalence'.
+Of course, for most things we do, quasi-isomorphism is best.} of algebras $\cA_x \simeq \cA_{x'}$ for $x, x' \in M$. 
 This happens in the examples we discuss later on.
 
 We will consider the problem of coupling to an auxiliary quantum mechanical system along $\RR_t$ whose algebra of local operators we will denote by $\cB$. 
@@ -983,7 +981,8 @@ We assume that the augmentation arises by making a suitable choice of boundary c
 In other words, the algebra of operators of the compactified theory is the trivial one-dimensional algebra $\CC$ and so there is a canonical map $\cA \to \CC$.
 This is the augmentation. 
 
-In theories with a mass gap, choosing boundary conditions at $\infty$ requires making a choice of massive vacuum and prescribing that the fields approach their expectation values in that vacuum as they approach the boundary. \natalie{feel free to edit this and the following foonote!} If the theory is massless, it violates our assumption that the compactified theory is trivial, so we exclude these theories from consideration \footnote{This fits in to a more general `relative' version of Koszul duality, also known as the centralizer of a map of algebras.}.
+In theories with a mass gap, choosing boundary conditions at $\infty$ requires making a choice of massive vacuum and prescribing that the fields approach their expectation values in that vacuum as they approach the boundary. 
+If the theory is massless, it violates our assumption that the compactified theory is trivial, so we exclude these theories from consideration \footnote{This fits in to a more general `relative' version of Koszul duality, which is a special case of the centralizer of a map of algebras.}.
 
 With this physical interpretation of the augmentation, we can make sense of the condition that the algebraic coupling satisfy $(\ep \otimes \id_B) \alpha = 0$.
 This simply says that the coupling preserves the choice of a vacuum.
@@ -1207,7 +1206,8 @@ Notice that only the $\d t$-components of the one-forms $\psi, \phi^{(1)}$ may c
 Also, observe that while the one-form field $\psi_t$ couples to a scalar $J[k]$, the field $\phi$ couples to a one-form along the line $K^{(1)}[\ell] = K_t [\ell] \d t$ (and vice versa for their counterparts). 
 In total, all of the Lagrangian couplings are one-forms along $\RR_t$ with ghost number 0.
 
-Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer-Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer-Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}. In practice, this means we may begin with the space of degree 1 elements in the tensor product algebra and check that they satisfy the Maurer-Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
+Although $\psi^{(1)}, \phi$ appeared in the original action of our twisted theory, the local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer--Cartan elements, using the assumption that both the bulk and line defect theories are topological. The resulting set of couplings is therefore slightly redundant. \footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.}. In other words, we must really work the space of Maurer--Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}
+In practice, this means we may begin with the space of degree $+1$ elements in the tensor product algebra and check that they satisfy the Maurer--Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
 
 It is natural to expect that we can obtain a complete set of couplings only involving fields that appeared in our original action, $\phi, \psi^{(1)}$. For example, consider the coupling $\int J \psi_t$ and its gauge transformation $\psi_t \mapsto \psi_t + d_t \chi$. Requiring a gauge invariant coupling is equivalent to requiring that $\int J d_t \chi$ vanishes. Integrating by parts yields the equation of motion for $J$: $d_t J = 0$. One can instead rewrite \natalie{need to finish this discussion, explaining the role of each term. Maybe use analogies to BV?}
 
