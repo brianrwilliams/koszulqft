@@ -538,12 +538,11 @@ Q_{\cA} \alpha = f_{ab}^c \rho_{cj}^i \fc^a \fc^b \otimes q_i p^j
 \]
 and
 \begin{align*}
-\alpha \star \alpha & = \rho_{aj}^i \rho_{bl}^k \fc^a \fc^b \otimes q_i [p^j, q_k] p^l \\
-& = \rho_{aj}^i \rho_{bl}^k \delta^j_k \fc^a \fc^b \otimes q_i p^l 
+\alpha \star \alpha & = \rho_{a,j}^i \rho_{b,\ell}^k \delta^j_k \fc^a \fc^b q_i p^\ell + \rho_{a,j}^i \rho_{b,\ell}^k \delta^\ell_i \fc^b \fc^a q_k p^j   \\
+& = (\rho_{ak}^i \rho_{bj}^k  - \rho_{aj}^k \rho^i_{bk}) \fc^a \fc^b \otimes q_i p^l .
 \end{align*}
 
-\brian{off by a sign}
-Thus, we see that in order for the Maurer--Cartan equation to hold we must have $f_{ab}^c \rho_{cj}^i = \rho^i_{ak} \rho^k_{bj}$ for all $a,b,i,j$. 
+Thus, we see that in order for the Maurer--Cartan equation to hold we must have $f_{ab}^c \rho_{cj}^i = \rho_{ak}^i \rho_{bj}^k  - \rho_{aj}^k \rho^i_{bk}$ for all $a,b,i,j$.
 This is equivalent to the condition that $\rho$ be a well-defined $\fg$-representation. 
 
 Before turning on the coupling $\alpha$, the decoupled system is of the form
@@ -1283,6 +1282,14 @@ On the other hand, the descendant field $\phi_t$ (which is a component of $\phi^
 This is because local operators and their descendants are treated democratically when we generate the line defect couplings: we start with the tensor products of local operators (of any ghost number) from both the bulk and defect algebra and perform descent on the Maurer--Cartan elements, using the assumption that both the bulk and line defect theories are topological. 
 If we start just with the physical fields, then the resulting set of couplings is slightly redundant.\footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.} 
 In other words, we must really work with the space of Maurer--Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}.
+
+Translated to local operators along the line, this means that there are gauge redundancies and constrains among the space of local operators spanned by $J,K$ and their descendants.
+Along the line $\{z=0\}$ one has the gauge symmetry $\delta \psi_t = \partial_t \chi$ and the descendant equation $\delta \phi^{(1)} = \partial_t \phi$. 
+The gauge symmetry implies that there is a redundancy among the operators, namely $\delta K^{(1)}[j] = \partial_t K[j]$. 
+Further, the descendant equation among the fields implies there is the following descendant equation among the operators $\delta J^{(1)} [k] = \partial_t J[k]$. 
+In total, up to gauge equivalence we see that only the degree zero operators $\{J[k]\}$ and the degree $+1$ operators $\{K[j]\}$ remain.
+ 
+
 %In practice, this means we may begin with the space of degree $+1$ elements in the tensor product algebra and check that they satisfy the Maurer--Cartan equation. \natalie{should we do this explicitly here? what to say about the gauge redundancies?}
 
 Applying our analysis from \S \ref{s:lines} to obtain the Koszul dual algebra is almost trivial to compute in this case. 
@@ -1380,6 +1387,7 @@ is precisely the projection onto the component ${\rm S}^0(V^*_{(0)})$.
 %\end{equation}
 
 
+\brian{I stopped editing here since I think you said you had some ideas for cleaning up these reduction sections.}
 
 \subsection{Dimensional reduction}
 
@@ -1609,7 +1617,7 @@ We recognize the prototypical example of Koszul duality for free algebras in $\O
 %
 
 
-\section{``Critical'' Chern--Simons theory}\label{s:crit}
+\section{Koszul duality in 3-dimensional gauge theory}\label{s:crit}
 
 %Add a few sentences about how CS theory at the critical level can still give a nontrivial topological theory when written in the first order formalism... need to connect to the familiar Lagrangian before jumping in to the BF-type theory. 
 \brian{I'd like to preempt this maybe by also discussing some characterization of line operators in 3d N=2 theories. 
@@ -1785,9 +1793,9 @@ Then, couplings are given by Maurer--Cartan elements in
 \[
 \cA / \hbar \otimes \cC_{N} .
 \]
-The most general degree $+1$ local operator in this algebra is of the form 
+The most general degree $+1$ local operator in this algebra is of the $\alpha = \sum_n \alpha[n]$ where 
 \[
-\alpha [n] = \rho_{a,i}^{j} [n] \partial_z^n \fc^a \psi^i \chi_j 
+\alpha [n] = \frac{1}{n!}\rho_{a,i}^{j} [n] \partial_z^n \fc^a \psi^i \chi_j 
 \]
 for some collection of coefficients $\{\rho_{a,i}^{j}[n]\}$. 
 Here, $n$ can be any non-negative integer, $i,j=1,\ldots N$ and $a = 1,\ldots, \dim \fg$. 
@@ -1795,9 +1803,9 @@ Here, $n$ can be any non-negative integer, $i,j=1,\ldots N$ and $a = 1,\ldots, \
 Suppose that $\rho_{a,i}^j [n] = 0$ for $n \geq 1$. 
 Since we are treating the bulk gauge theory as classical, the Maurer--Cartan equation \eqref{eqn:cmccs} reads
 \beqn\label{eqn:mcz0}
-f_{bc}^a \rho_{a,i}^{j} [0] \fc^b \fc^c \psi^i \chi_j + \rho_{aj}^i [0] \rho_{bl}^k [0] \delta^j_k \fc^a \fc^b \otimes \chi_i \psi^l  = 0
+f_{ab}^c \rho_{c,i}^{j} [0] \fc^a \fc^b \psi^i \chi_j + (\rho_{ak}^i [0] \rho_{bj}^k [0] - \rho_{aj}^k [0] \rho^i_{bk} [0]) = 0.
 \eeqn
-This computation is completely analogous to the one we did in \S {sec:gaugealg} for the case of the Weyl algebra.
+This computation is completely analogous to the one we did in \S \ref{sec:gaugealg} for the case of the Weyl algebra.
 It is equivalent to the condition that $\alpha[0]$ define a map of Lie algebras 
 \[
 \alpha[0] \colon \fg \to \End(\RR^N) . 
@@ -1806,13 +1814,16 @@ In other words, $\fg$ is represented on $\RR^N$.
 
 Let's go one step further. 
 Assume that $\rho_{a,i}^j [n] = 0$ only for $n \geq 2$. 
-In this case, in addition to \eqref{eqn:mcz1} there is the additional term in the Maurer--Cartan equation which requires
-\beqn\label{eqn:mcz1}
-f_{bc}^a \rho_{a,i}^{j} [1] \fc^b \fc^c \psi^i \chi_j + \rho_{aj}^i [0] \rho_{bl}^k [1] \delta^j_k \fc^a \fc^b \otimes \chi_i \psi^l  = 0
-\eeqn
-Both \eqref{eqn:mcz0} and \eqref{eqn:mcz1} together imply that $\alpha[0] + \alpha[1]$ comprise a representation for the Lie algebra $\fg \otimes \CC[[z]]/z^2 \simeq \fg \ltimes \fg$. 
+In this case, in addition to \eqref{eqn:mcz1}, which involves only $\alpha[0]$, there are the additional terms in the Maurer--Cartan equation which requires
+\begin{align}
+\label{eqn:mcz1}
+f_{ab}^c \rho_{c,i}^{j} [1] + (\rho_{ak}^i [0] \rho_{bj}^k [1] - \rho_{aj}^k [1] \rho^i_{bk} [0]) & = 0 \\
+\rho_{ak}^i [1] \rho_{bj}^k [1]  & = 0 .
+\label{eqn:mcz3}
+\end{align}
+Together, \eqref{eqn:mcz0}--\eqref{eqn:mcz3} imply that $\alpha[0] + \alpha[1]$ comprise a representation for the Lie algebra $\fg \otimes \CC[[z]]/z^2 \simeq \fg \ltimes \fg$. 
 
-In general, the Maurer--Cartan equation requires that the coupling $\alpha = \sum_n \alpha[n]$ comprises a representation for the infinite-dimensional Lie algebra $\fg[[z]]$.  
+In general, one can extend the computations above to see that the full Maurer--Cartan equation requires that the coupling $\alpha = \sum_n \alpha[n]$ comprises a representation for the infinite-dimensional Lie algebra $\fg[[z]]$.  
 %
 %This equation simply says that the collection $\{\rho_{a,i}^{j} \}$ prescribes a representation of the Lie algebra $\fg$ on the vector space $\RR^N$ which we can think of as a map of Lie algebras 
 %\[
@@ -1855,18 +1866,19 @@ Following the general discussion of topological descent in \S \ref{sec:descent},
 %\]
 This leads to the Lagrangian coupling
 \[
-\sum_{k \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{k!} \rho_{a,i}^j[k] \partial_z^k A_t \chi_j \psi^i .
+\sum_{n \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{n!} \rho_{a,i}^j[n] \partial_z^n A_t \chi_j \psi^i .
 \]
 
 
 
-\subsection*{Koszul duality and local operators}
+\subsection{Koszul duality and the universal line defect}
 
-In this section we characterize, to first-order in $\hbar$, the algebra which is Koszul dual to the algebra of local operators of the three-dimensional gauge theory.
+In this section we characterize the universal line defect of the 3-dimensional gauge theory.
+We take the line to live along $\{z=0\} \subset \RR_t \times \CC_z$.
 
 We will argue that the most general coupling takes the form
 \[
-\sum_{k \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{k!} J_a [k] \partial_z^k A^a_t + \sum_{\ell \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{\ell!} K_a[\ell] \partial_z^k B_t^a 
+\sum_{n \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{n!} J_a [n] \partial_z^n A^a_t + \sum_{n \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{n!} K_a[\ell] \partial_z^n B_t^a 
 \] 
 \brian{Point out parity difference between $J$ and $K$}
 
