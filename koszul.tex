@@ -1877,11 +1877,12 @@ In this section we characterize the universal line defect of the 3-dimensional g
 We take the line to live along $\{z=0\} \subset \RR_t \times \CC_z$.
 
 Similar to the case of the free theory in the previous section, the most general Lagrangian couplings take the form
-\[
+\beqn\label{eqn:3dgaugeLag}
 \sum_{n \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{n!} J_a [n] \partial_z^n A^a_t + \sum_{n \geq 0} \int_{\RR \times \{z=0\}} \frac{1}{n!} K_a[n] \partial_z^n B_t^a .
-\] 
+\eeqn
 Here $A_t$ is the $\d t$-component of the connection one-form and $B_t$ is the $\d t$-descendant of the field $B$. 
 On the line, $B_t$ imposes the equation of motion $\partial_t B = 0$. 
+We are ignoring the couplings of operators to the field $B$ and the ghost $\fc^a$ since they will not contribute to the cohomology of local operators on the line. 
 
 The main goal of this section is to compute the universal line defect to tree-level in the perturbation parameter. 
 
@@ -1927,16 +1928,42 @@ Let us first consider the classical commutation relation
 \end{equation}
 in the classical limit of the Koszul dual algebra. 
 
-The BRST variation of the term \brian{write path integral above} in the path integral vanishes provided
+We will see that this relation arises from demanding that the piece of the path integral involving the first term in \eqref{eqn:3dgaugeLag} is BRST invariant.  
+This term contributes the following expression to the path integral
+\beqn\label{eqn:pexp1}
+{\rm PExp} \left(\sum_{n \geq 1} \int_{\RR_t} \frac{1}{n!} J_a [n] \partial_z^n A^a_t \right) 
+\eeqn
+which can be expanded as a sum of terms of the form 
+\beqn\label{eqn:pexp2}
+\sum_{N \geq 0} \int_{t_1 \leq \cdots \leq t_N} \prod_{i=1}^N \left(\frac{1}{n_i!} J_{a_i}[n_i]  \partial_{z_i}^{n_i} A_t^{a_i} \right)  .
+\eeqn
+
+Recall that the BRST variation of the field $A_t$ is 
 \[
-\int_t \sum_k \frac1{k!} \partial_z^k \left(f_{bc}^a \fc^b(t) A^c_t (t) \right) J_a[k] (t) = \int_t \sum_{\ell,m} \frac1{\ell!} \frac1{m!} \partial^\ell \fc^d (t) \partial^m A^e (t) [J_d (t), J_e(t)]  .
+\delta A^a_t = \partial_t \fc^a + f_{bc}^a \fc^b A_t^c .
+\]
+We readily compute the BRST variation of \eqref{eqn:pexp2} as
+\[
+\sum_{N \geq 0} \sum_{j=1}^N \int_{t_1 \leq \cdots \leq t_N} \prod_{i=1, i \ne j}^N \left(\frac{1}{n_i!} \partial_{z_i}^{n_i} J_{a_i}[n_i] A_t^{a_i}   \right)  \left(\frac{1}{n_j!}  J_{a_i}[n_i] \partial_{z_j}^{n_j} \left( \partial_t \fc^{a_i} + f_{bc}^a \fc^b A_t^c \right)  \right)
+\]
+Let's consider the two terms $\partial_t \fc^{a_i} + f_{bc}^a \fc^b A_t^c$. 
+Integrating the term $\partial_t \fc^a$ by parts picks up boundary terms, when the points $t_j,t_{j+1}$ come together as we saw in the general analysis of the path integral in \S \ref{?}. 
+When the two points collide, the corresponding operators are multiplied according to the algebra structure on local operators. 
+As we saw, the two types of boundary terms contribute with alternate signs. 
+
+Notice that we have not touched the term coming from $f_{bc}^a \fc^b A_t^c$. 
+Thus, in order for this piece in the path integral to be BRST invariant we must have the following relation
+\[
+\int_t \sum_n \frac1{n!} J_a[n] \partial_z^n \left(f_{bc}^a \fc^b A^c_t \right) = \int_t \sum_{\ell,m} \frac1{k!}  \frac1{\ell!} [J_d[k] , J_e[\ell]] \partial_z^k \fc^d  \partial_z^\ell A^e   .
 \] 
-To obtain the commutation relation \eqref{eqn:rel1}, one sets 
+This relation must hold for all input fields since it is in the path integral.
+To obtain the commutation relation \eqref{eqn:rel1}, we plug in the test fields
 \begin{align*}
-A_t & = \ft_b z^{m} \delta_{t=0} \\
-\fc & = \ft_a z^\ell .
+A_t & = e_b z^{\ell} \delta_{t=0} \\
+\fc & = e_a z^k .
 \end{align*}
 
+We remark on a Feynman diagrammatic interpretation of this computation. 
 This commutation relation is equivalent to the cancellation of the gauge variation of the tree-level Feynman diagrams in Figure~\ref{fig:cancel1}.
 
 \begin{figure}
@@ -1964,59 +1991,83 @@ This commutation relation is equivalent to the cancellation of the gauge variati
 	\label{fig:cancel1}}
 \end{figure}
 
-$\bullet$
-Next, let's consider the classical commutation relation 
+The tree-level commutation relation 
 \begin{equation}\label{eqn:rel2}
 [J_a [k] , K_b [\ell]] = f_{ab}^c K_{c} [k+\ell]
 \end{equation}
+can be derived in a completely analogous way so we omit the details. 
 
-The BRST variation of the term \brian{write path integral above} in the path integral vanishes provided
-\[
-\int_t \sum_k \frac1{k!} \partial_z^k \left(f_{bc}^a \fc^b(t) B^c_t (t) \right) K_a[k] (t) = \int_t \sum_{\ell,m} \frac1{\ell!} \frac1{m!} \partial^\ell \fc^d (t) \partial^m B^e (t) [J_d (t), K_e(t)]  .
-\] 
-To obtain the commutation relation \eqref{eqn:rel2}, one sets 
-\begin{align*}
-B_t & = \ft_b z^{m} \delta_{t=0} \\
-\fc & = \ft_a z^\ell .
-\end{align*}
+%The BRST variation of the term \brian{write path integral above} in the path integral vanishes provided
+%\[
+%\int_t \sum_k \frac1{k!} \partial_z^k \left(f_{bc}^a \fc^b(t) B^c_t (t) \right) K_a[k] (t) = \int_t \sum_{\ell,m} \frac1{\ell!} \frac1{m!} \partial^\ell \fc^d (t) \partial^m B^e (t) [J_d (t), K_e(t)]  .
+%\] 
+%To obtain the commutation relation \eqref{eqn:rel2}, one sets 
+%\begin{align*}
+%B_t & = \ft_b z^{m} \delta_{t=0} \\
+%\fc & = \ft_a z^\ell .
+%\end{align*}
+%
+%This commutation relation is equivalent to the cancellation of the gauge variation of the tree-level Feynman diagrams in Figure~\ref{fig:cancel2}.
+%
+%\begin{figure}
+%	\begin{tikzpicture}
+%	\begin{scope}
+%		\node[circle, draw] (J1) at (0,1) {$J$};
+%		\node[circle, draw] (J2) at (0,-1) {$K$};
+%		\node (A1) at (2,1)  {$A_{t}$};
+%		\node (A2) at (2,-1)  {$B_{t}$};
+%		\draw[decorate, decoration={snake}] (J1) --(A1);
+%		\draw[decorate, decoration={snake}] (J2) --(A2);
+%		\draw (0,2) -- (J1) --(J2) -- (0,-2); 
+%	\end{scope}	
+%	\begin{scope}[shift={(4,0)}];
+%		\node[circle, draw] (J) at (0,0) {$K$};
+%		\node (A1) at (3,1)  {$A_{t}$};
+%		\node (A2) at (3,-1)  {$B_{t}$};
+%		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
+%		\draw[decorate, decoration={snake}] (J) -- (1.5,0) --  (A1);
+%		\draw[decorate, decoration={snake}] (1.5,0) --(A2);
+%		\draw (0,2) -- (J)-- (0,-2);
+%	\end{scope}
+%	\end{tikzpicture}
+%	\caption{Cancellation of the gauge anomaly of these two diagrams leads to the equation for the commutation relations involving $J[k]$ and $K[\ell]$.
+%	\label{fig:cancel2}}
+%\end{figure}
 
-This commutation relation is equivalent to the cancellation of the gauge variation of the tree-level Feynman diagrams in Figure~\ref{fig:cancel2}.
-
-\begin{figure}
-	\begin{tikzpicture}
-	\begin{scope}
-		\node[circle, draw] (J1) at (0,1) {$J$};
-		\node[circle, draw] (J2) at (0,-1) {$K$};
-		\node (A1) at (2,1)  {$A_{t}$};
-		\node (A2) at (2,-1)  {$B_{t}$};
-		\draw[decorate, decoration={snake}] (J1) --(A1);
-		\draw[decorate, decoration={snake}] (J2) --(A2);
-		\draw (0,2) -- (J1) --(J2) -- (0,-2); 
-	\end{scope}	
-	\begin{scope}[shift={(4,0)}];
-		\node[circle, draw] (J) at (0,0) {$K$};
-		\node (A1) at (3,1)  {$A_{t}$};
-		\node (A2) at (3,-1)  {$B_{t}$};
-		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
-		\draw[decorate, decoration={snake}] (J) -- (1.5,0) --  (A1);
-		\draw[decorate, decoration={snake}] (1.5,0) --(A2);
-		\draw (0,2) -- (J)-- (0,-2);
-	\end{scope}
-	\end{tikzpicture}
-	\caption{Cancellation of the gauge anomaly of these two diagrams leads to the equation for the commutation relations involving $J[k]$ and $K[\ell]$.
-	\label{fig:cancel2}}
-\end{figure}
-
-\subsection*{Quantum corrections}
+\subsection{Quantum corrections}
 
 We now turn to quantum corrections to the Koszul dual algebra.
+We have observed the Feynman diagrammatic interpretation of the classical, or tree-level, Koszul dual algebra. 
+The quantum correction arises from anomalous diagrams present in the one-loop BRST variation of the couplings. 
 
-The second diagram in Figure \ref{fig:cancel3} has a gauge anomaly.
-We will show that this gauge anomaly is proportional to 
+The simplest one-loop Feynman diagram involving the couplings to the line defect is displayed in Figure \ref{fig:oneloop}. 
+\begin{figure}
+	\begin{tikzpicture}
+	\begin{scope}[shift={(4,0)}];
+		\node[circle, draw] (K) at (0,1) {$K$};
+		\node[circle, draw] (J) at (0,-1) {$J$};
+		\node (A) at (3,0)  {$A_{t}$};
+		%\node (A2) at (3,-1)  {$B_{t}$};
+		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
+		\draw[decorate, decoration={snake}] (J) -- (1.5,0);
+		\draw[decorate, decoration={snake}] (1.5,0) --(A);
+		\draw[decorate, decoration={snake}] (K) -- (1.5,0);
+		\draw (0,-2) -- (J) -- (K) -- (0,2);
+	\end{scope}
+	\end{tikzpicture}
+	\caption{Simplest one-loop diagram involving coupling to the line defect.
+	\label{fig:oneloop}}
+\end{figure}
+
+One can show that this one-loop diagram has a gauge anomaly.
+The evaluation of the relevant integral is outside the scope of these notes, but this gauge anomaly is proportional to
 \[
-\hbar \int_{\RR \times \{z=0\}} \partial_z \fc^a \kappa^{bc} f_{ab}^d J_{c} K_{d} + \cdots .
+\hbar \int_{\RR \times \{z=0\}} \partial_z \fc^a \kappa^{bc} f_{ab}^d J_{c} [0] K_{d} [0] + \cdots .
 \]
-The ellipses denote similar terms present in the anomaly which involve a higher number of holomorphic $z$-derivatives 
+The ellipses denote similar terms present in the anomaly which involve a higher number of holomorphic $z$-derivatives.
+Here, $\kappa^{bc}$ is the Killing form on $\fg$. 
+
+
 
 The second diagram in Figure \ref{fig:cancel4} also has a gauge anomaly.
 We will show that this gauge anomaly is proportional to 
