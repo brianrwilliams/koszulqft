@@ -72,19 +72,20 @@ Finally, in \S \ref{s:conclusions}, we will take a somewhat broader view. We wil
 
 \subsection*{Notations \& Conventions}
 
-Cohomological shift. 
+We briefly summarize some conventions we use throughout this note. Unless otherwise stated, we study quantum field theories in Euclidean signature and on flat spacetimes. 
 
-\natalie{point out we are in Euclidean signature}
+In particular, all of our considerations are local, and are carried out at the perturbative level. We do not account for interesting global properties of quantum field theories, such as studying the theories on manifolds of nontrivial topology, nor do we account for potentially interesting nonperturbative effects, except for brief comments in \S \ref{s:conclusions}. Clarifying any interactions between Koszul duality and these effects is a topic we leave for future work. 
 
-\natalie{emphasize that everything we are doing is local and perturbative. can mention that global issues, as well as nonperturbative things, is missing from the mathematical languages we are using so far.}
+A notation we use liberally is the \textit{cohomological shift}. Given a graded complex $A= \oplus_i A_i$ with differentials $d_{A}^i: A_i \rightarrow A_{i+1}$, we define the n-shifted complex $A[n]$ by the relation on the graded subspaces $A[n]_i := A_{n+i}$ and differential $d^i_{A[n]} := (-1)^n d^{i+n}_{A}$. The shift has degree $n$ and the differential has degree $1$.
+
+A crucial point here is that our complexes are viewed in a \textit{graded-commutative} sense. This means that any two homogeneous operators $a_p, a_q$ of respective degrees $p, q$ satisfy $a_p a_q = (-1)^{pq} a_q a_p$. Under an odd-degree shift, therefore, the statistics of a graded subspace will change from `bosonic' to `fermionic', and vice versa. 
+
+
+\natalie{say anything about math definitions of local ops and local observables versus their physics counterparts?}
 
 
 
 \section{A short review of Koszul duality} \label{s:review}
-
-%sym and alt
-%maybe a few words about mapping of modules btw derived categories? how does this relate to the line picture?
-%CE(g) and U(g)
 
 We provide a basic introduction to Koszul duality for associative algebras, emphasizing the most simple algebraic examples. Since our aim is expository, we will omit many important references and generalizations. 
 For a more exhaustive textbook introduction to Koszul duality in mathematics see, for example, \cite[Chapter 3]{LV}. 
