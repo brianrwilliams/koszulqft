@@ -1555,8 +1555,6 @@ Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$.
 %Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$. 
 %\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
 
-\subsubsection*{Topological limit}
-
 We conclude by noting that it is already instructive to think about a degenerate limit of $S^1$ reduced theory. 
 If we just remember the {\em lowest} lying $S^1$-modes, we have see that observables at $r=0$ are simply the free algebra on the even operator $\phi_0$, thus the subalgebra of lowest lying modes of the algebra $\Obs_0$ is
 \[
@@ -1748,7 +1746,7 @@ Q = Q_0 + \hbar Q_1 + \cdots .
 In what follows, we will work only to first order in $\hbar$.
 At the end of the section we argue that this is actually enough: there exists a quantization of this three-dimensional theory which is exact at one-loop so we can assume $Q_k = 0$ for $k \geq 2$. 
 
-\subsection{Line operators}
+\subsection{Coupling to line operators}
 
 By Proposition \ref{prop:line}, there is a one-to-one correspondence between line defects along
 \[
@@ -1774,7 +1772,7 @@ Thus, we are studying the Maurer--Cartan equation in
 \]
 which reads
 \begin{equation}\label{eqn:cmccs}
-Q_0 \cO^{(0)} + \cO^{(0)} \star \cO^{(0)} = 0 .
+Q_0 \alpha + \alpha \star \alpha = 0 .
 \end{equation}
 
 \subsection{An example: minimal free fermion coupling}
@@ -1882,7 +1880,7 @@ Similar to the case of the free theory in the previous section, the most general
 \eeqn
 Here $A_t$ is the $\d t$-component of the connection one-form and $B_t$ is the $\d t$-descendant of the field $B$. 
 On the line, $B_t$ imposes the equation of motion $\partial_t B = 0$. 
-We are ignoring the couplings of operators to the field $B$ and the ghost $\fc^a$ since they will not contribute to the cohomology of local operators on the line. 
+We are ignoring the couplings of operators to the field $B$ and the ghost $\fc$ since they will not contribute to the cohomology of local operators on the line. 
 
 The main goal of this section is to compute the universal line defect to tree-level in the perturbation parameter. 
 
@@ -1894,13 +1892,7 @@ At tree-level, the Koszul dual to the algebra of operators of the $3d$ gauge the
 \end{align*} 
 \end{prop}
 
-%Furthermore, on generators, the differential is of the form \natalie{are we bouncing back and forth between d and Q again?}
-%\begin{align*}
-%\d J_a[k] & = \hbar \sum_{r + s = k} \kappa f J_b[r] K_c[s] + O(\hbar^2) \\
-%\d K_a[k] & = \hbar \sum_{r + s = k} \kappa f K_b[r] \Tilde{J}_c[s] + O(\hbar^2)
-%\end{align*} 
-%\brian{figure out indices}
-%\end{prop}
+
 
 From a mathematical standpoint this proposition is no surprise given our recollections on Koszul duality. 
 Recall that the algebra of classical observables of the 3d gauge theory is the Lie algebra cohomology on the graded Lie algebra $\fg[\ep][[z]]$:
@@ -1954,7 +1946,7 @@ As we saw, the two types of boundary terms contribute with alternate signs.
 Notice that we have not touched the term coming from $f_{bc}^a \fc^b A_t^c$. 
 Thus, in order for this piece in the path integral to be BRST invariant we must have the following relation
 \[
-\int_t \sum_n \frac1{n!} J_a[n] \partial_z^n \left(f_{bc}^a \fc^b A^c_t \right) = \int_t \sum_{\ell,m} \frac1{k!}  \frac1{\ell!} [J_d[k] , J_e[\ell]] \partial_z^k \fc^d  \partial_z^\ell A^e   .
+\int_t \sum_n \frac1{n!} J_a[n] \partial_z^n \left(f_{bc}^a \fc^b A^c_t \right) = \int_t \sum_{\ell,k} \frac1{k!}  \frac1{\ell!} [J_d[k] , J_e[\ell]] \partial_z^k \fc^d  \partial_z^\ell A^e   .
 \] 
 This relation must hold for all input fields since it is in the path integral.
 To obtain the commutation relation \eqref{eqn:rel1}, we plug in the test fields
@@ -2067,15 +2059,6 @@ The evaluation of the relevant integral is outside the scope of these notes, but
 The ellipses denote similar terms present in the anomaly which involve a higher number of holomorphic $z$-derivatives.
 Here, $\kappa^{bc}$ is the Killing form on $\fg$. 
 
-
-
-The second diagram in Figure \ref{fig:cancel4} also has a gauge anomaly.
-We will show that this gauge anomaly is proportional to 
-\[
-\hbar \int_{\RR \times \{z=0\}} \partial_z \fc^a \kappa^{bc} f_{ab}^d K_{c} K_{d} + \cdots .
-\]
-
-
 \begin{figure}
 	\begin{tikzpicture}
 	\begin{scope}
@@ -2103,34 +2086,105 @@ We will show that this gauge anomaly is proportional to
 	\label{fig:cancel3}}
 \end{figure}
 
-\begin{figure}
-	\begin{tikzpicture}
-	\begin{scope}
-		\node[circle, draw] (K) at (0,0) {$K$};
-		%\node[circle, draw] (J2) at (0,-1) {$K$};
-		\node (B) at (2,0)  {$B_{t}$};
-		%\node (A2) at (2,-1)  {$B_{t}$};
-		\draw[decorate, decoration={snake}] (K) --(B);
-		%\draw[decorate, decoration={snake}] (J2) --(A2);
-		\draw (0,2) -- (K) -- (0,-2); 
-	\end{scope}	
-	\begin{scope}[shift={(4,0)}];
-		\node[circle, draw] (K1) at (0,1) {$K$};
-		\node[circle, draw] (K2) at (0,-1) {$K$};
-		\node (B) at (3,0)  {$B_{t}$};
-		%\node (A2) at (3,-1)  {$B_{t}$};
-		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
-		\draw[decorate, decoration={snake}] (K1) -- (1.5,0);
-		\draw[decorate, decoration={snake}] (1.5,0) --(B);
-		\draw[decorate, decoration={snake}] (K2) -- (1.5,0);
-		\draw (0,-2) -- (K2) -- (K1) -- (0,2);
-	\end{scope}
-	\end{tikzpicture}
-	\caption{Cancellation of the gauge anomaly of these two diagrams leads to the $\hbar$-linear correction to the differential $\d K[k]$.
-	\label{fig:cancel4}}
-\end{figure}
+We conclude that cancellation of this gauge anomaly requires us to introduce the differential which acts on the $J$-generators as
+\[
+\d J_a[k] = \hbar \sum_{r + s = k} \kappa f J_b[r] K_c[s] .
+\]
 
-\natalie{computation needs to be completed}
+The next diagram we consider has a single internal loop. 
+\brian{I need to draw the diagram.}
+It has a one-loop anomaly given by
+\[
+\sum_{n \geq 0} \int \partial_z^{n+1} \fc^a K_a [n]  .
+\]
+\brian{Maybe we should flip this diagram and the other one around? We could filter by the number of operators on the line. 
+This one is linear and only generates this single anomalous diagram.
+Furthermore, it is the only anomalous diagram with a single operator on the line.} 
+
+We conclude that cancellation of this gauge anomaly requires us to introduce the differential which acts on the $J$-generators as
+\[
+\d J_a[n] = \hbar K_a [n-1] .
+\]
+
+\subsection{Summary} 
+
+\brian{I switched to using $\hbar$ as a macroscopic variable.}
+
+In summary, we have found that in order for quantum gauge anomalies to vanish we must introduce a differential on the Koszul dual to the algebra of local operators.
+This quantum dg algebra takes the form
+\[
+\bigg( U(\fg[\ep]) \, , \, \hbar \d \bigg) .
+\]
+On the $J_a[n]$ generators, $\d$ is of the form 
+\[
+\d J_a [n] = K_a [n-1] + \sum_{r + s = k} \kappa^{bc} f J_b[r] K_c[s] .
+\]
+On the $K_a[n]$ generators it is
+\[
+\d K_a [n] = \sum_{r + s = k} \kappa^{bc} f K_b[r] K_c[s] .
+\]
+
+The cohomology of this dg algebra is a familiar algebra. 
+To compute the cohomology we use a spectral sequence obtain from the filtration by polynomial degree. 
+The first page of this spectral sequence is the cohomology with respect to the differential $\d J_a [n] = K_a [n-1]$. 
+
+Already, at this page the spectral sequence collapses. 
+The cohomology is isomorphic to the algebra generated by $\{J_a[0]\}$ subject to the relation
+\[
+J_a [0] J_b[0] - J_b[0] J_a[0]= f_{ab}^c J_c[0].
+\]
+This is precisely the enveloping algebra of the Lie algebra $\fg$! 
+Without much more difficultly, one can show that the natural inclusion
+\[
+U (\fg) \hookrightarrow \bigg( U(\fg[\ep]) \, , \, \hbar \d \bigg)
+\]
+is a quasi-isomorphism. 
+
+In other words, after taking to account one-loop effects, the Koszul dual to the algebra of operators of this 3-dimensional gauge theory on $\CC \times \RR$ is equivalent to $U (\fg)$.
+This is precisely the same algebra we found to be Koszul dual to the algebra of operators of Chern--Simons theory on $\RR^3$. 
+\brian{I want to say something smart about level shift here.}
+
+%The second diagram in Figure \ref{fig:cancel4} also has a gauge anomaly.
+%We will show that this gauge anomaly is proportional to 
+%\[
+%\hbar \int_{\RR \times \{z=0\}} \partial_z \fc^a \kappa^{bc} f_{ab}^d K_{c} K_{d} + \cdots .
+%\]
+
+
+
+%\begin{figure}
+%	\begin{tikzpicture}
+%	\begin{scope}
+%		\node[circle, draw] (K) at (0,0) {$K$};
+%		%\node[circle, draw] (J2) at (0,-1) {$K$};
+%		\node (B) at (2,0)  {$B_{t}$};
+%		%\node (A2) at (2,-1)  {$B_{t}$};
+%		\draw[decorate, decoration={snake}] (K) --(B);
+%		%\draw[decorate, decoration={snake}] (J2) --(A2);
+%		\draw (0,2) -- (K) -- (0,-2); 
+%	\end{scope}	
+%	\begin{scope}[shift={(4,0)}];
+%		\node[circle, draw] (K1) at (0,1) {$K$};
+%		\node[circle, draw] (K2) at (0,-1) {$K$};
+%		\node (B) at (3,0)  {$B_{t}$};
+%		%\node (A2) at (3,-1)  {$B_{t}$};
+%		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
+%		\draw[decorate, decoration={snake}] (K1) -- (1.5,0);
+%		\draw[decorate, decoration={snake}] (1.5,0) --(B);
+%		\draw[decorate, decoration={snake}] (K2) -- (1.5,0);
+%		\draw (0,-2) -- (K2) -- (K1) -- (0,2);
+%	\end{scope}
+%	\end{tikzpicture}
+%	\caption{Cancellation of the gauge anomaly of these two diagrams leads to the $\hbar$-linear correction to the differential $\d K[k]$.
+%	\label{fig:cancel4}}
+%\end{figure}
+
+
+
+%\d K_a[k] & = \hbar \sum_{r + s = k} \kappa f K_b[r] \Tilde{J}_c[s] + O(\hbar^2)
+%\end{align*} 
+%\brian{figure out indices}
+%\end{prop}
 
 
 %Two steps:
