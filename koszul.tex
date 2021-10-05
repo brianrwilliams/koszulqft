@@ -74,11 +74,18 @@ Finally, in \S \ref{s:conclusions}, we will take a somewhat broader view. We wil
 
 We briefly summarize some conventions we use throughout this note. Unless otherwise stated, we study quantum field theories in Euclidean signature and on flat spacetimes. 
 
-In particular, all of our considerations are local, and are carried out at the perturbative level. We do not account for interesting global properties of quantum field theories, such as studying the theories on manifolds of nontrivial topology, nor do we account for potentially interesting nonperturbative effects, except for brief comments in \S \ref{s:conclusions}. Clarifying any interactions between Koszul duality and these effects is a topic we leave for future work. 
+In particular, all of our considerations are local, and are carried out at the perturbative level. We do not account for interesting global properties of quantum field theories, such as studying the theories on manifolds of nontrivial topology, nor do we account for potentially interesting nonperturbative effects, except for brief comments in \S \ref{s:conclusions}. 
+Clarifying any interactions between Koszul duality and these effects is a topic we leave for future work. 
 
-A notation we use liberally is the \textit{cohomological shift}. Given a graded complex $A= \oplus_i A_i$ with differentials $d_{A}^i: A_i \rightarrow A_{i+1}$, we define the n-shifted complex $A[n]$ by the relation on the graded subspaces $A[n]_i := A_{n+i}$ and differential $d^i_{A[n]} := (-1)^n d^{i+n}_{A}$. The shift has degree $n$ and the differential has degree $1$.
+By a grading we will mean a $\ZZ$-grading unless otherwise specified. 
+Throughout this note we use the {\em cohomological} grading convention.
+A cochain complex is a graded vector space $A$ equipped with a sequence of operators $\d_i \colon A^i \to A^{i+1}$ which satisfies $\d_{i+1} \circ \d_i = 0$. 
+Given a graded vector space $A$ and an integer $n$, denote by $A[n]$ the new graded vector space which satisfies $A[n]^i := A^{n+i}$. 
+In other words, $A[n]$ is like $A$ where the grading is shifted down by the integer $n$.
 
-A crucial point here is that our complexes are viewed in a \textit{graded-commutative} sense. This means that any two homogeneous operators $a_p, a_q$ of respective degrees $p, q$ satisfy $a_p a_q = (-1)^{pq} a_q a_p$. Under an odd-degree shift, therefore, the statistics of a graded subspace will change from `bosonic' to `fermionic', and vice versa. 
+We will use the Koszul rule of signs for all graded algebraic structures.
+For example, a graded commutative algebra is a graded vector space equipped with a degree zero product $\cdot$ which satisfies $a \cdot b = (-1)^{|a||b|} b \cdot a$. 
+The bracket in a graded Lie algebra follows the Koszul sign rule $[a, b] = (-1)^{|a||b|+1} [b, a]$.
 
 
 \natalie{say anything about math definitions of local ops and local observables versus their physics counterparts?}
@@ -2090,7 +2097,7 @@ To cancel this gauge anomaly we must modify the algebra of operators on the univ
 Classically, we have pointed out that the Koszul dual to the local operators of the bulk gauge theory is a graded associative algebra.
 To cancel this gauge anomaly, we must introduce the following {\em differential} acting on this graded algebra:
 \[
-\d J_a[k] = \hbar \sum_{r + s = k-1} \kappa^{bc} f_{ab}^d J_c[r] K_d[s] .
+\d J_a[n] = \hbar \sum_{r + s = n-1} \kappa^{bc} f_{ab}^d J_c[r] K_d[s] .
 \]
 If $k=0$ then $\d J_a [0] = 0$. 
 If we introduce this differential into the gauge variation of the path-ordered exponential in \eqref{eqn:brstvar1}.
@@ -2123,7 +2130,7 @@ It is proportional to
 To cancel this gauge anomaly we must further modify the algebra of operators on the universal line defect.
 We must introduce the following additional term in the differential which acts by the formula:
 \[
-\d K_a[k] = \hbar \sum_{r + s = k-1} \kappa^{bc} f_{ab}^d f K_c[r] K_d[s] .
+\d K_a[n] = \hbar \sum_{r + s = n-1} \kappa^{bc} f_{ab}^d f K_c[r] K_d[s] .
 \]
 If $k=0$ then $\d K_a [0] = 0$. 
 
@@ -2147,18 +2154,21 @@ If $k=0$ then $\d K_a [0] = 0$.
 
 \brian{I switched to using $\hbar$ as a macroscopic variable.}
 
-In summary, we have found that in order for quantum gauge anomalies to vanish we must introduce a differential on the Koszul dual to the algebra of local operators.
+In summary, we have found that in order for one-loop quantum gauge anomalies to vanish we must introduce a differential on the Koszul dual to the algebra of local operators.
+In fact, we claim that this is an exact result, there are no higher loop anomalies!
+This follows from the existence of a particular gauge which renders all two-loop and higher diagrams in the perturbative gauge theory identically zero \cite{GWcs}. 
+
 This quantum dg algebra takes the form
 \[
-\bigg( U(\fg[\ep]) \, , \, \d \bigg) .
+\cA^! = \bigg( U(\fg[\ep]) \, , \, \d \bigg) .
 \]
-On the $J_a[n]$ generators, $\d$ is of the form 
+where on the $J$-generators the differential is
 \[
-\d J_a [n] = K_a [n-1] + \sum_{r + s = k} \kappa^{bc} f J_b[r] K_c[s] .
+\d J_a[n] = \hbar \sum_{r + s = n-1} \kappa^{bc} f_{ab}^d J_c[r] K_d[s] .
 \]
-On the $K_a[n]$ generators it is
+On the $K$-generators it is
 \[
-\d K_a [n] = \sum_{r + s = k} \kappa^{bc} f K_b[r] K_c[s] .
+\d K_a[n] = \hbar \sum_{r + s = n-1} \kappa^{bc} f_{ab}^d K_c[r] K_d[s] .
 \]
 
 The cohomology of this dg algebra is a familiar algebra. 
