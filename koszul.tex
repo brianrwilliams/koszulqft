@@ -174,21 +174,30 @@ To illustrate the abstract considerations above, we present a short computation 
 This is the case where the algebra is the free symmetric algebra on a single (bosonic) generator, $\cA = \CC[x]$. 
 The augmentation $\ep$ is the obvious one which sends a polynomial to its constant coefficient. 
 
-The resulting one-dimensional module $\CC_{\ep}$ is not free (i.e. it does not admit a presentation in terms of linearly independent basis elements) as a $\CC[x]$-module, so, in order to make efficient computations, we need to find a cochain complex of free modules which resolves it. (The prototypical example of a free module is a vector space). 
+The resulting one-dimensional module $\CC_{\ep}$ is not free (i.e. it does not admit a presentation in terms of linearly independent basis elements) as a $\CC[x]$-module, so, in order to make efficient computations, we need to find a cochain complex of free modules which resolves it. 
+The prototypical example of a free module is $\CC[x]$ itself.
 
 Using the technique of resolving a module as cochain complex is not unheard-of in physics: indeed, BRST quantization for some gauge group $G$ involves making a so-called projective resolution of the space of $G$-invariant local operators. 
 The corresponding complex introduces fields of nonzero ghost number and a BRST differential. 
-The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish.\brian{I'm not sure about this. 
-The BRST complex is a model of the derived invariants, which may differ from the strict invariants.
-}
+The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish.\footnote{In mathematical language, the BRST complex is a model for derived invariants, which may differ from strict invariants, but in physics one is often interested in the strict case.}
 
-Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. Geometrically, the resulting complex is called the Koszul-Tate complex. 
+Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. 
+This is a geometric avatar of the Koszul--Tate complex. 
 
-In general, a resolution of some module is simply a chain complex whose cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. 
-A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. 
-The resulting chain map is called a quasi-isomorphism. 
+In general, a free resolution of some $R$-module $M$ is an exact sequence of $R$-modules of the form
+\[
+\cdots \to M_2 \to M_1 \to M_0 \to M \to 0 .
+\]
+% cohomology reproduces the original module; in homological algebra, this allows for efficient representation of invariant submodules or quotient modules using the tools of (nicely behaved) free or projective (etc.) modules. 
+%A bit more stringently, we require that there is a chain map from the original module to its resolution that induces an isomorphism in cohomology. 
+Said differently, $(\cdots M_2 \to M_1 \to M_0)$ has the structure of a cochain complex with $M_i$ in degree $-i$. 
+The exact sequence endows a cochain map of $R$-modules from this cochain complex to the original module $M$ which is an isomorphism in cohomology.
+Such a cochain map is called a quasi-isomorphism. 
+
 Different quasi-isomorphic representations of the same module can have useful physical interpretations, even though the physical observables of interest involve the passage back to cohomology. 
-To take a particularly simple instance, Yang-Mills theory can be quantized using the minimal BRST complex or using the full machinery of the BV-BRST complex, which are quasi-isomorphic complexes.\footnote{\natalie{do we want to say anything here about a "minimal complex" and Koszul duality? or elsewhere?}}.\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
+To take a particularly simple instance, Yang-Mills theory can be quantized using the minimal BRST complex or using the full machinery of the BV-BRST formalism, but we do not need to use the latter for most purposes. 
+%And I want to say that there is always some smallest complex available for quantization for which we can talk about Koszul duality
+%\footnote{\natalie{do we want to say anything here about a "minimal complex" and Koszul duality? or elsewhere?}}.\natalie{nice physics example of useful different quasi-iso'c representations? an example from a physical duality?} 
 
 
 A natural choice for a free resolution in this example is the so-called ``Koszul complex'', a progenitor of the Koszul-Tate complex in BV-quantization, defined as the polynomial algebra on an bosonic generator $x$ and a fermionic generator $\xi$. 
