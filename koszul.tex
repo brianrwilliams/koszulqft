@@ -88,7 +88,7 @@ For example, a graded commutative algebra is a graded vector space equipped with
 The bracket in a graded Lie algebra follows the Koszul sign rule $[a, b] = (-1)^{|a||b|+1} [b, a]$.
 
 
-\natalie{say anything about math definitions of local ops and local observables versus their physics counterparts?}
+%\natalie{say anything about math definitions of local ops and local observables versus their physics counterparts?}
 
 
 
@@ -451,7 +451,7 @@ Indeed, it is the second Hochschild cohomology $HH^2(A,A)$ of an algebra $A$ tha
 
 We specialize the situation a bit further and make the following assumption: 
 \begin{itemize}
-\item the operator $\til{Q}$ is {\em inner} (or {\em Lagrangian}\footnote{It is precisely these elements which will correspond to Lagrangian density couplings via topological descent, see \S \ref{s:lagcoupling}})
+\item the operator $\til{Q}$ is {\em inner} (or {\em Lagrangian}\footnote{It is precisely these elements which will correspond to Lagrangian density couplings via topological descent: see \S \ref{s:lagcoupling}.})
 in the sense that it acts on an observable $\cO$ by
 \[
 \til{Q} \cO = [\alpha , \cO]_\star = \alpha \star \cO - \cO \star \alpha
@@ -635,7 +635,7 @@ Thus, the cohomology is again the Jacobian ring of $W$:
 H^\bu \left(\cA \, \underset{\alpha_W}{\til{\otimes}} \, \cB\right) \cong \CC[q_1,q_2] / (\partial_i W)  .
 \]
 Observe that the algebraic coupling deformed us from a non-commutative associative algebra to one that is strictly commutative. 
-We will remark on the physical significance of this example momentarily. \natalie{note to us to check that we do this}
+%We will remark on the physical significance of this example momentarily. \natalie{note to us to check that we do this}
 %
 %Consider the algebra 
 %\[
@@ -702,7 +702,8 @@ Because the theory is translation invariant, we can consider the complex of {\em
 \]
 where $S$ is any oriented one-manifold without boundary. 
 This complex is equipped with the original BRST differential $Q$ acting on $\cB$ as well as the de Rham differential $\d$. 
-This complex carries a total grading which combines the natural grading on differential forms and the internal grading / ghost number in the BRST complex $\cB$.  \natalie{this reminds me... should we say something somewhere about how when an algebra whose homological and internal gradings coincide it is Koszul (and why)?}
+This complex carries a total grading which combines the natural grading on differential forms and the internal grading / ghost number in the BRST complex $\cB$.  
+%\natalie{this reminds me... should we say something somewhere about how when an algebra whose homological and internal gradings coincide it is Koszul (and why)?}
 
 Given a local (0-form) operator, $\cO = \cO^{(0)} \in \cB$, we can use the endomorphism $\hat{Q}$ to define the following one-form valued operator
 \[
@@ -764,7 +765,7 @@ where $\mu_n(\cdot, \cdot, \ldots, \cdot)$ denote the $n$-ary operations of the 
 The deformed BRST differential is then modified by an infinite number of terms involving the higher products $Q \tilde{\cO} \mapsto Q \tilde{\cO} + \sum_{n, m}\mu_{n + m + 1}(\cO^n, \tilde{\cO}, \cO^m)$. The reader is encouraged to consult the appendices of \cite{GO} for more details, including explications of the $A_\infty$-algebra structure and the definition of the $n$-ary operations in terms of suitably regularized operator products on a topological line. 
 In the remainder of the note, we will continue to implicitly assume that we are working with a strict dg algebra model and higher $A_\infty$ operations will play no role.
 
-\natalie{make sure to say a word somewhere in this section about which algebra maps take MC elements to MC elements.}
+%\natalie{make sure to say a word somewhere in this section about which algebra maps take MC elements to MC elements.}
 
 
 \subsection{From Maurer--Cartan elements to local couplings} 
@@ -916,12 +917,14 @@ Thus, in summary, the algebra of local operators for Chern--Simons theory is the
 If we treat Chern--Simons theory classically, then, the problem of coupling a one-dimensional line defect to Chern--Simons theory is identical to the problem of coupling a one-dimensional theory to a one-dimensional gauge theory for the Lie algebra $\fg$.
 For topological quantum mechanics, see \S \ref{sec:gaugetheory}, we have described this coupling explicitly. 
 
-\natalie{we should talk about the following paragraphs, I find them a bit confusing as written}
+%\natalie{we should talk about the following paragraphs, I find them a bit confusing as written}
 
-What happens if we don't treat the bulk gauge theory classically? In perturbation theory, there is a single parameter for quantizing Chern--Simons theory on $\RR^3$ for a semisimple Lie algebra $\fg$. For an approach to this problem in modern mathematical language, see \cite[Chapter 5]{CosRenorm}. 
-At each order in $\hbar$ one is free to choose a {\em level}---an invariant symmetric bilinear form on $\fg$.
+What happens if we don't treat the bulk gauge theory classically? In perturbation theory, there is a single parameter for quantizing Chern--Simons theory on $\RR^3$ for a semisimple Lie algebra $\fg$: the Chern-Simons level. For an approach to this problem in modern mathematical language, see \cite[Chapter 5]{CosRenorm}. 
+The discrete level can be modified by quantum corrections; restoring $\hbar$ for illustrative purposes, this in general leads to a perturbative series $k_0 + \hbar k_1 + \ldots$. In other wrods, at each order in perturbation theory one has a choice of level, which is a choice of an invariant symmetric bilinear form on $\fg$.
 
-Once when chooses a level for each order in $\hbar$, one can show that there is a unique $\hbar$-correction to the coupling $\alpha$ describing the line defect. \brian{I want to cite Kevin, Owen, and John. But do you have a less technical explanation as to why this is true?}
+Once when chooses a level for each order in $\hbar$, one can show that there is a unique $\hbar$-correction to the coupling $\alpha$ describing the line defect. 
+
+%\brian{I want to cite Kevin, Owen, and John. But do you have a less technical explanation as to why this is true?}
 
 \subsection{The universal line defect}
 \label{sec:univ}
@@ -985,12 +988,12 @@ Consider the compactification of the theory on $\RR_t \times M \rightarrow \RR_t
 In particular, if $M$ is a noncompact manifold, one must choose suitable boundary conditions at infinity. 
 If $\Obs(M \cup \infty)$ denotes the algebra of observables upon making this choice of boundary conditions, then there is a canonical map of algebras $\cA \to \Obs(M \cup \infty)$.\footnote{Using the formalism of factorization algebras this has the elegant interpretation as the structure map corresponding to the manifold embedding $\RR \times M \hookrightarrow \RR \times (M \cup \infty)$.} 
 
-A simplifying assumption to construct an augmentation arises by making a suitable choice of boundary conditions which render the compactified theory {\em trivial}.\footnote{Not all augmentations will arise in this way. \natalie{where do the rest come from?}}
+A simplifying assumption to construct an augmentation arises by making a suitable choice of boundary conditions which render the compactified theory {\em trivial}.\footnote{We do not expect that all augmentations will arise in this way.}
 In other words, the algebra of operators of the compactified theory is the trivial one-dimensional algebra $\CC$ and so there is a canonical map $\cA \to \CC$.
 This is the augmentation. 
 
 In theories with a mass gap, choosing boundary conditions at $\infty$ requires making a choice of massive vacuum and prescribing that the fields approach their expectation values in that vacuum as they approach the boundary. 
-If the theory is massless, it violates our assumption that the compactified theory is trivial, so we exclude these theories from consideration \footnote{This fits in to a more general `relative' version of Koszul duality, which is a special case of the centralizer of a map of algebras.}.
+If the theory is massless, it violates our assumption that the compactified theory is trivial, so we exclude these theories from consideration \footnote{This fits in to a more general `relative' version of Koszul duality, which is a special case of the centralizer of a map of algebras. It will be interesting to make this connection precise in future work.}.
 
 With this physical interpretation of the augmentation, we can make sense of the condition that the algebraic coupling satisfy $(\ep \otimes \id_B) \alpha = 0$.
 This simply says that the coupling preserves the choice of a vacuum.
@@ -1018,7 +1021,7 @@ A description of the universal line defect of perturbative Chern--Simons theory 
 As we have already remarked, the algebra local observables of Chern--Simons theory on $\RR^3$ is equivalent to the Chevalley--Eilenberg complex $\cA = \clie^\bu(\fg)$. 
 
 There is a natural choice of an augmentation, namely the projection onto the unit observable $\ep\colon \cA \to \CC$. 
-To see this from the point of view of choosing a vacuum, observe that since Chern--Simons theory is topological we can place it on the $3$-manifold $\RR_t \times S^2$ where we think of $S^2$ as the one-point compactification of $\RR^2$. 
+To see this from the point of view of choosing a vacuum, observe that since Chern--Simons theory is topological, and we choose the obvious boundary condition that the gauge field be trivial at infinity, we can place it on the $3$-manifold $\RR_t \times S^2$ where we think of $S^2$ as the one-point compactification of $\RR^2$. 
 
 The algebra of observables of the theory compactified along $\RR_t \times S^2 \to \RR_t$ is equivalent to 
 \[
@@ -1046,7 +1049,8 @@ The precomposition with the local-to-global map yields the desired augmentation 
 \[
 \clie^\bu(\fg) = \cA \twoheadrightarrow \Obs(S^2) \xto{\simeq} \CC  .
 \]
-Notice that this is an example where the choice of a vacuum did not arise in a trivial theory upon compactification.  \natalie{confused about this statement. also, can we relate these statements to something like standard, natural boundary conditions on the gauge field at infinity?}
+Notice that this is an example where the choice of a vacuum did not arise in a trivial theory upon compactification.  
+%\natalie{confused about this statement. also, can we relate these statements to something like standard, natural boundary conditions on the gauge field at infinity?}
 
 Finally, since the Koszul dual of $\clie^\bu(\fg)$ is 
 \[
@@ -1086,14 +1090,16 @@ This theory we study is equivalent to the holomorphic twist of the $3d$ $\cN=2$ 
 The presentation of the holomorphic twist depends on the R-symmetry data we assign to the untwisted theory. 
 The component fields of a 3d chiral multiplet of R-charge $r$ include a complex scalar $\phi$ of R-charge $r$ and four fermions $\psi_{\pm}$ with R-charges  $r-1$ and their conjugates $\bar{\psi}_{\pm}$ with R-charges $1-r$. We choose $r=0$ \footnote{Since the R-charge governs the twisted spin of the fields, more general R-charge assignments will result in the fields transforming as sections of certain powers of the canonical bundle: the $r/2$ power for the twisted scalar, and the $1-r/2$ power for the twisted fermion.}.  
 
-The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). Following \cite{DGP}, in preparation for the holomorphic twist, we can express the 3d $\cN=2$ superalgebra on $\RR^{1,1} \times \RR$ using complex spinors as (displaying only the nonvanishing brackets)
-\begin{align*}
-\left\lbrace Q_+, \bar{Q}_+ \right\rbrace &= -2 P_+ \\
-\left\lbrace Q_-, \bar{Q}_- \right\rbrace &= 2 P_- \\
-\left\lbrace Q_+, \bar{Q}_- \right\rbrace &= -2 i (P_{\perp} - i Z) \\
-\left\lbrace Q_-, \bar{Q}_+ \right\rbrace &= 2 i (P_{\perp} + i Z)
-\end{align*} where $P_{\pm} := \pm P_0 + P_1$ are linear combinations of the translation generators on $\RR^{1, 1}$, $P_{\perp}$ is the translation generator along $\RR$, and $Z$ is a real central charge.
-\brian{would probably be better to write the Euclidean signature down? It doesn't really matter since our coefficients are always $\CC$ rather than $\RR$.}
+The input data is simply a complex vector space $V$ in which the scalar field takes values. (In a more interesting bulk theory where the chiral multiplet were coupled to a $G$ gauge field, then $V$ would be a unitary linear $G$-representation of our choosing). Following \cite{DGP, CDG}, in preparation for the holomorphic twist, we can express the 3d $\cN=2$ superalgebra on $\CC \times \RR$ as $\left\lbrace Q_+, \bar{Q}_+ \right\rbrace = -2 i \partial_{\bar{z}}, \left\lbrace Q_-, \bar{Q}_- \right\rbrace = 2 i \partial_{z}, \left\lbrace Q_+, \bar{Q}_- \right\rbrace = \left\lbrace Q_-, \bar{Q}_+ \right\rbrace = i \partial_t.$
+%using complex spinors as (displaying only the nonvanishing brackets)
+%\begin{align*}
+%\left\lbrace Q_+, \bar{Q}_+ \right\rbrace &= -2 P_+ \\
+%\left\lbrace Q_-, \bar{Q}_- \right\rbrace &= 2 P_- \\
+%\left\lbrace Q_+, \bar{Q}_- \right\rbrace &= -2 i (P_{\perp} - i Z) \\
+%\left\lbrace Q_-, \bar{Q}_+ \right\rbrace &= 2 i (P_{\perp} + i Z)
+%\end{align*} where $P_{\pm} := \pm P_0 + P_1$ are linear combinations of the translation generators on $\RR^{1, 1}$, $P_{\perp}$ is the translation generator along $\RR$, and $Z$ is a real central charge.
+
+%\brian{would probably be better to write the Euclidean signature down? It doesn't really matter since our coefficients are always $\CC$ rather than $\RR$.}
 
 After the holomorphic twist with respect to the choice of supercharge 
 \[
@@ -1110,14 +1116,15 @@ where $t$ is a real coordinate along $\RR$ and $z$ is a holomorphic coordinate a
 The theory will be topological along $\RR$ but only holomorphic along $\CC_z$. 
 This means that the OPE depends trivially on $t$ and holomorphically on $z$. 
 
-Per the discussion of the previous section \natalie{we may want to make sure we say a few words about this slight generalization of descent in the previous section!}, one may also perform descent on the two $Q$-closed fields of the twisted theory. 
+One may perform descent on the two $Q$-closed fields of the twisted theory. If we restrict our attention to $\RR$ right away, following the discussion of the previous section, we can straightforwardly compute the descendants. For completeness, however, we note that there is a straightforward generalization of topological descent to the mixed holomorphic-topological case \cite{OY}.  We will employ this generalization here to compute three-dimensional holomorphic-topological descendants \cite{CDG}, which will restrict to our familiar 1d topological descendants on the line. 
+
 If we denote the descendent 1-forms associated to an operator $\mathcal{O}$ by $\mathcal{O}^{(1)}$, then by construction these operators satisfy
 \[
 Q(\d z \wedge \mathcal{O}^{(1)}) = \d (\d z \wedge \mathcal{O})
 \]
 where $\d$ is the total de Rham differential on spacetime. Equivalently, we have $Q \mathcal{O}^{(1)} = (\d \bar{z}\partial_{\bar{z}} + \d t \partial_t)\mathcal{O}$. 
 This equation can be solved for the descendent, and the solution is given by $\mathcal{O}^{(1)} = {i \over 2}Q_+ \mathcal{O} \d\bar{z} - i Q_- \mathcal{O} \d t$. 
-\brian{confused by the factors here}
+
 Wedging the one-form descendent with $\d z$ produces a two-form operator that can be integrated along a two-cycle in spacetime to produce a $Q$-closed operator. 
 
 Computing the corresponding descendants for the scalar and the fermion gives (up to signs and constants we suppress)
@@ -1453,7 +1460,7 @@ with free action
 \]
 
 Without the second term, this free action can be thought of as the topological $B$-model with target the algebraic loop space $L V = V[z,z^{-1}]$.
-The second term includes a background gauge field for the symmetry of loop rotations. \natalie{spell this out more?}
+The second term includes a background gauge field for the symmetry of loop rotations.
 
 There is an overall gauge symmetry of this dimensionally reduced action by an integers' worth of fields $\{\chi_n (t,r)\}_{z \in \ZZ}$ which acts via $\delta \psi_n (t,r) = \d \chi_n (t,r)$, where $\d = \d t \,\partial_t + \d r \,\partial_r$ is the two-dimensional de Rham operator. 
 
@@ -1552,7 +1559,7 @@ At $r=\infty$ the character reads
 \chi_\infty (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1}q^{-n}}{1 - s q^{-n-1}}
 \]
 Observe that $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$. 
-\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
+%\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
 
 %\subsection*{Comparing boundary conditions}
 %
@@ -1652,9 +1659,9 @@ When $\fg$ is semi-simple, one can interpret this holomorphic-topological twist 
 
 Physically, we begin with a vector multiplet with components $(A_{\mu}, \sigma, \lambda_{\pm}, \bar{\lambda}_{\pm})$ with canonical R-charge and spin quantum numbers, and will consider the components of the gauge field on $\RR_t \times \CC_{z}$ (though as explained in \cite{ACNV} the twisted construction to follow may be defined on any 3-manifold with a transverse holomorphic foliation). The gauge field takes values in some compact gauge group, though for the purposes of studying local operators we will only need to specify the Lie algebra $\fg$ in what follows. The vector multiplet also includes a real adjoint-valued scalar, $\sigma \in \fg_{\RR}$, and $\fg$-valued gauginos. 
 
-\brian{We are confusing $Q$ with both the twist and the full BRST operator of the twisted theory.}
+%\brian{We are confusing $Q$ with both the twist and the full BRST operator of the twisted theory.}
 
-With respect to the twisting supercharge $Q \define \bar{Q}_+$, it is easy to check that we have the following $Q$-closed combinations:
+With respect to the twisting supercharge $\bar{Q}_+$, it is easy to check that we have the following $\bar{Q}_+$-closed combinations:
 \begin{align}
 A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
 \cA_t &= A_t - i \sigma.
@@ -1662,13 +1669,13 @@ A & = A_{\zbar} (z,t) \d \zbar + A_{t} (z, t) \d t \\
 The curvature of the connection 1-form in the first line is given by
 \[
 \cF_{\zbar t} := i  [(\partial_{\zbar} - i A_{\zbar}), \partial_t - i \cA_t] = F_{\zbar t} - i D_{\zbar}\sigma.
-\] It is straightforward to check that $\overline{\cF_{\zbar t}}$ is also $Q$-closed modulo the Dirac equation for the gauginos. 
+\] It is straightforward to check that $\overline{\cF_{\zbar t}}$ is also $\bar{Q}_+$-closed modulo the Dirac equation for the gauginos. 
 The computation of the descendants of the local operators will proceed similarly to our previous example, except that now we use the covariantized descent equation:
 \[
-Q \cO^{(1)} = d_{A} \cO
+\bar{Q}_+ \cO^{(1)} = d_{A} \cO
 \] with $d_A := (\partial_{\zbar} - i A_{\zbar})d\zbar + (\partial_t - i \cA_t)dt$. 
 
-We will pass now to the twisted theory, where we write the theory in the first-order formalism and discard the $Q$-exact terms. We will slightly relabel the relevant fields for Chern-Simons theory at the critical level. 
+We will pass now to the twisted theory, where we write the theory in the first-order formalism and discard the $\bar{Q}_+$-exact terms. We will slightly relabel the relevant fields for Chern-Simons theory at the critical level. 
 
 The theory has two sets of fields
 \begin{align*}
@@ -2282,7 +2289,7 @@ On the $K$-generators it is
 
 \section{Conclusions and further directions}\label{s:conclusions}
 
-\natalie{we may want to open the conclusions with a brief literature survey of appearances of Koszul duality in mathematics, to get a sense of its breadth. Or maybe add something brief like that in the beginning of section 2?}
+%\natalie{we may want to open the conclusions with a brief literature survey of appearances of Koszul duality in mathematics, to get a sense of its breadth. Or maybe add something brief like that in the beginning of section 2?}
 
 In this note, we have explicated Koszul duality as an algebraic duality that arises when coupling a QFT to a topological quantum mechanical system. We would like to conclude by tying it to some parallel developments in the math and physics literature, as well as enumerate various open questions, works-in-progress, and future directions.
 
@@ -2318,16 +2325,18 @@ It would be desirable to have a more general analysis of this situation. In part
 
 Finally, we wish to connect the discussion in this note to more general questions of recent physical interest, and highlight some alternative perspectives on Koszul duality that can be found in the literature. We hope that, in doing so, we have conveyed some of the beauty and utility of applying homological algebraic reasoning to various physical problems. Although homological algebra---as well as derived geometry, higher categories, etc.---may appear abstruse, it can serve as an organizational framework and computational toolbox for various physical questions.
 \begin{itemize}
-\item We explained in \S \ref{s:review} that Koszul dual algebras have the same derived category of dg-modules (roughly, representation categories), although we have not said much about the modules so far\footnote{For the cognoscenti, Koszul duality is a dg version of Morita theory.}. Let us make some physical and mathematical remarks now. One can draw a(n extremely precise!) mathematical analogy between Koszul duality and Fourier transforms. \natalie{is this point of view written down anywhere nice we can cite here?} \brian{besides some math overflow, not that I'm aware of. Maybe ``extremely precise'' is not the correct wording here. It's certainly a convincing parallel.} In this analogy, $\cA, \cA^{!}$ correspond to canonically conjugate variables on a phase space like $x, p$, and the transformation that takes an object viewed as an $\cA$-module to its avatar as an $\cA^{!}$-module is analogous to a Fourier transform of tempered distributions. The role of the integral kernel in the Fourier transform is played by the Maurer-Cartan element.  More precise statements about module transformation in the dg-associative case can be found in \cite{GO}, along with a physical realization of this idea in the context of twisted, $\Omega$-deformed M2/M5-brane intersections. A module can be thought of in the topological line context as a defect on which lines can end. The algebra elements can act on this defect by translating them along the line to the endpoint where the local operator sits. A line may also puncture the defect, in which case the defect furnishes an algebra bimodule. One can obtain additional morphisms by studying defects as junctions between two different lines.  Additional structures, such as coproducts, on this category can also be obtained by fusing lines together, fusing defects together, and so on. In a set-up from a twisted version of M-theory, including intersections of line/surface defects arising from twisted M2/M5 branes, these questions were explored in detail \cite{GR}. Studying further examples, and providing a complete mathematical treatment of all these ingredients, is important future work. \\
+\item We explained in \S \ref{s:review} that Koszul dual algebras have the same derived category of dg-modules (roughly, representation categories), although we have not said much about the modules so far\footnote{For the cognoscenti, Koszul duality is a dg version of Morita theory.}. Let us make some physical and mathematical remarks now. One can draw a mathematical analogy between Koszul duality and Fourier transforms. In this analogy, $\cA, \cA^{!}$ correspond to canonically conjugate variables on a phase space like $x, p$, and the transformation that takes an object viewed as an $\cA$-module to its avatar as an $\cA^{!}$-module is analogous to a Fourier transform of tempered distributions. The role of the integral kernel in the Fourier transform is played by the Maurer-Cartan element.  More precise statements about module transformation in the dg-associative case can be found in \cite{GO}, along with a physical realization of this idea in the context of twisted, $\Omega$-deformed M2/M5-brane intersections. A module can be thought of in the topological line context as a defect on which lines can end. The algebra elements can act on this defect by translating them along the line to the endpoint where the local operator sits. A line may also puncture the defect, in which case the defect furnishes an algebra bimodule. One can obtain additional morphisms by studying defects as junctions between two different lines.  Additional structures, such as coproducts, on this category can also be obtained by fusing lines together, fusing defects together, and so on. In a set-up from a twisted version of M-theory, including intersections of line/surface defects arising from twisted M2/M5 branes, these questions were explored in detail \cite{GR}. Studying further examples, and providing a complete mathematical treatment of all these ingredients, is important future work. \\
 \item In \S \ref{s:free}, we illustrated another way to obtain Koszul dual algebras from our free theory example: they arose as the algebras of local operators on two distinct boundary conditions upon compactification of our three-dimensional theory to a two dimensional half-space. In the resulting 2d TQFT, the original topological direction along which our putative line defect was supported lies transverse to the resulting boundary. This is, of course, no accident. Koszul dual associative algebras arise as local operator algebras on boundary conditions in 2d TQFTs \cite{DimofteStringMath}. More precisely, the two boundary conditions supporting the Koszul dual algebras are two distinct generating objects in the category of boundary conditions, and are sometimes called ``transverse''. The reason for this terminology is that, roughly speaking, transverse boundary conditions support complementary halves of the degrees of freedom in the 2d theory. This choice of coordinates/field variables for the degrees of freedom corresponds to a choice of phase space polarization spanned by the two ``transverse'' directions. This is natural from the point of view of Koszul duality as a Fourier transform we have sketched above. The boundary condition picture of Koszul duality was explored in 2d compactifications of 3d $\cN =4$ theories in \cite{BDGH}. Koszul duality in the Fukaya-Seidel derived category (i.e. the category of boundary conditions in the A-model) was also studied in \cite{Mina}, with applications to knot homology. 
 
 Higher dimensional BPS boundary conditions may instead support, for instance, vertex algebras of local operators in a suitable twist. It would be very illuminating to explicate Koszul duality for vertex algebras from the boundary condition point of view as well. For example, examples of transverse pairs of BPS-boundary conditions in 3d $\cN=2$ theories were employed to construct duality interfaces in \cite{DGP}, and are also expected to be Koszul dual in the appropriate sense. Further, one should be able to connect a.) the transverse boundary condition picture of Koszul dual vertex algebras and b.) the picture employing gauge-invariant coupling of a bulk QFT to a holomorphic defect, again via a suitable dimensional reduction to a half-space. We leave to future work the task of making all of these connections more precise.\\
 
 \item Costello and Li have used Koszul duality to provide proofs of powerful anomaly cancellation arguments in the topological string, even in situations where one must contend with an infinite number of possible counterterms or, more dramatically, nontrivial gauge anomalies at every order in perturbation theory. Homological algebra provides all-orders result proving that coupled open-closed string theories can nonetheless be quantized uniquely in the topological string. This analysis was performed in the B-model (BCOV theory) \cite{CLBCOV} and in a supersymmetric sector of the type I string \cite{CL2}. Analogous studies are underway for the open-closed A-model on hyperkahler spaces \cite{PS}. \\
 
-\item Many of the ideas and ingredients we have touched on so far seem closely connected to quantization. Geometric quantization involves a choice of polarization on phase space, and one is often interested in the canonical transformations on phase space, while Koszul duality is a distinguished such symmetry (a swap of canonically conjugate variables given a choice of polarization). Furthermore, Koszul duality produces two alternative ways to view the category of boundary conditions in topological string theory, while studying A-branes on certain spaces provides an alternative geometric route to quantization \cite{GukovWitten}; see \cite{GW} for recent work connecting brane quantization and geometric quantization.  Indeed, a more concrete relationship between Koszul duality and quantization exists. A slogan for this train of thought is that Koszul duality gives a perturbative notion of ``geometric quantization on the cylinder'', or geometric quantization of a relative bulk/boundary system. This setup has been fleshed out in detail \cite{EY} in the context of the TQFT relevant for Geometric Langlands program, and we will briefly summarize. Consider a TQFT theory on the ``cylinder'' $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$, with some choice of boundary condition (so, in particular, the direction normal to the boundary is topological). A line operator inserted in the topological direction and supported at a point on $\mathbb{R}_{\geq 0}$ can act on the boundary condition by bringing the point close to 0, wherein it fuses with the original boundary condition to form a new one. One can of course consider the trivial line, whose endomorphisms are simply local operators in the theory, which then act naturally on the category of boundary conditions. 
+\item Many of the ideas and ingredients we have touched on so far seem closely connected to quantization. Geometric quantization involves a choice of polarization on phase space, and one is often interested in the canonical transformations on phase space, while Koszul duality is a distinguished such symmetry (a swap of canonically conjugate variables given a choice of polarization). Furthermore, Koszul duality produces two alternative ways to view the category of boundary conditions in topological string theory, while studying A-branes on certain spaces provides an alternative geometric route to quantization \cite{GukovWitten}; see \cite{GW} for recent work connecting brane quantization and geometric quantization. Indeed, Koszul duality has been shown to be useful in the physical context of ``geometric quantization on the cylinder'', or geometric quantization of a relative bulk/boundary system. This setup has been fleshed out in detail \cite{EY} in the context of the TQFT relevant for Geometric Langlands program, and we will briefly summarize. Consider a TQFT theory on the ``cylinder'' $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$, with some choice of boundary condition (so, in particular, the direction normal to the boundary is topological). A line operator inserted in the topological direction and supported at a point on $\mathbb{R}_{\geq 0}$ can act on the boundary condition by bringing the point close to 0, wherein it fuses with the original boundary condition to form a new one. One can of course consider the trivial line, whose endomorphisms are simply local operators in the theory, which then act naturally on the category of boundary conditions. 
 
-On the other hand, one can consider the TQFT on $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$ with a choice of boundary condition, and study the algebra of operators on $M \times U$ where $U$ is a contractible open set of the half-plane. Since we are in a TQFT we can use the state-operator correspondence to map this configuration to a codimension-1 strip with the same boundary condition at both ends; by the usual TQFT voodoo, this produces a Hilbert space of states with the structure of an algebra. This picture, illustrated in \cite{EY}, enables one to think of the endomorphism algebra of local operators on any given boundary condition of the TQFT as the quantum phase space of the bulk/boundary system. On the other hand, the algebra of local operators, viewed as endomorphisms of the trivial line, acts on any such boundary condition. This gives a map of algebras from the algebra of local operators to the endomorphism algebra of any boundary condition in the category. This must be true for any category object/boundary condition, so the algebra enjoys a universal property in the category of boundary conditions. \natalie{what is the simplest and most powerful thing one can say about Koszul duality here?}
+On the other hand, one can consider the TQFT on $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$ with a choice of boundary condition, and study the algebra of operators on $M \times U$ where $U$ is a contractible open set of the half-plane. Since we are in a TQFT we can use the state-operator correspondence to map this configuration to a codimension-1 strip with the same boundary condition at both ends; by the usual TQFT voodoo, this produces a Hilbert space of states with the structure of an algebra. This picture, illustrated in \cite{EY}, enables one to think of the endomorphism algebra of local operators on any given boundary condition of the TQFT as the quantum phase space of the bulk/boundary system. On the other hand, the algebra of local operators, viewed as endomorphisms of the trivial line, acts on any such boundary condition. This gives a map of algebras from the algebra of local operators to the endomorphism algebra of any boundary condition in the category. This must be true for any category object/boundary condition, so the algebra enjoys a universal property in the category of boundary conditions.
+
+Both of these description of the category fit in naturally with the physical avatars of Koszul duality we discussed. This category can be thought of as a category of $\cA$-modules, where $\cA$ is the endomorphism algebra of the generating boundary condition. However, it has a (more tractable) Koszul dual description as a category of $\cA^{!}$-modules. The Koszul dual frame was used to nice effect in \cite{EY}. 
 
 
 An immediate and very interesting extension would be extending this setup to theories that are not TQFTs but rather are twisted theories with holomorphic or mixed holomorphic-topological dependence in the directions transverse to $\mathbb{R}$. The mathematical formalism relevant for these explorations is \textit{shifted geometric quantization}, reviewed in \cite{Safronov}. \\
