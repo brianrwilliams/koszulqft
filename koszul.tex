@@ -181,7 +181,7 @@ Using the technique of resolving a module as cochain complex is not unheard-of i
 The corresponding complex introduces fields of nonzero ghost number and a BRST differential. 
 The cohomology of the BRST complex reproduces $G$-invariant local operators concentrated in degree 0 (the physical observables), and cohomologies in higher ghost number vanish.\footnote{In mathematical language, the BRST complex is a model for derived invariants, which may differ from strict invariants, but in physics one is often interested in the strict case.}
 
-Similarly, BV quantization provides a resolution of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. 
+Similarly, the Batalin--Vilkovisky (BV) formalism provides a derived enhancement of the critical locus, i.e. solutions of the Euler-Lagrange equations, of a Lagrangian quantum field theory using antifields and antighosts. 
 This is a geometric avatar of the Koszul--Tate complex. 
 
 In general, a free resolution of some $R$-module $M$ is an exact sequence of $R$-modules of the form
@@ -406,7 +406,7 @@ It is a straightforward exercise in spectral sequences to prove that even for a 
 
 %hochschild
 
-%\subsection{A look at $\EE_n$ Koszul duality}
+%\subsection{A look at $\E\EE_n$ Koszul duality}
 
 %\subsection{Deformed Koszul duality}
 
@@ -1020,43 +1020,84 @@ A description of the universal line defect of perturbative Chern--Simons theory 
 
 As we have already remarked, the algebra local operators of Chern--Simons theory on $\RR^3$ is equivalent to the Chevalley--Eilenberg complex $\cA = \clie^\bu(\fg)$. 
 
-There is a natural choice of an augmentation, namely the projection onto the unit observable $\ep\colon \cA \to \CC$. 
-To see this from the point of view of choosing a vacuum, observe that since Chern--Simons theory is topological, and we consider a trivial gauge field at infinity, we can place it on the $3$-manifold $\RR_t \times S^2$ where we think of $S^2$ as the one-point compactification of $\RR^2$. 
+There is a natural choice of an augmentation at the classical level, namely the projection onto the unit observable $\ep\colon \cA \to \CC$. 
+To see this how this augmentation persists at the quantum level, it is best to take the point of view of choosing a vacuum. 
 
-The algebra of observables of the theory compactified along $\RR_t \times S^2 \to \RR_t$ is equivalent to 
+To construct the vacuum we make a choice of boundary conditions to place 3d Chern--Simons theory on the slab 
 \[
-\Obs (S^2) \simeq \clie^\bu (\fg \otimes H^\bu(S^2)) .
-\] 
-The de Rham cohomology of $S^2$ is concentrated in degrees zero and two.  
-In degree zero, the generator is the constant function $1$, and in degree two the generator is the volume element ${\rm vol}_{S^2}$. 
-We are endowing the graded vector space
-\[
-\fg \otimes H^\bu (S^2) \cong \fg \cdot 1 \oplus \fg \cdot \text{vol}_{S^2} [-2]
+(x,y,t) \in \RR^2 \times [0,1] .
 \]
-with the structure of a graded Lie algebra with brackets 
-\[
-[e_a \cdot 1, e_b \cdot 1] = f_{ab}^c e_c \cdot 1, \quad [e_a \cdot 1, e_b \cdot \text{vol}_{S^2}] = f_{ab}^c e_c \cdot \text{vol}_{S^2}
-\]  
-and $[e_a \cdot \text{vol}_{S^2}, e_b \cdot \text{vol}_{S^2}] = 0$. 
+We will see that with a clever choice of boundary conditions, the theory compactified along $\RR^2 \times [0,1] \to \RR^2$ becomes trivial. 
+These boundary conditions were described in \cite{Nanna}, and we follow the presentation there. 
 
-For us, a concrete description of the Lie algebra cohomology of $\fg \otimes H^\bu(S^2)$ is not important. 
-What is important to note is that there is a canonical projection map onto the zeroth cohomology 
+For simplicity, suppose that $\fg$ is an even dimensional Lie algebra. 
+Then, choose subalgebras $\lie{l}_0, \lie{l}_1 \subset \fg$ such that 
 \[
-\Obs (S^2) \twoheadrightarrow H^0 \Obs (S^2) \simeq \CC .
+\dim \lie{l}_0 = \dim \lie{l}_1 = \frac{\dim \fg}{2} 
 \]
+and that the restriction of the trace pairing to both $\ell_0,\ell_1$ vanishes. 
+In other words, $\lie{l}_0, \lie{l}_1$ are maximally isotropic subalgebras with respect to the trace pairing. 
 
-The precomposition with the local-to-global map yields the desired augmentation of the algebra of local observables
+The phase space for Chern--Simons theory at $\RR^2 \times \{0\}$ and $\RR^2 \times \{1\} \subset \RR^2 \times [0,1]$ is isomorphic to 
 \[
-\clie^\bu(\fg) = \cA \twoheadrightarrow \Obs(S^2) \xto{\simeq} \CC  .
+\Omega^\bu(\RR^2) \times \fg[1] .
 \]
-Notice that this is an example where the choice of a vacuum did not arise in a trivial theory upon compactification.  More physically, it was shown in \cite{Aamand} in studying 3d Chern-Simons theory on an interval $\RR^2 \times I$, that there are choices of boundary conditions at $\partial I$ \footnote{Since the theory is topological, we can take the boundaries to be at infinite distance.} (given by requiring the gauge field to take values certain middle-dimensional gauge subalgebras) that produce a trivial 2d theory upon reduction along the interval. This is sufficiently strong to guarantee the existence of augmentations producing a trivial theory upon compactification to 1d.
-%\natalie{confused about this statement. also, can we relate these statements to something like standard, natural boundary conditions on the gauge field at infinity?}
+If we demand that our fields have compact support, then the trace pairing endows this cochain complex with a symplectic structure. 
+A boundary condition is specified by choosing a Lagrangian subspace of this symplectic space which is compatible with the non-linear gauge symmetries. 
 
-Finally, since the Koszul dual of $\clie^\bu(\fg)$ is 
+At $\RR^2 \times \{0\}$ we choose the boundary condition to be the Lagrangian
 \[
-\clie(\fg)^! \simeq U \fg 
+\Omega^\bu(\RR^2) \times \lie{l}_0 [1] \subset \Omega^\bu(\RR^2) \times \lie{g}_0 [1]  .
 \]
-we interpret the enveloping algebra $U \fg$ as the algebra of operators on the universal line defect for Chern--Simons theory on $\RR^3$. 
+In other words, we require that the gauge field satisfy $A|_{t=0} \in \Omega^1 (\RR^2) \times \lie{l}_0$ and similarly for the ghost and anti-field. 
+At $\RR^2 \times \{1\}$ we choose the boundary condition to be the Lagrangian
+\[
+\Omega^\bu(\RR^2) \times \lie{l}_1 [1] \subset \Omega^\bu(\RR^2) \times \lie{g}_0 [1]  .
+\]
+In other words, we require that the gauge field satisfy $A|_{t=1} \in \Omega^1 (\RR^2) \times \lie{l}_0$ and similarly for the ghost and anti-field. 
+
+One can show that the compactification $\RR^2 \times [0,1] \to \RR^2$ results in a trivial theory on $\RR^2$. 
+There is a slight modification one can make in the case that $\fg$ is not even dimensional, we refer to \cite{Nanna} for more details. 
+We point out that this vacuum gives a bit more structure than an augmentation as discussed in the previous section where we only assumed that you obtain a trivial theory after compactification all the way down to one dimension. 
+In fact, this procedure constructs an augmentation for the local operators of Chern--Simons theory as an $\EE_2$-algebra. 
+This structure is used to relate the observables of Chern--Simons theory to the quantum group.
+
+%observe that since Chern--Simons theory is topological, and we consider a trivial gauge field at infinity, we can place it on the $3$-manifold $\RR_t \times S^2$ where we think of $S^2$ as the one-point compactification of $\RR^2$. 
+%
+%The algebra of observables of the theory compactified along $\RR_t \times S^2 \to \RR_t$ is equivalent to 
+%\[
+%\Obs (S^2) \simeq \clie^\bu (\fg \otimes H^\bu(S^2)) .
+%\] 
+%The de Rham cohomology of $S^2$ is concentrated in degrees zero and two.  
+%In degree zero, the generator is the constant function $1$, and in degree two the generator is the volume element ${\rm vol}_{S^2}$. 
+%We are endowing the graded vector space
+%\[
+%\fg \otimes H^\bu (S^2) \cong \fg \cdot 1 \oplus \fg \cdot \text{vol}_{S^2} [-2]
+%\]
+%with the structure of a graded Lie algebra with brackets 
+%\[
+%[e_a \cdot 1, e_b \cdot 1] = f_{ab}^c e_c \cdot 1, \quad [e_a \cdot 1, e_b \cdot \text{vol}_{S^2}] = f_{ab}^c e_c \cdot \text{vol}_{S^2}
+%\]  
+%and $[e_a \cdot \text{vol}_{S^2}, e_b \cdot \text{vol}_{S^2}] = 0$. 
+%
+%For us, a concrete description of the Lie algebra cohomology of $\fg \otimes H^\bu(S^2)$ is not important. 
+%What is important to note is that there is a canonical projection map onto the zeroth cohomology 
+%\[
+%\Obs (S^2) \twoheadrightarrow H^0 \Obs (S^2) \simeq \CC .
+%\]
+%
+%The precomposition with the local-to-global map yields the desired augmentation of the algebra of local observables
+%\[
+%\clie^\bu(\fg) = \cA \twoheadrightarrow \Obs(S^2) \xto{\simeq} \CC  .
+%\]
+%Notice that this is an example where the choice of a vacuum did not arise in a trivial theory upon compactification.  More physically, it was shown in \cite{Aamand} in studying 3d Chern-Simons theory on an interval $\RR^2 \times I$, that there are choices of boundary conditions at $\partial I$ \footnote{Since the theory is topological, we can take the boundaries to be at infinite distance.} (given by requiring the gauge field to take values certain middle-dimensional gauge subalgebras) that produce a trivial 2d theory upon reduction along the interval. This is sufficiently strong to guarantee the existence of augmentations producing a trivial theory upon compactification to 1d.
+%%\natalie{confused about this statement. also, can we relate these statements to something like standard, natural boundary conditions on the gauge field at infinity?}
+%
+%Finally, since the Koszul dual of $\clie^\bu(\fg)$ is 
+%\[
+%\clie(\fg)^! \simeq U \fg 
+%\]
+%we interpret the enveloping algebra $U \fg$ as the algebra of operators on the universal line defect for Chern--Simons theory on $\RR^3$. 
 
 %\brian{the stuff below I had a hard time fitting in}
 %
@@ -2196,6 +2237,20 @@ On the $K$-generators it is
 \d K^a[n] = \sum_{r + s = n-1} f_{bc}^a K^b[r] K^c [s] .
 \]
 
+This quantum differential is relate to a rich story in quantum groups, specifically the Yangian quantum group associated to the simple Lie algebra $\fg$. 
+Costello argued in \cite{CosYangian} that a certain four-dimensional partially topological, partially holomorphic gauge theory is ``controlled'' by the Yangian.
+More explicitly, he shows that the Koszul dual to the algebra of local operators of the four-dimensional theory is equivalent to the (dual) Yangian as a topological Hopf algebra.  
+
+If we place this four-dimensional theory on $\CC \times \RR \times S^1$ and compactify along $S^1$ then we precisely recover the theory on $\CC \times \RR$ that we studied in this section. 
+A corollary of Costello's result is that the algebra of local operators of our theory is isomorphic to the dg algebra
+\[
+{\rm Hoch}_{\bu}\left( Y (\fg) \right)^\vee .
+\]
+This is the linear dual of the Hochschild {\em homology} of $Y(\fg)$. 
+The differential is defined using the associative product on $Y(\fg)$.
+The associative product on this dg algebra comes from the coproduct on $Y(\fg)$. 
+
+\brian{I might want to temper this statement below}
 The quantum differential conspires, in fact, to produce a Koszul dual algebra equivalent to the original algebra: we have a nontrivial example of a self-Koszul-duality. It is not obvious that this should be so (nor is it evident in the way we have written the algebras). Indeed, classically, $\cA/\hbar \neq \cA^{!}/\hbar$. It would be desirable to have a deeper explanation of this result. 
 %The cohomology of this dg algebra is a familiar algebra. 
 %To compute the cohomology we use a spectral sequence obtain from the filtration by polynomial degree. 
@@ -2301,7 +2356,11 @@ For theories with a moduli space of vacua, we expect choices of augmentation to 
 
 \item Similarly, but less ambitiously, it would be instructive to work through some examples with multiple massive vacua, and explore how the Koszul dual pairs of algebra vary given the explicit choice of augmentation/massive vacuum. 
 
-\item In our examples, we have focused on Koszul dual pairs where one algebra was an ordinary degree 0 algebra and its dual was generated by elements in degree 1. This case is especially simple, in part because the extra augmentation constraint is essentially trivial, and it is easy to enumerate all Maurer-Cartan elements.  It would be insightful to work out more explicit examples of algebras generated in multiple cohomological degrees, and deduce the corresponding space of MC elements. Such examples can arise physically in theories with higher form gauge symmetries, and so would be particularly interesting in the studies of $E_n$-Koszul duality. It would also be interesting to understand if studying Koszul duality of these theories using their BV-BRST complexes of local operators can lend insight into the study of the higher group symmetries such theories enjoy \cite{2group, 2group6}.
+\item In our examples, we have focused on Koszul dual pairs where one algebra was an ordinary degree 0 algebra and its dual was generated by elements in degree 1. 
+This case is especially simple, in part because the extra augmentation constraint is essentially trivial, and it is easy to enumerate all Maurer-Cartan elements.  
+It would be insightful to work out more explicit examples of algebras generated in multiple cohomological degrees, and deduce the corresponding space of MC elements. 
+Such examples can arise in theories in higher dimensions with higher form gauge symmetries, and so would be particularly interesting in the studies of higher dimensional TFTs and $\EE_n$-Koszul duality. 
+It would also be interesting to understand if studying Koszul duality of these theories using their BV-BRST complexes of local operators can lend insight into the study of the higher group symmetries such theories enjoy \cite{2group, 2group6}.
 \end{itemize}
  
 
@@ -2309,9 +2368,9 @@ Next, we will describe some versions of Koszul duality for a broader class of al
 
 \begin{itemize}
 
-\item In \S \ref{s:lines} we alluded to the $A_\infty$-algebra (or $E_1$-algebra) structure present for algebras on topological lines (though see \cite{GO}). Also of interest are higher-dimensional topological defects (or, in codimension-1, boundary conditions) \footnote{Note that here we again mean a \textit{fixed} $d$-dimensional submanifold in spacetime along which translations are BRST-trivial. This is to be contrasted with the topological defect lines (TDLs) of, e.g., \cite{Yinetal}.}. For example, topological boundary conditions in 3d TQFTs have been studied in \cite{KS, BM, Kaidietal}. Gauge-invariant couplings of QFTs to $d$-dimensional topological defects can be described using Koszul duality for $E_d$-algebras, and the latter is well-understood mathematically \cite{lurie2011formal}. It would be interesting to see if Koszul duality affords an alternative characterization of these topological defects/boundaries as the space of $E_n$-homomorphisms from a Koszul-dual $E_n$-algebra. For instance, the perspective on Koszul duality as a ``Fourier transform" between transverse boundary conditions that we will discuss below may connect to the Lagrangian subgroup condition of \cite{KS}. It may also be fruitful to approach these problems using the BV-BFV formalism espoused in \cite{Cattaneo:2020lle} and elsewhere. 
+\item In \S \ref{s:lines} we alluded to the $A_\infty$-algebra (or $E_1$-algebra) structure present for algebras on topological lines (though see \cite{GO}). Also of interest are higher-dimensional topological defects (or, in codimension-1, boundary conditions) \footnote{Note that here we again mean a \textit{fixed} $d$-dimensional submanifold in spacetime along which translations are BRST-trivial. This is to be contrasted with the topological defect lines (TDLs) of, e.g., \cite{Yinetal}.}. For example, topological boundary conditions in 3d TQFTs have been studied in \cite{KS, BM, Kaidietal}. Gauge-invariant couplings of QFTs to $n$-dimensional topological defects can be described using Koszul duality for $\EE_n$-algebras, and the latter is well-understood mathematically \cite{lurie2011formal}. It would be interesting to see if Koszul duality affords an alternative characterization of these topological defects/boundaries as the space of $\EE_n$-homomorphisms from a Koszul-dual $\EE_n$-algebra. For instance, the perspective on Koszul duality as a ``Fourier transform" between transverse boundary conditions that we will discuss below may connect to the Lagrangian subgroup condition of \cite{KS}. It may also be fruitful to approach these problems using the BV-BFV formalism espoused in \cite{Cattaneo:2020lle} and elsewhere. 
 
-\item Associative algebras and their $E_n$ cousins are natural algebras capturing OPEs of local operators in topological quantum field theories (including theories which are topological in the sense of cohomology).  Another concrete but rich algebraic structure capturing OPEs in certain (cohomological) field theories is that of a vertex algebra\footnote{For higher dimensional analogues of Kac-Moody algebras, relevant for capturing symmetries of holomorphically twisted QFTs, see \cite{GW}}. In contrast to the $E_n$ case, however, Koszul duality for vertex algebras has not been rigorously formulated \footnote{As in the associative algebra case, we are actually working with dg-vertex algebras}. Following the logic in this note, one would expect that a theory with holomorphic dependence on a plane (i.e. such that $\partial_{\bar{z}}$ is BRST-exact) has a Koszul dual vertex algebra corresponding to the universal holomorphic defect. One can try to compute this algebra by imposing BRST invariance of the resulting coupled system. This point of view was adopted to perturbatively compute Koszul dual vertex algebras in \cite{CP}. To formulate this notion mathematically, along the lines of this note, one needs the appropriate generalization of the space of Maurer-Cartan elements in the augmentation kernel. See \cite{Li} for some special cases of the requisite space of solutions.  
+\item Associative algebras and their $\EE_n$ cousins are natural algebras capturing OPEs of local operators in topological quantum field theories (including theories which are topological in the sense of cohomology).  Another concrete but rich algebraic structure capturing OPEs in certain (cohomological) field theories is that of a vertex algebra\footnote{For higher dimensional analogues of Kac-Moody algebras, relevant for capturing symmetries of holomorphically twisted QFTs, see \cite{GW}}. In contrast to the $\EE_n$ case, however, Koszul duality for vertex algebras has not been rigorously formulated \footnote{As in the associative algebra case, we are actually working with dg-vertex algebras}. Following the logic in this note, one would expect that a theory with holomorphic dependence on a plane (i.e. such that $\partial_{\bar{z}}$ is BRST-exact) has a Koszul dual vertex algebra corresponding to the universal holomorphic defect. One can try to compute this algebra by imposing BRST invariance of the resulting coupled system. This point of view was adopted to perturbatively compute Koszul dual vertex algebras in \cite{CP}. To formulate this notion mathematically, along the lines of this note, one needs the appropriate generalization of the space of Maurer-Cartan elements in the augmentation kernel. See \cite{Li} for some special cases of the requisite space of solutions.  
 
 \item Throughout this note, we have focused on defects of order-type: that is, defects described by a lower-dimensional QFT with a local Lagrangian, coupled to the bulk QFT by local terms. It is natural to wonder if Koszul duality has some imprint on defects of disorder type, such as those describing nonperturbative objects in the bulk QFT. (Certainly, in systems with S-duality exchanging Wilson and 't Hooft lines, one can expect a connection). 
 
