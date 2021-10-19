@@ -1023,19 +1023,19 @@ As we have already remarked, the algebra local operators of Chern--Simons theory
 There is a natural choice of an augmentation at the classical level, namely the projection onto the unit observable $\ep\colon \cA \to \CC$. 
 To see this how this augmentation persists at the quantum level, it is best to take the point of view of choosing a vacuum. 
 
-To construct the vacuum we make a choice of boundary conditions to place 3d Chern--Simons theory on the slab 
+One way to construct the augmentation is to place 3d Chern--Simons theory on the slab with a suitable choice of boundary conditions
 \[
 (x,y,t) \in \RR^2 \times [0,1] .
 \]
-We will see that with a clever choice of boundary conditions, the theory compactified along $\RR^2 \times [0,1] \to \RR^2$ becomes trivial. 
-These boundary conditions were described in \cite{Nanna}, and we follow the presentation there. 
+We will see that with a clever choice of boundary conditions, the theory compactified along $\RR^2 \times [0,1] \to \RR^2$ (and hence upon further compactification to $\RR$) becomes trivial. 
+This setup and boundary conditions were described in \cite{Aamand}, and we follow the presentation there. 
 
 For simplicity, suppose that $\fg$ is an even dimensional Lie algebra. 
 Then, choose subalgebras $\lie{l}_0, \lie{l}_1 \subset \fg$ such that 
 \[
 \dim \lie{l}_0 = \dim \lie{l}_1 = \frac{\dim \fg}{2} 
 \]
-and that the restriction of the trace pairing to both $\ell_0,\ell_1$ vanishes. 
+and that the restriction of the trace pairing to both $\lie{l}_0,\lie{l}_1$ vanishes. 
 In other words, $\lie{l}_0, \lie{l}_1$ are maximally isotropic subalgebras with respect to the trace pairing. 
 
 The phase space for Chern--Simons theory at $\RR^2 \times \{0\}$ and $\RR^2 \times \{1\} \subset \RR^2 \times [0,1]$ is isomorphic to 
@@ -1049,18 +1049,16 @@ At $\RR^2 \times \{0\}$ we choose the boundary condition to be the Lagrangian
 \[
 \Omega^\bu(\RR^2) \times \lie{l}_0 [1] \subset \Omega^\bu(\RR^2) \times \lie{g}_0 [1]  .
 \]
-In other words, we require that the gauge field satisfy $A|_{t=0} \in \Omega^1 (\RR^2) \times \lie{l}_0$ and similarly for the ghost and anti-field. 
+In other words, we require that the gauge field satisfy $A|_{t=0} \in \Omega^1 (\RR^2) \times \lie{l}_0$ and similarly for the ghost and (in the BV formalism) anti-field. 
 At $\RR^2 \times \{1\}$ we choose the boundary condition to be the Lagrangian
 \[
 \Omega^\bu(\RR^2) \times \lie{l}_1 [1] \subset \Omega^\bu(\RR^2) \times \lie{g}_0 [1]  .
 \]
 In other words, we require that the gauge field satisfy $A|_{t=1} \in \Omega^1 (\RR^2) \times \lie{l}_0$ and similarly for the ghost and anti-field. 
 
-One can show that the compactification $\RR^2 \times [0,1] \to \RR^2$ results in a trivial theory on $\RR^2$. 
-There is a slight modification one can make in the case that $\fg$ is not even dimensional, we refer to \cite{Nanna} for more details. 
-We point out that this vacuum gives a bit more structure than an augmentation as discussed in the previous section where we only assumed that you obtain a trivial theory after compactification all the way down to one dimension. 
-In fact, this procedure constructs an augmentation for the local operators of Chern--Simons theory as an $\EE_2$-algebra. 
-This structure is used to relate the observables of Chern--Simons theory to the quantum group.
+One can show that the compactification $\RR^2 \times [0,1] \to \RR^2$ results in a trivial theory on $\RR^2$, which is sufficient to guarantee a trivial theory on $\RR$ upon further compactification to 1d and satisfy our condition. 
+There is a slight modification one can make in the case that $\fg$ is not even dimensional; we refer to \cite{Aamand} for more details. 
+We point out that this vacuum gives a bit more structure than an augmentation as discussed in the previous section, where we only assumed that you obtain a trivial theory after compactification all the way down to one dimension. In fact, this slab setup constructs an augmentation for the local operators of Chern--Simons theory as an $\EE_2$-algebra, which  is used in \cite{Aamand} to relate the observables of Chern--Simons theory to the quantum group.
 
 %observe that since Chern--Simons theory is topological, and we consider a trivial gauge field at infinity, we can place it on the $3$-manifold $\RR_t \times S^2$ where we think of $S^2$ as the one-point compactification of $\RR^2$. 
 %
@@ -1093,11 +1091,11 @@ This structure is used to relate the observables of Chern--Simons theory to the 
 %Notice that this is an example where the choice of a vacuum did not arise in a trivial theory upon compactification.  More physically, it was shown in \cite{Aamand} in studying 3d Chern-Simons theory on an interval $\RR^2 \times I$, that there are choices of boundary conditions at $\partial I$ \footnote{Since the theory is topological, we can take the boundaries to be at infinite distance.} (given by requiring the gauge field to take values certain middle-dimensional gauge subalgebras) that produce a trivial 2d theory upon reduction along the interval. This is sufficiently strong to guarantee the existence of augmentations producing a trivial theory upon compactification to 1d.
 %%\natalie{confused about this statement. also, can we relate these statements to something like standard, natural boundary conditions on the gauge field at infinity?}
 %
-%Finally, since the Koszul dual of $\clie^\bu(\fg)$ is 
-%\[
-%\clie(\fg)^! \simeq U \fg 
-%\]
-%we interpret the enveloping algebra $U \fg$ as the algebra of operators on the universal line defect for Chern--Simons theory on $\RR^3$. 
+Finally, since the Koszul dual of $\clie^\bu(\fg)$ is 
+\[
+\clie(\fg)^! \simeq U \fg 
+\]
+we interpret the enveloping algebra $U \fg$ as the algebra of operators on the universal line defect for Chern--Simons theory on $\RR^3$. 
 
 %\brian{the stuff below I had a hard time fitting in}
 %
@@ -2237,8 +2235,8 @@ On the $K$-generators it is
 \d K^a[n] = \sum_{r + s = n-1} f_{bc}^a K^b[r] K^c [s] .
 \]
 
-This quantum differential is relate to a rich story in quantum groups, specifically the Yangian quantum group associated to the simple Lie algebra $\fg$. 
-Costello argued in \cite{CosYangian} that a certain four-dimensional partially topological, partially holomorphic gauge theory is ``controlled'' by the Yangian.
+This quantum differential is related to a rich story in quantum groups, specifically the Yangian quantum group associated to the simple Lie algebra $\fg$. 
+Costello argued in \cite{CYangian} that a certain four-dimensional partially topological, partially holomorphic gauge theory is ``controlled'' by the Yangian.
 More explicitly, he shows that the Koszul dual to the algebra of local operators of the four-dimensional theory is equivalent to the (dual) Yangian as a topological Hopf algebra.  
 
 If we place this four-dimensional theory on $\CC \times \RR \times S^1$ and compactify along $S^1$ then we precisely recover the theory on $\CC \times \RR$ that we studied in this section. 
@@ -2246,9 +2244,7 @@ A corollary of Costello's result is that the algebra of local operators of our t
 \[
 {\rm Hoch}_{\bu}\left( Y (\fg) \right)^\vee .
 \]
-This is the linear dual of the Hochschild {\em homology} of $Y(\fg)$. 
-The differential is defined using the associative product on $Y(\fg)$.
-The associative product on this dg algebra comes from the coproduct on $Y(\fg)$. 
+This is the linear dual of the Hochschild {\em homology} of $Y(\fg)$. The differential is defined using the associative product on $Y(\fg)$, and the associative product on this dg algebra comes from the coproduct on $Y(\fg)$. 
 
 \brian{I might want to temper this statement below}
 The quantum differential conspires, in fact, to produce a Koszul dual algebra equivalent to the original algebra: we have a nontrivial example of a self-Koszul-duality. It is not obvious that this should be so (nor is it evident in the way we have written the algebras). Indeed, classically, $\cA/\hbar \neq \cA^{!}/\hbar$. It would be desirable to have a deeper explanation of this result. 
@@ -2394,7 +2390,7 @@ Higher dimensional BPS boundary conditions may instead support, for instance, ve
 
 \item Many of the ideas and ingredients we have touched on so far seem closely connected to quantization. Geometric quantization involves a choice of polarization on phase space, and one is often interested in the canonical transformations on phase space, while Koszul duality is a distinguished such symmetry (a swap of canonically conjugate variables given a choice of polarization). Furthermore, Koszul duality produces two alternative ways to view the category of boundary conditions in topological string theory, while studying A-branes on certain spaces provides an alternative geometric route to quantization \cite{GukovWitten}; see \cite{GW} for recent work connecting brane quantization and geometric quantization. Indeed, Koszul duality has been shown to be useful in the physical context of ``geometric quantization on the cylinder'', or geometric quantization of a relative bulk/boundary system. This setup has been fleshed out in detail \cite{EY} in the context of the TQFT relevant for Geometric Langlands program, and we will briefly summarize. Consider a TQFT theory on the ``cylinder'' $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$, with some choice of boundary condition (so, in particular, the direction normal to the boundary is topological). A line operator inserted in the topological direction and supported at a point on $\mathbb{R}_{\geq 0}$ can act on the boundary condition by bringing the point close to 0, wherein it fuses with the original boundary condition to form a new one. One can of course consider the trivial line, whose endomorphisms are simply local operators in the theory, which then act naturally on the category of boundary conditions. 
 
-On the other hand, one can consider the TQFT on $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$ with a choice of boundary condition, and study the algebra of operators on $M \times U$ where $U$ is a contractible open set of the half-plane. Since we are in a TQFT we can use the state-operator correspondence to map this configuration to a codimension-1 strip with the same boundary condition at both ends; by the usual TQFT voodoo, this produces a Hilbert space of states with the structure of an algebra. This picture, illustrated in \cite{EY}, enables one to think of the endomorphism algebra of local operators on any given boundary condition of the TQFT as the quantum phase space of the bulk/boundary system. On the other hand, the algebra of local operators, viewed as endomorphisms of the trivial line, acts on any such boundary condition. This gives a map of algebras from the algebra of local operators to the endomorphism algebra of any boundary condition in the category. This must be true for any category object/boundary condition, so the algebra enjoys a universal property in the category of boundary conditions.
+On the other hand, one can consider the TQFT on $M \times \mathbb{R} \times \mathbb{R}_{\geq 0}$ with a choice of boundary condition, and study the algebra of operators on $M \times U$ where $U$ is a contractible open set of the half-plane. Since we are in a TQFT we can use the state-operator correspondence to map this configuration to a codimension-1 strip with the same boundary condition at both ends; by the usual TQFT voodoo, this produces a Hilbert space of states with the structure of an algebra. This picture, illustrated in \cite{EY}, enables one to think of the endomorphism algebra of local operators on any given boundary condition of the TQFT as the quantum phase space of the bulk/boundary system. The algebra of local operators, viewed as endomorphisms of the trivial line, acts on any such boundary condition. This gives a map of algebras from the algebra of local operators to the endomorphism algebra of any boundary condition in the category. This must be true for any category object/boundary condition, so the algebra enjoys a universal property in the category of boundary conditions.
 
 Both of these description of the category fit in naturally with the physical avatars of Koszul duality we discussed. This category can be thought of as a category of $\cA$-modules, where $\cA$ is the endomorphism algebra of the generating boundary condition. However, it has a (more tractable) Koszul dual description as a category of $\cA^{!}$-modules. The Koszul dual frame was used to nice effect in \cite{EY}. 
 
@@ -2413,7 +2409,7 @@ The utility of Koszul duality and twisted holography is not limited to AdS/CFT: 
 The applications of these mathematical ideas to physics, and especially holography, are just beginning to bear fruit. We hope this note has served as a helpful introduction to this vast web of ideas. 
 
 
-\section{acknowledgements} We are grateful to Kevin Costello for teaching us many of the ideas and perspectives described in this note, for enjoyable and inspiring collaborations, and for emphasizing to us and others the importance of Koszul duality in mathematical physics. We also wish to thank Tudor Dimofte, Chris Elliott, Davide Gaiotto, Justin Hilburn, Si Li, Ingmar Saberi, and Philsang Yoo for numerous useful conversations and collaborations throughout the years. Finally, we are grateful to ... for very helpful comments on a draft of this note. 
+\section{acknowledgements} We are grateful to Kevin Costello for teaching us many of the ideas and perspectives described in this note, for enjoyable and inspiring collaborations, and for emphasizing to us and others the importance of Koszul duality in mathematical physics. We also wish to thank Tudor Dimofte, Chris Elliott, Davide Gaiotto, Justin Hilburn, Si Li, Ingmar Saberi, and Philsang Yoo for numerous useful conversations and collaborations throughout the years. Finally, we are grateful to K.Costello for very helpful comments on a draft of this note. 
 
 NMP was supported by the grant NSF PHY-1911298, and the Sivian Fund, and is currently supported by the DOE's Research Opportunities in High Energy Physics and the University of Washington. 
 
