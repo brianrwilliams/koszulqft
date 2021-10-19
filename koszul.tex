@@ -520,7 +520,7 @@ We think of $\cA$ as the dg-algebra of a BRST ghost in one-dimensional flat spac
 
 Next, we consider the Weyl algebra $\cW_V$ associated to a $\fg$-representation $V$. This is the algebra of operators of some topological quantum mechanics consisting of bosonic matter with a $\fg$-symmetry, and we intend to couple it to the theory given by the BRST ghost algebra. 
 
-This will ultimately have the physical interpretation, per the discussion of \S \ref{s:lagcoupling},  of coupling the quantum mechanics to a 1d classical background (or flavor) gauge field. (If we had wanted to couple to a dynamical background gauge field, thereby gauging the global symmetry of the matter theory, we would also include the usual $b$ antighosts in the BRST complex). 
+This will ultimately have the physical interpretation, per the discussion of \S \ref{s:lagcoupling},  of coupling the quantum mechanics to a 1d classical background (or flavor) gauge field. (In higher dimenions, if we had wanted to couple to a dynamical background gauge field and gauge the global symmetry of the matter theory, we would also include the usual $b$ antighosts in the BRST complex). 
 
 We will see that the coupling to the ghost field is encoded by an explicit Maurer--Cartan element. 
 
@@ -620,7 +620,7 @@ So, $\alpha_W$ is a Maurer--Cartan element in $\cA \otimes \cB$ for any $W$ and 
 
 Let's explicitly characterize the coupled system $\cA \, \underset{\alpha_W}{\til{\otimes}} \, \cB$ which as a cochain complex is 
 \[
-\big(\cH^{\otimes 2} \otimes \cC^{\otimes 2} , \d = \alpha_W \star (-) \big) .
+\big(\cW^{\otimes 2} \otimes \cC^{\otimes 2} , \d = \alpha_W \star (-) \big) .
 \]
 We compute the behavior of the differential on the generators of the algebra: 
 \begin{align*}
@@ -1603,7 +1603,8 @@ At $r=\infty$ the character reads
 \[
 \chi_\infty (q,s) = \prod_{n \geq 0} \frac{1 - s^{-1}q^{-n}}{1 - s q^{-n-1}}
 \]
-Observe that the characters of these two Koszul dual algebras are related by $\chi_0 (q,s) = \chi_\infty (q, s^{-1})$. It would be interesting to understand how Koszul duality acts on more general indices, for which, by standard cohomological arguments, it is generally sufficient to study free theories \footnote{We thank K. Costello for a discussion of this point.}.
+Observe that, employing some identities of q-Pochhammer symbols, the characters of these two Koszul dual algebras are related by $\chi_0 (q,s) = (\chi_\infty (q, s))^{-1}$.  The property $\chi_0(q, s)\chi_{\infty}(q, s) = 1$ is expected for characters of Koszul dual algebras. 
+%It would be interesting to understand how Koszul duality acts on more general indices, for which, by standard cohomological arguments, it is generally sufficient to study free theories \footnote{We thank K. Costello for a discussion of this point.}.
 %\brian{how to explain the $s$-flip? this is just some linear duality. Can we make a statement at the level of the $G_f$ index?}
 
 %\subsection*{Comparing boundary conditions}
@@ -2136,7 +2137,7 @@ The evaluation of the relevant integral is outside the scope of these notes, but
  \int_{\RR \times \{z=0\}} \partial_z A_t^a f_{ac}^b J_{b} [0] K^c [0] + \cdots .
 \]
 The ellipses denote similar terms present in the anomaly which involve a higher number of holomorphic $z$-derivatives.
-Here, $\kappa^{bc}$ is the Killing form on $\fg$. 
+%Here, $\kappa^{bc}$ is the Killing form on $\fg$. 
 
 \begin{figure}
 	\begin{tikzpicture}
