@@ -51,7 +51,7 @@ By a {\em coupling} of the two systems we will mean a {\em Maurer--Cartan elemen
 \[
 \alpha \in \cA \otimes \cB .
 \]
-That is, $\alpha$ is an element of ghost degree one which satisfies the Maurer--Cartan (MC) equation
+That is, $\alpha$ is an element of ghost degree one which satisfies the Maurer--Cartan equation
 \[
 \delta \alpha + \alpha \star \alpha = 0 .
 \]
@@ -66,7 +66,7 @@ The key observation is that the data of the Mauer--Cartan element $\alpha$ is eq
 where $\cA^!$ is Koszul dual to the algebra $\cA$. 
 From this observation, the Koszul dual has the following interpretation: $\cA^!$ is the algebra of operators on the {\em universal} line defect supported on $\RR \times \{x\}$. We will explain this point of view in detail in \S \ref{s:lines} and illustrate it concretely in a free field theory example in \S \ref{s:free}. 
 
-We stress that Koszul dual algebras at the classical level may be (dually) deformed when considering quantum effects. The Maurer--Cartan equation is linear at the classical level and simply captures BRST-closure of the coupling: $\delta \alpha = 0$. However, a classical coupling may fail to be BRST invariant at the quantum level. As we will explain, this manifests as a deformation of the BRST operator $\delta \rightarrow \delta + \alpha \star (-)$, which in turn deforms the Maurer--Cartan equation by the quadratic term as above. Requiring that the coupling satisfies the full, nonlinear MC equation will produce a noncommutative deformation of the classical operator product. We will illustrate this in an example in \S \ref{s:crit}. For another illustrative example of this phenomenon, in which the algebra $\mathfrak{g}[[z]]$ deforms to the Yangian due to the presence of a two-loop gauge anomaly, see \cite{CWY}. In general, quantum corrections may take the form of an infinite series, with nontrivial corrections at every loop order. 
+We stress that Koszul dual algebras at the classical level may be (dually) deformed when considering quantum effects. The Maurer--Cartan equation is linear at the classical level and simply captures BRST-closure of the coupling: $\delta \alpha = 0$. However, a classical coupling may fail to be BRST invariant at the quantum level. As we will explain, this manifests as a deformation of the BRST operator $\delta \rightarrow \delta + \alpha \star (-)$, which in turn deforms the Maurer--Cartan equation by the quadratic term as above. Requiring that the coupling satisfies the full, nonlinear Maurer--Cartan equation will produce a noncommutative deformation of the classical operator product. We will illustrate this in an example in \S \ref{s:crit}. For another illustrative example of this phenomenon, in which the algebra $\mathfrak{g}[[z]]$ deforms to the Yangian due to the presence of a two-loop gauge anomaly, see \cite{CWY}. In general, quantum corrections may take the form of an infinite series, with nontrivial corrections at every loop order. 
 
 Finally, in \S \ref{s:conclusions}, we will take a somewhat broader view. We will explain some connections between Koszul duality and other areas of inquiry, mention other appearances and applications of Koszul duality in the field theory literature, and highlight further examples of our perspective on Koszul duality, as well as some generalizations, in both field theory and holography. 
 
@@ -1013,6 +1013,12 @@ Any another coupling $\alpha \in \cA \otimes \cB$ can be obtained by
 \]
 where $\phi_\alpha \colon \cA^! \to \cB$ is the corresponding map of algebras. 
 We note that this universal property is sensitive to the choice of a vacuum; the element $\alpha_{univ}$ depends on this vacuum.  
+
+%There is also the following categorical interpretation of choosing a vacuum or augmentation. 
+%Induction along the map of algebras $\ep \colon \cA \to \CC$ produces a functor from the category of left $\cA$-modules to the category of vector spaces:
+%\[
+%M \in \cA - {\rm mod} \mapsto M \otimes_{\cA} \CC . 
+%\]
 
 \subsection{Universal line defect in Chern--Simons theory} 
 
@@ -2239,15 +2245,20 @@ This quantum differential is related to a rich story in quantum groups, specific
 Costello argued in \cite{CYangian} that a certain four-dimensional partially topological, partially holomorphic gauge theory is ``controlled'' by the Yangian.
 More explicitly, he shows that the Koszul dual to the algebra of local operators of the four-dimensional theory is equivalent to the (dual) Yangian as a topological Hopf algebra.  
 
-If we place this four-dimensional theory on $\CC \times \RR \times S^1$ and compactify along $S^1$ then we precisely recover the theory on $\CC \times \RR$ that we studied in this section. 
+If we place this four-dimensional theory on $\CC \times \RR \times S^1$ and compactify along $S^1$ then we precisely recover the theory on $\CC \times \RR$ studied in this section. 
 A corollary of Costello's result is that the algebra of local operators of our theory is isomorphic to the dg algebra
-\[
+\beqn\label{eqn:yangian1}
 {\rm Hoch}_{\bu}\left( Y (\fg) \right)^\vee .
-\]
+\eeqn
 This is the linear dual of the Hochschild {\em homology} of $Y(\fg)$. The differential is defined using the associative product on $Y(\fg)$, and the associative product on this dg algebra comes from the coproduct on $Y(\fg)$. 
 
-\brian{I might want to temper this statement below}
-The quantum differential conspires, in fact, to produce a Koszul dual algebra equivalent to the original algebra: we have a nontrivial example of a self-Koszul-duality. It is not obvious that this should be so (nor is it evident in the way we have written the algebras). Indeed, classically, $\cA/\hbar \neq \cA^{!}/\hbar$. It would be desirable to have a deeper explanation of this result. 
+Under Koszul duality, the quantum differential we find in this section becomes a quadratic relation in this Hochschild complex \eqref{eqn:yangian1}. 
+This quadratic relation is rigorously understood in \cite{CYangian} as defining the Lie bialgebra structure on the classical limit of the (dual) Yangian. 
+
+We speculate that the quantum differential conspires, in fact, to produce a Koszul dual algebra equivalent to the original algebra: this gives a nontrivial example of a self-Koszul-duality. 
+It is not obvious that this should be so (nor is it evident in the way we have written the algebras). 
+Indeed, classically, $\cA/\hbar \neq \cA^{!}/\hbar$. 
+It would be desirable to have a deeper explanation of this result. 
 %The cohomology of this dg algebra is a familiar algebra. 
 %To compute the cohomology we use a spectral sequence obtain from the filtration by polynomial degree. 
 %The first page of this spectral sequence is the cohomology with respect to the differential $\d J_a [n] = K_a [n-1]$. 
@@ -2354,7 +2365,7 @@ For theories with a moduli space of vacua, we expect choices of augmentation to 
 
 \item In our examples, we have focused on Koszul dual pairs where one algebra was an ordinary degree 0 algebra and its dual was generated by elements in degree 1. 
 This case is especially simple, in part because the extra augmentation constraint is essentially trivial, and it is easy to enumerate all Maurer-Cartan elements.  
-It would be insightful to work out more explicit examples of algebras generated in multiple cohomological degrees, and deduce the corresponding space of MC elements. 
+It would be insightful to work out more explicit examples of algebras generated in multiple cohomological degrees, and deduce the corresponding space of Maurer--Cartan elements. 
 Such examples can arise in theories in higher dimensions with higher form gauge symmetries, and so would be particularly interesting in the studies of higher dimensional TFTs and $\EE_n$-Koszul duality. 
 It would also be interesting to understand if studying Koszul duality of these theories using their BV-BRST complexes of local operators can lend insight into the study of the higher group symmetries such theories enjoy \cite{2group, 2group6}.
 \end{itemize}
