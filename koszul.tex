@@ -12,7 +12,7 @@
 \email{npaquett@uw.edu}
 \author{Brian R. Williams}
 \address{School of Mathematics, University of Edinburgh, Edinburgh, UK}
-\email{brianwilliams.math@gmail.com}
+\email{brian.williams@ed.ac.uk}
 
 \date{\today}
 \title{Koszul duality in quantum field theory}
@@ -481,7 +481,7 @@ The algebra $\cW_V$ is the free polynomial algebra on generators $p^i, x_i$ subj
 [p^i, q_j] = \delta_j^i .
 \]
 In the notation of the previous section, we consider coupling the dg algebra $\cA$ to the algebra $\cB = \cW_V$. 
-Notice that along with $V$, the algebra $\cW_V$ carries the natural structure of a $\fg$-representation where $\fg$ acts covariantly on the $p$-variables and contragradiently on the $q$-variables. 
+Notice that along with $V$, the algebra $\cW_V$ carries the natural structure of a $\fg$-representation where $\fg$ acts covariantly on the $p$-variables and contragrediently on the $q$-variables. 
 
 Let $\{\fc_a\}_{a=1,\dots,\dim \fg}$ be a basis for $\fg$ and denote by $\{\fc^a\}$ the basis for $\fg^*$. 
 In other words, $\fc^a$ is a linear BRST ghost for the gauge field. 
@@ -1178,7 +1178,7 @@ This is because local operators and their descendants are treated democratically
 If we start just with the physical fields, then the resulting set of couplings is slightly redundant.\footnote{The BV formalism provides an elegant way to avoid these redundancies from the outset, though we avoid using it in this note for clarity of presentation.} 
 In other words, we must really work with the space of Maurer--Cartan elements of $\cA \otimes \cB$ \textit{modulo gauge redundancies}.
 
-Translated to local operators along the line, this means that there are gauge redundancies and constrains among the space of local operators spanned by $J,K$ and their descendants.
+Translated to local operators along the line, this means that there are gauge redundancies and constraints among the space of local operators spanned by $J,K$ and their descendants.
 Along the line $\{z=0\}$ one has the gauge symmetry $\delta \psi_t = \partial_t \chi$ and the descendant equation $\delta \phi^{(1)} = \partial_t \phi$. 
 The gauge symmetry implies that there is a redundancy among the operators, namely $\delta K^{(1)}[j] = \partial_t K[j]$. 
 Further, the descendant equation among the fields implies there is the following descendant equation among the operators $\delta J^{(1)} [k] = \partial_t J[k]$. 
@@ -1777,15 +1777,15 @@ There is a similar diagram where instead of a $J$ and a $K$ operator on the line
 \begin{figure}
 	\begin{tikzpicture}
 	\begin{scope}[shift={(4,0)}];
-		\node[circle, draw] (K) at (0,1) {$K$};
-		\node[circle, draw] (J) at (0,-1) {$J$};
-		\node (A) at (3,0)  {$A_{t}$};
+		\node[circle, draw] (K1) at (0,1) {$K$};
+		\node[circle, draw] (K2) at (0,-1) {$K$};
+		\node (B) at (3,0)  {$B_{t}$};
 		%\node (A2) at (3,-1)  {$B_{t}$};
 		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
-		\draw[decorate, decoration={snake}] (J) -- (1.5,0);
-		\draw[decorate, decoration={snake}] (1.5,0) --(A);
-		\draw[decorate, decoration={snake}] (K) -- (1.5,0);
-		\draw (0,-2) -- (J) -- (K) -- (0,2);
+		\draw[decorate, decoration={snake}] (K2) -- (1.5,0);
+		\draw[decorate, decoration={snake}] (1.5,0) --(B);
+		\draw[decorate, decoration={snake}] (K1) -- (1.5,0);
+		\draw (0,-2) -- (K2) -- (K1) -- (0,2);
 	\end{scope}
 	\end{tikzpicture}
 	\caption{Another one-loop diagram with a gauge anomaly.
@@ -1920,5 +1920,7 @@ NMP was supported by the grant NSF PHY-1911298, and the Sivian Fund, and is curr
 
 
 \printbibliography
+
+\newpage
 
 \end{document}
