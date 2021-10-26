@@ -386,16 +386,20 @@ Thus, the cohomology of this complex is concentrated in degree zero, and is prec
 
 Of course, we have recovered the usual chiral ring of the B-twisted Landau-Ginzburg model. 
 
-This algebra $\cA$ resolving the Jacobian ring has the following special property: it is self-Koszul dual. 
-This means that $\cA^!$ is equivalent to the original algebra $\cA$. 
-When $W$ is a constant function, so that the differential $\d$ vanishes, this is immediate:
+When $W = $ constant, the algebra $\cA$ has the following special property: it is self-Koszul dual. 
+This means that $\cA^!$ is equivalent to the original algebra $\cA$:
 \[
 \cA^! = \left(\Sym^\bu (V^\vee) \otimes \wedge^\bu(V)\right)^! = \Sym^\bu (V^\vee)^! \otimes \wedge^\bu(V)^! \cong \wedge^\bu (V) \otimes \Sym^\bu (V^\vee) = \cA .
 \]
-Note that it is absolutely necessary to remember the full algebra $\cA$, even when $W = 0$. 
+Note that it is absolutely necessary to remember the full algebra $\cA$ for this statement to hold. 
 For instance, the degree zero piece is simply the algebra of polynomials in the variables $x_i$, which is far from being self Koszul dual.
 
-It is a straightforward exercise in spectral sequences to prove that even for a more general superpotential $W$ the result still holds, and $\cA^! \simeq \cA$. We will spare the physics-oriented reader this potential unpleasantness. 
+For more general $W$ the algebra $\cA$ no longer has this property. 
+For instance, when $n=1$ and $W = x^3$, one has $\cA \simeq \CC[x]/(x^2)$. 
+In this case the Koszul dual algebra is huge, given by the free (tensor) algebra on a single even generator $x^!$: 
+\[
+\cA^! = {\rm Tens}(\CC) = \CC \oplus \CC x^! \oplus \CC (x^! \otimes x^!) \oplus \cdots .
+\]
 
 \section{Maurer--Cartan elements and algebraic couplings}
 \label{s:algcouple}
