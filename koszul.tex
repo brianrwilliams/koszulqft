@@ -2,7 +2,7 @@
 
 \usepackage{macros}
 
-\spacing{1.25}
+\spacing{1.1}
 
 \addbibresource{references.bib}
 
@@ -36,7 +36,6 @@ The connections between string theory and mathematics are as strong as ever.  As
 
 The appearance of Koszul duality parallels a recent surge of interest in the study of extended operators, defects, and boundary conditions in quantum field theories and, to be sure, this is no coincidence. 
 As we describe in this note, Koszul duality captures, from an operator algebraic perspective, essential symmetries of coupled bulk/defect systems compatible with gauge invariance. 
-In the case of topological field theory, Koszul duality patterns have been observed in the context of Kontsevich formality in the works \cite{Shoikhet, Calaque, Rossi}. 
 
 Let us give a heuristic for the context in which Koszul duality appears in a broader field theoretic context. 
 Along the way, we will preview the remainder of this article. 
@@ -90,6 +89,17 @@ We will use the Koszul rule of signs for all graded algebraic structures.
 For example, a graded commutative algebra is a graded vector space equipped with a degree zero product $\cdot$ which satisfies $a \cdot b = (-1)^{|a||b|} b \cdot a$. 
 The bracket in a graded Lie algebra follows the Koszul sign rule $[a, b] = (-1)^{|a||b|+1} [b, a]$.
 
+
+\section*{acknowledgements} 
+
+There is a rich history of how ideas of Koszul duality in QFT developed and we are undoubtedly unaware of many important contributions. 
+We learned much of this in conversations with Kevin Costello and with fellow collaborators.
+We are especially grateful to Kevin for teaching us many of the ideas and perspectives described in this note, for enjoyable and inspiring collaborations, and for emphasizing to us and others the importance of Koszul duality in mathematical physics. 
+We also wish to thank Tudor Dimofte, Chris Elliott, Davide Gaiotto, Owen Gwilliam, Justin Hilburn, Si Li, Ingmar Saberi, and Philsang Yoo for numerous useful conversations and collaborations throughout the years. 
+Finally, we are grateful to K. Costello for very helpful comments on a draft of this note. 
+
+NMP was supported by the grant NSF PHY-1911298, and the Sivian Fund, and is currently supported by the DOE's Research Opportunities in High Energy Physics and the University of Washington. 
+BRW thanks the University of Edinburgh for their support.
 
 \section{A short review of Koszul duality} \label{s:review}
 
@@ -396,7 +406,7 @@ For instance, the degree zero piece is simply the algebra of polynomials in the 
 
 For more general $W$ the algebra $\cA$ no longer has this property. 
 For instance, when $n=1$ and $W = x^3$, one has $\cA \simeq \CC[x]/(x^2)$. 
-In this case the Koszul dual algebra is huge, given by the free (tensor) algebra on a single even generator $x^!$: 
+In this case the Koszul dual algebra is huge, given by the free (tensor) algebra on a single generator $x^!$: 
 \[
 \cA^! = {\rm Tens}(\CC) = \CC \oplus \CC x^! \oplus \CC (x^! \otimes x^!) \oplus \cdots .
 \]
@@ -1868,11 +1878,21 @@ It would also be interesting to understand if studying Koszul duality of these t
 \end{itemize}
  
 
-Next, we will describe some versions of Koszul duality for a broader class of algebras than the (homotopy) associative algebras we have been focusing on. For some of these, the physical and mathematical generalization is relatively straightforward, while for others the appropriate definitions have not yet been made. 
+Next, we will describe some versions of Koszul duality for a broader class of algebras than the (homotopy) associative algebras we have been focusing on. 
+For some of these, the physical and mathematical generalization is relatively straightforward, while for others the appropriate definitions have not yet been made. 
 
 \begin{itemize}
 
-\item In \S \ref{s:lines} we alluded to the $A_\infty$-algebra (or $E_1$-algebra) structure present for algebras on topological lines (though see \cite{GO}). Also of interest are higher-dimensional topological defects (or, in codimension-1, boundary conditions) \footnote{Note that here we again mean a \textit{fixed} $d$-dimensional submanifold in spacetime along which translations are BRST-trivial. This is to be contrasted with the topological defect lines (TDLs) of, e.g., \cite{Yinetal}.}. For example, topological boundary conditions in 3d TQFTs have been studied in \cite{KS, BM, Kaidietal}. Gauge-invariant couplings of QFTs to $n$-dimensional topological defects can be described using Koszul duality for $\EE_n$-algebras, and the latter is well-understood mathematically \cite{lurie2011formal}. It would be interesting to see if Koszul duality affords an alternative characterization of these topological defects/boundaries as the space of $\EE_n$-homomorphisms from a Koszul-dual $\EE_n$-algebra. For instance, the perspective on Koszul duality as a ``Fourier transform" between transverse boundary conditions that we will discuss below may connect to the Lagrangian subgroup condition of \cite{KS}. It may also be fruitful to approach these problems using the BV-BFV formalism espoused in \cite{Cattaneo:2020lle} and elsewhere. 
+\item 
+In the case of topological field theory, Koszul duality patterns have been observed in the context of Kontsevich formality in the works \cite{Shoikhet, Calaque, Rossi}. 
+In \S \ref{s:lines} we alluded to the $A_\infty$-algebra (or $\EE_1$-algebra) structure present for algebras on topological lines (though see \cite{GO}). Also of interest are higher-dimensional topological defects (or, in codimension-1, boundary conditions) \footnote{Note that here we again mean a \textit{fixed} $d$-dimensional submanifold in spacetime along which translations are BRST-trivial. This is to be contrasted with the topological defect lines (TDLs) of, e.g., \cite{Yinetal}.}. For example, topological boundary conditions in 3d TQFTs have been studied in \cite{KS, BM, Kaidietal}. 
+
+Topological QFT admits a functorial description in terms of $\EE_n$-algebras and their factorization homology \cite{AF1,AFT,LurieHA,Claudia}. 
+Gauge-invariant couplings of QFTs to $n$-dimensional topological defects can be described using Koszul duality for $\EE_n$-algebras, and the latter is well-understood mathematically \cite{lurie2011formal}.
+Further, in \cite{AFkoszul} Ayala and Francis have proved a duality for factorization homology of $\EE_n$-algebras  which simultaneously generalizes Koszul duality and Poincar\'e duality for manifolds. 
+
+It would be interesting to see if Koszul duality affords an alternative characterization of these topological defects/boundaries as the space of $\EE_n$-homomorphisms from a Koszul-dual $\EE_n$-algebra. For instance, the perspective on Koszul duality as a ``Fourier transform" between transverse boundary conditions that we will discuss below may connect to the Lagrangian subgroup condition of \cite{KS}. 
+It may also be fruitful to approach these problems using the BV-BFV formalism espoused in \cite{Cattaneo:2020lle} and elsewhere. 
 
 \item Associative algebras and their $\EE_n$ cousins are natural algebras capturing OPEs of local operators in topological quantum field theories (including theories which are topological in the sense of cohomology).  Another concrete but rich algebraic structure capturing OPEs in certain (cohomological) field theories is that of a vertex algebra\footnote{For higher dimensional analogues of Kac-Moody algebras, relevant for capturing symmetries of holomorphically twisted QFTs, see \cite{GWkm}}. In contrast to the $\EE_n$ case, however, Koszul duality for vertex algebras has not been rigorously formulated \footnote{As in the associative algebra case, we are actually working with dg-vertex algebras}. Following the logic in this note, one would expect that a theory with holomorphic dependence on a plane (i.e. such that $\partial_{\bar{z}}$ is BRST-exact) has a Koszul dual vertex algebra corresponding to the universal holomorphic defect. One can try to compute this algebra by imposing BRST invariance of the resulting coupled system. This point of view was adopted to perturbatively compute Koszul dual vertex algebras in \cite{CP}. To formulate this notion mathematically, along the lines of this note, one needs the appropriate generalization of the space of Maurer-Cartan elements in the augmentation kernel. See \cite{Li} for some special cases of the requisite space of solutions.  
 
@@ -1907,7 +1927,8 @@ An immediate and very interesting extension would be extending this setup to the
 
 
 
-\item At last, we come to the end of our tour through Koszul duality and its myriad guises. Naturally, we must conclude with the killer application of Koszul duality in physics: holography. More precisely, we claim that Koszul duality (suitably generalized), governs bulk/boundary algebras of operators in examples of the \textit{twisted holography} program, initiated in \cite{CG}. One may motivate this correspondence somewhat picturesquely using the coupled bulk/defect picture of Koszul duality. One can consider the open/closed string origins of the AdS/CFT correspondence and derive the constraints on this system from imposing BRST-invariance of their couplings, with a suitable deformation to the algebras arising from the D-brane backreaction. It would be interesting to translate the transverse boundary picture of Koszul duality into a twisted holography context as well; it would be fascinating if the transverse boundaries connected, for instance, to the idea of Gopakumar that every closed string theory has two open string duals \cite{Gopakumar}. The protoypical example of this is the FZZT/ZZ branes dual to 2d gravity coupled to Liouville theory/minimal models. This example begs for a twisted holographic interpretation. 
+\item At last, we come to the end of our tour through Koszul duality and its myriad guises. 
+Naturally, we must conclude with the killer application of Koszul duality in physics: holography. More precisely, we claim that Koszul duality (suitably generalized), governs bulk/boundary algebras of operators in examples of the \textit{twisted holography} program, initiated in \cite{CG}. One may motivate this correspondence somewhat picturesquely using the coupled bulk/defect picture of Koszul duality. One can consider the open/closed string origins of the AdS/CFT correspondence and derive the constraints on this system from imposing BRST-invariance of their couplings, with a suitable deformation to the algebras arising from the D-brane backreaction. It would be interesting to translate the transverse boundary picture of Koszul duality into a twisted holography context as well; it would be fascinating if the transverse boundaries connected, for instance, to the idea of Gopakumar that every closed string theory has two open string duals \cite{Gopakumar}. The protoypical example of this is the FZZT/ZZ branes dual to 2d gravity coupled to Liouville theory/minimal models. This example begs for a twisted holographic interpretation. 
 
 The idea that Koszul duality could be relevant for the holographic correspondence was initiated by Costello and Li in \cite{TwistedSugra}, and elaborated upon by Costello in \cite{CostelloM2} using his twisted M-theory construction \cite{CostelloMtheory}. Koszul duality in a twisted instance of the AdS/CFT correspondence, the duality between IIB string theory on $AdS_3 \times S^3 \times T^4$ and the $Sym^N(T^4)$ CFT, was explicated in \cite{CP}. More precisely, the authors proposed that deformed/curved Koszul duality for vertex algebras enabled one to obtain $N \rightarrow \infty$ OPEs of the boundary CFT from the BV-BRST complex of the closed string field theory on the appropriate spacetime in the bulk. More work needs to be done in order to fully understand and exploit this relationship. 
 
@@ -1917,14 +1938,9 @@ The utility of Koszul duality and twisted holography is not limited to AdS/CFT: 
 The applications of these mathematical ideas to physics, and especially holography, are just beginning to bear fruit. We hope this note has served as a helpful introduction to this vast web of ideas. 
 
 
-\section{acknowledgements} We are grateful to Kevin Costello for teaching us many of the ideas and perspectives described in this note, for enjoyable and inspiring collaborations, and for emphasizing to us and others the importance of Koszul duality in mathematical physics. We also wish to thank Tudor Dimofte, Chris Elliott, Davide Gaiotto, Justin Hilburn, Si Li, Ingmar Saberi, and Philsang Yoo for numerous useful conversations and collaborations throughout the years. Finally, we are grateful to K. Costello for very helpful comments on a draft of this note. 
-
-NMP was supported by the grant NSF PHY-1911298, and the Sivian Fund, and is currently supported by the DOE's Research Opportunities in High Energy Physics and the University of Washington. 
-
-
 
 \printbibliography
 
-\newpage
+%\newpage
 
 \end{document}
