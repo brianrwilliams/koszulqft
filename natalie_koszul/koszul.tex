@@ -1832,14 +1832,29 @@ First, we reflect on a particular symmetry present in the theory.
 Notice that the rescaling $z \to \lambda z$, for $\lambda \in \CC^\times$, the perturbative parameter scales as $\hbar \mapsto \lambda \hbar$. 
 Thus, if a $k$-loop anomaly diagram takes as input operators involving $r$ holomorphic $\del_z$ derivatives then the anomaly will involve $(k+r)$ holomorphic $\del_z$ derivatives.
 
-To compute the weight, we first introduce some notation. 
-The propagator for the theory is given by 
+To compute the weight, we first introduce the propagator of the the holomorphic-topological theory.
+For more details on the gauge condition used to construct this holomorphic-topological propagator we refer the reader to \cite{GRWht, CP??}. 
+Recall that the kinetic term in the action reads $\int_{\CC \times \RR} (B \del_t A_\zbar + B \del_\zbar A_t)$.
+Thus, the propagator $P$ must satisfy the distributional equation
 \[
-P(t,z) = \frac{\zbar \d t - t \d \zbar}{(|z|^2 + t^2)^{3/2})} .
+\d z (\d t \del_t + \d \zbar \del_\zbar) P(z,t ; z',t') = \delta_{z=z', t=t'} \mathbb{1}_\fg  
 \]
-\brian{explain or just cite the formula}
+where $\mathbb{1}_\fg \in \fg \otimes \fg^*$ represents the identity map $\fg \to \fg$. 
+An explicit solution to this equation on flat space can be constructed as follows. 
+First, let 
+\[
+p(t,z) = \frac{\zbar \d t - t \d \zbar}{(|z|^2 + t^2)^{3/2})} .
+\]
+This is a one-form which is smooth away from the origin in $\CC \times \RR$. 
+On $\CC \times \RR$ it can be thought of as a distributional one-form. 
+The topological-holomorphic propagator on flat space is defined by
+\[
+P = j^* p \otimes \mathbb{1}_\fg 
+\]
+where $j \colon \CC \times \RR \to (\CC \times \RR)^2$ is the difference map $(z,t) \mapsto (z-z',t-t')$.
+Since the propagator is symmetric across the diagonal, we will denote~$P(z,t;z',t') = P(z-z' , t-t').$
 
-Consider the simplest case of the one-loop weight of the diagram in Figure \ref{fig:oneloop}
+Now, let's consider the simplest case of the one-loop weight of the diagram in Figure \ref{fig:oneloop}
 \[
 f^a_{bc} \int_{t_1,t_2, t, z} \d z \wedge P(t-t_1, z) \wedge P(t-t_2, z) \wedge A_{tz}^c (t,z). 
 \]
