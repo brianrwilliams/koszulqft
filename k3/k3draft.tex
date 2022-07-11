@@ -1,0 +1,965 @@
+\documentclass[11pt]{amsart}
+
+ \usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows, decorations.markings, decorations.pathmorphing, decorations.pathreplacing, shapes.arrows, patterns, calc}
+\usepackage{url}
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  ->-/.style={decoration={markings, mark=at position 0.5 with {\arrow{to}}},
+              postaction={decorate}},
+}
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  -<-/.style={decoration={markings, mark=at position 0.5 with {\arrow{to reversed}}},
+              postaction={decorate}},
+}
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  dbl->-/.style={
+double, 
+double equal sign distance,
+shorten >= 1pt,
+shorten <= 1pt,
+ decoration={markings, mark=at position 0.5 with {\arrow{implies}}},
+              postaction={decorate}},
+}
+
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  dbl-<-/.style={
+double, 
+double equal sign distance,
+shorten >= 1pt,
+shorten <= 1pt,
+ decoration={markings, mark=at position 0.5 with {\arrowreversed{implies}}},
+              postaction={decorate}},
+}
+
+
+
+
+
+
+\usepackage{amsmath,amsthm}
+\textwidth=14.5cm \oddsidemargin=1cm  \evensidemargin=1cm\setlength{\parskip}{10pt} \setlength{\headsep}{20pt}
+
+\pdfmapfile{+mathpple.map}
+\usepackage{mathrsfs}
+\usepackage{amscd,amssymb, amsfonts, verbatim,subfigure, enumerate}
+\usepackage[mathcal]{eucal}
+\usepackage[super]{nth}
+
+\usepackage{mathpazo}
+
+
+
+\linespread{1.2}  
+\usepackage{color,slashed}
+
+
+
+\setcounter{tocdepth}{1}
+
+\renewcommand{\c}{\mf{c}}
+\newcommand{\Lap}{\tr}
+\newcommand{\dbar}{\br{\partial}}
+\newcommand{\Dirac}{\slashed{\partial}}
+\newcommand{\RHom}{\mbb{R}\op{Hom}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\wbar}{\br{w}} 
+\newcommand{\del}{\partial}
+\renewcommand{\sl}{\mathfrak{sl}}
+\renewcommand{\L}{\mathscr{L}}
+\newcommand{\red}[1]{{\color{red}{#1}}} 
+\newcommand{\zbar}{\br{z}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\Spin}{\op{Spin}}
+\newcommand{\PV}{\op{PV}}
+\newcommand{\GL}{\op{GL}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\Per}{\mscr{P}}
+\newcommand{\dpa}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\dpas}[1]{\tfrac{\partial}{\partial #1}}
+\newcommand{\Res}{\op{Res}}
+\newcommand{\Sup}{\op{Sup}}
+\newcommand{\Sing}{\op{Sing}}
+\newcommand{\Diag}{\triangle}
+
+
+
+
+
+\newcommand{\Obs}{\op{Obs}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\Der}{\op{Der}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\g}{\mathfrak{g}}
+
+\newcommand{\Hol}{\op{Hol}}
+
+\renewcommand{\Re}{\op{Re}}
+
+
+\newcommand{\xto}{\xrightarrow}
+
+
+
+
+\newcommand{\what}{\widehat}
+\newcommand{\tr}{\triangle}
+
+
+
+\newcommand{\til}{\widetilde}
+\newcommand{\mscr}{\mathscr}
+\renewcommand{\det}{\operatorname{det}}
+
+
+
+
+
+\newcommand{\br}{\overline}
+
+\newcommand{\iso}{\cong}
+\newcommand{\C}{\mathbb C}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mbb Q}
+\newcommand{\rarr}{\rightarrow}
+\newcommand{\larr}{\leftarrow}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\Oo}{\mscr O}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\defeq}{\overset{\text{def}}{=}}
+\newcommand{\into}{\hookrightarrow}
+
+
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mc}{\mathcal}
+\newcommand{\from}{\leftarrow}
+
+\newcommand{\R}{\mbb R}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\liminv}{ \varprojlim }
+\newcommand{\limdir}{\varinjlim}
+\newcommand{\dirlim}{\varinjlim}
+
+\def\define{\overset{\rm def}{=}}
+\def\ep{\varepsilon}
+\def\zbar{{\overline{z}}}
+\def\Weyl{{\rm Weyl}}
+\def\Cl{{\rm C}\ell}
+\def\U{{\rm U}}
+\def\PV{{\rm PV}}
+\def\thetabar{\Bar{\theta}}
+\def\hotimes{\; \Hat{\otimes} \;} 
+\def\C{{\rm C}}
+\newcommand{\op}{\operatorname}
+\def\ibar{{\Bar{i}}}
+\def\jbar{{\Bar{j}}}
+\def\CP{{\mathbb{CP}}}
+\def\eps{{\epsilon}}
+\def\what{\Hat}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ip}[1]{\left\langle #1 \right\rangle}
+\def\oO{\cO}
+\def\CP{{\mathbb{CP}}}
+\def\bu{{\bullet}}
+\def\DD{\mathbb{D}}
+\def\cO{\mc O}
+\def\ZZ{\mathbb{Z}}
+\def\lie#1{\ensuremath{\mathfrak{#1}}}
+
+
+\newcommand{\bfP}{\mathbf{P}}
+
+
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\End}{End}
+
+\DeclareMathOperator{\Sym}{Sym} \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Diff}{Diff} 
+\DeclareMathOperator{\Met}{Met} \DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Tr}{Tr}
+
+\def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
+\def\natalie#1{{\textcolor{green!65!black}{BRW: {#1}}}}
+
+
+\def\beqn{\begin{equation}}
+\def\eeqn{\end{equation}}
+
+
+
+
+
+
+
+
+
+
+\newtheoremstyle{thm}% name
+  {7pt}%      Space above
+  {7pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {.}%        Punctuation after thm head
+  {5pt}%     Space after thm head: " " = normal interword space;
+         %       \newline = line-break
+  {\thmnumber{#2 }\thmname{#1}\thmnote{ (#3)}}%         Thm head spec (can be left empty, meaning `normal')
+
+
+
+
+
+\newtheoremstyle{def}% name
+  {7pt}%      Space above
+  {10pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {.}%        Punctuation after thm head
+  {5pt}%     Space after thm head: " " = normal interword space;
+         %       \newline = line-break
+  {\thmnumber{#2} \thmname{#1}\thmnote{ (#3)}}%         Thm head spec (can be left empty, meaning `normal')
+
+
+
+
+
+\newtheoremstyle{rem}% name
+  {4pt}%      Space above
+  {10pt}%      Space below
+  {}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\itshape}% Thm head font
+  {:}%        Punctuation after thm head
+  {3pt}%     Space after thm head: " " = normal interword space;
+        %       \newline = line-break
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{texttheorem}% name
+  {8pt}%      Space above
+  {8pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {. \hspace{5pt}}%        Punctuation after thm head
+  {3pt}%     Space after thm head: " " = normal interword space;
+        %       \newline = line-break
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+
+
+
+\theoremstyle{thm}
+
+
+
+\newtheorem*{claim}{Claim}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{ntheorem}{Theorem}
+\newtheorem*{thmA}{Theorem A}
+\newtheorem*{thmB}{Theorem B}
+\newtheorem*{thmC}{Theorem C}
+\newtheorem*{conjecture}{Conjecture}
+
+
+
+
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{thm-def}{Theorem/Definition}[theorem]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{question}{Question}
+\newtheorem*{question*}{Question}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{sublemma}[theorem]{Sub-lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{deflem}[theorem]{Definition-Lemma}
+\newtheorem*{hope}{Hope}
+\numberwithin{equation}{subsection}
+
+
+\theoremstyle{def}
+%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{udefinition}{Definition}
+
+
+
+
+\theoremstyle{rem}
+%\declaretheorem[style=rem, numbered=no,qed=$\diamondsuit$]{remark}
+%\declaretheorem[style=rem, numbered=no,qed=$\diamondsuit$]{remarks}
+%\declaretheorem[style=rem, numbered=no,qed=$\diamondsuit$]{example}
+
+\newtheorem*{remark}{Remark}
+\newtheorem*{remarks}{Remarks}
+\newtheorem*{example}{Example}
+
+%\theoremstyle{texttheorem}
+%\newtheorem{textlemma}[theorem]{}
+
+%%This document
+
+\newcommand{\cinfty}{C^{\infty}}
+
+
+
+%% BRIAN'S STUFF
+\usepackage{cmupint}
+\newcommand{\sfc}{\mathsf{c}}
+\newcommand{\sfb}{\mathsf{b}}
+\renewcommand\div{{\partial_\Omega}}
+
+
+
+
+
+\usepackage{stmaryrd}
+\parskip=10pt
+\date{}
+\newcommand{\gl}{\mf{gl}}
+
+
+
+
+
+
+%
+\title{K3 draft}
+%\author{Kevin Costello}
+%\author{Natalie M. Paquette}
+%\thanks{CALT-TH 2019-050}
+%
+%\address{Perimeter Institue for Theoretical Physics}
+%\address{Walter Burke Institute for Theoretical Physics, California Institute of Technology}
+%\email{kcostello@perimeterinstitute.ca}
+%\email{nataliep@caltech.edu}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Twisted supergravity on ${\rm AdS}_3 \times S^3 \times K3$}
+
+\subsection{Compactification of Kodaira--Spencer theory}
+
+Recall that $\PV (Y) = \PV^{\bu,\bu}(Y)$ denotes the graded space given by the Dolbeault resolution of holomorphic polyvector fields on a complex manifold $Y$.
+
+Let $Y$ be a complex surface with a fixed holomorphic symplectic structure.
+The fields of Kodaira--Spencer theory on $\CC^3 \times Y$ are polyvector fields which are in the kernel of the divergence operator.
+A polyvector field on $\CC^3 \times Y$ can be written as a tensor product of one on $\CC^3$ with one on $Y$.  
+Polyvector fields on $Y$ are the same as differential forms, because the holomorphic symplectic form on $Y$ identifies the tangent and cotangent bundles. 
+In particular, the harmonic polyvector fields are given simply by the de Rham cohomology of $Y$.  
+Furthermore, polyvector fields on $Y$ which are harmonic are automatically in the kernel of the divergence operator $\div$, by standard Hodge theory arguments.   
+Summarizing there is an equivalence of graded algebras
+\[
+\PV (\CC^3) \otimes \bigg(\ker \div |_{\PV(Y)} \bigg) \simeq \PV(\CC^3) \otimes H^\bu(X) .
+\]
+We will use this equivalence to describe the fields of the theory on $\CC^3$ upon compactification along $Y$. 
+
+Let $A = H^\bu(Y)$ denote the cohomology ring of $Y$.
+We are mostly interested in the case that $Y$ is a K3 surface in which case this algebra is generated by even elements $\eta, \br \eta, \eta_a$ for $a=1,\ldots 20$ subject to the relations
+\beqn
+\label{eqn:K3rel}
+\begin{split}
+\eta^2 & = \Bar{\eta}^2 = 0 \\
+\eta_a \eta_b & = h_{ab} \eta \Bar{\eta} 
+\end{split}
+\eeqn
+where $h_{ab}$ is a non-degenerate symmetric pairing on $\CC^{20}$. 
+Let $I$ denote the ideal generated by these equations so that $A = \CC[\eta,\Bar{\eta}, \eta_a] / I$. 
+
+As usual, we write the polyvector fields on $\CC^3$ in terms of a superspace by introducing odd variables $\theta^i$, $\br{\theta}_{\br{j}}$.  
+Here, $\theta^i$ represents the coordinate vector field $\partial_{z_i}$ and $\br \theta_i$ represents the coordinate Dolbeault form $\d \zbar_i$. 
+Then we can write the field content as a collection of superfields
+\begin{equation} 
+		\mu(z,\zbar,\theta^i, \br{\theta}_{\br{i}},\eta) \in \oplus_{i,j}  \PV^{i,j}(\CC^3) \otimes A .
+\end{equation}
+Here, we are using the shorthand $\eta$ to inform that there is a dependence on $\eta, \br{\eta}$, and $\eta_a$, $a=1,\ldots, 20$. 
+As such, such a superfield decomposes in its dependencies on the generators of the cohomology of $X$ as
+\begin{multline}
+\mu(z,\zbar,\theta^i, \br{\theta}_{\br{i}}) \\
++ \mu_\eta (z,\zbar,\theta^i, \br{\theta}_{\br{i}}) \eta + \mu_{\br{\eta}} (z,\zbar,\theta^i, \br{\theta}_{\br{i}}) \br{\eta} + \mu^a (z,\zbar,\theta^i, \br{\theta}_{\br{i}}) \eta_a \\
++ \mu_{\eta \Bar{\eta}} (z,\zbar,\theta^i, \br{\theta}_{\br{i}}) \eta \Bar{\eta} .
+\end{multline}
+We emphasize that the $\eta$-variables represent harmonic polyvector fields on $X$ and so are not acted on by any differential operators along $\CC^3$. 
+
+%The fields on $\C^3$ must satisfy the constraint 
+%\begin{equation} 
+%	\partial_{z_{i_1}} \mu_{i_1 \dots i_l; a}^{\br{j}_1 \dots \br{j}_k} = 0. 
+%\end{equation}
+The superfield satisfies the equation $\partial \mu = 0$
+where, in the superspace formulation,
+\begin{align} 
+	\dbar & \, = \, \br{\theta}_{\br{j}} \partial_{\zbar_{\br{j}}} \\
+	\partial &\, = \, \partial_{\theta^i} \partial_{z_i}.  
+\end{align}
+	The Lagrangian is
+	\begin{equation} 
+		\tfrac{1}{2} \int_{\CC^{3 \mid 6}}  \mu \dbar \partial^{-1} \mu \d^3 z \d^3 \zbar \d^3 \theta \d^3 \br{\theta} |_{\eta \br{\eta}} + \frac{1}{6} \int_{\CC^{3 \mid 6}} \mu^3 \d^3 z \d^3 \zbar \d^3 \theta \d^3 \br{\theta} |_{\eta \br{\eta}}  
+	\end{equation}
+where the $(-)|_{\eta \br{\eta}}$ means we pick up only the $\eta \br{\eta}$ component.
+
+Before we turn to the computation of the backreaction, we will simplify the field content somewhat, following \cite{CostelloGaiotto}.  
+We note that the coefficient of $\theta^1 \theta^2 \theta^3$ does not appear in the kinetic term in the action.  
+This field does not propagate, so we can (and will) impose the additional constraint
+\begin{equation}\label{eq:nonprop} 
+	\partial_{\theta^1} \partial_{\theta^2} \partial_{\theta^3} \mu (z,\zbar,\theta,\br{\theta},\eta) = 0. 
+\end{equation}
+
+Next, let us expand the superfield $\mu$ only in the $\theta^i$ variables:
+\begin{equation} 
+	\mu = \mu(z,\zbar,\br{\theta},\eta) + \mu_{i}(z,\zbar,\br{\theta},\eta) \theta^i + \dots 
+\end{equation}
+We note that the constraint $\partial \mu_{ij} = 0$ implies that there is some super-field
+\begin{equation} 
+	\what{\mu}_{ijk}(z,\zbar,\br{\theta},\eta) = 	\alpha(z,\zbar,\br{\theta},\eta) \eps_{ijk}   
+\end{equation}
+so that $\partial_{z_i} \what{\mu}_{ijk} = \mu_{jk}$.
+
+It is convenient to rephrase the theory in terms of the field $\alpha(z,\zbar,\br{\theta},\eta)$, which has no holomorphic index. 
+We will also change notation and let $\gamma(z,\zbar,\br{\theta},\eta)$ be the term with no $\theta^i$ dependence in the superfield $\mu(z,\zbar,\theta,\br{\theta},\eta)$.  
+
+In summary, we have the following fundamental superfields in the compactified theory on $\CC^3$:
+\begin{itemize}
+\item $\mu_i (z,\zbar,\br{\theta}, \eta) \theta^i$ which we identify with an element in the graded space
+\beqn
+\mu \in \PV^{1,\bu}(\CC^3) \otimes A .
+\eeqn
+\item $\alpha (z,\zbar,\br \theta, \eta)$ which we identify with an element of the graded space
+\beqn
+\alpha \in \Omega^{0,\bu}(\CC^3) \otimes A .
+\eeqn
+\item $\gamma(z,\zbar,\br \theta, \eta)$ which we also identify with an element of the graded space
+\beqn
+\gamma \in \Omega^{0,\bu}(\CC^3) \otimes A .
+\eeqn
+\end{itemize}
+In terms of these fields, the Lagrangian is
+\begin{multline} 
+	\tfrac{1}{2}\int_{\CC^{3|3}}   \eps^{ijk} \dbar \mu_{i} (\partial^{-1}  \mu)_{jk} \, \d^3 z \d^3 \zbar \d^3 \br{\theta} |_{\eta \br \eta}   + \int  \alpha \dbar \gamma \d^3 z \d^3 \zbar \d^3 \br{\theta} |_{\eta \br{\eta}} 
+	\\
+	+ \tfrac{1}{6} \int_{\CC^{3|3}}  \eps_{ijk} \mu_{i}\mu_{i} \mu_{c,i} \, \d^3 z \d^3 \br{z} \d^3 \br{\theta} |_{\eta \br{\eta}} + \int  \alpha \mu_i \partial_{z_i}  \gamma \, \d^3 z \d^3 \zbar \d^3 \br{\theta} |_{\eta \br{\eta}} .
+\end{multline} 
+In this expression we project onto the component $\eta \br \eta$ and perform the Berezin integral along the $\br \theta$ coordinate.
+
+Just as when we twist a field theory, when we twist a supergravity theory the ghost number of the twisted theory  is a mixture of the ghost number and a $U(1)_R$-charge of the original physical theory. To define a consistent ghost number, one can choose any $U(1)_R$ in the physical theory under which the supercharge has weight $1$.  In general, there are many ways to do this.  It is convenient for us to make the following assignments of ghost number.
+\begin{enumerate} 
+	\item The variables $\eta_a$ \brian{finish}
+	\item The anti-commuting variables $\br{\theta}_i$ have ghost number $1$.
+	\item The fields $\alpha$, $\gamma$ have ghost number $-1$, and are fermionic.
+\end{enumerate}
+
+\subsection{Backreaction as an infinitesimal deformation} 
+\label{sec:conifold}
+
+In the type IIB theory on $\CC^3 \times K3$ we consider a D1--D5 system where the D1 branes wrap 
+\[
+\CC \times 0 \times \{x\} \subset \CC \times \CC^2 \times K3 
+\]
+for some $y \in K3$ and the D5 branes wrap 
+\[
+\CC \times 0 \times K3 \subset \CC \times \CC^2 \times K3 .
+\]
+We can apply a duality to turn this into a D3 brane system which wraps 
+\[
+\CC \times 0 \times \Sigma \subset \CC \times \CC^2 \times K3 
+\]
+for some two-cycle $\Sigma \subset K3$. 
+\brian{say this precisely}
+
+In the last section, we argued that the dimensional reduction along a $K3$ surface becomes an extended version of Kodaira--Spencer theory where the extra fields are labeled by the cohomology of the surface.
+Upon compactification, the D3 system becomes a system of $B$-type branes in this extended version of Kodaira--Spencer theory. 
+
+The charge of these branes is labeled by a cohomology class 
+\beqn
+F \in H^2(K3) \subset A .
+\eeqn
+We denote 
+\beqn
+N \define \ip{F, F}
+\eeqn
+using the inner product on $H^2(Y)$. 
+Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. 
+\brian{Can we say how $N$ is related to $N_1$ and $N_5$? This would require tracing through some dualities carefully...}
+
+Let's choose coordinates $z,w_1,w_2$ on $\CC^3$, where the branes wrap the $z$-plane along $w_1=w_2=0$. 
+Including the backreaction will deform the geometry away from the locus of the brane. 
+Before backreacting, we should say what geometry is actually being deformed. 
+Recall that in the case of ordinary Kodaira--Spencer theory on $\CC^3$, it was shown in \cite{CGhol} that the backreaction of B-branes along $\CC \subset\CC^3$ deformed the complex structure on $\CC^3 \setminus \CC$ to the {\em deformed conifold} $SL_2(\CC)$. 
+
+Our case is similar in that the branes are supported along the same locus as in \cite{CGhol}.
+The difference is that we are working with a bigger space of fields, roughly extended by the cohomology of the $K3$ surface. 
+We will now show that in the case of type IIB compactified on a K3 surface, the backreaction determines an {\em infinitesimal} deformation of the complex manifold $\CC^3 \setminus \CC$ over the fat point $\Spec A$ where $A = H^\bu(K3)$. 
+ 
+If $A$ is any local ring, an infinitesimal deformation of a complex manifold $M_0$ over $\Spec A$ is an element 
+\beqn
+\mu_{def} \in \PV^{1,1}(M_0) \otimes \mathfrak{m}_A 
+\eeqn
+satisfying the Maurer--Cartan equation.
+In our case, $M_0 = \CC^3 \setminus \CC$ and $\mu_{def}$ is a supergravity field sourced by the branes. 
+The Maurer--Cartan equation is the equation of motion for $\mu_{def}$. 
+
+%Recall that the cohomology ring of a K3 surface (with complex coefficients) is generated by even elements $\eta, \br \eta, \eta_a$, where $a=1,\ldots,20$ subject to the relations \eqref{eqn:K3rel}. 
+%These relations define a quadric $Z$ inside $\CC^{22}$. 
+%Thus, in total, we will see that the backreaction will deform the complex structure on 
+%\[
+%(\CC^3 \setminus \CC) \times Z \subset \CC^3 \times \CC^{22} .
+%\]
+%Before deforming, there is an obvious projection map 
+%\[
+%(\CC^3 \setminus \CC) \times Z \to Z 
+%\] 
+%whose fiber is a Calabi--Yau manifold equipped with the standard holomorphic volume form $\Omega_{\CC^3} = \d z \d w_1 \d w_2$. 
+Forgetting the usual $2\ZZ$-grading, the cohomology $A$ of a $K3$ surface is a local ring.
+Following \cite{CGhol}, the backreaction of this system of branes introduces a twisted supergravity field
+\[
+\mu_{BR} \in \br\PV^{1,1}(\CC^3) \otimes A 
+\]
+which we can identify with an element of $\br\Omega^{2,1}(\CC^3) \otimes A$ using the Calabi--Yau form on $\CC^3$. 
+This field satisfies the following equations of motion
+\beqn
+\label{eqn:mcbr}
+	\begin{split}
+		\dbar \mu_{BR}  & = F \, \delta_{\CC \subset \CC^3} \\
+		\del \mu_{BR} & = 0 .
+	\end{split}
+\eeqn
+For quantization we will also impose the gauge fixing condition that $\dbar^\ast \mu_{BR}(\eta_a) = 0$. 	
+There is a unique solution to the above equations given by
+\beqn
+\mu_{BR} = \frac{\eps^{ij} \br w_i \d \br w_j}{|w|^4} \partial_z \otimes F .
+\eeqn
+Note that this field is of the form $\mu_{BR,0} \otimes F$ where $\mu_{BR,0}$ is the Beltrami differential which gives rise to the deformed conifold \cite{CGhol}---all of the dependence on the parameters $\eta, \br \eta, \eta_a$ is in the cohomology class~$F$.
+
+Equations \eqref{eqn:mcbr} imply that $\mu_{BR}$ determines an infinitesimal deformation of~$\CC^3 \setminus \CC$ over $\Spec A$. 
+The Kodaira--Spencer map associated to this infinitesimal deformation is of the form
+\[
+KS \colon T_{\Spec A} \to H^1(\CC^3 \setminus \CC, T) 
+\]
+and simply maps a derivation $\delta$ of $A$ to the class 
+\[
+\delta(F) \left[\frac{\eps^{ij} \br w_i \d \br w_j}{|w|^4} \del_z \right] \in H^1(\CC^3 \setminus \CC, T) .
+\] 
+\brian{what more to say?}
+%This Beltrami differential defines a new complex structure on the complex manifold $(\CC^3 \setminus \CC) \times Z$ where $Z$ is the quadric inside $\CC^{22}$ defined by \eqref{eqn:K3rel}. 
+%Note that \brian{how to say things remain algebraic along $Z$?}
+%A function $\Phi(z,\br z, w_i, \br w_i , \eta, \br \eta, \eta_a)$ is holomorphic if the following equations hold
+%\beqn
+%	\begin{split}
+%		\del_{\br z} \Phi & = 0 \\
+%		\del_{\br w_1} \Phi - F \frac{\br w_2}{\norm{w}^2} \del_z \Phi & = 0 \\
+%		\del_{\br w_2} \Phi + F \frac{\br w_1}{\norm{w}^2} \del_z \Phi & = 0 .
+%	\end{split}
+%\eeqn
+%It is easy to check that the following functions are holomorphic for the deformed complex structure 
+%\beqn
+%	\begin{split}
+%		u_1 & = w_1 z - F \frac{\br w_2}{\norm{w}^2} \\
+%		u_2 & = w_2 z + F \frac{\br w_1}{\norm{w}^2} .
+%	\end{split}
+%\eeqn
+%
+%In total, we are describing the affine variety $X_F$ inside of $\CC^4 \times \CC^{22}$ defined by the equations 
+%\beqn
+%\label{eqn:conifold}
+%	\begin{split}
+%		\eta^2 = \br \eta^2 & = 0 \\
+%		\eta_a \eta_b & = h_{ab} \eta \br \eta \\
+%		w_1 u_2 - w_2 u_1 & = F . 
+%	\end{split}
+%\eeqn
+%Here, $(u_1,u_2,w_1,w_2)$ are the holomorphic coordinates on $\CC^4$ and $\eta,\br \eta, \eta_a$ are the holomorphic coordinates on $\CC^{22}$. 
+%Denote by $X_F^0 \subset X_F$ the open subset where $u_i,w_j$ are all not zero. 
+%
+%We observe that upon deforming the complex structure, there is still a fibration
+%\[
+%X_{F}^0 \to Z 
+%\]
+%whose fibers are Calabi--Yau three-folds. 
+%The volume form in the coordinates $z, w_1,w_2$ is unchanged when we deform the complex structure.
+%This is because the Beltrami differential $\mu_{BR}$ is divergence-free. 
+%In the coordinates $u_i, w_i$ the holomorphic volume on the fibers of this projection reads
+%\beqn
+%\Omega|_{w_1 \ne 0} = \frac{\d u_1 \d w_1 \d w_2}{w_1}, \qquad \Omega|_{w_2 \ne 0} = \frac{\d u_2 \d w_1 \d w_2}{w_2} . 
+%\eeqn
+%
+%In \cite{CP1} the first two authors considered Kodaira--Spencer theory on the complex surface $T^4$ and found that the resulting backreaction only gave finite-order corrections to operator products on flat space. 
+%We are in a very similar situation here in the case of Kodaira--Spencer theory compactified on a K3 surface. 
+%The flat space background corresponds to $F = 0$. 
+%Now, since $F \in H^2(Y)$, we see that $F^3 = 0$ in the ring $A = H^\bu (Y)$.
+%Thus, only the only powers of $F$ that appear in corrections to the flat space OPE are $F$ and $F^2$. 
+
+%\subsection{Partial compactification of the extended conifold}
+%\label{sec:compact} 
+%
+%The ordinary deformed conifold is biholomorphic to $SL_2(\CC)$. 
+%One can view this as a subvariety of $\CC^4$ with coordinates $u_i,w_j$ satisfying $\eps^{ij} u_i w_j = N$. 
+%To compactify this subvariety the idea is to introduce an additional homogeneous coordinate $\lambda$ and consider the projective variety in $\CP^4$ defined by the equation $\eps^{ij} u_i w_j = N \lambda^2$ where the $u_i,w_j,\lambda$ are now projective coordinates. 
+%The boundary of this projective variety is described by the equation $\eps^{ij} u_i w_j = 0$ and is equivalent to $\CP^1 \times \CP^1$. 
+%
+%We use the new coordinate $z$ for the first $\CP^1$ which is the boundary of the Euclidean ${\rm AdS}_3$ space
+%and the new coordinate $w$ for the second $\CP^1$.  
+%Let $n$ be the coordinate normal to the boundary $\CP^1 \times \CP^1$ of $SL_2(\CC)$. 
+%This coordinate has a first order pole at $z=\infty$ and $w=\infty$. 
+%Let $\DD_z \times \CP^1_w \subset \CP^1_z \times \CP^1_w$ be a neighborhood of the algebraic curve $0 \times \CP^1_w$ in the boundary divisor. 
+%A neighborhood of this region in the whole manifold $\br{X_{F}^0}$ is a deformation of the total space of $\cO(1) \to \DD \times \CP^1$ by the Beltrami differential 
+%\[
+%n^2 \d ...
+%\]
+%
+%
+%The situation here is very similar. 
+%The extended conifold $X_F^0$ has a completion $\br{X_F^0}$ which is a subvariety of $\CP^4 \times Z$. 
+%It is defined by modifying the last equation in \eqref{eqn:conifold} to
+%\beqn
+%\eps^{ij} u_i w_j = F \lambda^2 
+%\eeqn
+%where $\lambda$ is an additional homogenous coordinate.
+%The boundary of $\br{X_F^0}$ is the subvariety of $\CP^3 \times Z$ defined by $\eps^{ij} u_i w_j = 0$ which is $\CP^1 \times \CP^1 \times Z$. 
+
+\section{The chiral algebra on $D$-branes} 
+
+\subsection{$D$-branes in type IIB}
+
+We consider the situation of a $D1/D5$ brane system in the twist of type IIB on a Calabi--Yau five-fold $X$. 
+For simplicity, we assume that we have a collection of $N_1 = N$ $D1$ branes supported along a complex submanifold
+\[
+\Sigma \subset X 
+\]
+together with a single $D5$ brane which is parallel to the $D1$ branes. 
+
+We consider $D1$ branes which are a sum simple branes labeled by $\cO_\Sigma$.
+The Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by 
+\beqn\label{eqn:open1}
+\Omega^{0,\bu}(\Sigma, \underline{\rm Ext}_{\cO_X}(\cO_\Sigma)) \cong \Omega^{0,\bu}(\Sigma, \wedge^\bu N_\Sigma) 
+\eeqn
+where $N_\Sigma$ is the normal bundle to $\Sigma$ in $X$. 
+If we take $X$ to the be the total space of the bundle $N_\Sigma$ then the Calabi--Yau condition requires $\wedge^4 N_\Sigma = K_\Sigma$. 
+In the case $\Sigma = \CC$ and $X = \CC^5$ we can twist by a homomorphism $SO(2) \to SO(4)$ to 
+write the open string fields \eqref{eqn:open1} as 
+\beqn\label{eqn:open1a}
+\Omega^{0,\bu}(\CC) \otimes \lie{gl}(N) [\ep_1,\ldots,\ep_4] [1] .
+\eeqn
+Here the $\ep_i$ are odd variables. 
+
+Next, we consider $D1-D5$ strings. 
+The open string fields are given by 
+\beqn\label{eqn:open15}
+\Omega^{0,\bu}(\CC, K^{\frac12}_\CC)  [\ep_3,\ep_4] \otimes {\rm Hom}(\CC, \CC^N) = \Omega^{0,\bu}(\CC, K^{\frac12}_\CC)  [\ep_3,\ep_4] \otimes \CC^N .
+\eeqn
+Together with the $D5-D1$ strings we get 
+\beqn\label{eqn:open15a}
+\Omega^{0,\bu}(\CC, K^{\frac12}_\CC)  [\ep_3,\ep_4] \otimes T^*\CC^N .
+\eeqn
+
+In total, we see that the open-strings of the $D1/D5$ system along $\Sigma = \CC$ are given by the Dolbeault complex valued in the following holomorphic vector bundle
+\beqn
+\bigg(\lie{gl}(N)[\ep_1,\ep_2][1] \oplus K^{\frac12}_\CC \otimes T^*\CC^N \bigg) \otimes \CC[\ep_3,\ep_4] .
+\eeqn
+The bundle in parentheses can be written as 
+\brian{Now here I really want $\deg{\ep_1}=\deg{\ep_2} = +1$}
+\beqn
+\lie{gl}(N)[1] \oplus T^* \left(\lie{gl}(N) \oplus K^{\frac12}_\Sigma \CC^N\right) \oplus \lie{gl}(N) [-1] .
+\eeqn
+Up to the factor of $K^{\frac12}_\Sigma$ this is evidently the underlying vector space of the graded Lie algebra controlling Hamiltonian reduction of 
+\beqn
+T^*(\lie{gl}(N) \oplus \CC^N) \sslash \lie{gl}(N) .
+\eeqn
+
+\section{Supergravity states}
+
+\subsection{Boundary conditions}
+
+To describe the boundary conditions we will use the partial compactification of the extended deformed conifold as described in \S \ref{sec:compact}. 
+
+Recall that there are three fundamental fields for Kodaira--Spencer theory compactified on a $K3$ surface.
+Two fundamental fields $\alpha, \gamma$ are Dolbeault forms of type $(0,\bu)$ valued in the algebra $A$. 
+The last fundamental field $\mu$ is a $(0,\bu)$ form valued in $T_{\CC^3} \otimes A$.
+We can use the Calabi--Yau form to view $\mu$ as a Dolbeault form of type $(2,\bu)$ valued in the algebra $A$. 
+
+\begin{itemize}
+\item The vacuum boundary condition for the fields $\alpha, \gamma$ is that each are divisible by the coordinate $n$. 
+\item The vacuum boundary condition for the field $\mu$ is that when viewing it as a Dolbeault form of type $(2,\bu)$ it can be expressed as a sum of terms which are each wedge products of $\d \log n, \d w, \d z , \d \br n, \d \br w , \d \br z$ with coefficients that are regular at $n = 0$. 
+\end{itemize} 
+
+
+%The vacuum boundary condition for the fields $\alpha$ requires that it is divisible by the coordinate $n$. 
+%We can modify this at the point $z=0$ at the boundary by taking 
+%\[
+%\alpha = n^{-k} w^l \del_z^{r} \delta_{z=0} \otimes a .
+%\]
+%In this expression, $k \geq 0$ and $l \leq k$ to ensure that there are no poles along $w = \infty$. 
+%Also, $a \in H^\bu(Y)$ denotes an arbitrary cohomology class for the $K3$ surface.
+%The ansatz for $\gamma$ is identical.
+%
+%For the field $\mu$
+
+\subsection{Enumerating states}
+
+The supergravity states were enumerated in \cite{CP}. 
+We briefly recall the results here. 
+
+The twisted supergravity states organize into a representation for the super Lie algebra $\lie{psu}(2|2)$.
+The bosonic factor of this super Lie algebra is $\lie{su}(2)_L \oplus \lie{su}(2)_R$. 
+The first copy is the global conformal transformations in the $z$-plane and the second copy is the $R$-symmetry algebra which rotates the $w$-coordinate.
+We take the Cartan of this Lie algebra to be spanned by $(L_0, J_0^3)$. 
+  
+Denote by $(\frac{\bf m}{\bf 2})_S$ the short representation of $\lie{psu}(2|2)$ whose highest weight vector has $(L_0, J_0^3)$ eigenvalue $(m/2,m/2)$ \cite{dB1}. 
+As an example, the short representation $({\bf 1})_S$ consists of a boson with weight $(L_0 = 1, J_0^3 = 1)$, which in our notation corresponds to 
+\beqn
+\mu \sim n^{-2} \d \log n \d z \delta_{z=0}  .
+\eeqn 
+There are also two fermions in $({\bf 1})_S$ with weights $(3/2,1/2)$ corresponding to the states
+\beqn
+\alpha \sim n^{-1} \delta_{z=0} + \cdots , \quad \gamma \sim n^{-1}\delta_{z=0} + \cdots
+\eeqn
+and another boson of weight $(2,0)$ corresponding to 
+\beqn
+\mu \sim n^{-2} \d \log n \d w \delta_{z=0} + \cdots .
+\eeqn 
+
+In \cite{CP} it was shown that the space of single particle states of twisted type IIB supergravity on a $K3$ surface is given by the $\lie{psu}(2|2)$ representation 
+\beqn\label{eqn:IIBstates}
+\bigoplus_{m \geq 1} (\frac{\bf m}{\bf 2})_S \otimes H^\bu(K3) = \bigoplus_{m \geq 1} \bigoplus_{i,j} (\frac{\bf m}{\bf 2})_S \otimes H^{i,j} (K3)  . 
+\eeqn 
+This should be compared to \cite{dB1}, where the supergravity states upon localizing are found to be
+\beqn\label{eqn:db1}
+\bigoplus_{m \geq 0} \bigoplus_{i,j} (\frac{\bf m+i}{\bf 2})_S \otimes H^{i,j} (K3) .
+\eeqn
+The answers clearly agree in the range where the highest weight of the short representation is at least two. 
+The low weight discrepancies break up into two types:
+\begin{itemize}
+\item In \cite{dB1} there is an extra factor of $({\bf 0})_S \otimes H^{0,i}(K3)$. 
+So, there are two extra bosonic operators in the analysis of \cite{dB1}. 
+In \cite{CP} is was pointed out that these are topological operators, annihilated by $L_{-1}$, and have nonsingular OPE with all remaining operators. 
+\item 
+In our analysis there is an extra factor of $(\frac{\bf 1}{\bf 2})_S \otimes H^{2,j}(K3)$. 
+We can remove these two bosonic states while maintaining an $SO(21)$ symmetry. 
+\end{itemize}
+
+\subsection{The index} 
+
+The contributions from the four towers of states in Figure \ref{fig:states} comprise short representations for $\lie{su}(2|2)$. 
+Let $\chi_j (q,y)$ be the single particle index of the combination of these short representations which have spin $j$ (that is, $L_0 = j$). 
+
+The generating function for our single-particle states is given in terms of the characters $\chi_j(q,y)$ as 
+\beqn
+\sum_{n,m,l} c_{sugra}(m,n,l) p^m q^n y^l = \sum_{m \geq 0} \sum_{i,j} h^{i,j} \chi_{m+i} (q,y) p^{m+1} .
+\eeqn
+The $c_{sugra}(m,n,l)$ appear as the exponents of the index of the full multiparticle Fock space via \cite{dB2, dmvv}:
+\beqn
+\prod_{m> 0, n,l} \frac{1}{(1-p^mq^ny^l)^{c_{sugra}(m,n,l)}} .
+\eeqn 
+
+\subsection{Global symmetry algebra}
+For $F \in H^2(Y_{K3})$, let $X^0_F$ be the extended deformed conifold as defined in \S \ref{sec:conifold}.
+Recall that $Z = {\rm Spec}(A)$ is the affine variety described by the commutative algebra $A = H^\bu(Y_{K3})$. 
+Previously, we saw that the space $X_F^0$ admits a fibration $X^0_F \to Z$ fibered in Calabi--Yau three-folds. 
+Let $\cO(X^0_F)$ be the algebra of functions on $X^0_F$.
+By Hartog's theorem this is the algebra generated by the bosonic linear functions $u_i, w_j, \eta, \br \eta, \eta_a$ where $i,j=1,2$, $a=1,\ldots, 20$ subject to the relations
+\[
+\eta^2 = \br \eta^2 = \eta_a \eta_b - h_{ab} \eta \br \eta = 0, \qquad \eps^{ij} u_i w_j = F . 
+\]
+
+Let 
+
+\section{Orbifold CFT}
+
+\subsection{The half-twisted $\mc N=4$ CFT}
+
+Assuming that the target manifold $M$ is K\"ahler, we can decompse the complexified bosons into $\phi^I, \phi^{\br I}$ where $I, \br I = 1,\ldots, \dim_\CC (M)$ index a local holomorphic (and anti-holomorphic) coordinate on the target.
+The fermionic fields of the physical supersymmetric $\sigma$-model are sections of the following bundles
+\beqn
+\label{eqn:fermionsuntwist}
+\begin{split}
+\psi^I & \in \Gamma\left(\Sigma \, , \, K^{\frac12}_\Sigma \otimes \phi^* T^{1,0}_M\right) \\ 
+\psi^{\br I} & \in \Gamma\left(\Sigma \, , \, K^{\frac12}_\Sigma \otimes \phi^* T^{0,1}_M\right) \\
+\br\psi^I & \in \Gamma\left(\Sigma \, , \, \br K^{\frac12}_\Sigma \otimes \phi^* T^{1,0}_M\right) \\
+\br\psi^{\br I} & \in \Gamma\left(\Sigma \, , \, \br K^{\frac12}_\Sigma \otimes \phi^* T^{0,1}_M\right). 
+\end{split}
+\eeqn
+
+To pass to the half-twisted\footnote{We are referring to the twist which renders the theory holomorphic on the Riemann surface.}, we restrict to the cohomology of the supercharge $\br Q_+$ and twist the fermionic fields using a combination of R-symmetry curents. 
+The more common $A$-type twist, studied in \cite{KapustinHalf}, is with respect to the current $\frac12 (J_L - J_R)$. 
+Instead, we will consider the twist just by the $R$-symmetry current $-J_R$. 
+This has the effect of modifying the right-moving fermions but not the left-moving fermions:
+\beqn
+\label{eqn:fermionstwist}
+\begin{split}
+\psi^I & \in \Gamma\left(\Sigma \, , \, K^{\frac12}_\Sigma \otimes \phi^* T^{1,0}_M\right) \\ 
+\psi^{\br I} & \in \Gamma\left(\Sigma \, , \, K^{\frac12}_\Sigma \otimes \phi^* T^{0,1}_M\right) \\
+\br\psi^I & \in \Gamma\left(\Sigma \, , \, \br K_\Sigma \otimes \phi^* T^{1,0}_M\right) \\
+\br\psi^{\br I} & \in \Gamma\left(\Sigma \, , \, \phi^* T^{0,1}_M\right). 
+\end{split}
+\eeqn
+
+In $\br Q_+$ cohomology the right-moving fermions are rendered trivial. 
+We identify the fields which remain in $\br Q_+$ cohomology in terms of a chiral $bc \beta\gamma$ system in the following way
+\beqn
+\begin{split}
+\beta_I & = g_{I \br J} \del_z X^{\br J} , \quad \gamma^I = X^I \\
+b_I & = g_{I \br J} \psi^{\br J} , \quad c^I = \psi^I .
+\end{split}
+\eeqn
+The free action is simply $\int_\Sigma \beta \dbar \gamma + \int_\Sigma b \dbar c$. 
+Notice that in twist, the $bc$ fields still have half-integral spin as opposed to the conventional $A$ or $B$-twists. 
+
+In our context, the target space $M$ is $\oplus_{N=1}^\infty \Sym^N (T^4)$ or $\oplus_{N=1}^\infty \Sym^N (K3)$. 
+These spaces are hyperk\"ahler, so the chiral de Rham complex will acquire a symmetry by a twisted version of the $\mc N = 4$ superconformal algebra. 
+Actually, since our twist only modifies the right-moving fermions, the left-moving part of the $\mc N = 4$ superconformal algebra itself remains the same as in the untwisted theory. 
+
+\subsection{Chiral de Rham complex on hyperk\"ahler manifolds}
+
+We describe the chiral de Rham complex on a general hyperk\"ahler manifold. 
+We will specialize to the symmetric orbifold in the next section. 
+
+We adjust indexing notation to one that is more natural from the point of view of hyperk\"ahler geometry.
+Locally, the holomorphic tangent bundle of a hyperk\"ahler manifold $M$ of complex dimension $2n$ decomposes as $T^{1,0}_M = V \otimes \CC^2$ where $V$ is a holomorphic vector bundle of rank $n$. 
+We let $i = 1,\ldots, n$ index a frame for the bundle $V$ and $\alpha = 1,2$ index be the $SU(2)$ doublet index. 
+The fields will be written as $\gamma^{i\alpha}, \beta_i^\beta$, etc..
+
+The nonvanishing $bc \beta\gamma$ OPEs are
+\beqn
+\begin{split}
+\beta_i^\alpha (0) \gamma^{j\beta} (z) & \simeq \eps^{\alpha \beta} \delta_i^j \frac1z \\
+b^\alpha (0) c^{j\beta} (z) & \simeq \eps^{\alpha \beta} \delta_i^j  \frac1z .
+\end{split}
+\eeqn
+
+The $\mc N=4$ superconformal algebra is generated by the following fields:
+\beqn
+\begin{split}
+T(z) & = \eps_{\alpha\beta} \beta_i^\alpha \del \gamma^{i \beta} + \frac12 \eps_{\alpha \beta} b^\alpha_i \del c^{i \beta}  \\
+G^{\alpha \beta} (z) & = \beta_i^\alpha c^{i \beta} + b_i^\alpha \del \gamma^{i \beta} \\
+J^a (z) & = \eps_{\alpha \beta} b_i^\alpha \sigma^{a \beta}_\gamma c^{i \gamma} .
+\end{split}
+\eeqn
+\brian{normalize}
+
+\subsection{The chiral de Rham complex of the symmetric orbifold}
+
+Our eventual goal is to describe the chiral de Rham complex on the symmetric orbifold on the hyperk\"ahler manifolds $T^4$ or a $K3$ surface. 
+We start by describing the chiral de Rham complex of an affine version of the symmetric orbifold, namely $\Sym^N(\CC^2)$. 
+
+Consider the complex vector space $B_N = \lie{gl}(N) \times \CC^N$ and its cotangent space $T^* B_N$. 
+We consider $T^* B_N$ as a holomorphic symplectic manifold. 
+There is a Hamiltonian action of $GL(N)$ on $T^* B_N$ with moment map 
+\beqn
+\mu_N (v,A ; w , B) = vw + [A,B] . 
+\eeqn 
+The symmetric orbifold $\Sym^N (\CC^2)$ can be written as the Hamiltonian reduction of $T^*B_N$ with respect to this Hamiltonian action 
+\beqn
+T^* B_N \sslash_\mu GL(N) = \mu^{-1} (0) \slash GL(N) .
+\eeqn 
+
+
+\begin{itemize}
+\item 
+A map $\Sigma \to T^* B_N$ which we will decompose as a map
+\[
+\gamma^{\alpha}_{(r)} \colon \Sigma \to T^* \CC^N
+\]
+where $\alpha=1,2$ and $r = 1,\ldots, N$ and a map
+\[
+\Gamma^{\alpha r}_{s} \colon \Sigma \to T^* \lie{gl}(N) ,
+\]
+where $\alpha=1,2$ and $r,s=1,\ldots,N$. 
+Similarly, there are the bosonic $(1,0)$ forms $\beta^\alpha_{(r)}$, $\mc B^{\alpha r}_s$. 
+\item 
+There are the fermions
+\[
+c^\alpha_{(r)} \in \Gamma(\Sigma, K^{\frac12}_\Sigma) \otimes T^* \CC^N ,
+\]
+where $\alpha=1,2$ and $r=1,\ldots N$ and 
+\[
+C^{\alpha r}_s \in \Gamma(\Sigma, K^{\frac12}_\Sigma) \otimes T^* \lie{gl}(N) .
+\]
+Similarly, there are the fermions $b^\alpha_{(r)}, B^{\alpha r}_s$.
+\item
+There are the $\lie{gl}(N)$ valued ghosts 
+\[
+\sfc^{r}_s \in \Gamma(\Sigma, \cO) \otimes \lie{gl}(N), 
+\]
+and their anti-ghosts $\sfb^r_s$. 
+\item
+Finally, there are the $\lie{gl}(N)$ valued ghosts 
+\[
+\til\sfc^{r}_s \in \Gamma(\Sigma , K_\Sigma) \otimes \lie{gl}(N),
+\]
+(note that these are of spin $+1$) and their anti-ghosts $\til \sfb_s^r$. 
+\end{itemize}
+
+In Appendix \ref{appx:cdr} we give a construction of the chiral de Rham complex on the Hamiltonian reduction of a holomorphic symplectic manifold. 
+In the notation of that appendix we are using $W = T^* B_N$ and $G=GL(N)$. 
+We spell out the BRST operator in this notation. 
+It is given by $Q = \oint J_{BRST}(z) \, \d z$ where the BRST current is
+\beqn
+\label{eqn:BRSTcdr}
+\begin{split}
+J_{BRST} (z) & = \frac12 \Tr{\sfb \sfc^2} \\ & + \Tr{\sfc (\beta \gamma)} + \Tr{\sfc \mc B \Gamma} + \frac12 \Tr{\til \sfc (\gamma^2)} + \frac12 \Tr{\til \sfc \Gamma^2} \\ & + \Tr{\sfc (b c)} + \Tr{\sfc B C} + \frac12 \Tr{\til \sfc (c^2)} + \frac12 \Tr{\til \sfc C^2} .
+\end{split}
+\eeqn
+In the expression above we have made use of the following notation. 
+If two fields $x,y$ transform in the vector representation of $GL(N)$, we denote by $(xy) = x \otimes y \in \lie{gl}(N)$ the induced adjoint valued element (this is used in terms 2,4,6, and 8). 
+\appendix
+
+\section{Chiral de Rham complexes and BRST reduction} 
+\label{appx:cdr}
+
+Suppose that $W$ is a symplectic vector space with a Hamiltonian action by a Lie group $G$ and moment map $\mu \colon W \to \lie{g}^*$. 
+We will construct a model for the chiral de Rham complex on the Hamiltonian reduction of $W$ by $G$. 
+
+The first step is to introduce a derived model for the symplectic reduction $W \sslash_\mu G = \mu^{-1} (0) / \lie{g}$.
+Introduce the following graded vector space 
+\beqn
+W \sslash \lie{g} \define \lie{g}[1] \oplus W \oplus \lie{g}^*[-1] 
+\eeqn
+whose elements we will write as triples $(\sfc, \gamma, \til \sfb)$. 
+There is an $L_\infty$ structure on $W\sslash \lie{g} [-1]$ determined by the brackets 
+\beqn
+\begin{split}
+[c_1,c_2]_2 & = [c_1,c_2]_{\lie{g}} \in \lie{g} \\
+[c, \gamma_1,\ldots,\gamma_k]_{k+1} & = \ip{c, \mu_{k+1}(\gamma_1,\ldots,\gamma_k)} \in W \\
+[\gamma_1,\ldots,\gamma_l]_{l} & = \mu_l(\gamma_1,\ldots,\gamma_l) \in \lie{g}^* .
+\end{split}
+\eeqn
+
+Choose a symplectic basis $\{w_\alpha\}$ for $W$ where the symplectic form is $\omega_{\alpha \beta}$. 
+Additionally, let $\{e_a\}$ be a basis for the Lie algebra $\lie{g}$. 
+We will assume for simplicity that the moment map is quadratic of the form $\mu^{a}$ 
+In particular, the $L_\infty$ structure on $W\sslash \lie{g}[-1]$ is a strict graded Lie algebra. 
+The vertex algebra is generated by the following fields
+\begin{itemize}
+\item $\gamma^\alpha(z)$ is a field of spin zero and ghost number zero. 
+$\beta^\alpha (z)$ is a field of spin $+1$ and ghost number zero. 
+\item $c^\alpha(z)$ is a field of spin $+1/2$ and ghost number $+1$. 
+$b^\alpha (z)$ is a field of spin $+1/2$ and ghost number $-1$. 
+\item $\sfc^a(z)$ is a field of spin zero and ghost number $+1$. 
+$\sfb_a(z)$ is a field of spin $+1$ and ghost number $-1$. 
+\item $\til \sfc^a(z)$ is a field of spin $+1$ and ghost number $+1$. 
+$\til \sfb_a(z)$ is a field of spin zero and ghost number $-1$. 
+\end{itemize}
+
+The BRST operator is given in terms of the current
+\beqn
+J_{BRST}(z)  = f^a_{bc} \sfb_a \sfc^b \sfc^c + \mu_{a\alpha\beta} \sfc^a \beta^\alpha \gamma^\beta + \mu_{a \alpha \beta} \til \sfc^a \gamma^\alpha  \gamma^\beta + \mu_{a\alpha\beta} \sfc^a b^\alpha c^\beta + \mu_{a \alpha \beta} \til \sfc^a c^\alpha  c^\beta 
+\eeqn
+as $Q = \oint J_{BRST} (z) \, \d z$. 
+
+
+\end{document}
