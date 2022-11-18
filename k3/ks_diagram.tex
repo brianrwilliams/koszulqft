@@ -833,14 +833,31 @@ Similarly, the anomaly in \eqref{eqn:treeanomaly2} can be cancelled by the gauge
 \eeqn
 (We are omitting appearences of volume forms for simplicity.)
 
-Proceeding as above by working in the Fourier dual odd coordinates and working with on-shell fields, we see that there must be a term in the $JJ$ OPE of the form
+Proceeding as above by working in the Fourier dual odd coordinates and working with on-shell fields, we see that to cancel the first of these anomalies there must be a term in the $JJ$ OPE of the form
 \beqn
 \til{J}^i[0,0](0,\what\eta^a) \til{J}^j [0,0] (z,\what\eta'^a) \simeq \epsilon^{ij} \frac1z \what F (\what\eta^a + \what\eta'^a) .
 \eeqn
-Similarly, there must be a term in the GG OPE of the form
+Using the constraints \eqref{eqn:constraint1} we can write this OPE in terms of on-shell fields as
+\beqn
+J[1,0](0,\what \eta^a) J[0,1] (z,\what \eta'^a) \simeq \frac{1}{z} \what F(\what \eta^a + \what \eta'^a) .
+\eeqn
+
+Similarly, to cancel the second anomaly there must be a term in the GG OPE of the form
 \beqn
 G_\alpha[0,0](0,\what \eta^a) G_\gamma[0,0](z,\what \eta'^b) \simeq \frac1{z^2} \what F (\what \eta^a + \what \eta'^a) .
 \eeqn
+
+As a simple consequence of this, we see that the operators $J[1,0](\what \eta), J[0,1](\what \eta),G_\alpha[0,0](\what \eta), G_\gamma[0,0](\what \eta)$ form a subalgebra of the full gravitational chiral algebra.
+Recall that the spin of the operator $G_\alpha[0,0]$ is one.
+If we choose a spin zero operator $G'_{\alpha}[0,0]$ such that $\del G_\alpha'[0,0]$ then we can obtain the same OPE as above if we declare that 
+\beqn
+G'_\alpha[0,0](0,\what \eta^a) G_\gamma[0,0](z,\what \eta'^b) \simeq \frac1{z} \what F (\what \eta^a + \what \eta'^a) .
+\eeqn
+The operators $J[1,0](\what \eta), J[0,1](\what \eta),G
+'_\alpha[0,0](\what \eta), G_\gamma[0,0](\what \eta)$ familiar chiral algebra of free fields.
+
+
+
 
 \subsection{The propagator for Kodaira--Spencer theory}
 
