@@ -150,6 +150,9 @@ shorten <= 1pt,
 \newcommand{\liminv}{ \varprojlim }
 \newcommand{\limdir}{\varinjlim}
 \newcommand{\dirlim}{\varinjlim}
+\newcommand{\fw}{\mathfrak{w}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cL}{\mathcal{L}}
 
 
 \newcommand{\bfP}{\mathbf{P}}
@@ -352,17 +355,10 @@ shorten <= 1pt,
 %P = \del P' \in \br\PV^{2,2}(\CC^3 \times \CC^3) .
 %\]
 
-\section{Computing the OPE}
-
-In the example we consider a defect along the holomorphic plane 
-\[
-\CC_z \times 0 \subset \CC_z \times \CC_{w_1} \times \CC_{w_2} = \CC^3. 
-\]
-
 \section{Tree-level OPEs}
 
 
-The classical bulk coupling of Kodaira--Spencer theory is
+Recall that the full classical coupling of Kodaira--Spencer theory is
 \[
 \int_{\CC^{3|4}} \mu_1 \mu_2 \mu_z \; \d z \d^2 w \d^4 \eta + \int_{\CC^{3|4}} \alpha \mu_i \partial_{w_i} \gamma \; \d z \d^2 w \d^4 \eta + \int_{\CC^{3|4}} \alpha \mu_z \partial_z \gamma \; \d z \d^2 w \d^4 \eta .
 \]
@@ -521,6 +517,18 @@ we find that the OPE is
 
 Note that the operators with $r + s = 2$ which are independent of $\what{\eta}^a$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level \underline{zero}.
 We will get a nontrivial level once we include the contribution from the back reaction, which we do in \S \ref{sec:br}. 
+
+As was pointed out in \cite{CP}, the mode algebra corresponding to this full collection of OPE's can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonoian vector fields on $\C^2$.\footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
+This is the Lie algebra $\cL^{1|4} \fw_\infty$.
+Explicitly, elements of this super Lie algebra can be expressed as 
+\beqn
+z^{n} f(w_1,w_2; \eta_a) \in \cL^{1|4} \fw_\infty
+\eeqn
+for $n \in \Z$ and where $f(w_1,w_2;\eta_a) \in \C[w_1,w_2,\eta_a]/ \C$. 
+The bracket is 
+\beqn
+[z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
+\eeqn
 
 \subsection{$TJ$ OPE}
 
@@ -795,28 +803,65 @@ up to scaling.
 The first nontrivial contribution from the backreaction occurs at tree-level. 
 This contribution was computed in \cite{CP}, but we briefly recall the formula here for completeness.
 
-The Beltrami differential $\mu_{BR}(\eta_a)$ couples to the fields of BCOV theory by the Lagrangian
-\[
-\int_{\CC^{3|4}} \mu_{BR} (\eta_a) \mu_1(\eta_a) \mu_2(\eta_a) \, \d z \d^2 w \d^4 \eta .
-\]
-Recall that the Beltrami differential satisfies the defining equation
+The backreaction $\mu_{BR}(\eta_a)$ is a Beltrami differential and hence couples to the fields of BCOV theory by the pair of Lagrangians
+\beqn\label{eqn:br1}
+\int_{\CC^{3|4}} \mu_{BR} (\eta) \mu_1(\eta) \mu_2(\eta) \, \d z \d^2 w \d^4 \eta .
+\eeqn
+and 
+\beqn\label{eqn:br2}
+\int_{\CC^{3|4}} \mu_{BR}(\eta) \alpha(\eta) \del_z \gamma(\eta) \d z \d^2 w \d^4 \eta .
+\eeqn
+
+The defining equation for the backreaction reads
 \[
 \dbar \mu_{BR} (\eta_a) = \delta_{w_i=0} F^{ab} \eta_a \eta_b \partial_z  .
 \]
-Using this, we obtain the tree-level gauge variation of the backreaction coupling as
-\[
-\int_{\CC^{1|4}} F^{ab} \eta_a \eta_b \mu_i (\eta_a) \fc_j (\eta_b) \epsilon^{ij}  .
-\]
-Notice that this expression does not involve any $w_i$-derivatives. 
-Since $\til{J}^i[0,0]$ couples to $\mu_i$, this anomaly can be cancelled by the gauge variation of 
-\[
+Using this, we obtain the tree-level gauge variation of the backreaction coupling \eqref{eqn:br1} as
+\beqn\label{eqn:treeanomaly1}
+\int_{\CC^{1|4}} F^{ab} \eta_a \eta_b \mu_i (\eta_a) \fc_j (\eta_b) \epsilon^{ij} \d z \d^4 \eta .
+\eeqn
+Similarly, the tree-level gauge variation of the coupling \eqref{eqn:br2} is 
+\beqn\label{eqn:treeanomaly2}
+\int_{\CC^{1|4}} F^{ab} \eta_a \eta_b \alpha (\eta) \del_z \fc_\gamma (\eta) \d z \d^4 \eta + \int_{\CC^{1|4}} F^{ab} \eta_a \eta_b c_\alpha (\eta) \del_z \gamma (\eta) \d z \d^4 \eta .
+\eeqn
+
+Notice that neither of these expression involve $w_i$-derivatives. 
+Since $\til{J}^i[0,0]$ couples to $\mu_i$, the anomaly in \eqref{eqn:treeanomaly1} can be cancelled by the gauge variation of 
+\beqn
 \int_{z,z',\eta_a,\eta_a'} \til{J}^1[0,0](z,\eta_a) \mu_1(z,\eta_a) \til{J}^2[0,0] (z',\eta_a') \mu_2(z',\eta_a') 
-\]
+\eeqn
 provided that the $\til{J}^i[0,0]$ operators satisfy an appropriate OPE. 
-Proceeding as above by working in the Fourier dual odd coordinates, we see that there must be a term in the OPE of the form
-\[
+Similarly, the anomaly in \eqref{eqn:treeanomaly2} can be cancelled by the gauge variation of a coupling of the form
+\beqn
+\int_{z,z',\eta_a,\eta_a'} G_\alpha[0,0](z,\eta_a) \alpha(z,\eta_a) G_\gamma[0,0] (z',\eta_a') \gamma (z',\eta_a') 
+\eeqn
+(We are omitting appearences of volume forms for simplicity.)
+
+Proceeding as above by working in the Fourier dual odd coordinates and working with on-shell fields, we see that to cancel the first of these anomalies there must be a term in the $JJ$ OPE of the form
+\beqn
 \til{J}^i[0,0](0,\what\eta^a) \til{J}^j [0,0] (z,\what\eta'^a) \simeq \epsilon^{ij} \frac1z \what F (\what\eta^a + \what\eta'^a) .
-\]
+\eeqn
+Using the constraints \eqref{eqn:constraint1} we can write this OPE in terms of on-shell fields as
+\beqn
+J[1,0](0,\what \eta^a) J[0,1] (z,\what \eta'^a) \simeq \frac{1}{z} \what F(\what \eta^a + \what \eta'^a) .
+\eeqn
+
+Similarly, to cancel the second anomaly there must be a term in the GG OPE of the form
+\beqn
+G_\alpha[0,0](0,\what \eta^a) G_\gamma[0,0](z,\what \eta'^b) \simeq \frac1{z^2} \what F (\what \eta^a + \what \eta'^a) .
+\eeqn
+
+As a simple consequence of this, we see that the operators $J[1,0](\what \eta), J[0,1](\what \eta),G_\alpha[0,0](\what \eta), G_\gamma[0,0](\what \eta)$ form a subalgebra of the full gravitational chiral algebra.
+Recall that the spin of the operator $G_\alpha[0,0]$ is one.
+If we choose a spin zero operator $G'_{\alpha}[0,0]$ such that $\del G_\alpha'[0,0]$ then we can obtain the same OPE as above if we declare that 
+\beqn
+G'_\alpha[0,0](0,\what \eta^a) G_\gamma[0,0](z,\what \eta'^b) \simeq \frac1{z} \what F (\what \eta^a + \what \eta'^a) .
+\eeqn
+The operators $J[1,0](\what \eta), J[0,1](\what \eta),G
+'_\alpha[0,0](\what \eta), G_\gamma[0,0](\what \eta)$ familiar chiral algebra of free fields.
+
+
+
 
 \subsection{The propagator for Kodaira--Spencer theory}
 
@@ -999,12 +1044,11 @@ and similarly for $J_0$.
 \textcolor{red}{NP: note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
 \textcolor{red}{NP: it may be prettier to separate the $J[m,n]$ OPEs when one or both arguments are zero from the rest, to avoid using the clunky theta function notation.}
 
-
+If $nr-ms > 0$ the OPEs are
 \begin{align}
 J[m,n](0)J[r, s](z) &\sim {(nr-ms) \over z}J[m + r -1, n + s -1](0) \\
 J[m, n](0)T[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}\left({m \over 2(r + 1)} + {n \over 2(s + 1)}\right)J[m + r, n + s](0) \\ \nonumber
-&+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})(\theta(|nr-ms|) + \delta_{nr = ms}\theta(ms)) \right)\partial_z J[m + r, n+s](0) \\ \nonumber
-&+{1 \over z}\left({n \over n + s}\delta_{r =m=0}\theta(s) + {m \over m + r}\delta_{n = s=0}\theta(r) + \delta_{r = s= 0} \right)\partial_zJ[m + r, n+s](0)\\
+&+{1 \over 2 z}\left({m \over m + r} + {n \over n + s} \right)\partial_z J[m + r, n + s](0)\\
 G[m, n](0)J[r, s](z) &\sim {(ms - rn) \over z}G[m + r -1, n + s - 1](z) \\
 G[m, n](0)T[r, s](z) &\sim ({1 \over z} \partial_z + {1 \over z^2})G[m + r, n+s](0) + \left({m \over 2(r+1)} + {n \over 2 (s + 1)}\right){1 \over z^2}G[m + r, n+s](0) \\
 T[m, n](0)T[r, s](z) &\sim {1 \over z}\left(1 + {r \over 2(m+1)} + {s \over 2(n+1)}\partial_z \right) T[m + r, n +s](0) \\ \nonumber &+ {1 \over z^2}\left(2 + {r \over 2(m+1)} + {s \over 2(n+1)} + {m \over 2(r+1)} + {n \over 2(s+1)} \right)T[m + r, n + s](0)\\ \nonumber
@@ -1013,8 +1057,30 @@ T[m, n](0)T[r, s](z) &\sim {1 \over z}\left(1 + {r \over 2(m+1)} + {s \over 2(n+
 &+ {1 \over 4 z^2}\left({1 \over n + s + 1}({2 + m + r \over (1 + m)(1 + r)}) - {1 \over m + r + 1}({2 + n + s \over (1 + n)(1 + s)}) \right) \\ \nonumber & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \partial_z J[m + r + 1, n + s + 1](0) \\ \nonumber
 &+{1 \over 2 z^3}\left( {1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right) J[m + r + 1, n + s + 1](0) \\ \nonumber
 G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
-&+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})(\theta(|nr-ms|) + \delta_{nr = ms}\theta(ms)) \right)\partial_z J[m + r, n+s](0) \\ \nonumber
-&+{1 \over z}\left({n \over n + s}\delta_{r =m=0}\theta(s) + {m \over m + r}\delta_{n = s=0}\theta(r) \right)\partial_zJ[m + r, n+s](0)\\
+&+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})\right)\partial_z J[m + r, n+s](0)
+\end{align}. 
+
+The JT and GG OPE coefficients have to be treated with slightly more care for special choices of $n, r, m, s$, though the basic structure of the OPEs is the same.
+For the JT OPE, the above expression also holds when $nr - ms = 0$ but $nr = m s >0$. 
+For the GG OPE, if $n r - ms = 0$ but $nr = ms > 0$ we have
+\begin{align}
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
+&+{1 \over z}\partial_z J[m + r, n+s](0).
+\end{align}
+The remaining cases are as follows. If $nr-ms = 0$ and $n r = ms = 0$ the TJ and GG OPE coefficients are instead as follows. \newline
+If $r = m = 0, s \neq 0$:
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({n \over 2(s + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({n \over n + s} \right)\partial_z J[m + r, n + s](0) \\ \nonumber
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({n \over  (n + s)}\right)\partial_z J[m + r, n+s](0)
+\end{align}
+If $n = s = 0, r \neq 0$:
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({m \over 2(r + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({m \over m + r} \right)\partial_z J[m + r, n + s](0)\\
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({m \over m + r}\right)\partial_z J[m + r, n+s](0)
+\end{align}
+If $r = s= 0$ (note that there are no G operators for these values):
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +{1 \over  z}\partial_z J[m + r, n + s](0)
 \end{align}
 \textcolor{red}{NP: Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
 \end{document}
