@@ -162,8 +162,10 @@ shorten <= 1pt,
 \DeclareMathOperator{\Or}{Or}\DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Mat}{Mat} \DeclareMathOperator{\Ob}{Ob}
 
-
-
+\newcommand\beqn{\begin{equation}}
+\newcommand\eeqn{\end{equation}} 
+\newcommand{\lie}{\mathfrak}
+\newcommand{\bu}{\bullet}
 
 
 
@@ -248,7 +250,7 @@ shorten <= 1pt,
 
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{thm-def}{Theorem/Definition}[theorem]
-\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{prop}[theorem]{Proposition}
 \newtheorem{question}{Question}
 \newtheorem*{question*}{Question}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -305,7 +307,7 @@ shorten <= 1pt,
 
 In this note we review basic aspects of the symmetric orbifold SCFT $Sym^N(T^4)$ dual to supergravity on $AdS_3 \times S^3 \times T^4$. We also review the notion of the chiral de Rham complex of a manifold, and its generalization to orbifolds, in order to discuss the chiral algebra associated with the half-twist of the $Sym^N(T^4)$ SCFT, putatively dual to Kodaira-Spencer theory on the superconifold. Of course, this SCFT is the IR limit of the field theory that arises from the zero modes of the open strings on the D1-D5 branes. 
 
-\section{The dual field theory from D1-D5 bound states}
+\section{The dual superconformal field theory}
 
 Here we review the system of interest, following \cite{Davidetal} and references therein. The lowest-lying modes of open strings, which provide an effective field theory description of the D1 and D5-branes, naturally furnish a gauge theory whose IR limit we are primarily interested in.  
 The D5-D5 strings give rise to a six-dimensional supersymmetric $U(N_5)$ gauge theory preserving 16 supercharges. 
@@ -422,6 +424,285 @@ One can also construct anti-chiral primaries with $h=-j$ in the holomorphic (or 
 We also note briefly that the exactly marginal operators, which form a basis for the tangent space of the moduli space, can be found in such multiplets. In particular, marginal operators that preserve $\mc{N}=(4,4)$ supersymmetry must be $SU(2)_L$ singlets with $h=\bar{h}=1$. Therefore, they must be in the multiplets with highest weight states (combining now holomorphic and anti-holomorphic sectors) $\sigma^{+ \dot{+} }_{2}, \psi^{+\dot{A}}\bar{\psi}^{\dot{+}\dot{B}}$. Each of these five operators gives four such states, corresponding to 20 marginal operators.
 
 
+\subsection{The chiral de Rham complex} 
+
+One can start with the single-particle states furnished by chiral primaries and their $SU(1,1,|2)$ descendents and construct a Fock space. 
+These are dual to $1/4$-BPS states in the full physical SCFT, and their graded dimension gives rise to the elliptic genus of the model.
+The $1/4$-BPS states are captured by the so-called half-twist of the supersymmetric model which we now recall.
+
+The two-dimensional $\cN=(4,4)$ $\sigma$-model admits a half-twist along the lines of \cite{Kapustin, Witten} which results in a purely chiral theory.
+For this purpose, it can be convenient to recombine the fermions into vectors, and complexify the bosons $X$ so that we chose local holomorphic and anti-holomorphic coordinates on the target space: $\phi^i, \phi^{\bar{i}}$. 
+Then, explicitly, the fermionic fields are sections of the following bundles: 
+\begin{align*}
+\Psi^i &\in \Gamma(K^{1/2}\otimes \phi^*(T^{(1,0)}M))\\
+\Psi^{\bar{i}}&\in \Gamma(K^{1/2}\otimes \phi^*(T^{(0,1)}M))\\
+\bar{\Psi}^{i} &\in \Gamma(\bar{K}^{1/2}\otimes \phi^*(T^{(1,0)}M))\\
+\bar{\Psi}^{\bar{i}} &\in \Gamma(\bar{K}^{1/2}\otimes \phi^*(T^{(0,1)}M))
+\end{align*}  
+where as before the left-movers are given by $\Psi$ and the right-movers by $\bar{\Psi}$.
+
+To pass to the half-twisted model, we will restrict to the cohomology of the supercharge $\bar{Q}_+$, after we twist with a certain combination of R-symmetry currents. It is common, as in  \cite{Kapustin}, to perform the A-type twist by the current ${1 \over 2}(J_L - J_R)$ before passing to cohomology. We will instead simply consider a twist by $-J_R$, on the right-movers only, so that the twisted fields live in the following spaces of sections:
+
+\begin{align*}
+\Psi^i &\in \Gamma(K^{1/2}\otimes \phi^*(T^{(1,0)}M))\\
+\Psi^{\bar{i}} &\in \Gamma(K^{1/2}\otimes \phi^*(T^{(0,1)}M))\\
+\bar{\Psi}^i &\in \Gamma(\bar{K} \otimes\phi^*(T^{(1,0)}M))\\
+\bar{\Psi}^{\bar{i}} &\in  \Gamma(\phi^*(T^{(0,1)}M))
+\end{align*} 
+
+We then make the standard local identifications of fields in the twisted theory with those of ${\rm dim}_{\C}M$ copies of a free $bc\beta\gamma$ system (though again, we stress, the $bc$ fields are just ordinary fermions):
+\begin{align*}
+\beta_i &\equiv g_{i \bar{j}}\partial_z X^{\bar{j}} \\
+\gamma^i &\equiv \phi^i \\
+b_i &\equiv g_{i \bar{j}} \Psi^{\bar{j}} \\
+c^i &\equiv \Psi^i.
+\end{align*}
+On a local patch $U \subset M$ we can also take $g_{i\bar{j}} = \delta_{i \bar{j}}$.
+Notice that in the standard treatment of the half-twisted model, where the twist is performed using the A-model current, the left-moving fermions transform instead as $\Psi^i \in \Gamma(\phi^* T^{(1, 0)}M), g_{i \bar{j}}\Psi^{\bar{j}} \in \Gamma(K \otimes \phi^* T^{(0, 1)}M)$, rendering the $bc$ fields of spin $(1, 0)$, respectively. In our case, the spins remain half-integral.
+
+The nontrivial operators in the $\bar{Q}_+ = g_{i \bar{j}}\tilde{\Psi}^{\bar{j}} \partial_{\bar{z}}X^i$ cohomology are those of left and right-moving conformal dimensions $(n, 0), n \geq 0$ \cite{Tan,CostelloHol,ESW}. 
+The operators of dimension $(0, 0)$ (i.e. the operators forming the ground ring), in particular, have an interpretation as $(0,k)$-forms on the target space. 
+The operators of dimension $(n > 0, 0)$ are given by $(0, k)$-forms valued in various tensor product bundles arising from insertions of $\partial_z X^i, g_{i \bar{j}}\partial_z X^{\bar{j}}, g_{i \bar{j}}\partial_z \Psi^{\bar{j}}$. In terms of the physical operators (post-twist), the operators in $\bar{Q}_+$-cohomology will composites of 1.) polynomials in the left-moving fermions and in arbitrary numbers of their holomorphic derivatives 2.) some function of the scalar fields and arbitrary numbers of their holomorphic derivatives 3.) The field $\Psi^{\bar{i}}$, though none of its derivatives (since, by its equation of motion, the holomorphic derivatives of $\Psi^{\bar{i}}$ may be expressed in terms of the aforementioned fields and their derivatives only). Call such an operator $\mathcal{F}$. One can further study which such operators can be constructed globally. Using standard techniques from cohomology reveals that that the Dolbeault cohomology describing the local operators $H_{\bar{\partial}}^{(0,k)}(M, \mathcal{F})=0$ for $k>0$, so that we disallow operators $\mathcal{F}$ that contain $\Psi^{\bar{i}}$. Translating this over to the $bc\beta\gamma$ language, we have that the relevant operators are nothing but functions of $b, c, \beta, \gamma$ and their holomorphic derivatives.
+
+In the present context, our target space $M$ is given by $\oplus_{a=1}^{\infty} Sym^a (T^4)$ or $\oplus_{a=1}^{\infty} Sym^a(K3)$. These spaces are hyperkahler, so the chiral de Rham complex has  (in general, a twisted version of) $\mathcal{N}=4$ supersymmetry \cite{Heluanietal}.
+
+The basic, non vanishing OPEs for $bc\beta\gamma$ systems are
+\begin{align*}
+b_i(z)c^j(w) = c^j(z)b_i(w) &\sim {\delta^{j}_i \over z - w} \\
+\beta_i(z)\gamma^j(w) = -\gamma^j(z)\beta_i(w) &\sim {-\delta^{j}_i \over z - w}
+\end{align*}
+
+As explained in previous sections, odd spin operators in the symmetric orbifold theories will be built up from the Ramond sector vacuum, so we will also need the OPEs between the ghosts and the operator $\Sigma(z)$ (often called the spin field) that maps $|0\rangle_{NS} \rightarrow |0\rangle_{R}$:
+\begin{align*}
+\beta(z)\Sigma(w) &\sim {\tilde{\Sigma}(w) \over (z - w)^{1/2}}\\
+\gamma(z)\Sigma(w) &\sim 0.
+\end{align*}
+
+\subsection{Multiparticle states and elliptic genera for K3}
+
+
+Consider the chiral half of the $\mc N= (4,4)$ $\sigma$-model on the symmetric orbifold  $\Sym^N X$ where $X$ is $T^4$ or a $K3$ surface. 
+After performing the half-twist, this is all that remains of the supersymmetric $\sigma$-model.
+ According to \cite{DMVV} we can regard the direct sum of the vacuum modules of the chiral algebras of $\Sym^N X$ as being itself a Fock space. The generators of this Fock space are given by the single string states. These single string states are the analog of single trace operators in a gauge theory, and will ultimately be matched with single-particle states in the holographic dual.
+
+Let $c(n,m)$ be the super dimension of the space of operators in supersymmetric $\sigma$-model into $X$, which are of weight $n$ under $L_0$ and of weight $m$ under the action of the Cartan of $SU(2)_R$.  
+Let $q,y$ be fugacities for $L_0$ and the Cartan of $SU(2)_R$, respectively---the elliptic genus $\chi(X;q,y)$ is a series in these variables.  
+Of course, for $X = T^4$ the elliptic genus vanishes, so it is safe to assume from hereon that $X$ is a K3 surface.
+
+Introducing another parameter $p$, which keeps track of the symmetric power, we can consider the generating series
+\begin{equation} 
+	\sum_{n \geq 0} p^n \chi(\Sym^n X; q,y) 
+\end{equation}
+%where $\chi$ indicates the character of the vacuum module of the $bc\beta\gamma$\footnote{We will call the system a $bc\beta\gamma$ system by a slight abuse of terminology: we will not employ the A-type twist on the left-movers when restricting to $\bar{Q}_+$ cohomology, so that the would-be $bc$ fields have fermionic statistics and spin.} on $\Sym^n X$.  
+The main result of \cite{deBoer,Verlinde?} is an expression for this generating series
+\begin{equation} 
+	\sum_{n} p^n \chi(\Sym^n X; q,y) = \prod_{l,m \geq 0,n >0 } \frac{1}{(1 - p^n q^m y^l)^{c(nm,l)}}
+\end{equation}
+where $c(m,l)$ is a function of the quantity $4m-l^2$.
+In other words, we can interpret the direct sum of the vacuum modules of the $\Sym^n X$ $\sigma$-model as being the Fock space generated by a trigraded super vector space 
+\begin{equation} 
+	V =\oplus_{n \ge 0,m,l} V_{n,m,l} 
+\end{equation}
+where the super dimension of $V_{n,m,l}$ is $c(nm,l)$.
+
+Setting $V_n = \oplus_{m,l} V_{n,m,l}$, we see that $V_n$ is isomorphic to the vacuum module of the $bc\beta\gamma$ system on the original surface $X$, except with a different conformal structure.  
+A state of the $\sigma$-model into $X$ of spin $k$ is of spin $k/n$ in $V_n$.  
+
+The states in $V_N$ will play the role of the single-trace operators in the large $N$ limit of the $\Sym^N X$ $\sigma$-model.   
+These states can be understood geometrically as follows---let us focus just on the $S^1$-modes of this $\sigma$-model.
+A map $S^1 \to \Sym^N X$ is the same as an $N$-fold cover $M \to S^1$ together with a map $M \to X$.  
+Therefore, the Hilbert space of the $\sigma$-model on $\Sym^N X$ decomposes over sectors corresponding to the topological type of this $N$-fold cover, which are labelled by partitions of $N$. 
+The single string sector is the sector corresponds to $M$ being connected. 
+This means that the monodromy of the cover $M \to  S^1$ is conjugate to the length $N$ cycle of type $(1 \dots N)$ in the symmetric group $S_N$.  
+
+Since the $N$-fold cover of $S^1$ corresponding to the single trace sector is connected, the Hilbert space of the single-trace sector is isomorphic to that of the original $\sigma$-model into $X$.  
+However, the conformal structure is different---a rotation along $S^1$ in this $\sigma$-model rotates the total space $1/N$ times.
+This tells us that an operator in the single-trace sector carries spin $1/N$ times that of the corresponding state of the original $\sigma$-model. 
+The projection onto $\Z_N$-invariant states ultimately restores integrality of the spin. 
+In particular, the generating function of elliptic genera of $\Sym^N X$ decomposes as
+\begin{equation}
+\sum_{N\geq 0}p^N \chi(\Sym^N X; q, y) = \prod_{n>0}\sum_{N \geq 0}p^{n N}\chi(\Sym^{N}\mathcal{H}^{\Z_n}_{(n)}; q, y)
+\end{equation}
+with $\sum_{N \geq 0}p^{n N}\chi(\Sym^{N}\mathcal{H}^{\Z_n}_{(n)}; q, y) = \prod_{l, m\geq0}{1 \over (1 - p q^m y^l)^{c(mn, l)}}$. Here, $\mathcal{H}_{(n)}$ is the Hilbert space of a single long string on $X$ of length $n$ with winding number $1/n$. 
+
+We can extract the $N \rightarrow \infty$ limit of this expression, following the logic employed in \cite{de Boer, MAGOO, BKKP}. First, in preparation for comparison to supergravity, we perform spectral flow\footnote{We shift the overall power of $q$ by $q^{c/24}$ so that the vacuum occurs at $q^0$.} to the NS sector:
+\begin{align*}
+\sum_{N \geq 0}p^N \chi_{NS}(\Sym^N X; q, y) & = \sum_{N\geq 0}p^N \chi(\Sym^N X; q, y \sqrt{q}) y^N q^{N/2} \\
+&= \prod_{\substack{n \geq 0 \\ m \geq 0, m \in \Z \\ l \in \Z}} \frac{1}{(1 - p^n q^{m + l/2 + n/2} y^{l + n})^{c(nm,l)}} \\
+&= \prod_{\substack{n \geq0 \\ m' \geq |l'|/2, \ 2 m' \in \Z_{\geq 0} \\ l' \in \Z, \ m' - l'/2 \in \Z_{\geq 0}}} \frac{1}{(1 - p^n q^{m'} y^{l'})^{c(nm' - nl'/2,n-l')}}.
+\end{align*}
+
+At any power of $q$, there will be contributions from terms of the form ${1 \over (1 - p y^{l'})^{c(-l'/2, l'-1)}}$. The only nonvanishing such term in our case when $m'=0$ is ${1 \over (1 - p)^2}$. We wish to isolate the coefficients of all terms of the form $q^a y^b p^N$ for $a \ll N$. Taylor expanding ${1 \over (1-p)^2}$ and extracting the desired coefficient gives $N h(a, b) + \mathcal{O}(N^0)$ where $h(a, b)$ is the coefficient of $q^a y^b$ in
+\begin{equation}\nonumber
+\prod_{\substack{m' \geq |l'|/2, \ 2 m' \in \Z_{\geq 0} \\ l' \in \Z, \  m' - l'/2 \in \Z_{\geq 0}}}{1 \over (1 - q^{m'} y^{l'})^{f(m', l')}}
+\end{equation}with $f(m', l'):= \sum_{n >0}c(n(m' -  l'/2), l' - n)$.  The coefficients $c(M, L)$ vanish for $4M-L^2 < -1$ so for $m' \geq 1$ the sum truncates to $f(m', l') = \sum_{n=1}^{4m'}c(n(m' -  l'/2), l' - n)$.
+
+Hence, we can get a finite contribution upon dividing by $N$. 
+
+We can also write out the non-vanishing $f(m', l')$ more explicitly, recalling that the coefficients are constrained to lie in the following range of the Jacobi variable: $-2m' \leq l' \leq 2m', l' \equiv 2 m' \mod 2$. Reproducing the elementary manipulations in Appendix A of \cite{BKKP} (in particular, using the fact that $c(N, L)$ depends only on $4N-L^2$ and $L \ {\rm mod} \ 2$) allows us to rewrite the sum as
+\begin{equation}\label{eq:fml2}
+f(m', l') = \left( \sum_{\tilde{n} \in \Z}c(m'^2 - l'^2/4, \tilde{n}) \right) - c(0, l'),
+\end{equation} where $n':= n - 2m$ in the first term. 
+The first term is non-vanishing only when $l' = \pm 2 m'$ and then it reduces to the Witten index of K3, i.e. $f(m', \pm 2m') = 24$ for general $m'$. Otherwise, we have $f(m', l') = -c(0, l')$. When $m' \in \mathbb{Z}$ the nonvanishing such term is $-c(0, 0) = -20$, and when $m' \in \Z + 1'/2$ we have $-c(0, 1) = -2$ and $-c(0, -1) = -2$. 
+
+In sum, we obtain
+\begin{align*}
+{\rm lim}_{N \rightarrow \infty}{\chi_{NS}(\Sym^{N} X; q, y) \over N} &= \prod_{k \geq 1}{(1 - q^k)^{20}(1 - q^{k-1/2}y^{-1})^2(1 - q^{k-1/2}y)^2 \over (1 - q^{k/2}y^k)^{24}(1 - q^{k/2}y^{-k})^{24}} \\
+&= 1 + \left({22 \over y} + 22 y \right)q^{1/2} + \left({277 \over y^2} + 464 + 277 y^2 \right)q + \text{O}(q^{3/2}).
+\end{align*} 
+We will denote this large $N$ limit by $\chi_{NS}(\Sym^\infty X ; q,y)$. 
+In particular, for there are two bosonic towers corresponding to (anti)chiral primary states and three fermionic towers corresponding to (derivatives of) the states capturing the cohomology of a single copy of K3. At $k=1$, there is a cancellation to ${(1 - q)^{20} \over (1 - q^{1/2}y)^{22}(1 - q^{1/2}y^{-1})^{22}}$.
+
+Throughout this derivation, we have used the coefficients $c(m, l)$ that appear in the expansion of the K3 elliptic genus in the Ramond sector: $\sum_{m \geq 0, l \in \mathbb{Z}} c(m, l) q^m y^l$. We can also rewrite things slightly in terms of the coefficients of the NS sector elliptic genus expansion: $\sum_{2 m' \in \mathbb{Z}_{\geq 0}, l' \in \mathbb{Z}} \mathcal{C}(m', l') q^{m'} y^{l'} = 2 + (20/y + 20 y)q^{1/2} + (2/y^2 - 128 + 2 y^2)q + \ldots$ using the half-integral spectral flow relation on the coefficients of the elliptic genera: $\mathcal{C}(m', l') = c(m'-l'/2, l'-1)$. 
+
+%Applying spectral flow to the second quantized elliptic genus and reindexing $n,m,l$ gives:
+%\begin{equation}
+%\prod_{\substack{n \geq0 \\ m \in \Z_{\geq 0} \\ l \in \Z}} \frac{1}{(1 - p^n q^{m} y^{l})^{c(nm - nl/2,n-l)}} = \prod_{\substack{n \geq0 \\ m \geq |l|/2, \ 2 m \in \Z_{\geq 0} \\ l \in \Z, \ m - l/2 \in \Z_{\geq 0}}} \frac{1}{(1 - p^n q^{m} y^{l})^{\mathcal{C}(n m - n l/2 - n/2 + l/2 + 1/2, l - n + 1)}}.
+%\end{equation}
+%The same set of manipulations as before give (again with $m \in \mathbb{Z}_{\geq 0}/2, l \in \mathbb{Z}, -2m \leq l \leq 2m, l \equiv 2 m (\text{ mod } 2)$)
+%\begin{equation}
+%f(m, l) = \left(\sum_{n'= - \infty}^{\infty}\mathcal{C}(m^2 - l^2/4 + (n' + 1)/2, n' + 1) \right) - \mathcal{C}((l + 1)/2, l + 1)
+%\end{equation} to the same conclusion. As before, $n':= n - 2m$. In particular, when $l = \pm 2 m$, the sum only gets nonvanishing contributions from $n' = -1, 0, 1$, which contribute $2, 20, 2$, respectively. 
+
+Let us unpack those contributions a bit more, starting from the expression 
+\begin{align*}\label{eq:fml1}
+f(m', l') &= \sum_{n=1}^{4m'}c(n(m'-l'/2), l'-n) \\
+&= \sum_{n=1}^{4m'}\mathcal{C}(n(m'-l'/2 - 1/2) + l'/2 + 1/2, l' - n +1).
+\end{align*} In the second line, we have used spectral flow to rewrite the sum in terms of the NS sector elliptic genus.
+
+
+Let us henceforth drop the primes on our variables, for ease of notation, and then take for example the states $l = 2 m$. The summand is nonvanishing only for $\mathcal{C}(1/2, 1)= 20, \mathcal{C}(0, 0)=2, \mathcal{C}(1, 2)= 2$ and, of course, have contributions which sum to 24. The solutions to these conditions occur at $n=2m, n = 1 + 2m, n=2m -1$ $ \ (\forall m >0, 2m \in \Z_{\geq 0})$ and these values of $n$ do appear in the sum. The corresponding states therefore have quantum numbers $(n, m, l) = 20\times(j, j/2, j), 2\times(j + 1, j/2, j), 2\times(j-1, j/2, j), \ j \in \Z_{>0}$ and come from chiral primary states in the physical theory. In the next section, we will recall the corresponding states in the physical theory \cite{luninmathur, others...}. Similarly, for $l = -2m$ we will obtain contributions from anti-chiral primary states \textcolor{blue}{finish}. 
+
+We can also discuss the origin of the terms of negative multiplicity, which contribute to the numerator of the index. Taking $f(m,l)$ as it is written in \ref{eq:fml1} and studying $l=0, k \in \mathbb{Z}_{\geq 1}$, there is a cancellation between the $n=4k$ term, $\mathcal{C}(4k(k-1/2) + 1/2,-4k+1)=20$, and the rest of the terms, which sum to $-40$. Similar cancellations apply to $l=\pm 1, m = k-1/2, k \in \mathbb{Z}_{\geq 1}$, wherein the last terms of the sum are always $\mathcal{C}(4(k-1)^2, 4-4k) = 2, \mathcal{C}((1-2k)^2, 2-4k) = 2$, respectively, and the remainder of the terms produce coefficients summing to -4. Alternatively, one can use manipulations on Jacobi form coefficients to rewrite $f(m, l)$ as in \ref{eq:fml2}:
+\begin{equation}
+f(m', l') =\left(\sum_{\tilde{n}= - \infty}^{\infty}\mathcal{C}(m'^2 - l'^2/4 + (\tilde{n} + 1)/2, \tilde{n} + 1) \right) - \mathcal{C}((l' + 1)/2, l' + 1)
+\end{equation} with $\tilde{n} = n-2m$ as before. The first term sums to zero when $l=0, m= k$ and for $l=\pm 1, m = k-1/2$, and the second gives the desired negative coefficients.
+
+
+\textcolor{blue}{finish discussion of quantum numbers of states contributing to the infinite-N index}
+
+\subsection{Large $N$ limit via the Loday--Quillen--Tsygan theorem} 
+
+
+\section{Matching with Kodaira-Spencer theory on the super-conifold}
+
+
+\subsection{The elliptic genus of Kodaira--Spencer theory} 
+
+Denote by $\left(\mathbf{\frac{m}{2}}\right)_S$ the short representation of $\lie{psu}(1,1|2)$ whose highest weight vector has $(J_0^3,L_0)$ eigenvalues $(\frac{m}{2}, \frac{m}{2})$. 
+Denote by $y$ the fugacity for the $U(1)$ symmetry $2J_0^3$ and $q$ the fugacity for the $U(1)$ symmetry $L_0$.
+Let 
+\beqn
+D = (1-q)(1-q^{1/2} y)(1-q^{-1/2}y^{-1}) .
+\eeqn
+
+Let's first consider the case where the internal manifold is just a point.
+This is just the topological string with $B$-branes wrapping 
+\beqn
+\C \subset \C^3 .
+\eeqn 
+
+\begin{prop}
+The single particle states for Kodaira--Spencer theory on $\C^3$ with branes wrapping $\C \subset \C^3$ decompose as
+\beqn
+\oplus_{m \geq 1} \left(\mathbf{\frac{m}{2}}\right)_S 
+\eeqn
+From this, we deduce that the single particle index for Kodaira--Spencer theory on $\C^3$ is
+\beqn
+\frac{q^2 - 3 q + q^{1/2}(y+y^{-1})}{D} .
+\eeqn
+\end{prop}
+
+\begin{itemize} 
+\item State $\mu \sim n^{-k} \d \log n \d w_1 \delta_{z=0}$.
+For $k \geq 1$ these even states and their descendants contribute
+\beqn
+\frac{y q^{1/2}}{D} 
+\eeqn
+to the single particle index. 
+\item Lowest lying state $\mu \sim n^{-k} \d \log n \d w_2 \delta_{z=0}$.
+For $k \geq 1$ these even states and their descendants contribute
+\beqn
+\frac{y^{-1} q^{1/2}}{D} 
+\eeqn
+to the single particle index. 
+\item Lowest lying state $\mu \sim n^{-k} \d \log n \d z \delta_{z=0}$.
+For $k \geq 2$ these even states and their descendants contribute 
+\beqn
+\frac{q^2}{D} 
+\eeqn
+to the single particle index. 
+\item State $\alpha \sim n^{1-k}\delta_{z=0}$. 
+For $k \geq 1$ these odd states and their descendants contribute 
+\beqn
+- \frac{q}{D} .
+\eeqn
+to the single particle index.
+\item State $\gamma \sim n^{1-k}\delta_{z=0}$. 
+For $k \geq 1$ these odd states and their descendants contribute 
+\beqn
+- \frac{q}{D} .
+\eeqn
+to the single particle index.
+\item \item State $\nu \sim n^{1-k}\delta_{z=0}$. 
+For $k \geq 1$ these odd states contribute 
+\beqn
+- \frac{q}{D} .
+\eeqn
+to the single particle index.
+\end{itemize}
+
+In total we find that the multi particle gravitational index is 
+\beqn
+\frac{q^2 - 3q + q^{1/2} (y+y^{-1})}{(1-q)(1-q^{1/2} y)(1-q^{-1/2}y^{-1})} = \frac{y q^{1/2}}{1-y q^{1/2}} + \frac{y^{-1} q^{1/2}}{1-y^{-1}  q^{1/2}} - \frac{q}{1-q} .
+\eeqn
+
+\subsection{The supergravity elliptic genus} 
+
+We consider twisted type IIB supergravity on a Calabi--Yau surface $X$, where $X$ could be $T^4$ or a $K3$ surface. 
+
+\begin{prop} 
+The supergravity states for the $D1-D5$ brane system in twisted type IIB supergravity on a compact Calabi--Yau surface $X$ decompose as
+\beqn\label{eqn:states1}
+\oplus_{m \geq 1} \left(\mathbf{\frac{m}{2}}\right)_S  \otimes H^{\bu,\bu}(X) = \oplus_{m \geq 1} \oplus_{i,j} \left(\mathbf{\frac{m}{2}}\right)_S  \otimes H^{i,j}(X) .
+\eeqn
+In particular, when $X$ is a $K3$ surface the supergravity index is 
+\beqn\label{eqn:sugra_index}
+f_{KS}(q,y) = 24 \frac{q^2 - 3 q + q^{1/2}(y+y^{-1})}{D} .
+\eeqn
+\end{prop}
+
+In \cite{dB1} the chiral half of the supergravity states are found to decompose as
+\beqn
+\oplus_{m \geq 0} \oplus_{i,j} \left(\mathbf{\frac{m+i}{2}}\right)_S  \otimes H^{i,j}(X) .
+\eeqn
+Denote the single particle index of these supergravity states by $f_{sugra}(q,y)$. 
+One of the main results of \cite{dB1} is that the corresponding multiparticle index agrees with the large $N$ elliptic genus of the orbifold CFT of a $K3$ surface
+\beqn
+\chi_{NS}(\Sym^\infty X ; q,y) = {\rm PExp} \left[f_{sugra}(q,y) \right]
+\eeqn
+where ${\rm PExp}$ is the plethystic exponential.
+
+Compared to \eqref{eqn:states1} there are two sources of discrepancy
+\begin{itemize} 
+\item First, the states $(\mathbf{0})_S \otimes H^{0,\bu}(X)$ which appear in the treatment of \cite{dB1} but not in Kodaira--Spencer theory.
+When computing the elliptic genus these states are thrown away. 
+\item Second, the states $(\mathbf{\frac12})_S \otimes H^{2,\bu}(X)$ which appear in the treatment of \cite{dB1} but no in Kodaira--Spencer theory. 
+\end{itemize} 
+
+For $X$ a $K3$ surface, the states $(\mathbf{\frac12})_S \otimes H^{2,\bu}(X)$ contribute the single particle index
+\beqn
+2 f_1 (q,y) = \frac{2}{1-q}\left(-2 q + q^{1/2}(y+y^{-1})\right) .
+\eeqn
+If we subtract this from the supergravity index we find an exact match with the supergravity index computed by \cite{dB1}
+\beqn
+f_{sugra}(q,y) = f_{KS}(q,y) - 2 f_1(q,y) .
+\eeqn
+
+
+\appendix
+
+\section{extra stuff}
 \subsection{Chiral primary correlation functions} We state for reference the results of \cite{LuninMathur, Ramgoolametal} in computing certain three-point functions of (anti)chiral primaries and certain other states in their multiplets. Correlation functions involving twist fields can either be computed on the base space where the fields are multivalued, or by passing to the appropriate covering space where the fields are single-valued. The latter strategy is employed in practice, wherein one needs to determine the appropriate meromorphic covering map. The covering space will typically have a nontrivial curvature which must be accounted for as well, typically by conformally mapping to a flat metric at the expense of introducing a Liouville field to account for the resulting curvature anomaly. The leading order contribution to such correlation functions at large $N=N_1N_5$ is the correlation function on the sphere. 
 
 We denote the chiral primaries coming from combining the $\sigma^0_{l+1}$ with either one or two fermions as $\sigma^1_{l+1}, \sigma^{\dot{2}}_{l+1}, \sigma^{1\dot{2}}_{l+1}$ in the obvious notation. Since each of these operators are in the $\mathbb{Z}_{l+1}$ twisted sectors one must construct operators in the full (holomorphic) $S_N$ orbifold theory by symmetrization: 
@@ -475,166 +756,7 @@ There is one subtlety we should keep in mind: the supergravity point and the sym
 \end{equation}
 where $S, \Sigma$ denote the supergravity scalar fields dual to the $(0,0)$ and $(2, 2)$ forms and $O^{S, \Sigma}$ the operators that source them. 
 
-
-\subsection{Multiparticle states and elliptic genera for K3}
-One can start with the single-particle states furnished by chiral primaries and their $SU(1,1,|2)$ descendents and construct a Fock space. These are dual to 1/4-BPS states in the full physical SCFT.
-
-Consider the chiral half of the $\mc N= (4,4)$ $\sigma$-model on the symmetric orbifold  $\Sym^N X$ where $X$ is $T^4$ or a $K3$ surface. 
- According to \cite{DMVV} we can regard the direct sum of the vacuum modules of the chiral algebras of $\Sym^N X$ as being itself a Fock space. The generators of this Fock space are given by the single string states. These single string states are the analog of single trace operators in a gauge theory, and will ultimately be matched with single-particle states in the holographic dual.
-
-Let $c(n,m)$ be the super dimension of the space of operators in the $bc\beta\gamma$ system on $X$, which are of weight $n$ under $L_0$ and of weight $m$ under the action of the Cartan of $SU(2)_R$.  
-Let $q,y$ be fugacities for $L_0$ and the Cartan of $SU(2)_R$, respectively.  
-If we introduce another parameter $p$ we can consider the generating series
-\begin{equation} 
-	\sum_{n \geq 0} p^n \chi(\Sym^n X, q,y) 
-\end{equation}
-where $\chi$ indicates the character of the vacuum module of the $bc\beta\gamma$\footnote{We will call the system a $bc\beta\gamma$ system by a slight abuse of terminology: we will not employ the A-type twist on the left-movers when restricting to $\bar{Q}_+$ cohomology, so that the would-be $bc$ fields have fermionic statistics and spin.} on $\Sym^n X$.  
-The main result of \cite{??} is that
-\begin{equation} 
-	\sum_{n} p^n \chi(\Sym^n X, q,y) = \prod_{l,m \geq 0,n >0 } \frac{1}{(1 - p^n q^m y^l)^{c(nm,l)}}. 
-\end{equation}
-This means that we can interpret the direct sum of the vacuum modules of the $\Sym^n X$ model as being the Fock space generated by a trigraded super vector space 
-\begin{equation} 
-	V =\oplus_{n \ge 0,m,l} V_{n,m,l} 
-\end{equation}
-where the super dimension of $V_{n,m,l}$ is $c(nm,l)$.  
-
-Setting $V_n = \oplus_{m,l} V_{n,m,l}$, we see that $V_n$ is isomorphic to the vacuum module of the $bc\beta\gamma$ system on the original surface $X$, except with a different conformal structure.  
-A state of the $\sigma$-model into $X$ of spin $k$ is of spin $k/n$ in $V_n$.  
-
-The states in $V_N$ will play the role of the single-trace operators in the large $N$ limit of the $\Sym^N X$ $\sigma$-model.   
-These states can be understood geometrically as follows---let us focus just on the $S^1$-modes of this $\sigma$-model.
-A map $S^1 \to \Sym^N X$ is the same as an $N$-fold cover $M \to S^1$ together with a map $M \to X$.  
-Therefore, the Hilbert space of the $\sigma$-model on $\Sym^N X$ decomposes over sectors corresponding to the topological type of this $N$-fold cover, which are labelled by partitions of $N$. 
-The single string sector is the sector corresponds to $M$ being connected. 
-This means that the monodromy of the cover $M \to  S^1$ is conjugate to the length $N$ cycle of type $(1 \dots N)$ in the symmetric group $S_N$.  
-
-Since the $N$-fold cover of $S^1$ corresponding to the single trace sector is connected, the Hilbert space of the single-trace sector is isomorphic to that of the original $\sigma$-model into $X$.  
-However, the conformal structure is different---a rotation along $S^1$ in this $\sigma$-model rotates the total space $1/N$ times.
-This tells us that an operator in the single-trace sector carries spin $1/N$ times that of the corresponding state of the original $\sigma$-model. 
-The projection onto $\Z_N$-invariant states ultimately restores integrality of the spin. 
-In particular, the generating function of elliptic genera of $\Sym^N X$ decomposes as
-\begin{equation}
-\sum_{N\geq 0}p^N \chi(\Sym^N X; q, y) = \prod_{n>0}\sum_{N \geq 0}p^{n N}\chi(\Sym^{N}\mathcal{H}^{\Z_n}_{(n)}; q, y)
-\end{equation}
-with $\sum_{N \geq 0}p^{n N}\chi(\Sym^{N}\mathcal{H}^{\Z_n}_{(n)}; q, y) = \prod_{l, m\geq0}{1 \over (1 - p q^m y^l)^{c(mn, l)}}$. Here, $\mathcal{H}_{(n)}$ is the Hilbert space of a single long string on $X$ of length $n$ with winding number $1/n$. 
-
-We can extract the $N \rightarrow \infty$ limit of this expression, following the logic employed in \cite{de Boer, MAGOO, BKKP}. First, in preparation for comparison to supergravity, we spectral flow\footnote{We shift the overall power of $q$ by $q^{c/24}$ so that the vacuum occurs at $q^0$.} to the NS sector:
-\begin{align*}
-\sum_{N \geq 0}p^N \chi_{NS}(\Sym^N X; q, y) & = \sum_{N\geq 0}p^N \chi(\Sym^N X; q, y \sqrt{q}) y^N q^{N/2} \\
-&= \prod_{\substack{n \geq 0 \\ m \geq 0, m \in \Z \\ l \in \Z}} \frac{1}{(1 - p^n q^{m + l/2 + n/2} y^{l + n})^{c(nm,l)}} \\
-&= \prod_{\substack{n \geq0 \\ m' \geq |l'|/2, \ 2 m' \in \Z_{\geq 0} \\ l' \in \Z, \ m' - l'/2 \in \Z_{\geq 0}}} \frac{1}{(1 - p^n q^{m'} y^{l'})^{c(nm' - nl'/2,n-l')}}.
-\end{align*}
-
-At any power of $q$, there will be contributions from terms of the form ${1 \over (1 - p y^{l'})^{c(-l'/2, l'-1)}}$. The only nonvanishing such term in our case when $m'=0$ is ${1 \over (1 - p)^2}$. We wish to isolate the coefficients of all terms of the form $q^a y^b p^N$ for $a << N$. Taylor expanding ${1 \over (1-p)^2}$ and extracting the desired coefficient gives $N h(a, b) + \mathcal{O}(N^0)$ where $h(a, b)$ is the coefficient of $q^a y^b$ in
-\begin{equation}\nonumber
-\prod_{\substack{m' \geq |l'|/2, \ 2 m' \in \Z_{\geq 0} \\ l' \in \Z, \  m' - l'/2 \in \Z_{\geq 0}}}{1 \over (1 - q^{m'} y^{l'})^{f(m', l')}}
-\end{equation}with $f(m', l'):= \sum_{n >0}c(n(m' -  l'/2), l' - n)$.  The coefficients $c(M, L)$ vanish for $4M-L^2 < -1$ so for $m' \geq 1$ the sum truncates to $f(m', l') = \sum_{n=1}^{4m'}c(n(m' -  l'/2), l' - n)$.
-
-Hence, we can get a finite contribution upon dividing by $N$. 
-
-We can also write out the non-vanishing $f(m', l')$ more explicitly, recalling that the coefficients are constrained to lie in the following range of the Jacobi variable: $-2m' \leq l' \leq 2m', l' \equiv 2 m' {\rm (mod 2)}$. Reproducing the elementary manipulations in Appendix A of \cite{BKKP} (in particular, using the fact that $c(N, L)$ depends only on $4N-L^2$ and $L \ {\rm mod} \ 2$) allows us to rewrite the sum as
-\begin{equation}\label{eq:fml2}
-f(m', l') = \left( \sum_{\tilde{n} \in \Z}c(m'^2 - l'^2/4, \tilde{n}) \right) - c(0, l'),
-\end{equation} where $n':= n - 2m$ in the first term. 
-The first term is non-vanishing only when $l' = \pm 2 m'$ and then it reduces to the Witten index of K3, i.e. $f(m', \pm 2m') = 24$ for general $m'$. Otherwise, we have $f(m', l') = -c(0, l')$. When $m' \in \mathbb{Z}$ the nonvanishing such term is $-c(0, 0) = -20$, and when $m' \in \Z + 1'/2$ we have $-c(0, 1) = -2$ and $-c(0, -1) = -2$. 
-
-In sum, we obtain
-\begin{align*}
-{\rm lim}_{N \rightarrow \infty}{\chi_{NS}(\Sym^{N} K3; q, y) \over N} &= \prod_{k \geq 1}{(1 - q^k)^{20}(1 - q^{k-1/2}y^{-1})^2(1 - q^{k-1/2}y)^2 \over (1 - q^{k/2}y^k)^{24}(1 - q^{k/2}y^{-k})^{24}} \\
-&= 1 + \left({22 \over y} + 22 y \right)q^{1/2} + \left({277 \over y^2} + 464 + 277 y^2 \right)q + \text{O}(q^{3/2}).
-\end{align*} 
-In particular, for there are two bosonic towers corresponding to (anti)chiral primary states and three fermionic towers corresponding to (derivatives of) the states capturing the cohomology of a single copy of K3. At $k=1$, there is a cancellation to ${(1 - q)^{20} \over (1 - q^{1/2}y)^{22}(1 - q^{1/2}y^{-1})^{22}}$.
-
-Throughout this derivation, we have used the coefficients $c(m, l)$ that appear in the expansion of the K3 elliptic genus in the Ramond sector: $\sum_{m \geq 0, l \in \mathbb{Z}} c(m, l) q^m y^l$. We can also rewrite things slightly in terms of the coefficients of the NS sector elliptic genus expansion: $\sum_{2 m' \in \mathbb{Z}_{\geq 0}, l' \in \mathbb{Z}} \mathcal{C}(m', l') q^{m'} y^{l'} = 2 + (20/y + 20 y)q^{1/2} + (2/y^2 - 128 + 2 y^2)q + \ldots$ using the half-integral spectral flow relation on the coefficients of the elliptic genera: $\mathcal{C}(m', l') = c(m'-l'/2, l'-1)$. 
-
-%Applying spectral flow to the second quantized elliptic genus and reindexing $n,m,l$ gives:
-%\begin{equation}
-%\prod_{\substack{n \geq0 \\ m \in \Z_{\geq 0} \\ l \in \Z}} \frac{1}{(1 - p^n q^{m} y^{l})^{c(nm - nl/2,n-l)}} = \prod_{\substack{n \geq0 \\ m \geq |l|/2, \ 2 m \in \Z_{\geq 0} \\ l \in \Z, \ m - l/2 \in \Z_{\geq 0}}} \frac{1}{(1 - p^n q^{m} y^{l})^{\mathcal{C}(n m - n l/2 - n/2 + l/2 + 1/2, l - n + 1)}}.
-%\end{equation}
-%The same set of manipulations as before give (again with $m \in \mathbb{Z}_{\geq 0}/2, l \in \mathbb{Z}, -2m \leq l \leq 2m, l \equiv 2 m (\text{ mod } 2)$)
-%\begin{equation}
-%f(m, l) = \left(\sum_{n'= - \infty}^{\infty}\mathcal{C}(m^2 - l^2/4 + (n' + 1)/2, n' + 1) \right) - \mathcal{C}((l + 1)/2, l + 1)
-%\end{equation} to the same conclusion. As before, $n':= n - 2m$. In particular, when $l = \pm 2 m$, the sum only gets nonvanishing contributions from $n' = -1, 0, 1$, which contribute $2, 20, 2$, respectively. 
-
-Let us unpack those contributions a bit more, starting from the expression 
-\begin{align*}\label{eq:fml1}
-f(m', l') &= \sum_{n=1}^{4m'}c(n(m'-l'/2), l'-n) \\
-&= \sum_{n=1}^{4m'}\mathcal{C}(n(m'-l'/2 - 1/2) + l'/2 + 1/2, l' - n +1).
-\end{align*} In the second line, we have used spectral flow to rewrite the sum in terms of the NS sector elliptic genus.
-
-
-Let us henceforth drop the primes on our variables, for ease of notation, and then take for example the states $l = 2 m$. The summand is nonvanishing only for $\mathcal{C}(1/2, 1)= 20, \mathcal{C}(0, 0)=2, \mathcal{C}(1, 2)= 2$ and, of course, have contributions which sum to 24. The solutions to these conditions occur at $n=2m, n = 1 + 2m, n=2m -1$ $ \ (\forall m >0, 2m \in \Z_{\geq 0})$ and these values of $n$ do appear in the sum. The corresponding states therefore have quantum numbers $(n, m, l) = 20\times(j, j/2, j), 2\times(j + 1, j/2, j), 2\times(j-1, j/2, j), \ j \in \Z_{>0}$ and come from chiral primary states in the physical theory. In the next section, we will recall the corresponding states in the physical theory \cite{luninmathur, others...}. Similarly, for $l = -2m$ we will obtain contributions from anti-chiral primary states \textcolor{blue}{finish}. 
-
-We can also discuss the origin of the terms of negative multiplicity, which contribute to the numerator of the index. Taking $f(m,l)$ as it is written in \ref{eq:fml1} and studying $l=0, k \in \mathbb{Z}_{\geq 1}$, there is a cancellation between the $n=4k$ term, $\mathcal{C}(4k(k-1/2) + 1/2,-4k+1)=20$, and the rest of the terms, which sum to $-40$. Similar cancellations apply to $l=\pm 1, m = k-1/2, k \in \mathbb{Z}_{\geq 1}$, wherein the last terms of the sum are always $\mathcal{C}(4(k-1)^2, 4-4k) = 2, \mathcal{C}((1-2k)^2, 2-4k) = 2$, respectively, and the remainder of the terms produce coefficients summing to -4. Alternatively, one can use manipulations on Jacobi form coefficients to rewrite $f(m, l)$ as in \ref{eq:fml2}:
-\begin{equation}
-f(m', l') =\left(\sum_{\tilde{n}= - \infty}^{\infty}\mathcal{C}(m'^2 - l'^2/4 + (\tilde{n} + 1)/2, \tilde{n} + 1) \right) - \mathcal{C}((l' + 1)/2, l' + 1)
-\end{equation} with $\tilde{n} = n-2m$ as before. The first term sums to zero when $l=0, m= k$ and for $l=\pm 1, m = k-1/2$, and the second gives the desired negative coefficients.
-
-
-\textcolor{blue}{finish discussion of quantum numbers of states contributing to the infinite-N index}
-
-
-
-
-\section{The chiral de Rham complex and the half-twisted model}
-
-The two-dimensional $\cN=(4,4)$ $\sigma$-model admits a half-twist along the lines of \cite{Kapustin, Witten} which results in a purely chiral theory.
-For this purpose, it can be convenient to recombine the fermions into vectors, and complexify the bosons $X$ so that we chose local holomorphic and anti-holomorphic coordinates on the target space: $X^i, X^{\bar{i}}$. 
-Then, explicitly, the fermionic fields are sections of the following bundles: 
-\begin{align*}
-\Psi^i &\in \Gamma(K^{1/2}\otimes X^*(T^{(1,0)}M))\\
-\Psi^{\bar{i}}&\in \Gamma(K^{1/2}\otimes X^*(T^{(0,1)}M))\\
-\bar{\Psi}^{i} &\in \Gamma(\bar{K}^{1/2}\otimes X^*(T^{(1,0)}M))\\
-\bar{\Psi}^{\bar{i}} &\in \Gamma(\bar{K}^{1/2}\otimes X^*(T^{(0,1)}M))
-\end{align*}  
-where as before the left-movers are given by $\Psi$ and the right-movers by $\bar{\Psi}$ and the pullback of the sigma model map $X \colon \Sigma \rightarrow M$ is denoted by $X^*$.
-
-To pass to the half-twisted model, we will restrict to the cohomology of the supercharge $\bar{Q}_+$, after we twist with a certain combination of R-symmetry currents. It is common, as in  \cite{Kapustin}, to perform the A-type twist by the current ${1 \over 2}(J_L - J_R)$ before passing to cohomology. We will instead simply consider a twist by $-J_R$, on the right-movers only, such that the twisted fields live in the following spaces of sections:
-
-\begin{align*}
-\Psi^i &\in \Gamma(K^{1/2}\otimes \phi^*(T^{(1,0)}M))\\
-\Psi^{\bar{i}} &\in \Gamma(K^{1/2}\otimes \phi^*(T^{(0,1)}M))\\
-\bar{\Psi}^i &\in \Gamma(\bar{K} \otimes\phi^*(T^{(1,0)}M))\\
-\bar{\Psi}^{\bar{i}} &\in  \Gamma(\phi^*(T^{(0,1)}M))
-\end{align*} 
-
-We then make the standard local identifications of fields in the twisted theory with those of ${\rm dim}_{\C}M$ copies of a free $bc\beta\gamma$ system (though again, we stress, the $bc$ fields are just ordinary fermions):
-\begin{align*}
-\beta_i &\equiv g_{i \bar{j}}\partial_z X^{\bar{j}} \\
-\gamma^i &\equiv X^i \\
-b_i &\equiv g_{i \bar{j}} \Psi^{\bar{j}} \\
-c^i &\equiv \Psi^i.
-\end{align*}
-On a local patch $U \subset M$ we can also take $g_{i\bar{j}} = \delta_{i \bar{j}}$.
-Notice that in the standard treatment of the half-twisted model, where the twist is performed using the A-model current, the left-moving fermions transform instead as $\Psi^i \in \Gamma(\phi^* T^{(1, 0)}M), g_{i \bar{j}}\Psi^{\bar{j}} \in \Gamma(K \otimes \phi^* T^{(0, 1)}M)$, rendering the $bc$ fields of spin $(1, 0)$, respectively. In our case, the spins remain half-integral.
-
-In the physical theory, it is easy to see (see \cite{Tan} for a nice review) that the nontrivial operators in $\bar{Q}_+ = g_{i \bar{j}}\tilde{\Psi}^{\bar{j}} \partial_{\bar{z}}X^i$ cohomology are those of left and right-moving conformal dimensions $(n, 0), n \geq 0$. The operators of dimension $(0, 0)$ (i.e. the operators forming the ground ring), in particular, have an interpretation as $(0,k)$-forms on the target space. The operators of dimension $(n > 0, 0)$ are given by $(0, k)$-forms valued in various tensor product bundles arising from insertions of $\partial_z X^i, g_{i \bar{j}}\partial_z X^{\bar{j}}, g_{i \bar{j}}\partial_z \Psi^{\bar{j}}$. In terms of the physical operators (post-twist), the operators in $\bar{Q}_+$-cohomology will composites of 1.) polynomials in the left-moving fermions and in arbitrary numbers of their holomorphic derivatives 2.) some function of the scalar fields and arbitrary numbers of their holomorphic derivatives 3.) The field $\Psi^{\bar{i}}$, though none of its derivatives (since, by its equation of motion, the holomorphic derivatives of $\Psi^{\bar{i}}$ may be expressed in terms of the aforementioned fields and their derivatives only). Call such an operator $\mathcal{F}$. One can further study which such operators can be constructed globally. Using standard techniques from cohomology reveals that that the Dolbeault cohomology describing the local operators $H_{\bar{\partial}}^{(0,k)}(M, \mathcal{F})=0$ for $k>0$, so that we disallow operators $\mathcal{F}$ that contain $\Psi^{\bar{i}}$. Translating this over to the $bc\beta\gamma$ language, we have that the relevant operators are nothing but functions of $b, c, \beta, \gamma$ and their holomorphic derivatives.
-
-In the present context, our target space $M$ is given by $\oplus_{a=1}^{\infty} Sym^a (T^4)$ or $\oplus_{a=1}^{\infty} Sym^a(K3)$. These spaces are hyperkahler, so the chiral de Rham complex has  (in general, a twisted version of) $\mathcal{N}=4$ supersymmetry \cite{Heluanietal}.
-
-\subsection{OPEs in the twisted theory}
-
-Recall that the basic, nonvanishing OPEs for $bc\beta\gamma$ systems are
-\begin{align*}
-b_i(z)c^j(w) = c^j(z)b_i(w) &\sim {\delta^{j}_i \over z - w} \\
-\beta_i(z)\gamma^j(w) = -\gamma^j(z)\beta_i(w) &\sim {-\delta^{j}_i \over z - w}
-\end{align*}
-
-As explained in previous sections, odd spin operators in the symmetric orbifold theories will be built up from the Ramond sector vacuum, so we will also need the OPEs between the ghosts and the operator $\Sigma(z)$ (often called the spin field) that maps $|0\rangle_{NS} \rightarrow |0\rangle_{R}$:
-\begin{align*}
-\beta(z)\Sigma(w) &\sim {\tilde{\Sigma}(w) \over (z - w)^{1/2}}\\
-\gamma(z)\Sigma(w) &\sim 0.
-\end{align*}
-
-
-\section{Matching with Kodaira-Spencer theory on the super-conifold}
-
-
-
-
-
-
+\end{document}
 %\subsection{Review of the physical symmetric orbifold SCFT}
 %
 %Here we briefly review aspects of the $\mathcal{N}=(4,4)$ symmetric orbifold SCFT that we will need for the sequel. 
