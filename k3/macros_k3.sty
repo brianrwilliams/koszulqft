@@ -1,0 +1,278 @@
+\usepackage{cmupint}
+
+
+\usepackage{stmaryrd}
+\parskip=10pt
+
+
+
+ \usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows, decorations.markings, decorations.pathmorphing, decorations.pathreplacing, shapes.arrows, patterns, calc}
+\usepackage{url}
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  ->-/.style={decoration={markings, mark=at position 0.5 with {\arrow{to}}},
+              postaction={decorate}},
+}
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  -<-/.style={decoration={markings, mark=at position 0.5 with {\arrow{to reversed}}},
+              postaction={decorate}},
+}
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  dbl->-/.style={
+double, 
+double equal sign distance,
+shorten >= 1pt,
+shorten <= 1pt,
+ decoration={markings, mark=at position 0.5 with {\arrow{implies}}},
+              postaction={decorate}},
+}
+
+
+\tikzset{% arrow close to the source: the 0.2 determines where the arrow is drawn
+  dbl-<-/.style={
+double, 
+double equal sign distance,
+shorten >= 1pt,
+shorten <= 1pt,
+ decoration={markings, mark=at position 0.5 with {\arrowreversed{implies}}},
+              postaction={decorate}},
+}
+
+
+
+
+
+
+\usepackage{amsmath,amsthm}
+\textwidth=14.5cm \oddsidemargin=1cm  \evensidemargin=1cm\setlength{\parskip}{10pt} \setlength{\headsep}{20pt}
+
+\pdfmapfile{+mathpple.map}
+\usepackage{mathrsfs}
+\usepackage{amscd,amssymb, amsfonts, verbatim,subfigure, enumerate}
+\usepackage[mathcal]{eucal}
+\usepackage[super]{nth}
+
+\usepackage{mathpazo}
+
+
+
+\linespread{1.2}  
+\usepackage{color,slashed}
+
+
+
+\setcounter{tocdepth}{1}
+
+\renewcommand{\c}{\mf{c}}
+\newcommand{\Lap}{\tr}
+\newcommand{\dbar}{\br{\partial}}
+\newcommand{\Dirac}{\slashed{\partial}}
+\newcommand{\RHom}{\mbb{R}\op{Hom}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\wbar}{\br{w}} 
+\newcommand{\del}{\partial}
+\renewcommand{\sl}{\mathfrak{sl}}
+\renewcommand{\L}{\mathscr{L}}
+\newcommand{\red}[1]{{\color{red}{#1}}} 
+\newcommand{\zbar}{\br{z}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\Spin}{\op{Spin}}
+\newcommand{\PV}{\op{PV}}
+\newcommand{\GL}{\op{GL}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\Per}{\mscr{P}}
+\newcommand{\dpa}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\dpas}[1]{\tfrac{\partial}{\partial #1}}
+\newcommand{\Res}{\op{Res}}
+\newcommand{\Sup}{\op{Sup}}
+\newcommand{\Sing}{\op{Sing}}
+\newcommand{\Diag}{\triangle}
+\newcommand{\Obs}{\op{Obs}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\Der}{\op{Der}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\g}{\mathfrak{g}}
+\newcommand{\Hol}{\op{Hol}}
+\renewcommand{\Re}{\op{Re}}
+\newcommand{\xto}{\xrightarrow}
+\newcommand{\what}{\widehat}
+\newcommand{\tr}{\triangle}
+\newcommand{\til}{\widetilde}
+\newcommand{\mscr}{\mathscr}
+\renewcommand{\det}{\operatorname{det}}
+\newcommand{\br}{\overline}
+\newcommand{\iso}{\cong}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mbb Q}
+\newcommand{\rarr}{\rightarrow}
+\newcommand{\larr}{\leftarrow}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\Oo}{\mscr O}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\defeq}{\overset{\text{def}}{=}}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mc}{\mathcal}
+\newcommand{\from}{\leftarrow}
+\newcommand{\R}{\mbb R}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\liminv}{ \varprojlim }
+\newcommand{\limdir}{\varinjlim}
+\newcommand{\dirlim}{\varinjlim}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\gl}{\mf{gl}}
+\newcommand{\cinfty}{C^{\infty}}
+\newcommand{\cN}{\mathcal{N}}
+
+\def\define{\overset{\rm def}{=}}
+\def\ep{\varepsilon}
+\def\zbar{{\overline{z}}}
+\def\Weyl{{\rm Weyl}}
+\def\Cl{{\rm C}\ell}
+\def\U{{\rm U}}
+\def\PV{{\rm PV}}
+\def\thetabar{\Bar{\theta}}
+\def\hotimes{\; \Hat{\otimes} \;} 
+\def\clie{{\rm C}}
+\newcommand{\op}{\operatorname}
+\def\ibar{{\Bar{i}}}
+\def\jbar{{\Bar{j}}}
+\def\CP{\mathbf{CP}}
+\def\eps{{\epsilon}}
+\def\what{\Hat}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\ip}[1]{\left\langle #1 \right\rangle}
+\def\oO{\cO}
+\def\bu{{\bullet}}
+\def\DD{\mathbb{D}}
+\def\cO{\mc O}
+\def\ZZ{\mathbb{Z}}
+\def\lie#1{\ensuremath{\mathfrak{#1}}}
+\newcommand{\sfc}{\mathsf{c}}
+\newcommand{\sfb}{\mathsf{b}}
+\renewcommand\div{{\partial_\Omega}}
+\newcommand\C{\mathbf{C}}
+\newcommand{\fc}{\lie{c}}
+\newcommand{\fw}{\lie{w}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\im}{\mathrm{i}}
+
+%math operators
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator{\Aut}{Aut} \DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Sym}{Sym} \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Diff}{Diff} 
+\DeclareMathOperator{\Met}{Met} \DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Tr}{Tr}
+
+%comments
+\def\brian#1{{\textcolor{blue!65!red}{BRW: {#1}}}}
+\def\natalie#1{{\textcolor{green!65!black}{BRW: {#1}}}}
+
+
+%eqn macros
+\newcommand\beqn{\begin{equation}}
+\newcommand\eeqn{\end{equation}}
+
+
+%thm styles
+\newtheoremstyle{thm}% name
+  {7pt}%      Space above
+  {7pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {.}%        Punctuation after thm head
+  {5pt}%     Space after thm head: " " = normal interword space;
+         %       \newline = line-break
+  {\thmnumber{#2 }\thmname{#1}\thmnote{ (#3)}}%         Thm head spec (can be left empty, meaning `normal')
+
+
+
+\newtheoremstyle{def}% name
+  {7pt}%      Space above
+  {10pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {.}%        Punctuation after thm head
+  {5pt}%     Space after thm head: " " = normal interword space;
+         %       \newline = line-break
+  {\thmnumber{#2} \thmname{#1}\thmnote{ (#3)}}%         Thm head spec (can be left empty, meaning `normal')
+
+
+
+\newtheoremstyle{rem}% name
+  {4pt}%      Space above
+  {10pt}%      Space below
+  {}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\itshape}% Thm head font
+  {:}%        Punctuation after thm head
+  {3pt}%     Space after thm head: " " = normal interword space;
+        %       \newline = line-break
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{texttheorem}% name
+  {8pt}%      Space above
+  {8pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bf}% Thm head font
+  {. \hspace{5pt}}%        Punctuation after thm head
+  {3pt}%     Space after thm head: " " = normal interword space;
+        %       \newline = line-break
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+
+
+
+\theoremstyle{thm}
+
+\newtheorem*{claim}{Claim}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{definition*}{Definition}
+\newtheorem{ntheorem}{Theorem}
+\newtheorem*{thmA}{Theorem A}
+\newtheorem*{thmB}{Theorem B}
+\newtheorem*{thmC}{Theorem C}
+\newtheorem*{conjecture}{Conjecture}
+
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{thm-def}{Theorem/Definition}[theorem]
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{question}{Question}
+\newtheorem*{question*}{Question}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{sublemma}[theorem]{Sub-lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{deflem}[theorem]{Definition-Lemma}
+\newtheorem*{hope}{Hope}
+\numberwithin{equation}{subsection}
+
+
+\theoremstyle{def}
+%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{udefinition}{Definition}
+
+
+\theoremstyle{rem}
+%\declaretheorem[style=rem, numbered=no,qed=$\diamondsuit$]{remark}
+%\declaretheorem[style=rem, numbered=no,qed=$\diamondsuit$]{remarks}
+%\declaretheorem[style=rem, numbered=no,qed=$\diamondsuit$]{example}
+
+\newtheorem*{remark}{Remark}
+\newtheorem*{remarks}{Remarks}
+\newtheorem*{example}{Example}
