@@ -1,0 +1,428 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Backreaction and quantum corrections}
+\label{sec:br}
+
+We proceed to compute one-loop corrections to the OPE including those arising from the presence of the backreaction. 
+
+\subsection{Warmup: holomorphic Chern--Simons theory}
+
+Consider holomorphic Chern--Simons in the presence of a Kodaira--Spencer field which sources a brane wrapping $N$ $D1$ branes $\C \subset \C^3$. 
+The backreaction field is 
+\[
+\mu_{BR} = N \frac{\eps_{ij} \wbar^i \d \wbar^j}{\|w\|^4} \partial_z \in \PV^{1,1} (\C^3 \setminus \C) . 
+\]
+This field satisfies the equation
+\beqn\label{eqn:csBR}
+\dbar \mu_{BR} \wedge \Omega_{w_i=0} = N \delta^{(4)}_{w_i = 0} \del_z 
+\eeqn
+and couples to the holomorphic Chern--Simons field by 
+\[
+S_{BR} = \frac12 \int_{\C^3} A^a (\mu_{BR} A^a) = \frac12 N \int_{\C^3} A^a \frac{\eps_{ij} \wbar^i \d \wbar^j}{\|w\|^4} \partial_z A^a .
+\]
+
+The backreaction coupling has a gauge anomaly. 
+Indeed, the tree-level gauge variation of $S_{BR}$ is
+\[
+\int_{\C^3} A^a (\dbar \mu_{BR}) \fc^a = \int_{\C_z} A_{\zbar}^a \partial_z \fc^a .
+\]
+In order to cancel this gauge anomaly one must introduce an $N$-dependent term in the OPE of the currents $J_a[k,l]$. 
+In fact, at tree level only the OPE between currents with $k=l=0$ 
+is affected by the tree-level backreaction.
+In the presence of the backreaction the currents $J_a[0,0]$ form a Kac--Moody algebra of level $N$
+\[
+J_a[0,0] (0) J_b [0,0] (z) \simeq f_{ab}^c \frac1z J_c[0,0] + \delta_{ab} N \frac1{z^2} {\rm Id} .
+\]
+The second term in the OPE is present due the the existence of a tree-level anomaly which involves the back reaction.
+The diagram which represents this anomaly is given in figure \ref{fig:treeBR}.
+
+What about higher loop gauge anomalies involving the backreaction?
+For dimension reasons, there are no further corrections to the OPE between $J[0,0]-J[0,0]$ OPE.
+Let's consider the possibility of quantum corrections to the OPE between the fields $J_a[1,0]$ and $J_b[0,1]$, recall that the tree and one-loop level OPE is 
+\[
+J_a[1,0](z) J[0,1]_b \simeq \frac{1}{z} f^c_{ab} J[1,1] + \hbar \frac1z K^{fe} f_{ae}^c f_{bf}^d J_c[0,0] J_d[0,0] .
+\]
+By conformal invariance, the possible $N$-dependent terms in the OPE $J_a[1,0] (0) J_b [0,1](z)$ must be of the form
+\[
+\alpha N \delta_{bd} f^c_{ae} K^{de}  \left(\frac{1}{z^2} J_c[0,0] + \frac{1}{z} \del_z J_c[0,0] \right) + \beta N^2 \delta_{ac} \delta_{bd} K^{cd} \frac{1}{z^3} {\rm Id} 
+\]
+for some (possibly zero) constants $\alpha,\beta$ which are independent of~$N$.
+The diagrams which represent the anomalies necessitating these terms in the OPE are given in figures \ref{fig:loopBR1} and \ref{fig:loopBR2}, respectively.
+In these diagrams, the dotted lines represent coupling to the backreaction and the wiggle lines represent bulk propagators.
+
+For simplicity, let's consider \ref{fig:loopBR2}.
+As usual, the linearized BRST transformation is simply given by the $\dbar$-operator. 
+This can act on either of external legs.
+Using the fact that the bulk propagator $P$ is a parametrix for $\dbar$
+\beqn
+\dbar P \wedge \Omega = 2 \pi \im \delta^{(6)}
+\eeqn
+we can iteratively integrate by parts to obtain two types of terms: a term where the bulk edge is contracted via the $\delta$-function and a term where $\dbar$ acts on the backreaction.
+
+The first type of term is identically zero. 
+The second type of term is of the form 
+\beqn
+\int_{\C^3_1 \times \C^3_2}  A_1 \dbar \mu_{BR,1} P_{12} \mu_{BR,2} A_2 .
+\eeqn
+There is a similar term where $\dbar$ acts on $\mu_{BR,2}$. 
+Using the defining equation \eqref{eqn:csBR} for $\mu_{BR}$ we can write this as
+\beqn
+\int_{\C_{z_1} \times \C^3_2} \left.  A_1 \del_{z_1} P_{12} \mu_{BR,2} A_2 \right|_{w_1=0} .
+\eeqn
+
+It is useful to expand $\del_{z_1} P_{12} \mu_{BR,2}|_{w_1=0}$:
+\begin{multline} 
+\del_{z_1} \left(\frac{\zbar_{2} \d \wbar^1_{2} \d \wbar^2_{2} + \eps_{ij} \wbar^i_{2} \d \wbar_{2}^j \d \zbar_{12}}{\left(|z_{12}|^2 + \|w_{2}\|^2\right)^3}\right) \frac{\eps_{kl} \wbar_2^k \d \wbar^l_2}{\|w_2\|^4} \partial_z \\ 
+= \eps_{ij} \eps_{kl} \del_{z_1} \left(\frac{\wbar^i_{2} \d \wbar_{2}^j \d \zbar_{12}}{\left(|z_{12}|^2 + \|w_{2}\|^2\right)^3}\right) \frac{ \wbar_2^k \d \wbar^l_2}{\|w_2\|^4} \partial_z \\ 
+\end{multline}
+%\begin{multline} 
+%\del_{z_1} \left(\frac{\zbar_{12} \d \wbar^1_{12} \d \wbar^2_{12} + \eps_{ij} \wbar^i_{12} \d \wbar_{12}^j \d \zbar_{12}}{\left(|z_{12}|^2 + \|w_{12}\|^2\right)^3}\right) \frac{\eps^{ij} \wbar_2^i \d \wbar^j_2}{\|w_2\|^4} \partial_z \\ 
+%\end{multline}
+
+
+The diagrams which contribute to the $N$-dependent OPE are displayed in Figure \ref{fig:hcsback}.
+The gauge anomaly of the first diagram in this figure is proportional to
+\[
+\hbar N \int_z \eps_{ij} (\partial_{w_i} A_{\zbar}^a) (\partial_{w_j}  \partial_z \fc^b) f_{ae}^c K^{be} J_c .
+\]
+Similarly, for the second diagram the anomaly is proportional to
+\[
+\hbar N^2 \int_z \eps_{ij} (\partial_{w_i} \partial_z A_{\zbar}^a) (\partial_{w_j} \partial_z \fc^b) K^{ab} .
+\]
+We won't provide a detailed computation of either of these anomalies, but we point out some self-consistent features. 
+
+Recall that the operator $J_a[r,s]$ is Virasoro primary of dimension $\frac{r+s}{2} + 1$. 
+The backreaction carries conformal dimension one. 
+
+ so that the gauge variation of 
+\[
+\frac12 \int_{z,z'} J_a [1,0] (z) J_b [0,1](z') A_{\zbar}^a (z) A_{\zbar}^b (z') 
+\]
+cancels the above anomalies. 
+
+
+
+\begin{figure}
+	\begin{tikzpicture}
+	\begin{scope}		
+			\node (A1) at (3,1.5) {};
+			\node (A2) at (3,-1.5){};
+
+		\node[circle,draw,fill=black]  (V1) at (1.5,1) {}; 
+		\node[circle,draw,fill=black]  (V2) at (1.5,-1) {};  
+		\draw[decorate, decoration={snake}]  (V1) --  (A1);
+		\draw[decorate, decoration={snake}] (V1) -- (V2) -- (A2);
+		\draw[decorate,decoration={snake}](0,-1) -- (V2);
+		\draw[dashed] (0,1) -- (V1);
+
+		\draw (0,2) -- (0,-2);	
+	\end{scope}
+
+		\begin{scope}[shift={(5,0)}]		
+			\node (A1) at (3,1.5) {};
+			\node (A2) at (3,-1.5){};
+
+		\node[circle,draw,fill=black]  (V1) at (1.5,1) {}; 
+		\node[circle,draw,fill=black]  (V2) at (1.5,-1) {};  
+		\draw[decorate, decoration={snake}]  (V1) --  (A1);
+		\draw[decorate, decoration={snake}] (V1) -- (V2) -- (A2);
+		\draw[dashed](0,-1) -- (V2);
+		\draw[dashed] (0,1) -- (V1);
+
+		\draw (0,2) -- (0,-2);	
+	\end{scope}
+	\end{tikzpicture}
+	\label{fig:hcsback}
+	\caption{Diagrams contributing to the first-order gauge anomaly in the presence of the backreaction in holomorphic Chern--Simons theory.}  
+\end{figure}
+
+\subsection{Tree-level backreaction}
+
+The first nontrivial contribution from the backreaction occurs at tree-level. 
+Part of this contribution was computed in \cite{CP}.
+
+The backreaction $\mu_{BR}(\eta_a)$ is a Beltrami differential and hence couples to the fields of BCOV theory by the pair of Lagrangians
+\beqn\label{eqn:br1}
+\int_{\C^{3|4}} \mu_{BR} (\eta) \mu_1(\eta) \mu_2(\eta) \, \d z \d^2 w \d^4 \eta .
+\eeqn
+and 
+\beqn\label{eqn:br2}
+\int_{\C^{3|4}} \mu_{BR}(\eta) \alpha(\eta) \del_z \gamma(\eta) \d z \d^2 w \d^4 \eta .
+\eeqn
+
+The defining equation for the backreaction reads
+\[
+\dbar \mu_{BR} (\eta_a) = \delta_{w_i=0} F^{ab} \eta_a \eta_b \partial_z  .
+\]
+Using this, we obtain the tree-level gauge variation of the backreaction coupling \eqref{eqn:br1} as
+\beqn\label{eqn:treeanomaly1}
+\int_{\C^{1|4}} F^{ab} \eta_a \eta_b \mu_i (\eta_a) \fc_j (\eta_b) \epsilon^{ij} \d z \d^4 \eta .
+\eeqn
+Similarly, the tree-level gauge variation of the coupling \eqref{eqn:br2} is 
+\beqn\label{eqn:treeanomaly2}
+\int_{\C^{1|4}} F^{ab} \eta_a \eta_b \alpha (\eta) \del_z \fc_\gamma (\eta) \d z \d^4 \eta + \int_{\C^{1|4}} F^{ab} \eta_a \eta_b c_\alpha (\eta) \del_z \gamma (\eta) \d z \d^4 \eta .
+\eeqn
+
+Notice that neither of these expression involve $w_i$-derivatives. 
+Since $\til{J}^i[0,0]$ couples to $\mu_i$, the anomaly in \eqref{eqn:treeanomaly1} can be cancelled by the gauge variation of 
+\beqn
+\int_{z,z',\eta_a,\eta_a'} \til{J}^1[0,0](z,\eta_a) \mu_1(z,\eta_a) \til{J}^2[0,0] (z',\eta_a') \mu_2(z',\eta_a') 
+\eeqn
+provided that the $\til{J}^i[0,0]$ operators satisfy an appropriate OPE. 
+Similarly, the anomaly in \eqref{eqn:treeanomaly2} can be cancelled by the gauge variation of a coupling of the form
+\beqn
+\int_{z,z',\eta_a,\eta_a'} G_\alpha[0,0](z,\eta_a) \alpha(z,\eta_a) G_\gamma[0,0] (z',\eta_a') \gamma (z',\eta_a') 
+\eeqn
+(We are omitting appearences of volume forms for simplicity.)
+
+Proceeding as above by working in the Fourier dual odd coordinates and working with on-shell fields, we see that to cancel the first of these anomalies there must be a term in the $JJ$ OPE of the form
+\beqn
+\til{J}^i[0,0](0,\what\eta^a) \til{J}^j [0,0] (z,\what\eta'^a) \simeq \epsilon^{ij} \frac1z \what F (\what\eta^a + \what\eta'^a) .
+\eeqn
+Using the constraints \eqref{eqn:constraint1} we can write this OPE in terms of on-shell fields as
+\beqn
+J[1,0](0,\what \eta^a) J[0,1] (z,\what \eta'^a) \simeq \frac{1}{z} \what F(\what \eta^a + \what \eta'^a) .
+\eeqn
+
+Similarly, to cancel the second anomaly there must be a term in the GG OPE of the form
+\beqn
+G_\alpha[0,0](0,\what \eta^a) G_\gamma[0,0](z,\what \eta'^b) \simeq \frac1{z^2} \what F (\what \eta^a + \what \eta'^a) .
+\eeqn
+
+As a simple consequence of this, we see that the operators 
+\[
+J[1,0](\what \eta), J[0,1](\what \eta),G_\alpha[0,0](\what \eta), G_\gamma[0,0](\what \eta)
+\]
+form a subalgebra of the full gravitational chiral algebra.
+Recall that the spin of the operator $G_\alpha[0,0]$ is one.
+If we choose a spin zero operator $G'_{\alpha}[0,0]$ such that $\del G_\alpha'[0,0]$ then we can obtain the same OPE as above if we declare that 
+\beqn
+G'_\alpha[0,0](0,\what \eta^a) G_\gamma[0,0](z,\what \eta'^b) \simeq \frac1{z} \what F (\what \eta^a + \what \eta'^a) .
+\eeqn
+The operators $J[1,0](\what \eta), J[0,1](\what \eta),G
+'_\alpha[0,0](\what \eta), G_\gamma[0,0](\what \eta)$ form a familiar chiral algebra of free fields.
+\brian{finish, say what the free theory is more explicitly, refer back to CDR.}
+
+\subsection{The propagator for Kodaira--Spencer theory}
+
+The following discussion is based off the work \cite{CLbcov1}. 
+We recall only the essential details. 
+
+The propagator for Kodaira--Spencer theory on $\C^3$ is the kernel for the operator $\del \dbar^* \tr^{-1}$. 
+We obtain this by applying the divergence operator to the kernel for the operator $\dbar^* \tr^{-1}$ (this is the propagator used in holomorphic Chern--Simons theory). 
+Let us first recall the construction of the kernel for $\dbar^* \tr^{-1}$.
+
+As usual, we use $(z,w_i)$ for a coordinate on $\C^3$. 
+Using the Calabi--Yau form one can express the integral kernel for the operator $\dbar^* \tr^{-1}$ as
+\[
+P'(z,w_i) = \frac{1}{r^6} \big(\zbar \d \wbar_1 \d \wbar_2 - \wbar_1 \d \wbar_2 \d \zbar + \wbar_2 \d \zbar \d \wbar_1 \big) \del_z \del_{w_1} \del_{w_2}  
+\]
+where $r^2 = |z|^2 + |w_1|^2 + |w_2|^2$. 
+This is a smooth section of $\PV^{3,2}(\C^3)$ away from $0 \in \C^3$.
+The kernel is obtained by pulling back this section along the difference map 
+\[
+\C^3 \times \C^3 \to \C^3,\quad (z, w_i ; z',w_i') \mapsto (z-z', w_i - w_i') .
+\]
+We denote the pulled back section by
+\[
+P'(z,w_i ; z',w_i') \in \br{\PV}^{3,2}(\C^3 \times \C^3) . 
+\]
+Here $\br{\PV}^{3,2}$ stands for distributional Dolbeault valued polyvector fields of type $(3,2)$.
+Notice that this section is smooth away from the diagonal in $\C^3 \times \C^3$. 
+
+We are interested in the Kodaira--Spencer propagator. 
+To obtain this, we first apply the divergence operator to $P'$ 
+\[
+P = \del P' \in \br\PV^{2,2}(\C^3) .
+\]
+Explicitly
+\begin{align*}
+P(z,w_i) = & \pm \frac{\d \wbar_1 \d \wbar_2}{r^8} \left(\zbar^2 \partial_{w_1} \partial_{w_2} - \zbar w_1 \partial_z \partial_{w_2} + \zbar w_2 \partial_z \partial_{w_1} \right) \\ 
+& \pm \frac{\d \wbar_2 \d \zbar}{r^8} \left(\zbar \wbar_1 \partial_{w_1} \partial_{w_2} - \wbar_1^2 \partial_z \partial_{w_2} + \wbar_1 \wbar_2 \partial_z \partial_{w_1}\right) \\
+& \pm \frac{\d \zbar \d \wbar_1}{r^8} \left(\zbar \wbar_2 \partial_{w_1} \partial_{w_2} - \wbar_1 \wbar_2 \partial_z \partial_{w_2} + \wbar_2^2 \partial_z \partial_{w_1} \right) .
+\end{align*}
+Again, pulling back along the difference map we obtain a section
+\[
+P(z,w_i;z',w_i') \in \br\PV^{2,2}(\C^3 \times \C^3) .
+\]
+This distribution is the integral kernel for the operator $\partial \dbar^* \tr^{-1}$ acting on poyvector fields. 
+As in the case of the propagator for holomorphic Chern--Simons theory it is a smooth away from the diagonal. 
+We will interpret this propagator as a symmetric element of the (completed) tensor square of the fields of Kodaira--Spencer theory on~$\C^3$. 
+
+The propagator for Kodaira--Spencer theory on $T^4 \times \C^3$ is the kernel for the operator $\partial \dbar^* \tr^{-1}$ acting on the full space of fields which acts on the odd $\eta$-coordinates by the identity.
+
+To obtain this propagator we simply introduce coordinates $(z , w_i, \eta_a)$ on $\C^{3|4}$ and define
+\[
+P(z , w_i, \eta_a) = \eta_1 \eta_2 \eta_3 \eta_4 P(z,w_i) \in \br{\PV}^{2,2}(\C^3) [\eta_i] 
+\]
+and let
+\[
+P(z , w_i, \eta_a ; z', w_i', \eta_a')
+\]
+be the restriction along the difference map at the level of superspace $\C^{3|4} \times \C^{3|4} \to \C^{3|4}$.
+
+\subsection{Enumerating one-loop diagrams}
+
+\subsection{The order $N$ term} 
+\label{sec:oneloop}
+
+\begin{figure}
+	\begin{tikzpicture}
+
+		\begin{scope}		
+			\node (A1) at (3,1.5) {};
+			\node (A2) at (3,-1.5){};
+
+		\node[circle,draw,fill=black]  (V1) at (1.5,1) {}; 
+		\node[circle,draw,fill=black]  (V2) at (1.5,-1) {};  
+		\draw[decorate, decoration={snake}]  (V1) --  (A1);
+		\draw[decorate, decoration={snake}] (V1) -- (V2) -- (A2);
+		\draw[dashed](0,-1) -- (V2);
+		\draw[dashed] (0,1) -- (V1);
+
+		\draw (0,2) -- (0,-2);	
+	\end{scope}
+	\end{tikzpicture}
+	\label{fig:orderN}
+	\caption{The order $N$ term.}  
+\end{figure}
+
+Our goal is to compute the anomaly associated to the diagram in Figure \ref{fig:orderN}.
+
+The vertices of this diagram are labeled by the Lagrangian
+\[
+\int_{\C^{3|4}} \mu_{BR} (w,\eta_a) \mu_1(\eta_a) \mu_2(\eta_a) \, \d z \d^2 w \d^4 \eta .
+\]
+where the Beltrami differential encoding the backreaction satisfies the defining equation
+\[
+\dbar \mu_{BR} (w,\eta_a) = \delta_{w_i=0} F^{ab} \eta_a \eta_b \partial_z  .
+\]
+
+The weight of the diagram in Figure \ref{fig:orderN} is 
+\beqn
+\int_{(z,w,\eta), (z',w', \eta')} \mu_{BR} (w,\eta) \mu_{w_i}(z,w,\eta) P(z , w, \eta ; z', w', \eta) \mu_{BR}(w',\eta') \mu_{w_j}(z',w',\eta') .
+\eeqn
+We observe that this weight is only nonzero when the inputs $\mu_{w_i}, \mu_{w_j}$ have no $\eta$-dependence.
+Write $\mu_{w_i}(z,w) = \mu_{w_i}(z,w,\eta=0)$. 
+Then, the diagram simplifies to 
+\beqn
+N \int_{(z,w), (z',w')} \mu_{BR} (w) \mu_{w_i}(z,w) \til P(z , w ; z', w') \mu_{BR}(w') \mu_{w_j}(z',w') 
+\eeqn
+where $\til P$ is the propagator for Kodaira--Spencer theory on $\C^3$ and $\mu_{BR}(w)$ is the distributional Beltrami differential which satisfies $\dbar \mu_{BR} (w) = \delta_{w=0} \del_z$.
+We have used the notation $N = \int_{\C^{0|4}} F^2$ where $F = F^{ab} \eta_a \eta_b$. 
+
+We compute the gauge anomaly for this diagram. 
+There are two types of terms, the first is
+\beqn\label{loop1}
+N \int_{(z,w), (z',w')} \mu_{BR} (w) \dbar \fc_{i}(z,w) \til P(z , w ; z', w') \mu_{BR}(w') \mu_{j}(z',w') 
+\eeqn
+and the second is 
+\beqn\label{loop2}
+N \int_{(z,w), (z',w')} \mu_{BR} (w) \dbar \mu_{i}(z,w) \til P(z , w ; z', w') \mu_{BR}(w') \dbar \fc_{j}(z',w') 
+\eeqn
+
+Let's first consider \eqref{loop1}.
+If we apply integration by parts to the operator $\dbar$, we see that this integal can be written as  
+\begin{multline}
+N \int_{(z,w), (z',w')} \dbar \mu_{BR} (w) \fc_{i}(z,w) \til P(z , w ; z', w') \mu_{BR}(w') \mu_{j}(z',w') \\
++ N \int_{(z,w), (z',w')} \mu_{BR} (w) \fc_{i}(z,w) \dbar \til P(z , w ; z', w') \mu_{BR}(w') \mu_{j}(z',w') .
+\end{multline}
+
+\subsection{The order $N^{1/2}$ term}
+
+
+\section{Superconformal algebra}
+
+\begin{itemize}
+\item The bosonic operator $T = T^0 [0,0]|_{\eta = 0}$ is the stress energy tensor in the superconformal algebra. 
+\item The bosonic operators $J [r,s]|_{\eta = 0}$, for $r + s = 2$ comprise the $SU(2)_R$ current.
+Denote $J_0 = J [1,1]|_{\eta = 0}$, $J_+ = J^0 [2,0]|_{\eta = 0}$, $J_- = J^0[0,2]|_{\eta = 0}$. 
+\item The fermionic elements of the superconformal algebra are given by the pair of $SU(2)_R$ doublets 
+\[
+\begin{pmatrix} G_+ \\ \Bar{G}_+ \end{pmatrix} = \begin{pmatrix} \sqrt{2} G^0_\alpha [1,0]|_{\eta = 0} \\ \sqrt{2} G^0_\gamma [1,0]|_{\eta = 0} \end{pmatrix} , \quad \begin{pmatrix} G_- \\ \Bar{G}_- \end{pmatrix} = \begin{pmatrix} \sqrt{2} G^0_\alpha [0,1]|_{\eta = 0} \\ \sqrt{2} G^0_\gamma [0,1]|_{\eta = 0} \end{pmatrix}
+\]
+\end{itemize}
+
+
+\subsection{The $TT$ OPE}
+
+In Section \ref{sec:TT1} we computed the tree-level $TT$ OPE at the level of general $w$-descendants.
+Specializing just to $T (z) = T^0[0,0](z)$ we find that the tree-level OPE becomes the usual charge zero Virasoro OPE
+\[
+T(0) T(z) \simeq 2 \frac{1}{z^2} T(0) + \frac{1}{z} \partial_z T(0) .
+\]
+
+At the quantum level, this OPE is deformed. 
+In \S \ref{sec:oneloop} we have shown that there is a one-loop correction to the $\til J \til J$ OPE of the form 
+\[
+\til J^{1}[1,0] (0, \what\eta = 0) \til J^{2} [0,1] (z, \what\eta'=0) |_{\text{1-loop}} \simeq \frac{N^2}{z^2} .
+\]
+Now, since 
+\[
+T[0,0] (\eta) = \til T[0,0] (\eta) - \frac12 \left(\del_z \til J^{1}[1,0] (\eta) - \del_z \til J^{2}[0,1] (\eta) \right) 
+\]
+we see that 
+\[
+T(0) T(z)|_{\text{1-loop}} \simeq \# \del_z^2 \frac{N^2}{z^2} = \# \frac{N^2}{z^4} .
+\]
+
+Here, we note that for type reasons, there is no one-loop quantum correction to the $\til T \til T$ OPE so that the the tree-level plus one-loop $TT$ OPE reads
+\[
+T(0) T(z) \simeq \# \frac{N^2}{z^4} + 2 \frac{1}{z^2} T(0) + \frac{1}{z} \partial_z T(0) .
+\]
+
+
+\subsection{The $JJ$ OPE } 
+
+From \eqref{eqn:TJtree} and we see that the $SU(2)$ currents $J_0, J_\pm$ are weight one primary operators
+\[
+T(0) J_\pm (z) \simeq \frac1z \partial_z J_\pm (0) + \frac{1}{z^2} J_\pm (0) 
+\]
+and similarly for $J_0$. 
+
+\subsection{Tree-level on-shell OPEs}
+\textcolor{red}{NP: note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
+\textcolor{red}{NP: it may be prettier to separate the $J[m,n]$ OPEs when one or both arguments are zero from the rest, to avoid using the clunky theta function notation.}
+
+If $nr-ms > 0$ the OPEs are
+\begin{align}
+J[m,n](0)J[r, s](z) &\sim {(nr-ms) \over z}J[m + r -1, n + s -1](0) \\
+J[m, n](0)T[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}\left({m \over 2(r + 1)} + {n \over 2(s + 1)}\right)J[m + r, n + s](0) \\ \nonumber
+&+{1 \over 2 z}\left({m \over m + r} + {n \over n + s} \right)\partial_z J[m + r, n + s](0)\\
+G[m, n](0)J[r, s](z) &\sim {(ms - rn) \over z}G[m + r -1, n + s - 1](z) \\
+G[m, n](0)T[r, s](z) &\sim ({1 \over z} \partial_z + {1 \over z^2})G[m + r, n+s](0) + \left({m \over 2(r+1)} + {n \over 2 (s + 1)}\right){1 \over z^2}G[m + r, n+s](0) \\
+T[m, n](0)T[r, s](z) &\sim {1 \over z}\left(1 + {r \over 2(m+1)} + {s \over 2(n+1)}\partial_z \right) T[m + r, n +s](0) \\ \nonumber &+ {1 \over z^2}\left(2 + {r \over 2(m+1)} + {s \over 2(n+1)} + {m \over 2(r+1)} + {n \over 2(s+1)} \right)T[m + r, n + s](0)\\ \nonumber
+&+{1 \over 4 z}\left({1 \over (m + 1)(n + s + 1)}- {1 \over (n +1)(m + r + 1)} \right) \partial^2_z J[m + r  +1, n + s +1](0) \\ \nonumber
+&+{1 \over 4 z^2}\left({1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right)\partial_z J[m + r + 1, n + s + 1](0) \\ \nonumber 
+&+ {1 \over 4 z^2}\left({1 \over n + s + 1}({2 + m + r \over (1 + m)(1 + r)}) - {1 \over m + r + 1}({2 + n + s \over (1 + n)(1 + s)}) \right) \\ \nonumber & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \partial_z J[m + r + 1, n + s + 1](0) \\ \nonumber
+&+{1 \over 2 z^3}\left( {1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right) J[m + r + 1, n + s + 1](0) \\ \nonumber
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
+&+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})\right)\partial_z J[m + r, n+s](0)
+\end{align}. 
+
+The JT and GG OPE coefficients have to be treated with slightly more care for special choices of $n, r, m, s$, though the basic structure of the OPEs is the same.
+For the JT OPE, the above expression also holds when $nr - ms = 0$ but $nr = m s >0$. 
+For the GG OPE, if $n r - ms = 0$ but $nr = ms > 0$ we have
+\begin{align}
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
+&+{1 \over z}\partial_z J[m + r, n+s](0).
+\end{align}
+The remaining cases are as follows. If $nr-ms = 0$ and $n r = ms = 0$ the TJ and GG OPE coefficients are instead as follows. \newline
+If $r = m = 0, s \neq 0$:
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({n \over 2(s + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({n \over n + s} \right)\partial_z J[m + r, n + s](0) \\ \nonumber
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({n \over  (n + s)}\right)\partial_z J[m + r, n+s](0)
+\end{align}
+If $n = s = 0, r \neq 0$:
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({m \over 2(r + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({m \over m + r} \right)\partial_z J[m + r, n + s](0)\\
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({m \over m + r}\right)\partial_z J[m + r, n+s](0)
+\end{align}
+If $r = s= 0$ (note that there are no G operators for these values):
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +{1 \over  z}\partial_z J[m + r, n + s](0)
+\end{align}
+\textcolor{red}{NP: Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
+\end{document}
