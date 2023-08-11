@@ -94,6 +94,7 @@ where the bullet denotes arbitrary anti-holomorphic form type.
 We can do this because we have the constraint $\div \mu = 0$.
 Then, the kinetic term in the Lagrangian above can be written as 
 \beqn
+\label{eqn:kineticks}
 \int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1} \dbar \Hat{\mu}_{i_2\cdots i_5} + \frac12 \int \eps^{i_1 \cdots i_5} \mu_{i_1 i_2} (\dbar \del^{-1}_\Omega \mu)_{i_3 i_4 i_5} .
 \eeqn
 This Lagrangian is still non-local, but the only non-locality involves the field $\PV^{2,\bu}(X)$.
@@ -109,12 +110,12 @@ At the level of free fields, the match between the holomorphic twist of type IIB
 Here, we spell out a precise relationship between the fields of Kodaira--Spencer theory and those of supergravity.
 For simplicity we will work on flat space near the flat K\"ahler metric $g^{i \jbar}_0 = \delta^{i \jbar}$.
 
-In type IIB supergravity there is a subsector known as type I supergravity. 
-This theory is equipped with $N=(1,0)$ supersymmetry rather than $N=(2,0)$ supergravity for IIB supergravity.
-This theory is anomalous at one-loop, but we will only be concerned with the classical limit.
-In terms of Kodaira--Spencer theory, the fields of type I supergravity correspond to $\PV^{1,\bu}(\C^5)$ and $\PV^{3,\bu}(\C^5)$ whose fields we denote by $\mu_{i}^\bu$, $\mu_{ijk}^\bu$ respectively.
+%In type IIB supergravity there is a subsector known as type I supergravity. 
+%This theory is equipped with $N=(1,0)$ supersymmetry rather than $N=(2,0)$ supergravity for IIB supergravity.
+%This theory is anomalous at one-loop, but we will only be concerned with the classical limit.
+%In terms of Kodaira--Spencer theory, the fields of type I supergravity correspond to $\PV^{1,\bu}(\C^5)$ and $\PV^{3,\bu}(\C^5)$ whose fields we denote by $\mu_{i}^\bu$, $\mu_{ijk}^\bu$ respectively.
 
-The bosonic fields of type I supergravity include a metric tensor. 
+An important bosonic field in supergravity is the metric tensor. 
 As representations of $SU(5)$, the metric tensor breaks into three components $g^{ij}, g^{i \jbar}, g^{\ibar \jbar}$.
 To leading order, the components $g^{ij}, g^{i \jbar}$ are rendered massive in the twist and can hence be removed.
 The remaining component of the metric corresponds to the field $\mu_{k}^{\jbar}$ in Kodaira--Spencer theory via the K\"ahler form
@@ -122,7 +123,7 @@ The remaining component of the metric corresponds to the field $\mu_{k}^{\jbar}$
 g^{\ibar \jbar} \mapsto \delta^{k \ibar} \mu_k^{\jbar} .
 \eeqn
 
-The fermionic fields of type I supergravity include a gravitino.
+The fermionic fields of type IIB supergravity include a gravitino.
 In the untwisted theory the gravitino has a spinor index and a vector index.
 As a $SU(5)$ representation, the 16-dimensional spinor representation $S_+$ of $SO(10)$ decomposes as a sum of three irreducible representations: the trivial representation, the exterior square of the anti-fundamental representation, and the fourth exterior power of the anti-fundamental representation
 \beqn
@@ -151,25 +152,82 @@ Using this modified field in Kodaira--Spencer theory, we can more easily match w
 \lambda^{* k}_{\br l_1 \br l_2} \mapsto \eps^{k i_1 i_2 i_3 i_4} \eps_{\br l_1 \br l_2 \br j_1 \br j_2 \br j_3} \mu^{\br j_1 \br j_2 \br j_3}_{k i_1 i_2 i_4} .
 \eeqn
 
-So far we have just discussed matching Kodaira--Spencer theory with type I supergravity. 
-In type IIB supergravity there is an important bosonic field called the chiral four-form $C \in \Omega^4(\R^{10})$. 
-Chiral means that the field strength five-form $F = \d C$ is required to be self-dual.
-It is components of the field strength that appears as a fundamental field in Kodaira--Spencer theory.
-Specifically, the component 
+We continue to explicitly match with Kodaira--Spencer theory at the level of the kinetic term in the Lagrangian.
+In \eqref{eqn:kineticks} we have expressed the kinetic term in the Kodaira--Spencer action as a sum of two terms.
+We first show how there is a similar kinetic term involving the metric $g$ and the anti-field to the gravitino $\lambda^*$ when we twist type IIB supergravity.
+Recall that this means that this amounts to assigning a certain component of the superghost a nontrivial VEV.
+
+As an $SU(5)$ representation the superghost $Q$ can be written as a sum of three tensors $Q^{(0)}, Q^{\br j_1 \br j_2}, Q^{\br j_1 \cdots \br j_4}$, these are the components of the even exterior powers of the anti-fundamental representation of $SU(5)$.
+Here $Q^{(0)}$ denotes the $SU(5)$ invariant component of the superghost in the $\cN=(1,0)$ subalgebra; this is the component that the holomorphic supercharge lives.
+A term in the BV action involving $\lambda^*$ and $Q$ arises from a supersymmetric variation of the gravitino $\lambda$.
+
+Reverting back to $SO(10)$ notation, where $a,b=1,\ldots,10$ are vector indices and $\alpha,\beta,\ldots=1,\ldots,32$ are spinor indices, the supersymmetric variation of the gravitino is of the form
+\beqn
+\delta \lambda_a^\alpha = \delta_{ab} (\del_{x_b} \eps^\alpha + \Gamma_{\beta}^{\alpha b} (g) \eps^\beta).
+\eeqn
+Here $A$ is the spin Levi-Civita tensor in the spin representation of $Spin(10)$.\footnote{We use $A$ instead of $\Gamma$ for the Levi-Civita connection to avoid confusion with $\Gamma$-matrices.}
+Taking a perturbative expansion of the flat metric of the form $\delta^{ab} + g^{ab}$ and working to low order in $g^{ab}$, we can write the ordinary Levi-Civita connection as
+\beqn
+A_a^{bc} = \frac12 \delta_{ad} (\del_{x_c} g^{bd} + \del_b g^{cd} - \del_d g^{bc}) + O(g^2) .
+\eeqn
+In terms of this ordinary Levi-Civita connection, the spin Levi-Civita connection can be written in terms of $\Gamma$-matrices as
+\beqn\label{eqn:christ}
+A_{\beta}^{\alpha b} = \Gamma_c^{\alpha \gamma} \Gamma_{\beta \gamma}^a A_a^{bc} .
+\eeqn
+We are interested in the covariant derivative of the constant spinor $\eps^{(0)}$.
+
+As before, a spinor decomposes as an $SU(5)$ representation into a sum of even exterior powers of the anti-fundamental representation.
+The index $(0)$ represents the $SU(5)$ invariant part of the spinor.
+A simple computation with $\Gamma$-matrices shows that the components of the spin Levi-Civita connection whose lower index is $(0)$ and upper index is $(\br i \br j)$ are
+\begin{align*}
+A_{(0)}^{(\br i \br j)k} = A_j^{\br i k} \delta^{j \br j} \\
+A_{(0)}^{(\br i \br j) \br k} = A_j^{\br i \br k} \delta^{j \br j} 
+\end{align*}
+where the ordinary Christoffel symbols appear on the right hand side (with $SU(5)$ indices).
+
+Plugging in \eqref{eqn:christ} we see that the desired variation of the gravitino is
+\begin{align*}
+\delta \lambda_k^{\br i \br j} & = \delta_{k \br k} A_{(0)}^{(\br i \br j) \br k} \eps^{(0)} \\
+& = \delta_{k \br k} \delta^{j \br j} A_{j}^{\br i \br k} \eps^{(0)} \\
+& = \frac12 \delta_{k \br k} \delta^{j \br j} \delta_{j \br l} \left(\delta_{\zbar_{\br k}} g^{\br l \br i} + \del_{\zbar_{\br i}} g^{\br l \br k} - \del_{\zbar_{\br l}} g^{\br i \br k} \right) \eps^{(0)} \\
+& = \frac12 \delta_{k \br k} \left(\delta_{\zbar_{\br k}} g^{\br j \br i} + \del_{\zbar_{\br i}} g^{\br j \br k} - \del_{\zbar_{\br j}} g^{\br i \br k} \right) \eps^{(0)} \\ & = \eps^{\br i \br j} \delta_{k \br k} \del_{\zbar_{\br i}} g^{\br j \br k} \eps^{(0)} .
+\end{align*}
+In the last line we have used the fact that $\br i, \br j$ appear anti-symmetrically on the left hand side.
+It follows that once we assign a nonzero VEV to the superghost $Q^{(0)}$ in the BV action there is a term of the form
+\beqn
+(\del_{\zbar_{\br k}} g^{\br i \br j} \delta_{l \br i}) \lambda^{* l}_{\br k \br j} .
+\eeqn
+This matches precisely with the first term in the Kodaira--Spencer kinetic action.
+
+The final fields we describe in terms of the holomorphic twist are the Ramond--Ramond fields in supergravity.
+These fields are magnetically sourced by $D_{2k-1}$ and hence are forms of degree $8-2k$.
+In the original presentation of Kodaira--Spencer theory, it is certain components of the field strengths of such forms which are present as polyvector fields.
+The field strength is a form of degree $9-2k$; in the holomorphic twist the component of this form which survives is of Hodge type $(5-k,4-k)$ and corresponds to polyvector field of type $(k,4-k)$ using the isomorphism
+\beqn
+\PV^{k,4-k} (\C^5) \simeq_\Omega \Omega^{5-k,4-k} (\C^5) \subset \Omega^{9-2k} (\R^{10}) \otimes \C
+\eeqn
+determined by the Calabi--Yau form.
+
+A special Ramond--Ramond form is the four-form $C \in \Omega^4(\R^{10})$ sourced by a $D_3$ brane.
+Such a field is required to be `chiral' in the sense that its field strength $F = \d C$ is self-dual.
+The component of the field strength
 \beqn
 F^{\ibar_1 \ibar_2 j_1 j_2 j_3} \in \Omega^{3,2}(\C^5)
 %, F^{\ibar_1 j_1 j_2 j_3 j_4}, F^{j_1 j_2 j_3 j_4 j_5} \in \Omega^{3,2}(\C^5) \oplus \Omega^{4,1}(\C^5) \oplus \Omega^{5,0} (\C^5)
 \eeqn
-survives the twist.
+survives the holomorphic twist.
 Using the holomorphic volume form these components are identified with the fields
 \beqn
 F^{\ibar_1 \ibar_2 j_1 j_2 j_3} \mapsto \eps^{j_1 j_2 j_3 j_4 j_5} \mu_{j_4 j_5}^{\ibar_1 \ibar_2}
 %F^{\ibar_1 j_1 j_2 j_3 j_4} & \mapsto \eps^{j_1 j_2 j_3 j_4 j_5} \mu_{j_5}^{\ibar_1 \ibar_2 \ibar_3 \ibar_4}
 \eeqn
-which we view as a polyvector field of type $\PV^{2,2}(\C^5)$.
-Notice that the Bianchi identity $\d F = 0$ becomes the constraint $\del_{j} \mu_{j k}^{\ibar_1 \ibar_2} = 0$ that this polyvector field be divergence-free.
+which is a polyvector field of type $(2,2)$ as expected.
+Self-duality becomes the constraint $\del_{j} \mu_{j k}^{\ibar_1 \ibar_2} = 0$ that this polyvector field be divergence-free.
+This constraint gives rise to the non-local kinetic term present in equation \eqref{eqn:kineticks}.
+For more on the relationship between constraints and non-local kinetic terms we refer to \cite{SWconstraint}.
 
-We continue to match with Kodaira--Spencer theory at the level of the kinetic term in the Lagrangian. 
+This concludes our general discussion of the twist of ten-dimensional type IIB supergravity in terms of Kodaira--Spencer theory.
+We now turn to compactifications as understood in the twist. 
 
 \subsection{Compactification of Kodaira--Spencer theory}
 
@@ -280,7 +338,7 @@ In terms of these fields, the Lagrangian is
 \begin{multline} 
 	\tfrac{1}{2}\int_{\C^{3}}   \eps^{ijk} \dbar \mu_{i} (\partial^{-1}  \mu)_{jk} \, \d^3 z |_{\eta \br \eta}   + \int_{\C^{3}}  \alpha \dbar \gamma \d^3 z  |_{\eta \br{\eta}} 
 	\\
-	+ \tfrac{1}{6} \int_{\C^{3}}  \eps_{ijk} \mu_{i}\mu_{j} \mu_{k} \, \d^3 z |_{\eta \br{\eta}} + _{\C^{3}}  \alpha \mu_i \partial_{z_i}  \gamma \, \d^3 z|_{\eta \br{\eta}} .
+	+ \tfrac{1}{6} \int_{\C^{3}}  \eps_{ijk} \mu_{i}\mu_{j} \mu_{k} \, \d^3 z |_{\eta \br{\eta}} + \int_{\C^{3}}  \alpha \mu_i \partial_{z_i}  \gamma \, \d^3 z|_{\eta \br{\eta}} .
 \end{multline} 
 In this expression we project onto the component $\eta \br \eta$ as before.
 
@@ -302,7 +360,7 @@ Here, we recall the field content of each of the twisted six-dimensional multipl
 \begin{itemize}
 \item[(i)] The holomorphic twist of the the graviton multiplet has two fundamental fields
 \beqn
-(\mu, \rho, \til \alpha) \in \left(\PV^{1,\bu}(\C^3) \cap \ker \div \right)^{\oplus 3} .
+(\mu, \rho, \til \alpha) \in \left(\PV^{1,\bu}(\C^3)[1] \cap \ker \div \right)^{\oplus 3} .
 \eeqn
 \item[(ii)] The holomorphic twist of the vector multiplet is three-dimensional holomorphic BF theory with two fundamental fields
 \beqn
@@ -315,7 +373,7 @@ Here, we recall the field content of each of the twisted six-dimensional multipl
 %The arrow indicated there is an additional gauge transformation for the $(3,\bu)$-form $\delta^{hol} v = \del \alpha$.
 \item[(iv)] The holomorphic twist of the hypermultiplet is the higher dimensional $\beta-\gamma$ system with two fundamental fields
 \beqn
-(\gamma,\beta) \in \Omega^{0,\bu}(\C^3) .
+(\gamma,\beta) \in \Omega^{0,\bu}(\C^3)^{\oplus 2} .
 \eeqn
 \end{itemize}
 
@@ -383,7 +441,7 @@ N \define \ip{F, F}
 \eeqn
 using the inner product on $H^2(Y)$. 
 Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. 
-\brian{Can we say how $N$ is related to $N_1$ and $N_5$? This would require tracing through some dualities carefully...}
+\brian{Can we say how $N$ is related to $N_1$ and $N_5$? This would require tracing through some dualities carefully... $N=N_1 N_5$.}
 
 Let's choose coordinates $z,w_1,w_2$ on $\C^3$, where the branes wrap the $z$-plane along $w_1=w_2=0$. 
 Including the backreaction will deform the geometry away from the locus of the brane. 
