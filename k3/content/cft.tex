@@ -28,9 +28,78 @@ In fact, it has been argued that the instanton moduli space is the more accurate
 To get the SCFT we take an IR limit, which would be dual to a near-horizon limit from the closed string point of view. In this limit, the gauge theory moduli space becomes the target space of the low-energy sigma-model. It has been argued that the correct instanton moduli space is a smooth deformation of the symmetric product theory $Sym^{N_1 N_5}(\tilde{T}^4)/S_{N_1 N_5}$. Indeed, there is a point in the SCFT moduli space (far from the supergravity point itself) where the theory takes precisely the symmetric orbifold form. The orbifold point is the analogue of free Yang-Mills theory in the perhaps more-familiar $AdS_5\times S^5$/ 4d $\mc N =4$ SYM duality, and is dual to a stringy point in moduli space which has been explored extensively in recent years \cite{Eberhardtetal}.
  
 
+\subsection{Branes in twisted supergravity}
+
+We have already recollected the proposal of \cite{CLsugra} that the twist of type IIB supergravity is equivalent to the topological $B$-model on a Calabi--Yau fivefold.
+At the level of branes, this proposal further asserts that $D_{2k-1}$-branes in type IIB corresponds to topological $B$-branes.
+We use that perspective here to deduce the worldvolume CFT of the twist of the $D1/D5$ system in type IIB supergravity.
+
+We consider the system of $D1/D5$ branes in the twist of type IIB on a Calabi--Yau five-fold $Z$. 
+For simplicity, we assume that we have a collection of $N_1 = N$ $D1$ branes supported along a closed Riemann surface
+\[
+\Sigma \subset Z \]
+together with a single $D5$ brane which is parallel to the $D1$ branes. 
+
+We consider $D1$ branes that are a sum of simple branes labeled by the structure sheaf $\cO_\Sigma$.
+The Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by 
+\beqn\label{eqn:open1}
+\Omega^{0,\bu}(\Sigma, \underline{\rm Ext}_{\cO_Z}(\cO_\Sigma^{\oplus N}))[1] \simeq \Omega^{0,\bu}\left(\Sigma, \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma\right) [1] 
+\eeqn
+where $\cN_\Sigma$ is the normal bundle to $\Sigma$ in $Z$.
+If we take $X$ to the be the total space of the bundle $\cN_\Sigma$ then the Calabi--Yau condition requires $\wedge^4 N_\Sigma = K_\Sigma$. 
+In the case $\Sigma = \C$ and $Z = \C^5$ 
+%we can twist by a homomorphism $SO(2) \to SO(4)$ to 
+we can write the open string fields \eqref{eqn:open1} as 
+\beqn\label{eqn:open1a}
+\Omega^{0,\bu}\left(\C , \lie{gl}(N) [\ep_1,\ldots,\ep_4] \right) [1] .
+\eeqn
+Here the $\ep_i$ are odd variables that carry spin $1/4$, meaning they transform as constant sections of the bundle $K_\C^{1/4}$.
+This is precisely the field content of the holomorphic twist of two-dimensional $\cN=(8,8)$ pure gauge theory which is the worldvolume theory living on a stack of $D1$ branes in twisted supergravity on flat space.
+
+Next, we consider $D1-D5$ strings. 
+The open string fields are given by 
+\beqn
+\label{eqn:open15}
+\Omega^{0,\bu}\left(\Sigma, \underline{\op{Ext}}_{\cO_X} \left(\cO_Y , \cO_\Sigma^{\oplus N}\right) \right) .
+\eeqn
+Again, on flat space $\Sigma = \C$ this can be written in a more explicit way as
+\beqn\label{eqn:open15}
+\Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes {\rm Hom}(\C, \C^N) = \Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes \C^N .
+\eeqn
+Together with the $D5-D1$ strings we get 
+\beqn\label{eqn:open15a}
+\Omega^{0,\bu}\left(\C, K^{1/2}_\C [\ep_3,\ep_4]\right)   \otimes T^*\C^N .
+\eeqn
+
+In total, we see that the open-strings of the $D1/D5$ system along $\Sigma = \C$ are given by the Dolbeault complex valued in the following holomorphic vector bundle
+\beqn
+\bigg(\lie{gl}(N)[\ep_1,\ep_2][1] \oplus K^{1/2}_\C \otimes T^*\C^N \bigg) \otimes \C[\ep_3,\ep_4] .
+\eeqn
+If we choose twisting data so that the odd variable carry degree $\deg{\ep_1}=\deg{\ep_2} = +1$ then the bundle in parentheses can be written as
+\beqn
+\lie{gl}(N)[1] \oplus T^* \left(\lie{gl}(N) \oplus K^{1/2}_\Sigma \otimes \C^N\right) \oplus \lie{gl}(N) [-1] .
+\eeqn
+Up to the factor of $K^{1/2}_\Sigma$ this is evidently the underlying vector space of the graded Lie algebra controlling Hamiltonian reduction
+\beqn
+T^*(\lie{gl}(N) \oplus \C^N) \sslash \lie{gl}(N) .
+\eeqn
+This recovers the well-known GIT description of the symmetric orbifold $\Sym^{N} \C^2$.
+The total worldvolume theory living on the twisted $D1$ brane is thus a holomorphic $\sigma$-model with target this symmetric orbifold.
+
+This analysis happened entirely in flat space.
+The $D1$ branes wrapped
+\beqn
+\C \times 0 \times 0 \times 0 \times 0 \subset \C^5
+\eeqn
+while the $D5$ brane wrapped
+\beqn
+\C \times \C^2 \times 0 \times 0 \subset \C^5 .
+\eeqn
+If we instead replace this $\C^2$ by a compact Calabi--Yau twofold $X$ then the above computation leads us to the well-established expectation that the worldvolume theory, after twisting, is a holomorphic $\sigma$-model with target $\Sym^N X$.
+
 \subsection{The symmetric orbifold SCFT}
 
-With this background in mind, we go directly to the SCFT description of the orbifold point in moduli space. We will be particularly interested in protected, moduli-independent quantities that can still be compared to the supergravity point in moduli space. We will take the branes to be supported on $\R \times S^1$ after $T^4$ compactification, so that the CFT is defined on the cylinder. On the cylinder, the NS sector corresponds to anti-periodic boundary conditions on the fermions. The sigma model is then the $\mc N = (4,4)$ theory whose bosonic fields are valued in maps from $S^1 \rightarrow Sym^N(T^4)$.  
+We recall the SCFT description of the orbifold point in the string moduli space. We will be particularly interested in protected, moduli-independent quantities that can still be compared to the supergravity point in moduli space. We will take the branes to be supported on $\R \times S^1$ after $T^4$ compactification, so that the CFT is defined on the cylinder. On the cylinder, the NS sector corresponds to anti-periodic boundary conditions on the fermions. The sigma model is then the $\mc N = (4,4)$ theory whose bosonic fields are valued in maps from $S^1 \rightarrow Sym^N(T^4)$.  
 
 The physical SCFT has R-symmetries $SO(4) \simeq SU(2)_L \times SU(2)_R$ dual to rotations of the $S^3$ and symmetries under a global $SO(4)_I \simeq SU(2)_a \times SU(2)_b$ of transverse rotations; this latter symmetry is broken by compactification on $T^4$. The latter $SO(4)_I$, although broken by the background, is still often used to organize the field content of the theory, and acts as an outer automorphism on the $\mc N=(4, 4)$ superconformal algebra. As is well known, the isometries of $AdS_3 \times S^3$ are $SL(2, \R) \times SL(2, \R) \times SO(4)$ form the bosonic part of the supergroup $SU(1,1|2) \times SU(1,1|2)$ which preserve the supergravity vacuum and form the anomaly-free global subalgebra of the $\mc N= (4,4)$ superconformal algebra.
 
@@ -124,11 +193,22 @@ We also note briefly that the exactly marginal operators, which form a basis for
 
 \subsection{The chiral de Rham complex} 
 
+The chiral de Rham complex is a sheaf of super vertex algebras defined on any manifold \cite{MSV,??}.
+To an open coordinate neighborhood in the target, the vertex algebra is a $bc\beta\gamma$ system.
+Its global sections over the target is a super vertex algebra which is notoriously difficult to describe explicitly \cite{Moonshine stuff?}.
+On the other hand, properties of this vertex algebra are known.
+For complex manifolds this vertex algebra is known to have an action by the $\cN=2$ superconformal algebra.
+The graded character of this super vertex algebra returns the elliptic genus of the complex manifold; in this sense the chiral de Rham complex is a vertex algebra refinement of the elliptic genus.
+If the complex manifold is Calabi--Yau then this symmetry is further enhanced to the $\cN=4$ superconformal algebra and hence makes manifest the decomposition of the elliptic genus for a Calabi--Yau manifold into characters of irreducible representations of this superconformal algebra.
+
+
+We review how the chiral de Rham complex arises as the vertex algebra associated to the holomorphic twist, or half twist, which captures capturing $1/4$-BPS states of the supersymmetric $\sigma$-model on a complex manifold.
+
 One can start with the single-particle states furnished by chiral primaries and their $SU(1,1,|2)$ descendents and construct a Fock space. 
 These are dual to $1/4$-BPS states in the full physical SCFT, and their graded dimension gives rise to the elliptic genus of the model.
 The $1/4$-BPS states are captured by the so-called half-twist of the supersymmetric model which we now recall.
 
-The two-dimensional $\cN=(4,4)$ $\sigma$-model admits a half-twist along the lines of \cite{Kapustin, Witten} which results in a purely chiral theory.
+The two-dimensional $\cN=(2,2)$ $\sigma$-model admits a half-twist along the lines of \cite{Kapustin, Witten} which results in a purely holomorphic theory.
 For this purpose, it can be convenient to recombine the fermions into vectors, and complexify the bosons $X$ so that we chose local holomorphic and anti-holomorphic coordinates on the target space: $\phi^i, \phi^{\bar{i}}$. 
 Then, explicitly, the fermionic fields are sections of the following bundles: 
 \begin{align*}
@@ -278,60 +358,6 @@ f(m', l') =\left(\sum_{\tilde{n}= - \infty}^{\infty}\mathcal{C}(m'^2 - l'^2/4 + 
 
 
 \textcolor{blue}{finish discussion of quantum numbers of states contributing to the infinite-N index}
-
-\subsection{Branes in twisted supergravity}
-\brian{Here I wanted to derive from first-principles the dual chiral CFT using the topological string package.}
-
-We consider the situation of a $D1/D5$ brane system in the twist of type IIB on a Calabi--Yau five-fold $X$. 
-For simplicity, we assume that we have a collection of $N_1 = N$ $D1$ branes supported along a closed Riemann surface
-\[
-\Sigma \subset X 
-\]
-together with a single $D5$ brane which is parallel to the $D1$ branes. 
-
-We consider $D1$ branes that are a sum of simple branes labeled by $\cO_\Sigma$.
-The Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by 
-\beqn\label{eqn:open1}
-\Omega^{0,\bu}(\Sigma, \underline{\rm Ext}_{\cO_X}(\cO_\Sigma^{\oplus N}))[1] \simeq \Omega^{0,\bu}\left(\Sigma, \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma\right) [1] 
-\eeqn
-where $\cN_\Sigma$ is the normal bundle to $\Sigma$ in $X$.
-If we take $X$ to the be the total space of the bundle $\cN_\Sigma$ then the Calabi--Yau condition requires $\wedge^4 N_\Sigma = K_\Sigma$. 
-In the case $\Sigma = \C$ and $X = \C^5$ 
-%we can twist by a homomorphism $SO(2) \to SO(4)$ to 
-we can write the open string fields \eqref{eqn:open1} as 
-\beqn\label{eqn:open1a}
-\Omega^{0,\bu}\left(\C , \lie{gl}(N) [\ep_1,\ldots,\ep_4] \right) [1] .
-\eeqn
-Here the $\ep_i$ are odd variables that carry spin $1/4$, meaning they transform as constant sections of the bundle $K_\C^{1/4}$.
-
-Next, we consider $D1-D5$ strings. 
-The open string fields are given by 
-\beqn
-\label{eqn:open15}
-\Omega^{0,\bu}\left(\Sigma, \underline{\mathbb{R}\op{Hom}}_{\cO_X} \left(\cO_Y , \cO_\Sigma^{\oplus N}\right) \right) .
-\eeqn
-Again, on flat space $\Sigma = \C$ this can be written in a more explicit way as
-\beqn\label{eqn:open15}
-\Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes {\rm Hom}(\C, \C^N) = \Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes \C^N .
-\eeqn
-Together with the $D5-D1$ strings we get 
-\beqn\label{eqn:open15a}
-\Omega^{0,\bu}\left(\C, K^{1/2}_\C [\ep_3,\ep_4]\right)   \otimes T^*\C^N .
-\eeqn
-
-In total, we see that the open-strings of the $D1/D5$ system along $\Sigma = \C$ are given by the Dolbeault complex valued in the following holomorphic vector bundle
-\beqn
-\bigg(\lie{gl}(N)[\ep_1,\ep_2][1] \oplus K^{1/2}_\C \otimes T^*\C^N \bigg) \otimes \C[\ep_3,\ep_4] .
-\eeqn
-The bundle in parentheses can be written as 
-\brian{Now here I really want $\deg{\ep_1}=\deg{\ep_2} = +1$}
-\beqn
-\lie{gl}(N)[1] \oplus T^* \left(\lie{gl}(N) \oplus K^{1/2}_\Sigma \otimes \C^N\right) \oplus \lie{gl}(N) [-1] .
-\eeqn
-Up to the factor of $K^{1/2}_\Sigma$ this is evidently the underlying vector space of the graded Lie algebra controlling Hamiltonian reduction of 
-\beqn
-T^*(\lie{gl}(N) \oplus \C^N) \sslash \lie{gl}(N) .
-\eeqn
 
 \subsection{The large $N$ limit}
 
