@@ -4,11 +4,12 @@
 
 \section{The twisted symmetric orbifold CFT}
 
-Supergravity on $AdS_3 \times S^3 \times X$, where $X$ is either $T^4$ or a $K3$ surface, is expected to be holographically dual to a particular two-dimensional superconformal field theory (SCFT). 
-Here we review this system of interest, following \cite{Davidetal} and references therein.
-We also review the notion of the chiral de Rham complex of a manifold, and its generalization to orbifolds, in order to discuss the chiral algebra associated with the half-twist of the $Sym^N(T^4)$ SCFT, putatively dual to Kodaira-Spencer theory on the superconifold. Of course, this SCFT is the IR limit of the field theory that arises from the zero modes of the open strings on the D1-D5 branes. 
-The lowest-lying modes of open strings, which provide an effective field theory description of the D1 and D5-branes, naturally furnish a gauge theory whose IR limit we are primarily interested in.  
-The D5-D5 strings give rise to a six-dimensional supersymmetric $U(N_5)$ gauge theory preserving 16 supercharges. 
+Supergravity on $AdS_3 \times S^3 \times X$, where $X$ is either $T^4$ or a $K3$ surface, is expected to be holographically dual to a particular two-dimensional superconformal field theory (SCFT). Though our primary interest in this note is $K3$, with the $T^4$ case studied in \cite{CPT4}, we can be agnostic about $X$ for many aspects of the analysis. 
+
+We will briefly review this system of interest, following \cite{Davidetal} and references therein, with a focus towards applying the holomorphic twist to this system and isolate the 1/4-BPS states. Of course, this SCFT is the IR limit of the field theory that arises from the zero modes of the open strings on the D1-D5 branes. 
+The lowest-lying modes of open strings, which provide an effective field theory description of the D1 and D5-branes, naturally furnish a gauge theory whose IR limit we are primarily interested in. One can study the twist, which is insensitive to RG flow, of both the D1-D5 gauge theory or the symmetric orbifold CFT, and we will sketch salient features of both perspectives. 
+
+We recall that the D5-D5 strings give rise to a six-dimensional supersymmetric $U(N_5)$ gauge theory preserving 16 supercharges. 
 When all the D-branes are coincident the gauge theory is in the Higgs phase and when some of the adjoint scalars in the field theory acquire a vev, corresponding to transverse separation of the branes, the theory is in the Coulomb phase. 
 We will focus on the Higgs branch of the gauge theory throughout, which involves turning on a nonvanishing Fayet-Iliopoulos parameter (dually, NS B-field). 
 We reduce four directions of the gauge theory on 
@@ -22,39 +23,113 @@ These strings produce matter multiplets transforming in the bifundamental repres
 
 On the Higgs branch, one must solve the vanishing of the bosonic potential (i.e. D-flatness equations) modulo the gauge symmetries $U(N_1)\times U(N_5)$ to obtain the moduli space. 
 If one imagined that both sets of D-branes were supported on a noncompact six-dimensional space, these D-flatness equations can be rewritten to reproduce the ADHM equations for $N_1$ instantons of a six-dimensional $U(N_5)$ gauge theory a la \cite{WittenADHM}. 
-In fact, it has been argued that the instanton moduli space is the more accurate description of the dual field theory, so that one should study the moduli space of $N_1$ instantons of a $U(N_5)$ gauge theory on $T^4$, i.e. the Hilbert scheme of $N_1 N_5$ points on $T^4$ \footnote{Throughout this note we ignore the center of mass factor of the moduli space that produces a $\tilde{T}^4$ factor, for some $\tilde{T}^4$ not necessarily the same as the compactification $T^4$. The relationship between the two tori is clarified in \cite{GiveonKutasovSeiberg}.}. The (conformally invariant limit of the) gauge theory description is expected to only capture the regime of vanishing size instantons (i.e. when the hypermultiplets have small vevs). One can understand that the gauge theory description is approximate by noticing that the Yang-Mills couplings are given in terms of the $T^4$ volume $V$ and string coupling as $g_1^2 = g_s (2 \pi \alpha'), g_5^2 = g_s V/(\alpha' (2\pi)^3)$ so for energies much smaller than the inverse string length the gauge theories are strongly coupled \cite{Davidetal}. 
+In fact, it has been argued that the instanton moduli space is the more accurate description of the dual field theory, so that one should study the moduli space of $N_1$ instantons of a $U(N_5)$ gauge theory on $X$, for which a useful model is the Hilbert scheme of $N_1 N_5$ points on $X$ \footnote{Throughout this note we ignore the center of mass factor of the moduli space that produces a $\tilde{X}$ factor, for some $\tilde{X}$ not necessarily the same as the compactification $X$. The relationship between the two manifolds in the $T^4$ case is clarified in \cite{GiveonKutasovSeiberg}.}. The (conformally invariant limit of the) gauge theory description is expected to only capture the regime of vanishing size instantons (i.e. when the hypermultiplets have small vevs). One can understand that the gauge theory description is approximate by noticing that the Yang-Mills couplings are given in terms of the $X$ volume $V$ and string coupling as $g_1^2 = g_s (2 \pi \alpha'), g_5^2 = g_s V/(\alpha' (2\pi)^3)$ so for energies much smaller than the inverse string length the gauge theories are strongly coupled \cite{Davidetal}. 
 
 
-To get the SCFT we take an IR limit, which would be dual to a near-horizon limit from the closed string point of view. In this limit, the gauge theory moduli space becomes the target space of the low-energy sigma-model. It has been argued that the correct instanton moduli space is a smooth deformation of the symmetric product theory $Sym^{N_1 N_5}(\tilde{T}^4)/S_{N_1 N_5}$. Indeed, there is a point in the SCFT moduli space (far from the supergravity point itself) where the theory takes precisely the symmetric orbifold form. The orbifold point is the analogue of free Yang-Mills theory in the perhaps more-familiar $AdS_5\times S^5$/ 4d $\mc N =4$ SYM duality, and is dual to a stringy point in moduli space which has been explored extensively in recent years \cite{Eberhardtetal}.
+To get the SCFT we take an IR limit, which would be dual to a near-horizon limit from the closed string point of view. In this limit, the gauge theory moduli space becomes the target space of the low-energy sigma-model. It has been argued that the correct instanton moduli space is a smooth deformation of the symmetric product theory $Sym^{N_1 N_5}(\tilde{X})/S_{N_1 N_5}$ \footnote{Here we are taking both $N_1, N_5$ large, so as to treat the $K3$ and $T^4$ cases symmetrically}. Indeed, there is a point in the SCFT moduli space (far from the supergravity point itself) where the theory takes precisely the symmetric orbifold form. The orbifold point is the analogue of free Yang-Mills theory in the perhaps more-familiar $AdS_5\times S^5$/ 4d $\mc N =4$ SYM duality, and is dual to a stringy point in moduli space which has been explored extensively in recent years \cite{Eberhardtetal}.
+
+In this section, we will focus on moduli-independent quantities and reproduce the familiar counts of 1/4-BPS states at large-N \cite{deBoerEG}, via the elliptic genus, from the twisted CFT perspective using the twist of the symmetric orbifold CFT. This is also known as the half-twist \cite{Witten, Kapustin}; in particular, the half-twist of a sigma-model can be mathematically formulated as the chiral de Rham complex \cite{Kapustin, Malikovetal}, which is precisely what our holomorphic twist captures. We will also review some aspects of the twist from the perspective of the UV worldvolume gauge theory, to which we now turn. 
  
+
+\subsection{Branes in twisted supergravity}
+
+We have already recollected the proposal of \cite{CLsugra} that the twist of type IIB supergravity is equivalent to the topological $B$-model on a Calabi--Yau fivefold.
+At the level of branes, this proposal further asserts that $D(2k-1)$-branes in type IIB corresponds to $B$-branes in the topological string theory.
+We use that perspective here to deduce the worldvolume CFT of the twist of the $D1/D5$ system in type IIB supergravity.
+
+We consider the system of $D1/D5$ branes in the twist of type IIB on a Calabi--Yau five-fold $Z$. 
+For simplicity, we assume that we have a collection of $N_1 = N$ $D1$ branes supported along a closed Riemann surface
+\[
+\Sigma \subset Z \]
+together with a single $D5$ brane which is parallel to the $D1$ branes. 
+
+We consider $D1$ branes that are a sum of simple branes labeled by the structure sheaf $\cO_\Sigma$. Fields in the holomorphic twist of some supersymmetric theory are naturally modeled via an appropriate Dolbeault complex.
+The Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by \textcolor{red}{we should unpack a bit of this notation, including the underline/subscript of the Ext groups (I think most physicists are not familiar with Ext groups actually so we should at least cite the D-branes and mirror symmetry book, or say a few extra words? and the cohomological shift} 
+\beqn\label{eqn:open1}
+\Omega^{0,\bu}(\Sigma, \underline{\rm Ext}_{\cO_Z}(\cO_\Sigma^{\oplus N}))[1] \simeq \Omega^{0,\bu}\left(\Sigma, \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma\right) [1] 
+\eeqn
+where $\cN_\Sigma$ is the normal bundle to $\Sigma$ in $Z$.
+If we take $X$ to the be the total space of the bundle $\cN_\Sigma$ then the Calabi--Yau condition requires $\wedge^4 N_\Sigma = K_\Sigma$. 
+In the case $\Sigma = \C$ and $Z = \C^5$ 
+%we can twist by a homomorphism $SO(2) \to SO(4)$ to 
+we can write the open string fields \eqref{eqn:open1} as 
+\beqn\label{eqn:open1a}
+\Omega^{0,\bu}\left(\C , \lie{gl}(N) [\ep_1,\ldots,\ep_4] \right) [1] .
+\eeqn
+Here the $\ep_i$ are odd variables that carry spin $1/4$, meaning they transform as constant sections of the bundle $K_\C^{1/4}$.
+This is precisely the field content of the holomorphic twist of two-dimensional $\cN=(8,8)$ pure gauge theory which is the worldvolume theory living on a stack of $D1$ branes in twisted supergravity on flat space.
+
+Next, we consider $D1-D5$ strings. 
+The open string fields are given by 
+\beqn
+\label{eqn:open15}
+\Omega^{0,\bu}\left(\Sigma, \underline{\op{Ext}}_{\cO_X} \left(\cO_Y , \cO_\Sigma^{\oplus N}\right) \right) .
+\eeqn
+Again, on flat space $\Sigma = \C$ this can be written in a more explicit way as
+\beqn\label{eqn:open15}
+\Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes {\rm Hom}(\C, \C^N) = \Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes \C^N .
+\eeqn
+Together with the $D5-D1$ strings we get 
+\beqn\label{eqn:open15a}
+\Omega^{0,\bu}\left(\C, K^{1/2}_\C [\ep_3,\ep_4]\right)   \otimes T^*\C^N .
+\eeqn
+
+In total, we see that the open-strings of the $D1/D5$ system along $\Sigma = \C$ are given by the Dolbeault complex valued in the following holomorphic vector bundle
+\beqn
+\bigg(\lie{gl}(N)[\ep_1,\ep_2][1] \oplus K^{1/2}_\C \otimes T^*\C^N \bigg) \otimes \C[\ep_3,\ep_4] .
+\eeqn
+If we choose twisting data so that the odd variable carry degree $\deg{\ep_1}=\deg{\ep_2} = +1$ then the bundle in parentheses can be written as
+\beqn
+\lie{gl}(N)[1] \oplus T^* \left(\lie{gl}(N) \oplus K^{1/2}_\Sigma \otimes \C^N\right) \oplus \lie{gl}(N) [-1] .
+\eeqn
+Up to the factor of $K^{1/2}_\Sigma$ this is evidently \textcolor{red}{perhaps not so evident for physicists... we should add some explanatory remarks} the underlying vector space of the graded Lie algebra controlling Hamiltonian reduction
+\beqn
+T^*(\lie{gl}(N) \oplus \C^N) \sslash \lie{gl}(N) .
+\eeqn
+This recovers the well-known GIT description of the symmetric orbifold $\Sym^{N} \C^2$.
+The total worldvolume theory living on the twisted $D1$ brane is thus a holomorphic $\sigma$-model with target this symmetric orbifold.
+
+This analysis happened entirely in flat space.
+The $D1$ branes wrapped
+\beqn
+\C \times 0 \times 0 \times 0 \times 0 \subset \C^5
+\eeqn
+while the $D5$ brane wrapped
+\beqn
+\C \times \C^2 \times 0 \times 0 \subset \C^5 .
+\eeqn
+If we instead replace this $\C^2$ by a compact Calabi--Yau twofold $X$ then the above computation leads us to the well-established expectation that the worldvolume theory, after twisting, is a holomorphic $\sigma$-model with target $\Sym^N X$.
+
+\textcolor{red}{Q: is it easy to map the dolbeault model of the fields to the (local description of) CdR fields explicitly?}
 
 \subsection{The symmetric orbifold SCFT}
 
-With this background in mind, we go directly to the SCFT description of the orbifold point in moduli space. We will be particularly interested in protected, moduli-independent quantities that can still be compared to the supergravity point in moduli space. We will take the branes to be supported on $\R \times S^1$ after $T^4$ compactification, so that the CFT is defined on the cylinder. On the cylinder, the NS sector corresponds to anti-periodic boundary conditions on the fermions. The sigma model is then the $\mc N = (4,4)$ theory whose bosonic fields are valued in maps from $S^1 \rightarrow Sym^N(T^4)$.  
+We now briefly recall the SCFT description of the orbifold point in the string moduli space, and its holomorphic twist. We will take the branes to be supported on $\R \times S^1$ after compactification on $X$, so that the CFT is defined on the cylinder. On the cylinder, the NS sector corresponds to anti-periodic boundary conditions on the fermions. The sigma model is then the $\mc N = (4,4)$ theory whose bosonic fields are valued in maps from $S^1 \rightarrow Sym^N(X)$.  
 
-The physical SCFT has R-symmetries $SO(4) \simeq SU(2)_L \times SU(2)_R$ dual to rotations of the $S^3$ and symmetries under a global $SO(4)_I \simeq SU(2)_a \times SU(2)_b$ of transverse rotations; this latter symmetry is broken by compactification on $T^4$. The latter $SO(4)_I$, although broken by the background, is still often used to organize the field content of the theory, and acts as an outer automorphism on the $\mc N=(4, 4)$ superconformal algebra. As is well known, the isometries of $AdS_3 \times S^3$ are $SL(2, \R) \times SL(2, \R) \times SO(4)$ form the bosonic part of the supergroup $SU(1,1|2) \times SU(1,1|2)$ which preserve the supergravity vacuum and form the anomaly-free global subalgebra of the $\mc N= (4,4)$ superconformal algebra.
+The physical SCFT has R-symmetries $SO(4) \simeq SU(2)_L \times SU(2)_R$ dual to rotations of the $S^3$ and symmetries under a global $SO(4)_I \simeq SU(2)_a \times SU(2)_b$ of transverse rotations; this latter symmetry is broken by compactification on $X$. The latter $SO(4)_I$, although broken by the background, is still often used to organize the field content of the compactified, and acts as an outer automorphism on the $\mc N=(4, 4)$ superconformal algebra. As is well known, the isometries of $AdS_3 \times S^3$ are $SL(2, \R) \times SL(2, \R) \times SO(4)$ form the bosonic part of the supergroup $SU(1,1|2) \times SU(1,1|2)$ which preserve the supergravity vacuum and form the anomaly-free global subalgebra of the $\mc N= (4,4)$ superconformal algebra.
 
-The orbifold theory can be described in terms of free fields on $N:= N_1N_5$ copies of the $T^4$ theory. We write $SU(2)_a \times SU(2)_b$ doublet indices as $A, \dot{B}$, $SU(2)_L\times SU(2)_R$ doublet indices as $\alpha, \dot{\beta}$. $SO(4)_I$ vector indices will be denoted by $i,j$, etc and subscripts $(r), r= 1,\ldots, N$ label the orbifold copy number.  
+%The CFT when $X= T^4$ is particularly simple, as the orbifold theory can be described in terms of free fields on $N:= N_1N_5$ copies of the $T^4$ theory \cite{Davidetal}. We write $SU(2)_a \times SU(2)_b$ doublet indices as $A, \dot{B}$, $SU(2)_L\times SU(2)_R$ doublet indices as $\alpha, \dot{\beta}$. $SO(4)_I$ vector indices will be denoted by $i,j$, etc and subscripts $(r), r= 1,\ldots, N$ label the orbifold copy number.  
 
-Each $T^4$ theory has four free bosons $X^i_{(r)}$ and eight free fermions, the left-movers $\psi^{\alpha \dot{A}}_{(r)}(z)$ and right-movers $\bar{\psi}^{\dot{\alpha} \dot{A}}_{(r)}(\bar{z})$, for fixed copy $(r)$ that satisfy the reality conditions
-\begin{align*}
-\psi^{\dagger}_{\alpha \dot{A}} &= -\epsilon_{\alpha \beta}\epsilon_{\dot{A} \dot{B}}\psi^{\beta \dot{B}} \\ 
-\bar{\psi}^{\dagger}_{\dot{\alpha} \dot{A}} &= -\epsilon_{\dot{\alpha} \dot{\beta}}\epsilon_{\dot{A} \dot{B}}\bar{\psi}^{\dot{\beta} \dot{B}}.
-\end{align*}
+%Each $T^4$ theory has four free bosons $X^i_{(r)}$ and eight free fermions, the left-movers $\psi^{\alpha \dot{A}}_{(r)}(z)$ and right-movers $\bar{\psi}^{\dot{\alpha} \dot{A}}_{(r)}(\bar{z})$, for fixed copy $(r)$ that satisfy the reality conditions
+%\begin{align*}
+%\psi^{\dagger}_{\alpha \dot{A}} &= -\epsilon_{\alpha \beta}\epsilon_{\dot{A} \dot{B}}\psi^{\beta \dot{B}} \\ 
+%\bar{\psi}^{\dagger}_{\dot{\alpha} \dot{A}} &= -\epsilon_{\dot{\alpha} \dot{\beta}}\epsilon_{\dot{A} \dot{B}}\bar{\psi}^{\dot{\beta} \dot{B}}.
+%\end{align*}
+%
+%In terms of the free fields, we construct the holomorphic $\mc N=4$ superconformal algebra generators (similar expressions hold for the right-movers). In what follows, we have implicitly performed the diagonal sum over the copy index of all fields to obtain $S_{N_1 N_5}$-invariant expressions:
+%\begin{align*}
+%J^{a}(z) &= {1 \over 4} \epsilon_{\dot{A} \dot{B}} \psi^{\alpha \dot{A}}\epsilon_{\alpha\beta}(\sigma^{* a})^{\beta}_{\gamma} \psi^{\gamma \dot{B}}\\
+%G^{\alpha A}(z) &= \psi^{\alpha \dot{A}}\left[\partial X \right]^{\dot{B}A}\epsilon_{\dot{A} \dot{B}}\\
+%T(z) &= {1 \over 2} \epsilon_{\dot{A}\dot{B}}\epsilon_{AB}\left[\partial X\right]^{\dot{A}A}\left[\partial X \right]^{\dot{B}B} + {1\over 2}\epsilon_{\alpha \beta}\epsilon_{\dot{A}\dot{B}} \psi^{\alpha \dot{A}}\partial \psi^{\beta \dot{B}}
+%\end{align*} with $a$ an $SU(2)_L$ triplet index and using the notation $\left[ X \right]^{A \dot{A}} = {1 \over \sqrt{2}}X^i (\sigma^i)^{\dot{A} A}$ using the usual Pauli matrices plus $\sigma^4 = i \mbb 1_2$.
+%
+%The free fields are normalized in the usual way,
+%\begin{align*}
+%\langle X^i(z) X^j(w) \rangle &= -2 \delta^{ij}\log|z-w| \\
+%\langle \psi^{\alpha \dot{A}} \psi^{\beta \dot{B}} \rangle &= - {\epsilon^{\alpha \beta}\epsilon^{\dot{A}\dot{B}} \over z-w}
+%\end{align*}
 
-In terms of the free fields, we construct the holomorphic $\mc N=4$ superconformal algebra generators (similar expressions hold for the right-movers). In what follows, we have implicitly performed the diagonal sum over the copy index of all fields to obtain $S_{N_1 N_5}$-invariant expressions:
-\begin{align*}
-J^{a}(z) &= {1 \over 4} \epsilon_{\dot{A} \dot{B}} \psi^{\alpha \dot{A}}\epsilon_{\alpha\beta}(\sigma^{* a})^{\beta}_{\gamma} \psi^{\gamma \dot{B}}\\
-G^{\alpha A}(z) &= \psi^{\alpha \dot{A}}\left[\partial X \right]^{\dot{B}A}\epsilon_{\dot{A} \dot{B}}\\
-T(z) &= {1 \over 2} \epsilon_{\dot{A}\dot{B}}\epsilon_{AB}\left[\partial X\right]^{\dot{A}A}\left[\partial X \right]^{\dot{B}B} + {1\over 2}\epsilon_{\alpha \beta}\epsilon_{\dot{A}\dot{B}} \psi^{\alpha \dot{A}}\partial \psi^{\beta \dot{B}}
-\end{align*} with $a$ an $SU(2)_L$ triplet index and using the notation $\left[ X \right]^{A \dot{A}} = {1 \over \sqrt{2}}X^i (\sigma^i)^{\dot{A} A}$ using the usual Pauli matrices plus $\sigma^4 = i \mbb 1_2$.
-
-The free fields are normalized in the usual way,
-\begin{align*}
-\langle X^i(z) X^j(w) \rangle &= -2 \delta^{ij}\log|z-w| \\
-\langle \psi^{\alpha \dot{A}} \psi^{\beta \dot{B}} \rangle &= - {\epsilon^{\alpha \beta}\epsilon^{\dot{A}\dot{B}} \over z-w}
-\end{align*}
-using which one can verify that the generators for each copy indeed satisfy the OPEs for the $\mc N=4$ superconformal algebra with $c=6$ and the diagonal sum for $c=6N$ \textcolor{red}{Kodaira-Spencer theory seems to miss the $\partial J$ terms in the TJ, GG OPEs below. Do they come from the diagrams including a single line sourcing the Beltrami differential?}:
+Part of the underlying chiral algebra of the $\mc{N}=(4, 4)$ SCFT OPEs is the usual holomorphic $\mc N=4$ superconformal algebra with $c=6N$ (which can be explicitly constructed as a diagonal sum over the $N$ copies of the seed $c=6$ sigma models):
 \begin{align*}
 J^a(z)J^b(w) &\sim  {c \over 12}{\delta^{ab} \over (z-w)^2} + i \epsilon^{ab}_c {J^c(w) \over z-w}\\
 J^a(z)G^{\alpha A}(w) &\sim {1 \over 2} (\sigma^{*a})^{\alpha}_{\beta} {G^{\beta A}(w) \over z-w}\\
@@ -63,18 +138,25 @@ T(z)J^a(w) &\sim {J^a(w) \over (z-w)^2} + {\partial J^a(w) \over z-w}\\
 T(z)G^{\alpha A}(w)&\sim { {3 \over 2} G^{\alpha A}(w) \over (z-w)^2} + {\partial G^{\alpha A}(w) \over z-w}\\
 T(z)T(w) &\sim {c \over 2}{1 \over (z-w)^4} + 2 {T(w) \over (z-w)^2} + {\partial T(w) \over z-w}.
 \end{align*}
-It is also easy to derive the OPEs of these generators with the basic free primaries:
-\begin{align*}
-J^a(z)\psi^{\alpha \dot{A}}(w) &\sim {1 \over 2}(\sigma^{*a})^{\alpha}_{\beta}{\psi^{\beta \dot{A}}(w) \over z-w}\\
-G^{\alpha A}(z)\left[\partial X(w)\right]^{\dot{B}B} &\sim \epsilon^{AB}\left({\psi^{\alpha \dot{B}}(w) \over (z-w)^2} + {\partial \psi^{\alpha \dot{B}}(w) \over z-w} \right)\\
-G^{\alpha A}(z)\psi^{\beta \dot{A}}(w) &\sim \epsilon^{\alpha \beta}{\left[\partial X(w) \right]^{\dot{A}A} \over z-w}\\
-T(z) \left[\partial X(w) \right]^{\dot{A}A} &\sim { \left[\partial X(w) \right]^{\dot{A}A} \over (z-w)^2} + {\left[\partial^2 X(w) \right]^{\dot{A}A} \over z-w}\\
-T(z) \psi^{\alpha \dot{A}} &\sim {{1\over2} \psi^{\alpha \dot{A}}(w) \over (z-w)^2} + {\partial \psi^{\alpha \dot{A}}(w) \over z-w}.
-\end{align*}
- As always, we define the modes $\mc O_m$ of a field $\mc O(z)$ in terms of its weight $\Delta$:
- \begin{equation}
- \mc O_m = \oint {dz \over 2\pi i} \mc O(z) z^{\Delta + m-1}.
- \end{equation}
+Above, we have written $SU(2)_a \times SU(2)_b$ doublet indices as $A, \dot{B}$ and $SU(2)_L\times SU(2)_R$ doublet indices as $\alpha, \dot{\beta}$. 
+
+%$SO(4)_I$ vector indices will be denoted by $i,j$, etc and subscripts $(r), r= 1,\ldots, N$ label the orbifold copy number.  
+
+There is, of course, also a right-moving copy in the full SCFT, though only the chiral half above will be accessible in the holomorphic twist. 
+
+%It is also easy to derive the OPEs of these generators with the basic free primaries:
+%\begin{align*}
+%J^a(z)\psi^{\alpha \dot{A}}(w) &\sim {1 \over 2}(\sigma^{*a})^{\alpha}_{\beta}{\psi^{\beta \dot{A}}(w) \over z-w}\\
+%G^{\alpha A}(z)\left[\partial X(w)\right]^{\dot{B}B} &\sim \epsilon^{AB}\left({\psi^{\alpha \dot{B}}(w) \over (z-w)^2} + {\partial \psi^{\alpha \dot{B}}(w) \over z-w} \right)\\
+%G^{\alpha A}(z)\psi^{\beta \dot{A}}(w) &\sim \epsilon^{\alpha \beta}{\left[\partial X(w) \right]^{\dot{A}A} \over z-w}\\
+%T(z) \left[\partial X(w) \right]^{\dot{A}A} &\sim { \left[\partial X(w) \right]^{\dot{A}A} \over (z-w)^2} + {\left[\partial^2 X(w) \right]^{\dot{A}A} \over z-w}\\
+%T(z) \psi^{\alpha \dot{A}} &\sim {{1\over2} \psi^{\alpha \dot{A}}(w) \over (z-w)^2} + {\partial \psi^{\alpha \dot{A}}(w) \over z-w}.
+%\end{align*}
+% As always, we define the modes $\mc O_m$ of a field $\mc O(z)$ in terms of its weight $\Delta$:
+% \begin{equation}
+% \mc O_m = \oint {dz \over 2\pi i} \mc O(z) z^{\Delta + m-1}.
+% \end{equation}
+
  It is easy from the above OPEs to get the mode algebra of the $\mc N=4$ superconformal algebra. For simplicity, we will just record the mode algebra of the global subalgebra generated by $\left\lbrace J_0^a, G^{\alpha A}_{\pm 1/2}, L_0, L_{\pm 1} \right\rbrace$, which has its Cartan subalgebra generated by $J_0^3, L_0$: 
  \begin{align}
  \left[L_0, L_{\pm 1} \right]&= \mp L_{\pm}\\
@@ -88,19 +170,22 @@ T(z) \psi^{\alpha \dot{A}} &\sim {{1\over2} \psi^{\alpha \dot{A}}(w) \over (z-w)
  \left[J^a_{0}, G^{\alpha A}_{\pm n} \right]&= {1 \over 2}(\sigma^{*a})^{\alpha}_{\beta}G^{\beta A}_{\pm n} 
  \end{align} These commutators generate $\mf psu(1,1|2)$. Notice that there is no anomaly $c = 6 N$ in the global subalgebra. 
  
+ Later in the text, we will reproduce the chiral algebra of the symmetric orbifold SCFT using the method of Koszul duality. The global subalgebra can be readily reproduced at tree-level in the planar limit; to obtain the centrally extended chiral algebra, including the holomorphic $\mc{N}=4$ superconformal algebra, we will incorporate a certain class of planar Feynman diagrams sensitive to the backreaction. 
+ 
+Next, we will briefly recapitulate the SCFT states which contribute to the infinite-N limit of the elliptic genus, and their avatars in the holomorphic twist. 
  
 \subsection{Chiral primaries \& short multiplets in the symmetric orbifold}
 \textcolor{red}{Chiral primaries themselves have an OPE $J[m, 0]J[n, 0] \sim regular$, but still have interesting three point functions from the regular terms $O^i O^j \sim C^{ij}_k O^k$... can we recover the chiral ring coefficients from KS somehow?}
-From studying the algebra above it is easy to derive that a primary $\phi$ that also satisfies the condition $G^{+ A}_{-1/2}|\phi \rangle = 0, A=1,2$ satisfies $h=j$ (for $L_0$ eigenvalue $h$ and $J_0^3$ eigenvalue $j$) and is called a chiral primary. The quantum numbers and two and three-point functions among chiral primaries are protected quantities as one moves in moduli space and can be matched to the corresponding quantities at the supergravity point. Anti-chiral primaries are defined similarly and satisfy $h = -j$. In the full physical theory, one combines left and right-moving (anti)chiral primaries: $(c, c), (a,a), (a,c), (c, a)$. We will first focus on chiral primaries in the holomorphic half of the SCFT. 
+From studying the algebra above it is easy to derive that a primary $\phi$ that also satisfies the condition $G^{+ A}_{-1/2}|\phi \rangle = 0, A=1,2$ satisfies $h=j$ (for $L_0$ eigenvalue $h$ and $J_0^3$ eigenvalue $j$) and is called a chiral primary. The quantum numbers and two and three-point functions among chiral primaries have been extensively studied in the literature, and are protected quantities as one moves in moduli space and can be matched to the corresponding quantities at the supergravity point (e.g. \cite{}). Anti-chiral primaries are defined similarly and satisfy $h = -j$. In the full physical theory, one combines left and right-moving (anti)chiral primaries: $(c, c), (a,a), (a,c), (c, a)$. For the holomorphic twist, we will focus on chiral primaries in the holomorphic half of the SCFT. 
 
-Chiral primaries can arise in the twisted and untwisted sectors of the orbifold. In an $n$-twisted sector (cyclically permuting $n$ copies of the $T^4$ SCFT), the weights of the chiral primaries are bounded: ${n-1 \over 2} \leq h \leq {n+1 \over 2}$. The chiral primaries are explicitly constructed as follows, starting with a twist field. Consider the twist field $\sigma_{l+1}(z)$ which cyclically permutes $l+1$ copies of the holomorphic SCFT as one moves around the point $z$ in the base space; it creates the ground state of the twisted sector by acting on the original NS vacuum. It has weight $h = {6 \over 24}( (l+ 1) - {1 \over l+1})$, but no charge. To make a chiral primary from this state, we must dress it with modes of $J^+ \sim \psi^{+ \dot{1}} \psi^{+ \dot{2}}$, which carry $SU(2)_L$ charge. In particular, using the fact that operators in the twisted sector are fractionally moded we can build the chiral primaries \cite{LuninMathur}:
+Chiral primaries can arise in the twisted and untwisted sectors of the orbifold. In an $n$-twisted sector (cyclically permuting $n$ copies of the $X$ SCFT), the weights of the chiral primaries are bounded: ${n-1 \over 2} \leq h \leq {n+1 \over 2}$. The chiral primaries are explicitly constructed as follows, starting with a twist field. Consider the twist field $\sigma_{l+1}(z)$ which cyclically permutes $l+1$ copies of the holomorphic SCFT as one moves around the point $z$ in the base space; it creates the ground state of the twisted sector by acting on the original NS vacuum. It has weight $h = {6 \over 24}( (l+ 1) - {1 \over l+1})$, but no charge. To make a chiral primary from this state, we must dress it with modes of $J^+$, which carry $SU(2)_L$ charge. In particular, using the fact that operators in the twisted sector are fractionally moded we can build the chiral primaries \cite{LuninMathur}:
 \begin{align*}
 \sigma^0_{l+1}&:=  J^+_{-{l-1 \over l+1}}J^{+}_{-{l-3 \over l+1}} \ldots J^+_{-{1 \over l+1}}\sigma_{l+1}, \ \ \ l+1 \text { odd} \\
 \sigma^0_{l+1}&:= J^+_{-{l-1 \over l+1}}J^{+}_{-{l-3 \over l+1}} \ldots J^+_{-{2 \over l+1}}S^+_{l+1}\sigma_{l+1}, \ \ \ l+1 \text { even}
 \end{align*} which have $h=j= l/2$. The spin fields $S^+_{l+1}$ map the NS sector vacuum to the R sector, in order to restore the overall periodicity of the fermions as it traverses the length of the long closed string. These single long string states map to single particle states in the supergravity theory. 
 
 
-From this basic chiral primary, we can create three additional chiral primaries by acting with the fermions, which also map to single particle supergravity states:
+From this basic chiral primary, we can create three additional chiral primaries by acting with the generators of $H^{\bullet, 0}(X)$, which also map to single particle supergravity states. For example, when $X=T^4$ these are simply represented by free fermions:
 \begin{align*}
 &\sigma^0_{l+1},  &\qquad h=j= l/2 \\
 &\psi^{+ \dot{1}}\sigma^0_{l+1}, &\qquad h=j= (l+1)/2\\
@@ -118,17 +203,29 @@ One can also construct anti-chiral primaries with $h=-j$ in the holomorphic (or 
 \begin{align*}
 \tilde{\sigma}^0_{l+1}&:=  J^-_{-{l-1 \over l+1}}J^{-}_{-{l-3 \over l+1}} \ldots J^-_{-{1 \over l+1}}\sigma_{l+1}, \ \ \ l+1 \text { odd} \\
 \tilde{\sigma}^0_{l+1}&:= J^-_{-{l-1 \over l+1}}J^{-}_{-{l-3 \over l+1}} \ldots J^-_{-{2 \over l+1}}S^-_{l+1}\sigma_{l+1}, \ \ \ l+1 \text { even}.
-\end{align*} One can again act on these basic primaries with the fermions. Two point functions of chiral and anti-chiral primaries are non-vanishing (in contrast to c-c and a-a two-point functions) and can always be normalized to unity when the operators are unit-separated.
+\end{align*} One can again act on these basic primaries with the fermions (more generally, differential forms). Two point functions of chiral and anti-chiral primaries are non-vanishing (in contrast to c-c and a-a two-point functions) and can always be normalized to unity when the operators are unit-separated.
 
 We also note briefly that the exactly marginal operators, which form a basis for the tangent space of the moduli space, can be found in such multiplets. In particular, marginal operators that preserve $\mc{N}=(4,4)$ supersymmetry must be $SU(2)_L$ singlets with $h=\bar{h}=1$. Therefore, they must be in the multiplets with highest weight states (combining now holomorphic and anti-holomorphic sectors) $\sigma^{+ \dot{+} }_{2}, \psi^{+\dot{A}}\bar{\psi}^{\dot{+}\dot{B}}$. Each of these five operators gives four such states, corresponding to 20 marginal operators.
 
 \subsection{The chiral de Rham complex} 
+We now turn to the holomorphic twist of the symmetric orbifold SCFT, which is mathematically codified in the chiral de Rham complex. Physically, the holomorphic twist will localize to 1/4-BPS states in the SCFT though, as is well known \cite{deBoerEG}, the inifinite-N limit of the elliptic genus, which is nothing but the partition function of the holomorphically twisted theory (or equivalently the vacuum character of the resulting chiral algebra) can be understood in terms of counts of chiral primary states. In the subsequent section, we will obtain the infinite-N limit of the full chiral algebra itself, not just its vacuum character, from Koszul duality techniques. 
+
+The chiral de Rham complex is a sheaf of super vertex algebras defined on any manifold \cite{Malikovetal}.
+To an open coordinate neighborhood in the target, the vertex algebra is a $bc\beta\gamma$ system.
+Its global sections over the target is a super vertex algebra which is notoriously difficult to describe explicitly \cite{Moonshine stuff?}.
+On the other hand, properties of this vertex algebra are known.
+For complex manifolds this vertex algebra is known to have an action by the $\cN=2$ superconformal algebra.
+The graded character of this super vertex algebra returns the elliptic genus of the complex manifold; in this sense the chiral de Rham complex is a vertex algebra refinement of the elliptic genus.
+If the complex manifold is Calabi--Yau then this symmetry is further enhanced to the $\cN=4$ superconformal algebra and hence makes manifest the decomposition of the elliptic genus for a Calabi--Yau manifold into characters of irreducible representations of this superconformal algebra.
+
+
+We review how the chiral de Rham complex arises as the vertex algebra associated to the holomorphic twist, or half twist, which captures capturing $1/4$-BPS states of the supersymmetric $\sigma$-model on a complex manifold.
 
 One can start with the single-particle states furnished by chiral primaries and their $SU(1,1,|2)$ descendents and construct a Fock space. 
 These are dual to $1/4$-BPS states in the full physical SCFT, and their graded dimension gives rise to the elliptic genus of the model.
 The $1/4$-BPS states are captured by the so-called half-twist of the supersymmetric model which we now recall.
 
-The two-dimensional $\cN=(4,4)$ $\sigma$-model admits a half-twist along the lines of \cite{Kapustin, Witten} which results in a purely chiral theory.
+The two-dimensional $\cN=(2,2)$ $\sigma$-model admits a half-twist along the lines of \cite{Kapustin, Witten} which results in a purely holomorphic theory.
 For this purpose, it can be convenient to recombine the fermions into vectors, and complexify the bosons $X$ so that we chose local holomorphic and anti-holomorphic coordinates on the target space: $\phi^i, \phi^{\bar{i}}$. 
 Then, explicitly, the fermionic fields are sections of the following bundles: 
 \begin{align*}
@@ -164,17 +261,19 @@ The operators of dimension $(n > 0, 0)$ are given by $(0, k)$-forms valued in va
 
 In the present context, our target space $M$ is given by $\oplus_{a=1}^{\infty} Sym^a (T^4)$ or $\oplus_{a=1}^{\infty} Sym^a(K3)$. These spaces are hyperkahler, so the chiral de Rham complex has  (in general, a twisted version of) $\mathcal{N}=4$ supersymmetry \cite{Heluanietal}.
 
-The basic, non vanishing OPEs for $bc\beta\gamma$ systems are
-\begin{align*}
-b_i(z)c^j(w) = c^j(z)b_i(w) &\sim {\delta^{j}_i \over z - w} \\
-\beta_i(z)\gamma^j(w) = -\gamma^j(z)\beta_i(w) &\sim {-\delta^{j}_i \over z - w}
-\end{align*}
+It is difficult, however, to perform explicit computations beyond a local model, even for a single copy of $X$. Rather than try to work with the full chiral de Rham complex directly, we will outline the matching of (counts of) states between twisted supergravity and twisted CFT (via the elliptic genus). Then we will turn to the determination of the OPEs in the holomorphically twisted theory in the $N \rightarrow \infity$ limit by applying Koszul duality to our twisted supergravity theory. 
 
-As explained in previous sections, odd spin operators in the symmetric orbifold theories will be built up from the Ramond sector vacuum, so we will also need the OPEs between the ghosts and the operator $\Sigma(z)$ (often called the spin field) that maps $|0\rangle_{NS} \rightarrow |0\rangle_{R}$:
-\begin{align*}
-\beta(z)\Sigma(w) &\sim {\tilde{\Sigma}(w) \over (z - w)^{1/2}}\\
-\gamma(z)\Sigma(w) &\sim 0.
-\end{align*}
+%It is difficult, however, to move beyond a local model, even for a single copy of $X$ due to nonperturbative effects. The basic, non vanishing OPEs for $bc\beta\gamma$ systems are
+%\begin{align*}
+%b_i(z)c^j(w) = c^j(z)b_i(w) &\sim {\delta^{j}_i \over z - w} \\
+%\beta_i(z)\gamma^j(w) = -\gamma^j(z)\beta_i(w) &\sim {-\delta^{j}_i \over z - w}
+%\end{align*}
+%
+%As explained in previous sections, odd spin operators in the symmetric orbifold theories will be built up from the Ramond sector vacuum, so we will also need the OPEs between the ghosts and the operator $\Sigma(z)$ (often called the spin field) that maps $|0\rangle_{NS} \rightarrow |0\rangle_{R}$:
+%\begin{align*}
+%\beta(z)\Sigma(w) &\sim {\tilde{\Sigma}(w) \over (z - w)^{1/2}}\\
+%\gamma(z)\Sigma(w) &\sim 0.
+%\end{align*}
 
 
 \subsection{Elliptic genera for K3 surfaces}
@@ -278,60 +377,6 @@ f(m', l') =\left(\sum_{\tilde{n}= - \infty}^{\infty}\mathcal{C}(m'^2 - l'^2/4 + 
 
 
 \textcolor{blue}{finish discussion of quantum numbers of states contributing to the infinite-N index}
-
-\subsection{Branes in twisted supergravity}
-\brian{Here I wanted to derive from first-principles the dual chiral CFT using the topological string package.}
-
-We consider the situation of a $D1/D5$ brane system in the twist of type IIB on a Calabi--Yau five-fold $X$. 
-For simplicity, we assume that we have a collection of $N_1 = N$ $D1$ branes supported along a closed Riemann surface
-\[
-\Sigma \subset X 
-\]
-together with a single $D5$ brane which is parallel to the $D1$ branes. 
-
-We consider $D1$ branes that are a sum of simple branes labeled by $\cO_\Sigma$.
-The Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by 
-\beqn\label{eqn:open1}
-\Omega^{0,\bu}(\Sigma, \underline{\rm Ext}_{\cO_X}(\cO_\Sigma^{\oplus N}))[1] \simeq \Omega^{0,\bu}\left(\Sigma, \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma\right) [1] 
-\eeqn
-where $\cN_\Sigma$ is the normal bundle to $\Sigma$ in $X$.
-If we take $X$ to the be the total space of the bundle $\cN_\Sigma$ then the Calabi--Yau condition requires $\wedge^4 N_\Sigma = K_\Sigma$. 
-In the case $\Sigma = \C$ and $X = \C^5$ 
-%we can twist by a homomorphism $SO(2) \to SO(4)$ to 
-we can write the open string fields \eqref{eqn:open1} as 
-\beqn\label{eqn:open1a}
-\Omega^{0,\bu}\left(\C , \lie{gl}(N) [\ep_1,\ldots,\ep_4] \right) [1] .
-\eeqn
-Here the $\ep_i$ are odd variables that carry spin $1/4$, meaning they transform as constant sections of the bundle $K_\C^{1/4}$.
-
-Next, we consider $D1-D5$ strings. 
-The open string fields are given by 
-\beqn
-\label{eqn:open15}
-\Omega^{0,\bu}\left(\Sigma, \underline{\mathbb{R}\op{Hom}}_{\cO_X} \left(\cO_Y , \cO_\Sigma^{\oplus N}\right) \right) .
-\eeqn
-Again, on flat space $\Sigma = \C$ this can be written in a more explicit way as
-\beqn\label{eqn:open15}
-\Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes {\rm Hom}(\C, \C^N) = \Omega^{0,\bu}\left(\C, K^{1/2}_\C  [\ep_3,\ep_4]\right) \otimes \C^N .
-\eeqn
-Together with the $D5-D1$ strings we get 
-\beqn\label{eqn:open15a}
-\Omega^{0,\bu}\left(\C, K^{1/2}_\C [\ep_3,\ep_4]\right)   \otimes T^*\C^N .
-\eeqn
-
-In total, we see that the open-strings of the $D1/D5$ system along $\Sigma = \C$ are given by the Dolbeault complex valued in the following holomorphic vector bundle
-\beqn
-\bigg(\lie{gl}(N)[\ep_1,\ep_2][1] \oplus K^{1/2}_\C \otimes T^*\C^N \bigg) \otimes \C[\ep_3,\ep_4] .
-\eeqn
-The bundle in parentheses can be written as 
-\brian{Now here I really want $\deg{\ep_1}=\deg{\ep_2} = +1$}
-\beqn
-\lie{gl}(N)[1] \oplus T^* \left(\lie{gl}(N) \oplus K^{1/2}_\Sigma \otimes \C^N\right) \oplus \lie{gl}(N) [-1] .
-\eeqn
-Up to the factor of $K^{1/2}_\Sigma$ this is evidently the underlying vector space of the graded Lie algebra controlling Hamiltonian reduction of 
-\beqn
-T^*(\lie{gl}(N) \oplus \C^N) \sslash \lie{gl}(N) .
-\eeqn
 
 \subsection{The large $N$ limit}
 
