@@ -178,7 +178,7 @@ Next, we will briefly recapitulate the SCFT states which contribute to the infin
 \textcolor{red}{Chiral primaries themselves have an OPE $J[m, 0]J[n, 0] \sim regular$, but still have interesting three point functions from the regular terms $O^i O^j \sim C^{ij}_k O^k$... can we recover the chiral ring coefficients from KS somehow?}
 From studying the algebra above it is easy to derive that a primary $\phi$ that also satisfies the condition $G^{+ A}_{-1/2}|\phi \rangle = 0, A=1,2$ satisfies $h=j$ (for $L_0$ eigenvalue $h$ and $J_0^3$ eigenvalue $j$) and is called a chiral primary. The quantum numbers and two and three-point functions among chiral primaries have been extensively studied in the literature, and are protected quantities as one moves in moduli space and can be matched to the corresponding quantities at the supergravity point (e.g. \cite{}). Anti-chiral primaries are defined similarly and satisfy $h = -j$. In the full physical theory, one combines left and right-moving (anti)chiral primaries: $(c, c), (a,a), (a,c), (c, a)$. For the holomorphic twist, we will focus on chiral primaries in the holomorphic half of the SCFT. 
 
-Chiral primaries can arise in the twisted and untwisted sectors of the orbifold. In an $n$-twisted sector (cyclically permuting $n$ copies of the $X$ SCFT), the weights of the chiral primaries are bounded: ${n-1 \over 2} \leq h \leq {n+1 \over 2}$. The chiral primaries are explicitly constructed as follows, starting with a twist field. Consider the twist field $\sigma_{l+1}(z)$ which cyclically permutes $l+1$ copies of the holomorphic SCFT as one moves around the point $z$ in the base space; it creates the ground state of the twisted sector by acting on the original NS vacuum. It has weight $h = {6 \over 24}( (l+ 1) - {1 \over l+1})$, but no charge. To make a chiral primary from this state, we must dress it with modes of $J^+$, which carry $SU(2)_L$ charge. In particular, using the fact that operators in the twisted sector are fractionally moded we can build the chiral primaries \cite{LuninMathur}:
+Chiral primaries can arise in the twisted and untwisted sectors of the orbifold. In an $n$-twisted sector (cyclically permuting $n$ copies of the $X$ SCFT), the weights of the chiral primaries are bounded: ${n-1 \over 2} \leq h \leq {n+1 \over 2}$. The chiral primaries are explicitly constructed as follows, starting with a twist field. Consider the twist field $\sigma_{l+1}(z)$ which cyclically permutes $l+1$ copies of the holomorphic SCFT as one moves around the point $z$ in the base space; it creates the ground state of the twisted sector by acting on the original NS vacuum. It has weight $h = {6 \over 24}( (l+ 1) - {1 \over l+1})$, but no charge. To make a chiral primary from this state, we must dress it with modes of $J^+$, which carry $SU(2)_L$ charge. In particular, using the fact that operators in the twisted sector are fractionally moded we can build the chiral primaries \cite{LuninMathur, LuninMathurSusy}:
 \begin{align*}
 \sigma^0_{l+1}&:=  J^+_{-{l-1 \over l+1}}J^{+}_{-{l-3 \over l+1}} \ldots J^+_{-{1 \over l+1}}\sigma_{l+1}, \ \ \ l+1 \text { odd} \\
 \sigma^0_{l+1}&:= J^+_{-{l-1 \over l+1}}J^{+}_{-{l-3 \over l+1}} \ldots J^+_{-{2 \over l+1}}S^+_{l+1}\sigma_{l+1}, \ \ \ l+1 \text { even}
@@ -280,36 +280,35 @@ It is difficult, however, to perform explicit computations beyond a local model,
 
 Consider the chiral half of the $\mc N= (4,4)$ $\sigma$-model on the symmetric orbifold  $\Sym^N X$ where $X$ is $T^4$ or a $K3$ surface. 
 After performing the half-twist, this is all that remains of the supersymmetric $\sigma$-model.
- According to \cite{DMVV} we can regard the direct sum of the vacuum modules of the chiral algebras of $\Sym^N X$ as being itself a Fock space. The generators of this Fock space are given by the single string states. These single string states are the analog of single trace operators in a gauge theory, and will ultimately be matched with single-particle states in the holographic dual.
+ According to \cite{DMVV} we can regard the direct sum of the vacuum modules of the chiral algebras of $\Sym^N X$, for each $N$, as being itself a Fock space. The generators of this Fock space are given by the single string states. These single string states are the analog of single trace operators in a gauge theory, and will ultimately be matched with single-particle states in the holographic dual.
 
-Let $c(n,m)$ be the super dimension of the space of operators in supersymmetric $\sigma$-model into $X$, which are of weight $n$ under $L_0$ and of weight $m$ under the action of the Cartan of $SU(2)_R$.  
+Let us brefly recall the computation of the elliptic genus. Let $c(n,m)$ be the super-dimension of the space of operators in supersymmetric $\sigma$-model into $X$, which are of weight $n$ under $L_0$ and of weight $m$ under the action of the Cartan of $SU(2)_R$.  
 Let $q,y$ be fugacities for $L_0$ and the Cartan of $SU(2)_R$, respectively---the elliptic genus $\chi(X;q,y)$ is a series in these variables.  
-Of course, for $X = T^4$ the elliptic genus vanishes, so it is safe to assume from hereon that $X$ is a K3 surface.
+Of course, for $X = T^4$ the elliptic genus vanishes \footnote{One could instead consider the modified elliptic genus for $T^4$, which is enriched with additional insertions of the fermion number operator to absorb the fermionic zero modes.}, so we will now fix $X = K3$.
 
 Introducing another parameter $p$, which keeps track of the symmetric power, we can consider the generating series
 \begin{equation} 
 	\sum_{n \geq 0} p^n \chi(\Sym^n X; q,y) 
 \end{equation}
 %where $\chi$ indicates the character of the vacuum module of the $bc\beta\gamma$\footnote{We will call the system a $bc\beta\gamma$ system by a slight abuse of terminology: we will not employ the A-type twist on the left-movers when restricting to $\bar{Q}_+$ cohomology, so that the would-be $bc$ fields have fermionic statistics and spin.} on $\Sym^n X$.  
-The main result of \cite{deBoer,Verlinde?} is an expression for this generating series
+The main result of \cite{deBoerEG, DMVV} is an expression for this generating series
 \begin{equation} 
 	\sum_{n} p^n \chi(\Sym^n X; q,y) = \prod_{l,m \geq 0,n >0 } \frac{1}{(1 - p^n q^m y^l)^{c(nm,l)}}
 \end{equation}
 where $c(m,l)$ is a function of the quantity $4m-l^2$.
-In other words, we can interpret the direct sum of the vacuum modules of the $\Sym^n X$ $\sigma$-model as being the Fock space generated by a trigraded super vector space 
+In other words, we can interpret the direct sum of the vacuum modules of the $\Sym^n X$ $\sigma$-models as being the Fock space generated by a trigraded super-vector space 
 \begin{equation} 
 	V =\oplus_{n \ge 0,m,l} V_{n,m,l} 
 \end{equation}
-where the super dimension of $V_{n,m,l}$ is $c(nm,l)$.
+where the super-dimension of $V_{n,m,l}$ is $c(nm,l)$.
 
-Setting $V_n = \oplus_{m,l} V_{n,m,l}$, we see that $V_n$ is isomorphic to the vacuum module of the $bc\beta\gamma$ system on the original surface $X$, except with a different conformal structure.  
-A state of the $\sigma$-model into $X$ of spin $k$ is of spin $k/n$ in $V_n$.  
+Setting $V_n = \oplus_{m,l} V_{n,m,l}$, we see that $V_n$ is isomorphic to the vacuum module of the $bc\beta\gamma$ system, or chiral de Rham complex, on the original surface $X$, except with a different conformal structure: a state of the $\sigma$-model into $X$ of spin $k$ is of spin $k/n$ in $V_n$.  
 
 The states in $V_N$ will play the role of the single-trace operators in the large $N$ limit of the $\Sym^N X$ $\sigma$-model.   
 These states can be understood geometrically as follows---let us focus just on the $S^1$-modes of this $\sigma$-model.
 A map $S^1 \to \Sym^N X$ is the same as an $N$-fold cover $M \to S^1$ together with a map $M \to X$.  
 Therefore, the Hilbert space of the $\sigma$-model on $\Sym^N X$ decomposes over sectors corresponding to the topological type of this $N$-fold cover, which are labelled by partitions of $N$. 
-The single string sector is the sector corresponds to $M$ being connected. 
+The single string sector is the sector that corresponds to $M$ being connected. 
 This means that the monodromy of the cover $M \to  S^1$ is conjugate to the length $N$ cycle of type $(1 \dots N)$ in the symmetric group $S_N$.  
 
 Since the $N$-fold cover of $S^1$ corresponding to the single trace sector is connected, the Hilbert space of the single-trace sector is isomorphic to that of the original $\sigma$-model into $X$.  
@@ -322,7 +321,7 @@ In particular, the generating function of elliptic genera of $\Sym^N X$ decompos
 \end{equation}
 with $\sum_{N \geq 0}p^{n N}\chi(\Sym^{N}\mathcal{H}^{\Z_n}_{(n)}; q, y) = \prod_{l, m\geq0}{1 \over (1 - p q^m y^l)^{c(mn, l)}}$. Here, $\mathcal{H}_{(n)}$ is the Hilbert space of a single long string on $X$ of length $n$ with winding number $1/n$. 
 
-We can extract the $N \rightarrow \infty$ limit of this expression, following the logic employed in \cite{de Boer, MAGOO, BKKP}. First, in preparation for comparison to supergravity, we perform spectral flow\footnote{We shift the overall power of $q$ by $q^{c/24}$ so that the vacuum occurs at $q^0$.} to the NS sector:
+We can extract the $N \rightarrow \infty$ limit of this expression, following the logic employed in \cite{deBoerEG, MAGOO, BKKP}. First, in preparation for comparison to supergravity, we perform spectral flow\footnote{We shift the overall power of $q$ by $q^{c/24}$ so that the vacuum occurs at $q^0$.} to the NS sector:
 \begin{align*}
 \sum_{N \geq 0}p^N \chi_{NS}(\Sym^N X; q, y) & = \sum_{N\geq 0}p^N \chi(\Sym^N X; q, y \sqrt{q}) y^N q^{N/2} \\
 &= \prod_{\substack{n \geq 0 \\ m \geq 0, m \in \Z \\ l \in \Z}} \frac{1}{(1 - p^n q^{m + l/2 + n/2} y^{l + n})^{c(nm,l)}} \\
@@ -337,7 +336,7 @@ At any power of $q$, there will be contributions from terms of the form ${1 \ove
 Hence, we can get a finite contribution upon dividing by $N$. 
 
 We can also write out the non-vanishing $f(m', l')$ more explicitly, recalling that the coefficients are constrained to lie in the following range of the Jacobi variable: $-2m' \leq l' \leq 2m', l' \equiv 2 m' \mod 2$. Reproducing the elementary manipulations in Appendix A of \cite{BKKP} (in particular, using the fact that $c(N, L)$ depends only on $4N-L^2$ and $L \ {\rm mod} \ 2$) allows us to rewrite the sum as
-\begin{equation}\label{eq:fml2}
+\begin{equation}\label{eq:fml1}
 f(m', l') = \left( \sum_{\tilde{n} \in \Z}c(m'^2 - l'^2/4, \tilde{n}) \right) - c(0, l'),
 \end{equation} where $n':= n - 2m$ in the first term. 
 The first term is non-vanishing only when $l' = \pm 2 m'$ and then it reduces to the Witten index of K3, i.e. $f(m', \pm 2m') = 24$ for general $m'$. Otherwise, we have $f(m', l') = -c(0, l')$. When $m' \in \mathbb{Z}$ the nonvanishing such term is $-c(0, 0) = -20$, and when $m' \in \Z + 1'/2$ we have $-c(0, 1) = -2$ and $-c(0, -1) = -2$. 
@@ -362,15 +361,15 @@ Throughout this derivation, we have used the coefficients $c(m, l)$ that appear 
 %\end{equation} to the same conclusion. As before, $n':= n - 2m$. In particular, when $l = \pm 2 m$, the sum only gets nonvanishing contributions from $n' = -1, 0, 1$, which contribute $2, 20, 2$, respectively. 
 
 Let us unpack those contributions a bit more, starting from the expression 
-\begin{align*}\label{eq:fml1}
+\begin{align}\label{eq:fml2}
 f(m', l') &= \sum_{n=1}^{4m'}c(n(m'-l'/2), l'-n) \\
 &= \sum_{n=1}^{4m'}\mathcal{C}(n(m'-l'/2 - 1/2) + l'/2 + 1/2, l' - n +1).
-\end{align*} In the second line, we have used spectral flow to rewrite the sum in terms of the NS sector elliptic genus.
+\end{align} In the second line, we have used spectral flow to rewrite the sum in terms of the NS sector elliptic genus.
 
 
-Let us henceforth drop the primes on our variables, for ease of notation, and then take for example the states $l = 2 m$. The summand is nonvanishing only for $\mathcal{C}(1/2, 1)= 20, \mathcal{C}(0, 0)=2, \mathcal{C}(1, 2)= 2$ and, of course, have contributions which sum to 24. The solutions to these conditions occur at $n=2m, n = 1 + 2m, n=2m -1$ $ \ (\forall m >0, 2m \in \Z_{\geq 0})$ and these values of $n$ do appear in the sum. The corresponding states therefore have quantum numbers $(n, m, l) = 20\times(j, j/2, j), 2\times(j + 1, j/2, j), 2\times(j-1, j/2, j), \ j \in \Z_{>0}$ and come from chiral primary states in the physical theory. In the next section, we will recall the corresponding states in the physical theory \cite{luninmathur, others...}. Similarly, for $l = -2m$ we will obtain contributions from anti-chiral primary states \textcolor{blue}{finish}. 
+Let us henceforth drop the primes on our variables, for ease of notation, and then take for example the states $l = 2 m$. The summand is nonvanishing only for $\mathcal{C}(1/2, 1)= 20, \mathcal{C}(0, 0)=2, \mathcal{C}(1, 2)= 2$ and, of course, have contributions which sum to 24. The solutions to these conditions occur at $n=2m, n = 1 + 2m, n=2m -1$ $ \ (\forall m >0, 2m \in \Z_{\geq 0})$ and these values of $n$ do appear in the sum. The corresponding states therefore have quantum numbers $(n, m, l) = 20\times(j, j/2, j), 2\times(j + 1, j/2, j), 2\times(j-1, j/2, j), \ j \in \Z_{>0}$ and come from chiral primary states in the physical theory. Similarly, for $l = -2m$ we will obtain contributions from anti-chiral primary states \textcolor{blue}{finish}. 
 
-We can also discuss the origin of the terms of negative multiplicity, which contribute to the numerator of the index. Taking $f(m,l)$ as it is written in \ref{eq:fml1} and studying $l=0, k \in \mathbb{Z}_{\geq 1}$, there is a cancellation between the $n=4k$ term, $\mathcal{C}(4k(k-1/2) + 1/2,-4k+1)=20$, and the rest of the terms, which sum to $-40$. Similar cancellations apply to $l=\pm 1, m = k-1/2, k \in \mathbb{Z}_{\geq 1}$, wherein the last terms of the sum are always $\mathcal{C}(4(k-1)^2, 4-4k) = 2, \mathcal{C}((1-2k)^2, 2-4k) = 2$, respectively, and the remainder of the terms produce coefficients summing to -4. Alternatively, one can use manipulations on Jacobi form coefficients to rewrite $f(m, l)$ as in \ref{eq:fml2}:
+We can also discuss the origin of the terms of negative multiplicity, which contribute to the numerator of the index. Taking $f(m,l)$ as it is written in \eqref{eq:fml1} and studying $l=0, k \in \mathbb{Z}_{\geq 1}$, there is a cancellation between the $n=4k$ term, $\mathcal{C}(4k(k-1/2) + 1/2,-4k+1)=20$, and the rest of the terms, which sum to $-40$. Similar cancellations apply to $l=\pm 1, m = k-1/2, k \in \mathbb{Z}_{\geq 1}$, wherein the last terms of the sum are always $\mathcal{C}(4(k-1)^2, 4-4k) = 2, \mathcal{C}((1-2k)^2, 2-4k) = 2$, respectively, and the remainder of the terms produce coefficients summing to -4. Alternatively, one can use manipulations on Jacobi form coefficients to rewrite $f(m, l)$ as in \eqref{eq:fml2}:
 \begin{equation}
 f(m', l') =\left(\sum_{\tilde{n}= - \infty}^{\infty}\mathcal{C}(m'^2 - l'^2/4 + (\tilde{n} + 1)/2, \tilde{n} + 1) \right) - \mathcal{C}((l' + 1)/2, l' + 1)
 \end{equation} with $\tilde{n} = n-2m$ as before. The first term sums to zero when $l=0, m= k$ and for $l=\pm 1, m = k-1/2$, and the second gives the desired negative coefficients.
