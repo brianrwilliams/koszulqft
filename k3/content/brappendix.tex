@@ -1,0 +1,75 @@
+\documentclass[../main.tex]{subfiles}
+
+\newcommand{\cI}{\mathcal{I}}
+\begin{document}
+
+\appendix
+
+\section{Backreaction in holomorphic Chern--Simons theory}
+\label{appx:hcsbr}
+
+Let $X = (z,x) = (z, x_1,x_2), Y = (w,y) = (w,y_1,y_2)$.
+We compute the integral
+\beqn
+\int_{(X,Y) \in \C^3_1 \times \C^3_2} A_1(X) \, \omega (x) \,  \del_z \del_w P(X,Y) \, \omega(y) \, A_2(Y) .
+\eeqn
+Plugging in $A = x_1 \d \br z$ and $B = y_2 \d \br w$ this integral becomes $\int_{z,w} \d z \, \d w \,  \del_z \del_w I(z,w)$ where
+\beqn
+I (z,w) \define (\br z - \br w) \int_{\C^2 \times \C^2} \d^4 x \d^4 y \frac{[\br x \br y] x_1 y_2}{\|x\|^4 (|z-w|^2 + \|x-y\|^2)^3 \|y\|^4}
+\eeqn
+as a function of $z,w$.
+
+First, we perform the integration along $y \in \C^2$.
+Using Feynman's trick we have
+\begin{multline}
+\int_{\C^2} \d^4 y \frac{[\br x \br y] y_2}{(|z-w|^2 + \|x-y\|^2)^3 \|y\|^4} \\ = \frac{4!}{2!} \int_0^1 \d t \, t^2 (1-t) \int_{\C^2} \d^4 y \frac{[\br x \br y] y_2}{\left(t |z-w|^2 + t \|x-y\|^2 + (1-t)\|y\|^2 \right)^5} .
+\end{multline}
+Introduce the new variable $\til y = y - t x$.
+The the right hand side becomes
+\beqn
+12 \int_0^1 \d t \, t^2 (1-t) \int_{\C^2} \d^4 \til y \frac{[\br x (\br {\til y} + t \br x)] (y_2+t x_2)}{\left(\|\til y\|^2 + t(1-t)\|x\|^2 + t |z-w|^2 \right)^5} 
+\eeqn
+Changing to polar coordinates and first computing the residue we see that only terms invariant under $U(1) \times U(1)$ rotations of $\C^2$ will contribute to this integral.
+The $U(1) \times U(1)$ invariant part of the numerator is $\br x_1 |\til y_2|^2$.
+After computing the residue along both the $\til y_1$ and $\til y_2$ directions the integral then becomes
+\beqn
+12 (-2 \pi \im)^2 \br x_1 \int_{0}^1 \d t \, t^2 (1-t) \int_{(0,\infty) \times (0,\infty)} \d^2 \rho \,\frac{\rho_2}{(\rho_1 + \rho_2 + t(1-t)\|x\|^2 + t |z-w|^2)^5} .
+\eeqn
+
+Performing the integration over $(0,\infty) \times (0 , \infty)$ we obtain 
+\beqn
+\frac{(-2 \pi \im)^2}{2} \br x_1 \int_0^1 \frac{1-t}{(|z-w|^2 + (1-t)\|x\|^2)^2} %= \frac{(-2 \pi \im)^2}{2} \br x_1 \left(- \frac{1}{\|x\|^2 (|z-w|^2 + \|x\|^2)} + \cdots\right) .
+\eeqn
+
+Returning to the original integral we must now compute
+\beqn
+\int_{0}^1 \d t \, (1-t) \int_{\C^2} \d^4 x \, \frac{|x_1|^2}{\|x\|^4 (|z-w|^2 + (1-t)\|x\|^2)^2} ,
+\eeqn
+We compute the integral over $x$.
+
+Using the Feynman trick again we have
+\begin{multline}
+\int_{\C^2} \d^4 x \, \frac{|x_1|^2}{\|x\|^4 (|z-w|^2 + (1-t)\|x\|^2)^2} \\ = \int_0^1 \d s \, s (1-s)
+\int_{\C^2} \d^4 x \, \frac{|x_1|^2}{\left(s |z-w|^2 + (1-ts)\|x\|^2\right)^4} .
+\end{multline}
+After computing the angular integrations this becomes
+\beqn
+(-2 \pi \im)^2 \int_{(0,\infty) \times (0,\infty)} \d^2 \rho \frac{\rho_1}{(s|z-w|^2 + (1-ts)(\rho_1 + \rho_2))^4} \\ = \frac{1}{s(1-ts)^3 |z-w|^2}   
+\eeqn
+
+Finally, plugging back into the original expression we have
+\beqn
+I(z,w) = \frac{1}{z-w} \int_{0}^1 \d t \int_0^1 \d s \frac{(1-t)(1-s)}{(1-ts)^3} .
+\eeqn
+The integral over $t,s$ gives $1/2$. 
+%If $\til Y = (tw - tz, y - tx)$ then
+%\beqn
+%\|\til Y\|^2 + t (1-t) (|z-w|^2 + \|x\|^2) = t \|X - Y\|^2 + (1-t) \|y\|^2 .
+%\eeqn
+%In terms of the coordinate $\til y$, the invariant piece of 
+%\beqn
+%[\br x \br y] y_2
+%\eeqn
+%is $\br x_1 |\til y_2|^2$.
+
+\end{document}

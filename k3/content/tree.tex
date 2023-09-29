@@ -6,27 +6,87 @@
 
 In this section we initiate our computation of OPEs of the gravitational side chiral algebra, using the same techniques as in \cite{CPt4}.
 
-\subsection{Explicit expressions for supergravity states}
-
-Recall that the full classical coupling of Kodaira--Spencer theory is
+We choose holomorphic coordinates $Z = (z,w_1,w_2)$ on $\C^3$ with a system of branes wrapping $\{w_i = 0\}$.
+The field $\mu$ has three holomorphic vector components that we denote by
+\beqn
+\mu = \mu_z \del_z + \mu_1 \del_{w_1} + \mu_2 \del_{w_2} ,
+\eeqn
+where $\mu_z,\mu_i \in \Omega^{0,\bu}(\C^3)$.
+With this notation, the full classical interaction of Kodaira--Spencer theory is
 \[
-\int_{\C^{3|4}} \mu_1 \mu_2 \mu_z \; \d z \d^2 w \d^4 \eta + \int_{\C^{3|4}} \alpha \mu_i \partial_{w_i} \gamma \; \d z \d^2 w \d^4 \eta + \int_{\C^{3|4}} \alpha \mu_z \partial_z \gamma \; \d z \d^2 w \d^4 \eta .
+\int_{\C^{3}} \mu_1 \mu_2 \mu_z |_{\eta \br\eta}  \; \d^3 Z + \int_{\C^{3}} \alpha \mu_i \partial_{w_i} \gamma|_{\eta \br\eta} \; \d^3 Z + \int_{\C^{3}} \alpha \mu_z \partial_z \gamma |_{\eta \br\eta}  \; \d^3 Z .
 \]
 
-We will use the notation $D_{r,s}$ to denote the holomorphic differential operator
+Recall that for the kinetic part of the action for Kodaira--Spencer theory to be well-defined we must impose the following constraint on the field $\mu$:
+\beqn\label{eqn:divfreetree}
+\del_z \mu_z + \del_{w_i} \mu_i = 0 .
+\eeqn
+We list the basic operators present in the defect chiral algebra \textit{before} imposing this constraint.
+In what follows we use the notation $D_{r,s}$ to denote the holomorphic differential operator
 \[ 
 	D_{r,s} = \frac{1}{r!} \frac{1}{s!} \partial_{w_1}^r \partial_{w_2}^s. 
 \]  
+As with the fields of our extended version of Kodaira--Spencer theory, the defect operators of the chiral algebra will all be polynomials in the variables $\eta$ parameterizing the cohomology of the $K3$ surface.
+The variables $\eta$ do not carry spin, parity, or ghost degree.
+For simplicity of notation we will not explicitly include this $\eta$-dependence until it is convenient.
+
+\begin{enumerate}
+\item Bosonic Virasoro primaries $\til T[r,s]$ of spin $2 + r/2 + s/2$ which couple to the field $\mu_z$ by
+\beqn
+\int \til T[r,s] D_{r,s} \mu_z |_{\eta \br \eta, w=0} \; \d z.
+\eeqn
+\item Bosonic Virasoro primaries $\til J^i[r,s]$, $i=1,2$ of spin $1/2 + r/2 + s/2$ which couple to the fields $\mu_i$ by
+\beqn
+\int \til J^i[r,s] D_{r,s} \mu_i |_{\eta \br \eta,w=0} \; \d z. 
+\eeqn
+\item Fermionic Virasoro primaries $G_\alpha[r,s]$, $G_\gamma[r,s]$ of spin $1 + r/2 + s/2$ which couple to the fields $\alpha,\gamma$ by
+\beqn
+\begin{aligned}[]
+& \int G_\alpha[r,s] D_{r,s} \alpha |_{\eta \br \eta,w=0} \; \d z \\
+& \int G_\gamma[r,s] D_{r,s} \gamma |_{\eta \br \eta,w=0} \; \d z .
+\end{aligned}
+\eeqn
+\end{enumerate}
+
+The fermionic operators $G_\alpha,G_\gamma$ couple to unconstrained fields of the theory on~$\C^3$.
+On the other hand, $\til T,\til J^i$ couple to the fields $\mu_z,\mu_i$ satisfying the divergence-free constraint \eqref{eqn:divfreetree}.
+Only some combination of these operators will couple to the on-shell fields of the theory on $\C^3$.
+Explicitly, one finds that the constrained fields source the following operators
+\beqn\label{eqn:onshell}
+\begin{aligned}[]
+T[r,s] & \define \til T[r,s] - \frac{1}{2(r+1)} \del_z \til J^1 [r+1,s] - \frac{1}{2(s+1)} \del_z \til J^2 [r,s+1] , \quad r+s \geq 0\\
+J[k,l] & \define k \til J^2[k-1,l] - s \til J^1[k,l-1], \quad k+l \geq 1 .
+\end{aligned}
+\eeqn
+We see that $T[r,s]$ has spin $2 + (r+s)/2$ and $J[k,l]$ has spin $(k+l)/2$ and live in the $SU(2)_R$ spin representatino $(k+l)/2$.
+
+As stated above, all operators are polynomials in the variables $\eta$ labeling the cohomology of the $K3$ surface.
+It is convenient to expand operators in the Fourier-dual variables $\Hat{\eta}$.
+If $\cO = \cO(\eta)$ is any of the operators defined above, then the Fourier-dual expansion is defined formally as
+\beqn
+\cO(\what\eta) = \eta^{\eta \Hat{\eta}} \cO(\eta) |_{\eta \br \eta} .
+\eeqn
 
 \subsection{$\til J \til J$ OPE}
 
 We first compute the OPE of the off-shell operators $\til{J}^i[r,s]$ and then impose constraints to determine the OPE of the on-shell operators $J[r,s]$.
 
+\subsubsection{}
+
 The coefficient of $\til{J}^1[k,l]$ in the OPE will be determined by the terms in the BRST variation of $\mu_1$ which involve $\fc_1$ and $\mu_1$, $\fc_1$ and $\mu_2$, or $\fc_2$ and $\mu_1$. 
+To simplify formulas in the computations below we will use the notation
+\beqn
+\int_{z,\eta} \omega = \int_{z \in \C_z} \omega |_{\eta \br \eta} \, \d z 
+\eeqn
+for integrals along the defect and
+\beqn
+\int_{Z,\eta} \omega = \int_{Z \in \C^3} \omega |_{\eta \br \eta}\, \d^3 Z 
+\eeqn
+for integrals in the bulk.
 
 Consider the gauge variation of 
 \begin{equation}\label{eqn:j1vary}
-	\int_{(z,\eta_a) \in \C^{1 \mid 4}} \til{J}^1[r,s](z,\eta_a)  D_{r,s} \mu_1(z,w_i = 0,\eta_a) . 
+	\int_{z,\eta} \til{J}^1[r,s](z)  D_{r,s} \mu_1 
 \end{equation}
 The gauge variation of $\mu_1$ is
 \begin{align*}
@@ -40,56 +100,59 @@ Inserting this gauge variation into the coupling to $\til{J}^i[r,s]$, we see tha
 Cancellation of the remaining terms will give us constraints on the OPE coefficients.
 The remaining terms are 
 \[ 
-	\int_{z,\eta_a} \til{J}^1[r,s] (z,\eta_a)  D_{r,s}\left( \mu_i \partial_{w_i} \mf{c}_1 + \mu_z \partial_{z} \mf{c}_1 - \mf{c}_i \partial_{w_i} \mu_1 - \mf{c}_z \partial_z \mu_1 \right)(z,w_i = 0, \eta_a). 
+	\int_{z} \til{J}^1[r,s] (z)  D_{r,s}\left( \mu_i \partial_{w_i} \mf{c}_1 + \mu_z \partial_{z} \mf{c}_1 - \mf{c}_i \partial_{w_i} \mu_1 - \mf{c}_z \partial_z \mu_1 \right)(z,w_i = 0, \eta_a). 
 \]
 Let us focus on the term in this expression which involves the fields $\mu_1$ and $\mf{c}_1$. This is 
 \[ 
-	 \int_{z,\eta_a} \til{J}^1[r,s] (z,\eta_a)  D_{r,s}\left( \mu_1 \partial_{w_1} \mf{c}_1   - \mf{c}_1 \partial_{w_1} \mu_1  \right)(z,w_i = 0, \eta_a). 
+	 \int_{z,\eta} \til{J}^1[r,s] (z)  D_{r,s}\left( \mu_1 \partial_{w_1} \mf{c}_1   - \mf{c}_1 \partial_{w_1} \mu_1  \right). 
 \]
 Because this expression involves both $\mf{c}_1$ and $\mu_1$, which are fields (and a corresponding ghost) that couple to $\til{J}^1$, we find that it can only be cancelled by a gauge variation of an integral involving two copies of the operators $\til{J}^1$, at separate points $z,z'$:  
 \[ 
-	\tfrac{1}{2} \int_{z,z', \eta_a,\eta_a'} \til{J}^1[k,l] (z,\eta_a) D_{k,l} \mu_1(z, w_i = 0, \eta_a)  \til{J}^1[r,s] (z',\eta'_a) D_{r,s} \mu_1(z', w'_i = 0, \eta'_a) . 
+	\tfrac{1}{2} \int_{z,z', \eta,\eta'} \til{J}^1[k,l] (z,\eta) D_{k,l} \mu_1(z, w=0, \eta)  \til{J}^1[r,s] (z',\eta') D_{r,s} \mu_1(z', w' = 0, \eta') . 
 \]
 Applying the gauge variation of $\mu_1$ to this expression, and retaining only the terms involving $\dbar \mf{c}_1$, gives us
 \[ 
-	\int_{z,z', \eta_a,\eta_a'} \til{J}^1[k,l] (z,\eta_a) D_{k,l} \mu_1(z, w_i = 0, \eta_a)  \til{J}^1[r,s] (z',\eta'_a) D_{r,s} \dbar \mf{c}_1 (z', w'_i = 0, \eta'_a) . 
+	\int_{z,z', \eta,\eta'} \til{J}^1[k,l] (z,\eta) D_{k,l} \mu_1(z, w = 0, \eta)  \til{J}^1[r,s] (z',\eta') D_{r,s} \dbar \mf{c}_1 (z', w' = 0, \eta') . 
 \]
-Here the $\dbar$ operator only involves the $z$-component because restricting to $w_i= 0$ sets any $\d \wbar_i$ to zero. We can integrate by parts to move the location of the $\dbar$ operator. Every field $\mu_i$ contains a $\d \zbar$, as otherwise it would restrict to zero at $w_i = 0$, so that $\partial_{\zbar} \mu_i = 0$. 
+Here the $\dbar$ operator only involves the $z$-component because restricting to $w_i= 0$ sets any $\d \wbar_i$ to zero. We can integrate by parts to move the location of the $\dbar$ operator. Every field $\mu_i$ contains a $\d \zbar$, as otherwise it would restrict to zero at $w = 0$, so that $\partial_{\zbar} \mu_i = 0$. 
 
-This discussion shows that in order for the anomaly to cancel we need
+This analysis shows that in order for the anomaly to cancel we must require
 \begin{multline} 
-	\int_{z,z', \eta_a,\eta_a'} \dbar_{\zbar} \left( \til{J}^1[k,l] (z,\eta_a)  \til{J}^1[r,s] (z',\eta'_a) \right)  D_{m,n} \mu_1(z, w_i = 0, \eta_a)  D_{r,s}  \mf{c}_1 (z', w'_i = 0, \eta'_a)  \\
-	= \int_{z'',\eta''_a} \til{J}^1[m,n] (z'',\eta''_a)  D_{m,n}\left( \mu_1 \partial_{w_1} \mf{c}_1   - \mf{c}_1 \partial_{w_1} \mu_1  \right)(z'',w_i = 0, \eta''_a).   
+	\int_{z,z', \eta,\eta'} \dbar_{\zbar} \left( \til{J}^1[k,l] (z,\eta)  \til{J}^1[r,s] (z',\eta') \right)  D_{m,n} \mu_1(z, w = 0, \eta)  D_{r,s}  \mf{c}_1 (z', w' = 0, \eta')  \\
+	= \int_{z'',\eta''} \til{J}^1[m,n] (z'',\eta'')  D_{m,n}\left( \mu_1 \partial_{w_1} \mf{c}_1   - \mf{c}_1 \partial_{w_1} \mu_1  \right)(z'',w = 0, \eta'').   
 \end{multline}
-In these expressions, we sum over the indices $r,s,k,l,m,n$.  This equation must hold for all values of the field $\mu_1$, $\mf{c}_1$. To constrain the OPEs, we can test the equation by setting 
+In these expressions, we sum over the indices $r,s,k,l,m,n$.  This equation must hold for all values of the field $\mu_1$, $\mf{c}_1$. To constrain the OPEs, we substitute the test fields
 \begin{align*}
-\mu_1 & = G(z,\zbar,\eta_a) \d \zbar w_1^k w_2^l \\
-\mf{c}_1 & = H(z,\zbar,\eta_a) w_1^r w_2^s
+\mu_1 & = G(z,\zbar,\eta) \d \zbar w_1^k w_2^l \\
+\mf{c}_1 & = H(z,\zbar,\eta) w_1^r w_2^s
 \end{align*}
 for $G,H$ arbitrary smooth functions of the variables $z,\zbar,\eta_a$. 
 
 Inserting these values for the fields into the anomaly-cancellation condition gives
 \begin{multline} 
-	\int_{z,z', \eta_a,\eta_a'} \dbar_{\zbar} \left( \til{J}^1[k,l] (z,\eta_a)  \til{J}^1[r,s] (z',\eta'_a) \right)  G(z,\zbar,\eta_a) H(z',\zbar',\eta_a') \\ 
-	= \int_{z'',\eta''_a} (r-k)  \til{J}^1[k+r-1, l+s] (z'',\eta''_a)  G(z'',\zbar'',\eta''_a) H(z'',\zbar'', \eta_a'').
+	\int_{z,z', \eta,\eta'} \dbar_{\zbar} \left( \til{J}^1[k,l] (z,\eta)  \til{J}^1[r,s] (z',\eta') \right)  G(z,\zbar,\eta) H(z',\zbar',\eta') \\ 
+	= \int_{z'',\eta''} (r-k)  \til{J}^1[k+r-1, l+s] (z'',\eta'')  G(z'',\zbar'',\eta'') H(z'',\zbar'', \eta'').
 \end{multline}
 Since this must hold for all values of the functions $G,H$ we get an identity of the integrands:
 \[ 
-	\dbar_{\zbar} \left( \til{J}^1[k, l] (z,\eta_a)  \til{J}^1[r,s] (z',\eta'_a) \right)  = \delta_{z = z',\br{z} = \br{z}'} \delta_{\eta_a = \eta'_a} (r-m) \til{J}^1[k + r -1, l+s] .  
+	\dbar_{\zbar} \left( \til{J}^1[k, l] (z,\eta)  \til{J}^1[r,s] (z',\eta') \right)  = \delta_{z = z'} \delta_{\eta = \eta'} (r-m) \til{J}^1[k + r -1, l+s] .  
 \]
-(Recall that the fermionic $\delta$-function $\delta_{\eta_a = \eta'_a}$ has the simple expression $\prod_a (\eta_a - \eta'_a)$).  
+The formal $\delta$-function $\delta_{\eta = \eta'}$ has the simple expression 
+\beqn
+\delta_{\eta = \eta'} = (\eta - \eta') \left(\prod_{a=1}^{20} h^{ab}(\eta_b - \eta'_b) \right) (\br \eta - \br \eta') \in A \otimes A.
+\eeqn
 
 This in turn leads to the OPE:
 \[ 
-		\til{J}^1[k,l](0,\eta_a)  \til{J}^1[r,s](z,\eta'_a)  
-	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\eta_a) \delta_{\eta_a = \eta'_a}. 
+		\til{J}^1[k,l](0,\eta)  \til{J}^1[r,s](z,\eta')  
+	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\eta) \delta_{\eta = \eta'}. 
 \]
 
 We apply the fermionic Fourier transform to write this expression in terms of the operators $\til{J}^1[k,l] (0, \what{\eta}^a)$.
 We find
 \[ 
-	\til{J}^1[k,l](0,\what{\eta}^a)  \til{J}^1[r,s](z,\what{\eta}'^{a})  
-	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\what{\eta}^a + \what{\eta}'^{a} ). 
+	\til{J}^1[k,l](0,\what{\eta})  \til{J}^1[r,s](z,\what{\eta}')  
+	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\what{\eta} + \what{\eta}' ). 
 \]
 
 Diagrammatically, the OPE we have just deduced follows from the cancellation of the gauge anomaly in Figure \ref{fig:JJcancel}.
@@ -140,8 +203,9 @@ and the $\til{J}^2 \til{J}^1$ OPE
 
 Let us use the these calculations to calculate the OPEs of the on-shell operators 
 \[ 
-	 	J[r,s] = r \til{J}^2[r-1,s] - s \til{J}^1[r,s-1]. 
+	 	J[r,s] = r \til{J}^2[r-1,s] - s \til{J}^1[r,s-1]
 \]
+as in \eqref{eqn:onshell}.
 We find
 \begin{multline}
 	J[r,s] (0,\what{\eta}^a) J[k,l](z,\what{\eta}'^{a}) =   \frac{1}{z} (l-s) k r  \til{J}^2 [k+r-2,l+s-1]   \\
@@ -166,10 +230,10 @@ we find that the OPE is
 	J[r,s](0,\what{\eta}^a)J[k,l](z,\what{\eta}'^{a}) = \frac{1}{z} (rl-ks)  J[r+k-1,l+s-1](z, \what{\eta}^a + \what{\eta}'^{a}).     
 \]
 
-Note that the operators with $r + s = 2$ which are independent of $\what{\eta}^a$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level \underline{zero}.
+Note that the operators with $r + s = 2$ which are independent of $\what{\eta}^a$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level zero.
 We will get a nontrivial level once we include the contribution from the back reaction, which we do in \S \ref{sec:br}. 
 
-As was pointed out in \cite{CP}, the mode algebra corresponding to this full collection of OPE's can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonoian vector fields on $\C^2$.\footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
+In \cite{CP}, it is shown that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonoian vector fields on $\C^2$ in the case that the hyper K\"ahler surface we start with is $T^4$.\footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
 This is the Lie algebra $\cL^{1|4} \fw_\infty$.
 Explicitly, elements of this super Lie algebra can be expressed as 
 \beqn
@@ -180,6 +244,8 @@ The bracket is
 \beqn
 [z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
 \eeqn
+
+In the $K3$ case \brian{finish}
 
 \subsection{$TJ$ OPE}
 
@@ -246,21 +312,24 @@ In a completely similar way one can deduce the $\til{T} \til{J}^2$ OPE
 
 \subsubsection{}
 
-Using the $\til{T} \til{J}^i$ and $\til{J}^i \til{J}^2$ OPE's that we have computed, we deduce the OPE's between the on-shell operators $T$ and $J^i$. 
-Recall that
-\begin{equation} 
-	\begin{split}
-		T[r,s] &:=  \til{T}[r,s] - \frac{1}{2(r+1)} \partial_z \til{J}^1[r+1,s] - \frac{1}{2(s+1)} \partial_z \til{J}^2[r,s+1] \\
-		J[k,l] &:= k \til{J}^2[k-1,l] - l \til{J}^1[k,l-1] 
-	\end{split}
-\end{equation}
-Thus
+Using the $\til{T} \til{J}^i$ and $\til{J}^i \til{J}^2$ OPE's that we have computed, we deduce the OPE's between the on-shell operators $T$ and $J^i$ using \eqref{eqn:onshell}.
+%\begin{equation} 
+%	\begin{split}
+%		T[r,s] &:=  \til{T}[r,s] - \frac{1}{2(r+1)} \partial_z \til{J}^1[r+1,s] - \frac{1}{2(s+1)} \partial_z \til{J}^2[r,s+1] \\
+%		J[k,l] &:= k \til{J}^2[k-1,l] - l \til{J}^1[k,l-1] 
+%	\end{split}
+%\end{equation}
+After some algebraic manipulation, we find
 \begin{multline}
-T[r,s](0, \eta_a) J[k,l](z,\what\eta'^a) \simeq \\ k \til{T}[r,s](0, \eta_a) \til{J}^2[k-1,l] - l \til{T}[k,l](0, \eta_a) \til{J}^1[k,l-1]  \\
-- \frac{k}{2(r+1)} \partial_z \til{J}^1[r+1,s] (0,\eta_a) \til{J}^2[k-1,l] + \frac{l}{2(r+1)} \partial_z \til{J}^1[r+1,s] \til{J}^1[k,l-1] \\
-- \frac{k}{2(s+1)} \partial_z \til{J}^2[r+1,s] (0,\eta_a) \til{J}^2[k-1,l] + \frac{l}{2(s+1)} \partial_z \til{J}^2[r+1,s] \til{J}^1[k,l-1] .
+J[m, n](0)T[r, s](z) \simeq (nr-ms) { 1\over z}T[m + r -1, n + s -1](0) \\ + {1 \over z^2}\left({m \over 2(r + 1)} + {n \over 2(s + 1)}\right)J[m + r, n + s](0)
++{1 \over 2 z}\left({m \over m + r} + {n \over n + s} \right)\partial_z J[m + r, n + s](0)
 \end{multline}
-(On the right hand side, all operators are evaluated at $z = 0$ and with the fermionic variables $\what{\eta}^a+\what{\eta}'^{a}$.  We have dropped this dependence for clarity.)
+%\begin{multline}
+%T[r,s](0, \eta_a) J[k,l](z,\what\eta'^a) \simeq \\ k \til{T}[r,s](0, \eta_a) \til{J}^2[k-1,l] - l \til{T}[k,l](0, \eta_a) \til{J}^1[k,l-1]  \\
+%- \frac{k}{2(r+1)} \partial_z \til{J}^1[r+1,s] (0,\eta_a) \til{J}^2[k-1,l] + \frac{l}{2(r+1)} \partial_z \til{J}^1[r+1,s] \til{J}^1[k,l-1] \\
+%- \frac{k}{2(s+1)} \partial_z \til{J}^2[r+1,s] (0,\eta_a) \til{J}^2[k-1,l] + \frac{l}{2(s+1)} \partial_z \til{J}^2[r+1,s] \til{J}^1[k,l-1] .
+%\end{multline}
+On the right hand side, all operators are evaluated at the variables $\what{\eta} +\what{\eta}'$.  We have dropped this dependence for clarity.
 
 \subsection{$TT$ OPE}
 \label{sec:TT1}
@@ -283,6 +352,27 @@ Integrating by parts and switching to the Fourier dual odd coordinates, we find 
 \begin{equation}\label{ope:TT}
 \til{T}[r,s] (0,\what\eta^a) \til{T}[k,l] (z, \what\eta'^a) \simeq \frac1z \partial_z \til{T}[r+k, s+l]  (0,\what\eta^a + \what\eta'^a) + 2 \frac{1}{z^2} \til{T}[r+k, s+l]  (0,\what\eta^a + \what\eta'^a) .
 \end{equation}
+
+\subsubsection{}
+
+Using the $\til{T} \til{T}$ and $\til{J}^i \til{J}^j$ OPE's that we have computed, we deduce the OPE's between the on-shell operator $T$ and itself using \eqref{eqn:onshell}.
+%\begin{equation} 
+%	\begin{split}
+%		T[r,s] &:=  \til{T}[r,s] - \frac{1}{2(r+1)} \partial_z \til{J}^1[r+1,s] - \frac{1}{2(s+1)} \partial_z \til{J}^2[r,s+1] \\
+%		J[k,l] &:= k \til{J}^2[k-1,l] - l \til{J}^1[k,l-1] 
+%	\end{split}
+%\end{equation}
+After some algebraic manipulation, we find
+\beqn
+\begin{aligned}[]
+T[m, n](0)T[r, s](z) &\sim {1 \over z}\left(1 + {r \over 2(m+1)} + {s \over 2(n+1)}\partial_z \right) T[m + r, n +s](0) \\ \nonumber &+ {1 \over z^2}\left(2 + {r \over 2(m+1)} + {s \over 2(n+1)} + {m \over 2(r+1)} + {n \over 2(s+1)} \right)T[m + r, n + s](0)\\
+&+{1 \over 4 z}\left({1 \over (m + 1)(n + s + 1)}- {1 \over (n +1)(m + r + 1)} \right) \partial^2_z J[m + r  +1, n + s +1](0) \\ 
+&+{1 \over 4 z^2}\left({1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right)\partial_z J[m + r + 1, n + s + 1](0) \\  
+&+ {1 \over 4 z^2}\left({1 \over n + s + 1}({2 + m + r \over (1 + m)(1 + r)}) - {1 \over m + r + 1}({2 + n + s \over (1 + n)(1 + s)}) \right) \\  & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \partial_z J[m + r + 1, n + s + 1](0) \\ 
+&+{1 \over 2 z^3}\left( {1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right) J[m + r + 1, n + s + 1](0) \\ 
+\end{aligned}
+\eeqn
+On the right hand side, all operators are evaluated at the variables $\what{\eta} +\what{\eta}'$.  We have dropped this dependence for clarity.
 
 \subsection{$GG$ OPE}
 To constrain the $G_\alpha$, $G_\gamma$ OPE we consider terms in the gauge variations of the classical couplings involving $\alpha$ and $\fc_\gamma$ or $\gamma$ and $\fc_\alpha$ (we have disregarded those terms in the analysis above as they played no role in the previous OPE calculations).
@@ -340,8 +430,6 @@ We integrate by parts to rewrite the right hand side as
 + (r+k) \int_{z'',\eta_a''} \til{J}^2[r+k-1,s+l] (z'',\eta_a'') \partial_{z''} H(z'',\zbar'', \eta_a'') G(z'', \zbar'', \eta_a'') .
 \end{multline}
 
-
-
 From these expressions we can read off the OPE's just as above. 
 We obtain
 \begin{multline}
@@ -349,8 +437,65 @@ G_{\alpha} [r,s] (0,\what\eta_a) G_{\gamma}[k,l](z,\what\eta_a') \simeq  - (s+l)
 - l \frac1z \partial_z \til{J}^1[r+k, s+l-1] + k \frac1z\partial_z \til{J}^2 [r+k-1, s+l]
 +(rl-sk) \frac1z \til{T}[r+k-1, s+l-1] .
 \end{multline}
-(On the right hand side, all operators are evaluated at $z = 0$ and with the fermionic variables $\what{\eta}^a+\what{\eta}'^{a}$.  We have dropped this dependence for clarity.)
+
+\subsubsection{}
+
+Using \eqref{eqn:onshell} we obtain the on-shell $G^\alpha-G^\gamma$ OPE's
+\beqn
+\begin{aligned}[]
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
+&+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})\right)\partial_z J[m + r, n+s](0)
+\end{aligned}
+\eeqn
+On the right hand side, all operators are evaluated at the variables $\what{\eta} +\what{\eta}'$.
+
+
 
 \subsection{$TG$ OPE}
+
+
+\subsection{Tree-level on-shell OPEs}
+\textcolor{red}{NP: note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
+\textcolor{red}{NP: it may be prettier to separate the $J[m,n]$ OPEs when one or both arguments are zero from the rest, to avoid using the clunky theta function notation.}
+
+If $nr-ms > 0$ the OPEs are
+\begin{align}
+J[m,n](0)J[r, s](z) &\sim {(nr-ms) \over z}J[m + r -1, n + s -1](0) \\
+J[m, n](0)T[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}\left({m \over 2(r + 1)} + {n \over 2(s + 1)}\right)J[m + r, n + s](0) \\ \nonumber
+&+{1 \over 2 z}\left({m \over m + r} + {n \over n + s} \right)\partial_z J[m + r, n + s](0)\\
+G[m, n](0)J[r, s](z) &\sim {(ms - rn) \over z}G[m + r -1, n + s - 1](z) \\
+G[m, n](0)T[r, s](z) &\sim ({1 \over z} \partial_z + {1 \over z^2})G[m + r, n+s](0) + \left({m \over 2(r+1)} + {n \over 2 (s + 1)}\right){1 \over z^2}G[m + r, n+s](0) \\
+T[m, n](0)T[r, s](z) &\sim {1 \over z}\left(1 + {r \over 2(m+1)} + {s \over 2(n+1)}\partial_z \right) T[m + r, n +s](0) \\ \nonumber &+ {1 \over z^2}\left(2 + {r \over 2(m+1)} + {s \over 2(n+1)} + {m \over 2(r+1)} + {n \over 2(s+1)} \right)T[m + r, n + s](0)\\ \nonumber
+&+{1 \over 4 z}\left({1 \over (m + 1)(n + s + 1)}- {1 \over (n +1)(m + r + 1)} \right) \partial^2_z J[m + r  +1, n + s +1](0) \\ \nonumber
+&+{1 \over 4 z^2}\left({1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right)\partial_z J[m + r + 1, n + s + 1](0) \\ \nonumber 
+&+ {1 \over 4 z^2}\left({1 \over n + s + 1}({2 + m + r \over (1 + m)(1 + r)}) - {1 \over m + r + 1}({2 + n + s \over (1 + n)(1 + s)}) \right) \\ \nonumber & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \partial_z J[m + r + 1, n + s + 1](0) \\ \nonumber
+&+{1 \over 2 z^3}\left( {1 \over (m + 1)(s + 1)}- {1 \over (n+1)(r + s)}\right) J[m + r + 1, n + s + 1](0) \\ \nonumber
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
+&+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})\right)\partial_z J[m + r, n+s](0)
+\end{align}. 
+
+The JT and GG OPE coefficients have to be treated with slightly more care for special choices of $n, r, m, s$, though the basic structure of the OPEs is the same.
+For the JT OPE, the above expression also holds when $nr - ms = 0$ but $nr = m s >0$. 
+For the GG OPE, if $n r - ms = 0$ but $nr = ms > 0$ we have
+\begin{align}
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
+&+{1 \over z}\partial_z J[m + r, n+s](0).
+\end{align}
+The remaining cases are as follows. If $nr-ms = 0$ and $n r = ms = 0$ the TJ and GG OPE coefficients are instead as follows. \newline
+If $r = m = 0, s \neq 0$:
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({n \over 2(s + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({n \over n + s} \right)\partial_z J[m + r, n + s](0) \\ \nonumber
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({n \over  (n + s)}\right)\partial_z J[m + r, n+s](0)
+\end{align}
+If $n = s = 0, r \neq 0$:
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({m \over 2(r + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({m \over m + r} \right)\partial_z J[m + r, n + s](0)\\
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({m \over m + r}\right)\partial_z J[m + r, n+s](0)
+\end{align}
+If $r = s= 0$ (note that there are no G operators for these values):
+\begin{align}
+J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +{1 \over  z}\partial_z J[m + r, n + s](0)
+\end{align}
+\textcolor{red}{NP: Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
 
 \end{document}
