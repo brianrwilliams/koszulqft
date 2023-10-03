@@ -435,12 +435,11 @@ and some number of $D5$ branes wrap the same complex line $\{w_i=0\}$ in $\C^3$ 
 \eeqn
 The effective open string theory associated to this system of branes will be supported on the intersection of this system which is simply the complex line $\{w_i=0\}$ in $\C^3$.
 
-We can apply a duality to turn this into a D3 brane system which wraps 
+Using classic results \cite{Dijkgraaf:1998gf}, we can apply a duality to turn this into a D3 brane system which wraps 
 \beqn
 \C \times 0 \times \Sigma \subset \C^3 \times K3 
 \eeqn
-for some two-cycle $\Sigma \subset K3$. 
-\brian{say this precisely}
+for a (special) Lagrangian two-cycle $\Sigma \subset K3$. This follows from the fact that any general D-brane (bound) state on K3 may be described by a Mukai vector $v$, which is a primitive vector such that $F \in \Gamma^{4, 20}, F^2>0$. Any two such vectors of equal length can be related to one another by T-duality transformations in $O(\Gamma^{4, 20})$. Of course, matching the moduli between the two duality frames can be an involved task. For our purposes, we will only need a few basic features in this frame. \footnote{A simple application of these ideas is the following. The positive-definite 4-plane which specifies the hyperk{\"a}hler structure on K3 can be decomposed into two orthogonal 2-planes which amounts to making a choice of complex structure and complexified (by the B-field) K{\"a}hler form. A quaternionic rotation of the 4-plane then exchanges the complex and K{\"a}hler structures, which amounts to a mirror symmetry transformation on the K3 surface. This will exchange the notion of B-branes and A-branes on K3, where B-branes wrap holomorphic curves (with respect to a chosen complex structure) and A-branes wrapping special Lagrangian 2-cycles. This point of view can also be reformulated as an application of the Strominger-Yau-Zaslow \cite{} picture of mirror symmetry as a composition of T-dualities acting on an elliptic fiber.}. As in our setup, B-branes (which, again, are BPS with respect to some chosen $\mathcal{N}=(2, 2)$ subalgebra of the $\mathcal{N}=(4, 4)$ superconformal algebra) on K3 surfaces can wrap not only 2-cycles, but also curves of dimension 0 and 4 (i.e. points or the entire K3 surface).} 
 
 In the last section, we argued that the compactification along a $K3$ surface becomes an extended version of Kodaira--Spencer theory where the extra fields are labeled by the cohomology of the surface.
 Upon compactification, the $D3$ system becomes a system of $B$-type branes in this extended version of Kodaira--Spencer theory.
@@ -449,12 +448,14 @@ The charge of these branes is labeled by a cohomology class
 \beqn
 F \in H^2(K3) \subset A .
 \eeqn
-We denote 
+ In particular, we take $F$ to be a primitive Mukai vector, as above. We denote 
 \beqn
 N \define \ip{F, F}
 \eeqn
 using the inner product on $H^2(Y)$. 
-Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. As usual $N = N_1(N_5-1) \simeq_{N_1, N_5 \rightarrow \infty} N_1 N_5$. \textcolor{red}{im pretty sure about the -1 but i want to double-check.}
+Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. Then the D-brane charge is related to the number of D1-D5 branes in the original duality frame $N = N_1(N_5-1) \simeq_{N_1, N_5 \rightarrow \infty} N_1 N_5$. (To satisfy the primitivity condition, we assume $N_1, N_5$ are coprime.). \textcolor{red}{im pretty sure about the -1 but i want to double-check.}
+
+Notice that the \textit{length} of the D-brane charge vector $F^2$ is of order $N$, so that anything proportional to the lattice vector itself scales like $\mathcal{O}(N^{1/2})$. We will always work in the supergravity limit in which any formal series in the inverse of these parameters is treated as an asymptotic series.
 
 Generally, the backreaction deforms the geometry away from the locus of the brane. 
 Before backreacting, we should say what geometry is actually being deformed. 
