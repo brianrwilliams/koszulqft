@@ -141,19 +141,24 @@ The formal $\delta$-function $\delta_{\eta = \eta'}$ has the simple expression
 \beqn
 \delta_{\eta = \eta'} = (\eta - \eta') \left(\prod_{a=1}^{20} h^{ab}(\eta_b - \eta'_b) \right) (\br \eta - \br \eta') \in A \otimes A.
 \eeqn
+\brian{check this}
 
-This in turn leads to the OPE:
-\[ 
+Anomaly cancellation leads to the OPE:
+\beqn
 		\til{J}^1[k,l](0,\eta)  \til{J}^1[r,s](z,\eta')  
 	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\eta) \delta_{\eta = \eta'}. 
-\]
-
-We apply the fermionic Fourier transform to write this expression in terms of the operators $\til{J}^1[k,l] (0, \what{\eta}^a)$.
+\eeqn
+We apply the fermionic Fourier transform to write this expression in terms of the operators $\til{J}^1[k,l] (0, \what{\eta})$.
 We find
-\[ 
+\beqn
 	\til{J}^1[k,l](0,\what{\eta})  \til{J}^1[r,s](z,\what{\eta}')  
 	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\what{\eta} + \what{\eta}' ). 
-\]
+\eeqn
+To simplify notation we will write this OPE in a way that does not explicitly refer to the $\eta$-variables as in:
+\beqn
+		\til{J}^1[k,l](0) \til{J}^1[r,s](z)  
+	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] 
+\eeqn
 
 Diagrammatically, the OPE we have just deduced follows from the cancellation of the gauge anomaly in Figure \ref{fig:JJcancel}.
 
@@ -184,68 +189,72 @@ Diagrammatically, the OPE we have just deduced follows from the cancellation of 
 
 \subsubsection{}
 
-Similarly, we have the $\til{J}^2 \til{J}^2$ OPE
+Similar computations lead to the following tree-level OPEs.
+We have the $\til{J}^2 \til{J}^2$ OPE:
 \[ 
-		\til{J}^2[r,s](0,\what{\eta}^a)  \til{J}^2[k,l](z,\what{\eta}'^{a})  
-	\simeq \frac{1}{z} (l-s)  \til{J}^2 [r+k,s+l-1] (0,\what{\eta}^a + \what{\eta}'^{a} ). 
+		\til{J}^2[r,s](0)  \til{J}^2[k,l](z)
+	\simeq \frac{1}{z} (l-s)  \til{J}^2 [r+k,s+l-1] (0) . 
 \]
-
-the $\til{J}^1 \til{J}^2$ OPE
+The $\til{J}^1 \til{J}^2$ OPE:
 \[ 
-	\til{J}^1[r,s] (0,\what{\eta}^a) \til{J}^2[k,l](z,\what{\eta}'^{a}) \simeq - \frac{1}{z} s  \til{J}^1[r+k, l+s - 1] (0,\what{\eta}^a + \what{\eta}'^{a})    + \frac{1}{z} k \til{J}^2[k+r-1,l+s] (0,\what{\eta}^a + \what{\eta}'^{a})  
+	\til{J}^1[r,s] (0) \til{J}^2[k,l](z) \simeq - \frac{1}{z} s  \til{J}^1[r+k, l+s - 1] (0) + \frac{1}{z} k \til{J}^2[k+r-1,l+s] (0).
 \]
-and the $\til{J}^2 \til{J}^1$ OPE
+And finally, the $\til{J}^2 \til{J}^1$ OPE:
 \[ 
-	\til{J}^2[r,s] (0,\what{\eta}^a) \til{J}^1[k,l](z,\what{\eta}'^{a}) \simeq - \frac{1}{z} r  \til{J}^2[r+k-1, l+s ] (0,\what{\eta}^a + \what{\eta}'^{a})    + \frac{1}{z} l \til{J}^1[k+r,l+s-1] (0,\what{\eta}^a + \what{\eta}'^{a}).   
+	\til{J}^2[r,s] (0) \til{J}^1[k,l](z) \simeq - \frac{1}{z} r  \til{J}^2[r+k-1, l+s ] (0)    + \frac{1}{z} l \til{J}^1[k+r,l+s-1] (0).   
 \]
 
 \subsubsection{}
 
-Let us use the these calculations to calculate the OPEs of the on-shell operators 
-\[ 
-	 	J[r,s] = r \til{J}^2[r-1,s] - s \til{J}^1[r,s-1]
-\]
-as in \eqref{eqn:onshell}.
+The calculations so far have involved the OPEs of the ``off-shell'' operators $\til{J}^i[r,s]$.
+To obtain the on-shell OPEs we apply the constraints in \eqref{eqn:onshell}, which for the $J$-type operators takes the form
+\beqn\label{eqn:Jonshell}
+	 	J[r,s] = r \til{J}^2[r-1,s] - s \til{J}^1[r,s-1] .
+\eeqn
+
 We find
 \begin{multline}
-	J[r,s] (0,\what{\eta}^a) J[k,l](z,\what{\eta}'^{a}) =   \frac{1}{z} (l-s) k r  \til{J}^2 [k+r-2,l+s-1]   \\
+	J[r,s] (0) J[k,l](z) =   \frac{1}{z} (l-s) k r  \til{J}^2 [k+r-2,l+s-1]   \\
 	+ \frac{1}{z} ls(k-r) \til{J}^1[k+r-1, l+s-2] \\
 	+  \frac{1}{z} r (r-1) l  \til{J}^2[r+k-2, l+s -1 ]    - \frac{1}{z} l (l-1) r \til{J}^1[k+r-1,l+s-2]  \\
 	+ \frac{1}{z} k s(s-1)  \til{J}^1[r+k-1, l+s - 2]    - \frac{1}{z}k s  (k-1) \til{J}^2[k+r-2,l+s-1] 
 \end{multline}
-(On the right hand side, all operators are evaluated at $z = 0$ and with the fermionic variables $\what{\eta}^a+\what{\eta}'^{a}$.  We have dropped this dependence for clarity.)
 
-Collecting the terms, we find the OPE is
+Collecting the terms, we find the right hand side is
 \begin{align*} 
 	&\frac{1}{z} \left( (l-s)kr + r (r-1) l - ks (k-1)     \right)  \til{J}^2 [k+r - 2, l +s - 1]  \\
 	&+ \frac{1}{z} \left( ls (k-r) - l (l-1) r + k s (s-1)  \right) \til{J}^1 [ k + r -1, l + s - 2]. 
 \end{align*}
-
-Since 
+Finally, using \eqref{eqn:Jonshell}
+we find that the OPE involving the on-shell operators $J[r,s]$ takes the form 
 \[ 
-	 J[k+r-1,l+s-1] = (k+r-1)\til{J}^2 [k+r-2,l+s-1] - (l+s-1) \til{J}^1 [ k+r - 1, l +s - 2] 
+	J[r,s](0)J[k,l](z) = \frac{1}{z} (rl-ks)  J[r+k-1,l+s-1](0).     
 \]
-we find that the OPE is 
-\[ 
-	J[r,s](0,\what{\eta}^a)J[k,l](z,\what{\eta}'^{a}) = \frac{1}{z} (rl-ks)  J[r+k-1,l+s-1](z, \what{\eta}^a + \what{\eta}'^{a}).     
-\]
-
-Note that the operators with $r + s = 2$ which are independent of $\what{\eta}^a$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level zero.
+As above, on the right hand side all operators are evaluated at $z = 0$ and with the fermionic variables $\what{\eta}+\what{\eta}'$. 
+Note that the operators $J[r,s]$ with $r + s = 2$ which are independent of $\what{\eta}$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level zero.
 We will get a nontrivial level once we include the contribution from the back reaction, which we do in \S \ref{sec:br}. 
 
-In \cite{CP}, it is shown that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonoian vector fields on $\C^2$ in the case that the hyper K\"ahler surface we start with is $T^4$.\footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
-This is the Lie algebra $\cL^{1|4} \fw_\infty$.
-Explicitly, elements of this super Lie algebra can be expressed as 
+In the case that the hyper K\"ahler surface we compactify type IIB supergravity on is $T^4$ (instead of $K3$ which we have mostly considered in this paper), it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonoian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
+This is the Lie algebra $\cL^{1|4} \fw_\infty$ whose elements have the form
 \beqn
 z^{n} f(w_1,w_2; \eta_a) \in \cL^{1|4} \fw_\infty
 \eeqn
-for $n \in \Z$ and where $f(w_1,w_2;\eta_a) \in \C[w_1,w_2,\eta_a]/ \C$. 
-The bracket is 
+for $n \in \Z$, where $f(w_1,w_2;\eta_a) \in \C[w_1,w_2] \slash \C \otimes \C[\eta_a]$. (Here, the $\eta_a, a=1,2,3,4$ variables generator the cohomology of $T^4$, so are fermionic.)
+The super bracket is 
 \beqn
 [z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
 \eeqn
 
-In the $K3$ case \brian{finish}
+In the $K3$ case the mode algebra of the $J$-operators gives rise to a similar infinite-dimensional Lie algebra that we denote $L^{K3}\fw_\infty$.
+Elements in this Lie algebra have the form
+\beqn
+z^{n} f(w_1,w_2; \eta_a) \in L^{K3}\fw_\infty 
+\eeqn
+where $n \in \Z$ and $f \in \C[w_1,w_2] \slash \C \otimes A$.
+The super bracket is identical 
+\beqn
+[z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
+\eeqn
 
 \subsection{$TJ$ OPE}
 
@@ -455,6 +464,11 @@ On the right hand side, all operators are evaluated at the variables $\what{\eta
 
 
 \subsection{Tree-level on-shell OPEs}
+
+The OPE's we have just computed completely characterize the tree-level defect chiral algebra.
+In the final part of this section we summarize all tree-level OPE's that we have deduced above.
+In the next section we will characterize loop effects which modify this tree-level chiral algebra.
+
 \textcolor{red}{NP: note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
 \textcolor{red}{NP: it may be prettier to separate the $J[m,n]$ OPEs when one or both arguments are zero from the rest, to avoid using the clunky theta function notation.}
 
@@ -474,9 +488,9 @@ G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s 
 &+{1 \over z}\left(({m \over 2 (m + r)} + {n \over 2 (n + s)})\right)\partial_z J[m + r, n+s](0)
 \end{align}. 
 
-The JT and GG OPE coefficients have to be treated with slightly more care for special choices of $n, r, m, s$, though the basic structure of the OPEs is the same.
-For the JT OPE, the above expression also holds when $nr - ms = 0$ but $nr = m s >0$. 
-For the GG OPE, if $n r - ms = 0$ but $nr = ms > 0$ we have
+The coefficients in the OPEs between $J-T$ and $G-G$ have to be treated with slightly more care for special choices of $n, r, m, s$, though the basic structure of the OPEs is the same.
+For the $J-T$ OPE, the above expression also holds when $nr - ms = 0$ and $nr = m s >0$. 
+For the $G-G$ OPE, if $n r - ms = 0$ and $nr = ms > 0$ we have
 \begin{align}
 G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
 &+{1 \over z}\partial_z J[m + r, n+s](0).
