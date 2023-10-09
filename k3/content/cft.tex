@@ -43,12 +43,25 @@ For simplicity, we assume that we have a collection of $N_1 = N$ $D1$ branes sup
 \Sigma \subset Z \]
 together with a single $D5$ brane which is parallel to the $D1$ branes. 
 
-We consider $D1$ branes that are a sum of simple branes labeled by the structure sheaf $\cO_\Sigma$. Fields in the holomorphic twist of some supersymmetric theory are naturally modeled via an appropriate Dolbeault complex.
-The Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by \textcolor{red}{we should unpack a bit of this notation, including the underline/subscript of the Ext groups (I think most physicists are not familiar with Ext groups actually so we should at least cite the D-branes and mirror symmetry book, or say a few extra words? and the cohomological shift} 
-\beqn\label{eqn:open1}
-\Omega^{0,\bu}(\Sigma, \underline{\rm Ext}_{\cO_Z}(\cO_\Sigma^{\oplus N}))[1] \simeq \Omega^{0,\bu}\left(\Sigma, \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma\right) [1] 
+In topological string theory, one views branes as objects in some category.
+Morphisms between objects represent open strings stretching between two branes.
+In particular, a general feature of topological string theory is that the open string fields which start and end on the same brane can be described in terms of the algebra of derived endomorphisms of the object representing the brane.
+Indeed, following \cite{WittenOpen}, one constructs a Chern--Simons theory based off of this derived algebra of endomorphisms where the gauge fields are degree one elements in the algebra of derived endomorphisms.
+In the $B$-model, the category is the category of coherent sheaves on the Calabi--Yau manifold.
+Fields of the corresponding open-string field theory (which start and on on the same brane) are given as holomorphic sections of the sheaf of derived endomorphisms.
+Following \cite{CLsugra}, we will use a Dolbeault model which resolves a sheaf of holomorphic sections to describe the space of fields as the cohomological shift by one of the Dolbeault resolutions of derived endomorphsism.
+
+We consider $D1$ branes that are a sum of simple branes labeled by the structure sheaf~$\cO_\Sigma$.
+In particular $N$ such $D1$ branes are represented by the object $\cO_{\Sigma}^{\oplus N}$ in the category of quasi-coherent sheaves on the Calabi--Yau fivefold $Z$.
+A model for the sheaf of derived endomorphisms of $\cO_\Sigma$ is the holomorphic sections of the exterior algebra of the normal bundle $\cN_{\Sigma}$ of $\Sigma$ in $Z$.
+Thus, a model for the sheaf of derived endomorphisms of a stack of $N$ such branes is
+\beqn
+\text{Ext}_{\cO_Z}\left(\cO_\Sigma^{\oplus N} \right) \simeq \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma .
 \eeqn
-where $\cN_\Sigma$ is the normal bundle to $\Sigma$ in $Z$.
+Thus, the Dolbeault model for the open string fields which stretch between two such $D1$ branes is given by
+\beqn\label{eqn:open1}
+\Omega^{0,\bu}\left(\Sigma, \lie{gl}(N) \otimes \wedge^\bu \cN_\Sigma\right) [1] .
+\eeqn
 If we take $X$ to the be the total space of the bundle $\cN_\Sigma$ then the Calabi--Yau condition requires $\wedge^4 N_\Sigma = K_\Sigma$. 
 In the case $\Sigma = \C$ and $Z = \C^5$ 
 %we can twist by a homomorphism $SO(2) \to SO(4)$ to 
@@ -80,14 +93,13 @@ In total, we see that the open-strings of the $D1/D5$ system along $\Sigma = \C$
 \eeqn
 If we choose twisting data so that the odd variable carry degree $\deg{\ep_1}=\deg{\ep_2} = +1$ then the bundle in parentheses can be written as
 \beqn
-\lie{gl}(N)[1] \oplus T^* \left(\lie{gl}(N) \oplus K^{1/2}_\Sigma \otimes \C^N\right) \oplus \lie{gl}(N) [-1] .
+\lie{gl}(N)[1] \oplus K^{1/2}_\Sigma \otimes T^* \left(\lie{gl}(N) \oplus  \C^N\right) \oplus \lie{gl}(N) [-1] .
 \eeqn
-Up to the factor of $K^{1/2}_\Sigma$ this is evidently \textcolor{red}{perhaps not so evident for physicists... we should add some explanatory remarks} the underlying vector space of the graded Lie algebra controlling Hamiltonian reduction
-\beqn
-T^*(\lie{gl}(N) \oplus \C^N) \sslash \lie{gl}(N) .
-\eeqn
-This recovers the well-known GIT description of the symmetric orbifold $\Sym^{N} \C^2$.
-The total worldvolume theory living on the twisted $D1$ brane is thus a holomorphic $\sigma$-model with target this symmetric orbifold.
+The first summand represents the ghosts of the holomorphic CFT and the last summand the anti-ghosts.
+The gauge symmetry in the middle term is induced from the standard 
+action of $\lie{gl}(N)$ on $T^* \left(\lie{gl}(N) \oplus C^N\right)$ by Hamiltonian vector fields (this is induced from the adjoint $+$ fundamental action on the base of the cotangent bundle). 
+Thus, we see that this model describes ($K^{1/2}_\Sigma$-twisted) holomorphic maps from $\Sigma$ into the well-known GIT description of the symmetric orbifold $\Sym^{N} \C^2$.
+That is, the worldvolume theory living on a stack of twisted $D1$ branes is the holomorphic $\sigma$-model of maps into the target $\Sym^N \C^2$.
 
 This analysis happened entirely in flat space.
 The $D1$ branes wrapped
@@ -99,6 +111,7 @@ while the $D5$ brane wrapped
 \C \times \C^2 \times 0 \times 0 \subset \C^5 .
 \eeqn
 If we instead replace this $\C^2$ by a compact Calabi--Yau twofold $X$ then the above computation leads us to the well-established expectation that the worldvolume theory, after twisting, is a holomorphic $\sigma$-model with target $\Sym^N X$.
+\brian{elaborate}
 
 
 \subsection{The symmetric orbifold SCFT}
@@ -358,6 +371,9 @@ In sum, we obtain
 \end{align} 
 We will denote this large $N$ limit by $\chi_{NS}(\Sym^\infty X ; q,y)$. 
 In particular, for there are two bosonic towers corresponding to (anti)chiral primary states and three fermionic towers corresponding to (derivatives of) the states capturing the cohomology of a single copy of K3. At $k=1$, there is a cancellation to ${(1 - q)^{20} \over (1 - q^{1/2}y)^{22}(1 - q^{1/2}y^{-1})^{22}}$.
+
+We observe that this expression for the large $N$ limit of the elliptic genus agrees exactly with the plethystic exponential of the single particle twisted supergravity index we computed in \eqref{eqn:sugraindex}.
+This is significant evidence that our twisted supergravity theory is dual to the large $N$ limit of the symmetric orbifold CFT.
 
 Throughout this derivation, we have used the coefficients $c(m, l)$ that appear in the expansion of the K3 elliptic genus in the Ramond sector: $\sum_{m \geq 0, l \in \mathbb{Z}} c(m, l) q^m y^l$. We can also rewrite things slightly in terms of the coefficients of the NS sector elliptic genus expansion: $\sum_{2 m' \in \mathbb{Z}_{\geq 0}, l' \in \mathbb{Z}} \mathcal{C}(m', l') q^{m'} y^{l'} = 2 + (20/y + 20 y)q^{1/2} + (2/y^2 - 128 + 2 y^2)q + \ldots$ using the half-integral spectral flow relation on the coefficients of the elliptic genera: $\mathcal{C}(m', l') = c(m'-l'/2, l'-1)$. 
 
