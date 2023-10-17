@@ -512,4 +512,89 @@ J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +
 \end{align}
 \textcolor{red}{NP: Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
 
+We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. If we perform the rescaling of the Kodaira-Spencer Lagrangian in the backreacted geometry, as discussed in section \ref{}, then the diagrammatics have the following dependence on $N$: 
+\begin{enumerate}
+\item The cubic Kodaira-Spencer interaction vertices scale like $\sim N$. \\
+\item The term controlling the backreaction, i.e. the cubic vertex coupling KS theory to the defect, scales like $\sim N$. \\
+\item The Kodaira-Spencer propagator (either in the form of bulk-bulk or bulk-defect propagators) scales like ${1 \over N}$.
+\end{enumerate}
+
+Putting this together, we find that the same class of diagrams as in \cite{CP} survive in the planar limit. We reproduce these below in Figure \ref{fig:alldiagramsplanar}. As expected, this leads to central terms scaling like the CFT central charge $c \sim N$, as well as a new class of diagrams arising from the backreaction that do not scale with $N$ and deform the algebra. We turn now to computing these diagrams and completing our characterization of the planar chiral algebra from Koszul duality. 
+
+\begin{figure}
+
+
+
+\begin{tikzpicture}[scale={0.75}]
+		
+
+
+	\begin{scope}[shift={(-5,0)}]
+		\node[circle, draw] (J) at (0,0) {$J$};
+		\node (A1) at (3,1)  {};
+		\node (A2) at (3,-1)  {};
+		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
+		\draw[decorate, decoration={snake}] (J) -- (1.5,0);
+		\draw[decorate, decoration={snake}] (1.5,0) --(A1);
+		\draw[decorate, decoration={snake}] (1.5,0) --(A2);
+		\draw (0,2)-- (J) -- (0,-2);
+		\node at (0.75,-3) {\small $(a)$};
+	\end{scope}
+
+
+	\begin{scope}[shift={(0,0)}];
+	%	\node[circle, draw] (J) at (0,0) {$J$};
+		\node (A1) at (3,1)  {};
+		\node (A2) at (3,-1)  {};
+		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
+		\draw[dashed] (0,0) -- (1.5,0);
+		\draw[decorate, decoration={snake}] (1.5,0) --(A1);
+		\draw[decorate, decoration={snake}] (1.5,0) --(A2);
+		\draw (0,2)-- (0,-2);
+		\node at (0.75,-3) {\small $(b)$};
+	\end{scope}
+
+
+
+	\begin{scope}[shift={(5,0)}]
+		\node (J1) at (0,1) {};
+		\node[circle, draw] (J2) at (0,-1) {$J$};
+		\node (A1) at (3,1.5)  {};
+		\node (A2) at (3,-1.5)  {};
+
+		\node[circle,draw,fill=black ]  (V1) at (1.5,1) {}; 
+		\node[circle,draw,fill=black]  (V2) at (1.5,-1) {};  
+		\draw[decorate, decoration={snake}]  (V1) --  (A1);
+		\draw[decorate, decoration={snake}] (J2) -- (V2) -- (A2);
+		\draw[decorate, decoration={snake}] (V1) -- (V2);
+		\draw[dashed] (J1) to (V1);
+		\draw (0,2) --  (J2) -- (0,-2);
+		\node at (0.75,-3) {\small $(c)$};
+	\end{scope}
+
+
+	\begin{scope}[shift={(10,0)}]
+		\node (J1) at (0,1) {};
+		\node (J2) at (0,-1) {};
+		\node (A1) at (3,1.5)  {};
+		\node (A2) at (3,-1.5)  {};
+
+		\node[circle,draw,fill=black ]  (V1) at (1.5,1) {}; 
+		\node[circle,draw,fill=black]  (V2) at (1.5,-1) {};  
+		\draw[decorate, decoration={snake}]  (V1) --  (A1);
+		\draw[decorate, decoration={snake}] (V2) -- (A2);
+		\draw[dashed] (J1)--(V1);
+		\draw[dashed] (J2)--(V2);
+		\draw[decorate, decoration={snake}] (V1) -- (V2); 
+		\draw (0,2)  -- (0,-2);
+		\node at (0.75,-3) {\small $(d)$};
+	\end{scope}
+
+
+	\end{tikzpicture}
+	\caption{All diagrams that contribute in the planar limit.  Diagrams $(a)$ and $(c)$ scale like $\sim \mathcal{O}(1)$ in the large-$N$ limit, and comprise 3-pt functions. We have computed the chiral algebra OPEs arising from Diagrams $(a)$ in this section. Diagrams $(b)$ and $(d)$ scale like $\sim \mathcal{O}(N)$ in the  large-$N$ limit and contribute to the 2-pt function or central extension of the algebra (terms in the OPE proportional to the identity operator). \label{fig:alldiagramsplanar}}
+\end{figure}
+
+
+
 \end{document}
