@@ -4,46 +4,59 @@
 
 \section{Tree-level OPEs}
 
-In this section we initiate our computation of OPEs of the gravitational side chiral algebra, using the same techniques as in \cite{CPt4}.
+In this section we initiate our computation of OPEs of the gravitational side chiral algebra, using the same techniques as in \cite{CP}, by first considering contributions from tree diagrams.
 
-We choose holomorphic coordinates $Z = (z,w_1,w_2)$ on $\C^3$ with a system of branes wrapping $\{w_i = 0\}$.
-The field $\mu$ has three holomorphic vector components that we denote by
+On flat space, we use holomorphic coordinates $Z = (z,w_1,w_2)$ on $\C^3$ where the system of branes wraps the locus $\{w_i = 0\}$.
+The Beltrami field $\mu$ has three holomorphic vector components that we denote by
 \beqn
 \mu = \mu_z \del_z + \mu_1 \del_{w_1} + \mu_2 \del_{w_2} ,
 \eeqn
-where $\mu_z,\mu_i \in \Omega^{0,\bu}(\C^3)$.
-With this notation, the full classical interaction of Kodaira--Spencer theory is
-\[
+where $\mu_z,\mu_i \in \Omega^{0,\bu}(\C^3)$ are Dolbeault forms (recall that the ghost number zero fields arise from forms of degree $(0,1)$---so, actual Beltrami differentials).
+With this notation, the full classical interaction of our compactified Kodaira--Spencer theory is
+\beqn
 \int_{\C^{3}} \mu_1 \mu_2 \mu_z |_{\eta \br\eta}  \; \d^3 Z + \int_{\C^{3}} \alpha \mu_i \partial_{w_i} \gamma|_{\eta \br\eta} \; \d^3 Z + \int_{\C^{3}} \alpha \mu_z \partial_z \gamma |_{\eta \br\eta}  \; \d^3 Z .
-\]
-
+\eeqn
 Recall that for the kinetic part of the action for Kodaira--Spencer theory to be well-defined we must impose the following constraint on the field $\mu$:
 \beqn\label{eqn:divfreetree}
 \del_z \mu_z + \del_{w_i} \mu_i = 0 .
 \eeqn
-We list the basic operators present in the defect chiral algebra \textit{before} imposing this constraint.
+
+Before moving into computations, we describe the operators present in the defect chiral algebra.
 In what follows we use the notation $D_{r,s}$ to denote the holomorphic differential operator
 \[ 
-	D_{r,s} = \frac{1}{r!} \frac{1}{s!} \partial_{w_1}^r \partial_{w_2}^s. 
+	D_{r,s} = \frac{1}{r!} \frac{1}{s!} \partial_{w_1}^r \partial_{w_2}^s,
 \]  
+where the holomorphic derivatives point transversely to the brane.
+To simplify formulas we will use the notations
+\beqn
+\int_{z,\eta} \omega = \int_{z \in \C_z} \omega |_{\eta \br \eta} \, \d z,
+\eeqn
+for integrals along the defect, and
+\beqn
+\int_{Z,\eta} \omega = \int_{Z \in \C^3} \omega |_{\eta \br \eta}\, \d^3 Z 
+\eeqn
+for integrals in the bulk.
+
 As with the fields of our extended version of Kodaira--Spencer theory, the defect operators of the chiral algebra will all be polynomials in the variables $\eta$ parameterizing the cohomology of the $K3$ surface.
-The variables $\eta$ do not carry spin, parity, or ghost degree.
+The variables $\eta$ do not carry spin, parity, or ghost degree (this is one difference with the case of the complex torus $T^4$).
 For simplicity of notation we will not explicitly include this $\eta$-dependence until it is convenient.
+
+Defect operators sourced by bulk fields \textit{before} imposing the constraint can be described as follows:
 
 \begin{enumerate}
 \item Bosonic Virasoro primaries $\til T[r,s]$ of spin $2 + r/2 + s/2$ which couple to the field $\mu_z$ by
 \beqn
-\int \til T[r,s] D_{r,s} \mu_z |_{\eta \br \eta, w=0} \; \d z.
+\int_{z,\eta} \til T[r,s] D_{r,s} \mu_z |_{w=0} .
 \eeqn
 \item Bosonic Virasoro primaries $\til J^i[r,s]$, $i=1,2$ of spin $1/2 + r/2 + s/2$ which couple to the fields $\mu_i$ by
 \beqn
-\int \til J^i[r,s] D_{r,s} \mu_i |_{\eta \br \eta,w=0} \; \d z. 
+\int_{z,\eta}  \til J^i[r,s] D_{r,s} \mu_i|_{w=0} .
 \eeqn
 \item Fermionic Virasoro primaries $G_\alpha[r,s]$, $G_\gamma[r,s]$ of spin $1 + r/2 + s/2$ which couple to the fields $\alpha,\gamma$ by
 \beqn
 \begin{aligned}[]
-& \int G_\alpha[r,s] D_{r,s} \alpha |_{\eta \br \eta,w=0} \; \d z \\
-& \int G_\gamma[r,s] D_{r,s} \gamma |_{\eta \br \eta,w=0} \; \d z .
+& \int_{z,\eta}  G_\alpha[r,s] D_{r,s} \alpha|_{w=0} .
+& \int_{z,\eta}  G_\gamma[r,s] D_{r,s} \gamma |_{w=0}.
 \end{aligned}
 \eeqn
 \end{enumerate}
@@ -51,7 +64,7 @@ For simplicity of notation we will not explicitly include this $\eta$-dependence
 The fermionic operators $G_\alpha,G_\gamma$ couple to unconstrained fields of the theory on~$\C^3$.
 On the other hand, $\til T,\til J^i$ couple to the fields $\mu_z,\mu_i$ satisfying the divergence-free constraint \eqref{eqn:divfreetree}.
 Only some combination of these operators will couple to the on-shell fields of the theory on $\C^3$.
-Explicitly, one finds that the constrained fields source the following operators
+Explicitly, the constrained fields source the following defect operators
 \beqn\label{eqn:onshell}
 \begin{aligned}[]
 T[r,s] & \define \til T[r,s] - \frac{1}{2(r+1)} \del_z \til J^1 [r+1,s] - \frac{1}{2(s+1)} \del_z \til J^2 [r,s+1] , \quad r+s \geq 0\\
@@ -64,7 +77,16 @@ As stated above, all operators are polynomials in the variables $\eta$ labeling 
 It is convenient to expand operators in the Fourier-dual variables $\Hat{\eta}$.
 If $\cO = \cO(\eta)$ is any of the operators defined above, then the Fourier-dual expansion is defined formally as
 \beqn
-\cO(\what\eta) = \eta^{\eta \Hat{\eta}} \cO(\eta) |_{\eta \br \eta} .
+\cO(\what\eta) = e^{\eta \what{\eta}} \cO(\eta) |_{\eta \br \eta} .
+\eeqn
+We will expand the OPE's that follow in this Fourier dual coordinate.
+Explicitly, if 
+\beqn
+\cO(\eta) = \cO + \cO_\eta \eta + \cO_{\Hat{\eta}} \Hat{\eta} + \cO_{\eta_a} \eta_a + \cO_{\eta \br \eta} \eta \br \eta 
+\eeqn
+then
+\beqn
+\cO(\Hat{\eta}) = \cO_{\eta \br \eta} + \what{\eta} \cO_{\br\eta} + \what{\br \eta} \cO_{\eta} + h_{ab} \cO_{\eta_a} \what{\eta}_b + \cO \what{\eta} \what{\br \eta} .
 \eeqn
 
 \subsection{$\til J \til J$ OPE}
@@ -74,15 +96,6 @@ We first compute the OPE of the off-shell operators $\til{J}^i[r,s]$ and then im
 \subsubsection{}
 
 The coefficient of $\til{J}^1[k,l]$ in the OPE will be determined by the terms in the BRST variation of $\mu_1$ which involve $\fc_1$ and $\mu_1$, $\fc_1$ and $\mu_2$, or $\fc_2$ and $\mu_1$. 
-To simplify formulas in the computations below we will use the notation
-\beqn
-\int_{z,\eta} \omega = \int_{z \in \C_z} \omega |_{\eta \br \eta} \, \d z 
-\eeqn
-for integrals along the defect and
-\beqn
-\int_{Z,\eta} \omega = \int_{Z \in \C^3} \omega |_{\eta \br \eta}\, \d^3 Z 
-\eeqn
-for integrals in the bulk.
 
 Consider the gauge variation of 
 \begin{equation}\label{eqn:j1vary}
@@ -462,6 +475,7 @@ On the right hand side, all operators are evaluated at the variables $\what{\eta
 
 \subsection{$TG$ OPE}
 
+The $TG$ OPE can be computed similarly. We record the result in the next section.
 
 \subsection{Tree-level on-shell OPEs}
 
@@ -514,12 +528,18 @@ J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +
 
 We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. If we perform the rescaling of the Kodaira-Spencer Lagrangian in the backreacted geometry, as discussed in section \ref{}, then the diagrammatics have the following dependence on $N$: 
 \begin{enumerate}
-\item The cubic Kodaira-Spencer interaction vertices scale like $\sim N$. \\
-\item The term controlling the backreaction, i.e. the cubic vertex coupling KS theory to the defect, scales like $\sim N$. \\
-\item The Kodaira-Spencer propagator (either in the form of bulk-bulk or bulk-defect propagators) scales like ${1 \over N}$.
+\item The Kodaira--Spencer Lagrangian scales like $\sim N$. \\
+\item The term in the Lagrangian implementing the backreaction, i.e. the cubic vertex coupling Kodaira--Spencer theory to the defect, scales like $\sim N$. \\
+\item The propagator (either in the form of bulk-bulk or bulk-defect propagators) scales like $N^{-1}$.
 \end{enumerate}
 
-Putting this together, we find that the same class of diagrams as in \cite{CP} survive in the planar limit. We reproduce these below in Figure \ref{fig:alldiagramsplanar}. As expected, this leads to central terms scaling like the CFT central charge $c \sim N$, as well as a new class of diagrams arising from the backreaction that do not scale with $N$ and deform the algebra. We turn now to computing these diagrams and completing our characterization of the planar chiral algebra from Koszul duality. 
+Putting this together, we find that the same class of diagrams as in \cite{CP} survive in the planar limit. We reproduce these below in Figure \ref{fig:alldiagramsplanar}. As expected, this leads to central terms scaling like the CFT central charge $c \sim N$, as well as a new class of diagrams arising from the backreaction that do not scale with $N$ and deform the algebra. 
+In the next section, we turn now to computing these diagrams and completing our characterization of the planar chiral algebra from Koszul duality. 
+
+To compute non-planar corrections, one would need to repeat this procedure for a larger class of bulk diagrams including: 1) diagrams with loops in the bulk, and 2) diagrams with $\leq 2$ backreaction legs attached to the defect plus an arbitrary number of bulk-defect propagators. The integrals quickly get difficult when working beyond the box topology, but we remark that an impressive class of non-planar contributions to the OPE of two open-string bulk operators (that is, considering additional space-filling D-branes coupled to Kodaira--Spencer theory), has been computed in \cite{Keyou} by incorporating a refined model for Kaluza--Klein reduction via homotopy transfer.
+These corrections, valid for a chiral algebra dual to Kodaira-Spencer type theories plus space-fillng D-branes, can be appended immediately to our chiral algebra, but does not yet include any dependence on the fermionic variables of the internal compactification manifold. 
+One can view the non-planar contributions of \cite{Keyou} as incorporating diagrams of the second type (i.e. those without bulk loops). 
+It would be very interesting to understand if other techniques from homological algebra can be leveraged to more directly obtain other non-planar contributions. 
 
 \begin{figure}
 

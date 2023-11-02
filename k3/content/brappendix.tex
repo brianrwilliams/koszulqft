@@ -11,13 +11,14 @@
 Let $X = (z,x) = (z, x_1,x_2), Y = (w,y) = (w,y_1,y_2)$.
 We compute the integral
 \beqn
-\int_{(X,Y) \in \C^3_1 \times \C^3_2} A_1(X) \, \omega (x) \,  \del_z \del_w P(X,Y) \, \omega(y) \, A_2(Y) .
+\int_{(X,Y) \in \C^3_1 \times \C^3_2} A_1(X) \, \omega (x) \,  \del_z \del_w P(X,Y) \, \omega(y) \, A_2(Y) ,
 \eeqn
+where $A_i$ ar $(0,1)$-forms on $\C^3$, and $P(X,Y) = P(X-Y)$ is as in equation \eqref{eqn:propagtorCS}.
 Plugging in $A = x_1 \d \br z$ and $B = y_2 \d \br w$ this integral becomes $\int_{z,w} \d z \, \d w \,  \del_z \del_w I(z,w)$ where
 \beqn
-I (z,w) \define (\br z - \br w) \int_{\C^2 \times \C^2} \d^4 x \d^4 y \frac{[\br x \br y] x_1 y_2}{\|x\|^4 (|z-w|^2 + \|x-y\|^2)^3 \|y\|^4}
+I (z,w) \define \frac{\br z - \br w}{4 \pi^3} \int_{\C^2 \times \C^2} \d^4 x \d^4 y \frac{[\br x \br y] x_1 y_2}{\|x\|^4 (|z-w|^2 + \|x-y\|^2)^3 \|y\|^4} .
 \eeqn
-as a function of $z,w$.
+We compute $I(z,w)$ as a function of the difference $z-w$.
 
 First, we perform the integration along $y \in \C^2$.
 Using Feynman's trick we have
@@ -59,9 +60,9 @@ After computing the angular integrations this becomes
 
 Finally, plugging back into the original expression we have
 \beqn
-I(z,w) = \frac{1}{z-w} \int_{0}^1 \d t \int_0^1 \d s \frac{(1-t)(1-s)}{(1-ts)^3} .
+I(z,w) = \frac{2 \pi}{z-w} \int_{0}^1 \d t \int_0^1 \d s \frac{(1-t)(1-s)}{(1-ts)^3} .
 \eeqn
-The integral over $t,s$ gives $1/2$. 
+The integral over $t,s$ gives $\pi/(z-w)$ thus leading to the expression in the bulk of the paper.
 %If $\til Y = (tw - tz, y - tx)$ then
 %\beqn
 %\|\til Y\|^2 + t (1-t) (|z-w|^2 + \|x\|^2) = t \|X - Y\|^2 + (1-t) \|y\|^2 .
