@@ -234,6 +234,8 @@ We now turn to compactifications as understood in the twist.
 
 Let $Y$ be a complex surface (which we will soon take to be compact) with a fixed holomorphic symplectic structure.
 A general field of Kodaira--Spencer theory on $\C^3 \times Y$ is a Dolbeault-valued polyvector field which is annihilated by the divergence operator with respect to the holomorphic volume form.
+We will use coordinates $z,w_1,w_2$ on $\C^3$ and we fix the standard Calabi--Yau form $\Omega = \d z \d w_1 \d w_2$.
+
 A Dolbeault-valued polyvector field $\alpha^{k,\bu}$ on $\C^3 \times Y$ of type $(k,\bu)$ can be written as a tensor product of one on $\C^3$ with one on $Y$
 \beqn
 \alpha^{k,\bu} = \sum_{i+j=k} \beta^{i,\bu} \otimes \gamma^{j,\bu} 
@@ -287,16 +289,16 @@ where, in the superspace formulation,
 \end{align}
 We denote by
 \beqn
-\int^\Omega_{\C^3,\eta} (-)|_{\eta \br \eta} \colon \PV^{3,3} \otimes A \to \eta \br \eta \PV^{3,3}  \to \C
+\int^\Omega_{\C^3} (-)|_{\eta \br \eta} \colon \PV^{3,3} \otimes A \to \eta \br \eta \PV^{3,3}  \to \C
 \eeqn
 the projection onto the summand $\C \eta \br \eta \subset A$ followed by integration as in \eqref{eqn:cyintegral}.
+We emphasize that the notation $(-)|_{\eta \br{\eta}}$ means we pick up only the $\eta \br{\eta}$ component.
+
 
 The Lagrangian is
 	\begin{equation} 
-		\tfrac{1}{2} \int_{\C^{3}}^\Omega  \mu \dbar \partial^{-1} \mu |_{\eta \br{\eta}} + \frac{1}{6} \int_{\C^{3}}^\Omega \mu^3 |_{\eta \br{\eta}}  
+		\frac{1}{2} \int^\Omega_{\C^3} \mu \dbar \partial^{-1} \mu |_{\eta \br \eta} + \frac{1}{6} \int{\C^3} \mu^3 |_{\eta \br \eta} .
 	\end{equation}
-where the $(-)|_{\eta \br{\eta}}$ means we pick up only the $\eta \br{\eta}$ component.
-
 %Before we turn to the computation of the backreaction, 
 We can simplify the field content somewhat, following \cite{CostelloGaiotto} which the authors in \cite{CLsugra} refer to as minimal Kodaira--Spencer theory.
 We note that the coefficient of $\theta^1 \theta^2 \theta^3$ does not appear in the kinetic term in the action.  
@@ -403,7 +405,7 @@ On a fivefold of the form $X = \C^3 \times Y$ where $Y$ is a K3 surface, the fie
 where the divergence is with respect to the CY form on $\C^3$.
 Similarly, if we neglect topological degrees of freedom, the field $\rho_{type\;I}$ decomposes as 
 \beqn
-\rho_{type\,I} = (\rho, \til \alpha, \beta) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \right) \cap \ker \div \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) .
+\rho_{type\,I} = (\rho, \til \alpha, \beta) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \right) \cap \ker \div \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) .
 \eeqn
 
 The fields $(\mu,\rho, \til \alpha)$ comprise the holomorphic twist of the six-dimensional graviton multiplet, denoted (i) above.
@@ -421,7 +423,7 @@ which is compatible with the description of the K3 compactification of the physi
 
 \textcolor{red}{We should probably say more here about the passage from type I to type IIB.}
 
-\subsection{Backreaction as an infinitesimal deformation} 
+\subsection{Backreaction as a deformation} 
 \label{sec:conifold}
 
 From now on we fix the holomorphic coordinates $(z,w_1,w_2)$ on $\C^3$.
@@ -439,7 +441,9 @@ Using classic results \cite{Dijkgraaf:1998gf}, we can apply a duality to turn th
 \beqn
 \C \times 0 \times \Sigma \subset \C^3 \times K3 
 \eeqn
-for a (special) Lagrangian two-cycle $\Sigma \subset K3$. This follows from the fact that any general D-brane (bound) state on K3 may be described by a Mukai vector $v$, which is a primitive vector such that $F \in \Gamma^{4, 20}, F^2>0$. Any two such vectors of equal length can be related to one another by T-duality transformations in $O(\Gamma^{4, 20})$. Of course, matching the moduli between the two duality frames can be an involved task. For our purposes, we will only need a few basic features in this frame. \footnote{A simple application of these ideas is the following. The positive-definite 4-plane which specifies the hyperk{\"a}hler structure on K3 can be decomposed into two orthogonal 2-planes which amounts to making a choice of complex structure and complexified (by the B-field) K{\"a}hler form. A quaternionic rotation of the 4-plane then exchanges the complex and K{\"a}hler structures, which amounts to a mirror symmetry transformation on the K3 surface. This will exchange the notion of B-branes and A-branes on K3, where B-branes wrap holomorphic curves (with respect to a chosen complex structure) and A-branes wrapping special Lagrangian 2-cycles. This point of view can also be reformulated as an application of the Strominger-Yau-Zaslow \cite{} picture of mirror symmetry as a composition of T-dualities acting on an elliptic fiber.}. As in our setup, B-branes (which, again, are BPS with respect to some chosen $\mathcal{N}=(2, 2)$ subalgebra of the $\mathcal{N}=(4, 4)$ superconformal algebra) on K3 surfaces can wrap not only 2-cycles, but also curves of dimension 0 and 4 (i.e. points or the entire K3 surface).} 
+for a (special) Lagrangian two-cycle $\Sigma \subset K3$. 
+This follows from the fact that any general D-brane (bound) state on K3 may be described by a Mukai vector $v$, which is a primitive vector such that $F \in \Gamma^{4, 20}, F^2>0$. 
+Any two such vectors of equal length can be related to one another by $T$-duality transformations in $O(\Gamma^{4, 20})$. Of course, matching the moduli between the two duality frames can be an involved task. For our purposes, we will only need a few basic features in this frame. \footnote{A simple application of these ideas is the following. The positive-definite 4-plane which specifies the hyperk{\"a}hler structure on K3 can be decomposed into two orthogonal 2-planes which amounts to making a choice of complex structure and complexified (by the B-field) K{\"a}hler form. A quaternionic rotation of the 4-plane then exchanges the complex and K{\"a}hler structures, which amounts to a mirror symmetry transformation on the K3 surface. This will exchange the notion of B-branes and A-branes on K3, where B-branes wrap holomorphic curves (with respect to a chosen complex structure) and A-branes wrapping special Lagrangian 2-cycles. This point of view can also be reformulated as an application of the Strominger-Yau-Zaslow \cite{??} picture of mirror symmetry as a composition of $T$-dualities acting on an elliptic fiber.}. As in our setup, B-branes (which, again, are BPS with respect to some chosen $\mathcal{N}=(2, 2)$ subalgebra of the $\mathcal{N}=(4, 4)$ superconformal algebra) on K3 surfaces can wrap not only 2-cycles, but also curves of dimension 0 and 4 (i.e. points or the entire K3 surface).
 
 In the last section, we argued that the compactification along a $K3$ surface becomes an extended version of Kodaira--Spencer theory where the extra fields are labeled by the cohomology of the surface.
 Upon compactification, the $D3$ system becomes a system of $B$-type branes in this extended version of Kodaira--Spencer theory.
@@ -460,14 +464,15 @@ Notice that the \textit{length} of the D-brane charge vector $F^2$ is of order $
 
 Generally, the backreaction deforms the geometry away from the locus of the brane. 
 Before backreacting, we should say what geometry is actually being deformed. 
-In the case of ordinary Kodaira--Spencer theory on $\C^3$, it was shown in \cite{CostelloGaiotto} that the backreaction of B-branes along $\C \subset\C^3$ deformed the complex structure on $\C^3 \setminus \C$ to the deformed conifold, isomorphic to $SL_2(\C)$. 
+In the case of ordinary Kodaira--Spencer theory on $\C^3$, it was shown in \cite{CostelloGaiotto} that the backreaction of B-branes along $\C \subset\C^3$ deformed the complex structure on $\C^3 \setminus \C$ to the deformed conifold, isomorphic to $SL_2(\C)$.
+In the case of the compactification of the IIB string on $T^4$, the resulting backreacting geometry is a super enhancement of the conifold \cite{CP}. 
 
 Our case is similar in that the branes are supported along the same locus as in \cite{CostelloGaiotto}.
 The difference is that we are working with a bigger space of fields, roughly extended by the cohomology of the $K3$ surface.
 Recall that $A = H^\bu(K3)$ denoted the cohomology ring of the $K3$ surface.
-Notice that the ring $A$ is canonically augmented via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_A$.
+Notice that the ring $A$ is canonically augmented by the map which sends all non-unit generators to zero. %via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_A$.
 A useful perspective on the extended version of Kodaira--Spencer theory we obtain by compactification along $K3$ is as a family of theories over the scheme $\op{Spec} A$.
-This family has the property that over $\lie{m}_A$ we obtain ordinary Kodaira--Spencer theory.
+This family has the property that over the augmentation ideal $\lie{m}_A$ we obtain ordinary Kodaira--Spencer theory.
 We will see that in the case of type IIB compactified on a $K3$ surface that the backreaction determines an infinitesimal deformation of the complex manifold $\C^3 \setminus \C$ over $\Spec A$. 
  
 If $A$ is any local ring, an infinitesimal deformation of a complex manifold $M_0$ over $\Spec A$ is an element 
@@ -519,6 +524,46 @@ and simply maps a derivation $\delta$ of $A$ to the class
 \[
 \delta(F) \left[\frac{\eps^{ij} \br w_i \d \br w_j}{|w|^4} \del_z \right] \in H^1(\C^3 \setminus \C, T) .
 \] 
+
+We point out a more explicit characterization of this infinitesimal deformation of $\C^3 \setminus \C$ as a subvariety of $\C^4 \times \Spec(A)$ following similar manipulations as in \cite{CostelloGaiotto,CP}.
+Choose coordinates $(\eta, \br \eta, \eta_a)$ so that $\Spec A$ is thought of as an algebraic subvariety of~$\C^{22}$ cut out by the equations \eqref{eqn:K3rel}.
+From this point of view, the flux $F$ can be thought of as (the restriction of) a linear function on $\Spec A$.
+An arbitrary function
+\beqn
+\Phi = \Phi(z,\zbar,w_i, \br w_i, \eta, \br \eta, \eta_a)
+%\in C^\infty(\C^3 \setminus \C \times \C^{22}) 
+\eeqn
+is holomorphic in the deformed complex structure determined by $\mu_{BR}$ if and only if
+\beqn
+\d \br w_i \frac{\del}{\del \br w_i} + F \frac{\eps^{ij} \br w_i \d \br w_j}{4 \pi^2 |w|^4} \frac{\del \Phi}{\del z} = 0 .
+\eeqn
+
+The following functions are holomorphic for this deformed complex structure
+\beqn
+\begin{aligned}
+u_1 & \define w_1 z - F \frac{\br w_2}{4 \pi^2  |w|^2} \\
+u_2 & \define  w_2 z + F \frac{\br w_1}{4 \pi^2 |w|^2} .
+\end{aligned}
+\eeqn
+In addition to the relations satisfied by the variables $\eta,\br \eta, \eta_a$, these functions satisfy
+\beqn
+u_2 w_1 - u_1 w_2 = F .
+\eeqn
+We denote this geometry by $X$, which the above formulas have expressed as a quadratic cone inside $\C^4 \times \Spec(A)$, where $u_i,w_j$ are coordinates on the $\C^4$.
+The backreacted geometry is given by the locus where we further remove the locus where the coordinated $u_i,w_j$ are zero; this is an open subset that we denote by $X^0 \subset X$.
+
+We point out that there is a canonical projection
+\beqn
+X^0 \to \Spec A ,
+\eeqn
+thus exhibiting $X^0$ as an $A$-deformation of the conifold.
+Furthermore, the holomorphic volume form $\Omega = \d z \d w_1 \d w_2$ is unchanged upon making this deformation since $\mu_{BR}$ is divergence-free.
+We can write this volume form in the deformed coordinates above as
+\beqn
+\Omega = w_1^{-1} \d u_1 \d w_1 \d w_2 ,
+\eeqn
+(or a similar expression involving $w_2^{-1}$) and note that this volume form is only well-defined on the fibers of the projection $X^0 \to \Spec(A)$.
+
 %\brian{what more to say?}
 %This Beltrami differential defines a new complex structure on the complex manifold $(\C^3 \setminus \C) \times Z$ where $Z$ is the quadric inside $\C^{22}$ defined by \eqref{eqn:K3rel}. 
 %Note that \brian{how to say things remain algebraic along $Z$?}
