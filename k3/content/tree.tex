@@ -4,9 +4,12 @@
 
 \section{Tree-level OPEs}
 
-In this section we initiate our computation of OPEs of the gravitational side chiral algebra, using the same techniques as in \cite{CP}, by first considering contributions from tree diagrams.
+In this section we initiate our computation of planar OPEs of the chiral algebra, using the same Koszul duality techniques as in \cite{CP}, by first considering contributions from tree diagrams. We will first recall the Koszul duality approach to twisted holography pioneered in \cite{CostelloM2, CP} (see \cite{PW} for a review of Koszul duality, \cite{Ishtiaque:2018str, Gaiotto:2019wcc, Oh:2020hph} for more on Koszul duality in twisted holography, and \cite{Mezei:2017kmw, Gaiotto:2020vqj,  Budzik:2021fyh, Oh:2021bwi} for additional, closely related twisted holographic explorations). Koszul duality enables us to \textit{derive} the planar chiral algebra from our knowledge of the twisted supergravity dual. In this way, Koszul duality provides a way to extract twisted CFT data, encoded in the technically challenging chiral de Rham complex, using more tractable supergravity computations\footnote{A complementary approach, compatible with a topological (as opposed to holomorphic) twist, is to study the rings of chiral primaries in symmetric orbifold theories \cite{Li:2020zwo, Ashok:2023mow, Ashok:2023kkd}. Chiral primaries are 1/2-BPS states, comprised of short multiplets with respect to both the holomorphic and anti-holomorphic $\mathcal{N}=4$ algebras, and have nonsingular OPEs with one another. Koszul duality is sensitive to 1/4-BPS states but only captures the (purely holomorphic) singular terms of the chiral algebra OPEs. It would be interesting to reproduce (the holomorphic halves of) the chiral ring structure coefficients from our Kodaira-Spencer theory.}. 
 
-On flat space, we use holomorphic coordinates $Z = (z,w_1,w_2)$ on $\C^3$ where the system of branes wraps the locus $\{w_i = 0\}$.
+We begin on flat space. In the next section, we will incorporate planar diagrams encoding the backreaction of the D1-D5 system. These are the diagrams responsible for deforming the initial flat space geometry to the K3 conifold. It was explained in \cite{CP} that, strikingly, only a finite number of such backreaction diagrams contribute at each order in the ${1 \over \sqrt{N}}$ expansion. Typically, one would have to re-sum an infinite number of such diagrams to obtain the deformed geometry. This simplification allows us to derive the chiral algebra as a deformation around flat space, using the perturbative, Feynman diagrammatic approach of Koszul duality. In particular, the complete, backreacted planar chiral algebra we will compute in the next two sections has the global subalgebra we derived from a different point of view in \S \ref{sec:globalsymm}. 
+
+On flat space, we use holomorphic coordinates $Z = (z,w_1,w_2)$ on $\C^3$ where the system of branes wraps the locus $\{w_i = 0\}$. We will call the brane locus the support of the ``defect chiral algebra'', following the perspective of the Koszul dual chiral algebra as the universal defect algebra to which Kodaira-Spencer theory can couple in a gauge-anomaly-free manner \cite{PW}. (In other words, any other defect chiral algebra one might wish to couple to Kodaira-Spencer theory, such as an appropriate number of free chiral fermions, must furnish a representation for the Koszul dual/universal defect algebra.). 
+
 The Beltrami field $\mu$ has three holomorphic vector components that we denote by
 \beqn
 \mu = \mu_z \del_z + \mu_1 \del_{w_1} + \mu_2 \del_{w_2} ,
@@ -41,7 +44,7 @@ As with the fields of our extended version of Kodaira--Spencer theory, the defec
 The variables $\eta$ do not carry spin, parity, or ghost degree (this is one difference with the case of the complex torus $T^4$).
 For simplicity of notation we will not explicitly include this $\eta$-dependence until it is convenient.
 
-Defect operators sourced by bulk fields \textit{before} imposing the constraint can be described as follows:
+Defect operators sourced by bulk fields \textit{before} imposing the constraint \eqref{eqn:divfreetree} can be described as follows:
 
 \begin{enumerate}
 \item Bosonic Virasoro primaries $\til T[r,s]$ of spin $2 + r/2 + s/2$ which couple to the field $\mu_z$ by
@@ -71,10 +74,10 @@ T[r,s] & \define \til T[r,s] - \frac{1}{2(r+1)} \del_z \til J^1 [r+1,s] - \frac{
 J[k,l] & \define k \til J^2[k-1,l] - s \til J^1[k,l-1], \quad k+l \geq 1 .
 \end{aligned}
 \eeqn
-We see that $T[r,s]$ has spin $2 + (r+s)/2$ and $J[k,l]$ has spin $(k+l)/2$ and live in the $SU(2)_R$ spin representatino $(k+l)/2$.
+We see that $T[r,s]$ has spin $2 + (r+s)/2$ and $J[k,l]$ has spin $(k+l)/2$ and live in the $SU(2)_R$ spin representation $(k+l)/2$.
 
 As stated above, all operators are polynomials in the variables $\eta$ labeling the cohomology of the $K3$ surface.
-It is convenient to expand operators in the Fourier-dual variables $\Hat{\eta}$.
+It is convenient to expand operators in the fermionic-Fourier-dual variables $\Hat{\eta}$.
 If $\cO = \cO(\eta)$ is any of the operators defined above, then the Fourier-dual expansion is defined formally as
 \beqn
 \cO(\what\eta) = e^{\eta \what{\eta}} \cO(\eta) |_{\eta \br \eta} .
@@ -245,14 +248,14 @@ we find that the OPE involving the on-shell operators $J[r,s]$ takes the form
 \]
 As above, on the right hand side all operators are evaluated at $z = 0$ and with the fermionic variables $\what{\eta}+\what{\eta}'$. 
 Note that the operators $J[r,s]$ with $r + s = 2$ which are independent of $\what{\eta}$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level zero.
-We will get a nontrivial level once we include the contribution from the back reaction, which we do in \S \ref{sec:br}. 
+We will get a nontrivial level once we include the contribution from the backreaction, which we do in \S \ref{sec:br}. 
 
-In the case that the hyper K\"ahler surface we compactify type IIB supergravity on is $T^4$ (instead of $K3$ which we have mostly considered in this paper), it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonoian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
+In the case that the hyperK\"ahler surface on which we compactify type IIB supergravity is $T^4$ (instead of $K3$, which we have mostly considered in this paper), it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
 This is the Lie algebra $\cL^{1|4} \fw_\infty$ whose elements have the form
 \beqn
 z^{n} f(w_1,w_2; \eta_a) \in \cL^{1|4} \fw_\infty
 \eeqn
-for $n \in \Z$, where $f(w_1,w_2;\eta_a) \in \C[w_1,w_2] \slash \C \otimes \C[\eta_a]$. (Here, the $\eta_a, a=1,2,3,4$ variables generator the cohomology of $T^4$, so are fermionic.)
+for $n \in \Z$, where $f(w_1,w_2;\eta_a) \in \C[w_1,w_2] \slash \C \otimes \C[\eta_a]$. (Here, the $\eta_a, a=1,2,3,4$ variables generate the cohomology of $T^4$, and are therefore fermionic.)
 The super bracket is 
 \beqn
 [z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
@@ -475,21 +478,21 @@ On the right hand side, all operators are evaluated at the variables $\what{\eta
 
 \subsection{$TG$ OPE}
 
-The $TG$ OPE can be computed similarly. We record the result in the next section.
+The $TG$ OPE can be computed similarly. For brevity, we will simply record the result in the next section.
 
 \subsection{Tree-level on-shell OPEs}
 
 The OPE's we have just computed completely characterize the tree-level defect chiral algebra.
 In the final part of this section we summarize all tree-level OPE's that we have deduced above.
-In the next section we will characterize loop effects which modify this tree-level chiral algebra.
+In the next section we will characterize planar backreaction effects effects (which are certain planar diagrams of loop topology) which modify this tree-level chiral algebra.
 
-\textcolor{red}{NP: note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
-\textcolor{red}{NP: it may be prettier to separate the $J[m,n]$ OPEs when one or both arguments are zero from the rest, to avoid using the clunky theta function notation.}
+\natalie{note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
+
 
 If $nr-ms > 0$ the OPEs are
 \begin{align}
 J[m,n](0)J[r, s](z) &\sim {(nr-ms) \over z}J[m + r -1, n + s -1](0) \\
-J[m, n](0)T[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}\left({m \over 2(r + 1)} + {n \over 2(s + 1)}\right)J[m + r, n + s](0) \\ \nonumber
+J[m, n](0)T[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) \\ \nonumber &+ {1 \over z^2}\left({m \over 2(r + 1)} + {n \over 2(s + 1)}\right)J[m + r, n + s](0) \\ \nonumber
 &+{1 \over 2 z}\left({m \over m + r} + {n \over n + s} \right)\partial_z J[m + r, n + s](0)\\
 G[m, n](0)J[r, s](z) &\sim {(ms - rn) \over z}G[m + r -1, n + s - 1](z) \\
 G[m, n](0)T[r, s](z) &\sim ({1 \over z} \partial_z + {1 \over z^2})G[m + r, n+s](0) + \left({m \over 2(r+1)} + {n \over 2 (s + 1)}\right){1 \over z^2}G[m + r, n+s](0) \\
@@ -524,9 +527,9 @@ If $r = s= 0$ (note that there are no G operators for these values):
 \begin{align}
 J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +{1 \over  z}\partial_z J[m + r, n + s](0)
 \end{align}
-\textcolor{red}{NP: Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
+\natalie{Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
 
-We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. If we perform the rescaling of the Kodaira-Spencer Lagrangian in the backreacted geometry, as discussed in section \ref{}, then the diagrammatics have the following dependence on $N$: 
+We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. If we perform the rescaling of the Kodaira-Spencer Lagrangian in the backreacted geometry, as discussed in section \ref{sec:conifold}, then the diagrammatics have the following dependence on $N$: 
 \begin{enumerate}
 \item The Kodaira--Spencer Lagrangian scales like $\sim N$. \\
 \item The term in the Lagrangian implementing the backreaction, i.e. the cubic vertex coupling Kodaira--Spencer theory to the defect, scales like $\sim N$. \\
@@ -537,9 +540,9 @@ Putting this together, we find that the same class of diagrams as in \cite{CP} s
 In the next section, we turn now to computing these diagrams and completing our characterization of the planar chiral algebra from Koszul duality. 
 
 To compute non-planar corrections, one would need to repeat this procedure for a larger class of bulk diagrams including: 1) diagrams with loops in the bulk, and 2) diagrams with $\leq 2$ backreaction legs attached to the defect plus an arbitrary number of bulk-defect propagators. The integrals quickly get difficult when working beyond the box topology, but we remark that an impressive class of non-planar contributions to the OPE of two open-string bulk operators (that is, considering additional space-filling D-branes coupled to Kodaira--Spencer theory), has been computed in \cite{Keyou} by incorporating a refined model for Kaluza--Klein reduction via homotopy transfer.
-These corrections, valid for a chiral algebra dual to Kodaira-Spencer type theories plus space-fillng D-branes, can be appended immediately to our chiral algebra, but does not yet include any dependence on the fermionic variables of the internal compactification manifold. 
+These corrections, valid for a chiral algebra dual to Kodaira-Spencer type theories plus space-filling D-branes, can be appended immediately to our chiral algebra, but does not yet include any dependence on the fermionic variables of the internal compactification manifold. 
 One can view the non-planar contributions of \cite{Keyou} as incorporating diagrams of the second type (i.e. those without bulk loops). 
-It would be very interesting to understand if other techniques from homological algebra can be leveraged to more directly obtain other non-planar contributions. 
+It would be very interesting to understand if other techniques from homological algebra can be leveraged to more directly obtain other non-planar contributions. We leave the incorporation of non-planar corrections to future work.
 
 \begin{figure}
 
