@@ -10,13 +10,13 @@ We have derived our twisted supergravity theory in the backreacted geometry; we 
 
 In order to enumerate twisted supergravity states, we must understand the boundary divisors of the K3 conifold, which are the geometric support for the asymptotic scattering states that participate in (the holomorphic analogue of) Witten diagram computations\footnote{While we will not study bulk scattering directly in this work, it would be interesting to explore methods to make such bulk computations more efficient, perhaps by generalizing the technology of \cite{Budzik:2022mpd, Budzik:2023xbr} to curved backgrounds.}. 
 
-The idea is to compactify the K3 conifold $X^0$ to a super-projective variety $\overline{X^0}$ inside $\mathbb{CP}^4 \times \textrm{Spec}(A).$\footnote{Note that other compactifications are possible, depending on one's application. In \cite{Burns}, the deformed conifold $SL(2, \mathbb{C})$ was not compactified to a quadric, as here, but instead was compactified inside the blow up of a flag variety. That compactification was the one compatible with the symmetries inherent from viewing the deformed conifold as the twistor space of 4d Burns space, which has isometry group $SU(2) \times U(1)$. It would be interesting to extend the analysis of \cite{Burns} to the conifolds of \cite{CP} and the present article, and view them as twistor spaces in turn.}. We give the $\mathbb{CP}^4$ homogeneous coordinates $U_i, W_i, Z$, so that we can complete the K3 conifold defined by equation \ref{eq:k3conifold} to 
+The idea is to compactify the K3 conifold $X^0$ to a super-projective variety $\overline{X^0}$ inside $\CP^4 \times \textrm{Spec}(A).$\footnote{Note that other compactifications are possible, depending on one's application. In \cite{Burns}, the deformed conifold $SL(2, \mathbb{C})$ was not compactified to a quadric, as here, but instead was compactified inside the blow up of a flag variety. That compactification was the one compatible with the symmetries inherent from viewing the deformed conifold as the twistor space of 4d Burns space, which has isometry group $SU(2) \times U(1)$. It would be interesting to extend the analysis of \cite{Burns} to the conifolds of \cite{CP} and the present article, and view them as twistor spaces in turn.}. We give the $\CP^4$ homogeneous coordinates $U_i, W_i, Z$, so that we can complete the K3 conifold defined by equation \ref{eq:k3conifold} to 
 \begin{equation}
 \epsilon^{ij}U_i W_j = F Z^2.
 \end{equation}
-The boundary is then at $Z=0$, given by $\epsilon^{ij}U_i W_j = 0$, which is the variety $\mathbb{CP}^1 \times \mathbb{CP}^1 \times \textrm{Spec}(A)$ \subset \mathbb{CP}^3 \times \textrm{Spec}(A)$. As in \cite{CostelloGaiotto}, the two $\mathbb{CP}^1$'s may be understood, respectively, as the 2-sphere boundary of AdS$_3$, and the $S^2$ base of the $S^3$ factor, viewed as a Hopf fibration. Each $\mathbb{CP}^1$ is naturally acted on by a copy of SL$_2$.
+The boundary is then at $Z=0$, given by $\epsilon^{ij}U_i W_j = 0$, which is the variety $\CP^1 \times \CP^1 \times \textrm{Spec}(A) \subset \CP^3 \times \textrm{Spec}(A)$. As in \cite{CostelloGaiotto}, the two $\CP^1$'s may be understood, respectively, as the 2-sphere boundary of AdS$_3$, and the $S^2$ base of the $S^3$ factor, viewed as a Hopf fibration. Each $\CP^1$ is naturally acted on by a copy of SL$_2$.
 
-To determine the complex structure in the neighborhood of the boundary, we must find coordinates which are holomorphic in the deformed geometry, as described in the previous section. To start, we can endow the two $\mathbb{CP}^1$'s with holomorphic coordinates $w, z$ and anti-holomorphic coordinates $\bar{w}, \bar{z}$ (in addition to the coordinates $\eta$ on $\textrm{Spec}(A)$), and take the $\mathbb{CP}^1$ with coordinates $z, \bar{z}$ to be the boundary of AdS$_3$ on which the dual twisted SCFT will live. In addition, we can specify a coordinate normal to the two boundary spheres by $n$, which has a simple pole at $z=\infty$ and at $w = \infty$. We need to specify the behavior of Kodaira-Spencer fields at $n=0$, where the complement of $n=0$ is the uncompactified K3 conifold. In these coordinates, the holomorphic volume form is 
+To determine the complex structure in the neighborhood of the boundary, we must find coordinates which are holomorphic in the deformed geometry, as described in the previous section. To start, we can endow the two $\CP^1$'s with holomorphic coordinates $w, z$ and anti-holomorphic coordinates $\bar{w}, \bar{z}$ (in addition to the coordinates $\eta$ on $\textrm{Spec}(A)$), and take the $\CP^1$ with coordinates $z, \bar{z}$ to be the boundary of $AdS_3$ on which the dual twisted SCFT will live. In addition, we can specify a coordinate normal to the two boundary spheres by $n$, which has a simple pole at $z=\infty$ and at $w = \infty$. We need to specify the behavior of Kodaira-Spencer fields at $n=0$, where the complement of $n=0$ is the uncompactified K3 conifold. In these coordinates, the holomorphic volume form is 
 \begin{equation}
 \Omega = -{dn dw dz \over n^3} + {F \over n}{dn dw d\bar{w} \over (1 + |w|^2)^2}.
 \end{equation} With these coordinates, one can straightforwardly define twisted supergravity states via the usual AdS/CFT extrapolate dictionary. 
@@ -27,10 +27,10 @@ F n^2 d\bar{w}{1 \over (1 + |w|^2)^2}\partial_z
 \end{equation}
 Holomorphic functions in the neighborhood of the boundary are given by 
 \begin{align}
-w_1&:= {1 \over n} \\
-w_2&:={w \over n} \\
-u_1&:={z \over n} - F n {\bar{w} \over (1 + |w|^2)^2} \\
-u_2&:={w z \over n} + F n {1 \over (1 + |w|^2)^2}.
+w_1&\define {1 \over n} \\
+w_2&\define{w \over n} \\
+u_1&\define{z \over n} - F n {\bar{w} \over (1 + |w|^2)^2} \\
+u_2&\define{w z \over n} + F n {1 \over (1 + |w|^2)^2}.
 \end{align}
 Notice that these coordinates have poles at $n=0$ and satisfy $u_2 w_1 - u_1 w_2 = F$. Moreover, in these coordinates the holomorphic volume form again takes the canonical form
 \begin{equation}
@@ -42,7 +42,7 @@ Notice that these coordinates have poles at $n=0$ and satisfy $u_2 w_1 - u_1 w_2
 
 \subsection{Enumerating states in Kodaira--Spencer theory}
 
-To describe boundary conditions on the fields in our theory, we can use the partial compactification of the K3 conifold described in \S \ref{sec:compact}. All that remains is, following the usual AdS/CFT prescription, to specify vacuum boundary conditions for our Kodaira-Spencer supergravity fields. Then, our twisted supergravity states are solutions to the equation of motion that satisfy these vacuum boundary conditions except at a point on the conformal boundary of the AdS$_3$ factor, say $z_*$. In other words, twisted supergravity states are, as usual, local modifications of the boundary conditions, which are equivalent to boundary operators placed along  $\mathbb{CP}^1_w \times \left\lbrace z_* \right\rbrace$. 
+To describe boundary conditions on the fields in our theory, we can use the partial compactification of the K3 conifold described in \S \ref{sec:compact}. All that remains is, following the usual AdS/CFT prescription, to specify vacuum boundary conditions for our Kodaira-Spencer supergravity fields. Then, our twisted supergravity states are solutions to the equation of motion that satisfy these vacuum boundary conditions except at a point on the conformal boundary of the AdS$_3$ factor, say $z_*$. In other words, twisted supergravity states are, as usual, local modifications of the boundary conditions, which are equivalent to boundary operators placed along  $\CP^1_w \times \left\lbrace z_* \right\rbrace$. 
 
 Recall that there are three fundamental fields for Kodaira--Spencer theory.
 Two fundamental fields $\alpha, \gamma$ are Dolbeault forms of type $(0,\bu)$.
@@ -196,7 +196,7 @@ One of the main results of \cite{deBoerEG} is that the corresponding multipartic
 \beqn
 \chi_{NS}(\Sym^\infty X ; q,y) = {\rm PExp} \left[f_{sugra}(q,y) \right]
 \eeqn
-where ${\rm PExp}$ is the plethystic exponential defined by ${\rm PExp}\left[f(x) \right] = {\rm exp}\left(\sum_{k=1}^{\infty}\right {f(x^k) \over k})$, which effects a ``multi-particling'' operation.
+where ${\rm PExp}$ is the plethystic exponential defined by ${\rm PExp}\left[f(x) \right] = {\rm exp}\left(\sum_{k=1}^{\infty} {f(x^k) \over k}\right)$, which effects a ``multi-particling'' operation.
 For $X$ a $K3$ surface, the states $(\mathbf{\frac12})_S \otimes H^{2,\bu}(X)$ contribute the single particle index
 \beqn
 2 f_1 (q,y) = \frac{2}{1-q}\left(-2 q + q^{1/2}(y+y^{-1})\right) .
