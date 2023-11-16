@@ -457,7 +457,7 @@ F \in H^2(K3) \subset A .
 \beqn
 N \define \ip{F, F}
 \eeqn
-using the inner product on $H^2(Y)$. 
+using the inner product on $H^2(K3)$. 
 Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = 2 f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. Then the D-brane charge is related to the number of D1-D5 branes in the original duality frame $N \sim N_1 N_5$ \footnote{We will always work in the supergravity approximation, and neglect the difference between the D-brane charges and numbers of D-branes in this work.}. (To satisfy the primitivity condition, we assume $N_1, N_5$ are coprime. Since the supergravity theory is only sensitive to the product $N$, rather than the constituents $N_1, N_5$, it is often convenient to take $N_1 = N, N_5 = 1$.).
 
 Notice that the \textit{length} of the D-brane charge vector $F^2$ is of order $N$, so that anything proportional to the lattice vector itself scales like $\mathcal{O}(N^{1/2})$. We will always work in the supergravity limit in which any formal series in the inverse of these parameters is treated as an asymptotic series. More generally, let us explicate the parameters available to us in twisted supergravity. Exactly as in \cite{CP}, the Kodaira-Spencer Lagrangian on flat space comes with an overall power of ${1 \over g_s^2}$ with $g_s$ the string coupling constant, which can be completely absorbed by rescaling of the fermionic variables $\eta_a \rightarrow {g_s}^{-1/2}\eta_a$. However, in the backreacted geometry, rescaling the fermionic variables rescales the D-brane charge vector $F$ by ${1 \over g_s}$ and $N$ by ${1 \over g_s^2}$ so that $g_s \sim {1 \over \sqrt{N}}$ as usual. We will always perform this rescaling. Notice that it is convenient for us to start with flat space and treat the backreaction \textit{perturbatively}, i.e. as a small-$N$ expansion; as in \cite{CP}, we find that the backreaction truncates to a finite series in $N$ due to the presence of the fermionic coordinates, so one can work equally well in small-$N$ (which is convenient for the Koszul duality computations in the sequel, or in large-$N$ (as usual for holography) \footnote{By contrast, \cite{CostelloGaiotto} works in the exact deformed geometry, rather than perturbatively around flat space, so that $N$ is fixed immediately as the period of the holomorphic volume form. It is a phenomenological observation in twisted holographic computations that observables either truncate to finite series in $N$ or can be resummed to quantities analytic in $N$, allowing us to match small-$N$ (Koszul duality) expansions with the large-$N$ holographic expansions; it would be desirable to have a more fundamental proof of these observations.}.
@@ -558,7 +558,9 @@ We point out that there is a canonical projection
 X^0 \to \Spec A ,
 \eeqn
 thus exhibiting $X^0$ as an $A$-deformation of the conifold.
-Furthermore, the holomorphic volume form $\Omega = \d z \d w_1 \d w_2$ is unchanged upon making this deformation since $\mu_{BR}$ is divergence-free.
+In analogy with the backreaction in the ordinary $B$-model, we will refer to $X^0$ as the \textit{K3 conifold}.
+
+The holomorphic volume form $\Omega = \d z \d w_1 \d w_2$ is unchanged upon making this deformation since $\mu_{BR}$ is divergence-free.
 We can write this volume form in the deformed coordinates above as
 \beqn
 \Omega = w_1^{-1} \d u_1 \d w_1 \d w_2 ,
