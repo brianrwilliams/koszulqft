@@ -4,6 +4,8 @@
 
 \section{Twisted supergravity in six dimensions}
 
+Type IIB supergravity compactified on a Calabi--Yau surface 
+
 \subsection{Generalities on twisting}
 
 \subsection{Twisted supergravity}
@@ -16,6 +18,10 @@ In \cite{CLsugra}, it was conjectured that the holomorphic twist of IIB supergra
 It effectively throws out the non-propagating fields.}
 In \cite{SWspinor} this conjecture was verified at the level of the free limit of type IIB supergravity using the pure spinor formalism.
 We will assume this conjecture throughout the paper, and we will provide further justification in section \ref{s:components}.
+
+One caveat about twists of type IIB supergravity is that there is no consistent integer ghost grading. 
+Indeed, the holomorphic supercharge does not admit compatible twisting data.
+Thus, in the holomorphic twist of type IIB supergravity there is only an overall $\mathbf{Z}/2$ grading which combines parity in the untwisted theory together with the ghost number mod 2.
 
 The fields of Kodaira--Spencer theory on the Calabi--Yau fivefold $X$ are given in terms of the Dolbeault complex of polyvector fields on $X$; that is, sections of exterior powers of the holomorphic tangent bundle with values in $(0,\bu)$ Dolbeault forms:
 \beqn
@@ -40,12 +46,12 @@ can be thought of as a smooth function
 on the superspace $\C^{5|5+5}$ where the odd cordinates are $\theta^i, \br \theta_{\ibar}$ for $i,\ibar=1,\ldots,5.$
 
 The space of fields of Kodaira--Spencer theory is not all polyvector fields: rather, the fields are polyvector fields which satisfy the constraint that they are divergence-free with respect to the holomorphic volume form $\Omega$.
-Geometrically, this means that $L_\mu \Omega = 0$ where $L_\mu$ is the Lie derivative \footnote{We recall that the Lie bracket on polyvector fields is the Schouten bracket, which reduces to the usual Lie bracket on ordinary vector fields.}; equivalently this is the condition $\div \mu = 0$ where $\div$ is the divergence operator.
+Geometrically, this means that $L_\mu \Omega = 0$ where $L_\mu$ is the Lie derivative \footnote{We recall that the Lie bracket on polyvector fields is the Schouten bracket, which reduces to the usual Lie bracket on ordinary vector fields.}; equivalently this is the condition $\del \mu = 0$ where $\del$ is the divergence operator.
 In coordinates this reads
 \beqn
-\div = \sum_i \del_{\theta^i} \del_{z_i} .
+\del = \sum_i \del_{\theta^i} \del_{z_i} .
 \eeqn
-In addition to $\div \mu = 0$ we also require that 
+In addition to $\del \mu = 0$ we also require that 
 \beqn
 \del_{\theta^1} \cdots \del_{\theta^5} \mu = 0,
 \eeqn
@@ -55,15 +61,17 @@ To define the action functional we utilize an integration map
 \beqn\label{eqn:cyintegral}
 \int^\Omega_X \colon \PV^{5,5}(X) \simeq C^\infty(X) \theta^1 \cdots \theta^5 \br \theta_1 \cdots \br \theta_5 \to \C
 \eeqn
-which is simply $\int ( \mu \vee \Omega) \wedge \Omega$, with $\Omega$ the Calabi--Yau form.
-In terms of the superspace description this is simply the usual integration along $X$ together with the Berezinian integral along the odd directions.
+which is $\int ( \mu \vee \Omega) \wedge \Omega$, with $\Omega$ the Calabi--Yau form.
+This operation simply projects out the $\PV^{5,5}$ component of the Kodaira--Spencer field, to get $(0,5)$ form, then integrates this against the holomorphic volume form.
+In terms of the superspace description this is the usual integration along $X$ together with the Berezinian integral along the odd directions.
 
-Appearing in the Lagrangian is a non-local term involving a term proportional to $\div^{-1} \mu$.
-While this is not globally well-defined, the condition that $\mu$ be in the kernel of $\div$ ensures that there exists locally such a polyvector field. As in the original BCOV paper \cite{BCOV}, this enables us to perform perturbative computations with the Kodaira-Spencer action. 
+A typical feature of Kodaira--Spencer theory, formulated naively, is that the kinetic part of the Lagrangian contains a non-local expression involving the distributional inverse of the divergence operator $\del$.
+While this is not globally well-defined, the condition that $\mu$ be in the kernel of $\del$ ensures that there exists locally such a polyvector field. 
+%As in the original paper \cite{BCOV}, this enables us to perform perturbative computations with the Kodaira-Spencer action. 
 
 In summary, the fields of Kodaira--Spencer theory are
 \beqn
-\PV(X) \cap \ker \div .
+\PV(X) \cap \ker \del .
 \eeqn
 The Lagrangian is
 \beqn
@@ -88,19 +96,19 @@ on the fields of Kodaira--Spencer theory, as mentioned earlier.
 
 We can avoid part of the non-locality appearing in the action by introducing a field $\Hat{\mu}_{i_1\cdots i_4} \in \PV^{4,\bu}$ which satisfies 
 \beqn\label{eqn:potentialC5}
-(\div \Hat{\mu})_{i_1 i_2 i_3}^\bu = \mu_{i_1 i_2 i_3}^\bu ,
+(\del \Hat{\mu})_{i_1 i_2 i_3}^\bu = \mu_{i_1 i_2 i_3}^\bu ,
 \eeqn
 where the bullet denotes arbitrary anti-holomorphic form type.
-We can do this because we have the constraint $\div \mu = 0$.
+We can do this because we have the constraint $\del \mu = 0$.
 Then, the kinetic term in the Lagrangian above can be written as 
 \beqn
 \label{eqn:kineticks}
-\int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1} \dbar \Hat{\mu}_{i_2\cdots i_5} + \frac12 \int \eps^{i_1 \cdots i_5} \mu_{i_1 i_2} (\dbar \del^{-1}_\Omega \mu)_{i_3 i_4 i_5} .
+\int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1} \dbar \Hat{\mu}_{i_2\cdots i_5} + \frac12 \int \eps^{i_1 \cdots i_5} \mu_{i_1 i_2} (\dbar \del^{-1} \mu)_{i_3 i_4 i_5} .
 \eeqn
 This Lagrangian is still non-local, but the only non-locality involves the field $\PV^{2,\bu}(X)$.
 We will see the significance of this field from the perspective of supergravity in the next subsection.
 %\beqn
-%\int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1}^{\br j_1} \del_{\zbar_{\jbar_2}} \Hat{\mu}_{i_2\cdots i_5}^{\jbar_3 \cdots \jbar_5} + \frac12 \int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1 i_2}^{\br j_1 \br j_2} (\dbar \div^{-1} \mu)_{i_3 i_4 i_5}^{\br j_3 \br j_4 \br j_5} + \cdots 
+%\int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1}^{\br j_1} \del_{\zbar_{\jbar_2}} \Hat{\mu}_{i_2\cdots i_5}^{\jbar_3 \cdots \jbar_5} + \frac12 \int \eps^{i_1 \cdots i_5} \eps_{\br j_1 \cdots \br j_5} \mu_{i_1 i_2}^{\br j_1 \br j_2} (\dbar \del^{-1} \mu)_{i_3 i_4 i_5}^{\br j_3 \br j_4 \br j_5} + \cdots 
 %\eeqn
 %where the $\cdots$ denote permutations of the placement of anti-holomorphic indices.
 
@@ -142,7 +150,7 @@ It turns out that it is the derivative of this anti-field that corresponds to a 
 \del_{z_{k_1}} \lambda^{* k_2}_{\br l_1 \br l_2} \mapsto \eps^{k_1 k_2 i_1 i_2 i_3} \eps_{\br l_1 \br l_2 \br j_1 \br j_2 \br j_3} \mu^{\br j_1 \br j_2 \br j_3}_{i_1 i_2 i_3} .
 \eeqn
 That is, we view the derivative of the anti-field as an element of $\PV^{3,3}$.
-Following the discussion above, we can use the equation $\div \mu=0$ to replace the field $\mu^{\br j_1 \br j_2 \br j_3}_{i_1 i_2 i_3}$ by a field $\Hat{\mu}$ satisfying 
+Following the discussion above, we can use the equation $\del \mu=0$ to replace the field $\mu^{\br j_1 \br j_2 \br j_3}_{i_1 i_2 i_3}$ by a field $\Hat{\mu}$ satisfying 
 \beqn
 \mu^{\br j_1 \br j_2 \br j_3}_{i_1 i_2 i_3} = \del_{z_j} \Hat{\mu}^{\br j_1 \br j_2 \br j_3}_{j i_1 i_2 i_3} .
 \eeqn
@@ -244,14 +252,18 @@ A Dolbeault-valued polyvector field $\alpha^{k,\bu}$ on $\C^3 \times Y$ of type 
 where $\beta^{i,\bu},\gamma^{j,\bu}$ are polyvector fields of type $(i,\bu),(j,\bu)$ on $\C^3$, $Y$ respectively.
 Polyvector fields on $Y$ are the same as differential forms, because the holomorphic symplectic form on $Y$ identifies the tangent and cotangent bundles. 
 In particular, the harmonic polyvector fields are given simply by the de Rham cohomology of $Y$.  
-Furthermore, polyvector fields on $Y$ which are harmonic are automatically in the kernel of the divergence operator $\div$, by standard Hodge theory arguments.   
+Furthermore, polyvector fields on $Y$ which are harmonic are automatically in the kernel of the divergence operator $\del$, by standard Hodge theory arguments.   
 To summarize, there is an equivalence of graded algebras
 \[
-\PV (\C^3) \otimes \bigg(\ker \div |_{\PV(Y)} \bigg) \simeq \PV(\C^3) \otimes H^\bu(Y) .
+\PV (\C^3) \otimes \bigg(\ker \del |_{\PV(Y)} \bigg) \simeq \PV(\C^3) \otimes H^\bu(Y) .
 \]
 We will use this equivalence to describe the fields of the theory on $\C^3$ upon compactification along $Y$.
 
-Let $A = H^\bu(Y)$ denote the cohomology ring of $Y$ \footnote{This $A$ is not to be confused with our notation for the Levi-Civita connection above; we trust that the distinction is clear from context.}.
+Let 
+\beqn
+R = H^\bu(Y)
+\eeqn
+denote the cohomology ring of $Y$.
 We are mostly interested in the case that $Y$ is a K3 surface, in which case this algebra is generated by even elements $\eta, \br \eta, \eta_a$ for $a=1,\ldots 20$ subject to the relations
 \beqn
 \label{eqn:K3rel}
@@ -261,13 +273,13 @@ We are mostly interested in the case that $Y$ is a K3 surface, in which case thi
 \end{split}
 \eeqn
 where $h_{ab}$ is a non-degenerate symmetric pairing on $\C^{20}$. 
-Let $I$ denote the ideal generated by these equations so that $A = \C[\eta,\Bar{\eta}, \eta_a] / I$. 
+Let $I$ denote the ideal generated by these equations so that $R = \C[\eta,\Bar{\eta}, \eta_a] \slash I$. 
 
 As before, we write the polyvector fields on $\C^3$ in terms of a superspace by introducing odd variables $\theta^i$, $\br{\theta}_{\br{j}}$.  
 Here, $\theta^i$ represents the coordinate vector field $\partial_{z_i}$ and $\br \theta_{\br{i}}$ represents the coordinate Dolbeault form $\d \zbar_{\br{i}}$. 
 Then we can write the field content as a collection of superfields
 \begin{equation} 
-		\mu(z,\zbar,\theta^i, \br{\theta}_{\br{i}},\eta) \in \oplus_{i,j}  \PV^{i,j}(\C^3) \otimes A .
+		\mu(z,\zbar,\theta^i, \br{\theta}_{\br{i}},\eta) \in \oplus_{i,j}  \PV^{i,j}(\C^3) \otimes R .
 \end{equation}
 Here, we are using the shorthand $\eta$ to inform that there is a dependence on $\eta, \br{\eta}$, and $\eta_a$, $a=1,\ldots, 20$. 
 As such, such a superfield decomposes in its dependencies on the generators of the cohomology of $Y$ as
@@ -290,7 +302,7 @@ where, in the superspace formulation,
 \end{align}
 We denote by
 \beqn
-\int^\Omega_{\C^3} (-)|_{\eta \br \eta} \colon \PV^{3,3} \otimes A \to \eta \br \eta \PV^{3,3}  \to \C
+\int^\Omega_{\C^3} (-)|_{\eta \br \eta} \colon \PV^{3,3} \otimes R \to \eta \br \eta \PV^{3,3}  \to \C
 \eeqn
 the projection onto the summand $\C \eta \br \eta \subset A$ followed by integration as in \eqref{eqn:cyintegral}.
 We emphasize that the notation $(-)|_{\eta \br{\eta}}$ means we pick up only the $\eta \br{\eta}$ component.
@@ -327,15 +339,15 @@ In summary, we have the following fundamental superfields in the compactified th
 \begin{itemize}
 \item $\mu_i (z,\zbar,\br{\theta}, \eta) \theta^i$ which we identify with an element in the graded space
 \beqn
-\mu \in \PV^{1,\bu}(\C^3) \otimes A [1] .
+\mu \in \PV^{1,\bu}(\C^3) \otimes R [1] .
 \eeqn
 \item $\alpha (z,\zbar,\br \theta, \eta)$ which we identify with an element of the graded space
 \beqn
-\alpha \in \Omega^{0,\bu}(\C^3) \otimes A .
+\alpha \in \Omega^{0,\bu}(\C^3) \otimes R .
 \eeqn
 \item $\gamma(z,\zbar,\br \theta, \eta)$ which we also identify with an element of the graded space
 \beqn
-\gamma \in \Omega^{0,\bu}(\C^3) \otimes A [2] .
+\gamma \in \Omega^{0,\bu}(\C^3) \otimes R [2] .
 \eeqn
 \end{itemize}
 We explain the cohomological shifts in the next paragraph.
@@ -357,7 +369,7 @@ Just as when we twist a field theory, when we twist a supergravity theory the gh
 	%\item The fields $\alpha$, $\gamma$ have ghost number $-1$, and are fermionic.
 \end{enumerate}
 With these choices one can check that the action \eqref{eqn:K3action} is ghost number zero.
-Note that in the case $A = \C$ the choices of ghost numbers we take here is in agreement of the standard presentation of Kodaira--Spencer theory on $\C^3$ as in \cite{CostelloGaiotto}.
+Note that in the case $R = \C$ the choices of ghost numbers we take here is in agreement of the standard presentation of Kodaira--Spencer theory on $\C^3$ as in \cite{CostelloGaiotto}.
 
 \subsection{Compactification and twisted multiplets}
 
@@ -372,7 +384,7 @@ Here, we recall the field content of each of the twisted six-dimensional multipl
 \begin{itemize}
 \item[(i)] The holomorphic twist of the the graviton multiplet has two fundamental fields
 \beqn
-(\mu, \rho, \til \alpha) \in \left(\PV^{1,\bu}(\C^3)[1] \cap \ker \div \right)^{\oplus 3} .
+(\mu, \rho, \til \alpha) \in \left(\PV^{1,\bu}(\C^3)[1] \cap \ker \del \right)^{\oplus 3} .
 \eeqn
 \item[(ii)] The holomorphic twist of the vector multiplet is three-dimensional holomorphic BF theory with two fundamental fields
 \beqn
@@ -396,23 +408,23 @@ Its compactification on a K3 surface is a model with 6d $\cN=(1,0)$ supersymmetr
 
 In \cite{CLtypeI,SWspinor} it is argued that the holomorphic twist of type I supergravity on a Calabi--Yau fivefold $X$ has two fundamental fields 
 \begin{align*}
-\mu_{type\,I} \in \Pi \PV^{1,\bu}(X) \cap \ker \div \\
-\rho_{type\,I} \in \Pi \PV^{3,\bu}(X) \cap \ker \div ,
+\mu_{type\,I} \in \Pi \PV^{1,\bu}(X) \cap \ker \del \\
+\rho_{type\,I} \in \Pi \PV^{3,\bu}(X) \cap \ker \del ,
 \end{align*} where $\Pi$ denotes a fermion parity shift. 
 On a fivefold of the form $X = \C^3 \times Y$ where $Y$ is a K3 surface, the field $\mu_{type\,I}$ decomposes as
 \beqn
-\mu_{type\,I} = (\mu,\alpha; \gamma) \in \left(\PV^{1,\bu}(\C^3)[1] \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{0,2}(Y)  \right) \cap \ker \div \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) ,
+\mu_{type\,I} = (\mu,\alpha; \gamma) \in \left(\PV^{1,\bu}(\C^3)[1] \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{0,2}(Y)  \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) ,
 \eeqn
 where the divergence is with respect to the CY form on $\C^3$.
 Similarly, if we neglect topological degrees of freedom, the field $\rho_{type\;I}$ decomposes as 
 \beqn
-\rho_{type\,I} = (\rho, \til \alpha, \beta) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \right) \cap \ker \div \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) .
+\rho_{type\,I} = (\rho, \til \alpha, \beta) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) .
 \eeqn
 
 The fields $(\mu,\rho, \til \alpha)$ comprise the holomorphic twist of the six-dimensional graviton multiplet, denoted (i) above.
 The field 
 \beqn
-\alpha \in \PV^{1,\bu}(\C^3)[1] \cap \ker \div \simeq \Omega^{2,\bu}(\C^3)[1] \cap \ker \del
+\alpha \in \PV^{1,\bu}(\C^3)[1] \cap \ker \del \simeq \Omega^{2,\bu}(\C^3)[1] \cap \ker \del
 \eeqn
 comprises the holomorphic twist of a single tensor multiplet, denoted (iii) above.
 Finally the fields $(\gamma, \beta) = (\gamma_a,\beta_a)$, $a=1,\ldots,20 = \dim H^{1,1}(Y)$ comprise the holomorphic twist of $20$ hypermultiplets, denoted (iv) above.
@@ -451,7 +463,7 @@ Upon compactification, the $D3$ system becomes a system of $B$-type branes in th
 
 The charge of these branes is labeled by a cohomology class 
 \beqn
-F \in H^2(K3) \subset A .
+F \in H^2(K3) \subset R .
 \eeqn
  In particular, we take $F$ to be a primitive Mukai vector, as above. We denote 
 \beqn
@@ -470,13 +482,13 @@ In the case of the compactification of the IIB string on $T^4$, the resulting ba
 
 Our case is similar in that the branes are supported along the same locus as in \cite{CostelloGaiotto, CP}.
 The difference is that, compared to \cite{CostelloGaiotto}, we are working with a bigger space of fields, roughly extended by the cohomology of the $K3$ surface.
-Recall that $A = H^\bu(K3)$ denoted the cohomology ring of the $K3$ surface.
-Notice that the ring $A$ is canonically augmented by the map which sends all non-unit generators to zero. %via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_A$.
+Recall that $R = H^\bu(K3)$ denoted the cohomology ring of the $K3$ surface.
+Notice that the ring $A$ is canonically augmented by the map which sends all non-unit generators to zero. %via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_R$.
 A useful perspective on the extended version of Kodaira--Spencer theory we obtain by compactification along $K3$ is as a family of theories over the scheme $\op{Spec} A$.
-This family has the property that over the augmentation ideal $\lie{m}_A$ we obtain ordinary Kodaira--Spencer theory.
-We will see that in the case of type IIB compactified on a $K3$ surface that the backreaction determines an infinitesimal deformation of the complex manifold $\C^3 \setminus \C$ over $\Spec A$. 
+This family has the property that over the augmentation ideal $\lie{m}_R$ we obtain ordinary Kodaira--Spencer theory.
+We will see that in the case of type IIB compactified on a $K3$ surface that the backreaction determines an infinitesimal deformation of the complex manifold $\C^3 \setminus \C$ over $\Spec R$. 
  
-If $A$ is any local ring, an infinitesimal deformation of a complex manifold $M_0$ over $\Spec A$ is an element 
+If $A$ is any local ring, an infinitesimal deformation of a complex manifold $M_0$ over $\Spec R$ is an element 
 \beqn
 \mu_{def} \in \PV^{1,1}(M_0) \otimes \mathfrak{m}_A 
 \eeqn
@@ -494,12 +506,12 @@ The Maurer--Cartan equation is the equation of motion for $\mu_{def}$.
 %(\C^3 \setminus \C) \times Z \to Z 
 %\] 
 %whose fiber is a Calabi--Yau manifold equipped with the standard holomorphic volume form $\Omega_{\C^3} = \d z \d w_1 \d w_2$. 
-The cohomology ring $A$ of a $K3$ surface is a local ring.
+The cohomology ring $R$ of a $K3$ surface is a local ring.
 Following \cite{CostelloGaiotto, CP}, the backreaction of this system of branes introduces a twisted supergravity field
 \beqn
-\mu_{BR} \in \PV^{1,1}(\C^3 \setminus \C) \otimes A 
+\mu_{BR} \in \PV^{1,1}(\C^3 \setminus \C) \otimes R 
 \eeqn
-which we can identify with an element of $\Omega^{2,1}(\C^3 \setminus \C) \otimes A$ using the Calabi--Yau form on $\C^3$. 
+which we can identify with an element of $\Omega^{2,1}(\C^3 \setminus \C) \otimes R$ using the Calabi--Yau form on $\C^3$. 
 This field satisfies the following defining equations
 \beqn
 \label{eqn:mcbr}
@@ -514,21 +526,21 @@ There is a unique solution to the above equations given by
 \mu_{BR} = \frac{\eps^{ij} \br w_i \d \br w_j}{4 \pi^2 |w|^4} \partial_z \otimes F .
 \eeqn
 Note that this field is of the form $\mu_{BR,0} \otimes F$ where $\mu_{BR,0} \in \PV^{1,1}$ is the Beltrami differential which gives rise to the deformed conifold \cite{CostelloGaiotto}---all of the dependence on the parameters $\eta, \br \eta, \eta_a$ is in the cohomology class~$F$.
-Also we notice that $F \in \lie{m}_A$.
+Also we notice that $F \in \lie{m}_R$.
 
-Equations \eqref{eqn:mcbr} imply that $\mu_{BR}$ determines an infinitesimal deformation of~$\C^3 \setminus \C$ over $\Spec A$. 
+Equations \eqref{eqn:mcbr} imply that $\mu_{BR}$ determines an infinitesimal deformation of~$\C^3 \setminus \C$ over $\Spec R$. 
 The Kodaira--Spencer map associated to this infinitesimal deformation is of the form
 \[
-KS \colon T_{\Spec A} \to H^1(\C^3 \setminus \C, T), 
+KS \colon T_{\Spec R} \to H^1(\C^3 \setminus \C, T), 
 \]
 where $T$ denotes the tangent sheaf of the corresponding space, and simply maps a derivation $\delta$ of $A$ to the class 
 \[
 \delta(F) \left[\frac{\eps^{ij} \br w_i \d \br w_j}{|w|^4} \del_z \right] \in H^1(\C^3 \setminus \C, T) .
 \] 
 
-We point out a more explicit characterization of this infinitesimal deformation of $\C^3 \setminus \C$ as a subvariety of $\C^4 \times \Spec(A)$ following similar manipulations as in \cite{CostelloGaiotto,CP}.
-Choose coordinates $(\eta, \br \eta, \eta_a)$ so that $\Spec A$ is thought of as an algebraic subvariety of~$\C^{22}$ cut out by the equations \eqref{eqn:K3rel}.
-From this point of view, the flux $F$ can be thought of as (the restriction of) a linear function on $\Spec A$.
+We point out a more explicit characterization of this infinitesimal deformation of $\C^3 \setminus \C$ as a subvariety of $\C^4 \times \Spec R$ following similar manipulations as in \cite{CostelloGaiotto,CP}.
+Choose coordinates $(\eta, \br \eta, \eta_a)$ so that $\Spec R$ is thought of as an algebraic subvariety of~$\C^{22}$ cut out by the equations \eqref{eqn:K3rel}.
+From this point of view, the flux $F$ can be thought of as (the restriction of) a linear function on $\Spec R$.
 An arbitrary function
 \beqn
 \Phi = \Phi(z,\zbar,w_i, \br w_i, \eta, \br \eta, \eta_a)
@@ -555,9 +567,9 @@ The backreacted geometry is given by the locus where we further remove the locus
 
 We point out that there is a canonical projection
 \beqn
-X^0 \to \Spec A ,
+X^0 \to \Spec R ,
 \eeqn
-thus exhibiting $X^0$ as an $A$-deformation of the conifold.
+thus exhibiting $X^0$ as an $R$-deformation of the conifold.
 In analogy with the backreaction in the ordinary $B$-model, we will refer to $X^0$ as the \textit{K3 conifold}.
 
 The holomorphic volume form $\Omega = \d z \d w_1 \d w_2$ is unchanged upon making this deformation since $\mu_{BR}$ is divergence-free.
@@ -566,6 +578,29 @@ We can write this volume form in the deformed coordinates above as
 \Omega = w_1^{-1} \d u_1 \d w_1 \d w_2 ,
 \eeqn
 (or a similar expression involving $w_2^{-1}$) and note that this volume form is only well-defined on the fibers of the projection $X^0 \to \Spec(A)$.
+
+\subsection{Parameterized Kodaira--Spencer theory}
+
+Before moving on, we point out that the above constructions make sense in the following generality.
+Fix a graded commutative ring $A$ equipped with a trace $\op{tr} \colon R \to \C$.
+In the entirety of this section $R = H^\bu(K3)$ and $\op{tr}(a) = \int_{K3} a$.
+Then, we can consider a complex three-dimensional theory whose fields, in the BV formalism, are given by
+\beqn
+\mu \in \PV^{1,\bu}(\C^3) \otimes R [1]
+\eeqn
+and 
+\beqn
+\alpha \in \Omega^{0,\bu}(\C^3) \otimes R , \quad \gamma \in \Omega^{0,\bu}(\C^3) \otimes R [2] .
+\eeqn
+
+The action functional is
+\begin{multline}\label{eqn:Aaction}
+	\tfrac{1}{2}\int_{\C^{3}}   \eps^{ijk} \op{tr} \dbar \mu_{i} (\partial^{-1}  \mu)_{jk} \, \d^3 Z + \int_{\C^{3}}  \op{tr} \alpha \dbar \gamma \, \d^3 Z
+	\\
+	+ \tfrac{1}{6} \int_{\C^{3}}  \eps_{ijk} \op{tr} \mu_{i}\mu_{j} \mu_{k} \, \d^3 Z + \int_{\C^{3}} \op{tr}  \alpha \mu_i \partial_{z_i}  \gamma \, \d^3 Z.
+\end{multline} 
+We refer to this as $R$-Kodaira--Spencer theory.
+
 
 %\brian{what more to say?}
 %This Beltrami differential defines a new complex structure on the complex manifold $(\C^3 \setminus \C) \times Z$ where $Z$ is the quadric inside $\C^{22}$ defined by \eqref{eqn:K3rel}. 
