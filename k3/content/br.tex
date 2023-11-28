@@ -18,8 +18,8 @@ Before getting into the main computation of the section, we turn our attention t
 
 \subsection{Warmup: holomorphic Chern--Simons theory}
 
-In this section we compute the effects of a backreaction where the bulk fields have no closed string sector, only an open string part. 
-Indeed, consider holomorphic Chern--Simons in the presence of a Kodaira--Spencer field which sources a brane wrapping $N$ $D1$ branes $\C \subset \C^3$. 
+In this section, we warm up by computing the effect of backreaction on the open string sector only of a ``bulk'' theory. That is, we study how holomorphic Chern-Simons theory, which may be interpreted as the open string field theory for some space-filling branes in the bulk, deforms in the presence of a certain Kodaira-Spencer field (or Beltrami differential). 
+More precisely, we consider holomorphic Chern--Simons in the presence of a Kodaira--Spencer field which is sourced by $N$ $D1$ branes wrapping $\C \subset \C^3$. 
 The backreaction field is 
 \[
 \mu_{BR} = \frac{\eps_{ij} \wbar^i \d \wbar^j}{4 \pi^2 \|w\|^4} \partial_z \in \PV^{1,1} (\C^3 \setminus \C) . 
@@ -76,7 +76,7 @@ Before accounting for the back reaction, the tree and one-loop level OPE is
 \beqn\label{eqn:Jbr}
 J_a[1,0](z) J[0,1]_b \simeq \frac{1}{z} f^c_{ab} J[1,1] + \hbar \frac1z K^{fe} f_{ae}^c f_{bf}^d J_c[0,0] J_d[0,0] ,
 \eeqn
-see section 6 of \cite{CPkoszul}.
+(see e.g. section 6 of \cite{CP}).
 By conformal invariance, the possible $N$-dependent terms in the OPE $J_a[1,0] (0) J_b [0,1](z)$ must be of the form
 \[
 \alpha f^c_{ae} K^{be}  \left(\frac{1}{z^2} J_c[0,0] + \frac{1}{z} \del_z J_c[0,0] \right) + \beta K^{ab} \frac{1}{z^3} {\rm Id} 
@@ -128,7 +128,7 @@ In these diagrams, the dotted lines represent coupling to the backreaction and t
 \end{figure}
 
 As usual, to evaluate these diagrams we use point splitting on the defect so that operators are placed at $z_1$,$z_2 \in \C$ with $|z_1-z_2| \geq \epsilon$.
-The edges of the diagram are labeled by the propagator for the free part of holomorphic Chern--Simons theory is determined by the parametrix for the $\dbar$-operator on $\C^3$:
+The edges of the diagram correspond to the propagator for the free part of holomorphic Chern--Simons theory, which is determined by the parametrix for the $\dbar$-operator on $\C^3$:
 \beqn
 (\dbar P) \wedge \d^3 Z = \delta_{Z=0} .
 \eeqn
@@ -145,7 +145,7 @@ The weight is represented by the integral
 where we use coordinates $X = (x_1,x_2,z), Y = (y_1,y_2,w)$ and impose a cutoff $|z-w| \geq \epsilon$.
 In appendix \ref{appx:hcsbr} we evaluate this integral to obtain
 \beqn
-\pi N^2 K_{ab} \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z - w)^3} \del_{w_i} A^a_1 \del_{w_j} A^b_2 |_{w_i=0},
+\pi  N^2 K_{ab} \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z - w)^3} \del_{w_i} A^a_1 \del_{w_j} A^b_2 |_{w_i=0},
 \eeqn
 where $A_1,A_2$ are the input gauge fields.
 The linear BRST variation $A \mapsto A + \dbar c$ of this diagram thus gives rise to the anomaly
@@ -156,15 +156,15 @@ Integrating by parts and taking $\epsilon \to 0$ this becomes
 \beqn
 \pi N^2 K_{ab} \ep_{ij} \del^3 \delta_{z_1=z_2} \del_{w_i} A^a \del_{w_j} \dbar c^b |_{w_i=0} .
 \eeqn
-In this form it is clear that this anomaly is canceled by introducing the term in the OPE in \eqref{eqn:Jbr} with
+In this form it is clear that this anomaly is canceled by introducing the term in the OPE in \eqref{eqn:Jbr} with \footnote{This answer can of course be adjusted with normalization of the generators of the chiral algebra, which we have not yet fixed. To obtain a more canonical choice of $\beta = {N^2 \over 2}$ it is natural to take $J \rightarrow \sqrt{2 \pi J} $.}
 \beqn
 \beta = \pi N^2 .
 \eeqn
-\brian{constant is probably wrong}
 
 
 
-\subsection{Tree-level backreaction in Kodaira--Spencer theory}
+
+\subsection{Tree-level backreaction in Kodaira--Spencer theory}\label{sec:tree}
 
 We now turn to the effects of backreaction in our version of Kodaira--Spencer theory obtained by compactifying the twist of type IIB supergravity on a $K3$ surface.
 The first nontrivial contribution from the backreaction occurs at tree-level. 
@@ -211,11 +211,11 @@ Similarly, the anomaly in \eqref{eqn:brtreeanomaly2} can be cancelled by the gau
 \int_{z,\bfeta,z',\bfeta'} G_\alpha[0,0](z) \alpha(z) G_\gamma[0,0] (z') \gamma (z') .
 \eeqn
 
-Proceeding as above by working in the Fourier dual odd coordinates and working with on-shell fields, we see that to cancel the first of these anomalies there must be a term in the $\til J \til J$ OPE of the form
+Proceeding as above by working in the Fourier dual odd coordinates and then transforming to the basis of on-shell fields, we see that to cancel the first of these anomalies there must be a term in the off-shell $\til J \til J$ OPE of the form
 \beqn
 \til{J}^i[0,0](0,\what\bfeta) \til{J}^j [0,0] (z,\what\bfeta') \simeq \ep^{ij} \frac1z \what F (\what\bfeta + \what\bfeta') .
 \eeqn
-Using the constraints \eqref{eqn:constraint1} we can write this OPE in terms of on-shell fields as
+Using the constraints \eqref{eqn:onshell} we can write this OPE in terms of on-shell fields as
 \beqn
 J[1,0](0,\what \bfeta) J[0,1] (z,\what \bfeta') \simeq \frac{1}{z} \what F(\what \bfeta + \what \bfeta') .
 \eeqn
@@ -224,8 +224,9 @@ To cancel the second anomaly \eqref{eqn:brtreeanomaly2} there must be a term in 
 G_\alpha[0,0](0,\what \bfeta) G_\gamma[0,0](z,\what \bfeta'\\) \simeq \frac1{z^2} \what F (\what \bfeta + \what \bfeta') .
 \eeqn
 
-Recall that in section \ref{s:sugraelliptic} we pointed out a discrepancy in our supergravity  elliptic genus and the one computed in \cite{deBoerEG}, which in the notation of that section arose from the two representations $(\frac{\bf 1}{\bf 2})_S \otimes H^{2,0}(K3)$ and $(\frac{\bf 1}{\bf 2})_S \otimes H^{2,2}(K3)$.
-We observe that these representations form a sub chiral algebra.
+Recall that in section \ref{s:sugraelliptic} we pointed out a discrepancy in our supergravity elliptic genus and the one computed in \cite{deBoerEG}, which in the notation of that section arose from the two representations $(\frac{\bf 1}{\bf 2})_S \otimes H^{2,0}(K3)$ and $(\frac{\bf 1}{\bf 2})_S \otimes H^{2,2}(K3)$.
+We observe that these representations form a sub-chiral algebra. 
+%\natalie{Check the following... does this account precisely for all these chiral algebra generators/OPEs?} In particular, it recovers the twist of the fields in the $U(1)$ supermultiplet that corresponds to the collective motion of the $D1-D5$ system in the transverse directions $\C^2$.
 Indeed, if we expand $J[1,0]$ in the Fourier dual coefficients as
 \beqn
 J[1,0](\what \bfeta) = J_0[1,0] + \what \eta J_{\what \eta} [1,0] + \cdots ,
@@ -242,22 +243,22 @@ J_0[0,1] (0) J_{\what \eta} [1,0] (z) \simeq - \frac{\br f}{z}
 \end{align*}
 where $\br f$ is the component of $\br \bfeta$ in the original flux $F \in H^2(K3)$.
 
-%As a simple consequence of this, we see that the operators 
-%\[
-%J[1,0](\what \bfeta), J[0,1](\what \bfeta),G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)
-%\]
-%form a subalgebra of the full gravitational chiral algebra.
-%Indeed, the $JG$ OPE's for this class of operators vanish.
-%We can relate this to a familiar system of free fields.
-%Recall that the spin of the operator $G_\alpha[0,0]$ is one.
-%If we choose a spin zero operator $\til G_{\alpha}[0,0]$ such that $\del \til G_\alpha [0,0]$ then we can obtain the same OPE as above if we declare that 
-%\beqn
-%\til G_\alpha[0,0](0,\what \bfeta) G_\gamma[0,0](z,\what \bfeta') \simeq \frac1{z} \what F (\what \bfeta^a + \what \bfeta'^a) .
-%\eeqn
-%The operators $J[1,0](\what \bfeta), J[0,1](\what \bfeta),G
-%'_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)$ form a familiar chiral algebra of free fields.
-%Explicitly, this is the $\beta \gamma bc$ system valued in 
-%\brian{finish, say what the free theory is more explicitly, refer back to CDR.}
+As a simple consequence of this, we see that the operators 
+\[
+J[1,0](\what \bfeta), J[0,1](\what \bfeta),G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)
+\]
+form a subalgebra of the full gravitational chiral algebra.
+Indeed, the $JG$ OPE's for this class of operators vanish.
+We can relate this to a familiar system of free fields.
+Recall that the spin of the operator $G_\alpha[0,0]$ is one.
+If we choose a spin zero operator $\til G_{\alpha}[0,0]$ such that $\del \til G_\alpha [0,0]$ then we can obtain the same OPE as above if we declare that 
+\beqn
+\til G_\alpha[0,0](0,\what \bfeta) G_\gamma[0,0](z,\what \bfeta') \simeq \frac1{z} \what F (\what \bfeta^a + \what \bfeta'^a) .
+\eeqn
+The operators $J[1,0](\what \bfeta), J[0,1](\what \bfeta),\til G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)$ form a familiar chiral algebra of free fields. (The zero mode of $\til G$ is topological and can be ignored; the fact that we take the derivative arises in Kodaira-Spencer theory from the fact that we chose a potential for the corresponding polyvector field in \S \ref{sec:sugra}). 
+Explicitly, this is the $\beta \gamma bc$ system valued in $R$. From the point of view of the UV gauge theory, this comes from the twist of the fields in the $U(1)$ supermultiplet that corresponds to the collective motion of the $D1-D5$ system in the transverse directions $\C^2$. The twist is $R$-valued because the target space directions corresponding to the center of mass degrees of freedom include an additional factor of $X =K3, T^4$ from the D5-brane worldvolume gauge theory (in the $T^4$ case, these degrees of freedom can be understood simply as Wilson lines on the homology cycles \cite{Davidetal}). 
+\natalie{check if you agree}
+\brian{finish, say what the free theory is more explicitly, refer back to CDR.}
 
 \subsection{The propagator for Kodaira--Spencer theory}
 
@@ -303,8 +304,8 @@ Pulling back along the difference map we obtain the Kodaira--Spencer theory prop
 \[
 \bP (Z,Z') \in \br\PV^{2,2}(\C^3 \times \C^3) .
 \]
-This distribution is the integral kernel for the operator $\partial \dbar^* \tr^{-1}$ acting on poyvector fields. 
-As in the case of the propagator for holomorphic Chern--Simons theory it is a smooth away from the diagonal. 
+This distribution is the integral kernel for the operator $\partial \dbar^* \tr^{-1}$ acting on polyvector fields. 
+As in the case of the propagator for holomorphic Chern--Simons theory, it is smooth away from the diagonal. 
 We interpret this propagator as a symmetric element of the (completed) tensor square of the fields of Kodaira--Spencer theory on~$\C^3$. 
 
 The propagator for Kodaira--Spencer theory on $K3 \times \C^3$ (after compactification) is the kernel for the operator $\partial \dbar^* \tr^{-1}$ acting on the full space of fields which acts on the odd $\bfeta$-coordinates by the identity:
@@ -346,7 +347,7 @@ where we use coordinates $X = (x_1,x_2,z), Y = (y_1,y_2,w)$ for $\C^3 \times \C^
 
 In appendix \ref{appx:ksbr} we evaluate this integral to obtain
 \beqn
-\# N  \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^2} \del_{w_i} \mu_1 \del_{w_j} \mu_2|_{w_i=0,\eta=0} ,
+ {N \over 2}  \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^2} \del_{w_i} \mu_1 \del_{w_j} \mu_2|_{w_i=0,\eta=0} ,
 \eeqn
 where we recall the normalization of the Mukai vector $N = \langle F,F\rangle = F^2|_{\eta \br \eta}$.
 From this expression, we see that there is a gauge anomaly which can be canceled upon introducing the following term OPE
@@ -357,10 +358,10 @@ The $\cdots$ indicates terms in the OPE which do not depend on the backreaction 
 
 One can use this expression to solve for the OPE involving the on-shell fields.
 This central term in the OPE will involve the operators $J[r,s]$ with $r + s = 2$,
-which implies that the lowest $\bfeta$-components of such operators comprise an $\lie{sl}(2)$-current algebra of level $\# N$.
+which implies that the lowest $\bfeta$-components of such operators comprise an $\lie{sl}(2)$-current algebra of level $N/2$.
 For example
 \beqn
-J_0 [1,1](0) J_0 [1,1] (z) \simeq \frac{1}{z^2} \# N
+J_0 [1,1](0) J_0 [1,1] (z) \simeq \frac{1}{z^2} {N \over 2}
 \eeqn
 where $J_0[1,1]$ is the lowest $\bfeta$-component of the operator $J[1,1]$.
 
@@ -373,20 +374,26 @@ together with the fermionic operators
 G_{\alpha,0}[1,0], G_{\alpha,0} [0,1], G_{\gamma,0}[1,0], G_{\gamma,0}[0,1]
 \eeqn
 comprise the (small) $\cN=4$ superconformal vertex algebra.
-We have just seen that the backreaction introduces a level of the $\lie{sl}(2)$ current algebra generated by the fields $J_0[2,0], J_0[1,1], J_0[0,2]$.
-This level completely determines the central charge of the superconformal algebra generated by these operators, $c = \# N$.
+We have just seen that the backreaction introduces a level $k = {N \over 2}$ of the $\lie{sl}(2)$ current algebra generated by the fields $J_0[2,0], J_0[1,1], J_0[0,2]$.
+This level completely determines the central charge of the superconformal algebra generated by these operators, $c = 12 k = 6 N$, as expected. One can alternatively directly compute the corresponding integrals corresponding to the $TT$ (after putting them on-shell) and $GG$ OPEs and find precisely the remaining central extension terms. 
 
 %Since $\mu_{BR}(x)$ only has a $\del_z$-component, and $\mu_{BR}(y)$ only has a $\del_w$ component, we see that the only component of $\bP$ which contributes to this integral is $\del_{x_2} \del_{y_1}$ which reads
 %\beqn
 %\bP(X,Y)|_{\del_{x_2} \del_{y_1}} = \frac{3}{4 \pi^3 r^8} \eps_{ijk} 
 %\eeqn
 
+Notice that by scaling arguments, a central extension to the $JJ$ OPE must take the form $J[k, l]J[r, s] \sim {1 \over z^2}$ (with similar arguments for other possible central extensions). This means the total spin of both generators must add to 4. We have presented the calculation when $k + l =2, r + s =2$. This is the only combination of spins that impacts the superconformal algebra. Other possibilities affecting the remainder of the algebra include OPEs like $J[1, 0]J[2, 1]$.
+
+\natalie{finish}
+
+
+
 \subsection{The order $N^{1/2}$ term}
 
 \subsection{Global symmetry algebra}
 
-In \ref{s:enumerate} we have given a geometric characterization of the global symmetry algebra.
-In this section we deduce the Lie bracket on the global symmetry algebra from the OPE's that we have just computed.
+In \S \ref{sec:globalsymm} we have given a geometric characterization of the global symmetry algebra.
+In this section we deduce the Lie bracket on the global symmetry algebra from the OPE's that we have just characterized.
 
 Recall that this global symmetry algebra is of the form
 \beqn
