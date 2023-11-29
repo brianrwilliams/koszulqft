@@ -85,6 +85,7 @@ for some (possibly zero) constants $\alpha,\beta$ which depend on~$N$
 (notice that the form of the central term in the last term is consistent with the fact that $J[1,0], J[0,1]$ are of spin $3/2$).
 The diagrams which give rise to the anomalies necessitating these terms in the OPE are presented in figure \ref{fig:hcsloopbr}.
 In these diagrams, the dotted lines represent coupling to the backreaction and the wiggle lines represent bulk propagators.
+The straight lines label bulk field inputs.
 
 \begin{figure}
 	\begin{tikzpicture}
@@ -164,7 +165,7 @@ In this form it is clear that this anomaly is canceled by introducing the term i
 
 
 
-\subsection{Tree-level backreaction in Kodaira--Spencer theory}\label{sec:tree}
+\subsection{Tree-level backreaction in Kodaira--Spencer theory}\label{sec:treebr}
 
 We now turn to the effects of backreaction in our version of Kodaira--Spencer theory obtained by compactifying the twist of type IIB supergravity on a $K3$ surface.
 The first nontrivial contribution from the backreaction occurs at tree-level. 
@@ -258,11 +259,13 @@ If we choose a spin zero operator $\til G_{\alpha}[0,0]$ such that $\del \til G_
 The operators $J[1,0](\what \bfeta), J[0,1](\what \bfeta),\til G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)$ form a familiar chiral algebra of free fields. (The zero mode of $\til G$ is topological and can be ignored; the fact that we take the derivative arises in Kodaira-Spencer theory from the fact that we chose a potential for the corresponding polyvector field in \S \ref{sec:sugra}). 
 Explicitly, this is the $\beta \gamma bc$ system valued in $R$. From the point of view of the UV gauge theory, this comes from the twist of the fields in the $U(1)$ supermultiplet that corresponds to the collective motion of the $D1-D5$ system in the transverse directions $\C^2$. The twist is $R$-valued because the target space directions corresponding to the center of mass degrees of freedom include an additional factor of $X =K3, T^4$ from the D5-brane worldvolume gauge theory (in the $T^4$ case, these degrees of freedom can be understood simply as Wilson lines on the homology cycles \cite{Davidetal}). 
 \natalie{check if you agree}
-\brian{finish, say what the free theory is more explicitly, refer back to CDR.}
+\brian{I still don't understand the role of the flux}
 
 \subsection{The propagator for Kodaira--Spencer theory}
 
-In this section we recall the form of the propagator for Kodaira--Spencer theory following \cite{CLbcov1}. 
+In a moment we will proceed with the characterization of how higher loop affects involving the backreaction in the $K3$ version of Kodaira--Spencer theory deforms the boundary chiral algebra.
+To set up the computations we recall the form of the propagator in Kodaira--Spencer theory.
+In this section we follow \cite{CLbcov1}.
 
 The propagator for Kodaira--Spencer theory on $\C^3$ is the kernel for the operator $\del \dbar^* \tr^{-1}$. 
 We obtain this by applying the divergence operator to the kernel for the operator $\dbar^* \tr^{-1}$ (the analytic part of this kernel is the same as the analytic part of the propagator used in holomorphic Chern--Simons theory). 
@@ -316,6 +319,12 @@ The propagator for Kodaira--Spencer theory on $K3 \times \C^3$ (after compactifi
 \subsection{The order $N$ central term} 
 \label{sec:oneloop}
 
+We have classified the planar bulk-boundary Feynman diagrams which involve the backreaction; there were three types.
+The first type occurs at tree-level, involving only a single backreaction vertex, and we have characterized the affect on the boundary chiral algebra in section \ref{sec:treebr}.
+There are two planar one-loop diagrams involving the backreaction: one involves a single backreaction vertex, see figure ??, and the other involves two backreaction vertices.
+In this section we focus on the latter one-loop diagram, involving two backreaction vertices, which has the special feature (like the tree-level backreaction affect) that it is not sourced by a field along the brane.
+In terms of the chiral algebra this means that the gauge anomaly resulting from this diagram introduces a central term in the OPE.
+
 \begin{figure}
 	\begin{tikzpicture}
 
@@ -337,8 +346,8 @@ The propagator for Kodaira--Spencer theory on $K3 \times \C^3$ (after compactifi
 	\caption{The order $N$ term.}  
 \end{figure}
 
-In this section we compute the anomaly associated to the diagram \ref{fig:orderN} which involves two backreaction vertices and a single propagator.
-We first consider the terms in the backreaction coupling involving the fields $\mu_1,\mu_2$.
+We proceed with the description of the anomaly associated to the diagram \ref{fig:orderN} which involves two backreaction vertices and a single propagator.
+We first consider the terms in the weight of the diagram involving the bulk fields $\mu_1-\mu_2$ (there are also terms involving input fields $\mu-\mu$ and $\alpha-\gamma$).
 The weight of this diagram involving these fields is represented by the integral
 \beqn
 \int_{X,\bfeta_X, Y, \bfeta_Y} \mu_1(X) \, \mu_{BR} (x) \,  \bP (X,Y) \, \mu_{BR}(y) \, \mu_2(Y) ,
@@ -373,7 +382,7 @@ together with the fermionic operators
 \beqn
 G_{\alpha,0}[1,0], G_{\alpha,0} [0,1], G_{\gamma,0}[1,0], G_{\gamma,0}[0,1]
 \eeqn
-comprise the (small) $\cN=4$ superconformal vertex algebra.
+comprise the (small) $\cN=4$ superconformal vertex algebra at central charge zero.
 We have just seen that the backreaction introduces a level $k = {N \over 2}$ of the $\lie{sl}(2)$ current algebra generated by the fields $J_0[2,0], J_0[1,1], J_0[0,2]$.
 This level completely determines the central charge of the superconformal algebra generated by these operators, $c = 12 k = 6 N$, as expected. One can alternatively directly compute the corresponding integrals corresponding to the $TT$ (after putting them on-shell) and $GG$ OPEs and find precisely the remaining central extension terms. 
 
