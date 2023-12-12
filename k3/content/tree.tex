@@ -76,12 +76,13 @@ J[k,l] & \define k \til J^2[k-1,l] - s \til J^1[k,l-1], \quad k+l \geq 1 .
 \eeqn
 We see that $T[r,s]$ has spin $2 + (r+s)/2$ and $J[k,l]$ has spin $(k+l)/2$ and live in the $SU(2)_R$ spin representation $(k+l)/2$.
 
-As stated above, all operators are polynomials in the variables $\eta$ labeling the cohomology of the $K3$ surface.
+As stated above, all operators are valued in the ring $R$ which in the case of compactification of a K3 surface is $R = H^\bu(K3)$.
 It is convenient to expand operators in the fermionic-Fourier-dual variables $\Hat{\eta}$.
 If $\cO = \cO(\eta)$ is any of the operators defined above, then the Fourier-dual expansion is defined formally as
 \beqn
-\cO(\what\eta) = e^{\eta \what{\eta}} \cO(\eta) |_{\eta \br \eta} .
+\cO(\what\eta) = e^{\eta \what{\eta}} \cO(\eta) |_{\eta \br \eta} ,
 \eeqn
+with a similar formula valid in the case of an arbitrary ring $R$ with trace.
 We will expand the OPE's that follow in this Fourier dual coordinate.
 Explicitly, if 
 \beqn
@@ -92,7 +93,7 @@ then
 \cO(\Hat{\eta}) = \cO_{\eta \br \eta} + \what{\eta} \cO_{\br\eta} + \what{\br \eta} \cO_{\eta} + h_{ab} \cO_{\eta_a} \what{\eta}_b + \cO \what{\eta} \what{\br \eta} .
 \eeqn
 
-\subsection{$\til J \til J$ OPE}
+\subsection{$\til J \til J$ OPE} \label{s:JJtree}
 
 We first compute the OPE of the off-shell operators $\til{J}^i[r,s]$ and then impose constraints to determine the OPE of the on-shell operators $J[r,s]$.
 
@@ -222,6 +223,7 @@ And finally, the $\til{J}^2 \til{J}^1$ OPE:
 
 \subsubsection{}
 
+
 The calculations so far have involved the OPEs of the ``off-shell'' operators $\til{J}^i[r,s]$.
 To obtain the on-shell OPEs we apply the constraints in \eqref{eqn:onshell}, which for the $J$-type operators takes the form
 \beqn\label{eqn:Jonshell}
@@ -248,29 +250,45 @@ we find that the OPE involving the on-shell operators $J[r,s]$ takes the form
 \]
 As above, on the right hand side all operators are evaluated at $z = 0$ and with the fermionic variables $\what{\eta}+\what{\eta}'$. 
 Note that the operators $J[r,s]$ with $r + s = 2$ which are independent of $\what{\eta}$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level zero.
-We will get a nontrivial level once we include the contribution from the backreaction, which we do in \S \ref{sec:br}. 
+We will get a nontrivial level once we include the contribution from the backreaction, which we do in \S \ref{sec:br}.
 
-In the case that the hyperK\"ahler surface on which we compactify type IIB supergravity is $T^4$ (instead of $K3$, which we have mostly considered in this paper), it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
+The OPE's described above lead to a mode algebra that is easy to describe and interpret.
+Let the $n$th mode of $J[r,s]$ be
+\beqn
+J[r,s]_n \define \oint \d z \; z^{-n-1+(r+s)/2} J[r,s](z) .
+\eeqn
+The OPE's above lead to the relation
+\beqn
+[J[r,s]_n , J[r',s']_{n'}] = (sr' - rs') J[r+r'-1,s+s'-1]_{n+n'} ,
+\eeqn
+which we can interpret geometrically as follows.
+
+In the case that the hyperK\"ahler surface on which we compactify type IIB supergravity is $T^4$ it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
 This is the Lie algebra $\cL^{1|4} \fw_\infty$ whose elements have the form
 \beqn
-z^{n} f(w_1,w_2; \eta_a) \in \cL^{1|4} \fw_\infty
+z^{n} f(w_1,w_2; \eta_a)
 \eeqn
 for $n \in \Z$, where $f(w_1,w_2;\eta_a) \in \C[w_1,w_2] \slash \C \otimes \C[\eta_a]$. (Here, the $\eta_a, a=1,2,3,4$ variables generate the cohomology of $T^4$, and are therefore fermionic.)
 The super bracket is 
-\beqn
+\beqn\label{eqn:winfinitymodes}
 [z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
 \eeqn
 
-In the $K3$ case the mode algebra of the $J$-operators gives rise to a similar infinite-dimensional Lie algebra that we denote $L^{K3}\fw_\infty$.
+More generally if $H^\bu(T^4)$ is replaced by an arbitrary super ring $R$, the mode algebra of the $J[r,s]$-operators gives rise to a similar infinite-dimensional Lie superalgebra that we denote $L^{R}\fw_\infty$.
 Elements in this Lie algebra have the form
 \beqn
-z^{n} f(w_1,w_2; \eta) \in L^{K3}\fw_\infty 
+z^{n} f(w_1,w_2; \eta) 
 \eeqn
-where $n \in \Z$ and $f \in \C[w_1,w_2] \slash \C \otimes A$.
-The super bracket is identical 
-\beqn
-[z^n f, z^m g] = z^{n+m} \eps^{ij} \del_{w_i} f \del_{w_j}g .
-\eeqn
+where $n \in \Z$ and $f \in \C[w_1,w_2] \slash \C \otimes R$.
+The bracket (before taking into account the backreaction) is identical
+to \eqref{eqn:winfinitymodes}
+and simply utilizes the commutative product on $R$.
+In the case of compactifying twisted IIB supergravity along a K3 surface we simply take $R = H^\bu (K3)$.
+
+If $R = \C$, then $L^\C \lie{w}_\infty = L \lie{w}_\infty$ is the Lie algebra of symmetries of $\C^2 \times\C^\times$ viewed as a bundle over $\C^\times$ with fibers the holomorphic symplectic manifold $\C^2$.
+More generally, $L^R \lie{w}_\infty$ is the Lie algebra of symmetries of $\C^2 \times \C^\times \times \op{Spec} R$ thought of as a bundle over $\C^\times \times \op{Spec} R$.
+
+In the next section we will see how the backreaction introduces additional terms (such as a central extension) in the bracket \eqref{eqn:winfinitymodes}.
 
 \subsection{$TJ$ OPE}
 
@@ -513,21 +531,23 @@ G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s 
 &+{1 \over z}\partial_z J[m + r, n+s](0).
 \end{align}
 The remaining cases are as follows. If $nr-ms = 0$ and $n r = ms = 0$ the TJ and GG OPE coefficients are instead as follows. \newline
-If $r = m = 0, s \neq 0$:
+If $r = m = 0, s \neq 0$: 
+\brian{should $r,m$ be zero in this equation?}
 \begin{align}
 J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({n \over 2(s + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({n \over n + s} \right)\partial_z J[m + r, n + s](0) \\ \nonumber
 G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({n \over  (n + s)}\right)\partial_z J[m + r, n+s](0)
 \end{align}
-If $n = s = 0, r \neq 0$:
+If $n = s = 0, r \neq 0$: \brian{should $n,s$ be zero in this equation?}
 \begin{align}
 J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({m \over 2(r + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({m \over m + r} \right)\partial_z J[m + r, n + s](0)\\
 G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({m \over m + r}\right)\partial_z J[m + r, n+s](0)
 \end{align}
-If $r = s= 0$ (note that there are no G operators for these values):
+If $r = s= 0$ (note that there are no $G$ operators for these values):
 \begin{align}
 J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +{1 \over  z}\partial_z J[m + r, n + s](0)
 \end{align}
 \natalie{Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
+\brian{should $r,s$ be zero in this equation?}
 
 We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. 
 For example, observe that tree-level OPE's of the lowest $\bfeta$-component of the operators

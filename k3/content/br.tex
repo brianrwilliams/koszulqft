@@ -244,20 +244,30 @@ J_0[0,1] (0) J_{\what \eta} [1,0] (z) \simeq - \frac{\br f}{z}
 \end{align*}
 where $\br f$ is the component of $\br \bfeta$ in the original flux $F \in H^2(K3)$.
 
-As a simple consequence of this, we see that the operators 
+Consider next the operators 
 \[
-J[1,0](\what \bfeta), J[0,1](\what \bfeta),G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)
+J[1,0](\what \bfeta), J[0,1](\what \bfeta),G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta) .
 \]
-form a subalgebra of the full gravitational chiral algebra.
-Indeed, the $JG$ OPE's for this class of operators vanish.
-We can relate this to a familiar system of free fields.
+These operators form a subalgebra of the full gravitational chiral algebra, even after taking into account the effect of the backreaction.
+%Indeed, the $JG$ OPE's for this class of operators vanish.
+We can relate this to a familiar system of free fields by a simple modification.
 Recall that the spin of the operator $G_\alpha[0,0]$ is one.
 If we choose a spin zero operator $\til G_{\alpha}[0,0]$ such that $\del \til G_\alpha [0,0]$ then we can obtain the same OPE as above if we declare that 
 \beqn
 \til G_\alpha[0,0](0,\what \bfeta) G_\gamma[0,0](z,\what \bfeta') \simeq \frac1{z} \what F (\what \bfeta^a + \what \bfeta'^a) .
 \eeqn
-The operators $J[1,0](\what \bfeta), J[0,1](\what \bfeta),\til G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)$ form a familiar chiral algebra of free fields. (The zero mode of $\til G$ is topological and can be ignored; the fact that we take the derivative arises in Kodaira-Spencer theory from the fact that we chose a potential for the corresponding polyvector field in \S \ref{sec:sugra}). 
-Explicitly, this is the $\beta \gamma bc$ system valued in $R$. From the point of view of the UV gauge theory, this comes from the twist of the fields in the $U(1)$ supermultiplet that corresponds to the collective motion of the $D1-D5$ system in the transverse directions $\C^2$. The twist is $R$-valued because the target space directions corresponding to the center of mass degrees of freedom include an additional factor of $X =K3, T^4$ from the D5-brane worldvolume gauge theory (in the $T^4$ case, these degrees of freedom can be understood simply as Wilson lines on the homology cycles \cite{Davidetal}). 
+The operators $J[1,0](\what \bfeta), J[0,1](\what \bfeta),\til G_\alpha[0,0](\what \bfeta), G_\gamma[0,0](\what \bfeta)$ form a familiar chiral algebra of free fields. 
+The zero mode of $\til G$ is topological and can be ignored; the fact that we take the derivative arises in Kodaira-Spencer theory from the fact that we chose a potential for the corresponding polyvector field in \S \ref{sec:sugra}).
+
+Explicitly, this is the $\beta \gamma bc$ system defined over the ring $R$. 
+This is the chiral algebra whose fields (of spins 0,1,1/2,1/2 respectively)
+\beqn
+c = \til G_\alpha[0,0], b = G_\gamma [0,0], \beta = J[1,0] , \gamma = J[0,1]
+\eeqn
+are each valued in $R$.
+
+
+From the point of view of the UV gauge theory, this comes from the twist of the fields in the $U(1)$ supermultiplet that corresponds to the collective motion of the $D1-D5$ system in the transverse directions $\C^2$. The twist is $R$-valued because the target space directions corresponding to the center of mass degrees of freedom include an additional factor of $X =K3, T^4$ from the D5-brane worldvolume gauge theory (in the $T^4$ case, these degrees of freedom can be understood simply as Wilson lines on the homology cycles \cite{Davidetal}). 
 \natalie{check if you agree}
 \brian{I still don't understand the role of the flux}
 
@@ -319,7 +329,7 @@ The propagator for Kodaira--Spencer theory on $K3 \times \C^3$ (after compactifi
 \bP(Z, \bfeta ; Z, \bfeta') = \bP(Z,Z') \delta_{\bfeta = \bfeta'} .
 \eeqn
 
-\subsection{The order $N$ central term} 
+\subsection{The one-loop central term} 
 \label{sec:oneloop}
 
 We have classified the planar bulk-boundary Feynman diagrams which involve the backreaction; there were three types.
@@ -443,6 +453,10 @@ We will focus on the case that the input fields are $\mu_1$ or $\mu_2$ so that t
 \int_{X,\bfeta_X, Y, \bfeta_Y} \mu_1(X) \, \mu_{BR} (x) \,  \bP (X,Y) \, \mu_2(Y) \, P(Y,z_1) J[k,l] ,
 \eeqn
 
+\brian{finish}
+
+We return to the operators $J[r,s]$ whose modes, before taking into account the backreaction, comprise the infinite-dimensional Lie algebra $L^R \lie{w}_\infty$ that we defined in section \ref{s:JJtree}.
+
 \subsection{Global symmetry algebra}
 
 In \S \ref{sec:globalsymm} we have given a geometric characterization of the global symmetry algebra.
@@ -467,7 +481,7 @@ The first class is
 \{T[r,s]_n \}
 \eeqn
 where $0 \leq n \leq r + s + 2$.
-The modes with $r + s = 0$ comprise the representation $R \otimes (1,0)$.
+The modes with $r = s = 0$ comprise the representation $R \otimes (1,0) = R \otimes \lie{sl}(2)$.
 The modes with $r + s = 1$ comprise the representation $R \otimes \left(\frac32,\frac12\right)$.
 The modes with $r + s = m \geq 2$ comprise the representation $R \otimes \left(\frac{m+2}{2}, \frac{m}{2}\right)$.
 \item 
@@ -477,7 +491,7 @@ The remaining bosonic part of the global symmetry algebra is generated by the mo
 \eeqn
 where $0 \leq n \leq r + s - 2$.
 Such modes satisfying $r + s = m \geq 2$ comprise the representation $\left(\frac{m-2}{2},\frac{m}2\right)$.
-Notice that the modes of the low lying operators $J[1,0]$ and $J[0,1]$ do not appear in the global symmetry algebra.
+Notice that the modes of the low lying operators $J[1,0]$ and $J[0,1]$ do not appear in the global symmetry algebra. (In particular, the central term in $\what{L^R \lie{w}_\infty}$ does not appear in the global symmetry algebra).
 \item The fermionic part of the global symmetry algebra is generated by the modes
 \beqn
 \{G_\alpha[r,s]_n, G_\gamma[r,s]_\ell\}
@@ -486,10 +500,7 @@ where $0 \leq n,\ell \leq r + s$.
 Such modes satisfying $r + s = m \geq 0$ comprise the representation $R \otimes \left(\frac{m}{2}, \frac{m}{2} \right) \otimes \Pi \C^2$.
 \end{itemize}
 
-We have
-\beqn
-[J[r,s]_n , J[r',s']_{n'}] = (sr' - rs') J[r+r'-1,s+s'-1]_{n+n'} .
-\eeqn
+
 
 %\section{Superconformal algebra}
 %
