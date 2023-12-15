@@ -152,20 +152,19 @@ Inserting these values for the fields into the anomaly-cancellation condition gi
 \end{multline}
 Since this must hold for all values of the functions $G,H$ we get an identity of the integrands:
 \[ 
-	\dbar_{\zbar} \left( \til{J}^1[k, l] (z,\eta)  \til{J}^1[r,s] (z',\eta') \right)  = \delta_{z = z'} \delta_{\eta = \eta'} (r-m) \til{J}^1[k + r -1, l+s] .  
+	\dbar_{\zbar} \left( \til{J}^1[k, l] (z,\eta)  \til{J}^1[r,s] (z',\eta') \right)  = \delta_{z = z'} \delta_{\bfeta = \bfeta'} (r-m) \til{J}^1[k + r -1, l+s] .  
 \]
-The formal $\delta$-function $\delta_{\eta = \eta'}$ has the simple expression 
+The formal $\delta$-function $\delta_{\bfeta = \bfeta'}$, in the case $R = H^\bu(K3)$, has the simple expression 
 \beqn
-\delta_{\eta = \eta'} = (\eta - \eta') \left(\prod_{a=1}^{20} h^{ab}(\eta_b - \eta'_b) \right) (\br \eta - \br \eta') \in A \otimes A.
+\delta_{\bfeta=\bfeta'} = 1 \otimes \eta' \br \eta' + \eta \otimes \br \eta' + \br \eta \otimes \eta' + h^{ab} \eta_a \otimes \eta_b' + (\bfeta \leftrightarrow \bfeta') + \eta \br \eta \otimes 1' .
 \eeqn
-\brian{check this}
 
 Anomaly cancellation leads to the OPE:
 \beqn
 		\til{J}^1[k,l](0,\eta)  \til{J}^1[r,s](z,\eta')  
 	\simeq \frac{1}{z} (r-k)  \til{J}^1 [k+r-1,l+s] (0,\eta) \delta_{\eta = \eta'}. 
 \eeqn
-We apply the fermionic Fourier transform to write this expression in terms of the operators $\til{J}^1[k,l] (0, \what{\eta})$.
+We apply the formal Fourier transform to write this expression in terms of the operators $\til{J}^1[k,l] (0, \what{\eta})$.
 We find
 \beqn
 	\til{J}^1[k,l](0,\what{\eta})  \til{J}^1[r,s](z,\what{\eta}')  
@@ -193,8 +192,8 @@ Diagrammatically, the OPE we have just deduced follows from the cancellation of 
 	\end{scope}	
 	\begin{scope}[shift={(4,0)}];
 		\node[circle, draw] (J) at (0,0) {$\til{J}^1$};
-		\node (A1) at (3,1)  {$\mu_1$};
-		\node (A2) at (3,-1)  {$\mu_1$};
+		\node (A1) at (3,1)  {$\mu$};
+		\node (A2) at (3,-1)  {$\mu$};
 		\node[circle,draw,fill=black, minimum size = 0.2pt]  (V) at (1.5,0) {};  
 		\draw[decorate, decoration={snake}] (J) -- (1.5,0) --  (A1);
 		\draw[decorate, decoration={snake}] (1.5,0) --(A2);
