@@ -4,24 +4,47 @@
 
 \section{Twisted supergravity in six dimensions}\label{sec:sugra}
 
-Type IIB supergravity compactified on a Calabi--Yau surface 
+The compactification of type IIB supergravity on a Calabi--Yau surface results in a supergravity theory which enjoys $\cN=(2,0)$ supersymmetry.
+We concern ourselves with a simplification obtained by twisting the original type IIB supergravity with respect to a particular ten-dimensional supercharge.
+This supercharge is such that the resulting compactified theory is holomorphic in the sense that it only depends on the complex structure of the six-dimensional spacetime.
 
-\subsection{Generalities on twisting}
+As found in \cite{CP}, in the case that the complex surface is $T^4$, this holomorphic theory is an extended version of the famous Kodaira--Spencer theory introduced in \cite{BCOV} to describe the closed string field theory of the $B$-model on a Calabi--Yau threefold.
+In this paper we mostly consider the case where the surface we compactify along is a $K3$ surface, referring to \cite{CP} for details in the case where the surface is $T^4$.
+This section outlines the description of this extension of Kodaira--Spencer theory. 
+More generally, we comment on a similar extension of Kodaira--Spencer theory which depends on the data of a commutative super ring equipped with a trace (in the physically meaningful cases, this ring corresponds to the graded cohomology ring of either $K3$ or $T^4$ and trace is integration).
 
-\subsection{Twisted supergravity}
+We recall some generalities on twisting supergravity following the foundational work in \cite{CLsugra}.
+%and point out how various fields in supergravity manifest themselves in the twist.
+In any supergravity theory there are ghosts for both local diffeomorphisms and local supersymmetry.
+Ghosts for local supersymmetries are bosonic ghosts and are typically realized as sections of a spinor bundle over spacetime.
+Twisted supergravity is simply supergravity in a background where a particular bosonic ghost for local supersymmetry acquires a nonzero expectation value $Q$.
+In addition to being part of a consistent background for supergravity, $Q$ must satisfy the Maurer--Cartan equation $[Q,Q] = 0$, where $[-,-]$ is supercommutator in the local supersymmetry algebra.
+In this sense, for deformations of flat space, the classification of twisting supercharges for supergravity is closely related to twists of ordinary field theories.
+
+The ten-dimensional IIB supersymmetry algebra admits a range of such twisting supercharges.
+We concern ourselves with a so called `minimal' (or holomorphic) twisting supercharge $Q$ which has the property that it is stabilized by $SU(5)$ in the Lorentz group $Spin(10)$.
+Such twists exist whenever the ten-dimensional spacetime is a Calabi--Yau manifold of dimension five.
+In \cite{CLsugra} a conjecture for this twist is given as a certain limit of the string field theory obtained from the topological $B$-model on the Calabi--Yau fivefold.
+The free limit of this conjecture has been proven in \cite{SWspinor}.
+
+We remark on a caveat involving this conjecture.
+First, the topological $B$-model has critical complex dimension three; meaning that genus $g$ amplitudes are nonzero only when the dimension of the Calabi--Yau target manifold is three.
+On the other hand, there is no $U(1)$ factor of the $R$-symmetry in the ten-dimensional IIB super Poincar\'e group which is compatible with the choice of a holomorphic supercharge $Q$.
+These issues are related.
+On one hand, while there are no nonzero amplitudes for insertions of operators of total ghost number zero, there are nonzero amplitudes involving operators of nonzero ghost number (here we mean ghost number computed from the worldsheet perspective).
+On the other, the fact that there is no $U(1)$ within the $R$-symmetry that is compatible with $Q$ means that the fields in the resulting twisted theory do not have a consistent spacetime ghost number, but only a ghost number modulo $2$.
+These two observations are consistent with the fact that Kodaira--Spencer theory defined on a Calabi--Yau manifold of dimension different from three is a theory with ghost number grading by the group $\Z/2$, rather than the typical integral grading.
+We will observe, nevertheless, that upon compactification of this ten-dimensional Kodaira--Spencer theory to six-dimensions that we are able to lift this $\Z/2$ grading to a fairly natural integral one (but of course this choice is not unique).
+
 
 \subsection{Kodaira--Spencer theory and IIB supergravity}
 
-We begin with a description of the holomorphic twist of type IIB supergravity in ten dimensions.
+We turn to a description of the holomorphic twist of type IIB supergravity in ten dimensions.
 The holomorphic supercharge used to minimally twist supergravity is invariant under $SU(5) \subset Spin(10)$, and so can be defined on any Calabi--Yau fivefold $X$.
-In \cite{CLsugra}, it was conjectured that the holomorphic twist of IIB supergravity is equivalent to a certain truncation of the topological $B$-model on $X$.\footnote{This truncation was referred to as `minimal' Kodaira--Spencer theory in \textit{loc. cit.}. 
+In \cite{CLsugra}, as we just recalled, it was conjectured that the holomorphic twist of IIB supergravity is equivalent to a certain truncation of the topological $B$-model on $X$.\footnote{This truncation was referred to as `minimal' Kodaira--Spencer theory in \textit{loc. cit.}. 
 It effectively throws out the non-propagating fields.}
-In \cite{SWspinor} this conjecture was verified at the level of the free limit of type IIB supergravity using the pure spinor formalism.
+%In \cite{SWspinor} this conjecture was verified at the level of the free limit of type IIB supergravity using the pure spinor formalism.
 We will assume this conjecture throughout the paper, and we will provide further justification in section \ref{s:components}.
-
-One caveat about twists of type IIB supergravity is that there is no consistent integer ghost grading. 
-Indeed, the holomorphic supercharge does not admit compatible twisting data.
-Thus, in the holomorphic twist of type IIB supergravity there is only an overall $\mathbf{Z}/2$ grading which combines parity in the untwisted theory together with the ghost number mod 2.
 
 The fields of Kodaira--Spencer theory on the Calabi--Yau fivefold $X$ are given in terms of the Dolbeault complex of polyvector fields on $X$; that is, sections of exterior powers of the holomorphic tangent bundle with values in $(0,\bu)$ Dolbeault forms:
 \beqn
@@ -264,7 +287,7 @@ Let
 R = H^\bu(Y)
 \eeqn
 denote the cohomology ring of $Y$.
-We are mostly interested in the case that $Y$ is a K3 surface, in which case this algebra is generated by even elements $\eta, \br \eta, \eta_a$ for $a=1,\ldots 20$ subject to the relations
+We are interested in the case that $Y$ is a $K3$ surface, in which case this algebra is generated by even elements $\eta, \br \eta, \eta_a$ for $a=1,\ldots 20$ subject to the relations
 \beqn
 \label{eqn:K3rel}
 \begin{split}
@@ -374,68 +397,93 @@ Note that in the case $R = \C$ the choices of ghost numbers we take here is in a
 
 \subsection{Compactification and twisted multiplets}
 
-We will next discuss the twists of matter multiplets in our compactified twisted supergravity theory. It will be useful to warm up with the twist of $\cN=(1, 0)$ supergravity before moving on to the $\cN=(2, 0)$ case we are most interested in.
+In this section we comment on the content of twisted six-dimensional $\cN=(2,0)$ supergravity in terms of standard $\cN=(2,0)$ multiplets.
 
-In six-dimensional $\cN=(1,0)$ supersymmetry there are four multiplets which appear in the compactifications we will discuss: (i) the graviton multiplet, (ii) the vector multiplet, (iii) the tensor (or chiral two-form \cite{WittenM5}) multiplet, and (iv) the hypermultiplet.
-Through the work in \cite{...}, the holomorphic twists of each of the theories associated to each of these multiplets has been characterized.
-By virtue of their holomorphicity, each theory shares a linear gauge symmetry by the $\dbar$ operator, schematically of the form $\delta \Phi = \dbar \Phi$.
+In six-dimensional $\cN=(2,0)$ supersymmetry there are two multiplets which appear in compactifications from ten dimensions: (i) the graviton multiplet and (ii) the tensor (or chiral two-form \cite{WittenM5}) multiplet.
+The holomorphic twists of each of these multiplets has been characterized in \cite{SWspinor,SWtensor}.
+By virtue of their holomorphicity, each theory shares a linear gauge symmetry by the $\dbar$ operator, schematically of the form $\delta \Phi = \dbar \Phi$ and so in the free field descriptions below we will use Dolbeault complexes to label twists of the multiplets.
 % (though the twist of the tensor multiplet has an additional gauge symmetry).
 
-Here, we recall the field content of each of the twisted six-dimensional multiplets, whose origin we will review in more detail below.
+We recall the field content of each of the twisted six-dimensional multiplets, whose origin we will review in more detail below.
 \begin{itemize}
-\item[(i)] The holomorphic twist of the the graviton multiplet has two fundamental fields
+\item[(i)] The holomorphic twist of the the graviton multiplet has fundamental fields
 \beqn
-(\mu, \rho, \til \alpha) \in \left(\PV^{1,\bu}(\C^3)[1] \cap \ker \del \right)^{\oplus 3} .
+(\mu, \rho, \til \alpha) \in \left(\Pi \PV^{1,\bu}(\C^3)[1] \cap \ker \del \right)^{\oplus 3} ,
 \eeqn
-\item[(ii)] The holomorphic twist of the vector multiplet is three-dimensional holomorphic BF theory with two fundamental fields
+as well as fields 
 \beqn
-(A,B) \in \Omega^{0,\bu}(\C^3)[1]
+(\til \gamma^i, \til \beta_j) \in \Omega^{0,\bu}(\C^3)^{\oplus 2} \oplus \Omega^{0,\bu}(\C^3)^{\oplus 2}  \oplus \Omega^{0,\bu}(\C^3)^{\oplus 2} 
 \eeqn
-\item[(iii)] The holomorphic twist of the tensor multiplet has as its underlying complex of fields
+where $i,j=1,2,3$.
+In $\cN=(1,0)$ language this is the holomorphic twist of a $\cN=(1,0)$ graviton multiplet, three hypermultiplets, and a single $\cN=(1,0)$ tensor multiplet.
+\item[(ii)] The holomorphic twist of the $\cN=(2,0)$ tensor multiplet has fields
 \beqn
-\alpha \in \left(\Omega^{2,\bu}(\C^3)[1]\right) \cap \ker \del .
+\alpha \in \left(\Pi \Omega^{2,\bu}(\C^3)[1]\right) \cap \ker \del ,
 \eeqn
-%The arrow indicated there is an additional gauge transformation for the $(3,\bu)$-form $\delta^{hol} v = \del \alpha$.
-\item[(iv)] The holomorphic twist of the hypermultiplet is the higher dimensional $\beta-\gamma$ system with two fundamental fields
+together with
 \beqn
 (\gamma,\beta) \in \Omega^{0,\bu}(\C^3)^{\oplus 2} .
 \eeqn
+In $\cN=(1,0)$ language this is the holomorphic twist of a single hypermultiplet and a single $\cN=(1,0)$ tensor multiplet.
 \end{itemize}
 
-In this paper we are concerned with the compactification of the holomorphic twist of type IIB supergravity on a K3 surface.
-Before turning towards IIB supergravity, we can instead look at the simpler type I supergravity.
-Its compactification on a K3 surface is a model with 6d $\cN=(1,0)$ supersymmetry, and hence its twist should be expressed in terms of the multiplets above.
+We will see how these multiplets arise from compactification of our ansatz for the twist of type IIB supergravity on a $K3$ surface.
 
-
-In \cite{CLtypeI,SWspinor} it is argued that the holomorphic twist of type I supergravity on a Calabi--Yau fivefold $X$ has two fundamental fields 
+Following \cite{CLsugra} we express the field content of the twist of type IIB supergravity on a Calabi--Yau fivefold $X$ as:
 \begin{align*}
-\mu_{type\,I} \in \Pi \PV^{1,\bu}(X) \cap \ker \del \\
-\rho_{type\,I} \in \Pi \PV^{3,\bu}(X) \cap \ker \del ,
-\end{align*} where $\Pi$ denotes a fermion parity shift. 
-On a fivefold of the form $X = \C^3 \times Y$ where $Y$ is a K3 surface, the field $\mu_{type\,I}$ decomposes as
+(\gamma_{IIB}, \beta_{IIB}) & \in \PV^{0,\bu}(X) \oplus \PV^{4,\bu}(X) \cap \ker \del \\
+(\mu_{IIB}, \rho_{IIB}) & \in \Pi \PV^{1,\bu}(X) \cap \ker \del \oplus \Pi \PV^{3,\bu}(X) \cap \ker \del \\
+\alpha_{IIB} & \in \PV^{2,\bu}(X) \cap \ker \del .
+\end{align*} 
+where $\Pi$ denotes parity shift.
+
+On a fivefold of the form $X = \C^3 \times Y$ where $Y$ is a K3 surface, $\gamma_{IIB}$ decomposes as
 \beqn
-\mu_{type\,I} = (\mu,\alpha; \gamma) \in \left(\PV^{1,\bu}(\C^3)[1] \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{0,2}(Y)  \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) ,
+\gamma_{IIB} = (\til \gamma , \gamma_{0,2}) \in \Omega^{0,\bu}(\C^3) \oplus \Omega^{0,\bu}(\C^3) \otimes H^{0,2}(Y) .
+\eeqn
+Up to topological degrees of freedom, $\beta_{IIB}$ decomposes also as
+\beqn
+(\til \beta , \beta_{2,0}) \in \Omega^{0,\bu}(\C^3) \oplus \Omega^{0,\bu}(\C^3) \otimes H^{2,0}(Y) .
+\eeqn
+
+The field $\mu_{IIB}$ decomposes as
+\beqn
+\mu_{IIB} = (\mu,\alpha_{0,2}; \Gamma) \in \left(\PV^{1,\bu}(\C^3)[1] \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{0,2}(Y)  \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) ,
 \eeqn
 where the divergence is with respect to the CY form on $\C^3$.
+We decompose $\Gamma$ further as $(\gamma_{1,1}^{a'}, \til \gamma_{1,1}^\omega)$ where $\til \gamma_{1,1}^\omega \in \Omega^{0,\bu}(\C^3)$ is associated to the K\"ahler form $\omega \in H^{1,1}(Y)$ and $a' = 1,\ldots,19$ labels the remaining cohomology classes in $H^{1,1}(Y)$.
+
 Similarly, if we neglect topological degrees of freedom, the field $\rho_{type\;I}$ decomposes as 
 \beqn
-\rho_{type\,I} = (\rho, \til \alpha, \beta) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) .
+(\rho, \alpha_{2,0}, B) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{2,0}(Y) \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) ,
 \eeqn
+where we decompose $B$ as $(\beta_{1,1}^{a'}, \til \beta_{1,1}^\omega)$ where $\til \beta_{1,1}^\omega \in \Omega^{0,\bu}(\C^3)$ is associated to the K\"ahler form and $a'=1,\ldots,19$.
 
-The fields $(\mu,\rho, \til \alpha)$ comprise the holomorphic twist of the six-dimensional graviton multiplet, denoted (i) above.
-The field 
+Finally, the field $\alpha_{IIB}$ decomposes, up to topological degrees of freedom, as
 \beqn
-\alpha \in \PV^{1,\bu}(\C^3)[1] \cap \ker \del \simeq \Omega^{2,\bu}(\C^3)[1] \cap \ker \del
+(\til \gamma', \til \beta' , \gamma_{2,0}, \beta_{0,2} ; \mathsf{A}) \in \Omega^{0,\bu}(\C^3)^{\oplus 4} \oplus \left(\PV^{1,\bu}(\C^3) \cap \ker \del\right) \otimes H^{1,1}(\C^3)
 \eeqn
-comprises the holomorphic twist of a single tensor multiplet, denoted (iii) above.
-Finally the fields $(\gamma, \beta) = (\gamma_a,\beta_a)$, $a=1,\ldots,20 = \dim H^{1,1}(Y)$ comprise the holomorphic twist of $20$ hypermultiplets, denoted (iv) above.
-In particular, we see that in terms of multiplets the compactification of type I supergravity on a K3 surface decomposes as
-\beqn
-\text{type I supergravity} \rightsquigarrow (i) + (iii) + 20 \, (iv) ,
-\eeqn
-which is compatible with the description of the K3 compactification of the physical type I supergravity (see, e.g., \cite{Oz:1999it}).
+where we further decompose $\mathsf{A}$ as $(\til \alpha^\omega, \alpha_{1,1}^{a'})$ as we did above.
 
-\textcolor{red}{Finish here the passage from type I to type IIB.}
+Now we can assemble these fields into twisted multiplets as follows.
+\begin{itemize}
+\item The fields 
+\beqn
+(\mu, \rho, \til \alpha^\omega ; \til \gamma, \til \gamma', \til \gamma^\omega_{1,1}, \til \beta, \til \beta', \til \beta^\omega_{1,1}) 
+\eeqn
+comprise the twist of the $\cN=(2,0)$ graviton multiplet.
+\item The fields 
+\beqn
+(\alpha_{0,2}, \alpha_{2,0}, \alpha_{1,1}^{a'} ; \gamma_{0,2}, \gamma_{2,0}, \gamma_{1,1}^{a'}, \beta_{0,2}, \beta_{2,0}, \beta_{1,1}^{a'})
+\eeqn
+comprise the twist of $1 + 1 + 19 = 21$ tensor multiplets with $\cN=(2,0)$ supersymmetry.
+\end{itemize}
+
+To conclude, we see that in terms of multiplets the compactification of the twist of type IIB supergravity on a K3 surface decomposes as
+\beqn
+\text{type IIB supergravity} \rightsquigarrow (i) + 21 \, (ii) .
+\eeqn
+This combination of multiplets is known to be anomaly free and is compatible with the description of the K3 compactification of the physical type IIB supergravity (see, e.g., \cite{Townsend:1983xt}) at the level of the holomorphic twist.
 
 \subsection{Backreaction as a deformation} 
 \label{sec:conifold}
