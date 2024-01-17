@@ -78,22 +78,29 @@ I(z, w) = {(- 2 \pi i)^4 \over 2}{1 \over 4 \pi^3}{1 \over 2 (z- w)} = {\pi \ove
 %\eeqn
 %is $\br x_1 |\til y_2|^2$.
 
-\subsection{The central term from Kodaira--Spencer theory}\label{appx:ksbr}
+\subsection{The central term in Kodaira--Spencer theory}\label{appx:ksbr}
 
 Let the notation for the coordinates $X,Y$ be as in the last section.
 We will compute the integral
 \beqn
-\int_{X,\bfeta_X, Y, \bfeta_Y} \mu_1(X) \, \mu_{BR} (x) \,  \bP (X,Y) \, \mu_{BR}(y) \, \mu_2(Y) .
+\int_{X, Y} \mu_1(X) \, \mu_{BR} (x) \,  \bP (X,Y) \, \mu_{BR}(y) \, \mu_2(Y) .
 \eeqn
-It suffices to plug in the test functions
+Without loss of generality, we plug in the test functions
 \beqn
 \mu_1 (X) = x_1 \del_{x_1} \d \zbar, \quad \mu_2 (Y) = y_2 \del_{y_2} \d \wbar .
 \eeqn
-In this case, this integral becomes $\int_{z,w} \d z \, \d w \, I(z,w)$ where
+The vector field type is determined by the symmetry of the graph while the powers of the holomorphic coordinates $x,y$ which appear are determined by the scaling properties of the propagator and backreaction.
+
+Notice that $\mu_{BR}(x)$ is proportional to the differential form $\ep_{ij} \br x_i  \d \br x_j$ and similarly for $\mu_{BR}(y)$.
+Thus, for these test functions only the $\del_{x_1-y_1} \del_{x_2-y_2}$ part of the BCOV propagator $\bP(X,Y)$ will contribute to this integral.
+Furthermore, the terms in the BCOV propagator proportional to $\d\zbar - \d \wbar$ will not contribute by type reasons.
+Simplifying, we see that for this choice of test functions this integral becomes $\int_{z,w} \d z \, \d w \, I(z,w)$ where
 \beqn
-I (z,w) \define(\br z - \br w)^2 \int_{\C^2_x \times \C^2_y} \d^4 x \d^4 y \frac{[\br x \br y] x_1 y_2}{\|x\|^4 (|z-w|^2 + \|x-y\|^2)^4 \|y\|^4} 
+I (z,w) \define (\br z - \br w)^2 \int_{\C^2_x \times \C^2_y} \d^4 x \d^4 y \frac{[\br x \br y] x_1 y_2}{\|x\|^4 (|z-w|^2 + \|x-y\|^2)^4 \|y\|^4} 
 \eeqn
-where we have again suppressed the constant factors from the propagator, to be restored at the end. We compute $I(z,w)$ as a function of the difference $z-w$.
+where we have again suppressed the constant factors from the propagator, to be restored at the end. 
+We remark that the factor $(\zbar-\wbar)^2$ comes from the BCOV propagator.
+We compute $I(z,w)$ as a function of the difference $z-w$.
 
 First, we perform the integration along $y \in \C^2$.
 Using Feynman's trick we have
@@ -103,7 +110,7 @@ Using Feynman's trick we have
 Introduce the new variable $\til y = y - t x$.
 The the right hand side becomes
 \beqn
-20 \int_0^1 \d t \, t^2 (1-t) \int_{\C^2} \d^4 \til y \frac{[\br x (\br {\til y} + t \br x)] (y_2+t x_2)}{\left(\|\til y\|^2 + t(1-t)\|x\|^2 + t |z-w|^2 \right)^5} 
+20 \int_0^1 \d t \, t^3 (1-t) \int_{\C^2} \d^4 \til y \frac{[\br x (\br {\til y} + t \br x)] (y_2+t x_2)}{\left(\|\til y\|^2 + t(1-t)\|x\|^2 + t |z-w|^2 \right)^6} 
 \eeqn
 The $U(1) \times U(1)$ invariant part of the numerator is $\br x_1 |\til y_2|^2$.
 After computing the residue along both the $\til y_1$ and $\til y_2$ directions the integral becomes
@@ -129,4 +136,87 @@ I(z,w) = {1 \over 4 \pi ^3}{(- 2 \pi i)^4 \over 6}\frac{1}{2 (z-w)^2} = {\pi \ov
 \eeqn
 To match with the canonical form for the Kac-Moody algebra at level ${ N \over 2}$, we can adjust the normalization of the generators by absorbing a factor of ${\sqrt{2 \pi \over 3}}$. We will make this choice. Then, the rest of the superconformal algebra follows from these holomorphic integrals with the standard terms. In principle we could also fix the correct normalizations by carefully matching to the coefficients in the kinetic terms of the Lagrangian. 
 
+\newpage
+
+\brian{Can't get a clean answer. Just need to remove what's below.}
+\subsection{Non-central terms in Kodaira--Spencer theory}
+
+Let the notation for the bulk coordinates $X = (z,x),Y=(w,y)$ be as in the last section.
+Additionally we fix a coordinate $U=(u,0)$ along the brane.
+We will compute the integral
+\beqn
+\int_{X, Y} D_{a,b} \bP(U,X) \mu(X) \bP(X,Y) \mu(Y)  \mu_{BR}(y) 
+\eeqn
+as a function of $u$.
+
+First, we set $a=b=0$, so that the denominator in the above integral is
+\beqn
+\|U-X\|^8 \|X-Y\|^8 \|Y\|^4 .
+\eeqn
+Without loss of generality, we consider the test functions
+\beqn
+\mu_1 (X) = f(X) \del_{x_1} \d \zbar, \quad \mu_2 (Y) = g(Y) \del_{y_2} \d \wbar ,
+\eeqn
+where $f,g$ are holomorphic functions of $X,Y$ respectively.
+Then, the anti-holomorphic differential form appearing in the integral above is
+\begin{multline}
+\left(\eps_{ijk} (\br U_i - \br X_i) \d (\br U_j - \br X_k) \d (\br U_k - \br X_k)\right) \d \zbar\\ \left(\eps_{lmn} (\br X_l - \br Y_l) \d (\br X_m - \br Y_m) \d (\br X_n - \br Y_n)\right)\d \wbar \left(\eps_{pq} \br y_p \d \br y_q \right)
+\end{multline}
+This is a nonzero multiple of
+\begin{multline}
+\left(\eps_{ij} \br x_i \d \br x_j \d \br u\right) \d \zbar \left(\eps_{mn} (\br z - \br w) (\d \br x_m - \d \br y_m) (\d \br x_n - \d \br y_n) \right)
+\d \br w \left(\ep_{pq} \br y_p  \d \br y_q\right) = 
+\# [\br x \br y] (\br z - \br w) \d \br u \d^3 X \d^3 Y .
+\end{multline}
+
+Recall that the BCOV propagator is a bivector.
+With the choice of input functions, only certain $\del^2$-components of the propagator will contribute nontrivially.
+For example, if we take the $\del_{u-z} \del_{x_i}$ component of $\bP(U,X)$ then only the component $\del_{x_1 - y_1} \del_{x_2-y_2}$ component of $\bP(X,Y)$ may contribute nontrivially.
+This combination contributes the analytic factor $\ep_{ij} \br x_j (\br z - \br w)$ to the integral, since these appear with opposite signs when $i=1,2$ these contributions cancel.
+If we take the $\del_{x_1} \del_{x_2}$ component of $\bP(U,X)$ then only the $\del_{z-w} \del_{x_1-y_1}$ component of $\bP(X,Y)$ may contribute nontrivially.
+This contributes the analytic factor $(\br u - \br z) (\br x_2 - \br y_2)$ to the integral.
+
+In total, we see that the integral simplifies to $\d \br u$ times 
+\beqn
+\int_{X,Y} \frac{(\br u - \br z) (\br z - \br w) [\br x \br y] (\br x_2 - \br y_2) f(X) g(Y)}{\|U-X\|^8 \|X-Y\|^8 \|Y\|^4} \d^3 X \d^3 Y
+\eeqn
+%We remark that the factor $(\zbar-\wbar)^2$ comes from the BCOV propagator.
+
+We fix the test function $f(X) = x_2^2 z$ and consider the integral over $X\in \C^3$:
+\begin{multline}
+\int_{X \in \C^3} \frac{(\br u - \br z) (\br z - \br w) [\br x \br y] (\br x_2 - \br y_2) x_2^2 z}{\|U - X\|^8 \|X-Y\|^8} \\= \int_{t=0}^1 \d t \int_{X \in \C^3} \frac{t^3 (1-t)^3}{\left(\|\til X\|^2 + t(1-t) \|U - Y\|^2\right)^8} \\ \times \left(\br {\til z} + (1-t)(\br w-\br u)\right) \left(\br {\til z} - t(\br w-\br u)\right) [(\br{\til x} + (1-t) \br y)] (\br {\til x}_2 + (1-t)y_2) ((\br {\til x}_2 + (1-t)y_2)^2 (\til z + t u + (1-t) w).
+\end{multline}
+
+\newpage
+
+\begin{multline}
+\int_{Y \in \C^3} \d^6 Y \frac{[\br x \br y] \br y_i y_j y_k}{\|X-Y\|^8 \|Y-W\|^4} \\
+= {5! \over 3!} \int_0^1 \d t \, t^3 (1-t) \int_{\C^2} \d^6 \til Y \frac{[\br x \br y] \br y_i y_j y_k}{(\|\til Y\|^2 + t(1-t)\|X-W\|^2)^6} .
+\end{multline}
+Where we have introduce the new variable $\til Y = Y - t X - (1-t)W$.
+Then, the right hand side becomes
+\beqn
+20 \int_0^1 \d t \, t^3 (1-t) \int_{\C^2} \d^4 \til y \frac{[\br x (\br {\til y} + t \br x)]  (\br {\til y}_i+t \br x_i) (\til y_j+tx_j)(\til y_k+tx_k)}{(\|\til Y\|^2 + t(1-t)\|X-W\|^2)^6} 
+\eeqn
+As above, only the $U(1)^2$-invariant part of the numerator will contribute nontrivially to this integral.
+There are two cases, $i=j$ or $i=k$.
+Suppose without loss of generality that $i=k$, then after computing the residue along both the $\til y_1$ and $\til y_2$ directions the integral becomes (up to a nonzero factor independent of $x,z,w$):
+\beqn
+\br x_i \int_{0}^1 \d t \, t^3 (1-t) \int_{(0,\infty) \times (0,\infty)} \d^2 \rho \,\frac{\rho_i \rho_j}{(\rho_1 + \rho_2 + \rho_3 + t(1-t)\|X-W\|^2)^6} .
+\eeqn
+Integrating over $(0,\infty)^3$ and then over $t \in (0,1)$, this is a nonzero multiple\footnote{When $i=j$ there is an additional factor of $1/2$, but since we are surpressing constants we will omit this special case} of
+\beqn
+\br x_i \frac{1}{\|X-W\|^2} .
+\eeqn
+
+It remains to compute the integral
+\beqn
+\int_{0}^1 \d t \, t (1-t) \int_{\C^2} \d^4 x \, \frac{\br x_i f(x)}{(|z'-z|^2 + \|x\|^2)^4 (|z-w|^2 + (1-t)\|x\|^2)^2} ,
+\eeqn
+which is nonzero only when $f$ is a scalar multiple of the linear function $x_i$.
+
+
+We can use Feynman's trick to write this integral as
+\beqn
+\eeqn
 \end{document}

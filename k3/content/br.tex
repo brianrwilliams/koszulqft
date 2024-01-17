@@ -3,10 +3,16 @@
 \newcommand{\cI}{\mathcal{I}}
 \begin{document}
 
-\section{Backreaction and quantum corrections}
+\section{OPE's from backreaction}
 \label{sec:br}
 
-We proceed to compute planar corrections to the OPE which involve the presence of the backreaction. 
+The correspondence between the theory on a stack of branes and the gravitational theory defined on the locus away from the brane is not an exact one, even at the twisted level.
+To obtain a match one must include effects from the backreaction.
+Geometrically, the backreaction defines the sort of geometry which is dual to the theory on a large stack of branes.
+This perspective persists for twisted holography.
+Algebraically, and importantly for us, the backreaction has the effect of deforming the dual gravitational chiral algebra defined on the boundary of (twisted) $AdS$ space.
+
+In this section, we proceed to compute planar corrections to the OPE which involve the backreaction. 
 This will complete the determination of the planar limit of the holographically dual chiral algebra.
 
 Since the integrals arising from diagrams this section are slightly more involved, we set up the following notations.
@@ -70,7 +76,7 @@ The diagram which represents this anomaly is presented in figure \ref{fig:hcstre
 \end{figure}
 
 What about higher loop anomalies involving the backreaction?
-For scaling dimension reasons, there are no further corrections to the $J_a[0,0]-J_b[0,0]$ OPE.
+For scaling dimension reasons, there are no further corrections to the $J[0,0]-J[0,0]$ OPE.
 Let's consider the possibility of quantum corrections to the OPE between the fields $J_a[1,0]$ and $J_b[0,1]$. 
 Before accounting for the back reaction, the tree and one-loop level OPE is 
 \beqn\label{eqn:Jbr}
@@ -85,7 +91,7 @@ for some (possibly zero) constants $\alpha,\beta$ which depend on~$N$
 (notice that the form of the central term in the last term is consistent with the fact that $J[1,0], J[0,1]$ are of spin $3/2$).
 The diagrams which give rise to the anomalies necessitating these terms in the OPE are presented in figure \ref{fig:hcsloopbr}.
 In these diagrams, the dotted lines represent coupling to the backreaction and the wiggle lines represent bulk propagators.
-The straight lines label bulk field inputs.
+The straight lines label bulk field inputs, as before.
 
 \begin{figure}
 	\begin{tikzpicture}
@@ -128,7 +134,7 @@ The straight lines label bulk field inputs.
 	\caption{One-loop diagrams involving the backreaction which contribute an anomaly.}  
 \end{figure}
 
-As usual, to evaluate these diagrams we use point splitting on the defect so that operators are placed at $z_1$,$z_2 \in \C$ with $|z_1-z_2| \geq \epsilon$.
+To evaluate the integrals associated to these diagrams we use point splitting on the defect so that operators are placed at $z_1$,$z_2 \in \C$ with $|z_1-z_2| \geq \epsilon$.
 The edges of the diagram correspond to the propagator for the free part of holomorphic Chern--Simons theory, which is determined by the parametrix for the $\dbar$-operator on $\C^3$:
 \beqn
 (\dbar P) \wedge \d^3 Z = \delta_{Z=0} .
@@ -367,16 +373,23 @@ The weight of this diagram involving these fields is represented by the integral
 \eeqn
 where we use coordinates $X = (x_1,x_2,z), Y = (y_1,y_2,w)$ for $\C^3 \times \C^3$ and impose a cutoff $|z-w| \geq \epsilon$.
 
+We first observe the $\eta$-dependence of the integral above.
+The backreaction $\mu_{BR}$ is proportional to $F$ and the $\eta$-dependence on the propagator is through $\delta_{\eta_X=\eta_Y}$.
+Thus, in total, the $\eta$-dependence on the integrand is
+\beqn
+\mu_{BR}(\eta_X) \mu_{BR}(\eta_Y) F(\eta_X) F(\eta_Y) \delta_{\eta_X = \eta_Y} .
+\eeqn
+From this we see that the anomaly associated to this diagram will only involve the unit component of the field $\mu_{BR}(\eta) = \mu_{BR,0} + \cO(\eta)$ and the resulting OPE will be proportional to $N = F^2|_{\eta \br \eta}$.
+
 In appendix \ref{appx:ksbr} we evaluate this integral to obtain
 \beqn
- {N \over 2}  \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^2} \del_{w_i} \mu_1 \del_{w_j} \mu_2|_{w_i=0,\eta=0} ,
+ {N \over 2}  \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^2} \del_{w_i} \mu_1 \del_{w_j} \mu_2|_{w_i=0,\eta=0} .
 \eeqn
-where we recall the normalization of the Mukai vector $N = \langle F,F\rangle = F^2|_{\eta \br \eta}$.
 From this expression, we see that there is a gauge anomaly which can be canceled upon introducing the following term OPE
 \beqn
-\til J^i[1,0](0, \what \bfeta) \til J^j[0,1](z,\what \bfeta') \simeq \cdots + \ep^{ij} \frac{1}{z^2} \what F^2 .
+\til J_0^i[1,0](0) \til J_0^j[0,1](z,\what \bfeta') \simeq \cdots \boxed{+ \ep^{ij} \frac{1}{z^2} N} .
 \eeqn
-The $\cdots$ indicates terms in the OPE which do not depend on the backreaction that we characterized in the previous section.
+The $\cdots$ indicates terms in the OPE which do not depend on the backreaction that we characterized in the previous section (and possibly terms that arise from anomalies associated to other diagrams involving the backreaction, but in this case there are none).
 
 One can use this expression to solve for the OPE involving the on-shell fields.
 This central term in the OPE will involve the operators $J[r,s]$ with $r + s = 2$,
@@ -412,7 +425,7 @@ At the level of unconstrained fields we only considered operators $\til J^i [k,l
 Therefore, the only other possibility we have not yet considered is the OPE between the unconstrained fields $\til J^i [0,0]$ and $\til J^j [1,1]$.
 By a completely similar computation, one finds
 \beqn
-\til J^i [0,0](0) \til J^j [1,1](z) \simeq \cdots + \eps^{ij} \frac1{z^2} \Hat{F}^2 .
+\til J^i [0,0](0) \til J^j [1,1](z) \simeq \cdots + \eps^{ij} \frac1{z^2} N .
 \eeqn
 At the level of the constrained operators, this OPE reads:
 \natalie{finish}
@@ -448,57 +461,20 @@ The description of the weight of this diagram is more complicated than the centr
 One reason is that this diagram will effect the OPE between an infinite tower of operators in the holographically dual chiral algebra (even in the planar limit).
 Secondly, there are more choices of possible labelings of the external edges of this diagram by fields in Kodaira--Spencer theory.
 
-We will focus on the case that the input fields are $\mu_1$ or $\mu_2$ so that the weight of the diagram is represented by the integral
+Consider the case where the input fields are $\mu_j$, $j=1,2$ so that the weight of the diagram is represented by the integral
 \beqn
-\int_{X,\bfeta_X, Y, \bfeta_Y} \mu_1(X) \, \mu_{BR} (x) \,  \bP (X,Y) \, \mu_2(Y) \, P(Y,z_1) J[k,l] ,
+\int_{u,\eta_u} \til J^i[a,b](u) \int_{X,\bfeta_X, Y, \bfeta_Y} \left(D_{a,b} \bP (U, X)\right) \mu_j(X) \,  \bP (X,Y) \, \mu_k (Y) \, \mu_{BR} (y)  .
 \eeqn
+Here $u,\bfeta_U$ are coordinates at the defect vertex and $X,\bfeta_X,Y,\bfeta_Y$ are coordinates at the bulk vertices which we integrate over.
+For notational symmetry, we have used the notation $U = (u,0)$ for the viewing the defect coordinate as a bulk coordinate.
 
-\brian{finish}
-
-We return to the operators $J[r,s]$ whose modes, before taking into account the backreaction, comprise the infinite-dimensional Lie algebra $L^R \lie{w}_\infty$ that we defined in section \ref{s:JJtree}.
-
-\subsection{Global symmetry algebra}
-
-In \S \ref{sec:globalsymm} we have given a geometric characterization of the global symmetry algebra.
-In this section we deduce the Lie bracket on the global symmetry algebra from the OPE's that we have just characterized.
-
-Recall that this global symmetry algebra is of the form
+While we do not compute it explicitly here, the gauge variation of this anomaly is of the form
 \beqn
-\op{Vect}_0 \left(X^0 \slash \Spec R \right) \oplus \cO(X^0) \otimes \Pi \C^2 .
+c(i,j,k,l)  \int_{z,\bfeta_u} \left(D_1 \lie{c}_j\right) \del_z^l \left(D_2\mu_k\right) \til J^i [a,b]|_{w=0} \wedge F(\bfeta_u),
 \eeqn
-As $SU(2)_R \times SL(2,\C)$ representations we have the decompositions
-\begin{align*}
-\cO(X^0) & = R \otimes \oplus_{m \geq 0} \left(\frac{m}{2}, \frac{m}{2} \right) \\
-\op{Vect}_0 \left(X^0 \slash \Spec R \right) & = R \otimes \left(1,0\right) \oplus R \otimes \left(\frac32, \frac12\right) \oplus R \otimes \oplus_{m \geq 2} \left(\frac{m-2}{2},\frac{m}2\right) \oplus \left(\frac{m+2}{2}, \frac{m}{2}\right) .
-\end{align*}
+where $D_i$ are constant coefficient differential operators in the $w_1,w_2$-coordinates whose orders sum to $2l + a + b + 1$, and the $c(i,j,k,l)$ are some coefficients.
 
-At the level of vector spaces, it is immediate to see the match between the global symmetry algebra and certain modes of the gravitational chiral algebra that we have computed.
-We describe the modes which make up the global symmetry algebra.
-\begin{itemize}
-\item The bosonic part of the global symmetry algebra is generated by two classes of modes.
-The first class is
-\beqn
-\{T[r,s]_n \}
-\eeqn
-where $0 \leq n \leq r + s + 2$.
-The modes with $r = s = 0$ comprise the representation $R \otimes (1,0) = R \otimes \lie{sl}(2)$.
-The modes with $r + s = 1$ comprise the representation $R \otimes \left(\frac32,\frac12\right)$.
-The modes with $r + s = m \geq 2$ comprise the representation $R \otimes \left(\frac{m+2}{2}, \frac{m}{2}\right)$.
-\item 
-The remaining bosonic part of the global symmetry algebra is generated by the modes
-\beqn
-\{J[r,s]_n\}
-\eeqn
-where $0 \leq n \leq r + s - 2$.
-Such modes satisfying $r + s = m \geq 2$ comprise the representation $\left(\frac{m-2}{2},\frac{m}2\right)$.
-Notice that the modes of the low lying operators $J[1,0]$ and $J[0,1]$ do not appear in the global symmetry algebra. (In particular, the central term in $\what{L^R \lie{w}_\infty}$ does not appear in the global symmetry algebra).
-\item The fermionic part of the global symmetry algebra is generated by the modes
-\beqn
-\{G_\alpha[r,s]_n, G_\gamma[r,s]_\ell\}
-\eeqn
-where $0 \leq n,\ell \leq r + s$.
-Such modes satisfying $r + s = m \geq 0$ comprise the representation $R \otimes \left(\frac{m}{2}, \frac{m}{2} \right) \otimes \Pi \C^2$.
-\end{itemize}
+
 
 
 
@@ -554,4 +530,5 @@ Such modes satisfying $r + s = m \geq 0$ comprise the representation $R \otimes 
 \section{Acknowledgments}
 
 We are grateful to V. Fernandez, ... for helpful discussions and comments. NP is supported by funds from the Department of Physics and the College of Arts \& Sciences at the University of Washington, the DOE Early Career Research Program under award DE-SC0022924, and the Simons Foundation as part of the Simons Collaboration in Celestial Holography. She also thanks the Perimeter Institute's Visiting Fellow program for additional support and hospitality while this work was underway. Research at Perimeter Institute is supported by the Government of Canada through Industry Canada and by the Province of Ontario through the Ministry of Research and Innovation.
+
 \end{document}

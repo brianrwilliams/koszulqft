@@ -4,13 +4,13 @@
 
 \section{Enumerating twisted supergravity states}
 
-We have derived our twisted supergravity theory in the backreacted geometry; we will refer to the latter henceforth as the K3 conifold, adapting the terminology of \cite{CP}. Our theory conjecturally captures a protected subsector of IIB supergravity on AdS$_3 \times S^3 \times K3$ (which we will refer to as the untwisted theory), and we would like to perform some sanity checks of this conjecture. In particular, in this section we demonstrate that the partition function of twisted supergravity states reproduces the seminal count of 1/4-BPS KK modes in the untwisted theory \cite{deBoerSUGRA}. The methods in this section are a slight modification of those in \cite{CostelloGaiotto, CP}. 
+We have derived our twisted supergravity theory in the backreacted geometry; we will refer to the latter henceforth as the $K3$ conifold, adapting the terminology of \cite{CP}. Our theory conjecturally captures a protected subsector of IIB supergravity on AdS$_3 \times S^3 \times K3$ (which we will refer to as the untwisted theory), and we would like to perform some sanity checks of this conjecture. In particular, in this section we demonstrate that the partition function of twisted supergravity states reproduces the seminal count of 1/4-BPS KK modes in the untwisted theory \cite{deBoerSUGRA}. The methods in this section are a slight modification of those in \cite{CostelloGaiotto, CP}. 
 
 \subsection{Inclusion of boundary divisors}\label{sec:compact}
 
 In order to enumerate twisted supergravity states, we must understand the boundary divisors of the K3 conifold, which are the geometric support for the asymptotic scattering states that participate in (the holomorphic analogue of) Witten diagram computations\footnote{While we will not study bulk scattering directly in this work, it would be interesting to explore methods to make such bulk computations more efficient, perhaps by generalizing the technology of \cite{Budzik:2022mpd, Budzik:2023xbr} to curved backgrounds.}. 
 
-The idea is to compactify the K3 conifold $X^0$ to a super-projective variety $\overline{X^0}$ inside $\CP^4 \times \textrm{Spec}(A).$\footnote{Note that other compactifications are possible, depending on one's application. In \cite{Burns}, the deformed conifold $SL(2, \mathbb{C})$ was not compactified to a quadric, as here, but instead was compactified inside the blow up of a flag variety. That compactification was the one compatible with the symmetries inherent from viewing the deformed conifold as the twistor space of 4d Burns space, which has isometry group $SU(2) \times U(1)$. It would be interesting to extend the analysis of \cite{Burns} to the conifolds of \cite{CP} and the present article, and view them as twistor spaces in turn.}. We give the $\CP^4$ homogeneous coordinates $U_i, W_i, Z$, so that we can complete the K3 conifold defined by equation \ref{eq:k3conifold} to 
+The idea is to compactify the $K3$ conifold $X^0$ to a super-projective variety $\overline{X^0}$ inside $\CP^4 \times \textrm{Spec}(A).$\footnote{Note that other compactifications are possible, depending on one's application. In \cite{Burns}, the deformed conifold $SL(2, \mathbb{C})$ was not compactified to a quadric, as here, but instead was compactified inside the blow up of a flag variety. That compactification was the one compatible with the symmetries inherent from viewing the deformed conifold as the twistor space of 4d Burns space, which has isometry group $SU(2) \times U(1)$. It would be interesting to extend the analysis of \cite{Burns} to the conifolds of \cite{CP} and the present article, and view them as twistor spaces in turn.}. We give the $\CP^4$ homogeneous coordinates $U_i, W_i, Z$, so that we can complete the K3 conifold defined by equation \ref{eq:k3conifold} to 
 \begin{equation}
 \epsilon^{ij}U_i W_j = F Z^2.
 \end{equation}
@@ -42,7 +42,7 @@ Notice that these coordinates have poles at $n=0$ and satisfy $u_2 w_1 - u_1 w_2
 
 \subsection{Enumerating states in Kodaira--Spencer theory}
 
-To describe boundary conditions on the fields in our theory, we can use the partial compactification of the K3 conifold described in \S \ref{sec:compact}. All that remains is, following the usual AdS/CFT prescription, to specify vacuum boundary conditions for our Kodaira-Spencer supergravity fields. Then, our twisted supergravity states are solutions to the equation of motion that satisfy these vacuum boundary conditions except at a point on the conformal boundary of the AdS$_3$ factor, say $z_*$. In other words, twisted supergravity states are, as usual, local modifications of the boundary conditions, which are equivalent to boundary operators placed along  $\CP^1_w \times \left\lbrace z_* \right\rbrace$. 
+To describe boundary conditions on the fields in our theory, we can use the partial compactification of the $K3$ conifold described in \S \ref{sec:compact}. All that remains is, following the usual AdS/CFT prescription, to specify vacuum boundary conditions for our Kodaira-Spencer supergravity fields. Then, our twisted supergravity states are solutions to the equation of motion that satisfy these vacuum boundary conditions except at a point on the conformal boundary of the AdS$_3$ factor, say $z_*$. In other words, twisted supergravity states are, as usual, local modifications of the boundary conditions, which are equivalent to boundary operators placed along  $\CP^1_w \times \left\lbrace z_* \right\rbrace$. 
 
 Recall that there are three fundamental fields for Kodaira--Spencer theory.
 Two fundamental fields $\alpha, \gamma$ are Dolbeault forms of type $(0,\bu)$.
@@ -134,7 +134,8 @@ The result is the same.
 \subsection{The twisted supergravity elliptic genus}
 \label{s:sugraelliptic}
 
-The supergravity states were enumerated in \cite{CP}. We briefly recall the results here. 
+The supergravity states were enumerated in \cite{CP} in the case that one compactifies type IIB supergravity along either $T^4$ or $K3$.
+We briefly recall the results here, with an emphasis on the case of a $K3$ surface.
 
 The twisted supergravity states organize into a representation for the super Lie algebra $\lie{psu}(1,1|2)$.
 The bosonic factor of this super Lie algebra is $\lie{su}(2)_L \times \lie{su}(2)_R$. 
@@ -159,16 +160,14 @@ Here, the ellipses denote additional terms required to express the fields in the
 
 We consider twisted type IIB supergravity on a Calabi--Yau surface $X$, where $X$ could be $T^4$ or a $K3$ surface. 
 
-\begin{prop}[\cite{CP}]
 The supergravity states for the D1-D5 brane system in twisted type IIB supergravity on a compact Calabi--Yau surface $X$ decompose as
 \beqn\label{eqn:IIBstates}
 \bigoplus_{m \geq 1} (\frac{\bf m}{\bf 2})_S \otimes H^\bu(X) = \bigoplus_{m \geq 1} \bigoplus_{i,j} (\frac{\bf m}{\bf 2})_S \otimes H^{i,j} (X)  . 
 \eeqn 
-In particular, when $X$ is a $K3$ surface the single particle twisted supergravity index is 
+In particular, according to the previous section, when $X$ is a $K3$ surface the single particle twisted supergravity index is 
 \beqn\label{eqn:sugra_index}
 f_{KS}(q,y) = 24 \frac{q^2 - 3 q + q^{1/2}(y+y^{-1})}{D} .
 \eeqn
-\end{prop} 
 
 This result should be compared to \cite{deBoerEG}, where the space of supergravity states upon supersymmetric localization (that is, the chiral half of the supergravity states) is found to be
 \beqn\label{eqn:db1}
@@ -239,9 +238,9 @@ By Hartog's theorem this is the algebra generated by the bosonic linear function
 where $V \in \left(X^0 \slash \Spec(A)\right)$, $f_i,g_j \in \cO(X^0) \otimes \Pi \C^2$.
 \end{itemize}
 
-This characterization of the global symmetry algebra will follow from our computation of the (tree level) OPE's of the boundary CFT. As in the examples of \cite{CostelloGaiotto, CP}, this global symmetry algebra is large enough to fix the \textit{planar} 2 and 3-point functions\footnote{In fact, at infinite$-N$ the 2-point functions in \cite{CP} were shown to vanish; the same argument goes through in this case.}.
+A characterization of the global symmetry algebra will follow from the computation of OPE's of the boundary CFT. As in the examples of \cite{CostelloGaiotto, CP}, this global symmetry algebra is large enough to fix the \textit{planar} 2 and 3-point functions\footnote{In fact, at infinite$-N$ the 2-point functions in \cite{CP} were shown to vanish; the same argument goes through in this case.}.
 
-In the remainder of this section we highlight some important properties of this global symmetry algebra.
+%In the remainder of this section we highlight some important properties of this global symmetry algebra.
 
 Following the exact same argument as in section 5.1 of \cite{CP}, one observes that $\lie{psl}(2|2)$ is embedded as a finite-dimensional subalgebra of the global symmetry algebra.
 The even part $\lie{sl}(2) \oplus \lie{sl}(2)$ consists of the complex $4 \times 4$ matrices which preserve the quadratic form $u_1 w_2 - u_2 w_1$; every such matrix gives rise to a vector field on $X^0$ which points along the fibers of $X^0 \to \Spec A$ and preserves the volume form.
@@ -262,5 +261,6 @@ and
 \eeqn
 where $Z$ is the ordinary (bosonic) conifold $u_1 w_2 - u_2 w_1 = 0$.
 
+\brian{what more to add}
 
 \end{document}
