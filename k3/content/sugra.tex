@@ -39,7 +39,10 @@ We will observe, nevertheless, that upon compactification of this ten-dimensiona
 
 \subsection{Kodaira--Spencer theory and IIB supergravity}
 
-We turn to a description of the holomorphic twist of type IIB supergravity in ten dimensions.
+We turn to a recollection of the conjectural holomorphic twist of type IIB supergravity in ten dimensions as originally described in \cite{CLsugra}. 
+Our discussion largely follows \cite{CP}.
+We refer to these references for more details.
+
 The holomorphic supercharge used to minimally twist supergravity is invariant under $SU(5) \subset Spin(10)$, and so can be defined on any Calabi--Yau fivefold $X$.
 In \cite{CLsugra}, as we just recalled, it was conjectured that the holomorphic twist of IIB supergravity is equivalent to a certain truncation of the topological $B$-model on $X$.\footnote{This truncation was referred to as `minimal' Kodaira--Spencer theory in \textit{loc. cit.}. 
 It effectively throws out the non-propagating fields.}
@@ -137,7 +140,7 @@ We will see the significance of this field from the perspective of supergravity 
 
 \subsection{Matching supergravity with Kodaira--Spencer theory}\label{s:components}
 
-At the level of free fields, the match between the holomorphic twist of type IIB supergravity on $\R^{10}$ and Kodaira--Spencer theory has been done in \cite{SWspinor}.
+At the level of free fields, the match between the holomorphic twist of type IIB supergravity on $\R^{10} = \C^5$ and Kodaira--Spencer theory has been performed in \cite{SWspinor}.
 Here, we spell out a precise relationship between the fields of Kodaira--Spencer theory and those of supergravity, to illustrate how Kodaira-Spencer theory encodes (the twist of) the physical field content.
 For clarity of presentation we will work on flat space near the flat K\"ahler metric $g^{i \jbar}_0 = \delta^{i \jbar}$.
 
@@ -261,7 +264,7 @@ We now turn to compactifications as understood in the twist.
 
 \subsection{Compactification of Kodaira--Spencer theory}
 
-We will focus on the setting where we compactify Kodaira-Spencer theory on a complex surface. This section and the following will closely follow the analysis of \cite{CP}, which analyzed the compactification of Kodaira-Spencer theory on $T^4$, and the subsequent backreaction computation in the twisted D1-D5 system. Many of the computations easily generalize when the $T^4$ is replaced by $K3$. 
+We will focus on the setting where we compactify Kodaira-Spencer theory on a complex surface. This section largely  follows \cite{CP}, which analyzed the compactification of Kodaira-Spencer theory on $T^4$ (but actually can be extended to any compact holomorphic symplectic surface with no difficulty), and the subsequent backreaction computation in the twisted D1-D5 system. Many of the computations easily generalize when the $T^4$ is replaced by $K3$. 
 %Recall that $\PV (X) = \PV^{\bu,\bu}(X)$ denotes the graded vector space given by the Dolbeault resolution of holomorphic polyvector fields on a complex manifold~$X$.
 
 Let $Y$ be a complex surface (which we will soon take to be compact) with a fixed holomorphic symplectic structure.
@@ -397,10 +400,10 @@ Note that in the case $R = \C$ the choices of ghost numbers we take here is in a
 
 \subsection{Compactification and twisted multiplets}
 
-In this section we comment on the content of twisted six-dimensional $\cN=(2,0)$ supergravity in terms of standard $\cN=(2,0)$ multiplets.
+In this section we comment on the content of twisted six-dimensional $\cN=(2,0)$ supergravity in terms of standard six-dimensional $\cN=(2,0)$ multiplets.
 
-In six-dimensional $\cN=(2,0)$ supersymmetry there are two multiplets which appear in compactifications from ten dimensions: (i) the graviton multiplet and (ii) the tensor (or chiral two-form \cite{WittenM5}) multiplet.
-The holomorphic twists of each of these multiplets has been characterized in \cite{SWspinor,SWconstraint}.
+In six-dimensional $\cN=(2,0)$ supersymmetry there are two multiplets which appear in compactifications from ten dimensions: (i) the graviton multiplet and (ii) the tensor (or chiral two-form \cite{WittenM5}) multiplet (the latter being the same multiplet describing the twist of a single $M5$ brane in eleven-dimensional supergravity on $\R^{11}$).
+The holomorphic twists of these multiplets has been characterized in \cite{SWspinor,SWconstraint}.
 By virtue of their holomorphicity, each theory shares a linear gauge symmetry by the $\dbar$ operator, schematically of the form $\delta \Phi = \dbar \Phi$ and so in the free field descriptions below we will use Dolbeault complexes to label twists of the multiplets.
 % (though the twist of the tensor multiplet has an additional gauge symmetry).
 
@@ -428,8 +431,7 @@ In $\cN=(1,0)$ language this is the holomorphic twist of a single hypermultiplet
 \end{itemize}
 
 We will see how these multiplets arise from compactification of our ansatz for the twist of type IIB supergravity on a $K3$ surface.
-
-Following \cite{CLsugra} we express the field content of the twist of type IIB supergravity on a Calabi--Yau fivefold $X$ as:
+Following the above presentation of Kodaira--Spencer theory we express the field content of the twist of type IIB supergravity on a Calabi--Yau fivefold $X$ as:
 \begin{align*}
 (\gamma_{IIB}, \beta_{IIB}) & \in \PV^{0,\bu}(X) \oplus \PV^{4,\bu}(X) \cap \ker \del \\
 (\mu_{IIB}, \rho_{IIB}) & \in \Pi \PV^{1,\bu}(X) \cap \ker \del \oplus \Pi \PV^{3,\bu}(X) \cap \ker \del \\
@@ -490,36 +492,36 @@ It would be interesting to work out the anomaly cancellation mechanism in a pure
 \label{sec:conifold}
 
 From now on we fix the holomorphic coordinates $(z,w_1,w_2)$ on $\C^3$.
-We start with type IIB supergravity on $\C^3 \times K3$ and consider a system of $D1$--$D5$ branes where some number of $D1$ branes wrap the complex line $\{w_i=0\}$ in $\C^3$ and a point in $K3$:
+We start with type IIB supergravity on $\C^3 \times Y$, with $Y$ a $K3$ surface, and consider a system of $D1$--$D5$ branes where some number of $D1$ branes wrap the complex line $\{w_i=0\}$ in $\C^3$ and a point in $K3$:
 \beqn
-\{w_i = 0\} \times \{x\} \subset \C^3 \times K3 
+\{w_i = 0\} \times \{x\} \subset \C^3 \times Y
 \eeqn
 and some number of $D5$ branes wrap the same complex line $\{w_i=0\}$ in $\C^3$ together with the entire $K3$ surface:
 \beqn
-\{w_i=0\} \times K3 \subset \C^3 \times K3 .
+\{w_i=0\} \times K3 \subset \C^3 \times Y .
 \eeqn
 The effective open string theory associated to this system of branes will be supported on the intersection of this system which is simply the complex line $\{w_i=0\}$ in $\C^3$.
 
 Using classic results \cite{Dijkgraaf:1998gf}, we can apply a duality to turn this into a D3 brane system which wraps 
 \beqn
-\C \times 0 \times \Sigma \subset \C^3 \times K3 
+\C \times 0 \times \Sigma \subset \C^3 \times Y 
 \eeqn
-for a (special) Lagrangian two-cycle $\Sigma \subset K3$. 
-This follows from the fact that any general D-brane (bound) state on K3 may be described by a Mukai vector $v$, which is a primitive vector such that $F \in \Gamma^{4, 20}, F^2>0$. 
-Any two such vectors of equal length can be related to one another by $T$-duality transformations in $O(\Gamma^{4, 20})$. Of course, matching the moduli between the two duality frames can be an involved task. For our purposes, we will only need a few basic features in this frame. \footnote{A simpler application of these ideas, in which the dimensionality of the wrapped cycle does not change, is the following. The positive-definite 4-plane which specifies the hyperk{\"a}hler structure on K3 can be decomposed into two orthogonal 2-planes which amounts to making a choice of complex structure and complexified (by the B-field) K{\"a}hler form. A quaternionic rotation of the 4-plane then exchanges the complex and K{\"a}hler structures, which is equivalent to a mirror symmetry transformation on the K3 surface. This will exchange the notion of B-branes and A-branes on K3, where B-branes wrap holomorphic curves (with respect to a chosen complex structure) and A-branes wrapping special Lagrangian 2-cycles. This point of view can also be reformulated as an application of the Strominger-Yau-Zaslow \cite{SYZ} picture of mirror symmetry as a composition of $T$-dualities acting on an elliptic fiber.}. As in our setup, B-branes (which, again, are BPS with respect to some chosen $\mathcal{N}=(2, 2)$ subalgebra of the $\mathcal{N}=(4, 4)$ superconformal algebra) on K3 surfaces can wrap not only 2-cycles, but also curves of dimension 0 and 4 (i.e. points or the entire K3 surface).
+for a (special) Lagrangian two-cycle $\Sigma \subset Y$. 
+This follows from the fact that any general D-brane (bound) state on $Y$ may be described by a Mukai vector $v$, which is a primitive vector such that $F \in \Gamma^{4, 20}, F^2>0$. 
+Any two such vectors of equal length can be related to one another by $T$-duality transformations in $O(\Gamma^{4, 20})$. Of course, matching the moduli between the two duality frames can be an involved task. For our purposes, we will only need a few basic features in this frame. \footnote{A simpler application of these ideas, in which the dimensionality of the wrapped cycle does not change, is the following. The positive-definite 4-plane which specifies the hyperk{\"a}hler structure on K3 can be decomposed into two orthogonal 2-planes which amounts to making a choice of complex structure and complexified (by the B-field) K{\"a}hler form. A quaternionic rotation of the 4-plane then exchanges the complex and K{\"a}hler structures, which is equivalent to a mirror symmetry transformation on the K3 surface. This will exchange the notion of B-branes and A-branes on K3, where B-branes wrap holomorphic curves (with respect to a chosen complex structure) and A-branes wrapping special Lagrangian 2-cycles. This point of view can also be reformulated as an application of the Strominger-Yau-Zaslow \cite{SYZ} picture of mirror symmetry as a composition of $T$-dualities acting on an elliptic fiber.}. As in our setup, B-branes (which, again, are BPS with respect to some chosen $\mathcal{N}=(2, 2)$ subalgebra of the $\mathcal{N}=(4, 4)$ superconformal algebra) on K3 surfaces can wrap not only 2-cycles, but also curves of dimension 0 and 4 (i.e. points or the entire $K3$ surface).
 
 In the last section, we argued that the compactification along a $K3$ surface becomes an extended version of Kodaira--Spencer theory where the extra fields are labeled by the cohomology of the surface.
 Upon compactification, the $D3$ system becomes a system of $B$-type branes in this extended version of Kodaira--Spencer theory.
 
 The charge of these branes is labeled by a cohomology class 
 \beqn
-F \in H^2(K3) \subset R .
+F \in H^2(Y) \subset R .
 \eeqn
  In particular, we take $F$ to be a primitive Mukai vector, as above. We denote 
 \beqn
 N \define \ip{F, F}
 \eeqn
-using the inner product on $H^2(K3)$. 
+using the inner product on $H^2(Y)$. 
 Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = 2 f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. Then the D-brane charge is related to the number of D1-D5 branes in the original duality frame $N \sim N_1 N_5$ \footnote{We will always work in the supergravity approximation, and neglect the difference between the D-brane charges and numbers of D-branes in this work.}. (To satisfy the primitivity condition, we assume $N_1, N_5$ are coprime. Since the supergravity theory is only sensitive to the product $N$, rather than the constituents $N_1, N_5$, it is often convenient to take $N_1 = N, N_5 = 1$.).
 
 Notice that the \textit{length} of the D-brane charge vector $F^2$ is of order $N$, so that anything proportional to the lattice vector itself scales like $\mathcal{O}(N^{1/2})$. We will always work in the supergravity limit in which any formal series in the inverse of these parameters is treated as an asymptotic series. More generally, let us explicate the parameters available to us in twisted supergravity. Exactly as in \cite{CP}, the Kodaira-Spencer Lagrangian on flat space comes with an overall power of ${1 \over g_s^2}$ with $g_s$ the string coupling constant, which can be completely absorbed by rescaling of the fermionic variables $\eta_a \rightarrow {g_s}^{-1/2}\eta_a$. However, in the backreacted geometry, rescaling the fermionic variables rescales the D-brane charge vector $F$ by ${1 \over g_s}$ and $N$ by ${1 \over g_s^2}$ so that $g_s \sim {1 \over \sqrt{N}}$ as usual. We will always perform this rescaling. Notice that it is convenient for us to start with flat space and treat the backreaction \textit{perturbatively}, i.e. as a small-$N$ expansion; as in \cite{CP}, we find that the backreaction truncates to a finite series in $N$ due to the presence of the fermionic coordinates, so one can work equally well in small-$N$ (which is convenient for the Koszul duality computations in the sequel, or in large-$N$ (as usual for holography) \footnote{By contrast, \cite{CostelloGaiotto} works in the exact deformed geometry, rather than perturbatively around flat space, so that $N$ is fixed immediately as the period of the holomorphic volume form. It is a phenomenological observation in twisted holographic computations that observables either truncate to finite series in $N$ or can be resummed to quantities analytic in $N$, allowing us to match small-$N$ (Koszul duality) expansions with the large-$N$ holographic expansions; it would be desirable to have a more fundamental proof of these observations.}.
@@ -532,7 +534,7 @@ In the case of the compactification of the IIB string on $T^4$, the resulting ba
 
 Our case is similar in that the branes are supported along the same locus as in \cite{CostelloGaiotto, CP}.
 The difference is that, compared to \cite{CostelloGaiotto}, we are working with a bigger space of fields, roughly extended by the cohomology of the $K3$ surface.
-Recall that $R = H^\bu(K3)$ denoted the cohomology ring of the $K3$ surface.
+Recall that $R = H^\bu(Y)$ denoted the cohomology ring of the $K3$ surface.
 Notice that the ring $A$ is canonically augmented by the map which sends all non-unit generators to zero. %via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_R$.
 A useful perspective on the extended version of Kodaira--Spencer theory we obtain by compactification along $K3$ is as a family of theories over the scheme $\op{Spec} A$.
 This family has the property that over the augmentation ideal $\lie{m}_R$ we obtain ordinary Kodaira--Spencer theory.
@@ -629,12 +631,13 @@ We can write this volume form in the deformed coordinates above as
 \eeqn
 (or a similar expression involving $w_2^{-1}$) and note that this volume form is only well-defined on the fibers of the projection $X^0 \to \Spec(A)$.
 
-\subsection{Parameterized Kodaira--Spencer theory}
+\subsection{A generalized Kodaira--Spencer theory}
 
 Before moving on, we point out that the above constructions make sense in the following generality.
 Fix a graded commutative ring $R$ equipped with a trace $\op{tr} \colon R \to \C$.
-In the entirety of this section $R = H^\bu(K3)$ and $\op{tr}(a) = \int_{K3} a$.
-Then, we can consider a complex three-dimensional theory whose fields, in the BV formalism, are given by
+In the entirety of this section $R = H^\bu(Y)$ and $\op{tr}(a) = \int_{Y} a$, where $Y$ is a $K3$ surface (or $T^4$ as in \cite{CP}).
+
+More generally we can consider a complex three-dimensional theory whose fields, in the BV formalism, are given by
 \beqn
 \mu \in \PV^{1,\bu}(\C^3) \otimes R [1]
 \eeqn
@@ -650,6 +653,8 @@ The action functional is
 	+ \tfrac{1}{6} \int_{\C^{3}}  \eps_{ijk} \op{tr} \mu_{i}\mu_{j} \mu_{k} \, \d^3 Z + \int_{\C^{3}} \op{tr}  \alpha \mu_i \partial_{z_i}  \gamma \, \d^3 Z.
 \end{multline} 
 We refer to this as $R$-Kodaira--Spencer theory.
+For a general ring $R$, we lose the interpretation of type IIB supergravity compactified on some holomorphic symplectic surface.
+On the other hand, judicious choices of $R$ may allow one to consider `compactifications' of supergravity on possibly singular surfaces.
 
 
 %\brian{what more to say?}
