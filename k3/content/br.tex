@@ -3,8 +3,7 @@
 \newcommand{\cI}{\mathcal{I}}
 \begin{document}
 
-\section{OPE's from backreaction}
-\label{sec:br}
+\section{OPE's from backreaction}\label{sec:br}
 
 The correspondence between the theory on a stack of branes and the gravitational theory defined on the locus away from the brane is not an exact one, even at the twisted level.
 To obtain a match one must include effects from the backreaction.
@@ -163,7 +162,7 @@ Integrating by parts and taking $\epsilon \to 0$ this becomes
 \beqn
 \pi N^2 K_{ab} \ep_{ij} \del^3 \delta_{z_1=z_2} \del_{w_i} A^a \del_{w_j} \dbar c^b |_{w_i=0} .
 \eeqn
-In this form it is clear that this anomaly is canceled by introducing the term in the OPE in \eqref{eqn:Jbr} with \footnote{This answer can of course be adjusted with normalization of the generators of the chiral algebra, which we have not yet fixed. To obtain a more canonical choice of $\beta = {N^2 \over 2}$ it is natural to take $J \rightarrow \sqrt{2 \pi J} $.}
+In this form it is clear that this anomaly is canceled by introducing the term in the OPE in \eqref{eqn:Jbr} with \footnote{This answer can of course be adjusted into the more canonical result $\beta = {N^2 \over 2}$ by adjusting the normalization of the length of the Mukai vector.}
 \beqn
 \beta = \pi N^2 .
 \eeqn
@@ -272,10 +271,7 @@ c = \til G_\alpha[0,0], b = G_\gamma [0,0], \beta = J[1,0] , \gamma = J[0,1]
 \eeqn
 are each valued in $R$.
 
-
 From the point of view of the UV gauge theory, this comes from the twist of the fields in the $U(1)$ supermultiplet that corresponds to the collective motion of the $D1-D5$ system in the transverse directions $\C^2$. The twist is $R$-valued because the target space directions corresponding to the center of mass degrees of freedom include an additional factor of $X =K3, T^4$ from the D5-brane worldvolume gauge theory (in the $T^4$ case, these degrees of freedom can be understood simply as Wilson lines on the homology cycles \cite{Davidetal}). 
-\natalie{check if you agree}
-\brian{I still don't understand the role of the flux}
 
 \subsection{The propagator for Kodaira--Spencer theory}
 
@@ -341,8 +337,7 @@ The propagator for Kodaira--Spencer theory on $K3 \times \C^3$ (after compactifi
 We have classified the planar bulk-boundary Feynman diagrams which involve the backreaction; there were three types.
 The first type occurs at tree-level, involving only a single backreaction vertex, and we have characterized the affect on the boundary chiral algebra in section \ref{sec:treebr}.
 There are two planar one-loop diagrams involving the backreaction: one involves a single backreaction vertex, see figure \ref{fig:oneloopsinglebr}, and the other involves two backreaction vertices as in figure \ref{fig:orderN}.
-In this section we focus on the latter one-loop diagram, involving two backreaction vertices, which has the special feature (like the tree-level backreaction affect) that it is not sourced by a field along the brane.
-In terms of the chiral algebra this means that the gauge anomaly resulting from this diagram introduces a central term in the OPE.
+In this section we focus on the latter one-loop diagram, involving two backreaction vertices, which has the special feature (like the tree-level backreaction effect) that it only couples to the identity operator in the chiral algebra along the brane. This means that the gauge anomaly resulting from this diagram introduces a central term in the OPE.
 
 \begin{figure}
 	\begin{tikzpicture}
@@ -427,9 +422,7 @@ By a completely similar computation, one finds
 \beqn
 \til J^i [0,0](0) \til J^j [1,1](z) \simeq \cdots + \eps^{ij} \frac1{z^2} N .
 \eeqn
-At the level of the constrained operators, this OPE reads:
-\natalie{finish}
-
+At the level of the constrained operators, this becomes a central extension for OPEs $J[1, 0]J[1, 2], J[0, 1]J[2, 1]$.
 
 \subsection{Non-central effects from backreaction}
 
@@ -475,8 +468,7 @@ c(i,j,k,l)  \int_{z,\bfeta_u} \left(D_1 \lie{c}_j\right) \del_z^l \left(D_2\mu_k
 where $D_i$ are constant coefficient differential operators in the $w_1,w_2$-coordinates whose orders sum to $2l + a + b + 1$, and the $c(i,j,k,l)$ are some coefficients.
 
 
-
-
+Finally, we remark that the planar chiral algebra should contain the information of the $c=6N$ small $\mathcal{N}=4$ superconformal algebra (which we have reproduced in the OPE of the low-lying generators) as well as OPEs among the superconformal descendants. It would therefore be enlightening to match the Koszul duality approach with more standard bootstrap analyses. This may be slightly tedious, since Koszul duality expresses the chiral algebra in a rather different basis than the one which is natural from the perspective of these symmetries. However, we can readily make certain simple checks. For example, we can verify that our algebra satisfies the $SU(2)_R$ selection rule, valid for the $\mathcal{N}=4$ superconformal algebra with arbitrary central charge, among the OPEs of BPS primaries described on page 7 of \cite{Lin:2015wcg}. We can also use the results of the $\mathcal{N}=4$ long-multiplet bootstrap of \cite{Kos:2018glc}, take the $h \rightarrow (m+n)/2$ limit in which the multiplets become short, and remove the null states, to immediately check that (up to overall numerical factors we did not carefully match), we have obtained the correct nonvanishing 2-pt functions for the lowest-lying modes; of course, those modes constitute the center of mass multiplet and the $\mathcal{N}=4$ superconformal algebra itself, which we knew from other methods, but it could be fruitful to check and match the results carefully at higher modes. 
 
 %\section{Superconformal algebra}
 %
