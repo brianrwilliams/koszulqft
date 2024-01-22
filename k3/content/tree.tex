@@ -2,9 +2,9 @@
 
 \begin{document}
 
-\section{Tree-level OPEs}
+\section{Tree-level OPEs}\label{sec:tree}
 
-In this section we initiate our computation of planar OPEs of the chiral algebra, using the same Koszul duality techniques as in \cite{CP}, by first considering contributions from tree diagrams. We will first recall the Koszul duality approach to twisted holography pioneered in \cite{CostelloM2, CP} (see \cite{PW} for a review of Koszul duality, \cite{Ishtiaque:2018str, Gaiotto:2019wcc, Oh:2020hph} for more on Koszul duality in twisted holography, and \cite{Mezei:2017kmw, Gaiotto:2020vqj,  Budzik:2021fyh, Oh:2021bwi} for additional, closely related twisted holographic explorations). Koszul duality enables us to \textit{derive} the planar chiral algebra from our knowledge of the twisted supergravity dual. In this way, Koszul duality provides a way to extract twisted CFT data, encoded in the technically challenging chiral de Rham complex, using more tractable supergravity computations\footnote{A complementary approach, compatible with a topological (as opposed to holomorphic) twist, is to study the rings of chiral primaries in symmetric orbifold theories \cite{Li:2020zwo, Ashok:2023mow, Ashok:2023kkd}. Chiral primaries are 1/2-BPS states, comprised of short multiplets with respect to both the holomorphic and anti-holomorphic $\mathcal{N}=4$ algebras, and have nonsingular OPEs with one another. Koszul duality is sensitive to 1/4-BPS states but only captures the (purely holomorphic) singular terms of the chiral algebra OPEs. It would be interesting to reproduce (the holomorphic halves of) the chiral ring structure coefficients from our Kodaira-Spencer theory.}. 
+In this section we initiate our computation of planar OPEs of the chiral algebra, using the same Koszul duality techniques as in \cite{CP}, by first considering contributions from tree diagrams. Tree diagrams, as we will see, correspond to the twisted open-closed string theory in flat space (i.e. before considering the backreaction of the D-branes). We will first recall the Koszul duality approach to twisted holography pioneered in \cite{CostelloM2, CP} (see \cite{PW} for a review of Koszul duality, \cite{Ishtiaque:2018str, Gaiotto:2019wcc, Oh:2020hph} for more on Koszul duality in twisted holography, and \cite{Mezei:2017kmw, Gaiotto:2020vqj,  Budzik:2021fyh, Oh:2021bwi} for additional, closely related twisted holographic explorations). Koszul duality enables us to \textit{derive} the planar chiral algebra from our knowledge of the twisted supergravity dual. In this way, Koszul duality provides a way to extract twisted CFT data, encoded in the technically challenging chiral de Rham complex, using more tractable supergravity computations\footnote{A complementary approach, compatible with a topological (as opposed to holomorphic) twist, is to study the rings of chiral primaries in symmetric orbifold theories \cite{Li:2020zwo, Ashok:2023mow, Ashok:2023kkd}. Chiral primaries are 1/2-BPS states, comprised of short multiplets with respect to both the holomorphic and anti-holomorphic $\mathcal{N}=4$ algebras, and have nonsingular OPEs with one another. Koszul duality is sensitive to 1/4-BPS states but only captures the (purely holomorphic) singular terms of the chiral algebra OPEs. It would be interesting to reproduce (the holomorphic halves of) the chiral ring structure coefficients from our Kodaira-Spencer theory.}. 
 
 We begin on flat space. In the next section, we will incorporate planar diagrams encoding the backreaction of the D1-D5 system. These are the diagrams responsible for deforming the initial flat space geometry to the K3 conifold. It was explained in \cite{CP} that, strikingly, only a finite number of such backreaction diagrams contribute at each order in the ${1 \over \sqrt{N}}$ expansion. Typically, one would have to re-sum an infinite number of such diagrams to obtain the deformed geometry. This simplification allows us to derive the chiral algebra as a deformation around flat space, using the perturbative, Feynman diagrammatic approach of Koszul duality. In particular, the complete, backreacted planar chiral algebra we will compute in the next two sections has the global subalgebra we derived from a different point of view in \S \ref{sec:globalsymm}. 
 
@@ -47,15 +47,15 @@ For simplicity of notation we will not explicitly include this $\eta$-dependence
 Defect operators sourced by bulk fields \textit{before} imposing the constraint \eqref{eqn:divfreetree} can be described as follows:
 
 \begin{enumerate}
-\item Bosonic Virasoro primaries $\til T[r,s]$ of spin $2 + r/2 + s/2$ which couple to the field $\mu_z$ by
+\item Bosonic Virasoro primaries $\til T[r,s]$ of holomorphic conformal weight (i.e. ``spin'') $2 + r/2 + s/2$ which couple to the field $\mu_z$ by
 \beqn
 \int_{z,\eta} \til T[r,s] D_{r,s} \mu_z |_{w=0} .
 \eeqn
-\item Bosonic Virasoro primaries $\til J^i[r,s]$, $i=1,2$ of spin $1/2 + r/2 + s/2$ which couple to the fields $\mu_i$ by
+\item Bosonic Virasoro primaries $\til J^i[r,s]$, $i=1,2$ of weight $1/2 + r/2 + s/2$ which couple to the fields $\mu_i$ by
 \beqn
 \int_{z,\eta}  \til J^i[r,s] D_{r,s} \mu_i|_{w=0} .
 \eeqn
-\item Fermionic Virasoro primaries $G_\alpha[r,s]$, $G_\gamma[r,s]$ of spin $1 + r/2 + s/2$ which couple to the fields $\alpha,\gamma$ by
+\item Fermionic Virasoro primaries $G_\alpha[r,s]$, $G_\gamma[r,s]$ of weight $1 + r/2 + s/2$ which couple to the fields $\alpha,\gamma$ by
 \beqn
 \begin{aligned}[]
 & \int_{z,\eta}  G_\alpha[r,s] D_{r,s} \alpha|_{w=0} .
@@ -74,7 +74,7 @@ T[r,s] & \define \til T[r,s] - \frac{1}{2(r+1)} \del_z \til J^1 [r+1,s] - \frac{
 J[k,l] & \define k \til J^2[k-1,l] - s \til J^1[k,l-1], \quad k+l \geq 1 .
 \end{aligned}
 \eeqn
-We see that $T[r,s]$ has spin $2 + (r+s)/2$ and $J[k,l]$ has spin $(k+l)/2$ and live in the $SU(2)_R$ spin representation $(k+l)/2$.
+We see that $T[r,s]$ has weight $2 + (r+s)/2$ and $J[k,l]$ has weight $(k+l)/2$ and live in the $SU(2)_R$ spin representation $(k+l)/2$.
 
 As stated above, all operators are valued in the ring $R$ which in the case of compactification of a K3 surface is $R = H^\bu(K3)$.
 It is convenient to expand operators in the fermionic-Fourier-dual variables $\Hat{\eta}$.
@@ -501,9 +501,7 @@ The $TG$ OPE can be computed similarly. For brevity, we will simply record the r
 
 The OPE's we have just computed completely characterize the tree-level defect chiral algebra.
 In the final part of this section we summarize all tree-level OPE's that we have deduced above.
-In the next section we will characterize planar backreaction effects effects (which are certain planar diagrams of loop topology) which modify this tree-level chiral algebra.
-
-\natalie{note, we should carefully check signs and normalizations against the N=4 superconformal algebra, etc.}
+In the next section we will characterize planar backreaction effects effects (which are certain planar diagrams of loop topology) which deform and centrally extend this tree-level chiral algebra.
 
 
 If $nr-ms > 0$ the OPEs are
@@ -526,27 +524,24 @@ The coefficients in the OPEs between $J-T$ and $G-G$ have to be treated with sli
 For the $J-T$ OPE, the above expression also holds when $nr - ms = 0$ and $nr = m s >0$. 
 For the $G-G$ OPE, if $n r - ms = 0$ and $nr = ms > 0$ we have
 \begin{align}
-G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
-&+{1 \over z}\partial_z J[m + r, n+s](0).
+G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\partial_z J[m + r, n+s](0).
 \end{align}
+
 The remaining cases are as follows. If $nr-ms = 0$ and $n r = ms = 0$ the TJ and GG OPE coefficients are instead as follows. \newline
 If $r = m = 0, s \neq 0$: 
-\brian{should $r,m$ be zero in this equation?}
 \begin{align}
-J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({n \over 2(s + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({n \over n + s} \right)\partial_z J[m + r, n + s](0) \\ \nonumber
-G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({n \over  (n + s)}\right)\partial_z J[m + r, n+s](0)
+J[0, n](0)T[0, s](z) &\sim {1 \over z^2}\left({n \over 2(s + 1)}\right)J[0, n + s](0) +{1 \over 2 z}\left({n \over n + s} \right)\partial_z J[0, n + s](0) \\ \nonumber
+G^{\alpha}[0, n](0)G^{\gamma}[0, s](z) &\sim {1 \over z^2}J[0, n + s](0) +{1 \over z}\left({n \over  (n + s)}\right)\partial_z J[0, n+s](0)
 \end{align}
-If $n = s = 0, r \neq 0$: \brian{should $n,s$ be zero in this equation?}
+If $n = s = 0, r \neq 0$: 
 \begin{align}
-J[m, n](0)T[r, s](z) &\sim {1 \over z^2}\left({m \over 2(r + 1)}\right)J[m + r, n + s](0) +{1 \over 2 z}\left({m \over m + r} \right)\partial_z J[m + r, n + s](0)\\
-G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {1 \over z^2}J[m + r, n + s](0) +{1 \over z}\left({m \over m + r}\right)\partial_z J[m + r, n+s](0)
+J[m, 0](0)T[r, 0](z) &\sim {1 \over z^2}\left({m \over 2(r + 1)}\right)J[m + r, 0](0) +{1 \over 2 z}\left({m \over m + r} \right)\partial_z J[m + r, 0](0)\\
+G^{\alpha}[m, 0](0)G^{\gamma}[r, 0](z) &\sim {1 \over z^2}J[m + r, 0](0) +{1 \over z}\left({m \over m + r}\right)\partial_z J[m + r, 0](0)
 \end{align}
 If $r = s= 0$ (note that there are no $G$ operators for these values):
 \begin{align}
-J[m, n](0)T[r, s](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m + r, n + s](0) +{1 \over  z}\partial_z J[m + r, n + s](0)
+J[m, n](0)T[0, 0](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m , n ](0) +{1 \over  z}\partial_z J[m , n ](0)
 \end{align}
-\natalie{Probably some of these can be written better with epsilon symbols and Pauli matrices to account for their $SU(2)$ reps, as in the N=4 SCA?}
-\brian{should $r,s$ be zero in this equation?}
 
 We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. 
 For example, observe that tree-level OPE's of the lowest $\bfeta$-component of the operators

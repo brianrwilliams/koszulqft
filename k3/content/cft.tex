@@ -2,12 +2,12 @@
 
 \begin{document}
 
-\section{The twisted symmetric orbifold CFT}
+\section{The twisted symmetric orbifold CFT}\label{sec:CFT}
 
 Supergravity on $AdS_3 \times S^3 \times Y$, where $Y$ is either $T^4$ or a $K3$ surface, is expected to be holographically dual to a particular two-dimensional superconformal field theory (SCFT). Though our primary interest in this note is $K3$, with the $T^4$ case studied in \cite{CP}, we can be agnostic about $Y$ for many aspects of the analysis. 
 
 We will briefly review this system of interest, following \cite{Davidetal} and references therein, with a focus towards applying the holomorphic twist to this system and isolating the $\frac14$-BPS states. Of course, this SCFT is the IR limit of the field theory that arises from the zero modes of the open strings on the $D1-D5$ branes. 
-The lowest-lying modes of open strings, which provide an effective field theory description of the $D1$ and $D5$-branes, naturally furnish a gauge theory whose IR limit we are primarily interested in. One can study the twist, which is insensitive to RG flow, of both the UV D1-D5 gauge theory or the symmetric orbifold CFT, and we will sketch salient features of both perspectives. 
+The lowest-lying modes of open strings, which provide an effective field theory description of the $D1$ and $D5$-branes, naturally furnish a gauge theory whose IR limit we are primarily interested in. One can study the twist, which is in principle insensitive to RG flow, of both the UV D1-D5 gauge theory or the symmetric orbifold CFT.
 
 We recall that the $D5-D5$ strings give rise to a six-dimensional supersymmetric $U(N_5)$ gauge theory preserving $16$ supercharges. 
 When all the $D$-branes are coincident the gauge theory is in the Higgs phase and when some of the adjoint scalars in the field theory acquire a vev, corresponding to transverse separation of the branes, the theory is in the Coulomb phase. 
@@ -316,7 +316,7 @@ Introducing another parameter $p$, which keeps track of the symmetric power, we 
 	\sum_{n \geq 0} p^n \chi(\Sym^n X; q,y) 
 \end{equation}
 %where $\chi$ indicates the character of the vacuum module of the $bc\beta\gamma$\footnote{We will call the system a $bc\beta\gamma$ system by a slight abuse of terminology: we will not employ the A-type twist on the left-movers when restricting to $\bar{Q}_+$ cohomology, so that the would-be $bc$ fields have fermionic statistics and spin.} on $\Sym^n X$.  
-The main result of \cite{deBoerEG, DMVV} is an expression for this generating series
+The main result of \cite{deBoerEG, DMVV} (which we follow closely in this review) is an expression for this generating series
 \begin{equation} 
 	\sum_{n} p^n \chi(\Sym^n X; q,y) = \prod_{l,m \geq 0,n >0 } \frac{1}{(1 - p^n q^m y^l)^{c(nm,l)}}
 \end{equation}
@@ -327,9 +327,7 @@ In other words, we can interpret the direct sum of the vacuum modules of the $\S
 \end{equation}
 where the super-dimension of $V_{n,m,l}$ is $c(nm,l)$.
 
-Setting $V_n = \oplus_{m,l} V_{n,m,l}$, we see that $V_n$ is isomorphic to the vacuum module of the $bc\beta\gamma$ system, or chiral de Rham complex, on the original surface $X$, except with a different conformal structure: a state of the $\sigma$-model into $X$ of spin $k$ is of spin $k/n$ in $V_n$.  
-
-The states in $V_N$ will play the role of the single-trace operators in the large $N$ limit of the $\Sym^N X$ $\sigma$-model.   
+Setting $V_n = \oplus_{m,l} V_{n,m,l}$, we see that $V_n$ is isomorphic to the vacuum module of the $bc\beta\gamma$ system, or chiral de Rham complex, on the original surface $X$, except with a different conformal structure: a state of the $\sigma$-model into $X$ of spin $k$ is of spin $k/n$ in $V_n$.  The states in $V_N$ play the role of the single-trace operators in the large $N$ limit of the $\Sym^N X$ $\sigma$-model.   
 These states can be understood geometrically as follows---let us focus just on the $S^1$-modes of this $\sigma$-model.
 A map $S^1 \to \Sym^N X$ is the same as an $N$-fold cover $M \to S^1$ together with a map $M \to X$.  
 Therefore, the Hilbert space of the $\sigma$-model on $\Sym^N X$ decomposes over sectors corresponding to the topological type of this $N$-fold cover, which are labelled by partitions of $N$. 
@@ -384,8 +382,8 @@ f_{CFT}(q, y) = \sum_{m=1}^{\infty} 24 (q^{1/2} y)^m + 24 (q^{1/2}y^{-1})^m -20 
 This is significant evidence that our twisted supergravity theory is dual to (a point on the moduli space of) the large $N$ limit of the symmetric orbifold CFT. 
 
 For a finite number of branes we have given a microscopic description of the twisted $D1/D5$ system in flat space as an explicit BRST theory and matched with the description in \cite{Davidetal}.
-In the large $N$ limit, the states of a general BRST model can be described in terms of the Loday--Quillen--Tsygan theorem, see the recent work \cite{costello2015quantization,CostelloGaiotto,Ginot:2021thu,Budzik:2023xbr}.
-It would be interesting to apply this theorem to understand the states of this model in the large $N$ limit and to match with the supergravity elliptic elliptic genus in the case of $T^4$.
+In the large $N$ limit, the states of a general BRST model can be described in terms of the Loday--Quillen--Tsygan theorem; see the recent work \cite{costello2015quantization,CostelloGaiotto,Ginot:2021thu,Budzik:2023xbr}.
+It would be interesting to apply this theorem to understand the states of this model in the large $N$ limit and to match with the elliptic genus. It is easier to perform LQT for the $T^4$ case and enumerate the non-vanishing states, and it would be interesting to match this explicitly to the results of \cite{CP}. 
 In the case of a $K3$ surface it is not clear how to apply this theorem to understand the large $N$ limit of the CFT.
 
 
