@@ -468,6 +468,12 @@ While we do not compute it explicitly here, the gauge variation of this anomaly 
 c(i,j,k,l)  \int_{z,\bfeta_u} \left(D_1 \lie{c}_j\right) \del_z^l \left(D_2\mu_k\right) \til J^i [a,b]|_{w=0} \wedge F(\bfeta_u),
 \eeqn
 where $D_i$ are constant coefficient differential operators in the $w_1,w_2$-coordinates whose orders sum to $2l + a + b + 1$, and the $c(i,j,k,l)$ are some coefficients.
+This anomaly will introduce additional linear terms in the OPE between the (off-shell) operators $\til J^j[r,s]$ and $\til J^{k} [r',s']$ of the following heuristic form
+\beqn
+\til J^i [r,s](0) \til J^k[r',s'] (z) \simeq c'(i,j,k,l) \frac{1}{z^{l+1}} J^i[a,b](0) + \cdots
+\eeqn
+where $r+s+r'+s'=2l+a+b+1$ and the $\cdots$ refer to terms with more derivatives acting on $J^i[a,b]$.
+
 
 
 Finally, we remark that the planar chiral algebra should contain the information of the $c=6N$ small $\mathcal{N}=4$ superconformal algebra (which we have reproduced in the OPE of the low-lying generators) as well as OPEs among the superconformal descendants. It would therefore be enlightening to match the Koszul duality approach with more standard bootstrap analyses. This may be slightly tedious, since Koszul duality expresses the chiral algebra in a rather different basis than the one which is natural from the perspective of these symmetries. However, we can readily make certain simple checks. For example, we can verify that our algebra satisfies the $SU(2)_R$ selection rule, valid for the $\mathcal{N}=4$ superconformal algebra with arbitrary central charge, among the OPEs of BPS primaries described on page 7 of \cite{Lin:2015wcg}. We can also use the results of the $\mathcal{N}=4$ long-multiplet bootstrap of \cite{Kos:2018glc}, take the $h \rightarrow (m+n)/2$ limit in which the multiplets become short, and remove the null states, to immediately check that (up to overall numerical factors we did not carefully match), we have obtained the correct nonvanishing 2-pt functions for the lowest-lying modes; of course, those modes constitute the center of mass multiplet and the $\mathcal{N}=4$ superconformal algebra itself, which we knew from other methods, but it could be fruitful to check and match the results carefully at higher modes. 
