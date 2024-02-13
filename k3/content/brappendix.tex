@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\pdfoutput=1 
+%\documentclass[a4paper,11pt]{article}
+%\pdfoutput=1 
 
 \documentclass[../main.tex]{subfiles}
 
@@ -158,6 +158,10 @@ We will evaluate three types of integrals, which differ in how many coordinates 
 
 \subsubsection{Type 1: Integral over $d^4x d^4 y$} 
 
+\brian{Can you say which sort of diagram this is meant to be relevant for? I think it's the central term where you have two backreaction vertices. In this case, I believe your integral $\cI^1$ is a function of $z-w$ which still needs to be integrated over.
+This integral over $z-w$, or really its gauge variation, is what gives the central extension.
+Also, can you say where the factors of $(\zbar - \wbar)$ are in $\cI^1$? For example, the central term in BCOV should have a factor like $(\zbar - \wbar)^2$ in addition to what's written here. (This is analogous to why the expression $[\br x \br y]$ appears, which you have included.)}
+
 We begin with an integral of the form:
 \begin{equation}
     \mathcal{I}^1(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) = \underset{\mathbb{C}^2}{\int} \frac{ (x^1)^{k_1} (x^2)^{k_2}  (\overline{x}^1)^{l_1} (\overline{x}^2)^{l_2}}{(\vert \vert x \vert \vert^2)^{j_1}} \mathcal{I}_y (\vec{j};\vec{m}, \vec{n}) d^4x \label{eq:main type 1}
@@ -216,6 +220,11 @@ where we have made the following definitions:
 
 \subsubsection{Type 2: Integral over $d^6X d^4y$}
 
+\brian{Again, I'd like to know which diagram this integral is relevant for.
+I think it's a diagram with one backreaction and one defect vertex.
+If that's the case then the defect vertex is $Z = (z,0)$.
+$\cI^2$ is a function of $z$ and $w$, but there is still an integral over $w$ that must be performed when computing the anomaly.}
+
 Next, let us consider an integral of the form:
 \begin{equation}
     \mathcal{I}^2(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) = \underset{\mathbb{C}^3}{\int} \frac{ (x^0)^{k_0} (x^1)^{k_1} (x^2)^{k_2} (\overline{x}^0)^{l_0} (\overline{x}^1)^{l_1} (\overline{x}^2)^{l_2}}{(\vert \vert Z-X \vert \vert^2)^{j_1}} \mathcal{I}_y (\vec{j};\vec{m}, \vec{n}) d^6X \label{eq:main type 2}
@@ -237,6 +246,8 @@ where we have made the following definitions:
 \end{align} \endgroup
 
 \subsubsection{Type 3: Integral over $d^6X d^6 Y$}
+\brian{All diagrams we consider give integrals of this type, so it'd be nice to say what the compatibility of $\cI^1,\cI^2$ with $\cI^3$ is.}
+
 Finally, we consider the integral where we integrate the bulk vertices over all holomorphic spacetime directions in one shot. For many purposes, this integral, while producing a somewhat more intricate final answer, is often the most natural. 
 \begin{equation}
     \mathcal{I}(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) = \underset{\mathbb{C}^3}{\int} \frac{(x^0)^{k_0} (x^1)^{k_1} (x^2)^{k_2} (\overline{x}^0)^{l_0} (\overline{x}^1)^{l_1} (\overline{x}^2)^{l_2}}{(\vert \vert Z-X \vert \vert^2)^{j_1}} \mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) d^6X \label{eq:main I}
