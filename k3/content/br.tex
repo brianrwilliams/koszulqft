@@ -1,4 +1,13 @@
-\documentclass[../main.tex]{subfiles}
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 
+\usepackage{jheppub} 
+\usepackage[T1]{fontenc} 
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{revsymb}
+\usepackage{mwe}
+\usepackage{simpler-wick}
 
 \newcommand{\cI}{\mathcal{I}}
 \begin{document}
@@ -26,7 +35,7 @@ In this section, we warm up by computing the effect of backreaction on the open 
 More precisely, we consider holomorphic Chern--Simons in the presence of a Kodaira--Spencer field which is sourced by $N$ $D1$ branes wrapping $\C \subset \C^3$. 
 The backreaction field is 
 \[
-\mu_{BR} = \frac{\eps_{ij} \wbar^i \d \wbar^j}{4 \pi^2 \|w\|^4} \partial_z \in \PV^{1,1} (\C^3 \setminus \C) . 
+\mu_{BR} = \frac{\eps_{ij} \wbar^i \d \wbar^j}{2 \pi \|w\|^4} \partial_z \in \PV^{1,1} (\C^3 \setminus \C) . 
 \]
 This field satisfies the equation
 \beqn\label{eqn:csBR}
@@ -35,9 +44,9 @@ This field satisfies the equation
 where $\delta_{w_i=0}$ is the $\delta$-function supported at $w_i=0$.
 This couples to the holomorphic Chern--Simons field by 
 \[
-S_{BR} = \frac12 \int_{\C^3} \mu_{BR} \vee \op{tr}(A \del A) = \frac12 N \int_{\C^3} A^a \frac{\eps_{ij} \wbar^i \d \wbar^j}{\|w\|^4} \partial_z A^a .
+S_{BR} = \frac12 \int_{\C^3} \mu_{BR} \vee \op{tr}(A \del A) = \frac12 N \int_{\C^3} A^a \frac{\eps_{ij} \wbar^i \d \wbar^j}{2\pi \|w\|^4} \partial_z A^a .
 \]
-We will denote $\omega = \frac{\eps_{ij} \wbar^i \d \wbar^j}{4 \pi^2\|w\|^4}$ so that the coupling can be written $S_{BR} = \frac{N}{2}
+We will denote $\omega = \frac{\eps_{ij} \wbar^i \d \wbar^j}{2 \pi \|w\|^4}$ so that the coupling can be written $S_{BR} = \frac{N}{2}
 \int_{\C^3} A \omega \del_z A.$
 
 The backreaction coupling has a gauge anomaly even at tree-level.
@@ -78,7 +87,7 @@ For scaling dimension reasons, there are no further corrections to the $J[0,0]-J
 Let's consider the possibility of quantum corrections to the OPE between the fields $J_a[1,0]$ and $J_b[0,1]$. 
 Before accounting for the back reaction, the tree and one-loop level OPE is 
 \beqn\label{eqn:Jbr}
-J_a[1,0](z) J[0,1]_b \simeq \frac{1}{z} f^c_{ab} J[1,1] + \hbar \frac1z K^{fe} f_{ae}^c f_{bf}^d J_c[0,0] J_d[0,0] ,
+J_a[1,0](z) J_b[0,1] \simeq \frac{1}{z} f^c_{ab} J[1,1] + \hbar \frac1z K^{fe} f_{ae}^c f_{bf}^d J_c[0,0] J_d[0,0] ,
 \eeqn
 (see e.g. section 6 of \cite{CP}).
 By conformal invariance, the possible $N$-dependent terms in the OPE $J_a[1,0] (0) J_b [0,1](z)$ must be of the form
@@ -139,7 +148,7 @@ The edges of the diagram correspond to the propagator for the free part of holom
 \eeqn
 Explicitly, this is the $(0,2)$-form
 \beqn\label{eqn:propagatorCS}
-P(Z) = \frac{1}{4 \pi^3 r^6} \ep_{ijk} \br Z^{i} \d \br Z^j \d \br Z^k .
+P(Z) = \frac{1}{4 \pi^2 r^6} \ep_{ijk} \br Z^{i} \d \br Z^j \d \br Z^k .
 \eeqn
 
 We first focus on diagram \ref{fig:hcsloopbr} (b).
@@ -150,20 +159,20 @@ The weight is represented by the integral
 where we use coordinates $X = (x_1,x_2,z), Y = (y_1,y_2,w)$ and impose a cutoff $|z-w| \geq \epsilon$.
 In appendix \ref{appx:hcsbr} we evaluate this integral to obtain
 \beqn
-\pi  N^2 K_{ab} \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z - w)^3} \del_{w_i} A^a_1 \del_{w_j} A^b_2 |_{w_i=0},
+\frac{N^2}{2} K_{ab} \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z - w)^3} \del_{w_i} A^a_1 \del_{w_j} A^b_2 |_{w_i=0},
 \eeqn
 where $A_1,A_2$ are the input gauge fields.
 The linear BRST variation $A \mapsto A + \dbar c$ of this diagram thus gives rise to the anomaly
 \beqn
-\pi N^2 K_{ab} \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^3} \del_{w_i} A^a \del_{w_j} \dbar c^b |_{w_i=0}
+\frac{N^2}{2} K_{ab} \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^3} \del_{w_i} A^a \del_{w_j} \dbar c^b |_{w_i=0}
 \eeqn
 Integrating by parts and taking $\epsilon \to 0$ this becomes
 \beqn
-\pi N^2 K_{ab} \ep_{ij} \del^3 \delta_{z_1=z_2} \del_{w_i} A^a \del_{w_j} \dbar c^b |_{w_i=0} .
+\frac{N^2}{2} K_{ab} \ep_{ij} \del^3 \delta_{z_1=z_2} \del_{w_i} A^a \del_{w_j} \dbar c^b |_{w_i=0} .
 \eeqn
-In this form it is clear that this anomaly is canceled by introducing the term in the OPE in \eqref{eqn:Jbr} with \footnote{This answer can of course be adjusted into the more canonical result $\beta = {N^2 \over 2}$ by adjusting the normalization of the length of the Mukai vector.}
+In this form it is clear that this anomaly is canceled by introducing the term in the OPE in \eqref{eqn:Jbr} with
 \beqn
-\beta = \pi N^2 .
+\beta = \frac{N^2}{2} .
 \eeqn
 
 
@@ -287,7 +296,7 @@ We obtain this by applying the divergence operator to the kernel for the operato
 As usual, we use $Z = (Z_1 = w_1, Z_2=w_2,Z_3=z)$ for the holomorphic coordinate on $\C^3$.
 Using the Calabi--Yau form one can express the integral kernel for the operator $\dbar^* \tr^{-1}$ in terms of the distributional Kodaira--Spencer field
 \beqn
-P(Z) = \frac{1}{4 \pi^3 r^6} \ep_{ijk} \br Z^{i} \d \br Z^j \d \br Z^k \del^3,
+P(Z) = \frac{1}{4 \pi^2 r^6} \ep_{ijk} \br Z^{i} \d \br Z^j \d \br Z^k \del^3,
 \eeqn
 where $\del^3 = \del_{Z_1} \del_{Z_2} \del_{Z_3}$.
 %This is a smooth section of $\PV^{3,2}(\C^3)$ away from $0 \in \C^3$.
@@ -309,7 +318,7 @@ To obtain this, we first apply the divergence operator to $P$
 \]
 Explicitly this is
 \beqn
-\bP (Z) = \frac{3}{4 \pi^3 r^8} \ep_{ijk} \ep_{lmn} \br Z^{i} \br Z^l \d \br Z^j \d \br Z^k \del_{Z_m} \del_{Z_n} .
+\bP (Z) = \frac{3}{4 \pi^2 r^8} \ep_{ijk} \ep_{lmn} \br Z^{i} \br Z^l \d \br Z^j \d \br Z^k \del_{Z_m} \del_{Z_n} .
 \eeqn
 We can expand this in terms of the coordinates $Z = (z,w_1,w_2)$ where $z$ is the holomorphic coordinate along the defect.
 Then, 
@@ -379,11 +388,11 @@ From this we see that the anomaly associated to this diagram will only involve t
 
 In appendix \ref{appx:ksbr} we evaluate this integral to obtain
 \beqn
- {N \over 2}  \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^2} \del_{w_i} \mu_1 \del_{w_j} \mu_2|_{w_i=0,\eta=0} .
+ -{N \over 4}  \ep_{ij} \int_{|z-w| \geq \epsilon} \frac{1}{(z-w)^2} \del_{w_i} \mu_1 \del_{w_j} \mu_2|_{w_i=0,\eta=0} .
 \eeqn
 From this expression, we see that there is a gauge anomaly which can be canceled upon introducing the following term OPE
 \beqn
-\til J_0^i[1,0](0) \til J_0^j[0,1](z,\what \bfeta') \simeq \cdots \boxed{+ \ep^{ij} \frac{1}{z^2} N} .
+\til J_0^i[1,0](0) \til J_0^j[0,1](z,\what \bfeta') \simeq \cdots \boxed{- \ep^{ij} \frac{1}{4z^2} N} .
 \eeqn
 The $\cdots$ indicates terms in the OPE which do not depend on the backreaction that we characterized in the previous section (and possibly terms that arise from anomalies associated to other diagrams involving the backreaction, but in this case there are none).
 
@@ -407,7 +416,7 @@ G_{\alpha,0}[1,0], G_{\alpha,0} [0,1], G_{\gamma,0}[1,0], G_{\gamma,0}[0,1]
 comprise the (small) $\cN=4$ superconformal vertex algebra at central charge zero.
 We have just seen that the backreaction introduces a level $k = {N \over 2}$ of the $\lie{sl}(2)$ current algebra generated by the fields $J_0[2,0], J_0[1,1], J_0[0,2]$.
 This level completely determines the central charge of the superconformal algebra generated by these operators, $c = 12 k = 6 N$.
-One can alternatively directly compute the corresponding integrals corresponding to the $TT$ (after putting them on-shell) and $GG$ OPEs and find precisely the remaining central extension terms (after fixing the normalization of $N$). 
+One can alternatively directly compute the corresponding integrals corresponding to the $TT$ (after putting them on-shell) and $GG$ OPEs and find precisely the remaining central extension terms.
 
 %Since $\mu_{BR}(x)$ only has a $\del_z$-component, and $\mu_{BR}(y)$ only has a $\del_w$ component, we see that the only component of $\bP$ which contributes to this integral is $\del_{x_2} \del_{y_1}$ which reads
 %\beqn
@@ -419,16 +428,16 @@ We have presented the calculation when $k + l =2, r + s =2$.
 This is the only combination of spins that impacts the superconformal algebra. 
 At the level of unconstrained fields we only considered operators $\til J^i [k,l]$ with $k+l = 1$.
 Therefore, the only other possibility we have not yet considered is the OPE between the unconstrained fields $\til J^i [0,0]$ and $\til J^j [1,1]$.
-By a completely similar computation, one finds
+By a completely similar computation, one finds (in the equations below we suppress $\mathcal{O}(1)$ constants, although they can easily be reinstated)
 \beqn
 \til J^i [0,0](0) \til J^j [1,1](z) \simeq \cdots + \eps^{ij} \frac1{z^2} N .
 \eeqn
-At the level of the constrained (on-shell) operators, this becomes 
+At the level of the constrained (on-shell) operators, this becomes (up to dropped constants)
 \beqn
-J[1, 0](0)J[1, 2](z) \sim \cdots + \frac{2N}{z^2}
+J[1, 0](0)J[1, 2](z) \sim \cdots + \frac{N}{z^2}
 \eeqn
 \beqn
-J[0, 1](0)J[2, 1](z) \sim \cdots - \frac{2N}{z^2}.
+J[0, 1](0)J[2, 1](z) \sim \cdots - \frac{N}{z^2}.
 \eeqn
 
 \subsection{Non-central effects from backreaction}
