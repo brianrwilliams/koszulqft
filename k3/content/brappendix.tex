@@ -269,162 +269,75 @@ where we have made the following definitions:
     p_1 &= 2+m_1+m_2+n_1+n_2-a_1-a_2-j_3 \\ p_2 &= 2+k_0+l_0+k_1+k_2+m_1+m_2-a_0-a_1-a_2-b_0-c-j_1 \\  p_3 &= 5+k_1+k_2+m_1+m_2-j_2-j_3+a_0+b_0+c \\ p_4 &= 2+k_1+k_2+m_1+m_2-a_1-a_2.
 \end{align} \endgroup
 %
-%\subsubsection{Type 3: Integral over $d^6X d^6 Y$}
-%\brian{All diagrams we consider give integrals of this type, so it'd be nice to say what the compatibility of $\cI^1,\cI^2$ with $\cI^3$ is.}
-%
-%Finally, we consider the integral where we integrate the bulk vertices over all holomorphic spacetime directions in one shot. For many purposes, this integral, while producing a somewhat more intricate final answer, is often the most natural. 
-%\begin{equation}
-%    \mathcal{I}(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) = \underset{\mathbb{C}^3}{\int} \frac{(x^0)^{k_0} (x^1)^{k_1} (x^2)^{k_2} (\overline{x}^0)^{l_0} (\overline{x}^1)^{l_1} (\overline{x}^2)^{l_2}}{(\vert \vert Z-X \vert \vert^2)^{j_1}} \mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) d^6X \label{eq:main I}
-%\end{equation}
-%where $\vec{k},\vec{l},\vec{m},\vec{n} \in (\mathbf{Z}_{\geq 0})^3, \vec{j} \in (\mathbf{Z}_{>0})^3, Z = (z,0^{\dot{\alpha}}), X = (x^0,x^{\dot{\alpha}}), Y = (y^0,y^{\dot{\alpha}})$, $W = (w,0^{\dot{\alpha}})$, and we have the following definitions:  
-%\begin{equation}
-%    \mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) = \underset{\mathbb{C}^3}{\int} \frac{[\overline{x},\overline{y}] (y^0)^{m_0} (y^1)^{m_1} (y^2)^{m_2} (\overline{y}^0)^{n_0} (\overline{y}^1)^{n_1} (\overline{y}^2)^{n_2}}{(\vert \vert X-Y \vert \vert^2)^{j_2} (\vert \vert Y-W \vert \vert^2)^{j_3}} d^6Y
-%\end{equation}
-%\begin{equation}
-%    [\overline{x},\overline{y}] = \overline{x}^1 \overline{y}^2 - \overline{x}^2 \overline{y}^1.
-%\end{equation}
-%
-%We first integrate over $d^6 Y$. Using Feynman's trick,
-%\begingroup \allowdisplaybreaks \begin{align}
-%    \mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) &= \bigg( \frac{\Gamma(j_2+j_3)}{\Gamma(j_2) \Gamma(j_3)} \bigg) \int_0^1 dt t^{j_2-1} (1-t)^{j_3-1} \underset{\mathbb{C}^3}{\int} \frac{[\overline{x},\overline{y}] (y^0)^{m_0} (y^1)^{m_1} (y^2)^{m_2} (\overline{y}^0)^{n_0} (\overline{y}^1)^{n_1} (\overline{y}^2)^{n_2}}{(t\vert \vert X-Y \vert \vert^2 + (1-t) \vert \vert Y-W \vert \vert^2)^{j_2+j_3}} d^6Y \notag
-%\end{align} \endgroup
-%We shift the integration variable $Y$, $Y \to Y-tX-(1-t)W$, and use the binomial theorem:
-%\begingroup \allowdisplaybreaks \begin{align}
-%    \mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) &= \bigg( \frac{\Gamma(j_2+j_3)}{\Gamma(j_2) \Gamma(j_3)} \bigg) \int_0^1 dt t^{j_2-1} (1-t)^{j_3-1} \sum_{i=0}^{2} \sum_{a_i = 0}^{m_i} \sum_{b_i = 0}^{n_i} {m_i \choose a_i} {n_i \choose b_i} \times \label{eq. 2}\\
-%    &\times (tx^0+(1-t)w)^{m_0-a_0} (tx^1)^{m_1-a_1}(tx^2)^{m_2-a_2}(t\overline{x}^0+(1-t)\overline{w})^{n_0-b_0} (t\overline{x}^1)^{n_1-b_1}(t\overline{x}^2)^{n_2-b_2} \times \notag\\
-%    & \times \underset{\mathbb{C}^3}{\int} \frac{[\overline{x},\overline{y}] (y^0)^{a_0} (y^1)^{a_1} (y^2)^{a_2} (\overline{y}^0)^{b_0} (\overline{y}^1)^{b_1} (\overline{y}^2)^{b_2}}{(\vert \vert Y \vert \vert^2+t(1-t)\vert \vert X-W \vert \vert^2)^{j_2+j_3}} d^6Y \notag
-%\end{align} \endgroup
-%
-%The integral over Y only receives contributions from those terms that are invariant under phase rotations of $y^0$ and $y^{\dot{\alpha}}$. Let us make the following convenient definition for the summations
-%\begingroup \allowdisplaybreaks \begin{align}
-%    \sum_{(a_0,a_1,a_2)}^{(\vec{m},\vec{n})} \equiv \sum_{a_0=0}^{\text{Min}[m_0,n_0]} {m_0 \choose a_0}{n_0 \choose a_0} &\bigg( \sum_{a_1=0}^{\text{Min}[m_1,n_1]} \sum_{a_2=1}^{\text{Min}[m_2,n_2+1]} {n_1 \choose a_1}  {n_2 \choose a_2-1}  \\ &- \sum_{a_1=1}^{\text{Min}[m_1,n_1+1]} \sum_{a_2=0}^{\text{Min}[m_2,n_2]} {n_1 \choose a_1-1}  {n_2 \choose a_2}\bigg) {m_1 \choose a_1} {m_2 \choose a_2} \notag
-%\end{align} \endgroup
-%using which, eq.(\ref{eq. 2}) reduces to
-%\begingroup \allowdisplaybreaks \begin{align}
-%\mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) &= \bigg( \frac{\Gamma(j_2+j_3)}{\Gamma(j_2) \Gamma(j_3)} \bigg) \sum_{(a_0,a_1,a_2)}^{(\vec{m},\vec{n})} \int_0^1 dt t^{j_2-1} (1-t)^{j_3-1}  \times \\
-%    &\times (tx^0+(1-t)w)^{m_0-a_0} (tx^1)^{m_1-a_1}(tx^2)^{m_2-a_2}(t\overline{x}^0+(1-t)\overline{w})^{n_0-a_0} (t\overline{x}^1)^{n_1+1-a_1}(t\overline{x}^2)^{n_2+1-a_2} \times \notag\\
-%    & \times (-2 \pi i)^3 (t(1-t) \vert \vert X-W \vert \vert^2)^{3+a_0+a_1+a_2-j_2-j_3} \int_0^{\infty} \frac{(r^0)^{a_0} (r^1)^{a_1} (r^2)^{a_2} }{r^1+r^2+r^3+1)^{j_2+j_3}} dr^0 dr^1 dr^2 \notag
-%\end{align} \endgroup
-%where we introduced radial coordinates $r^i = \vert y^i \vert^2/(t(1-t)\vert \vert X-W \vert \vert^2)$, and we integrated over $d\theta^i$. \\ \\
-%Integrating over $dr^i$, grouping terms and using the binomial theorem, this simplifies to:
-%\begingroup \allowdisplaybreaks \begin{align}
-%\mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) &= \bigg( \frac{(-2\pi i)^3}{\Gamma(j_2) \Gamma(j_3)} \bigg) \sum_{(a_0,a_1,a_2)}^{(\vec{m},\vec{n})} \Gamma(a_0+1) \Gamma(a_1+1) \Gamma(a_2+1) \Gamma(j_2+j_3-3-a_0-a_1-a_2) \times \notag \\
-%\times& \sum_{b_0=0}^{m_0-a_0} \sum_{c_0=0}^{n_0-a_0} {m_0-a_0 \choose b_0} {n_0 -a_0 \choose c_0} \frac{(x^0)^{b_0} (x^1)^{m_1-a_1} (x^2)^{m_2-a_2} (\overline{x}^0)^{c_0} (\overline{x}^1)^{n_1+1-a_1} (\overline{x}^2)^{n_2+1-a_2}}{(\vert \vert X-W \vert \vert^2)^{j_2+j_3-3-a_0-a_1-a_2}} \times \notag \\
-%\times (w)&^{m_0-a_0-b_0} (\overline{w})^{n_0-a_0-c_0} \int_0^1 dt t^{4+m_1+m_2+n_1+n_2+a_0+b_0+c_0-j_3-a_1-a_2} (1-t)^{2+m_0+n_0+a_1+a_2-j_2-a_0-b_0-c_0} \notag
-%\end{align} \endgroup
-%
-%We next perform the $dt$ integral,
-%\begingroup \allowdisplaybreaks \begin{align}
-%\mathcal{I}_Y (\vec{j};\vec{m}, \vec{n}) &= \bigg( \frac{(-2\pi i)^3}{\Gamma(j_2) \Gamma(j_3)} \bigg) \sum_{(a_0,a_1,a_2)}^{(\vec{m},\vec{n})} \Gamma(a_0+1) \Gamma(a_1+1) \Gamma(a_2+1) \Gamma(j_2+j_3-3-a_0-a_1-a_2) \times \notag \\
-%&\times \sum_{b_0=0}^{m_0-a_0}  \sum_{c_0=0}^{n_0-a_0} {m_0-a_0 \choose b_0} {n_0 -a_0 \choose c_0} \frac{(x^0)^{b_0} (x^1)^{m_1-a_1} (x^2)^{m_2-a_2} (\overline{x}^0)^{c_0} (\overline{x}^1)^{n_1+1-a_1} (\overline{x}^2)^{n_2+1-a_2}}{(\vert \vert X-W \vert \vert^2)^{j_2+j_3-3-a_0-a_1-a_2}} \times \notag \\
-% & \times (w)^{m_0-a_0-b_0} (\overline{w})^{n_0-a_0-c_0} \Gamma(5+m_1+m_2+n_1+n_2+a_0+b_0+c_0-j_3-a_1-a_2) \times \notag \\
-% & \times \frac{\Gamma(3+m_0+n_0+a_1+a_2-j_2-a_0-b_0-c_0)}{\Gamma(8+m_0+m_1+m_2+n_0+n_1+n_1+n_2-j_2-j_3)} \label{eq: I_Y}
-%\end{align} \endgroup
-%
-%We now at last have the following integral, which we must integrate over $d^6X$:
-%\begin{equation*}
-%   \mathcal{I}_X(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) = \underset{\mathbb{C}^3}{\int} \frac{(x^0)^{k_0+b_0} (x^1)^{k_1+m_1-a_1} (x^2)^{k_2+m_2-a_2} (\overline{x}^0)^{l_0+c_0} (\overline{x}^1)^{l_1+n_1+1-a_1} (\overline{x}^2)^{l_2+n_2+1-a_2}}{(\vert \vert Z-X \vert \vert^2)^{j_1} (\vert \vert X-W \vert \vert^2)^{j_2+j_3-3-a_0-a_1-a_2}} d^6X
-%\end{equation*}
-%The steps we need to follow to perform this integral are identical to those of the $d^6Y$ integral: Feynman's trick, shifting the integration variable, using the binomial theorem, and only retaining those terms which are invariant under phase rotations of $x^0$ and $x^{\dot{\alpha}}$. We present the result:
-%\begingroup \allowdisplaybreaks \begin{align}
-%\mathcal{I}_X(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) &= (-2\pi i)^3 \delta_{k_1+m_1}^{l_1+n_1+1} \delta_{k_2+m_2}^{l_2+n_2+1} \frac{\Gamma(j_1+j_2+j_3-3-a_0-a_1-a_2)}{\Gamma(j_1) \Gamma(j_2+j_3-3-a_0-a_1-a_2)} \times \label{eq: I_X} \\
-%&\times \overset{\text{Min}[k_0+b_0,l_0+c_0]}{\sum_{d_0=0}} {k_0+b_0 \choose d_0} {l_0+c_0 \choose d_0} \frac{\Gamma(d_0+1) \Gamma(k_1+m_1+1-a_1) \Gamma(k_2+m_2+1-a_2)}{\Gamma(j_1+j_2+j_3-3-a_0-a_1-a_2)} \times \notag \\
-%&\times \frac{\Gamma(j_1+j_2+j_3-6-a_0-d_0-k_1-k_2-m_1-m_2)}{(\vert z-w \vert^2)^{j_1+j_2+j_3-6-d_0-a_0-k_1-k_2-m_1-m_2}} \sum_{r_0=0}^{k_0+b_0-d_0}  {k_0+b_0-d_0 \choose r_0} \times \notag \\
-%&\times \sum_{s_0=0}^{l_0+c_0-d_0} {l_0+c_0-d_0 \choose s_0} z^{r_0} \overline{z}^{s_0} w^{k_0+b_0-d_0-r_0} \overline{w}^{l_0+c_0-d_0-s_0} \times \notag \\
-%&\times \frac{\Gamma(6+d_0+a_0+k_1+k_2+m_1+m_2+r_0+s_0-j_2-j_3)}{\Gamma(9+a_0+l_0+c_0+b_0+k_0+2k_1+2k_2+2m_1+2m_2-a_1-a_2-j_1-j_2-j_3)} \times \notag \\
-%&\times \Gamma(3+b_0+l_0+c_0+k_0+k_1+k_2+m_1+m_2-d_0-r_0-s_0-a_1-a_2-j_1). \notag
-%\end{align} \endgroup
-%Combining our results eq.(\ref{eq: I_X}) and eq.(\ref{eq: I_X}), we thus find that eq.(\ref{eq:main I}) is given by the following expression:
-%\begingroup \allowdisplaybreaks \begin{align}
-%\mathcal{I}(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) &= \bigg(\frac{(-2 \pi i)^6}{\Gamma(j_1) \Gamma(j_2) \Gamma(j_3)} \bigg) \delta_{k_1+m_1}^{l_1+n_1+1} \delta_{k_2+m_2}^{l_2+n_2+1} \sum \frac{z^{r_0} \overline{z}^{s_0} w^{k_0+m_0-a_0-d_0-r_0} \overline{w}^{l_0+n_0-a_0-d_0-s_0}}{(\vert z-w \vert^2)^{j_1+j_2+j_3-6-d_0-a_0-k_1-k_2-m_1-m_2}} \times \notag \\
-%    &\times {m_0-a_0 \choose b_0} {n_0-a_0 \choose c_0} {k_0+b_0 \choose d_0} {l_0+c_0 \choose d_0} {k_0+b_0-d_0 \choose r_0} {l_0+c_0-d_0 \choose s_0}  \times \notag \\
-%    &\times \frac{\Gamma(a_0+1) \Gamma(a_1+1) \Gamma(a_2+1) \Gamma(d_0+1) \Gamma(k_1+m_1+1-a_1) \Gamma(k_2+m_2+1-a_2)}{\Gamma(8+m_0+m_1+m_2+n_0+n_1+n_2-j_1-j_2)} \times \notag \\
-%    &\times \frac{\Gamma(6+d_0+a_0+k_1+k_2+m_1+m_2+r_0+s_0-j_2-j_3)}{\Gamma(9+a_0+l_0+b_0+c_0+k_0+2k_1+2k_2+2m_1+2m_2-a_1-a_2-j_1-j_2-j_3)} \times \notag \\
-%    \times \Gamma(5+m_1&+m_2+n_1+n_2+a_0+b_0+c_0-a_1-a_2-j_3) \Gamma(3+m_0+n_0+a_1+a_2-a_0-b_0-c_0-j_2) \times \notag \\
-%    &\times \Gamma(j_1+j_2+j_3-6-a_0-d_0-k_1-k_2-m_1-m_2) \times \notag \\
-%    &\times \Gamma(3+b_0+c_0+l_0+k_0+k_1+k_2+m_1+m_2-d_0-r_0-s_0-a_1-a_2-j_1) \notag
-%\end{align} \endgroup
-%where the symbol $\sum$ is a shorthand for:
-%\begin{equation}
-%    \sum = \sum_{(a_0,a_1,a_2)}^{(\vec{m},\vec{n})} \sum_{b_0=0}^{m_0-a_0} \sum_{c_0=0}^{n_0-a_0} \overset{\text{Min}[k_0+b_0,l_0+c_0]}{\sum_{d_0=0}} \sum_{r_0=0}^{k_0+b_0-d_0} \sum_{s_0=0}^{l_0+c_0-d_0} 
-%\end{equation}
-%%\\ 
-%\\
-%A convenient specialization for us is to take $\vec{k} = (1,0,2),\vec{m}=(0,1,0),l_1=0,n_1=0$. Then, this formula reduces to:
-%\begingroup \allowdisplaybreaks \begin{align} 
-%\mathcal{I}(\vec{j};\vec{k},\vec{l};\vec{m}, \vec{n}) &= - \bigg(\frac{2! (-2 \pi i)^6}{\Gamma(j_1) \Gamma(j_2) \Gamma(j_3)} \bigg)\sum_{c=0}^{n_0} \overset{\text{Min}[1,l_0+c_0]}{\sum_{d_0=0}}  \sum_{r_0=0}^{1-d_0} \sum_{s_0=0}^{l_0+c_0-d_0} {n_0 \choose c_0} {l_0+c_0 \choose d_0} {l_0+c_0-d_0 \choose s_0} \times \label{eq: simplified general result} \\
-%&\times \frac{\Gamma(5+n_2+c_0-j_3) \Gamma(4+n_0-c_0-j_2) \Gamma(9+d_0+r_0+s_0-j_2-j_3)}{\Gamma(9+n_0+n_2-j_1-j_2) \Gamma(15+l_0+c_0-j_1-j_2-j_3)} \times \notag \\
-%&\times \Gamma(j_1+j_2+j_3-9-d_0) \Gamma(6+c_0+l_0-d_0-r_0-s_0-j_1) \notag \\
-%&\times \frac{z^{r_0} \overline{z}^{s_0} w^{1-d_0-r_0} \overline{w}^{l_0+n_0-d_0-s_0}}{(\vert z-w \vert^2)^{j_1+j_2+j_3-9-d_0}} \notag 
-%\end{align}\endgroup
-%%
+We will now use the result of this integral to compute the integral associated to our final planar box diagram. 
 
 \subsection{Non-central terms in Kodaira--Spencer theory}\label{appx:noncentral}
 
-Let the notation for the bulk coordinates $X = (z,x),Y=(w,y)$ be as in Appendix \ref{appx:ksbr}.
-Additionally we fix a coordinate $U=(u,0)$ along the brane.
-We will compute the integral
-\beqn
-\int_{X, Y} D_{a,b} \bP(U,X) \mu(X) \bP(X,Y) \mu(Y)  \mu_{BR}(y) 
-\eeqn
-as a function of $u$.
+Let us fix our notation for the bulk coordinates $X = (x^0, x^i), Y = (w, y^i)$, similarly to Appendix \ref{appx:ksbr}. Additionally, we fix a coordinate $Z = (z, 0)$ along the brane. 
 
-First, we set $a=b=0$, so that the denominator in the above integral is
-\beqn
-\|U-X\|^8 \|X-Y\|^8 \|Y\|^4 .
-\eeqn
-Without loss of generality, we consider the test functions
-\beqn
-\mu_1 (X) = f(X) \del_{x_1} \d \zbar, \quad \mu_2 (Y) = g(Y) \del_{y_2} \d \wbar ,
-\eeqn
-where $f,g$ are holomorphic functions of $X,Y$ respectively.
+Our task is to compute the integral
+\begin{equation}
+    \underset{(\mathbb{C})^3 \times (\mathbb{C})^2}{\int} D_{a,b} \bold{P}(Z,X) \mu_1(X) \bold{P}(X,Y) \mu_2(Y) \mu_{BR}(y)
+\end{equation} as a function of $z$.
+Without loss of generality (i.e. other choices will lead to a vanishing integral), we can consider the test functions
+\begin{equation}
+    \mu_1(X) = f(X) \partial_{x_1} d\overline{x}^0 \quad \quad \mu_2(Y) = g(Y) \partial_{y_2} d\overline{y}^0.
+\end{equation} Here, $f, g$ are holomorphic functions of their respective arguments.
+We will also leave the order of the derivatives transverse to the brane, $a, b$, general.
+
+
+%We will compute the integral
+%\beqn
+%\int_{X, Y} D_{a,b} \bP(U,X) \mu(X) \bP(X,Y) \mu(Y)  \mu_{BR}(y) 
+%\eeqn
+%as a function of $u$.
+%
+%First, we set $a=b=0$, so that the denominator in the above integral is
+%\beqn
+%\|U-X\|^8 \|X-Y\|^8 \|Y\|^4 .
+%\eeqn
+%Without loss of generality, we consider the test functions
+%\beqn
+%\mu_1 (X) = f(X) \del_{x_1} \d \zbar, \quad \mu_2 (Y) = g(Y) \del_{y_2} \d \wbar ,
+%\eeqn
+%where $f,g$ are holomorphic functions of $X,Y$ respectively.
+
 Then, the anti-holomorphic differential form appearing in the integral above is
 \begin{multline}
-\left(\eps_{ijk} (\br U_i - \br X_i) \d (\br U_j - \br X_k) \d (\br U_k - \br X_k)\right) \d \zbar\\ \left(\eps_{lmn} (\br X_l - \br Y_l) \d (\br X_m - \br Y_m) \d (\br X_n - \br Y_n)\right)\d \wbar \left(\eps_{pq} \br y_p \d \br y_q \right)
+\left(\eps_{ijk} (\br Z_i - \br X_i) \d (\br Z_j - \br X_k) \d (\br Z_k - \br X_k)\right) \d \overline{x}^0\\ \left(\eps_{lmn} (\br X_l - \br Y_l) \d (\br X_m - \br Y_m) \d (\br X_n - \br Y_n)\right)\d \wbar \left(\eps_{pq} \br y_p \d \br y_q \right).
 \end{multline}
 This is a nonzero multiple of
 \begin{multline}
-\left(\eps_{ij} \br x_i \d \br x_j \d \br u\right) \d \zbar \left(\eps_{mn} (\br z - \br w) (\d \br x_m - \d \br y_m) (\d \br x_n - \d \br y_n) \right)
+\left(\eps_{ij} \br x_i \d \br x_j \d \br u\right) \d \overline{x}^0 \left(\eps_{mn} (\br x^0 - \br w) (\d \br x_m - \d \br y_m) (\d \br x_n - \d \br y_n) \right)
 \d \br w \left(\ep_{pq} \br y_p  \d \br y_q\right) = 
-\# [\br x \br y] (\br z - \br w) \d \br u \d^3 X \d^3 Y .
+\# [\br x \br y] (\br x^0 - \br w) \d \br z \d^3 X \d^3 Y .
 \end{multline}
 
 Recall that the BCOV propagator is a bivector.
 With the choice of input functions, only certain $\del^2$-components of the propagator will contribute nontrivially.
-For example, if we take the $\del_{u-z} \del_{x_i}$ component of $\bP(U,X)$ then only the component $\del_{x_1 - y_1} \del_{x_2-y_2}$ component of $\bP(X,Y)$ may contribute nontrivially.
-This combination contributes the analytic factor $\ep_{ij} \br x_j (\br z - \br w)$ to the integral, since these appear with opposite signs when $i=1,2$ these contributions cancel.
-If we take the $\del_{x_1} \del_{x_2}$ component of $\bP(U,X)$ then only the $\del_{z-w} \del_{x_1-y_1}$ component of $\bP(X,Y)$ may contribute nontrivially.
-This contributes the analytic factor $(\br u - \br z) (\br x_1 - \br y_1)$ to the integral.
+For example, if we take the $\del_{z-x^0} \del_{x_i}$ component of $\bP(Z,X)$ then only the component $\del_{x_1 - y_1} \del_{x_2-y_2}$ component of $\bP(X,Y)$ may contribute nontrivially.
+This combination contributes the analytic factor $\ep_{ij} \br x_j (\br x^0 - \br w)$ to the integral, since these appear with opposite signs when $i=1,2$ these contributions cancel.
+If we take the $\del_{x_1} \del_{x_2}$ component of $\bP(Z,X)$ then only the $\del_{x^0-w} \del_{x_2-y_2}$ component of $\bP(X,Y)$ may contribute nontrivially.
+This contributes the analytic factor $(\br z - \br x^0) (\br x_1 - \br y_1)$ to the integral.
 
-In total, we see that the integral simplifies to $\d \br u$ times 
-\beqn
-\int_{X,Y} \frac{(\br u - \br z) (\br z - \br w) [\br x \br y] (\br x_1 - \br y_1) f(X) g(Y)}{\|U-X\|^8 \|X-Y\|^8 \|Y\|^4} \d^3 X \d^3 Y
-\eeqn
+%In total, we see that the integral simplifies to $\d \br z$ times 
+%\beqn
+%\int_{X,Y} \frac{(\br z - \br x^0) (\br x^0 - \br w) [\br x \br y] (\br x_1 - \br y_1) f(X) g(Y)}{\|Z-X\|^8 \|X-Y\|^8 \|Y\|^4} \d^3 X \d^3 Y
+%\eeqn
 
-\textcolor{red}{Victor's computation below. Need to merge the discussion and uniformize the notation}
-
-Let $Z = (z,0), X = (x^0, x^i), Y = (w, y^i) $.
-\begin{equation}
-    \underset{(\mathbb{C})^3 \times (\mathbb{C})^2}{\int} D_{a,b} \bold{P}(Z,X) \mu_1(X) \bold{P}(X,Y) \mu_2(Y) \mu_{BR}(y)
-\end{equation}
-Without loss of generality, we consider the test functions
-\begin{equation}
-    \mu_1(X) = f(X) \partial_{x_1} d\overline{x}^0 \quad \quad \mu_2(Y) = g(Y) \partial_{y_2} d\overline{y}^0
-\end{equation}
-We find that we must compute the following integral, which occurs as a special case of
-the formula we derived in Appendix A.3.2:
+In total, we find that we must compute the following integral:
 \begin{equation}
     \tau = \underset{(\mathbb{C})^3 \times (\mathbb{C})^2}{\int} \frac{[\overline{x}, \overline{y}] (\overline{x}^1)^a (\overline{x}^2)^b (\overline{z}-\overline{x}^0) (\overline{x}^0 - \overline{w})(\overline{x}^1-\overline{y}^1) f(X) g(Y)}{(\vert \vert Z-
 X \vert \vert^2)^{4+a+b}(\vert \vert X-Y \vert \vert^2)^4 (\vert \vert y \vert \vert^2)^2} d^6X d^4y
 \end{equation}
-Fix the test functions $f(X) = (x^1)^{2+a}, \text{ } g(Y) = (w)^l (y^2)^{1+b}$, and define:
+We will now specialize to the holomorphic test functions $f(X) = (x^1)^{2+a}, \text{ } g(Y) = (w)^l (y^2)^{1+b}$, and define:
 \begin{equation}
     \vec{j} = (4+a+b,4,2) \quad \quad \vec{k} = (0,(x^1)^{2+a},0) \quad \quad \vec{m} = (0, (y^2)^{1+b}) \quad \quad \vec{n} = (n_1, 0) 
 \end{equation}
 \begin{equation}
     \mathcal{A} = \{ (a+1,0),(a,1)\}.
 \end{equation}
-Then, our integral, $\tau$, is given by a linear combinations of our results in eq.(\ref{}):
+Then, our integral, $\tau$, is given by a linear combinations of our results in eq.(\ref{eq:noncentralintegral}):
 \begin{align} 
     \tau = \sum_{(l_1,n_1) \in \mathcal{A}} (-1)^{n_1} \bigg( &- \overline{z} \overline{w} \mathcal{I}^2(\vec{j};\vec{k}; \vec{l} = (0,l_1,b);\vec{m};\vec{n}) +(\overline{z}+\overline{w}) \mathcal{I}^2(\vec{j};\vec{k}; \vec{l} = (1,l_1,b);\vec{m};\vec{n}) \notag \\  &-\mathcal{I}^2(\vec{j};\vec{k}; \vec{l} = (2,l_1,b);\vec{m};\vec{n})\bigg) 
 \end{align}
@@ -433,10 +346,12 @@ Defining $\gamma(p_1,p_2,p_3,p_4,q_1)$ as:
     \gamma(p_1,p_2,p_3,p_4,q_1) = \int_0^1 \int_0^1 ds dt \frac{t^{p_1} (1-t)^{p_2} s^{p_3} (1-s)^{p_4}}{(1-st)^{q_1}}
 \end{equation}
 we find that our linear combination simplifies to:
-\begin{align}
+\begin{align}\label{eq:noncentralanswer}
     \tau = \bigg( \frac{(2\pi)^5 \Gamma(3+a) \Gamma(2+b)}{\Gamma(4+a+b) \Gamma(4) \Gamma(2)}&\bigg) \bigg( \frac{1}{z-w} \bigg)^2 \sum_{(l_1,n_1) \in \mathcal{A}} (-1)^{n_1} \sum_{l_0=0}^2 (\delta_{l_0,0}-\delta_{l_0,2}) \bigg(\frac{1}{2}\bigg)^{l_0} \times \\
     & \times \sum_{c=0}^{l_0} (-1)^{l_0-c} {l_0 \choose c} \gamma(b+n_1,1,l_0-c,2+a+b+c,4+a+b). \notag
 \end{align}
+
+We can take this result, reinstate the overall normalization factors from the propagators and backreaction terms, and perform the remaining $\int dz dw$ integral over the brane coordinates to complete our determination of the OPE. 
 
 
 \end{document}
