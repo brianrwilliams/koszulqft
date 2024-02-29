@@ -10,13 +10,13 @@ We have derived our twisted supergravity theory in the backreacted geometry; we 
 
 In order to enumerate twisted supergravity states, we must understand the boundary divisors of the K3 conifold, which are the geometric support for the asymptotic scattering states that participate in (the holomorphic analogue of) Witten diagram computations\footnote{While we will not study bulk scattering directly in this work, it would be interesting to explore methods to make such bulk computations more efficient, perhaps by generalizing the technology of \cite{Budzik:2022mpd, Budzik:2023xbr} to curved backgrounds.}. 
 
-The idea is to compactify the $K3$ conifold $X^0$ to a super-projective variety $\overline{X^0}$ inside $\CP^4 \times \textrm{Spec}(A).$\footnote{Note that other compactifications are possible, depending on one's application. In \cite{Burns}, the deformed conifold $SL(2, \mathbb{C})$ was not compactified to a quadric, as here, but instead was compactified inside the blow up of a flag variety. That compactification was the one compatible with the symmetries inherent from viewing the deformed conifold as the twistor space of 4d Burns space, which has isometry group $SU(2) \times U(1)$. It would be interesting to extend the analysis of \cite{Burns} to the conifolds of \cite{CP} and the present article, and view them as twistor spaces in turn.}. We give the $\CP^4$ homogeneous coordinates $U_i, W_i, Z$, so that we can complete the K3 conifold defined by equation \ref{eq:k3conifold} to 
+The idea is to compactify the $K3$ conifold $X^0$ to a super-projective variety $\overline{X^0}$ inside $\CP^4 \times \textrm{Spec}(R).$\footnote{Note that other compactifications are possible, depending on one's application. In \cite{Burns}, the deformed conifold $SL(2, \mathbb{C})$ was not compactified to a quadric, as here, but instead was compactified inside the blow up of a flag variety. That compactification was the one compatible with the symmetries inherent from viewing the deformed conifold as the twistor space of 4d Burns space, which has isometry group $SU(2) \times U(1)$. It would be interesting to extend the analysis of \cite{Burns} to the conifolds of \cite{CP} and the present article, and view them as twistor spaces in turn.}. We give the $\CP^4$ homogeneous coordinates $U_i, W_i, Z$, so that we can complete the K3 conifold defined by equation \ref{eq:k3conifold} to 
 \begin{equation}
 \epsilon^{ij}U_i W_j = F Z^2.
 \end{equation}
-The boundary is then at $Z=0$, given by $\epsilon^{ij}U_i W_j = 0$, which is the variety $\CP^1 \times \CP^1 \times \textrm{Spec}(A) \subset \CP^3 \times \textrm{Spec}(A)$. As in \cite{CostelloGaiotto}, the two $\CP^1$'s may be understood, respectively, as the 2-sphere boundary of AdS$_3$, and the $S^2$ base of the $S^3$ factor, viewed as a Hopf fibration. Each $\CP^1$ is naturally acted on by a copy of SL$_2$.
+The boundary is then at $Z=0$, given by $\epsilon^{ij}U_i W_j = 0$, which is the variety $\CP^1 \times \CP^1 \times \textrm{Spec}(R) \subset \CP^3 \times \textrm{Spec}(R)$. As in \cite{CostelloGaiotto}, the two $\CP^1$'s may be understood, respectively, as the 2-sphere boundary of AdS$_3$, and the $S^2$ base of the $S^3$ factor, viewed as a Hopf fibration. Each $\CP^1$ is naturally acted on by a copy of SL$_2$.
 
-To determine the complex structure in the neighborhood of the boundary, we must find coordinates which are holomorphic in the deformed geometry, as described in the previous section. To start, we can endow the two $\CP^1$'s with holomorphic coordinates $w, z$ and anti-holomorphic coordinates $\bar{w}, \bar{z}$ (in addition to the coordinates $\eta$ on $\textrm{Spec}(A)$), and take the $\CP^1$ with coordinates $z, \bar{z}$ to be the boundary of $AdS_3$ on which the dual twisted SCFT will live. In addition, we can specify a coordinate normal to the two boundary spheres by $n$, which has a simple pole at $z=\infty$ and at $w = \infty$. We need to specify the behavior of Kodaira-Spencer fields at $n=0$, where the complement of $n=0$ is the uncompactified K3 conifold. In these coordinates, the holomorphic volume form is 
+To determine the complex structure in the neighborhood of the boundary, we must find coordinates which are holomorphic in the deformed geometry, as described in the previous section. To start, we can endow the two $\CP^1$'s with holomorphic coordinates $w, z$ and anti-holomorphic coordinates $\bar{w}, \bar{z}$ (in addition to the coordinates $\eta$ on $\textrm{Spec}(R)$), and take the $\CP^1$ with coordinates $z, \bar{z}$ to be the boundary of $AdS_3$ on which the dual twisted SCFT will live. In addition, we can specify a coordinate normal to the two boundary spheres by $n$, which has a simple pole at $z=\infty$ and at $w = \infty$. We need to specify the behavior of Kodaira-Spencer fields at $n=0$, where the complement of $n=0$ is the uncompactified K3 conifold. In these coordinates, the holomorphic volume form is 
 \begin{equation}
 \Omega = -{dn dw dz \over n^3} + {F \over n}{dn dw d\bar{w} \over (1 + |w|^2)^2}.
 \end{equation} With these coordinates, one can straightforwardly define twisted supergravity states via the usual AdS/CFT extrapolate dictionary. 
@@ -156,7 +156,7 @@ and another boson of weight $(2,0)$ corresponding to
 \mu \sim n^{-2} \d \log n \d w \delta_{z=0} + \cdots .
 \eeqn 
 
-Here, the ellipses denote additional terms required to express the fields in the holomorphic coordinates of the deformed geometry (see \cite{CP} for the complete expressions in the $T^4$ case). In particular, only a finite number of terms are required to correct the holomorphicity of these expressions, due to the fact that the relations imposed on the coordinates of $\textrm{Spec}(A)$ cause the expansions in the $\eta$'s to truncate. 
+Here, the ellipses denote additional terms required to express the fields in the holomorphic coordinates of the deformed geometry (see \cite{CP} for the complete expressions in the $T^4$ case). In particular, only a finite number of terms are required to correct the holomorphicity of these expressions, due to the fact that the relations imposed on the coordinates of $\textrm{Spec}(R)$ cause the expansions in the $\eta$'s to truncate. 
 
 We consider twisted type IIB supergravity on a Calabi--Yau surface $X$, where $X$ could be $T^4$ or a $K3$ surface. 
 
@@ -179,10 +179,10 @@ The low weight discrepancies break up into two types:
 \item In \cite{deBoerEG} there is an extra factor of $({\bf 0})_S \otimes H^{0,i}(X)$. 
 So, in the case that $X$ is a $K3$ surface there are two extra bosonic operators in the analysis of \cite{deBoerEG}. 
 In \cite{CP} it was pointed out that these are topological operators, annihilated by $L_{-1}$, and have nonsingular OPE with all remaining operators. 
-Notice that these states are removed by hand from the infinite-$N$ ${\rm Sym}^N(K3)$ elliptic genus in \cite{deBoerEG} (as we will review below), because their degeneracy scales with $N$. Though they naturally appear on the SCFT side, and in particular are well-defined for any finite $N$, the Kodaira-Spencer theory does not see them. 
+Notice that these states are removed by hand from the infinite-$N$ ${\rm Sym}^N(K3)$ elliptic genus in \cite{deBoerEG} (as we will review below), because their degeneracy scales with $N$. Though they naturally appear on the SCFT side, and in particular are well-defined for any finite $N$, the minimal Kodaira-Spencer theory does not contain them.
 \item 
 In our analysis there is an extra factor of $(\frac{\bf 1}{\bf 2})_S \otimes H^{2,j}(X)$. 
-In the case that $X$ is a $K3$ surface one can remove these two bosonic states while maintaining an $SO(21)$ symmetry. We will comment more on these modes in \S \ref{sec:tree} when we examine their OPEs. Roughly speaking, they are the twist of the center of mass degrees of freedom, which are often removed in the near-horizon limit in holography. This limit is a bit subtle in twisted supergravity, and we see that these degrees of freedom most naturally remain in the Kodaira-Spencer theory. However, the states that we are interested in form a consistent subalgebra to which we restrict our attention (formally, the additional multiplet contributes as a semidirect product with our subalgebra of interest; it is, in particular, acted upon by the 2d $\mathcal{N}=4$ superconformal algebra).
+In the case that $X$ is a $K3$ surface these two bosonic states can be removed by hand from the spectrum while preserving the $SO(21)$ symmetry. We will comment more on these modes in \S \ref{sec:tree} when we examine their OPEs. Roughly speaking, they are the twist of the center of mass degrees of freedom, which are often removed in the near-horizon limit in holography. This limit is a bit subtle in twisted supergravity, and we see that these degrees of freedom most naturally remain in the Kodaira-Spencer theory. However, the states that we are interested in form a consistent subalgebra to which we restrict our attention (formally, the algebra generated by this additional twisted multiplet is a semidirect product with our subalgebra of interest. Note that it cannot be a trivial direct product and its algebra elements are, in particular, acted upon by the 2d $\mathcal{N}=4$ superconformal algebra).
 \end{itemize}
 
 Denote the single particle index of the supergravity states, described in equation \eqref{eqn:db1}, by $f_{sugra}(q,y)$. 
@@ -225,7 +225,7 @@ By Hartog's theorem this is the algebra generated by the bosonic linear function
 \[
 \eta^2 = \br \eta^2 = \eta_a \eta_b - h_{ab} \eta \br \eta = 0, \qquad \eps^{ij} u_i w_j = F . 
 \]
-\item $\op{Vect}_0\left(X^0 \slash \Spec(A)\right)$ is the Lie algebra of divergence-free holomorphic vector fields which point in the direction of the fibers of $X^0 \to \Spec(A)$ (those holomorphic vector fields preserving the holomorphic volume form on the fibers).
+\item $\op{Vect}_0\left(X^0 \slash \Spec(R)\right)$ is the Lie algebra of divergence-free holomorphic vector fields which point in the direction of the fibers of $X^0 \to \Spec(R)$ (those holomorphic vector fields preserving the holomorphic volume form on the fibers).
 \item $\Pi(-)$ denotes parity shift, so that this is a Lie superalgebra.
 \item The nontrivial Lie brackets (and anti-brackets) are:
 \beqn
@@ -235,10 +235,10 @@ By Hartog's theorem this is the algebra generated by the bosonic linear function
 [f_i, g_j] & = \eps_{ij} \Omega^{-1} \left( \del f_i \wedge \del g_j\right) 
 \end{aligned}
 \eeqn
-where $V \in \left(X^0 \slash \Spec(A)\right)$, $f_i,g_j \in \cO(X^0) \otimes \Pi \C^2$.
+where $V \in \left(X^0 \slash \Spec(R)\right)$, $f_i,g_j \in \cO(X^0) \otimes \Pi \C^2$.
 \end{itemize}
 
-A characterization of the global symmetry algebra will follow from the computation of OPE's of the boundary CFT. As in the examples of \cite{CostelloGaiotto, CP}, this global symmetry algebra is large enough to fix the \textit{planar} 2 and 3-point functions\footnote{In \cite{CP} it was shown that, for $N \rightarrow \infty$, all two-point functions of states with $SU(2)_R$ spin $\geq 1$ vanish. The same argument holds in this case, though of course at finite $N$ there will be nonvanishing 2-pt functions.}.
+A characterization of the global symmetry algebra will follow from the computation of OPEs of the boundary CFT (more precisely, its chiral algebra of holomorphic symmetries). As in the examples of \cite{CostelloGaiotto, CP}, this global symmetry algebra is large enough to fix the \textit{planar} 2 and 3-point functions\footnote{In \cite{CP} it was shown that, for $N \rightarrow \infty$, all two-point functions of states with $SU(2)_R$ spin $\geq 1$ vanish. The same argument holds in this case, though of course at finite $N$ there will be nonvanishing 2-pt functions.}.
 
 %In the remainder of this section we highlight some important properties of this global symmetry algebra.
 
