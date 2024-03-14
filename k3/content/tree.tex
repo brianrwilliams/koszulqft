@@ -4,7 +4,9 @@
 
 \section{Tree-level OPEs}\label{sec:tree}
 
-In this section we initiate our computation of planar OPEs of the chiral algebra, using the same Koszul duality techniques as in \cite{CP}, by first considering contributions from tree diagrams. Tree diagrams, as we will see, correspond to the twisted open-closed string theory in flat space (i.e. before considering the backreaction of the D-branes). We will first recall the Koszul duality approach to twisted holography pioneered in \cite{CostelloM2, CP} (see \cite{PW} for a review of Koszul duality, \cite{Ishtiaque:2018str, Gaiotto:2019wcc, Oh:2020hph} for more on Koszul duality in twisted holography, and \cite{Mezei:2017kmw, Gaiotto:2020vqj,  Budzik:2021fyh, Oh:2021bwi} for additional, closely related twisted holographic explorations). Koszul duality enables us to \textit{derive} the planar chiral algebra from our knowledge of the twisted supergravity dual. In this way, Koszul duality provides a way to extract twisted CFT data, encoded in the technically challenging chiral de Rham complex, using more tractable supergravity computations\footnote{A complementary approach, compatible with a topological (as opposed to holomorphic) twist, is to study the rings of chiral primaries in symmetric orbifold theories \cite{Li:2020zwo, Ashok:2023mow, Ashok:2023kkd}. Chiral primaries are 1/2-BPS states, comprised of short multiplets with respect to both the holomorphic and anti-holomorphic $\mathcal{N}=4$ algebras, and have nonsingular OPEs with one another. Koszul duality is sensitive to 1/4-BPS states but only captures the (purely holomorphic) singular terms of the chiral algebra OPEs. It would be interesting to reproduce (the holomorphic halves of) the chiral ring structure coefficients from our Kodaira-Spencer theory.}. 
+In this section we initiate our computation of planar OPEs of the chiral algebra, using the same Koszul duality techniques as in \cite{CP} (to which we refer for a more complete discussion), by first considering contributions from tree diagrams. Tree diagrams, as we will see, correspond to the twisted open-closed string theory in flat space (i.e. before considering the backreaction of the D-branes). We will first recall the Koszul duality approach to twisted holography pioneered in \cite{CostelloM2, CP} (see \cite{PW} for a physical review of Koszul duality) \footnote{See also \cite{Ishtiaque:2018str, Gaiotto:2019wcc, Oh:2020hph} for more on Koszul duality in twisted holography, and \cite{Mezei:2017kmw, Gaiotto:2020vqj,  Budzik:2021fyh, Oh:2021bwi} for additional, closely related twisted holographic explorations}. 
+
+Koszul duality enables us to \textit{derive} the planar chiral algebra from our knowledge of the twisted supergravity dual. In this way, Koszul duality provides a way to extract twisted CFT data, encoded in the technically challenging chiral de Rham complex, using more tractable supergravity computations\footnote{A complementary approach, compatible with a topological (as opposed to holomorphic) twist, is to study the rings of chiral primaries in symmetric orbifold theories \cite{Li:2020zwo, Ashok:2023mow, Ashok:2023kkd}. Chiral primaries are 1/2-BPS states, comprised of short multiplets with respect to both the holomorphic and anti-holomorphic $\mathcal{N}=4$ algebras, and have nonsingular OPEs with one another. Koszul duality is sensitive to 1/4-BPS states but only captures the (purely holomorphic) singular terms of the chiral algebra OPEs. It would be interesting to reproduce (the holomorphic halves of) the chiral ring structure coefficients from our Kodaira-Spencer theory.}. The method is to write down the most general possible bulk-brane coupling and compute the BRST variation of all possible bulk-boundary (or Witten-like) diagrams order by order in perturbation theory. In this work, we will focus only on the diagrams that contribute in the $N \rightarrow \infty$ limit. Demanding that the sum of the BRST variations of all contributing diagrams at a given order vanish results in constraints on the operator product of the local operators on the brane worldvolume; these operators generate the chiral algebra of the twisted SCFT, and so Koszul duality directly extracts their OPEs.
 
 We begin on flat space. In the next section, we will incorporate planar diagrams encoding the backreaction of the D1-D5 system. These are the diagrams responsible for deforming the initial flat space geometry to the K3 conifold. It was explained in \cite{CP} that, strikingly, only a finite number of such backreaction diagrams contribute at each order in the ${1 \over \sqrt{N}}$ expansion. Typically, one would have to re-sum an infinite number of such diagrams to obtain the deformed geometry. This simplification allows us to derive the chiral algebra as a deformation around flat space, using the perturbative, Feynman diagrammatic approach of Koszul duality. In particular, the complete, backreacted planar chiral algebra we will compute in the next two sections has the global subalgebra we derived from a different point of view in \S \ref{sec:globalsymm}. 
 
@@ -83,7 +85,7 @@ If $\cO = \cO(\eta)$ is any of the operators defined above, then the Fourier-dua
 \cO(\what\eta) = e^{\eta \what{\eta}} \cO(\eta) |_{\eta \br \eta} ,
 \eeqn
 with a similar formula valid in the case of an arbitrary ring $R$ with trace.
-We will expand the OPE's that follow in this Fourier dual coordinate.
+We will expand the OPEs that follow in this Fourier dual coordinate.
 Explicitly, if 
 \beqn
 \cO(\eta) = \cO + \cO_\eta \eta + \cO_{\Hat{\eta}} \Hat{\eta} + \cO_{\eta_a} \eta_a + \cO_{\eta \br \eta} \eta \br \eta 
@@ -111,7 +113,7 @@ The gauge variation of $\mu_1$ is
 & + \partial_{w_2} \fc_\gamma\partial_z \alpha -  \partial_z\fc_\gamma \partial_{w_2} \alpha + \partial_{w_2} \fc_\alpha \partial_z \gamma - \partial_z \fc_\alpha \partial_{w_2} \gamma .
 \end{align*}
 For now, we can disregard the terms involving $\fc_\gamma$ and $\alpha$ or $\fc_\alpha$ and $\gamma$.
-These will play a role later on when we constrain the OPE's involving the operators $G_\alpha, G_\gamma$.
+These will play a role later on when we constrain the OPEs involving the operators $G_\alpha, G_\gamma$.
 
 Inserting this gauge variation into the coupling to $\til{J}^i[r,s]$, we see that the first term, $\dbar \mf{c}_1$, vanishes by integration by parts.  
 Cancellation of the remaining terms will give us constraints on the OPE coefficients.
@@ -251,18 +253,18 @@ As above, on the right hand side all operators are evaluated at $z = 0$ and with
 Note that the operators $J[r,s]$ with $r + s = 2$ which are independent of $\what{\eta}$ satisfy the OPE of the $\mf{su}(2)$ Kac-Moody algebra at level zero.
 We will get a nontrivial level once we include the contribution from the backreaction, which we do in \S \ref{sec:br}.
 
-The OPE's described above lead to a mode algebra that is easy to describe and interpret.
+The OPEs described above lead to a mode algebra that is easy to describe and interpret.
 Let the $n$th mode of $J[r,s]$ be
 \beqn
 J[r,s]_n \define \oint \d z \; z^{-n-1+(r+s)/2} J[r,s](z) .
 \eeqn
-The OPE's above lead to the relation
+The OPEs above lead to the relation
 \beqn
 [J[r,s]_n , J[r',s']_{n'}] = (sr' - rs') J[r+r'-1,s+s'-1]_{n+n'} ,
 \eeqn
 which we can interpret geometrically as follows.
 
-In the case that the hyperK\"ahler surface on which we compactify type IIB supergravity is $T^4$ it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPE's of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
+In the case that the hyperK\"ahler surface on which we compactify type IIB supergravity is $T^4$ it is shown in \cite{CP} that the mode algebra corresponding to this full collection of OPEs of the $J$-operators can be expressed as the super loop space of the Lie algebra $\fw_{\infty}$ of Hamiltonian vector fields on $\C^2$ \footnote{This is the quotient of the Lie algebra of functions on $\C^2$, which equipped with the standard Poisson bracket, by its center consisting of the constant functions.}
 This is the Lie algebra $\cL^{1|4} \fw_\infty$ whose elements have the form
 \beqn
 z^{n} f(w_1,w_2; \eta_a)
@@ -354,7 +356,7 @@ In a completely similar way one can deduce the $\til{T} \til{J}^2$ OPE
 
 \subsubsection{}
 
-Using the $\til{T} \til{J}^i$ and $\til{J}^i \til{J}^2$ OPE's that we have computed, we deduce the OPE's between the on-shell operators $T$ and $J^i$ using \eqref{eqn:onshell}.
+Using the $\til{T} \til{J}^i$ and $\til{J}^i \til{J}^2$ OPEs that we have computed, we deduce the OPEs between the on-shell operators $T$ and $J^i$ using \eqref{eqn:onshell}.
 %\begin{equation} 
 %	\begin{split}
 %		T[r,s] &:=  \til{T}[r,s] - \frac{1}{2(r+1)} \partial_z \til{J}^1[r+1,s] - \frac{1}{2(s+1)} \partial_z \til{J}^2[r,s+1] \\
@@ -377,7 +379,7 @@ On the right hand side, all operators are evaluated at the variables $\what{\eta
 \label{sec:TT1}
 
 Following the same logic we constrain the $\til{T}\til{T}$ OPE. 
-These OPE's are determined by terms in the BRST variation of $\mu_z$ which involve $c_z$ and $\mu_z$. 
+These OPEs are determined by terms in the BRST variation of $\mu_z$ which involve $c_z$ and $\mu_z$. 
 
 Proceeding as above we set
 \begin{align*}
@@ -397,7 +399,7 @@ Integrating by parts and switching to the Fourier dual odd coordinates, we find 
 
 \subsubsection{}
 
-Using the $\til{T} \til{T}$ and $\til{J}^i \til{J}^j$ OPE's that we have computed, we deduce the OPE's between the on-shell operator $T$ and itself using \eqref{eqn:onshell}.
+Using the $\til{T} \til{T}$ and $\til{J}^i \til{J}^j$ OPEs that we have computed, we deduce the OPEs between the on-shell operator $T$ and itself using \eqref{eqn:onshell}.
 %\begin{equation} 
 %	\begin{split}
 %		T[r,s] &:=  \til{T}[r,s] - \frac{1}{2(r+1)} \partial_z \til{J}^1[r+1,s] - \frac{1}{2(s+1)} \partial_z \til{J}^2[r,s+1] \\
@@ -472,7 +474,7 @@ We integrate by parts to rewrite the right hand side as
 + (r+k) \int_{z'',\eta_a''} \til{J}^2[r+k-1,s+l] (z'',\eta_a'') \partial_{z''} H(z'',\zbar'', \eta_a'') G(z'', \zbar'', \eta_a'') .
 \end{multline}
 
-From these expressions we can read off the OPE's just as above. 
+From these expressions we can read off the OPEs just as above. 
 We obtain
 \begin{multline}
 G_{\alpha} [r,s] (0,\what\eta_a) G_{\gamma}[k,l](z,\what\eta_a') \simeq  - (s+l) \frac{1}{z^2} \til{J}^1[r+k, s+k-1] + (r + k) \frac1{z^2} \til{J}^2 [r+k-1, s+l] \\
@@ -482,7 +484,7 @@ G_{\alpha} [r,s] (0,\what\eta_a) G_{\gamma}[k,l](z,\what\eta_a') \simeq  - (s+l)
 
 \subsubsection{}
 
-Using \eqref{eqn:onshell} we obtain the on-shell $G^\alpha-G^\gamma$ OPE's
+Using \eqref{eqn:onshell} we obtain the on-shell $G^\alpha-G^\gamma$ OPEs
 \beqn
 \begin{aligned}[]
 G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s -1](0) + {1 \over z^2}J[m + r, n + s](0) \\ \nonumber
@@ -491,16 +493,14 @@ G^{\alpha}[m, n](0)G^{\gamma}[r, s](z) &\sim {(nr-ms) \over z}T[m + r -1, n + s 
 \eeqn
 On the right hand side, all operators are evaluated at the variables $\what{\eta} +\what{\eta}'$.
 
-
-
 \subsection{$TG$ OPE}
 
 The $TG$ OPE can be computed similarly. For brevity, we will simply record the result in the next section.
 
 \subsection{Tree-level on-shell OPEs}
 
-The OPE's we have just computed completely characterize the tree-level defect chiral algebra.
-In the final part of this section we summarize all tree-level OPE's that we have deduced above.
+The OPEs we have just computed completely characterize the tree-level defect chiral algebra.
+In the final part of this section we summarize all tree-level OPEs that we have deduced above.
 In the next section we will characterize planar backreaction effects effects (which are certain planar diagrams of loop topology) which deform and centrally extend this tree-level chiral algebra.
 
 
@@ -544,7 +544,7 @@ J[m, n](0)T[0, 0](z) &\sim {1 \over 2 z^2}\left(m + n\right)J[m , n ](0) +{1 \ov
 \end{align}
 
 We have so far discussed OPEs that come from cancelling the BRST variation of bulk/defect Feynman diagrams that have the topology of tree diagrams. However, they do not yet constitute the complete planar, i.e. $N \rightarrow \infty$, chiral algebra. In particular, we have not accounted for the effects of backreaction, which will serve to deform and centrally extend the planar algebra. 
-For example, observe that tree-level OPE's of the lowest $\bfeta$-component of the operators
+For example, observe that tree-level OPEs of the lowest $\bfeta$-component of the operators
 \beqn
 J[r,s], T[0,0], G_\alpha[k,\ell], G_\gamma[k,\ell],
 \eeqn
@@ -636,7 +636,7 @@ It would be very interesting to understand if other techniques from homological 
 
 
 	\end{tikzpicture}
-	\caption{All diagrams that contribute in the planar limit.  Diagrams $(a)$ and $(c)$ scale like $\sim \mathcal{O}(1)$ in the large-$N$ limit, and comprise 3-pt functions. We have computed the chiral algebra OPEs arising from Diagrams $(a)$ in this section. Diagrams $(b)$ and $(d)$ scale like $\sim \mathcal{O}(N)$ in the  large-$N$ limit and contribute to the 2-pt function or central extension of the algebra (terms in the OPE proportional to the identity operator). \label{fig:alldiagramsplanar}}
+	\caption{All diagrams that contribute in the planar limit. The solid vertical line represents the stack of $N$ branes. Wiggly lines represent Kodaira-Spencer propagators; dashed lines represent backreaction legs; circles anchored on the brane represent local operators in the chiral algebra. Diagrams $(a)$ and $(c)$ scale like $\sim \mathcal{O}(1)$ in the large-$N$ limit, and comprise 3-pt functions. We have computed the chiral algebra OPEs arising from Diagrams $(a)$ in this section. Diagrams $(b)$ and $(d)$ scale like $\sim \mathcal{O}(N)$ in the  large-$N$ limit and contribute to the 2-pt function or central extension of the algebra (terms in the OPE proportional to the identity operator). \label{fig:alldiagramsplanar}}
 \end{figure}
 
 

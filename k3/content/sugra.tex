@@ -330,7 +330,7 @@ We denote by
 \beqn
 \int^\Omega_{\C^3} (-)|_{\eta \br \eta} \colon \PV^{3,3} \otimes R \to \eta \br \eta \PV^{3,3}  \to \C
 \eeqn
-the projection onto the summand $\C \eta \br \eta \subset A$ followed by integration as in \eqref{eqn:cyintegral}.
+the projection onto the summand $\C \eta \br \eta \subset R$ followed by integration as in \eqref{eqn:cyintegral}.
 We emphasize that the notation $(-)|_{\eta \br{\eta}}$ means we pick up only the $\eta \br{\eta}$ component.
 
 
@@ -345,7 +345,7 @@ This field does not propagate, so we can (and will) impose the additional constr
 \begin{equation}\label{eq:nonprop} 
 	\partial_{\theta^1} \partial_{\theta^2} \partial_{\theta^3} \mu (z,\zbar,\theta,\br{\theta},\eta) = 0. 
 \end{equation}
-This constraint only removes a single topological degree of freedom and hence will not significantly modify quantities like OPE's later on.
+This constraint only removes a single topological degree of freedom and hence will not significantly modify quantities like OPEs later on.
 
 Next, let us expand the superfield $\mu$ only in the $\theta^i$ variables:
 \begin{equation} 
@@ -395,7 +395,7 @@ Just as when we twist a field theory, when we twist a supergravity theory the gh
 	%\item The fields $\alpha$, $\gamma$ have ghost number $-1$, and are fermionic.
 \end{enumerate}
 With these choices one can check that the action \eqref{eqn:K3action} is ghost number zero.
-Note that in the case $R = \C$ the choices of ghost numbers we take here is in agreement of the standard presentation of Kodaira--Spencer theory on $\C^3$ as in \cite{CostelloGaiotto}\footnote{See also \cite{Bonetti:2016nma} for the first exploration of the gravitational dual of the chiral algebra subsector}.
+Note that in the case $R = \C$ the choice of ghost numbers we take here is in agreement of the presentation of Kodaira--Spencer theory on $\C^3$ as in \cite{CostelloGaiotto}, who used this formulation to explore the chiral algebra subsector of 4d $\mathcal{N}=4$ SYM and its twisted gravity dual \footnote{See also \cite{Bonetti:2016nma} for the first exploration of the gravitational dual of the chiral algebra subsector of 4d $\mathcal{N}=4$ SYM.}.
 
 
 \subsection{Compactification and twisted multiplets}
@@ -455,7 +455,7 @@ The field $\mu_{IIB}$ decomposes as
 where the divergence is with respect to the CY form on $\C^3$.
 We decompose $\Gamma$ further as $(\gamma_{1,1}^{a'}, \til \gamma_{1,1}^\omega)$ where $\til \gamma_{1,1}^\omega \in \Omega^{0,\bu}(\C^3)$ is associated to the K\"ahler form $\omega \in H^{1,1}(Y)$ and $a' = 1,\ldots,19$ labels the remaining cohomology classes in $H^{1,1}(Y)$.
 
-Similarly, if we neglect topological degrees of freedom, the field $\rho_{type\;I}$ decomposes as 
+Similarly, if we neglect topological degrees of freedom, the field $\rho_{IIB}$ decomposes as 
 \beqn
 (\rho, \alpha_{2,0}, B) \in \left(\PV^{1,\bu}(\C^3)[1] \otimes H^{2,2}(Y) \oplus \PV^{1,\bu}(\C^3)[1] \otimes H^{2,0}(Y) \right) \cap \ker \del \oplus \Omega^{0,\bu}(\C^3) \otimes H^{1,1}(Y) ,
 \eeqn
@@ -524,7 +524,7 @@ N \define \ip{F, F}
 using the inner product on $H^2(Y)$. 
 Explicitly, if $F = f \eta + \br f \br \eta + f^a \eta_a$ for $f, \br f, f_a$ complex numbers, then $N = 2 f \br f + f^{a} f^{b} h_{ab}$ where $h_{ab}$ is the fixed non-degenerate symmetric pairing. Then the D-brane charge is related to the number of D1-D5 branes in the original duality frame $N \sim N_1 N_5$ \footnote{We will always work in the supergravity approximation, and neglect the difference between the D-brane charges and numbers of D-branes in this work.}. (To satisfy the primitivity condition, we assume $N_1, N_5$ are coprime. Since the supergravity theory is only sensitive to the product $N$, rather than the constituents $N_1, N_5$, it is often convenient to take $N_1 = N, N_5 = 1$).
 
-Notice that the \textit{length} of the D-brane charge vector $F^2$ is of order $N$, so that anything proportional to the lattice vector itself (very naively; see the previous parenthetical) scales like $\mathcal{O}(N^{1/2})$. We will always work in the supergravity limit in which any formal series in the inverse of these parameters is treated as an asymptotic series. More generally, let us explicate the parameters available to us in twisted supergravity. Exactly as in \cite{CP}, the Kodaira-Spencer Lagrangian on flat space comes with an overall power of ${1 \over g_s^2}$ with $g_s$ the string coupling constant, which can be completely absorbed by rescaling of the fermionic variables $\eta_a \rightarrow {g_s}^{-1/2}\eta_a$. However, in the backreacted geometry, rescaling the fermionic variables rescales the D-brane charge vector $F$ by ${1 \over g_s}$ and $N$ by ${1 \over g_s^2}$ so that $g_s \sim {1 \over \sqrt{N}}$ as usual. We will always perform this rescaling. Notice that it is convenient for us to start with flat space and treat the backreaction \textit{perturbatively}, i.e. as a small-$N$ expansion; as in \cite{CP}, we find that the backreaction truncates to a finite series due to the presence of the fermionic coordinates, so one can work equally well in small-$N$ (which is convenient for the Koszul duality computations in the sequel, or in large-$N$ (as usual for holography) \footnote{By contrast, \cite{CostelloGaiotto} works in the exact deformed geometry, rather than perturbatively around flat space, so that $N$ is fixed immediately as the period of the holomorphic volume form. It is a phenomenological observation in twisted holographic computations that observables either truncate to finite series in $N$ or can be resummed to quantities analytic in $N$, allowing us to match small-$N$ (Koszul duality) expansions with the large-$N$ holographic expansions; it would be desirable to have a more fundamental proof of these observations.}.
+Notice that the \textit{length} of the D-brane charge vector $F^2$ is of order $N$. We will always work in the supergravity limit in which any formal series in the inverse of these parameters is treated as an asymptotic series. More generally, let us explicate the parameters available to us in twisted supergravity. Exactly as in \cite{CP}, the Kodaira-Spencer Lagrangian on flat space comes with an overall power of ${1 \over g_s^2}$ with $g_s$ the string coupling constant, which can be completely absorbed by rescaling of the fermionic variables $\eta_a \rightarrow {g_s}^{-1/2}\eta_a$. However, in the backreacted geometry, rescaling the fermionic variables rescales the D-brane charge vector $F$ by ${1 \over g_s}$ and $N$ by ${1 \over g_s^2}$ so that $g_s \sim {1 \over \sqrt{N}}$ as usual. We will always perform this rescaling. Notice that it is convenient for us to start with flat space and treat the backreaction \textit{perturbatively}, i.e. as a small-$N$ expansion; as in \cite{CP}, we find that the backreaction truncates to a finite series due to the presence of the fermionic coordinates, so one can work equally well in small-$N$ (which is convenient for the Koszul duality computations in the sequel), or in large-$N$ (as usual for holography) \footnote{By contrast, \cite{CostelloGaiotto} works in the exact deformed geometry, rather than perturbatively around flat space, so that $N$ is fixed immediately as the period of the holomorphic volume form. It is a phenomenological observation in twisted holographic computations that observables (at the very least, observables involving operators with conformal weights that do not scale with $N$) either truncate to finite series in $N$ or can be resummed to quantities analytic in $N$, allowing us to match small-$N$ (Koszul duality) expansions with the large-$N$ holographic expansions; it would be desirable to have a more fundamental proof of these observations.}.
  
 
 Generally, the backreaction deforms the geometry away from the locus of the brane. 
@@ -535,14 +535,14 @@ In the case of the compactification of the IIB string on $T^4$, the resulting ba
 Our case is similar in that the branes are supported along the same locus as in \cite{CostelloGaiotto, CP}.
 The difference is that, compared to \cite{CostelloGaiotto}, we are working with a bigger space of fields, roughly extended by the cohomology of the $K3$ surface.
 Recall that $R = H^\bu(Y)$ denoted the cohomology ring of the $K3$ surface.
-Notice that the ring $A$ is canonically augmented by the map which sends all non-unit generators to zero. %via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_R$.
-A useful perspective on the extended version of Kodaira--Spencer theory we obtain by compactification along $K3$ is as a family of theories over the scheme $\op{Spec} A$.
+Notice that this algebra is canonically augmented by the map which sends all non-unit generators to zero (see \cite{PW} for a physical interpretation of the augmentation and its relationship to Koszul duality). %via integration $\int_{K3} \colon A \to \C$ and hence $A$ is a local ring whose augmentation ideal we denote $\lie{m}_R$.
+A useful perspective on the extended version of Kodaira--Spencer theory we obtain by compactification along $K3$ is as a family of theories over the scheme $\op{Spec} R$.
 This family has the property that over the augmentation ideal $\lie{m}_R$ we obtain ordinary Kodaira--Spencer theory.
 We will see that in the case of type IIB compactified on a $K3$ surface that the backreaction determines an infinitesimal deformation of the complex manifold $\C^3 \setminus \C$ over $\Spec R$. 
  
-If $A$ is any local ring, an infinitesimal deformation of a complex manifold $M_0$ over $\Spec R$ is an element 
+If $R$ is any local ring, an infinitesimal deformation of a complex manifold $M_0$ over $\Spec R$ is an element 
 \beqn
-\mu_{def} \in \PV^{1,1}(M_0) \otimes \mathfrak{m}_A 
+\mu_{def} \in \PV^{1,1}(M_0) \otimes \mathfrak{m}_R 
 \eeqn
 satisfying the Maurer--Cartan equation.
 In our case, $M_0 = \C^3 \setminus \C$ and $\mu_{def}$ is a field sourced by the branes. 
@@ -614,7 +614,7 @@ In addition to the relations satisfied by the variables $\eta,\br \eta, \eta_a$,
 \beqn\label{eq:k3conifold}
 u_2 w_1 - u_1 w_2 = F .
 \eeqn
-We denote this geometry by $X$, which the above formulas have expressed as a quadratic cone inside $\C^4 \times \Spec(A)$, where $u_i,w_j$ are coordinates on the $\C^4$.
+We denote this geometry by $X$, which the above formulas have expressed as a quadratic cone inside $\C^4 \times \Spec(R)$, where $u_i,w_j$ are coordinates on the $\C^4$.
 The backreacted geometry is given by the locus where we further remove the locus where the coordinates $u_i,w_j$ are both zero; this is an open subset that we denote by $X^0 \subset X$.
 
 We point out that there is a canonical projection
